@@ -1,0 +1,12 @@
+$ git config --list --show-origin
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+$ git config --list
+user.name=John Doe
+user.email=johndoe@example.com
+color.status=auto
+color.branch=auto
+color.interactive=auto
+color.diff=auto
+...
