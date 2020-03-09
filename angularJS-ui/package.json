@@ -1,0 +1,15 @@
+{
+  "name": "angularjs-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.25",
+    "angularjs": "0.0.1"
+  }
+}
