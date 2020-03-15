@@ -1,0 +1,18 @@
+<h1>Things:</h1>
+
+<div ng-repeat="thing in things">
+  <ul>
+    <li>id: {{thing.id}}</li>
+    <li>name: {{thing.name}}</li>
+    <li>status: {{thing.status}}</li>
+    <button ng-click="destroy(thing)">삭제</button>
+    <button ng-click="update(thing)">변경</button>
+    <hr/>
+  </ul>
+</div>
+
+<form name="form" ng-submit="create(form)">
+  <label for="name">이름:</label>
+  <input type="text" name="name" ng-model="name" />
+  <button type="submit">추가</button>
+</form>
