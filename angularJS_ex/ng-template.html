@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+AngularJs ng-template Directive Example
+</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+<script >
+var myApp = angular.module("AngularngtemplateApp", ['ngRoute']);
+myApp.config(['$routeProvider',
+function ($routeProvider) {
+$routeProvider.when('/test1', { templateUrl: 'test1.html' })
+.when('/test2', { templateUrl: 'test2.html' })
+.when('/test3', { templateUrl: 'test3.html' });
+}
+]);
+myApp.controller('ngtemplatectrl', function ($scope) {
+$scope.text = 'Hello';
+});
+</script>
+</head>
+<body ng-app="AngularngtemplateApp">
+<div ng-controller="ngtemplatectrl">
+<script type="text/ng-template" id="test1.html">
+This list denotes the first list element.
+</script>
+<script type="text/ng-template" id="test2.html">
+<h3>This is the header of the second list.</h3>
+</script>
+<script type="text/ng-template" id="test3.html">
+<b>The ng-template directive is magical</b>
+</script>
+<ul>
+<li><a href="#/test1">list1</a></li>
+<li><a href="#/test2">list2</a></li>
+<li><a href="#/test3">list3</a></li>
+</ul>
+<div ng-view>
+</div>
+</div>
+</body>
+</html>

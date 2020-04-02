@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+AngularJs ng-switch Directive Example
+</title>
+<script src="angular.min.js"></script>
+<script>
+var app = angular.module("AngularswitchApp", []);
+app.controller("ngswitchctrl", function ($scope) {
+	$scope.items = ['one', 'two', 'three', 'four'];
+	$scope.selectval = "one";
+});
+</script>
+</head>
+<body ng-app="AngularswitchApp">
+<div ng-controller="ngswitchctrl">
+Select Item: <select ng-model="selectval" ng-options="item for item in items">
+</select>
+	<div ng-switch ="selectval">
+	<div ng-switch-when="one"><b>DIV1</b>: You Selected value one</div>
+	<div ng-switch-when="two"><b>DIV2</b>: You Selected value two</div>
+	<div ng-switch-when="three"><b>DIV3</b>: You Selected value three</div>
+	<div ng-switch-default>You are in default switch case.</div>
+</div>
+</div>
+</body>
+</html>

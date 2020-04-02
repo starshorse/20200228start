@@ -1,0 +1,78 @@
+ <!DOCTYPE  html>
+ <html>
+ <head>
+        <link   rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        </head>
+        <body   ng-app='app'>
+        <div    ng-controller='PostsCtrl'   class='container'>
+                        <h1>Recent  Posts</h1>
+          <form	role='form'>
+            <div	class='form-group'>
+            <div	class='input-group'>
+            <input	ng-model='postBody'	class='form-control'	/>
+            <span	class='input-group-btn'>
+            <button	ng-click='addPost()'	class='btn btn-default'>Add	Post</button>
+                        </span>
+                    </div>
+                </div>
+            </form>
+                        <ul class='list-group'>
+                            <li ng-repeat='post in  posts'  class='list-group-item'>
+                                <strong>@{{ post.username   }}</strong>
+                                <span>{{    post.body   }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <script src='https://code.angularjs.org/1.7.9/angular.min.js'></script>
+                        <script>
+                        var app =   angular.module('app',   [])
+//                        app.controller('PostsCtrl', function($scope){
+//                            $scope.addPost	=	function	()	{
+//                                //	Only	add	a	post	if	there	is	a	body
+//                                if	($scope.postBody)	{
+//                                    //	unshift	a	new	post	into	$scope.posts
+//                                    $scope.posts.unshift({
+//                                        username:	'dickeyxxx',
+//                                        body:	$scope.postBody	//	use	the	text entered
+//                                    })
+//                                    //	clear	out	the	input	field
+//                                    $scope.postBody	=	null
+//                                }
+//                            }
+//                            $scope.posts    =   [ {
+//                                username:   'dickeyxxx',
+//                                body:   'Node   rules!'
+//                                },
+//                            {
+//                                username:   'jeffdickey',
+//                                body:   'trying out angular.js...'
+//                            }
+//                                                                    ] })
+
+                            app.controller('PostsCtrl',	function($scope, $http)	{
+                                $scope.addPost	=	function	()	{
+                                    if	($scope.postBody)	{
+                                        $http.post('/api/posts',	{
+                                            username:	'dickeyxxx',
+                                            body:	$scope.postBody 
+//                                        }).success(function	(post)	{ 
+//                                            $scope.posts.unshift(post);
+//                                            $scope.postBody	=	null;
+//                                        })
+                                        }).then(function(post){ 
+                                            $scope.posts.unshift(post.data);
+                                            $scope.postBody	=	null;
+                                        },null)
+                                    }
+                                }
+//                                $http.get('/api/posts').success(function(posts)	{
+//                                    $scope.posts	=	posts.data;
+//                                })
+                                $http.get('/api/posts').then(function(posts){
+                                    $scope.posts	=	posts.data;
+                                },null)
+                            })
+                        </script>
+</body>
+</html>
+
