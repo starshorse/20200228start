@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+ -->
+<link rel="stylesheet" href="./exrn/bootstrap.min.css">
+<link rel="stylesheet" href="./exrn/all.min.css">
+<link rel="stylesheet" href="./exrn/datatables.min.css">
+<link rel="stylesheet" href="style.css">
+
+<title>CVS File to JSON</title>
+</head>
+<body>
+    <div id="emptyRow" class="row"></div>
+    <div class="row justify-content-md-center">
+       
+            <h1>CSV JSON Converter</h1><h3> &copyEz Works</h3>
+    </div>
+    <div class="betweenRow" class="row"></div>
+    <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+            <a class="navbar-brand"><h3>Ez Works</h3></a>
+            <!--
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>  -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Order</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            <div class="nav nav-item">
+                    <div class="input-group mb-3">
+                            <input type="text" id ="dataColNum" class="form-control text-md-right" placeholder="변경 컬럼 수" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <span class="input-group-text" id="basic-addon2">Columns</span>
+                            </div>
+                          </div>
+                          
+            </div> 
+            <div class="nav nav-item">
+                <div class="input-group mb-3">
+                    <input type="text" id ="dataRowNum" class="form-control text-md-right" placeholder="자료 목록 수" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="basic-addon2">Rows</span>
+                    </div>
+                  </div>
+            </div> 
+        <div class="navbar-nav ml-auto">
+            <div class="nav nav-item">
+                    <div class="input-group  mb-3  ">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroupFileAddon01">CSV File</span>
+                        </div>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="inputGroupFile01"
+                            aria-describedby="inputGroupFileAddon01">
+                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                      </div>
+            </div> 
+        </div>   
+    </nav>
+    <div class="betweenRow" class="row"></div>
+    <div class="row justify-content-center">
+        <div class="col-xs-6">
+            <button id ="exeConvert" class="btn-primary btn-lg">Convertion</button>
+        </div>
+    </div>
+    <div class="betweenRow" class="row"></div>
+    <div>
+        <table id="example" class="display" width="100%"></table>
+    </div>
+<!--  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+-->
+<script src="./exrn/jquery.min.js"></script>
+<script src="./exrn/bootstrap.min.js"></script>
+<script src="./exrn/datatables.min.js"></script>
+<script>
+        var myJData ; 
+		var myTableJData = {
+				data: myJData , 
+				columns:[
+				   {title : "TrackID" },
+				   {title : "ClientQID" },
+				   {title : "CASNumber" },
+				   {title : "ProductName" },
+				   {title : "Number" }
+				]
+		   }; 
+        $(document).ready(function() {
+ //             $('#example').DataTable(
+ //                 myTableJData
+ //             );
+     } );
+</script>
+<script>
+    document.getElementById('exeConvert').onclick = function(){
+        var arrRawData ;
+     // RICHARD-CHOI 2019-01-18  remove existing.    
+        if( document.getElementById('inputGroupFile01').files.length > 1)document.getElementById('inputGroupFile01').files.pop();   
+        var file = document.getElementById('inputGroupFile01').files[0];
+        if(!file){
+            console.log("no file selected!"); 
+            return; 
+        }
+        arrRawData = getInfoNarray(file); 
+
+    }
+    function getInfoNarray(file){
+        var CHUNK_SIZE = 50000; // 50kb, arbitrarily chosen.
+    // RICHARD-CHOI decoding with ANSI  'windows-1252' 'euc-kr'   
+        var decoder = new TextDecoder('euc-kr');
+        var utf8Encoder = new TextEncoder('utf-8'); 
+        var utf8Decoder =  new TextDecoder('utf-8');
+        var results = '';
+        var offset = 0;
+        var fr = new FileReader();
+        fr.onload = function() {
+            // Use stream:true in case we cut the file
+            // in the middle of a multi-byte character
+            results += decoder.decode(fr.result, {stream: true});
+            // Check if ANSI ? 2020-01-20 
+            var results_utf8 = ''; 
+            results_utf8 = utf8Encoder.encode(results); 
+            results =''; 
+            results = utf8Decoder.decode(results_utf8); 
+
+
+            var lines = results.split('\n');
+            $('#dataRowNum').val( lines.length -1 ); 
+            var colms = lines[0].split(','); 
+            $('#dataColNum').val( colms.length );
+            // Create Head. 
+            var colm_info = [] ; 
+            for( i = 0 ; i < colms.length ; i++){
+                var colm_entry = {}; 
+                colm_entry['data'] = colms[i]; 
+                colm_entry['title'] = colms[i];
+                colm_info.push(colm_entry); 
+            }   
+            // Generate Data and show Tables 
+            var aData = results.split(/[,\n]/);
+            var keyS = [];
+            var DataS  = [];
+            for( i = 0 ; i < colms.length ; i++ ){
+                keyS.push( aData.shift() ); 
+            }
+
+            for( j = 0 ; j < aData.length ; j += keyS.length){
+                var atmp = {};
+                for( i = 0 ; i < keyS.length ; i++){
+                    atmp[keyS[i]] = aData[j+i];
+                }
+                DataS.push(atmp); 
+            }
+           /**
+              Show Data
+           */
+           var table = $('#example'); 
+          
+           if ( $.fn.dataTable.isDataTable( '#example' ) ) {
+                    var attendanceDetailsTable = $('#example').DataTable();
+                    attendanceDetailsTable.destroy();
+                    $('#example').empty(); // empty in case the columns change
+           }
+           $('#example').dataTable({
+                 data : DataS ,
+                 columns : colm_info,
+                 retrieve: true,
+                 distroy: true
+                }
+           );
+           table = $('#example'); 
+
+       };
+       seek();   
+        function seek() {
+           var slice = file.slice(offset, offset + CHUNK_SIZE);
+            fr.readAsArrayBuffer(slice);
+        }
+    }
+   $(function(){
+       $('#inputGroupFile01').on('change',function(){
+ //           console.dir($(this)); 
+ //           $('#inputGroupFile01').val($(this)[0].files[0].name); 
+       });
+   }); 
+</script>
+</body>
+</html>
