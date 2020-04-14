@@ -1,14 +1,15 @@
-var Post = require('....models/post')
+var Post = require('../../models/post')
 var router = require('express').Router()
-router.get('apiposts',function(req,res,next)   {
-        Post.find()
-        .sort('-date')
-        .exec(function(err, posts){
-                if(err){ return  next(err)   }
-                res.json(posts)
-                })
+router.get('/',function(req,res,next)   {
+//        Post.find()
+//        .sort('-date')
+//        .exec(function(err, posts){
+//                if(err){ return  next(err)   }
+//                res.json(posts)
+//                })
+         res.json( Post.find()); 
         })
-router.post('apiposts',function(req,res,next){
+router.post('/',function(req,res,next){
 var post    =   new Post({
         username:   req.body.username,
         body:   req.body.body
@@ -17,5 +18,5 @@ var post    =   new Post({
             if  (err)   {   return  next(err)   }
             res.json(201,   post)
             })
-        })
+        });
 module.exports  =   router
