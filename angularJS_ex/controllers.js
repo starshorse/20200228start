@@ -18,7 +18,7 @@ app.controller('myNgMsg',['$scope', function($scope){
     
         $scope.toggleAB = function(){
               linkT = (linkT+1) % 2; 
-              $scope.myLinks = $scope.myLinksName = arrLinks[linkT];          
+              $scope.myLinks = $scope.myLinksName = arrLinks[linkT];
         };
         $scope.getLocation= function(){
        //     console.dir( $location);

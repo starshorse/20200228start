@@ -7,16 +7,16 @@
       <script src="./app.js"></script>
       <!-- <script src="scripts.js"></script> -->
       <script src="./controllers.js"></script>
-      <!-- <script src="directives.js"></script> -->
+       <script src="directives.js"></script>
   </head>
   <body ng-app="myNg" > 
 <ng-view></ng-view>
-    <!-- <ezw></ezw> -->
-    
+
     <!-- <ng-include src="'./ezw.html'"></ng-include> -->
     <div ng-controller="myNgMsg">
       <p ng-click="toggleAB()">message1:{{message}}</p>
       <a  ng-href="{{myLinks}}">{{myLinksName}}</a>
+         <ezw></ezw>
       <p  ng-click ="getLocation()">Basic2</p>
     </div>   
     <div ng-controller="myNgList">
