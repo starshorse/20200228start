@@ -17,5 +17,5 @@ app.config(function($routeProvider){
         template:'<h1>Hello route2</h1>',})
         .otherwise({
             template:'<h1>Default </h1>',
-        })           
+        })
 });
