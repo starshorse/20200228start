@@ -1,0 +1,20 @@
+﻿Build started 2020-07-08 오후 12:49:06.
+     1>Project "J:\20200228start\C-C++ex\vc++\c_ex\c_ex\c_ex.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>j:\20200228start\c-c++ex\vc++\c_ex\c_ex\source.cpp(96): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(86) : see declaration of 'ctime'
+     1>j:\20200228start\c-c++ex\vc++\c_ex\c_ex\source.cpp(98): warning C4996: 'gmtime': This function or variable may be unsafe. Consider using gmtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(99) : see declaration of 'gmtime'
+     1>j:\20200228start\c-c++ex\vc++\c_ex\c_ex\source.cpp(100): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.h(174) : see declaration of 'asctime'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"J:\20200228start\C-C++ex\vc++\c_ex\Debug\c_ex.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"J:\20200228start\C-C++ex\vc++\c_ex\Debug\c_ex.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"J:\20200228start\C-C++ex\vc++\c_ex\Debug\c_ex.lib" /MACHINE:X86 Debug\comm.obj
+         Debug\Source.obj
+         c_ex.vcxproj -> J:\20200228start\C-C++ex\vc++\c_ex\Debug\c_ex.exe
+     1>Done Building Project "J:\20200228start\C-C++ex\vc++\c_ex\c_ex\c_ex.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.24

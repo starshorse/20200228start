@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNgRS">
+<head>
+    <meta charset="UTF-8">
+    <title>resource-messages-services</title>
+</head>
+<body>
+<form action="#" name="angularFrm" ng-controller="myNgController">
+    Country:
+    <input type="text" name="angularIpt" ng-model="angularIpt" required maxlength="10" minlength="5">
+    <div ng-messages="angularFrm.angularIpt.$error" ng-show="angularFrm.angularIpt.$invalid">
+         {{ angularFrm.angularIpt.$error | json }}
+        <div ng-message="required">This field need value</div>
+    </div>
+    <select name="" id="" ng-options ="country.id as country.dsc for country in countries track by country.id" ng-model="selVal">
+    </select>{{ selVal }}
+</form>
+<script>
+</script>
+<script src="./bower_components/angular/angular.min.js"></script>
+<script src="./bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="./bower_components/angular-messages/angular-messages.min.js"></script>
+<script>
+angular.module('myNgRS',['ngMessages', 'ngResource']).controller('myNgController', ['$scope', function($scope){
+    $scope.countries =[
+        { id:'KOR', dsc:'KOREA'},
+        { id:'JPN', dsc:'JAPAN'},
+        { id:'USA', dsc:'U.S.A'}
+    ]
+}]);
+</script>
+</body>
+</html>
