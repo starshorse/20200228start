@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const dbconfig = require('./config/database.js');
 const connection = mysql.createConnection( //{
 	dbconfig
-	// host : '35.189.159.65',
+	// host : '35.189.159.xx',
 	// user : 'User_WebQt',
 	// password : 'test!@3582',
 	// database : 'ezWebQt'
