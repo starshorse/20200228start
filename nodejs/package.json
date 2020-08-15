@@ -5,7 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.17.1",
-    "mkdirp": "^1.0.3"
+    "mkdirp": "^1.0.3",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {},
   "scripts": {
