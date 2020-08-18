@@ -1,7 +1,28 @@
 <!Doctype html>
+<html ng-app="myNgRs">
 <head>
+	<script src="./bower_components/angular/angular.min.js"></script>
+	<script src="./bower_components/angular-resource/angular-resource.min.js"></script>
 </head>
 <body>
-	<h1>Hello World</h1>
+	<div ng-controller="myNgRsCtl">
+		<h1>Hello World</h1>
+	</div>
+	<script>
+		angular.module('myNgRs',['ngResource']).controller('myNgRsCtl',['$scope','$resource', function($scope ,$resource){
+               var Uid = $resource('/user/:id');   
+			   var Uid1 = new Uid(); 
+			   Uid1.foo ="bee";
+			   Uid1.something = 125; 
+			   Uid1.$save();
+			   
+			   Uid.get({id:123},function(response){
+				   console.log(response);
+			   });  
+			   Uid.query(function(response){
+				   console.log(response);
+			   })
+		}]);
+	</script>
 </body>
 </html>

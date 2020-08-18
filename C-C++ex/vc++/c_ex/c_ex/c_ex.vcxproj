@@ -76,8 +76,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="C++11.cpp" />
+    <ClCompile Include="c++shared_ptr.cpp" />
+    <ClCompile Include="C++string.cpp" />
     <ClCompile Include="comm.cpp" />
+    <ClCompile Include="function_Ptr01.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="var_c.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="boVector.h" />
+    <ClInclude Include="C++Shared_ptr.h" />
+    <ClInclude Include="C++string.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

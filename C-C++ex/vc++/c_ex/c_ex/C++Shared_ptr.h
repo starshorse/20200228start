@@ -1,0 +1,1 @@
+void mainShared_ptr();

@@ -1,15 +1,36 @@
 #include <iostream>
 #include <cstring>
 #include <ctime>
+#include "C++string.h"
+#include "C++Shared_ptr.h"
 
-void createComm(); 
+void createComm();
+void main_cpp11();
 using namespace std; 
+
+void main_var_c();
+
+/*
+ In order to return a function pointer within a function, 
+ an array of function pointers must be made malloc.
+ 
+typedef void (*drawFunctionPointer)(void);
+drawFunctionPointer *drawFunctions = malloc(sizeof(drawFunctionPointer) * numFunctions);
+*/
 
 /**
    2019-01-14 Function pointers 
 */
 typedef int(*ft())();
+typedef int(*fta)();
 //int(*getFunc())(int, int){ return *ft; };
+
+int(*a1())(){
+	printf("function return function!");
+	fta *functions = (fta *)malloc(sizeof(fta) * 4);
+	return functions[0];
+}
+
 
 int sum(int a, int b){
 	return a + b; 
@@ -89,6 +110,9 @@ int main(){
 		"Tender"
 	};
 	int(*myA)();
+	fta b;
+	b = a1();
+//  C++ 이 나니라서 안된다.	b = a();	
 
 	myA = funct_getA(2);
 	myA();
@@ -114,12 +138,11 @@ int main(){
 
 	printf(" value : %d", *myp[3]);
 
-
-
-
+	main_cpp11(); 
+	outString();
+	mainShared_ptr();
+	main_var_c();
 //	fb(3)[1];
-
-
 //	ft_1();
 	return 0;
 }
