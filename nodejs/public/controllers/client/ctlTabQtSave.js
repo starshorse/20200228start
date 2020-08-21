@@ -1,3 +1,5 @@
+// const { json } = require("express");
+
 app.controller('ctlTabQtSave',['$scope', 'DataNode', function($scope, DataNode){
     ( $scope.hideInput = function(){
          $('#saveInput').hide();
@@ -100,8 +102,11 @@ app.controller('ctlTabQtSave',['$scope', 'DataNode', function($scope, DataNode){
 
                 return 1 ; 
             }
-         currentRow['Cas No']   =    $scope.row_1_values['1'];
-         currentRow['Name']     =   $scope.row_1_values['2'];
+         // SargonI 2020-08-21
+         var editData ={} ;          
+         editData[web2dbCov['Cas No']] = currentRow['Cas No']   =    $scope.row_1_values['1'];
+         editData[web2dbCov['Name']] = currentRow['Name']     =   $scope.row_1_values['2'];
+
          currentRow['Unit']     =   $scope.row_1_values['3'];
          currentRow['ea']       =   $scope.row_1_values['4'];
          currentRow['purity']   =   $scope.row_1_values['5'];
@@ -131,7 +136,14 @@ app.controller('ctlTabQtSave',['$scope', 'DataNode', function($scope, DataNode){
          if( $scope.qtPurityOver == true ) currentRow['Purity Over'] |=  3;   // 0b0011
  // RICHARD-CHOI 2020-05-03 
          DataNode.postData(ezChemData);   
- 
+ // SargonI 2020-08-21 
+         DataNode.wqs_resource.update({ id: currentRow['No']}, { text : JSON.stringify(editData)}); 
+ //       DataNode.wqs_resource.update();
+        //  DataNode.wqs_resource.get({ id: currentRow['No']}).$promise.then(function(wqs_Entry) {
+        //     wqs_Entry.text = JSON.stringify(editData);
+        //     wqs_Entry.update({ id: currentRow['No']});
+        //   }); 
+         
          $scope.updateTable();
          $('#createQt').show();
          return 0;
@@ -192,6 +204,8 @@ app.controller('ctlTabQtSave',['$scope', 'DataNode', function($scope, DataNode){
             console.dir(checkBox.dataset.no); 
              selectIndexArr.push(checkBox.dataset.no); 
              ezChemData.splice( ezChemData.findIndex( x => x['No'] == checkBox.dataset.no), 1 );   
+           // SargonI 2020-08-21 
+            DataNode.wqs_resource.delete({id: checkBox.dataset.no});        
             }
         )
         DataNode.selectedIndex = selectIndexArr; 

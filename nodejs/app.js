@@ -46,9 +46,29 @@ app.get('/EzQuations/:id',function(req, res){
 	// connection.connect();
 	connection.query('SELECT * FROM quotations WHERE idx =' + req.params.id , function( error, rows, fields ){
 	console.log( rows ); 
-	res.send(rows);
+	res.send(rows[0]);
 	})
 //	connection.end();
+});
+app.put('/EzQuations/:id',function(req, res){
+	// connection.connect();
+	var object = JSON.parse(req.body.text);
+	const columns = Object.keys(object);
+	const values = Object.values(object);
+//	let sql = "UPDATE tableName SET '" + columns.join("' = ? ,'") +"' = ?";
+    let sql = "UPDATE quotations SET " + columns.join(" = ? ,") +" = ?";
+	connection.query( sql + ' WHERE idx =' + req.params.id  , values , function( error, results, fields ){
+	console.log( results ); 
+	res.send(results);
+	})
+//	connection.end();
+});
+app.delete('/EzQuations/:id',function(req, res){
+	connection.query('DELETE FROM quotations WHERE idx =' + req.params.id ,  function( error, results ){
+		// if(err) throw err;
+		console.log( results ); 
+		res.send(results );
+	})
 });
 app.use('/', express.static( __dirname +'/public')); 
 app.get('/getajax', function(req, res) {
