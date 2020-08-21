@@ -1,28 +1,67 @@
 <!Doctype html>
 <html ng-app="myNgRs">
 <head>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<script src="./bower_components/angular/angular.min.js"></script>
 	<script src="./bower_components/angular-resource/angular-resource.min.js"></script>
+	<script src="./Resource/defaultJson.js"></script>
+	<script src="./Resource/defaultJsonhead.js"></script>
 </head>
 <body>
-	<div ng-controller="myNgRsCtl">
+	<div ng-controller="ctlTabQtSave">
 		<h1>Hello World</h1>
+		<div ng-include="'./ClientSub/tempSave.html'"></div>
+		<!-- <table id="clientData_tabQtSave" class="display" width="100%"></table> -->
 	</div>
 	<script>
-		angular.module('myNgRs',['ngResource']).controller('myNgRsCtl',['$scope','$resource', function($scope ,$resource){
-               var Uid = $resource('/user/:id');   
-			   var Uid1 = new Uid(); 
-			   Uid1.foo ="bee";
-			   Uid1.something = 125; 
-			   Uid1.$save();
+		var defaultData ;
+		var ezChemData ; 
+	   var app =	angular.module('myNgRs',['ngResource']).controller('myNgRsCtl',['$scope','$resource','DataNode', function($scope ,$resource, DataNode){
+			// This is an example created when server.js is executed on the server. Comment out for when running app.js server.			
+            //    var Uid = $resource('/user/:id');   
+			//    var Uid1 = new Uid(); 
+			//    Uid1.foo ="bee";
+			//    Uid1.something = 125; 
+			//    Uid1.$save();
 			   
-			   Uid.get({id:123},function(response){
-				   console.log(response);
-			   });  
-			   Uid.query(function(response){
-				   console.log(response);
-			   })
+			//    Uid.get({id:123},function(response){
+			// 	   console.log(response);
+			//    });  
+			//    Uid.query(function(response){
+			// 	   console.log(response);
+			//    })
+
+			DataNode.getData().then( function(data){
+			//  SargonI 2020-08-20 ezChemData = JSON.parse(data); 
+			ezChemData = data ; 
+        	//  var defaultData = DataNode.getData().data.filter( function(cur){
+            	defaultData = ezChemData.filter(function(cur){
+             		return cur['분류']==0 ;
+            	});
+         		$scope.updateTable();
+			 });
+			 $scope.updateTable = function(){
+				if ( $.fn.dataTable.isDataTable( '#clientData_tabQtSave' ) ) {
+							var attendanceDetailsTable = $('#clientData_tabQtSave').DataTable();
+							attendanceDetailsTable.destroy();
+							$('#clientData_tabQtSave').empty(); // empty in case the columns change
+					}
+				$('#clientData_tabQtSave').DataTable({
+					data: defaultData ,
+					columns: ezChemDataH_save
+				});
+     		}
+			var Eqid = $resource('/EzQuations/:id');
+				Eqid.query(function(response){
+				console.log(response);	
+			})
 		}]);
 	</script>
+	<script src="./controllers/client/ctlTabQtSave.js"></script>
+	<script src="./data/data.services.js"></script>
+	<script src="./bower_components/datatables/media/js/jquery.js"></script>
+	<script src="./bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="./bower_components/datatables/media/js/dataTables.bootstrap4.min.js"></script>
 </body>
 </html>

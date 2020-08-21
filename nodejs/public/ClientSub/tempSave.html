@@ -1,0 +1,70 @@
+
+<div class="container-fluid" ng-controller="ctlTabQtSave">
+    {{ row_1_values }}   {{ row_2_values }}
+    <div id="createQt">
+    <div class="row no-gutters">
+        <div class="col-8"></div>
+        <div class="col-2">
+            <a name="" id="" class="btn btn-primary btn-block" href="#!/tabQtSave" role="button" ng-click="addEntry()">견적생성</a>
+        </div>
+        <div class="col-2">
+            <a name="" id="" class="btn btn-primary btn-block" href="#!/tabQtSave" role="button" ng-click="delEntry()">견적삭제</a>
+        </div>
+    </div></div>
+    <div id="saveInput">
+        <div class="row no-gutters">
+            <div  class= "{{ col.col_num }}" ng-repeat="col in row_1"> {{ col.label }}
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="{{ col.col_num }}" ng-repeat="col in row_1">
+                <input type="text" class="form-control" name="" id="row_1input{{ $index }}"  ng-model= "row_1_values[ $index  + 1]" aria-describedby="helpId" placeholder=" {{ col.placeholder }}">
+            </div>
+            <div class="col-1">
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        이상 <input type="checkbox" class="form-check-input" value="" ng-model ="qtPurityOver" ng-value="true" ng-change="qtPurityOverChanged()">
+                    </label>
+                </div>
+            </div>
+            <div class="col-3">
+            </div>
+            <div class="col-V2">
+<!--                <a name="" id="" class="btn btn-primary btn-block" href="#" role="button">견적생성</a>-->
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div  class= "{{ col.col_num }}" ng-repeat="col in row_2"> {{ col.label }}
+            </div>
+            <div class="col-3">
+            </div>
+            <div class="col-2">
+                <a name="" id="" class="btn btn-primary btn-block" href="#!/tabQtSave" role="button" ng-click="editEntry()">저장</a>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="{{ col.col_num }}" ng-repeat="col in row_2">
+            <input type="text" class="form-control" name="" id="row_2input{{ $index }}"  ng-model= "row_2_values[ $index  + 1]" aria-describedby="helpId" placeholder=" {{ col.placeholder }}">
+            </div>
+            <div class="col-3">
+            </div>
+            <div class="col-2">
+                <a name="" id="" class="btn btn-primary btn-block" href="#!/tabQtSave" role="button" ng-click ="hideInput()">취소</a>
+            </div>
+        </div>
+        <br>
+        <div class="row no-gutters">
+            <div class="col-7">
+                구조식 첨부
+                <a name="" id="" class="btn btn-primary" role="button" ng-disabled="1" >첨부하기</a>
+            </div>
+            <div class="col-3">
+            </div>
+            <div class="col-2">
+                <a name="" id="" class="btn btn-primary btn-block" href="#!/tabQtSave" role="button" ng-click ="moveEntry()">견적제출</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <table id="clientData_tabQtSave" class="display" width="100%"></table>
+</div>

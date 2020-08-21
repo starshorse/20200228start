@@ -32,6 +32,16 @@ app.get('/EzQuations',function(req, res){
 	})
 //	connection.end();
 });
+app.post('/EzQuations',function(req, res){
+	// connection.connect();
+	data ={ company : "TBTECH" , generated_by : "TBTECH" , progress_status : 1 , user : "최종규" }; 
+	connection.query('INSERT INTO quotations SET ?', data,  function( error, results ){
+	// if(err) throw err;
+	console.log( results ); 
+	res.send(results );
+	})
+//	connection.end();
+});
 app.get('/EzQuations/:id',function(req, res){
 	// connection.connect();
 	connection.query('SELECT * FROM quotations WHERE idx =' + req.params.id , function( error, rows, fields ){
@@ -40,7 +50,16 @@ app.get('/EzQuations/:id',function(req, res){
 	})
 //	connection.end();
 });
-app.get('/',	function(req,	res)	{
-		res.send(200,	'Hello	World');
-		});
+app.use('/', express.static( __dirname +'/public')); 
+app.get('/getajax', function(req, res) {
+	connection.query('SELECT * FROM quotations', function( error, rows, fields ){
+// SargonI 2020-08-18		
+//	var responseData = {'result' : 'ok', 'data' : JSON.stringify( curData ) };
+	var responseData = {'result' : 'ok', 'data' : rows  };
+	res.json(responseData);
+	});
+});
+// app.get('/',	function(req,	res)	{
+// 		res.send(200,	'Hello	World');
+// 		});
 app.listen(8888);
