@@ -24,7 +24,7 @@
 	<script>
 		var defaultData ;
 		var ezChemData ; 
-	   var app =	angular.module('myNgRs',['ngResource']).controller('myNgRsCtl',['$scope','$resource','DataNode', function($scope ,$resource, DataNode){
+	   var app =	angular.module('myNgRs',['ngResource'], ['ngMaterial']).controller('myNgRsCtl',['$scope','$resource','DataNode', function($scope ,$resource, DataNode){
 			// This is an example created when server.js is executed on the server. Comment out for when running app.js server.			
             //    var Uid = $resource('/user/:id');   
 			//    var Uid1 = new Uid(); 
