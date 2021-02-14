@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="./angular.min.js"></script>
+<script src="./angular-route.min.js"></script>
+<script src="./angular-messages.min.js"></script>
+<script src="app.js"></script>
+<script>
+    app.controller('myNgFrm',['$scope', function($scope){
+      $scope.countries = [
+        { id: 'KOR', desc :'KOREA'},
+        { id: 'USA', desc :'America'},
+        { id: 'JPN', desc :'Japan'},
+      ]
+
+    }]); 
+    app.controller('myNgList',['$scope', function($scope){
+
+    }]); 
+    app.controller('myNgMsg',['$scope', function($scope){
+        $scope.posts =[
+       { username:'RICHARD', body:'TBTECH nology'},
+       { username:'Sang', body:'ABOVE'},
+       { username:'Soo', body:'SangMoon'}
+        ];
+        $scope.addpost = function(){
+        $scope.posts.unshift({
+           username:'bob', body: $scope.postBody 
+         })
+        }
+    }]); 
+    var rtcs = angular.module('myNg.controllers',[]);
+    rtcs.controller('controller1',['$scope', '$http'
+    ,function($scope, $http){
+          $http.get('example.json').then(function(response){
+            //  var myData = JSON.parse(response);
+             $scope.get_json = response.data; 
+          });
+          $scope.name =" RICHARD2"; 
+    }]);
+    // angular.module('myApp.controllers',[]).controller('controller_2',['$scope', '$http'
+    rtcs.controller('controller2',['$scope', '$http'
+    ,function($scope, $http){
+         $scope.name ="RICHARD"; 
+    }]);
+</script>
+<title>Title</title>
+</head>
+<body>
+<h1>hello</h1>
+<div ng-controller="myNgList">
+    <p ng-click="toggleAB()">message1:{{message}}</p>
+    <a  ng-href="{{myLinks}}">{{myLinksName}}</a>
+    <p  ng-click ="getLocation()">Basic2</p>
+  </div>   
+  <div ng-controller="myNgMsg">
+    <input type="text" ng-model="postBody">
+    <button ng-click="addpost()">{{postBody}}</button>
+    <table border="1" cellspacing= "0"  cellpadding= "0"  width="600px">
+      <tr ng-repeat="post in posts" >
+        <td>{{post.username}}</td><td>{{post.body}}</td>
+      </tr>
+    </table>
+  </div>
+  <form action="#!/view1" name="angularFrm" >
+  <div class="form-group" ng-controller="myNgFrm">
+    <label for="">angularJs</label>
+    <input type="text" ng-model="angularFrmInput"
+      class="form-control" name="angularInput" id="angularJs" aria-describedby="helpId" placeholder="angularJs" required minlength="10">
+    <small id="helpId" class="form-text text-muted">{{angularFrm.angularInput.$error}}</small>
+    <div class="alert alert-danger" role="alert" ng-show="angularFrm.angularInput.$invalid">
+      <strong>Please check input</strong>
+    </div>
+    <div class="form-group">
+      <label for="">angularFrmSelect</label>
+      <select class="form-control" name="country" id="" ng-model="user.country" 
+      ng-options="country.id as country.desc for country in countries">
+      </select>
+      <span class="badge badge-info">{{user.country}}</span>
+    </div>
+    <div class="form-check form-check-inline">
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="" id="" value="coffee" ng-model="user.choice"> Coffee
+      </label>
+      <label class="form-check-label">
+          <input class="form-check-input" type="radio" name="" id="" value="beer" ng-model="user.choice"> beer
+        </label>
+    </div>
+    <div class="clearfix"></div>
+  <!-- message error handling    -->
+    <div ng-messages="angularFrm.angularInput.$error" style="color:maroon" role="alert">
+        <div ng-message="required">You did not enter a field {{ angularFrm.angularInput.$error | json }}</div>
+        <div ng-message="minlength">Your field is too short</div>
+        <div ng-message="maxlength">Your field is too long</div>
+        <div ng-if="angularFrm.angularInput.$error.required">Your field is required</div>
+    </div>
+    <span class="badge badge-info">{{user.choice}}</span>
+    <a href="#!/view1">View1</a>
+    <div class="clearfix"></div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  </form>
+<ng-view></ng-view>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

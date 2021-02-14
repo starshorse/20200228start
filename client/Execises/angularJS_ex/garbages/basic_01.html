@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+      <script src="./angular.min.js"></script> 
+      <script src="./angular-route.min.js"></script>
+      <script src="./angular-messages.min.js"></script>
+      <script src="./app.js"></script>
+      <!-- <script src="scripts.js"></script> -->
+      <script src="./controllers.js"></script>
+       <script src="directives.js"></script>
+  </head>
+  <body ng-app="myNg" > 
+<ng-view></ng-view>
+
+    <!-- <ng-include src="'./ezw.html'"></ng-include> -->
+    <div ng-controller="myNgMsg">
+      <p ng-click="toggleAB()">message1:{{message}}</p>
+      <a  ng-href="{{myLinks}}">{{myLinksName}}</a>
+         <ezw></ezw>
+      <p  ng-click ="getLocation()">Basic2</p>
+    </div>   
+    <div ng-controller="myNgList">
+      <input type="text" ng-model="postBody">
+      <button ng-click="addpost()">{{postBody}}</button>
+      <!-- <ul>
+        <li ng-repeat="post in posts"><strong>{{post.username}}</strong><span>{{post.body}}</span></li>
+      </ul> -->
+      <table border="1" cellspacing= "0"  cellpadding= "0"  width="600px">
+        <tr ng-repeat="post in posts" >
+          <td>{{post.username}}</td><td>{{post.body}}</td>
+        </tr>
+      </table>
+    </div>
+  
+  </body>
+</html>

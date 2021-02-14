@@ -1,0 +1,54 @@
+<div class="signup-form" ng-controller="myNgFrm">
+    <form action="/examples/actions/confirmation.php" method="post" name="angularFrm">
+        <h2>Register</h2>
+        <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+        <div class="form-group">
+            <div class="row">
+                <div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
+                <div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
+            </div>        	
+        </div>
+        <div class="form-group">
+            <input type="email" ng-model="angularFrmInput" class="form-control" name="angularInput" placeholder="Email" required="required">
+            <small id="helpId" class="form-text text-muted">{{angularFrm.angularInput.$error}}</small>
+            <div class="alert alert-danger" role="alert" ng-show="angularFrm.angularInput.$invalid">
+                <strong>Please check input</strong>
+              </div>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+        </div>
+        <div class="form-group">
+            <label for="">angularFrmSelect</label>
+            <select class="form-control" name="country" id="" ng-model="user.country" 
+            ng-options="country.id as country.desc for country in countries">
+            </select>
+            <span class="badge badge-info">{{user.country}}</span>
+          </div>  
+          <div class="form-check form-check-inline">Sex
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="" id="" value="coffee" ng-model="user.choice">Man
+            </label>
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="" id="" value="beer" ng-model="user.choice">Fem
+              </label>
+          </div>{{ user.choice }}
+          <div class="clearfix"></div>        
+        <div class="form-group">
+            <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+        </div>
+    </form>
+    <div class="text-center">Already have an account? <a href="#">Sign in</a></div>
+    <div ng-messages="angularFrm.angularInput.$error" style="color:white" role="alert">
+        <div ng-message="required">You did not enter a field {{ angularFrm.angularInput.$error | json }}</div>
+        <div ng-message="minlength">Your field is too short</div>
+        <div ng-message="maxlength">Your field is too long</div>
+        <div ng-if="angularFrm.angularInput.$error.required">Your field is required</div>
+    </div>
+</div>
