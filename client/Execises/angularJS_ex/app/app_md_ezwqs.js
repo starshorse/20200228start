@@ -3,13 +3,13 @@ app.controller('AppCtrl', function($scope, $mdDialog) {
   $scope.status = '  ';
   $scope.customFullscreen = false;
 
-  $scope.showAlert = function (ev) {
+  $scope.showAlert = function (ev, currentRow = null) {
     $mdDialog.show(
       $mdDialog.alert()
         .parent(angular.element(document.querySelector('#popupContainer')))
         .clickOutsideToClose(true)
         .title('This is an alert title')
-        .textContent('You can specify some description text in here.')
+        .textContent('Qt id:' + currentRow['trackId'] +' committed!')
         .ariaLabel('Alert Dialog Demo')
         .ok('Got it!')
         .targetEvent(ev)

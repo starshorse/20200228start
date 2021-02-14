@@ -1,6 +1,10 @@
 // const { json } = require("express");
 
-app.controller('ctlTabQtSave',['$scope', 'DataNode', function($scope, DataNode){
+app.controller('ctlTabQtSave',['$scope', 'DataNode', '$location', '$routeParams', function($scope, DataNode, $location,  $routeParams ){
+
+    console.log( $routeParams.id );
+    console.log( $routeParams.action ); 
+
     ( $scope.hideInput = function(){
          $('#saveInput').hide();
          $('#createQt').show();
@@ -35,6 +39,8 @@ app.controller('ctlTabQtSave',['$scope', 'DataNode', function($scope, DataNode){
          });
          $scope.updateTable();
      }) ;
+ 
+    
     $scope.updateTable = function(){
          if ( $.fn.dataTable.isDataTable( '#clientData_tabQtSave' ) ) {
                      var attendanceDetailsTable = $('#clientData_tabQtSave').DataTable();
@@ -50,6 +56,7 @@ app.controller('ctlTabQtSave',['$scope', 'DataNode', function($scope, DataNode){
                          currentRow = currentDt.row(this).data();
                          console.log($(this).index());
                          $scope.$apply(function(){
+//                            $scope.updateContents(); 
                              $scope.row_1_values['1'] = currentRow['Cas No'];
                              $scope.row_1_values['2'] = currentRow['Name'];
                              $scope.row_1_values['3'] = currentRow['Unit'];
@@ -71,8 +78,28 @@ app.controller('ctlTabQtSave',['$scope', 'DataNode', function($scope, DataNode){
                  });
          $('#saveInput').hide();
      };
+     $scope.updateContents = function(){
+        // $scope.row_1_values['1'] = currentRow['Cas No'];
+        // $scope.row_1_values['2'] = currentRow['Name'];
+        // $scope.row_1_values['3'] = currentRow['Unit'];
+        // $scope.row_1_values['4'] = currentRow['ea'];
+        // $scope.row_1_values['5'] = currentRow['purity'];
+
+        // $scope.row_2_values['1'] = currentRow['Supplier'];
+        // $scope.row_2_values['2'] = currentRow['Cat No'];
+        // $scope.qtPurityOver = false ; 
+        //  if ( currentRow['Purity Over'] & 1 ) $scope.qtPurityOver = true;
+    };
+       // SargonI 2021-02-14 
+    if( $routeParams.id != 'undefined'){
+        currentRow =  ezChemData.find( function(item){
+            return item['id'] == $routeParams.id ;  
+        })
+        $scope.updateContents(); 
+        $('#saveInput').show();
+    };
      // var currentDt ;
-     // var currentRow ;
+     var currentRow ;
      $scope.editEntry = function(){
 
      // RICHARD-CHOI pre-Check  Data..  
@@ -148,10 +175,9 @@ app.controller('ctlTabQtSave',['$scope', 'DataNode', function($scope, DataNode){
          $('#createQt').show();
          return 0;
      }
-     $scope.addEntry = function(){
+     $scope.addEntry = function($event){
  // RICHARD-CHOI 2020-05-03
  //        defaultData.push({});
-         $scope.showAlert($event); 
 
          var numLastNo = ezChemData[0]['lastNo']++;
          ezChemData.push( new DataNode.ezDataEntry( numLastNo ));
@@ -165,7 +191,15 @@ app.controller('ctlTabQtSave',['$scope', 'DataNode', function($scope, DataNode){
  
          $scope.updateTable();
      }
-     $scope.moveEntry = function(){
+     $scope.moveEntry = function( $event ){
+        // SargonI 2021-02-14 
+        // SargonI 2021-02-14      
+        $scope.showAlert($event, currentRow ); 
+        $location.url('#!/clientSubmit\/\:'+ currentRow['trackId'] );
+        
+        return 0; 
+
+
          if( $scope.editEntry()) return 1;
   // Check Valid 
          if( currentRow['Cas No'] == "" && currentRow['Name'] == "" &&  currentRow['Cat No'] =="" )
@@ -198,6 +232,7 @@ app.controller('ctlTabQtSave',['$scope', 'DataNode', function($scope, DataNode){
                return cur['분류']==0 ;
             });
          $scope.updateTable();
+   
      }
     $scope.delEntry = function(){
         var checkBoxes = $('input:checkbox:checked'); 
