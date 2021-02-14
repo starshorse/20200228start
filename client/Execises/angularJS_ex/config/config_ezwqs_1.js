@@ -22,4 +22,9 @@ app.config(function($routeProvider){
     .otherwise({
             template:'<h1>Default </h1>',
         })
-});
+})
+.config(['$locationProvider', function($locationProvider) {
+    $locationProvider.hashPrefix('');
+  }]);
+
+
