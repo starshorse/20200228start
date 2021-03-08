@@ -1,0 +1,52 @@
+===2021-03-08 
+DataTables:{
+     var currentDt ;
+     var currentRow ;    
+        $(function(){
+            $('#example').dataTable({
+                data : data_qtSave ,
+                columns : data_qtSaveH
+            }); 
+            currentDt = $('#example').DataTable(); 
+            $('#example tbody').on('click','tr',function(){
+                var currentRow = currentDt.row(this).data();
+// SargonI 2021-03-08 여기 내용 확인. 		
+                currentDt.row.add(data_qtSave.pop()).draw(false); 
+               var temp =  currentDt.row(':eq(1)').remove().draw(false); //  .delete({title: 'Delete first row'}); 
+            }
+            )
+        });
+
+Console.log를 이용하여서 순서를 넣어가는면 확인 한다. 
+}
+
+
+[Jquery]selector 범위를 한정하는 context - $(selector, context) 사용
+Gongdel Gongdel 2018. 2. 20. 16:18
+일반적으로 이벤트와 함께 사용하는 매개변수 context는 selector가 적용하는 범위를 한정
+예) Div 태그를 클릭했을 때 클릭된 div 태그 내부의 h1 태그와 p태그가 가지는 내용을 출력 방법
+
+
+   var attachEvent = function(){   
+    $('#adminData_companiesTable tbody').on('click','tr',function(){
+     // SargonI 2021-02-11  
+     //var checkBoxes = $('input:checkbox:checked'); 
+     var checkBoxes = $('input:checkbox:checked','#adminData_companiesTable'); 
+     if( checkBoxes.length != 0 ) return; 
+
+     currentRow = currentDt.row(this).data();
+      $scope.$apply(function(){
+         $scope.userData.id = currentRow['id'];
+         $scope.userData.name = currentRow['name'];
+         $scope.userData.address = currentRow['address'];
+         $scope.userData.type = currentRow['type'];
+         $scope.userData.show = 1; 
+         // SargonI 2021-02-20   
+         currentRow.add = 0; 
+//          $scope.uName = "CHOI";
+    })
+   });
+
+
+}
+ 

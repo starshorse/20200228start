@@ -1,0 +1,156 @@
+===2021-03-08
+gCloud Storage:{
+Cloud Storage 버킷에 연결 gsutil..
+==================gsutil==================================
+참고: Cloud Storage는 POSIX 파일 시스템과 동일한 쓰기 제약조건이 없는 객체 스토리지 시스템입니다. 여러 소스에서 동시에 Cloud Storage의 파일에 데이터를 쓰는 경우 의도치 않게 중요 데이터가 덮어쓰기될 수 있습니다.
+gcloud 명령줄 도구를 최신 버전으로 설치하거나 업데이트합니다.
+기본 리전 및 영역을 설정합니다.
+이 가이드의 API 예시를 사용하려면 API 액세스를 설정합니다.
+Cloud Storage 버킷에서 데이터 읽기 및 쓰기
+버킷에서 데이터를 읽거나 쓰려면 버킷에 대한 액세스 권한이 있어야 합니다. 또는 공개적으로 액세스할 수 있는 버킷에서 데이터를 읽을 수 있습니다.
+
+gsutil 명령줄 도구 또는 Cloud Storage API를 사용하여 Cloud Storage 버킷에서 파일을 읽고 씁니다.
+기본적으로 gsutil 명령줄 도구는 공개 이미지를 사용하는 대부분의 가상 머신(VM) 인스턴스에 설치됩니다. VM에 gsutil 명령줄 도구가 없으면 gsutil을 Cloud SDK의 일부로 설치할 수 있습니다.
+인스턴스에 연결합니다.
+Cloud Console에서 VM 인스턴스 페이지로 이동합니다.
+VM 인스턴스로 이동
+가상 머신 인스턴스 목록에서 연결할 인스턴스 행의 SSH를 클릭합니다.
+인스턴스 이름 옆에 있는 SSH 버튼
+이전에 이 인스턴스에서 gsutil을 사용한 적이 없는 경우 gcloud 도구를 사용하여 사용자 인증 정보를 설정합니다.
+
+gcloud init
+gsutil 도구를 사용하여 버킷을 만들고, 버킷에 데이터를 쓰고, 이 버킷에서 데이터를 읽습니다. 필요한 경우 Cloud Storage에 데이터를 스트리밍할 수도 있습니다.
+
+버킷을 파일 시스템으로 마운트
+Cloud Storage FUSE 도구를 사용하여 Compute Engine 인스턴스에 Cloud Storage 버킷을 마운트할 수 있습니다. 마운트된 버킷은 Cloud Storage 버킷이 객체 스토리지인 경우에도 영구 디스크와 비슷하게 동작합니다.
+Cloud Storage 범위가 있는 서비스 계정을 사용하도록 인스턴스를 구성한 경우 Cloud Storage API를 사용하여 Cloud Storage 버킷에서 데이터를 읽고 쓸 수 있습니다.
+==================API======================================
+인스턴스에 연결합니다.
+Cloud Console에서 VM 인스턴스 페이지로 이동합니다.
+VM 인스턴스로 이동
+가상 머신 인스턴스 목록에서 연결할 인스턴스 행의 SSH를 클릭합니다.
+인스턴스 이름 옆에 있는 SSH 버튼
+원하는 언어의 클라이언트 라이브러리를 설치 및 구성합니다.
+필요한 경우 삽입 코드 샘플을 따라 인스턴스에서 Cloud Storage 버킷을 만듭니다.
+데이터 쓰기 및 데이터 읽기 삽입 코드 샘플을 따라 Cloud Storage 버킷에서 파일을 읽거나 쓰는 코드를 앱에 포함합니다.
+
+Google Compute Engine 가입 및 사용
+시작 가이드의 단계에 따라 서비스에 가입하고, Linux 또는 Windows 가상 머신 인스턴스를 설정하고, 인스턴스를 사용하여 웹 콘텐츠를 호스팅합니다.
+계속 진행하기 전에 Compute Engine 기본사항을 잘 알고 있어야 합니다. API 문서에서는 Compute Engine을 사용해 본 적이 있으며, 웹 프로그래밍 개념과 웹 데이터 형식을 잘 알고 있다고 가정합니다.
+승인에 대해 알아보기
+Google Compute Engine에서는 OAuth 2.0을 사용하여 요청을 승인합니다. OAuth 2.0에 익숙하지 않은 경우 요청 승인 방법을 살펴보세요.
+
+REST에 대해 자세히 알아보기
+API를 호출하는 방법에는 2가지가 있습니다.
+
+HTTP 요청 전송 및 응답 파싱
+클라이언트 라이브러리 사용
+클라이언트 라이브러리를 사용하지 않으려는 경우에는 REST의 기본사항을 이해해야 합니다.
+REST는 데이터 요청 및 수정에 대한 간편하고 일관성 있는 접근 방식을 제공하는 소프트웨어 아키텍처 스타일입니다.
+REST는 'Representational State Transfer'의 줄임말로, Google API에서는 HTTP 동사를 사용하여 Google이 저장한 데이터 표현을 검색 및 수정하는 방법을 의미합니다.
+RESTful 시스템에서는 리소스가 데이터 저장소에 저장되고, 클라이언트는 서버에서 특정 작업(리소스 생성, 검색, 업데이트, 삭제 등)을 수행하라는 요청을 전송하며, 서버는 작업을 수행하고 응답을 전송합니다. 이 응답은 지정된 리소스 표현의 형식을 취하는 경우가 많습니다.
+Google의 RESTful API에서는 클라이언트가 POST, GET, PUT 또는 DELETE 등의 HTTP 동사를 사용하여 작업을 지정합니다. 다음과 같은 형식의 전역적으로 고유한 URI를 사용하여 리소스를 지정합니다.
+https://www.googleapis.com/apiName/apiVersion/resourcePath?parameters
+모든 API 리소스에는 HTTP에서 액세스할 수 있는 고유 URI가 있으므로 REST는 데이터 캐싱을 지원하며 웹의 분산형 인프라와의 연동성이 뛰어납니다.
+HTTP 1.1 표준 문서의 메소드 정의를 확인하면 유용합니다. 문서에 GET, POST, PUT, DELETE의 사양이 포함되어 있습니다.
+Google Compute Engine API의 REST
+Google Compute Engine API 작업은 REST HTTP 동사에 직접 매핑됩니다.
+Google Compute Engine API URI의 특정 형식은 다음과 같습니다.
+https://www.googleapis.com/compute/v1/resourcePath?parameters
+API에서 지원되는 각 작업에 사용되는 전체 URI 집합은 Google Compute Engine API 참조 문서에 요약되어 있습니다.
+
+JSON 데이터 형식에 대해 자세히 알아보기
+Google Compute Engine API는 JSON 형식으로 데이터를 반환합니다.
+
+
+=================================================================== https://cloud.google.com/storage/docs/reference/libraries?hl=ko
+Cloud Storage Client Libraries
+로컬 머신 또는 Cloud Shell에서 Cloud SDK를 사용하여 다음 명령어를 실행할 수 있습니다.
+서비스 계정을 만듭니다. NAME을 서비스 계정 이름으로 바꿉니다.
+	gcloud iam service-accounts create NAME
+서비스 계정에 권한을 부여합니다. PROJECT_ID를 프로젝트 ID로 바꿉니다.
+	gcloud projects add-iam-policy-binding PROJECT_ID --member="serviceAccount:NAME@PROJECT_ID.iam.gserviceaccount.com" --role="roles/owner"
+참고: --role 플래그는 서비스 계정이 프로젝트에서 액세스할 수 있는 리소스에 영향을 줍니다. 이러한 역할을 취소하거나 나중에 추가 역할을 부여할 수 있습니다. 프로덕션 환경에서는 소유자, 편집자 또는 뷰어 역할을 부여하지 마세요. 자세한 내용은 리소스에 대한 액세스 권한 부여, 변경, 취소를 참조하세요.
+키 파일을 생성합니다. FILE_NAME을 키 파일 이름으로 바꿉니다.
+	gcloud iam service-accounts keys create FILE_NAME.json --iam-account=NAME@PROJECT_ID.iam.
+
+OOGLE_APPLICATION_CREDENTIALS 환경 변수를 설정하여 애플리케이션 코드에 사용자 인증 정보를 제공합니다. 
+[PATH]를 서비스 계정 키가 포함된 JSON 파일의 파일 경로로 바꿉니다. 이 변수는 현재 셸 세션에만 적용되므로 새 세션을 연 경우 변수를 다시 설정합니다.
+
+Windows
+PowerShell:
+$env:GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\username\Downloads\my-key.json"
+명령어 프롬프트:
+set GOOGLE_APPLICATION_CREDENTIALS=[PATH]
+
+
+npm install --save @google-cloud/storage
+
+// Imports the Google Cloud client library
+const {Storage} = require('@google-cloud/storage');
+
+// Creates a client
+const storage = new Storage();
+// Creates a client from a Google service account key.
+// const storage = new Storage({keyFilename: "key.json"});
+// For more information on ways to initialize Storage, please see https://googleapis.dev/nodejs/storage/latest/Storage.html
+
+/**
+ * TODO(developer): Uncomment these variables before running the sample.
+ */
+// const bucketName = 'bucket-name';
+
+async function createBucket() {
+  // Creates the new bucket
+  await storage.createBucket(bucketName);
+  console.log(`Bucket ${bucketName} created.`);
+}
+
+createBucket().catch(console.error);
+
+https://medium.com/@luisbajana/setup-google-cloud-storage-in-nodejs-2019-8c02737bda55
+Setup Google Cloud Storage in NodeJS (2019)
+
+Creating a service account
+You need an API credential, go to your console in the search bar type API and select Credentials.
+2.- Once you have selected credentials, press Create credentials and select Service account key
+3.- Click on the service account select and press New service account
+4.- Fill the required information and select the role Storage -> Storage Admin (Leave JSON as default).
+5.- This will generate a JSON file and will automatically download to your computer (generally located in the Downloads folder). This file is very important so it’s better to move it to a safer location, because, you can delete it accidentally if it’s in the Downloads folder. I’ll locate it inside my project’s folder under a directory called “config”. The path will be something like this:
+“/Users/myname/Projects/MyProject/config/my-project-e2saass1e1.json”
+Setting the environment variable
+1.- Open a new terminal and type:
+vi ~/.bash_profile
+Note: If you need resources about vi click here.
+2.- Once you have opened the document .bash-profile go to the last line using the arrow keys on your keyboard press the letter “i” for insert, once you are in insert mode press enter to create a new line and type the path of the JSON file like this:
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/myname/Projects/MyProject/config/my-project-e2saass1e1.json"
+3.- Once you are done, press the ESC key and then press combination the :wq key to save and quit. (vi commands)
+4.- Verify it was saved correctly. In the console type:
+printenv
+and check if the new variable GOOGLE_APPLICATION_CREDENTIALS is there.
+Connecting Google Cloud Storage to your project
+Once the environment variable is set, we can write some code and check if we can list our buckets (if you need help creating your buckets click here).
+- Install @google-cloud/storage
+npm install @google-cloud/storage
+2.- List a bucket
+'use strict';
+
+const {Storage} = require('@google-cloud/storage');
+
+const storage = new Storage();
+
+storage
+  .getBuckets()
+  .then((results) => {
+    const buckets = results[0];
+
+    console.log('Buckets:');
+    buckets.forEach((bucket) => {
+      console.log(bucket.name);
+    });
+  })
+  .catch((err) => {
+    console.error('ERROR:', err);
+  });
+
