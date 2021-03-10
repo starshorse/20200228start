@@ -1,0 +1,405 @@
+10 PCIe 4.0 Root Port Registers
+The Integrated I/O (IIO) is comprised of a DMI3 module and PCIe Root Ports. The IIO module supports 64 PCI Express lanes and 4 DMI3 lanes.
+The 64 PCIE lanes are grouped as four x16 (PortA, PortB, PortC and PortD).
+10.1 Bus: B(1), Device: 2, Function: 0 (PortA PCIeG4 x16 Registers)
+This chapter documents the Gen4 PCIe x16 Port A registers in Bus: 1, Device 2,
+Function 0.
+Table 10-1. Summary of PCIe Gen4 Root Port Registers
+Bus: B(1), Device: 2, Function: 0 (PortA PCIeG4 x16 Registers)
+Bus: B(1), Device: 3, Function: 0 (PortB PCIe x16 Gen4 Registers)
+Bus: B(1), Device: 4, Function: 0 (PortC PCIe x16 Gen4 Registers)
+Bus: B(1), Device: 5, Function: 0 (PortD PCIe x16 Gen4 Registers)
+Express Port Memory Base Address Registers (EXPPTMBAR)
+
+Table 10-2. Summary of Bus: 1, Device: 2, Function: 0 Registers (Sheet 1 of 9)
+Offset Size
+(Bytes) Register Name (Register Symbol) Default Value
+0h 2 Vendor ID (VID) 8086h
+2h 2 Device ID (DID) 347Ah
+4h 2 PCI Command (PCICMD) 0000h
+6h 2 PCI Status (PCISTS) 0010h
+8h 1 Revision ID (RID) 00h
+9h 1 Class Code Programming Interface (CCRPI) 00h
+Ah 1 Class Code Sub-Class Code (CCRSCC) 04h
+Bh 1 Class Code Base Class Code (CCRBCC) 06h
+Ch 1 Cacheline Size (CLS) 00h
+Dh 1 Primary Latency Timer (PLAT) 00h
+Eh 1 Header Type (HDR) 01h
+Fh 1 Built-In Self Test (BIST) 00h
+10h 8 Express Port Memory Base Address (EXPPTMBAR) 0000000000000004h
+18h 1 Primary Bus Number (PRIBUS) 00h
+19h 1 Secondary Bus Number (SECBUS) 00h
+1Ah 1 Subordinate Bus Number (SUBBUS) 00h
+1Ch 1 I/O Base (IOBASE) 00h
+1Dh 1 I/O Limit (IOLIMIT) 00h
+1Eh 2 Secondary Status (SECSTS) 0000h
+20h 2 Memory Base (MEMBASE) 0000h
+22h 2 Memory Limit (MEMLIMIT) 0000h
+24h 2 Prefetchable Memory Base (PFBASE) 0001h
+26h 2 Prefetchable Memory Limit (PFLIMIT) 0001h
+28h 4 Prefetchable Memory Base Upper 32 Bits (PFBASEU) 00000000h
+2Ch 4 Prefetchable Memory Limit Upper 32 Bits (PFLIMITU) 00000000h
+34h 1 Capabilities Pointer (CAPPTR) 40h
+3Ch 1 Interrupt Line (INTL) 00h
+3Dh 1 Interrupt Pin (INTP) 01h
+3Eh 2 Bridge Control (BCTL) 0000h
+40h 2 PCI Express Capability List (EXPCAPLST) 8010h
+42h 2 PCI Express Capabilities (EXPCAP) 0042h
+44h 4 Device Capabilities (DEVCAP) 00008022h
+48h 2 Device Control (DEVCTL) 2010h
+4Ah 2 Device Status (DEVSTS) 0000h
+4Ch 4 Link Capabilities (LINKCAP) 0E794904h
+50h 2 Link Control (LINKCTL) 0000h
+52h 2 Link Status (LINKSTS) 1001h
+54h 4 Slot Capabilities (SLOTCAP) 00000000h
+58h 2 Slot Control (SLOTCTL) 03C0h
+5Ah 2 Slot Status (SLOTSTS) 0040h
+5Ch 2 Root Control (ROOTCTL) 0000h
+5Eh 2 Root Capabilities (ROOTCAP) 0001h
+60h 4 Root Status (ROOTSTS) 00000000h
+64h 4 Device Capabilities 2 (DEVCAP2) 00010437h
+68h 2 Device Control 2 (DEVCTL2) 0000h
+6Ch 4 Link Capabilities 2 (LINKCAP2) 0180001Eh
+70h 2 Link Control 2 (LINKCTL2) 0004h
+72h 2 Link Status 2 (LINKSTS2) 0000h
+80h 2 Power Management Capability List (PMCAPLST) 8801h
+82h 2 Power Management Capabilities (PMCAP) C803h
+84h 2 Power Management Control Status (PMCSR) 0008h
+86h 1 Power Management Bridge Support Extensions (PMBSE) 00h
+88h 2 Subsystem Capability List (SSCAPLST) 900Dh
+8Ch 2 Subsystem Vendor ID (SSVID) 8086h
+8Eh 2 Subsystem ID (SSID) 0000h
+90h 2 MSI Capability List (MSICAPLST) 0005h
+92h 2 MSI Message Control (MSICTL) 0000h
+94h 4 MSI Message Address (MSIADDR) 00000000h
+98h 4 MSI Message Data (MSIDATA) 00000000h
+9Ch 4 MSI Mask Bit (MSIMSK) 00000000h
+A0h 4 MSI Pending Bit (MSIPENDING) 00000000h
+ACh 4 AER Policy (AERPR) 00000001h
+B2h 2 CRS Retry Timeout (CRSRT) 0010h
+D4h 4 PCIe Port Definition Control Register 0 (PPD0) 00000000h
+DCh 4 VPP Control Status (VPPCSR) 00007800h
+E0h 4 VPP Control Status 1 (VPPCSR1) 00057766h
+E4h 4 Miscellaneous Port Configuration (MPC) 00000000h
+ECh 4 Latency Tolerance Reporting Control Status (LTRCSR) 00000000h
+F0h 4 Latency Tolerance Reporting Latency (LTRL) 00000000h
+F4h 4 Latency Tolerance Reporting Latency Override (LTROVR) 00000000h
+F8h 1 Legacy PCI Interrupt Swizzle Control (INTXSWZCTL) 00h
+100h 4 Advanced Error Reporting Extended Capability Header
+(AERCAPHDR) 14810001h
+104h 4 Uncorrectable Error Status (ERRUNCSTS) 00000000h
+108h 4 Uncorrectable Error Mask (ERRUNCMSK) 04400000h
+10Ch 4 Uncorrectable Error Severity (ERRUNCSEV) 00462030h
+110h 4 Correctable Error Status (ERRCORSTS) 00000000h
+114h 4 Correctable Error Mask (ERRCORMSK) 0000E000h
+118h 4 Advanced Error Capabilities and Control (AERCAPCTL) 00001000h
+11Ch 4 Header Log (AERHDRLOG1) 00000000h
+120h 4 Header Log (AERHDRLOG2) 00000000h
+124h 4 Header Log (AERHDRLOG3) 00000000h
+128h 4 Header Log (AERHDRLOG4) 00000000h
+12Ch 4 Root Error Command (ROOTERRCMD) 00000000h
+130h 4 Root Error Status (ROOTERRSTS) 00000000h
+134h 4 Error Source Identification (ERRSRCID) 00000000h
+148h 4 Access Control Services Extended Capability Header (ACSCAPHDR) 1801000Dh
+14Ch 2 Access Control Services Capability (ACSCAP) 0013h
+14Eh 2 Access Control Services Control (ACSCTL) 0000h
+150h 4 Multicast Extended Capability Header (MCSTCAPHDR) 00010012h
+154h 2 Multicast Capability (MCSTCAP) 000Fh
+156h 2 Multicast Control (MCSTCTL) 0000h
+158h 8 Multicast Base Address (MCSTBAR) 000000000000000Ch
+160h 8 Multicast Receive (MCSTRCV) 0000000000000000h
+168h 8 Multicast Block All (MCSTBLKALL) 0000000000000000h
+170h 8 Multicast Block Untranslated (MCSTBLKUT) 0000000000000000h
+178h 8 Multicast Overlay Base Address (MCSTOLBAR) 0000000000000000h
+180h 4 EINJ Extended Capability Header (EINJCAPHDR) 1901000Bh
+184h 4 EINJ Header (EINJHDR) 00A00003h
+188h 2 EINJ Control (EINJCTL) 0000h
+18Ch 4 eDPC Policy (EDPCPR) 00000E00h
+190h 4 DPC Extended Capability Header (DPCECH) 1E01001Dh
+194h 2 DPC Capability (DPCCAP) 14E0h
+196h 2 DPC Control (DPCCTL) 0000h
+198h 2 DPC Status (DPCSTS) 1F00h
+19Ah 2 DPC Error Source ID (DPCESID) 0000h
+19Ch 4 RP PIO Status (RPPIOSTS) 00000000h
+1A0h 4 RP PIO Mask (RPPIOMSK) 00070707h
+1A4h 4 RP PIO Severity (RPPIOSEV) 00000000h
+1A8h 4 RP PIO SysError (RPPIOSE) 00000000h
+1ACh 4 RP PIO Exception (RPPIOEXC) 00000000h
+1B0h 4 RP PIO Header Log (RPPIOHDRLOG1) 00000000h
+1B4h 4 RP PIO Header Log (RPPIOHDRLOG2) 00000000h
+1B8h 4 RP PIO Header Log (RPPIOHDRLOG3) 00000000h
+1BCh 4 RP PIO Header Log (RPPIOHDRLOG4) 00000000h
+1E0h 4 PTM Extended Capability Header (PTMECH) 2002001Fh
+1E4h 4 PTM Capability (PTMCAP) 00000206h
+1E8h 4 PTM Control (PTMCTL) 00000000h
+200h 4 Secondary PCI Express Extended Capability Header (SECEXPCAP) 40010019h
+204h 4 Link Control 3 (LINKCTL3) 00000000h
+208h 4 Lane Error Status (LANEERRSTS) 00000000h
+20Ch 2 Lane Equalization Control (LANEEQCTL_0) 7F7Fh
+20Eh 2 Lane Equalization Control (LANEEQCTL_1) 7F7Fh
+210h 2 Lane Equalization Control (LANEEQCTL_2) 7F7Fh
+212h 2 Lane Equalization Control (LANEEQCTL_3) 7F7Fh
+214h 2 Lane Equalization Control (LANEEQCTL_4) 7F7Fh
+216h 2 Lane Equalization Control (LANEEQCTL_5) 7F7Fh
+218h 2 Lane Equalization Control (LANEEQCTL_6) 7F7Fh
+21Ah 2 Lane Equalization Control (LANEEQCTL_7) 7F7Fh
+21Ch 2 Lane Equalization Control (LANEEQCTL_8) 7F7Fh
+21Eh 2 Lane Equalization Control (LANEEQCTL_9) 7F7Fh
+220h 2 Lane Equalization Control (LANEEQCTL_10) 7F7Fh
+222h 2 Lane Equalization Control (LANEEQCTL_11) 7F7Fh
+224h 2 Lane Equalization Control (LANEEQCTL_12) 7F7Fh
+226h 2 Lane Equalization Control (LANEEQCTL_13) 7F7Fh
+228h 2 Lane Equalization Control (LANEEQCTL_14) 7F7Fh
+22Ah 2 Lane Equalization Control (LANEEQCTL_15) 7F7Fh
+280h 4 Virtual Channel Extended Capability Header (VCECH) 00010002h
+284h 4 Port VC Capability Register 1 (PVCCR1) 00000000h
+288h 4 Port VC Capability Register 2 (PVCCR2) 00000000h
+28Ch 2 Port VC Control (PVCCTL) 0000h
+28Eh 2 Port VC Status (PVCSTS) 0000h
+290h 4 VC0 Resource Capability (VC0RC) 00000000h
+294h 4 VC0 Resource Control (VC0RCTL) 800000FFh
+29Ah 2 VC0 Resource Status (VC0RSTS) 0000h
+2E4h 2 IOSF Device Clock Gate Control (IOSFDEVCLKGCTL) 0010h
+2E6h 2 Sideband Device Clock Gate Control (SBDEVCLKGCTL) 0010h
+400h 4 Data Link Feature Extended Capability Header (DLFECH) 41010025h
+404h 4 Data Link Feature Capabilities (DLFCAP) 80000001h
+408h 4 Data Link Feature Status (DLFSTS) 00000000h
+410h 4 Physical Layer 16.0 GT/s Extended Capability Header (G4ECH) 45010026h
+414h 4 16.0 GT/s Capabilities (G4CAP) 00000000h
+418h 4 16.0 GT/s Control (G4CTL) 00000000h
+41Ch 4 16.0 GT/s Status (G4STS) 00000000h
+420h 4 16.0 GT/s Local Data Parity Mismatch Status (G4LDPMSTS) 00000000h
+424h 4 16.0 GT/s First Retimer Data Parity Mismatch Status
+430h 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_0) FFh
+431h 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_1) FFh
+432h 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_2) FFh
+433h 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_3) FFh
+434h 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_4) FFh
+435h 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_5) FFh
+436h 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_6) FFh
+437h 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_7) FFh
+438h 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_8) FFh
+439h 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_9) FFh
+43Ah 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_10) FFh
+43Bh 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_11) FFh
+43Ch 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_12) FFh
+43Dh 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_13) FFh
+43Eh 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_14) FFh
+43Fh 1 16.0 GT/s Lane Equalization Control (G4LANEEQCTL_15) FFh
+450h 4 Margining Extended Capability Header (MARGECH) 00010027h
+454h 2 Margining Port Capability (MARGPTCAP) 0000h
+456h 2 Margining Port Status (MARGPTSTS) 0000h
+458h 2 Margining Lane Control (MARGLNCTL_0) 9C38h
+45Ah 2 Margining Lane Status (MARGLNSTS_0) 0000h
+45Ch 2 Margining Lane Control (MARGLNCTL_1) 9C38h
+45Eh 2 Margining Lane Status (MARGLNSTS_1) 0000h
+460h 2 Margining Lane Control (MARGLNCTL_2) 9C38h
+462h 2 Margining Lane Status (MARGLNSTS_2) 0000h
+464h 2 Margining Lane Control (MARGLNCTL_3) 9C38h
+466h 2 Margining Lane Status (MARGLNSTS_3) 0000h
+468h 2 Margining Lane Control (MARGLNCTL_4) 9C38h
+46Ah 2 Margining Lane Status (MARGLNSTS_4) 0000h
+46Ch 2 Margining Lane Control (MARGLNCTL_5) 9C38h
+46Eh 2 Margining Lane Status (MARGLNSTS_5) 0000h
+470h 2 Margining Lane Control (MARGLNCTL_6) 9C38h
+472h 2 Margining Lane Status (MARGLNSTS_6) 0000h
+474h 2 Margining Lane Control (MARGLNCTL_7) 9C38h
+476h 2 Margining Lane Status (MARGLNSTS_7) 0000h
+478h 2 Margining Lane Control (MARGLNCTL_8) 9C38h
+47Ah 2 Margining Lane Status (MARGLNSTS_8) 0000h
+47Ch 2 Margining Lane Control (MARGLNCTL_9) 9C38h
+47Eh 2 Margining Lane Status (MARGLNSTS_9) 0000h
+480h 2 Margining Lane Control (MARGLNCTL_10) 9C38h
+482h 2 Margining Lane Status (MARGLNSTS_10) 0000h
+484h 2 Margining Lane Control (MARGLNCTL_11) 9C38h
+486h 2 Margining Lane Status (MARGLNSTS_11) 0000h
+488h 2 Margining Lane Control (MARGLNCTL_12) 9C38h
+48Ah 2 Margining Lane Status (MARGLNSTS_12) 0000h
+48Ch 2 Margining Lane Control (MARGLNCTL_13) 9C38h
+48Eh 2 Margining Lane Status (MARGLNSTS_13) 0000h
+490h 2 Margining Lane Control (MARGLNCTL_14) 9C38h
+492h 2 Margining Lane Status (MARGLNSTS_14) 0000h
+494h 2 Margining Lane Control (MARGLNCTL_15) 9C38h
+496h 2 Margining Lane Status (MARGLNSTS_15) 0000h
+4C0h 4 PCIe Port Definition Control Register 1 (PPD1) 00000100h
+4D8h 4 Margining Parameter (G4MARGPARAM) 0A506418h
+4DCh 4 Margining Parameter 2 (G4MARGPARAM2) 00000FFFh
+4E0h 4 Margining Parameter 3 (G4MARGPARAM3) 00024102h
+580h 4 XP PM Data Low Bits (XPPMDL0) 00000000h
+584h 4 XP PM Data Low Bits (XPPMDL1) 00000000h
+588h 4 XP PM Compare Low Bits (XPPMCL0) FFFFFFFFh
+58Ch 4 XP PM Compare Low Bits (XPPMCL1) FFFFFFFFh
+590h 2 XP PM Data High Bits (XPPMDH) 0000h
+592h 2 XP PM Compare High Bits (XPPMCH) 0F0Fh
+594h 4 XP PM Response Control (XPPMR0) 00000000h
+598h 4 XP PM Response Control (XPPMR1) 00000000h
+59Ch 4 XP PM Events Low (XPPMEVL0) 00000000h
+5A0h 4 XP PM Events Low (XPPMEVL1) 00000000h
+5A4h 4 XP PM Events High (XPPMEVH0) 00000000h
+5A8h 4 XP PM Events High (XPPMEVH1) 00000000h
+5ACh 4 XP PM Resource Events (XPPMER0) 00000000h
+5B0h 4 XP PM Resource Events (XPPMER1) 00000000h
+5C4h 4 Performance Monitor Local Control (XPPERFCON) 00000000h
+5C8h 1 Performance Monitor Local Status (XPPERFSTAT) 00h
+620h 4 IBIST Error CRC Detection Status (IBSTERRCRCSTS0) 00000000h
+624h 4 IBIST Error Recovery and Receive Detection Status
+(IBSTERRRCRVSTS0) 00000000h
+628h 4 IBIST Error CRC Detection Status (IBSTERRCRCSTS1) 00000000h
+62Ch 4 IBIST Error Recovery and Receive Detection Status
+(IBSTERRRCRVSTS1) 00000000h
+630h 4 IBIST Error CRC Detection Status (IBSTERRCRCSTS2) 00000000h
+634h 4 IBIST Error Recovery and Receive Detection Status
+(IBSTERRRCRVSTS2) 00000000h
+638h 4 IBIST Error CRC Detection Status (IBSTERRCRCSTS3) 00000000h
+63Ch 4 IBIST Error Recovery and Receive Detection Status
+(IBSTERRRCRVSTS3) 00000000h
+6A0h 4 LTSSM Logger Start Ext (LTLGSTARTEXT0) 00000000h
+6A4h 4 LTSSM Logger Start Ext (LTLGSTARTEXT1) 00000000h
+6A8h 4 LTSSM Logger Start Ext (LTLGSTARTEXT2) 00000000h
+6ACh 4 LTSSM Logger Start Ext (LTLGSTARTEXT3) 00000000h
+6B0h 4 LTSSM Logger Stop Ext (LTLGSTPEXT0) 00000000h
+6B4h 4 LTSSM Logger Stop Ext (LTLGSTPEXT1) 00000000h
+6B8h 4 LTSSM Logger Stop Ext (LTLGSTPEXT2) 00000000h
+6BCh 4 LTSSM Logger Stop Ext (LTLGSTPEXT3) 00000000h
+710h 4 XP Header Mask Register 0 (XPHMSK0) 00000000h
+714h 4 XP Header Mask Register 1 (XPHMSK1) 00000000h
+718h 4 XP Header Mask Register 2 (XPHMSK2) 00000000h
+71Ch 4 XP Header Mask Register 3 (XPHMSK3) 00000000h
+720h 4 XP Header Match Register 0 (XPHMAT0) 00000000h
+724h 4 XP Header Match Register 1 (XPHMAT1) 00000000h
+728h 4 XP Header Match Register 2 (XPHMAT2) 00000000h
+72Ch 4 XP Header Match Register 3 (XPHMAT3) 00000000h
+730h 2 XP Trigger Output Select (XPTRIGSEL) 0000h
+760h 4 Correctable Error Counter Mask (CORERRCNTMSK) 0000F1C1h
+764h 4 Correctable Error Counter (CORERRCNT) 00000000h
+768h 4 Correctable Error Threshold (CORERRTH) 00000000h
+880h 4 FC Credit Snapshot Control (FCCRDSSCTL) 00000000h
+884h 4 FC Credit Limit Snapshot (FCCRDLSS) 00000000h
+888h 4 FC Credit Allocated Snapshot (FCCRDASS) 00000000h
+88Ch 4 FC Credit Consumed Snapshot (FCCRDCSS) 00000000h
+890h 4 FC Credit Received Snapshot (FCCRDRSS) 00000000h
+894h 4 FC Credit Difference Snapshot (FCCRDDSS) 00000000h
+8E4h 2 Port 0 Transaction Clock Gate Control (PT0TXNCLKGCTL) 0010h
+8E6h 2 Port 1 Transaction Clock Gate Control (PT1TXNCLKGCTL) 0010h
+8E8h 2 Port 2 Transaction Clock Gate Control (PT2TXNCLKGCTL) 0010h
+8EAh 2 Port 3 Transaction Clock Gate Control (PT3TXNCLKGCTL) 0010h
+8F0h 4 Transmit Timeout and Configuration Retry Timeout (TXCRSTOCTL) 00000000h
+900h 4 FC Update Control (FCUCTL) 0018619Eh
+904h 4 FC Update JIT P Control (FCUJITPCTL0) 00004009h
+910h 4 FC Update JIT NP Control (FCUJITNCTL0) 00001001h
+91Ch 4 FC Update JIT CPL Control (FCUJITCCTL0) 00002016h
+940h 4 ACK Control (ACKCTL) 00000016h
+9E4h 2 Port 0 Link Clock Gate Control (PT0LNKCLKGCTL) 0010h
+9E6h 2 Port 1 Link Clock Gate Control (PT1LNKCLKGCTL) 0010h
+9E8h 2 Port 2 Link Clock Gate Control (PT2LNKCLKGCTL) 0010h
+9EAh 2 Port 3 Link Clock Gate Control (PT3LNKCLKGCTL) 0010h
+9ECh 2 Configuration PCIe Clock Gate Control (CFGPCIECLKGCTL) 0010h
+A40h 4 LTSSM State Jump Control (LTSSMSTATEJMP) 00000010h
+A44h 4 LTSSM State Control (LTSSMSTATECTR) 00000000h
+A60h 4 PIPE Control 3 (PIPECTL3) 00000000h
+A68h 4 LTSSM SM (LTSSMSMSTS) 00000000h
+A80h 4 LTSSM STATE LOG0 (LTSSMSTATELOG0) 00000000h
+A84h 4 LTSSM STATE LOG1 (LTSSMSTATELOG1) 00000000h
+A88h 4 LTSSM STATE LOG2 (LTSSMSTATELOG2) 00000000h
+A8Ch 4 LTSSM STATE LOG Control (LTSSMSTATELOGCTL) 00000000h
+A94h 2 LTSSM Lane Error Control (LTLNERRCTRL) 0000h
+AC8h 4 SOS Control (SOSCTL) 00025AE4h
+AE4h 2 Port 0 Physical Clock Gate Control (PT0PHYCLKGCTL) 0010h
+AE6h 2 Port 1 Physical Clock Gate Control (PT1PHYCLKGCTL) 0010h
+AE8h 2 Port 2 Physical Clock Gate Control (PT2PHYCLKGCTL) 0010h
+AEAh 2 Port 3 Physical Clock Gate Control (PT3PHYCLKGCTL) 0010h
+B00h 4 LTSSM Logger Capability (LTLGCAP) 3D000000h
+B04h 4 LTSSM Logger Control (LTLGCTRL) 00321000h
+B08h 4 LTSSM Logger Start (LTLGSTART0) 00000001h
+B0Ch 4 LTSSM Logger Start (LTLGSTART1) 00000001h
+B10h 4 LTSSM Logger Start (LTLGSTART2) 00000001h
+B14h 4 LTSSM Logger Start (LTLGSTART3) 00000001h
+B18h 4 LTSSM Logger Stop (LTLGSTP0) 1E000009h
+B1Ch 4 LTSSM Logger Stop (LTLGSTP1) 1E000009h
+B20h 4 LTSSM Logger Stop (LTLGSTP2) 1E000009h
+B24h 4 LTSSM Logger Stop (LTLGSTP3) 1E000009h
+B28h 4 LTSSM Logger Time Match Event (LTLGTMEV0) 00000000h
+B2Ch 4 LTSSM Logger Time Match Event (LTLGTMEV1) 00000000h
+B30h 4 LTSSM Logger Time Match Event (LTLGTMEV2) 00000000h
+B34h 4 LTSSM Logger Time Match Event (LTLGTMEV3) 00000000h
+B38h 4 LTSSM Logger State Match Event Ext 0 (LTLGSMEVEXT0) 00000000h
+B3Ch 4 LTSSM Logger State Match Event Ext 1 (LTLGSMEVEXT1) 00000000h
+B40h 4 LTSSM Logger Read Control (LTLGRDCT) 00000000h
+B44h 4 LTSSM Logger Read Result (LTLGRES) FFFFFFFFh
+B48h 4 LTSSM Logger State Match Event 0 (LTLGSMEV0) 00000000h
+B4Ch 4 LTSSM Logger State Match Event 1 (LTLGSMEV1) 00000000h
+B58h 4 Leaky Bucket Error (LEKBERR) 2000FFFFh
+B5Ch 4 Leaky Bucket Time Window (LEKBERR0) FFFFFFFFh
+B60h 4 Leaky Bucket Time Window (LEKBERR1) 02000007h
+B64h 4 Leaky Bucket Prolonged Error (LEKBPROERR) 00000000h
+B68h 4 Leaky Bucket Actions (LEKBAR) 00000000h
+B6Ch 4 Leaky Bucket Lane Error Count (LEKBLNERRCNT0) 00000000h
+B70h 4 Leaky Bucket Lane Error Count (LEKBLNERRCNT1) 00000000h
+B74h 4 Leaky Bucket Lane Error Count (LEKBLNERRCNT2) 00000000h
+B98h 4 Speed Control 2 (SPEEDCTL2) 00000000h
+BA8h 4 PHY Recalibrate (PHYRECAL) 000001E8h
+BACh 4 PLL Standby Control (PLLSTBYCTL) 00000100h
+BB8h 4 EQ EVAL Control (EQEVALCTL) 00000000h
+BBCh 4 EQ EVAL Control 2 (EQEVALCTL2) 0000FF00h
+BC0h 4 EQ EVAL Control 3 (EQEVALCTL3) 00030802h
+BC4h 4 EQ EVAL Control 4 (EQEVALCTL4) 64020000h
+BC8h 4 EQ EVAL Control 5 (EQEVALCTL5) 3A87F003h
+BCCh 4 EQ EVAL Control 6 (EQEVALCTL6) 00000623h
+BD0h 4 EQ EVAL Control 7 (EQEVALCTL7) 000000FFh
+BDCh 4 EQ EVAL Status (EQEVALSTS) 00000000h
+BE0h 4 EQ EVAL Status 2 (EQEVALSTS2) 00000000h
+BE4h 4 EQ EVAL Status 3 (EQEVALSTS3) 00000000h
+C00h 4 16.0 GT/s EQ EVAL Control (G4EQEVALCTL) 00000000h
+C04h 4 16.0 GT/s EQ EVAL Control 2 (G4EQEVALCTL2) 0000FF00h
+C08h 4 16.0 GT/s EQ EVAL Control 3 (G4EQEVALCTL3) 00030802h
+C0Ch 4 16.0 GT/s EQ EVAL Control 4 (G4EQEVALCTL4) 64020000h
+C10h 4 16.0 GT/s EQ EVAL Control 5 (G4EQEVALCTL5) 3A87F003h
+C14h 4 16.0 GT/s EQ EVAL Control 6 (G4EQEVALCTL6) 00000623h
+C18h 4 16.0 GT/s EQ EVAL Control 7 (G4EQEVALCTL7) 000000FFh
+C1Ch 4 16.0 GT/s EQ EVAL Status (G4EQEVALSTS) 00000000h
+C20h 4 16.0 GT/s EQ EVAL Status 2 (G4EQEVALSTS2) 00000000h
+C24h 4 16.0 GT/s EQ EVAL Status 3 (G4EQEVALSTS3) 00000000h
+
+
+====== ICX Log Capture for Line 8030 ======================
+
+IIO=0, IOU0=4.
+IIO=0, IOU1=4.
+IIO=0, IOU2=4.
+IIO=0, IOU3=4.
+IIO=0, IOU4=0.
+[0.0 p0] 00:00:03.0: PCI device 8086:3348 is enabled
+[0.1 p1] 00:17:02.0: PCI device 8086:347A is enabled
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.2]
+[0.1 p2] 00:17:03.0: PCI device FFFF:FFFF is disabled (not present)
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.3]
+[0.1 p3] 00:17:04.0: PCI device FFFF:FFFF is disabled (not present)
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.4]
+[0.1 p4] 00:17:05.0: PCI device FFFF:FFFF is disabled (not present)
+[0.2 p5] 00:50:02.0: PCI device 8086:347A is enabled
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.6]
+[0.2 p6] 00:50:03.0: PCI device FFFF:FFFF is disabled (not present)
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.7]
+[0.2 p7] 00:50:04.0: PCI device FFFF:FFFF is disabled (not present)
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.8]
+[0.2 p8] 00:50:05.0: PCI device FFFF:FFFF is disabled (not present)
+Socket= 0, Stack = 3, PciePortConfig[9] disabled. Stack not present
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.9]
+Socket= 0, Stack = 3, PciePortConfig[A] disabled. Stack not present
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.10]
+Socket= 0, Stack = 3, PciePortConfig[B] disabled. Stack not present
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.11]
+Socket= 0, Stack = 3, PciePortConfig[C] disabled. Stack not present
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.12]
+[0.4 p13] 00:89:02.0: PCI device 8086:347A is enabled
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.14]
+[0.4 p14] 00:89:03.0: PCI device FFFF:FFFF is disabled (not present)
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.15]
+[0.4 p15] 00:89:04.0: PCI device FFFF:FFFF is disabled (not present)
+SetPEXPHideForNotConfiguredPorts Hiding PXPMenu for [0.16]
+[0.4 p16] 00:89:05.0: PCI device FFFF:FFFF is disabled (not present)
+[0.5 p17] 00:C2:02.0: PCI device 8086:347A is enabled
+[0.5 p18] 00:C2:03.0: PCI device 8086:347B is enabled
+[0.5 p19] 00:C2:04.0: PCI device 8086:347C is enabled
+[0.5 p20] 00:C2:05.0: PCI device 8086:347D is enabled
+

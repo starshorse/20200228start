@@ -195,7 +195,9 @@ app.controller('ctlTabQtSave',['$scope', 'DataNode', '$location', '$routeParams'
         // SargonI 2021-02-14 
         // SargonI 2021-02-14      
         $scope.showAlert($event, currentRow ); 
-        $location.url('#!/clientSubmit\/\:'+ currentRow['trackId'] );
+     //   $location.url( '#!/clientSubmit#!/:'+ currentRow['trackId'] );
+     // SargonI 2021-02-15 give up using angularJS  $location %2F 
+        window.location.href ="./Ezwqs_1.html#/clientSubmit/"+ currentRow['trackId'];
         
         return 0; 
 
