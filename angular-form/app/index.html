@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap Schema Form example</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+</head>
+<body ng-app="test" ng-controller="TestCtrl" ng-cloak>
+      <h3>Web Quation System</h3>
+
+      <form name="ngform"
+            sf-model="modelData"
+            sf-form="form"
+            sf-schema="schema"
+            ng-submit="submitForm(ngform,modelData)"
+            sf-options="{ formDefaults: { ngModelOptions: { timezone: '+0430' } }}"
+            class="ng-cloak">
+      </form>
+
+      <div ng-show="ngform.$valid"><em>Form is valid</em></div>
+      <div ng-show="ngform.$invalid"><em>Form is not valid</em></div>
+
+<script type="text/javascript" src="../bower_components/tv4/tv4.js"></script>
+<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-schema-form/dist/angular-schema-form.js"></script>
+<script type="text/javascript" src="../bower_components/angular-schema-form/dist/angular-schema-form-bootstrap.js"></script>
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// To test the tinymce addon, uncomment the files above and inject 'tx-tinymce' below.
+/*global alert*/
+// var app = angular.module('test', ['schemaForm', 'ui.ace', 'ngClipboard', 'ui.bootstrap.tooltip', 'schemaForm-tinymce']);
+var app = angular.module('test', ['schemaForm']);
+//app.config(['sfErrorMessageProvider', function(sfErrorMessageProvider) {
+//    sfErrorMessageProvider.setDefaultMessage(10001, 'Whoa! Can you double check that email address for me?');
+//}]);
+app.controller('TestCtrl', function($scope, $http, $location) {
+//  tv4.defineError('EMAIL', 10001, 'Invalid email address');
+//  tv4.defineKeyword('email', function(data, value, schema) {
+//    if (schema.email) {
+//      if (/^\S+@\S+$/.test(data)) {
+//        return null;
+//      }
+//      return {
+//       code: 10001
+//      };
+//    }
+//    return null;
+//  });
+
+  $scope.tests = [
+    { name: "JSON Ref", data: 'dataEz/jsonrefEz.json' },
+    { name: "JSON Ref", data: 'data/jsonref.json' },
+    { name: "Simple", data: 'data/simple.json' },
+    { name: "Basic JSON Schema Type", data: 'data/types.json' },
+    { name: "Bootstrap Grid", data: 'data/grid.json' },
+    { name: "Complex Key Support", data: 'data/complex-keys.json' },
+    { name: "Array", data: 'data/array.json' },
+    { name: "Array of types", data: 'data/array-of-types.json' },
+    { name: "Tab Array", data: 'data/tabarray.json' },
+    { name: "Deep Array", data: 'data/deep-array.json' },
+    //{ name: "Array Radio-Buttons", data: 'data/array-radiobuttons.json' },
+    { name: "TitleMap Examples", data: 'data/titlemaps.json' },
+    { name: "Kitchen Sink", data: 'data/sink.json' },
+    { name: "Calculate", data: 'data/calculate.json' },
+    { name: "Custom Error", data: 'data/custom-error.json' },
+    { name: "Hack: Conditional required", data: 'data/conditional-required.json' }
+  ];
+  // Load data from gist.
+  if (window.location.hash.length > 4) {
+    $scope.navbarMode = 'loaded';
+    var gistId = window.location.hash.replace(/[\!\#\/]*/g, '');
+    $scope.loading = true;
+    $http.get('https://api.github.com/gists/' + gistId)
+      .then(function(response) {
+        $scope.error = null;
+        $scope.tests.unshift({name: 'Gist'});
+        $scope.selectedTest = $scope.tests[0];
+        $scope.loadedData = {
+          created: moment(response.data.created_at).fromNow(),
+          user: response.data.user !== null ? response.data.user.login : 'Anonymous'
+        }
+        $scope.loading = false;
+        $scope.schemaJson = response.data.files['schema.json'].content;
+        $scope.formJson   = response.data.files['form.json'].content;
+        $scope.modelData  = JSON.parse(response.data.files['model.json'].content);
+      },
+      function() {
+        $scope.loadedData = 'dummy';
+        $scope.error = 'Failed to load gist.';
+        $scope.selectedTest = $scope.tests[0];
+      }
+    );
+  } else {
+    $scope.selectedTest = $scope.tests[0];
+  }
+  $scope.$watch('selectedTest',function(val){
+    if (val && val.data !== undefined) {
+      $http.get(val.data).then(function(res) {setNewData(res.data);});
+    }
+  });
+  var setNewData = function(data) {
+    $scope.schema = data.schema;
+    $scope.form   = data.form;
+    $scope.schemaJson = JSON.stringify($scope.schema,undefined,2);
+    $scope.formJson   = JSON.stringify($scope.form,undefined,2);
+    $scope.modelData = data.model || {};
+  };
+	});		
+</script>
+</body>
+</html>

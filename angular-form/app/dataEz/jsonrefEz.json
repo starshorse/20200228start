@@ -1,0 +1,57 @@
+﻿{
+  "schema": {
+    "id": "http://some.site.somewhere/entry-schema#",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "local and remote schema resolution",
+    "type": "object",
+    "properties": {
+      "local": { "$ref": "#/definitions/local" },
+      "remote": { "$ref": "https://raw.githubusercontent.com/json-schema-org/json-schema-org.github.io/master/geo" }
+    },
+    "definitions": {
+      "local": {
+  "type": "object",
+  "title": "Account Creation Request",
+  "properties": {
+     "Id":  {
+      "title": "유저 아이디",
+      "type": "string"
+    },
+    "Password":  {
+      "title": "Password",
+      "type": "string"
+    },
+    "PasswordConfirm":  {
+      "title": "Password Conformation",
+      "type": "string"
+    },
+    "Lname":  {
+      "title": "Last Name",
+      "type": "string"
+    },
+    "Fname":  {
+      "title": "First Name",
+      "type": "string"
+    },
+    "CompanyName":  {
+      "title": "Company Name",
+      "type": "string"
+    },
+    "email":  {
+      "title": "Email",
+      "type": "string",
+      "pattern": "^\\S+@\\S+$",
+      "description": "Email will be used for evil."
+    },
+    "comment": {
+      "title": "Comment",
+      "type": "string",
+      "maxLength": 20,
+      "validationMessage": "Don't be greedy!"
+    }
+  },
+  "required": ["name","email","comment"]
+} }
+  },
+  "form": [ "local", "remote" ]
+}
