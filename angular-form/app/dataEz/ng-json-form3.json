@@ -1,0 +1,10 @@
+{
+  "form": [
+    "local",
+    "remote"
+  ],
+  "schema": {
+    "id": "schema337",
+    "$schema": "http://json-schema.org/draft-04/schema#"
+  }
+}
