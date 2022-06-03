@@ -13,8 +13,9 @@
       <script src="./controllers.js"></script>
        <script src="directives.js"></script>
   </head>
-  <body ng-app="myNg" > 
-<ng-view></ng-view>
+  <!--  <body ng-app="myNg" > -->
+  <body id ="bootstrap" > 
+   <ng-view></ng-view>
     <!-- <ng-include src="'./ezw.html'"></ng-include> -->
     <div ng-controller="myNgMsg">
       <p ng-click="toggleAB()">message1:{{message}}</p>

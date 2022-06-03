@@ -1,5 +1,6 @@
 
 var app;
+
 app = angular.module('myNg',['myNg.controllers','ngRoute','ngMessages']);
 // app = angular.module('myNg',['ngRoute']);
 app.config(function($routeProvider){
@@ -23,3 +24,7 @@ app.config(function($routeProvider){
             template:'<h1>Default </h1>',
         })
 });
+// angular.bootstrap( document.getElementById('bootstrap') , ['myNg'])
+ angular.element(function() {
+      angular.bootstrap(document, ['myNg']);
+    });
