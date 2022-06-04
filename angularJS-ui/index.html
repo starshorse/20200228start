@@ -10,11 +10,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js" type="text/javascript" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" type="text/javascript" charset="utf-8"></script>-->
         <script src="helloworld.js"></script>
-        <script src="auth.js"></script>
+		<!--        <script src="auth.js"></script>-->
     </head>
     <body>
         <a ui-sref="hello">Hello</a>
         <a ui-sref="about">About</a>
+        <a ui-sref="inbox.priority">priority</a>
+		<a ui-sref="inbox({inboxId:1})">Inbox1</a>
         <ui-view></ui-view>
     </body>
 </html>
