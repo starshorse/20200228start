@@ -36,7 +36,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		  }
 		  });
 	      $stateProvider.state('inbox', {
-			  url:'/inbox/:inboxId',
+			  url:'/inbox/:inboxId/{sorted:[0-9a-fA-F]{6}}',
 			  template: "<div><h1>Welcome to your inbox</h1>  \
 				<a ui-sref='inbox.priority'>show priority</a> \
 			    <div ui-view></div></div>",
