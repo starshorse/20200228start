@@ -1,0 +1,22 @@
+{
+  "name": "zombie_",
+  "version": "1.0.0",
+  "description": "test automation-zombie",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starshorse/20200228start.git"
+  },
+  "author": "richard choi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starshorse/20200228start/issues"
+  },
+  "homepage": "https://github.com/starshorse/20200228start#readme",
+  "devDependencies": {
+    "zombie": "^6.1.4"
+  }
+}
