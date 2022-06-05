@@ -17,7 +17,7 @@ var browser = new Browser()
 			done()
 	})
 	 it('should submit', function( done){
-		  this.timeout(10000) ;  
+		  this.timeout(150000) ;  
 		  console.log('[test_automation] brower.submit') 
 		  browser.fill('email_address','star_horse@naver.com') 
 		  browser.fill('password','ch1whdrb')
@@ -25,7 +25,9 @@ var browser = new Browser()
 		  assert( browser.query('button[type=submit]', form ))
 		  browser.pressButton('button[type=submit]', function(err){
 			  if(err) throw err 
-		  })
+			var form = browser.query('form') 
+			assert( form ,'form exists') 
 		  done() 	
+		  })
   })
 })	
