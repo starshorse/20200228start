@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/starshorse/20200228start#readme",
   "devDependencies": {
+    "mocha": "^10.0.0",
     "zombie": "^6.1.4"
   }
 }
