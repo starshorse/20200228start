@@ -8,12 +8,12 @@
     "update-deps": "npm update",
     "postupdate-deps": "npm run copy-libs",
     "copy-libs": "cpx \"node_modules/{angular,angular-*,html5-boilerplate/dist}/**/*\" lib -C",
-    "prestart": "npm install",
+    "prestart_": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1 ./app",
-    "pretest": "npm install",
+    "pretest_": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "npm test -- --single-run",
-    "preupdate-webdriver": "npm install",
+    "preupdate-webdriver_": "npm install",
     "//": "Do not install the Firefox driver to work around https://github.com/angular/webdriver-manager/issues/303.",
     "update-webdriver": "webdriver-manager update --gecko false",
     "preprotractor": "npm run update-webdriver",
@@ -23,28 +23,23 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@uirouter/angularjs": "^1.0.25",
-    "angularjs": "0.0.1"
-  },
-  "dependencies": {
     "angular": "^1.7.5",
     "angular-loader": "^1.7.5",
     "angular-route": "^1.7.5",
-    "html5-boilerplate": "0.0.1"
+    "html5-boilerplate": "0.0.1",
+    "npm": "^8.12.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.7.5",
     "cpx": "^1.5.0",
+    "grunt": "^1.5.3",
+    "grunt-contrib-connect": "^3.0.0",
     "http-server": "^0.11.1",
     "jasmine-core": "^3.3.0",
-    "karma": "^3.1.1",
+    "karma": "^3.1.4",
     "karma-chrome-launcher": "^2.2.0",
     "karma-firefox-launcher": "^1.1.0",
     "karma-jasmine": "^1.1.2",
     "protractor": "^5.4.1"
-  },
-  "devDependencies": {
-    "grunt": "^1.5.3",
-    "grunt-contrib-connect": "^3.0.0"
   }
 }

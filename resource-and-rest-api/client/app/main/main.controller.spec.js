@@ -19,10 +19,12 @@ describe('Controller: MainCtrl', function () {
     MainCtrl = $controller('MainCtrl', {
       $scope: scope
     });
+//	console.log( scope ) // log: {}  
   }));
 
   it('should attach a list of things to the scope', function () {
     $httpBackend.flush();
-    expect(scope.awesomeThings.length).toBe(4);
+//    expect(scope.awesomeThings.length).toBe(4);
+    expect(scope.things.length).toBe(4);
   });
 });
