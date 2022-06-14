@@ -10,12 +10,15 @@ exports.config = {
    'goog:chromeOptions': {
       'excludeSwitches': [ 'enable-automation' ],
       'useAutomationExtension': false
-   }
+   },
+   'chromeOptions': {
+      args: ['--disable-browser-side-navigation'] 
+   }   	  
   },
- baseUrl: 'http://ez-office.co.kr:3004',
+// baseUrl: 'http://ezoffice365.co.kr:3004',
  framework: 'jasmine',
  jasmineNodeOpts: {
     defaultTimeoutInterval: 60000
-  }
-
+  },
+  restartBrowserBetweenTests: true,	
 };
