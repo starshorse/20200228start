@@ -12,7 +12,8 @@ exports.config = {
       'useAutomationExtension': false
    },
    'chromeOptions': {
-      args: ['--disable-browser-side-navigation'] 
+ //  args: ['--disable-browser-side-navigation'] 
+     args: ['--headless','--disable-gpu','--window-size=800,600'] 
    }   	  
   },
 // baseUrl: 'http://ezoffice365.co.kr:3004',
