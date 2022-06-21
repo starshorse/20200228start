@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cp-lib":"cpx \"node_modules/{angular}/**/*.js\" lib -C"
+    "cp-lib": "cpx \"node_modules/{angular,angular-*}/**/*.js\" www/lib -C"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "angular": "^1.8.3",
+    "angular-route": "^1.8.3",
     "grunt": "^1.5.3",
     "grunt-contrib-connect": "^3.0.0",
     "load-grunt-tasks": "^5.1.0"
