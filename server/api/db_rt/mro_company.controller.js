@@ -84,6 +84,11 @@ exports.show = function (req, res) {
   // var thing = db.find('Things', req.params.id);
   // if (!thing) return res.send(404);
   // res.json(thing);
+  let id = req.params.id 
+  connection.query(`SELECT * FROM mro_company WHERE idx = ${id}`, function( error, rows, fields ){
+      var responseData = {'result' : 'ok', 'data' : rows  };
+      res.json(responseData);
+      });
 };
 
 // Update a thing

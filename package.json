@@ -4,7 +4,7 @@
   "description": "main workframe",
   "main": "server/app.js",
   "scripts": {
-    "start": "node server/app.js",
+    "start": "node --inspect server/app.js",
     "test": "grunt test"
   },
   "repository": {
