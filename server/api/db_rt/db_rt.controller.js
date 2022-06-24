@@ -1,10 +1,11 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /maker_company              ->  index
- * POST    /maker_company              ->  create
- * GET     /maker_company/:id          ->  show
- * PUT     /maker_company/:id          ->  update
- * DELETE  /maker_company/:id          ->  destroy
+ * GET     /:tbl_name                  ->  request
+ * POST    /:tbl_name                  ->  create
+ * GET     /:tbl_name/:id              ->  request(ent) 
+ * PUT     /:tbl_name/:id              ->  update
+ * DELETE  /:tbl_name                  ->  destroy 
+ * DELETE  /:tbl_name/:id              ->  destroy(ent) 
  */
 
 'use strict';
@@ -31,45 +32,43 @@ connection.query('SHOW TABLES', function( error, rows, fields ){
 	// 		console.log( rows ); 
 	// 	});
 	//}	
-});
-
-// var Database = function () {
-//   this.Things = [{
-//     id: 1,
-//     name: 'Thing1',
-//     status: false
-//   }, {
-//     id: 2,
-//     name: 'Thing2',
-//     status: true
-//   }, {
-//     id: 3,
-//     name: 'Thing3',
-//     status: true
-//   }];
-
-//   this.find = function (table, id) {
-//     if(_.isString(id)) id = parseInt(id, 10);
-//     return _.find(this[table], function (n) {
-//       return n.id === id
-//     });
-//   }
-// };
-// var db = new Database();
+})
 
 // Get list of things
-exports.maker_company_index = function (req, res) {
-  // res.json(db.Things);
-  connection.query('SELECT * FROM maker_company', function( error, rows, fields ){
+exports.all_request = function (req, res) {
+  let tbl_name = req.params.tbl_name 
+  connection.query(`SELECT * FROM ${tbl_name}`, function( error, rows, fields ){
     // SargonI 2020-08-18		
-    //	var responseData = {'result' : 'ok', 'data' : JSON.stringify( curData ) };
-      var responseData = {'result' : 'ok', 'data' : rows  };
-      res.json(responseData);
+      let responseData
+      if( rows ){
+	      responseData = {'STATUS': 1 ,'RESULT' : 'success', 'ROWS' : rows  }
+	      return res.json(responseData);
+      }else{
+
+	      responseData = {'STATUS': -1 ,'RESULT' : 'error', 'ROWS' : null , 'message': error }
+	      return res.json(responseData);
+      }
       });
-};
+}
+exports.ent_request = function (req, res) {
+  let tbl_name = req.params.tbl_name 
+  let id = req.params.id 
+  connection.query(`SELECT * FROM ${tbl_name} WHERE id = ${id}`, function( error, rows, fields ){
+    // SargonI 2020-08-18		
+      let responseData
+      if( rows ){
+	      responseData = {'STATUS': 1 ,'RESULT' : 'success', 'ROWS' : rows  }
+	      return res.json(responseData);
+      }else{
+
+	      responseData = {'STATUS': -1 ,'RESULT' : 'error', 'ROWS' : null , 'message': error }
+	      return res.json(responseData);
+      }
+      });
+}
 
 // Create new thing
-exports.maker_company_create = function (req, res) {
+exports.all_create = function (req, res) {
   // var thing = {
   //   id: db.Things.length + 1,
   //   name: req.body.name || 'Thing',
@@ -77,29 +76,30 @@ exports.maker_company_create = function (req, res) {
   // };
   // db.Things.push(thing);
   // res.json(201, thing);
-};
-
-// Get a things
-exports.maker_company_show = function (req, res) {
-  // var thing = db.find('Things', req.params.id);
-  // if (!thing) return res.send(404);
-  // res.json(thing);
-};
+}
 
 // Update a thing
-exports.maker_company_update = function (req, res) {
+exports.ent_update = function (req, res) {
   // var thing = db.find('Things', req.params.id);
   // if (!thing) return res.send(404);
   // if (req.body.hasOwnProperty('name')) thing.name = req.body.name;
   // if (req.body.hasOwnProperty('status')) thing.status = req.body.status;
   // res.json(thing);
-};
+}
 
 // Delete a thing
-exports.maker_company_destroy = function (req, res) {
+exports.ent_destroy = function (req, res) {
   // var id = parseInt(req.params.id, 10);
   // _.remove(db.Things, function (n) {
   //   return n.id === id;
   // });
   // res.send(204);
-};
+}
+// Delete a thing
+exports.all_destroy = function (req, res) {
+  // var id = parseInt(req.params.id, 10);
+  // _.remove(db.Things, function (n) {
+  //   return n.id === id;
+  // });
+  // res.send(204);
+}

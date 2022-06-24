@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   // Insert routes below
  // app.use('/api/things', require('./api/thing'));
-  app.use('/getajax', require('./api/Ezwqs'));
+  app.use('/ezwqs', require('./api/Ezwqs'));
   app.use('/db_rt', require('./api/db_rt'));
   
   // All undefined asset or api routes should return a 404

@@ -2,7 +2,7 @@
 module.exports = function(config) {
   config.set({
 
-    basePath: './app',
+    basePath: './client',
 
     files: [
       'lib/angular/angular.js',
@@ -12,20 +12,6 @@ module.exports = function(config) {
       '../node_modules/angular-mocks/angular-mocks.js',
       '../node_modules/angular-resource/angular-resource.min.js',
       '../node_modules/angular-messages/angular-messages.min.js',
-	  'company/main/0/app.js',	
-	  'company/main/0/view/*.js',	
-	  'rest_api/rest_api_service.js',	
-	  'company/main/0/app.spec.js',	
-	  'company/workspace/app.js', 	
-	  'company/workspace/app.spec.js', 	
-	  'db_edit/exists/app.js',	
-	  'db_edit/exists/app.spec.js',	
-      'parts/**/*.js',
-      'parts/**/*.spec.js',
-      'service/**/*.js',
-      'service/**/*.spec.js',
-      '../designv0.31/Admin_angular/app_admin.js',	    
-      '../designv0.31/Dt/**/*.js'	    
     ],
 
     autoWatch: true,

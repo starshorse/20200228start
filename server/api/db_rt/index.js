@@ -7,11 +7,12 @@ var router = express.Router();
 
 router.use('/mro_company', require('./mro_company')); 
 
-router.get('/maker_company/', controller.maker_company_index);
-router.get('/', controller.maker_company_index);
-router.post('/maker_company/', controller.maker_company_create);
-router.get('/maker_company/:id', controller.maker_company_show);
-router.put('/maker_company/:id', controller.maker_company_update);
-router.delete('/maker_company/:id', controller.maker_company_destroy);
+router.get('/:tbl_name', controller.all_request );
+// router.get('/', controller.maker_company_index);
+router.post('/:tbl_name', controller.all_create );
+router.get('/:tbl_name/:id', controller.ent_request );
+router.put('/:tbl_name/:id', controller.ent_update);
+router.delete('/:tbl_name', controller.all_destroy);
+router.delete('/:tbl_name/:id', controller.ent_destroy);
 
 module.exports = router;
