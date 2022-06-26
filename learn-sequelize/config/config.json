@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
+    "username": "User_WebQt",
+    "password": "test!@3582",
+    "database": "ezWebQt",
+    "host": "35.189.159.65",
     "dialect": "mysql"
   },
   "test": {

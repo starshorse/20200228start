@@ -9,7 +9,12 @@ var usersRouter = require('./routes/users');
 var sequelize = require('./models').sequelize 
 
 var app = express();
-sequelize.sync() 
+//sequelize.sync() 
+//const { QueryTypes } = require('sequelize');
+( async ()=>{
+	const users = await sequelize.query("SELECT * FROM `quotations`", { type: sequelize.QueryTypes.SELECT });
+	console.log( users )
+})()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
