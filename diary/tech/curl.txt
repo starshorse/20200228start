@@ -1,5 +1,6 @@
+///////////////////////////////////////////////////////////////////////////////////////////
 curl 명령어
-
+///////////////////////////////////////////////////////////////////////////////////////////
  # 요청 보내기
 curl http://httpbin.org/ip
 
@@ -11,7 +12,9 @@ curl -X POST --data "name=John&age=29" http://httpbin.org/anything
 
  # csv 파일을 Form(POST)으로 전송
 curl -F csv=@$PWD/sample.csv http://localhost:8088/submit-csv
+///////////////////////////////////////////////////////////////////////////////////////////
 header 지정
+///////////////////////////////////////////////////////////////////////////////////////////
 curl \
   -H 'Content-Type: text/html; charset=UTF=8' \
   -H 'Location: http://www.google.com' https://httpbin.org/ip \
@@ -39,16 +42,18 @@ curl \
   -d name="John Grib" \
   -d hobby="coding" \
   https://httpbin.org/anything
-
- # json 보내기
+///////////////////////////////////////////////////////////////////////////////////////////
+# json 보내기
+///////////////////////////////////////////////////////////////////////////////////////////
 curl -d '{"name":"john"}' \
   -H "Content-Type: application/json" \
   https://httpbin.org/anything
 
- # json 파일 이름을 지정하여 파일 내용 보내기
+# json 파일 이름을 지정하여 파일 내용 보내기
 curl -d @test.json \
   -H "Content-Type: application/json" \
   https://httpbin.org/anything
+
 -d, --data 옵션을 쓰면 body를 지정할 수 있다.
 -d @FILE_NAME: 텍스트 파일의 내용을 보낼 수 있다.
 --data-urlencode: URL encode를 사용한다.
@@ -56,9 +61,11 @@ curl -d @test.json \
 http 버전 지정
 curl --http1.0 http://httpbin.org/ip
 다운로드
- # 나의 ip 정보를 담은 json 문자열을 받아 파일로 저장한다
+# 나의 ip 정보를 담은 json 문자열을 받아 파일로 저장한다
 curl -o my_ip.json http://httpbin.org/ip
-재미있는 사용법
+///////////////////////////////////////////////////////////////////////////////////////////
+# 재미있는 사용법
+///////////////////////////////////////////////////////////////////////////////////////////
 curl wttr.in          # 날씨를 본다
 curl v2.wttr.in
 curl v2.wttr.in/Seoul
