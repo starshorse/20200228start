@@ -12,6 +12,7 @@ module.exports = function(app) {
  // app.use('/api/things', require('./api/thing'));
   app.use('/ezwqs', require('./api/Ezwqs'));
   app.use('/db_rt', require('./api/db_rt'));
+  app.use('/nosql', require('./api/nosql'));
   
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
