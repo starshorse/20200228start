@@ -11,10 +11,13 @@ var sequelize = require('./models').sequelize
 var app = express();
 //sequelize.sync() 
 //const { QueryTypes } = require('sequelize');
-( async ()=>{
-	const users = await sequelize.query("SELECT * FROM `quotations`", { type: sequelize.QueryTypes.SELECT });
-	console.log( users )
-})()
+require('dotenv').config() 
+if( process.env.NODE_ENV == 'development' ){
+	( async ()=>{
+		const users = await sequelize.query("SELECT * FROM `quotations`", { type: sequelize.QueryTypes.SELECT });
+		console.log( users )
+	})()
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
