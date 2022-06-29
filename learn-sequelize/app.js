@@ -9,8 +9,8 @@ var usersRouter = require('./routes/users');
 var sequelize = require('./models').sequelize 
 
 var app = express();
-//sequelize.sync() 
-//const { QueryTypes } = require('sequelize');
+sequelize.sync() 
+const { QueryTypes } = require('sequelize');
 require('dotenv').config() 
 if( process.env.NODE_ENV == 'development' ){
 	( async ()=>{
