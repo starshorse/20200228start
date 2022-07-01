@@ -120,11 +120,10 @@ $ sequelize db:migrate --env development
 마이그레이션이 완료되면 데이터베이스에는 SequelizeMeta 테이블이 생성된다.
 
 mysql> describe SequelizeMeta;
-+-------+--------------+------+-----+---------+-------+
+
 | Field | Type         | Null | Key | Default | Extra |
-+-------+--------------+------+-----+---------+-------+
 | name  | varchar(255) | NO   | PRI | NULL    |       |
-+-------+--------------+------+-----+---------+-------+
+
 1 row in set (0.00 sec)
 name 컬럼 하나만 있는 테이블이다. 마이그레이션을 수행하면 그 마이그레이션의 파일명을 이 테이블에 기록한다. 반대로 마이그래이션을 취소하면 테이블에 해당 파일명을 삭제한다.
 마이그레이션 파일이 여러개 있더라도 신규 마이그레이션만 동작하는 이유가 이것 때문이다. 마이그레이션 명령이 실행되면 SequelizeMeta 테이블을 확인하여 이미 수행한 마이그레이션은 제외하고 신규 마이그레이션만 진행하는 것이다. 만약 마이그레이션 롤백이 안되는 등 예외 사항이 발생한다면 이 테이블에 저장된 값을 삭제/추가하면서 문제를 해결할 수 있다.
@@ -180,9 +179,7 @@ module.exports = {
   },
 }
 ```
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-//  sequelize-auto 
-/////////////////////////////////////////////////////////////////////////////////////////////////////
+##  sequelize-auto 
 Sequelize-Auto
 Build Status Build status Code Climate Test Coverage
 
@@ -202,9 +199,7 @@ Postgres	npm install sequelize pg pg-hstore
 Sqlite	npm install sequelize sqlite3
 MSSQL	npm install sequelize tedious
 ```
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-//   Usage
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+###   Usage
 ```
 sequelize-auto -h <host> -d <database> -u <user> -x [password] -p [port]  --dialect [dialect] -c [/path/to/config] -o [/path/to/models] -t [tableName]
 
