@@ -216,6 +216,65 @@ With this config you are telling the CLI to:
 * Use db/models as models folder;
 * Use db/seeders as seeders folder;
 * Use db/migrations as migrations folder.
+
+## Dynamic configuration
+The configuration file is by default a JSON file called config.json. But sometimes you need a dynamic configuration, for example to access environment variables or execute some other code to determine the configuration.
+
+Thankfully, the Sequelize CLI can read from both .json and .js files. This can be setup with .sequelizerc file. You just have to provide the path to your .js file as the config option of your exported object:
+```javascript
+const path = require('path');
+
+module.exports = {
+  'config': path.resolve('config', 'config.js')
+}
+```
+Now the Sequelize CLI will load config/config.js for getting configuration options.
+
+An example of config/config.js file:
+```javascript
+const fs = require('fs');
+
+module.exports = {
+  development: {
+    username: 'database_dev',
+    password: 'database_dev',
+    database: 'database_dev',
+    host: '127.0.0.1',
+    port: 3306,
+    dialect: 'mysql',
+    dialectOptions: {
+      bigNumberStrings: true
+    }
+  },
+  test: {
+    username: process.env.CI_DB_USERNAME,
+    password: process.env.CI_DB_PASSWORD,
+    database: process.env.CI_DB_NAME,
+    host: '127.0.0.1',
+    port: 3306,
+    dialect: 'mysql',
+    dialectOptions: {
+      bigNumberStrings: true
+    }
+  },
+  production: {
+    username: process.env.PROD_DB_USERNAME,
+    password: process.env.PROD_DB_PASSWORD,
+    database: process.env.PROD_DB_NAME,
+    host: process.env.PROD_DB_HOSTNAME,
+    port: process.env.PROD_DB_PORT,
+    dialect: 'mysql',
+    dialectOptions: {
+      bigNumberStrings: true,
+      ssl: {
+        ca: fs.readFileSync(__dirname + '/mysql-ca-main.crt')
+      }
+    }
+  }
+};
+```
+The example above also shows how to add custom dialect options to the configuration.
+
 ##  sequelize-auto 
 Sequelize-Auto
 Build Status Build status Code Climate Test Coverage
