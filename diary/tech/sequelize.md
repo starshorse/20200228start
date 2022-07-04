@@ -180,6 +180,42 @@ module.exports = {
   },
 }
 ```
+## Migration Skeleton
+### The .sequelizerc file
+This is a special configuration file. It lets you specify the following options that you would usually pass as arguments to CLI:
+
+env: The environment to run the command in
+config: The path to the config file
+options-path: The path to a JSON file with additional options
+migrations-path: The path to the migrations folder
+seeders-path: The path to the seeders folder
+models-path: The path to the models folder
+url: The database connection string to use. Alternative to using --config files
+debug: When available show various debug information
+Some scenarios where you can use it:
+
+You want to override default path to migrations, models, seeders or config folder.
+You want to rename config.json to something else like database.json
+And a whole lot more. Let's see how you can use this file for custom configuration.
+
+To begin, let's create the .sequelizerc file in the root directory of your project, with the following content:
+
+// .sequelizerc
+
+const path = require('path');
+```javascript
+module.exports = {
+  'config': path.resolve('config', 'database.json'),
+  'models-path': path.resolve('db', 'models'),
+  'seeders-path': path.resolve('db', 'seeders'),
+  'migrations-path': path.resolve('db', 'migrations')
+};
+```
+With this config you are telling the CLI to:
+* Use config/database.json file for config settings;
+* Use db/models as models folder;
+* Use db/seeders as seeders folder;
+* Use db/migrations as migrations folder.
 ##  sequelize-auto 
 Sequelize-Auto
 Build Status Build status Code Climate Test Coverage
