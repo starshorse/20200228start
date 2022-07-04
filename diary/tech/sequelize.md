@@ -122,6 +122,7 @@ $ sequelize db:migrate --env development
 mysql> describe SequelizeMeta;
 
 | Field | Type         | Null | Key | Default | Extra |
+|-------|--------------|------|-----|---------|-------|
 | name  | varchar(255) | NO   | PRI | NULL    |       |
 
 1 row in set (0.00 sec)
