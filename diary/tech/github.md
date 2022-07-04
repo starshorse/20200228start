@@ -36,8 +36,41 @@ git reset HEAD CONTRIBUTING.md
 ```
 git checkout -- CONTRIBUTING.md
 ```
+## Tag
+```
+git tag
+git tag -l 'v1.8.5*'
+```
+#### Annotated Tag
+```
+git tag -a v1.4 -m 'my version 1.4'
+git tag
+git show v1.4 
+```
+#### Lightweight Tag
+```
+git tag v1.4-lw
+git tag
+```
+#### Tag later
+```
+git log --pretty=oneLine
+git tag -a v1.2 9fceb02
+```
+#### update to remote repository , Git push not include tag update on repository 
+```
+git push origin v1.5
+git push origin --tags
+```
+#### Checkout Tag version / switched to a new branch 'version2'
+```
+git checkout -b version2 v2.0.0
+```
 
-
+## Branch 
+* branch workflow - 각브랜치를 하나나의 실험실로 생각하라. 
+* Logn Running Branch..
+* Topic branch
 
 ## Reset
 앞에서 설명한대로 Reset은 시계를 다시 맞추는 것입니다. 돌아 가려는 커밋으로 리파지토리는 재설정되고, 해당 커밋 이후의 이력은 사라집니다. 예를 한번 들어볼까요? ( 일반적인 개발 이력과는 차이가 있지만, 이해가 쉽게 하기 위해 영화 “유주얼 서스펙트”를 이용했고 이에 대한 스포일러를 포함합니다. 하지만, 이미 보셨거나 들어보셨을 것이라 생각합니다. )
@@ -69,7 +102,7 @@ Revert는 상태를 되돌린다고 볼 수 있습니다. 스포를 당한 커�
 revert 를 하는 방법과 스포일러 댓글의 커밋을 되돌리는 것은
 
 
-# git revert <되돌릴 커밋> 
+## git revert <되돌릴 커밋> 
 git revert 2664ce8
 git revert 2664ce8..15413dc
 
