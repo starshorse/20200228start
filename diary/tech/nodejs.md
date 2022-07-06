@@ -3,8 +3,12 @@ NODEJS NPM
 
 # Error Object
 
-### const { isEmail } = require('validator') 
+### const { isEmail isUrl } = require('validator') 
 ```
+console.log( isEmail('abc@naver.com'))
+console.log( isUrl('http://ezoffice365.com:8000/restapi')
+
+
 let error ={ email:'', password:'' }
 userSchema({
 	validate:[ isEmail, 'please enter a valid email'] 
