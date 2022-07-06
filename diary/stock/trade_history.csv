@@ -1,7 +1,13 @@
-no, trade, company, date ,comment
+no, trade, company, date ,comment, mount
 1,buy,KT,2022-06-30,3days foreign buy
 2,buy,한라IMS,2022-06-30,3days up
 3,buy,대동전자,2022-06-30,3days up
 4,buy,삼화페인트,2022-06-30,3days up
 5,buy,모토닉,2022-06-30,3days up
+6,buy,S-Oil,2022-07-06,3days up, 20
+7,buy,쌍용C&E,2022-07-06,3days up, 20
+8,buy,신진에스엠,2022-07-06,3days up, 30
+9,sell,원유선물,2022-07-06, price down, 60
+
+
 
