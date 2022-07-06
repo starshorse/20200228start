@@ -104,3 +104,120 @@ console.log(setValue(21));
 값들이 저장되는지 살펴볼 수 있다. 테이블이 꽉 차면 풀방입니다 가 출력되니까 그때까진 신나게 돌려봐도 된
 다
 
+## fetch 
+
+JAM stack이 모던 웹 개발의 새로운 트랜드
+```javascript 
+fetch(url, options)
+  .then((response) => console.log("response:", response))
+  .catch((error) => console.log("error:", error));
+
+fetch("https://jsonplaceholder.typicode.com/posts/1").then((response) =>
+  console.log(response)
+);
+
+Response {status: 200, ok: true, redirected: false, type: "cors", url: "https://jsonplaceholder.typicode.com/posts/1", …}
+
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+  
+{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit↵suscipit recusandae consequuntur …strum rerum est autem sunt rem eveniet architecto"
+}
+```
+### POST 
+```javascript 
+fetch("https://jsonplaceholder.typicode.com/posts", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    title: "Test",
+    body: "I am testing!",
+    userId: 1,
+  }),
+}).then((response) => console.log(response));
+
+Response {type: "cors", url: "https://jsonplaceholder.typicode.com/posts", redirected: false, status: 201, ok: true, …}
+
+fetch("https://jsonplaceholder.typicode.com/posts", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    title: "Test",
+    body: "I am testing!",
+    userId: 1,
+  }),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+{title: "Test", body: "I am testing!", userId: 1, id: 101}
+```
+### PUT, DELETE 호출
+```javascript 
+fetch("https://jsonplaceholder.typicode.com/posts/1", {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    title: "Test",
+    body: "I am testing!",
+    userId: 1,
+  }),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+{title: "Test", body: "I am testing!", userId: 1, id: 1}
+
+fetch("https://jsonplaceholder.typicode.com/posts/1", {
+  method: "DELETE",
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+{}
+```
+
+[보너스] 사용성 개선
+fetch() 함수는 사용법이 아주 간단하지만, 계속 사용하다보면 똑같은 코드가 반복된다는 것을 느끼실 것입니다. 예를 들어, 응답 데이터을 얻기 위해서 response.json()을 매번 호출하거나, 데이터를 보낼 때, HTTP 요청 헤더에 "Content-Type": "application/json"로 설정해주는 부분은 지루하게 느껴질 수 있습니다. 뿐만 아니라, 기존에 사용하시던 라이브러리와 비교해봤을 때, fetch() 함수의 Promise 기반의 API가 좀 투박하다고 느끼실 수도 있습니다.
+
+이럴 때는 fetch() 함수를 직접 사용하시기 보다는, 본인 입맛에 맞게 별도의 함수나 모듈로 빼서 사용하시기를 추천드립니다. 저같은 경우에는 프로젝트의 상황에 맞게 다음과 같이 async/await 키워드를 이용하여 HTTP 방식별로 비동기 함수를 작성하고 모듈화하여 사용하곤 합니다.
+```javascript
+async function post(host, path, body, headers = {}) {
+  const url = `https://${host}/${path}`;
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...headers,
+    },
+    body: JSON.stringify(body),
+  };
+  const res = await fetch(url, options);
+  const data = await res.json();
+  if (res.ok) {
+    return data;
+  } else {
+    throw Error(data);
+  }
+}
+
+post("jsonplaceholder.typicode.com", "posts", {
+  title: "Test",
+  body: "I am testing!",
+  userId: 1,
+})
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```  
+async/await에 대해서는 좀 더 알고 싶으신 분들은 관련 포스팅를 참고바랍니다.
+
