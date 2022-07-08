@@ -5,6 +5,10 @@ module.exports = function(grunt){
 	localConfig = {}
 	require('time-grunt')(grunt);
 	grunt.loadNpmTasks('grunt-mocha-test'); 
+	grunt.loadNpmTasks('grunt-concurrent'); 
+//	grunt.loadNpmTasks(['grunt-nodemon','grunt-node-inspector']) 
+	grunt.loadNpmTasks('grunt-nodemon') 
+	grunt.loadNpmTasks('grunt-karma'); 
 	grunt.initConfig({
 		// Project settings 
 		pkg: grunt.file.readJSON('package.json'), 
@@ -28,8 +32,30 @@ module.exports = function(grunt){
 			},
 			src:['server/**/*.spec.js'] 
 		},
+		nodemon:{
+			debug:{	
+				script:'server/app.js', 
+				options:{
+//					nodeArgs:['--inspect-brk'],
+//					env:{ PORT: process.env.PORT || 9000 }
+				},
+				callback: function (nodemon) {
+					nodemon.on('log', function (event) {
+					  console.log(event.colour);
+					});
+				}
+			}
+		},
+		concurrent:{
+			debug:{
+	//			tasks:['nodemon', 'node-inspector']
+				tasks:['nodemon:debug'],
+				options: {
+					      logConcurrentOutput: true
+					   }
+			}
+		}
 	})
-	grunt.loadNpmTasks('grunt-karma'); 
 	grunt.registerTask('test',function( target ){
 		if( target === 'server' ){
 			return grunt.task.run([
@@ -45,5 +71,12 @@ module.exports = function(grunt){
 			'test:server',
 			'test:client'
 		]);
+	})
+	grunt.registerTask('serve',function( target ){
+		if( target === 'debug'){
+			return grunt.task.run([
+				'concurrent:debug'
+			])
+		}
 	})
 }
