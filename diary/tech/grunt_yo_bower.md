@@ -1,14 +1,66 @@
+Grunt
+======
+
+## ////////////////////////////////////////////////////////////////////////
+##  generator-angular with Yoeman 
+## ///////////////////////////////////////////////////////////////////////
+
+```
+	npm install -g yo
+	npm install -g generator-angular
+	mkdir myapp && cd $_
+	yo angular
+	grunt server 
+```
+### Route 
+```
+	yo angular:route dashboard 
+	yo angular:route home 
+```
+### Create a controller 
+```
+	yo angular:controller user 
+```
+### Create a Custom Directive 
+```
+	yo angular:directive tabPanel
+```	
+### Create a Custom Fileter
+```
+	yo angular:filter capitalize
+
+```
+### Create View 
+```
+	yo angular:view dashboard 
+```
+### Create a Service 
+```
+	yo angular:service api 
+	yo angular:factory api 
+	yo angular;provider api 
+	yo angular:value api 
+	yo angular:constant api 
+	yo angular:factory  session --skip-add
+```
+### Create a Decorator 
+```
+	yo angular:decorator api 
+```
+### CoffeeScript 
+```
+	yo angular:controller user --coffee 
+```
+
+```
+grunt test:server
+grunt test:client
+grunt build 
+```
+
 
 grunt-bower-install
 Inject your Bower dependencies right into your HTML from Grunt.
-
-What is this?
-Grunt is great.
-Bower is great.
-And now they work great together.
-
-Getting Started
-*If you are new to Grunt, you will find a lot of answers to your questions in their getting started guide.
 
 To install the module:
 
