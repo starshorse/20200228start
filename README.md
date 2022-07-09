@@ -3,7 +3,7 @@ My TECH hub
 
 # 20200228start
 
-- [ ] Diary/Tech 
+- [X] Diary/Tech 
 - [ ] ./Client ./Sever 통합 .. 
 - [ ] ./lean_sequeilize 
 
