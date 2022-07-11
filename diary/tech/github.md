@@ -71,7 +71,35 @@ git checkout -b version2 v2.0.0
 * branch workflow - 각브랜치를 하나나의 실험실로 생각하라. 
 * Logn Running Branch..
 * Topic branch
+### rebase 
+```
+ $git checkout master 
+ $git pull --rebase = preserve remote_nickname master 
+ $git checkout feature 
+ $git rebase mater 
+``` 
+ #### rebase 시 충돌사항 해결하기.. 
 
+ 1.병합 충돌을 해결한다.
+ 2.병합 충돌이 해결된것 같으면 다음 명령을 수행한다. 
+``` 
+  $git rebase --continue 
+  $git mergetool ch10.asciidoc 
+  $git rebase --continue 
+ ``` 
+ - 수정사항을 적용하지 않으려면 ?
+```
+( use 'git reset HEAD <file>..' to unstage ) 
+$git reset HEAD ch10.asciidoc
+```
+#### remote branch 작업
+```
+ $git remote add username git://github.com/<username>/<repository-name>
+ $git fetch username 
+ $git merge --no-ft username/branch-name
+ $git merge --no-ft -no-commit username/branch_name 
+ $git push origin master
+```
 ## 되돌리기 reset/revert.
 #### 되돌리기
 ```
