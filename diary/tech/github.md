@@ -11,7 +11,7 @@ github
 ```
 git status -S 
 ```
-### log History 
+## log History 
 ```
 // Line  응축된 Project History 보기
 $git log --oneline 
@@ -35,21 +35,7 @@ $git show fa04c30
  git log -p -2  // -p는 각 커밋의 diff결과를 보여준다.
  git log --stat // 통계정보 
 ```
-#### 되돌리기
-```
-git commit --amend 
-git commit -m 'initial Commit'
-git add forgotten_file 
-git commit --amend 
-```
-#### 파일 상태를 [unstage로 변경하기]
-```
-git reset HEAD CONTRIBUTING.md
-```
-#### Modified 파일 돌리기( commit된 파일로 )
-```
-git checkout -- CONTRIBUTING.md
-```
+
 ## Tag
 ```
 git tag
@@ -86,7 +72,24 @@ git checkout -b version2 v2.0.0
 * Logn Running Branch..
 * Topic branch
 
-## Reset
+## 되돌리기 reset/revert.
+#### 되돌리기
+```
+git commit --amend 
+git commit -m 'initial Commit'
+git add forgotten_file 
+git commit --amend 
+```
+
+#### Modified 파일 돌리기( commit된 파일로 )
+```
+git checkout -- CONTRIBUTING.md
+```
+### Reset
+#### 파일 상태를 [unstage로 변경하기]
+```
+git reset HEAD CONTRIBUTING.md
+```
 앞에서 설명한대로 Reset은 시계를 다시 맞추는 것입니다. 돌아 가려는 커밋으로 리파지토리는 재설정되고, 해당 커밋 이후의 이력은 사라집니다. 예를 한번 들어볼까요? ( 일반적인 개발 이력과는 차이가 있지만, 이해가 쉽게 하기 위해 영화 “유주얼 서스펙트”를 이용했고 이에 대한 스포일러를 포함합니다. 하지만, 이미 보셨거나 들어보셨을 것이라 생각합니다. )
 ```
 $ git reset <옵션> <돌아가고싶은 커밋>
@@ -117,7 +120,7 @@ Revert는 상태를 되돌린다고 볼 수 있습니다. 스포를 당한 커�
 revert 를 하는 방법과 스포일러 댓글의 커밋을 되돌리는 것은
 
 
-## git revert <되돌릴 커밋> 
+### git revert <되돌릴 커밋> 
 ```
 git revert 2664ce8
 git revert 2664ce8..15413dc
