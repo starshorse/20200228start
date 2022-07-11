@@ -8,9 +8,15 @@ github
 
 # Pro Git 2/E
 
+## Basic 
 ```
-git status -S 
+$git config --global init.defaultBranch  main 
+$git status -S 
 ```
+### add / Commit /push 
+```
+$git rm --cached <<file>> // unstage 한다. 
+
 ## log History 
 ```
 // Line  응축된 Project History 보기
