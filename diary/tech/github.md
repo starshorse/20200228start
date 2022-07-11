@@ -16,7 +16,7 @@ $git status -S
 ### add / Commit /push 
 ```
 $git rm --cached <<file>> // unstage 한다. 
-
+```
 ## log History 
 ```
 // Line  응축된 Project History 보기
@@ -77,6 +77,9 @@ git checkout -b version2 v2.0.0
 * branch workflow - 각브랜치를 하나나의 실험실로 생각하라. 
 * Logn Running Branch..
 * Topic branch
+```
+ $git branch -m to-delete to-erase  // move branch
+```
 ### rebase 
 ```
  $git checkout master 
@@ -155,7 +158,9 @@ revert 를 하는 방법과 스포일러 댓글의 커밋을 되돌리는 것은
 
 
 ### git revert <되돌릴 커밋> 
+#### revert를 사용해서 되돌아 가기...
 ```
-git revert 2664ce8
-git revert 2664ce8..15413dc
+$git revert 2664ce8
+$git revert 2664ce8..15413dc
+$git revert --no-commit  << commit id >>
 ```
