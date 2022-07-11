@@ -15,6 +15,9 @@ git status -S
 ```
 // Line  응축된 Project History 보기
 $git log --oneline 
+$git log --pretty=oneLine
+$git log fa04c30 -max-depth=1
+$git show fa04c30 
 ```
 
 ### .gitignore 
@@ -65,7 +68,7 @@ git tag
 ```
 #### Tag later
 ```
-git log --pretty=oneLine
+
 git tag -a v1.2 9fceb02
 ```
 #### update to remote repository , Git push not include tag update on repository 
