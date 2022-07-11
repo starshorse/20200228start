@@ -11,6 +11,12 @@ github
 ```
 git status -S 
 ```
+### log History 
+```
+// Line  응축된 Project History 보기
+$git log --oneline 
+```
+
 ### .gitignore 
 * *.a
 * !lib.a - 해당 파일만 무시하지 않기 
