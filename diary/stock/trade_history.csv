@@ -1,13 +1,18 @@
 no, trade, company, date ,comment, mount
-1,buy,KT,2022-06-30,3days foreign buy, 20
-2,buy,한라IMS,2022-06-30,3days up, 30
-3,buy,대동전자,2022-06-30,3days up, 30
+1,buy,KT,2022-06-30,3days foreign buy,20
+2,buy,한라IMS,2022-06-30,3days up,30
+3,buy,대동전자,2022-06-30,3days up,30
 4,buy,삼화페인트,2022-06-30,3days up,30
 5,buy,모토닉,2022-06-30,3days up,30
-6,buy,S-Oil,2022-07-06,3days up, 20
-7,buy,쌍용C&E,2022-07-06,3days up, 20
-8,buy,신진에스엠,2022-07-06,3days up, 30
-9,sell,원유선물,2022-07-06, price down, 60
-10,buy,S-Oil,2022-07-07,3days up, 20
-11,buy,신진에스엠,2022-07-07,3days up, 30
+6,sell,원유선물,2022-06-30,week,60
+7,buy,S-Oil,2022-07-06,3days up, 20
+8,buy,쌍용C&E,2022-07-06,3days up, 20
+9,buy,신진에스엠,2022-07-06,3days up, 30
+10,sell,원유선물,2022-07-06, price down, 60
+11,buy,S-Oil,2022-07-07,3days up, 20
+12,buy,신진에스엠,2022-07-07,3days up, 30
+13,buy,KT,2022-07-14,3days foreign buy,20
+14,buy,S-Oil,2022-07-14,3days foreign buy,20
+15,sell,원유선물,2022-07-14,week,60
+16,buy,원림,2022-07-14,3days up,30
 
