@@ -14,3 +14,6 @@ class TestEbest(unittest.TestCase):
         result = self.ebest.get_current_call_price_by_code("005930")
         assert result
         print(result)
+
+    def tearDown(self):
+        self.ebest.logout()     
