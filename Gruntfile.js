@@ -4,6 +4,7 @@ module.exports = function(grunt){
 	var localConfig; 
 	localConfig = {}
 	require('time-grunt')(grunt);
+        grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-mocha-test'); 
 	grunt.loadNpmTasks('grunt-concurrent'); 
 //	grunt.loadNpmTasks(['grunt-nodemon','grunt-node-inspector']) 
@@ -12,6 +13,13 @@ module.exports = function(grunt){
 	grunt.initConfig({
 		// Project settings 
 		pkg: grunt.file.readJSON('package.json'), 
+		connect : {
+		    dev:{}
+		   ,local:{
+	//              options : {port : 8001 ,base : 'dist'}
+		      options : { port : 7000 , base : './angularJS-ui'}
+		   }
+		},
 		watch: {
 			injectJs:{
 				files: [
@@ -56,6 +64,7 @@ module.exports = function(grunt){
 			}
 		}
 	})
+        grunt.registerTask('conn', ['connect:local:keepalive'])
 	grunt.registerTask('test',function( target ){
 		if( target === 'server' ){
 			return grunt.task.run([
