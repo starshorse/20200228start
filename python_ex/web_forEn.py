@@ -2,9 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from os import listdir 
 from openpyxl import load_workbook , Workbook 
+from time import sleep 
 
 driver = webdriver.Chrome('./chromedriver')
 driver.get('https://finance.daum.net/domestic/influential_investors')
+sleep(3) 
+
 items = driver.find_element('class name','box_contents')
 #print( items.text )
 def list_chuck(arr, n):
