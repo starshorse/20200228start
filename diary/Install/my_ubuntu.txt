@@ -1,0 +1,925 @@
+    1  sudo apt-get install git
+    2  sudo apt-get install vim
+    3  vim
+    4  exit
+    5  exit
+    6  tmux ls
+    7  vim
+    8  vim
+    9  ls
+   10  mkdir workdir
+   11  ls
+   12  cd workdir/
+   13  ls
+   14  vim
+   15  tmux ls
+   16  ls
+   17  vim ~/.vimrc
+   18  vim +PluginInstall
+   19  vim
+   20  vim ~/.vimrc
+   21  vim
+   22  ls
+   23  sudo apt-get install tmux
+   24  tmux
+   25  ls
+   26  sudo shutdown now
+   27  vim
+   28  vim
+   29  cd workdir/
+   30  dir
+   31  ls
+   32  vim
+   33  vim ~/.vimrc
+   34  vim +PluginInstall 
+   35  ls
+   36  vim ~/.vimrc
+   37  vim
+   38  vim ~/.vimrc
+   39  vim +PluginInstall 
+   40  dir
+   41  tmux
+   42  ls
+   43  vim
+   44  ls
+   45  vim index.html 
+   46  id
+   47  ls
+   48  ddir
+   49  dir
+   50  ls
+   51  git clone https://github.com/starshorse/ezoffice.git
+   52  ls
+   53  cd ezoffice/
+   54  ls
+   55  cd Bld_framework/
+   56  ls
+   57  cd ..
+   58  cd Gen_framework/
+   59  ls
+   60  cd sys02_linux/
+   61  vim
+   62  dir
+   63  cd ..
+   64  ls
+   65  cd Bld_framework/
+   66  ls
+   67  cd ..
+   68  ls
+   69  cd Gen_framework/
+   70  ls
+   71  cd sys02_linux/
+   72  ls
+   73  mkdir environment
+   74  ls
+   75  cd environment/
+   76  vim make_e_vimrc.c
+   77  vim build_exe.sh
+   78  ls
+   79  cd ..
+   80  vim build_exe.sh
+   81  ls
+   82  ./build_exe.sh 
+   83  sudo apt-get install essential-tools
+   84  sudo apt-get install essential-builds
+   85  sudo apt-get install build-essentials
+   86  sudo apt-get install build-essential
+   87  ./build_exe.sh 
+   88  cd environment/
+   89  ls
+   90  cd ..
+   91  ls
+   92  vim build_exe.sh
+   93  ls
+   94  ./build_exe.sh 
+   95  cd environment/
+   96  ls
+   97  vim make_e_vimrc.c 
+   98  ls
+   99  cd ..
+  100  ./build_exe.sh 
+  101  ls
+  102  cd bin_linux/
+  103  ls
+  104  ./make_e_vimrcexe 
+  105  ls
+  106  vim .vimrc
+  107  cd ..
+  108  ls
+  109  git init
+  110  git add .
+  111  git commit -m '2nd'
+  112  git config --global user.email "starshorse@naver.com"
+  113  git config --global user.name "starshorse"
+  114  git commit -m '2nd'
+  115  git branch -M main
+  116  git push -u origin main
+  117  syntax on
+  118  set number
+  119  set relativenumber
+  120  set hlsearch
+  121  set ignorecase
+  122  set tabstop=4
+  123  set softtabstop=4
+  124  set shiftwidth=4
+  125  set expandtab
+  126  autocmd FileType make setlocal noexpandtab
+  127  " Key Settings
+  128  nnoremap <F2> :set invpaste paste?<CR>
+  129  set pastetoggle=<F2>
+  130  let mapleader = ","
+  131  nnoremap <leader>q :bp<CR>
+  132  nnoremap <leader>w :bn<CR>
+  133  " Key Setting - resize windows
+  134  nnoremap <silent> <Leader>= :exe "resize +3"<CR>
+  135  nnoremap <silent> <Leader>- :exe "resize -3"<CR>
+  136  nnoremap <silent> <Leader>] :exe "vertical resize +8"<CR>
+  137  nnoremap <silent> <Leader>[ :exe "vertical resize -8"<CR>
+  138  nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+  139  nnoremap <silent> <Leader>_ :exe "resize " . (winheight(0) * 2/3)<CR>
+  140  nnoremap <silent> <Leader>} :exe "vertical resize " . (winheight(0) * 3/2)<CR>
+  141  nnoremap <silent> <Leader>{ :exe "vertical resize " . (winheight(0) * 2/3)<CR>
+  142  " Vundle
+  143  set nocompatible              " be iMproved, required
+  144  filetype off                  " required
+  145  " set the runtime path to include Vundle and initialize
+  146  set rtp+=~/.vim/bundle/Vundle.vim
+  147  call vundle#begin()
+  148  " alternatively, pass a path where Vundle should install plugins
+  149  "call vundle#begin('~/some/path/here')
+  150  " let Vundle manage Vundle, required
+  151  Plugin 'VundleVim/Vundle.vim'
+  152  " Keep Plugin commands between vundle#begin/end.
+  153  Plugin 'vim-airline/vim-airline'
+  154  Plugin 'vim-airline/vim-airline-themes'
+  155  Plugin 'The-NERD-Tree'
+  156  Plugin 'terryma/vim-multiple-cursors'
+  157  Plugin 'terryma/vim-smooth-scroll'
+  158  Plugin 'Raimondi/delimitMate'
+  159  Plugin 'SirVer/ultisnips'
+  160  Plugin 'honza/vim-snippets'
+  161  Plugin 'Syntastic'
+  162  Plugin 'Shougo/deoplete.nvim'
+  163  Plugin 'Rip-Rip/clang_complete'
+  164  Plugin 'scrooloose/nerdcommenter'
+  165  " All of your Plugins must be added before the following line
+  166  call vundle#end()            " required
+  167  filetype plugin indent on    " required
+  168  " To ignore plugin indent changes, instead use:
+  169  "filetype plugin on
+  170  "
+  171  " Brief help
+  172  " :PluginList       - lists configured plugins
+  173  "
+  174  " see :h vundle for more details or wiki for FAQ
+  175  " Put your non-Plugin stuff after this line
+  176  " for vim-airline
+  177  let g:airline#extensions#tabline#enabled = 1 " turn on buffer list
+  178  let g:airline_theme='hybrid'
+  179  set laststatus=2 " turn on bottom bar
+  180  " The-NERD-Tree
+  181  autocmd BufEnter * lcd %:p:h
+  182  nmap <leader>ne :NERDTreeToggle<cr>
+  183  let NERDTreeShowLineNumbers=1
+  184  let g:NERDTreeWinPos = "right"
+  185  " vim-multiple-cursor
+  186  let g:multi_cursor_use_default_mapping=0
+  187  " Default mapping
+  188  let g:multi_cursor_next_key='<C-n>'
+  189  let g:multi_cursor_prev_key='<C-p>'
+  190  let g:multi_cursor_skip_key='<C-x>'
+  191  let g:multi_cursor_quit_key='<Esc>'
+  192  " vim-smooth-scroll
+  193  noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 5)<CR>
+  194  noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 5)<CR>
+  195  noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 3)<CR>
+  196  noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 3)<CR>
+  197  " delimitMate
+  198  let delimitMate_expand_cr=1
+  199  " UltiSnips
+  200  let g:UltiSnipsExpandTrigger="<tab>"
+  201  let g:UltiSnipsJumpForwardTrigger="<tab>"
+  202  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+  203  let g:UltiSnipsEditSplit="vertical"
+  204  " Syntastic
+  205  set statusline+=%#warningmsg#
+  206  set statusline+=%{SyntasticStatuslineFlag()}
+  207  set statusline+=%*
+  208  let g:syntastic_always_populate_loc_list = 1
+  209  let g:syntastic_auto_loc_list = 1
+  210  let g:syntastic_check_on_open = 1
+  211  let g:syntastic_check_on_wq = 0
+  212  let g:syntastic_cpp_compiler = 'g++'
+  213  let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
+  214  let g:syntastic_c_compiler_options = "-std=c11 -Wall -Wextra -Wpedantic"
+  215  " Deoplete.
+  216  let g:deoplete#enable_at_startup = 1
+  217  " clang_complete
+  218  set completeopt-=preview
+  219  " NERD Commenter
+  220  " Add spaces after comment delimiters by default
+  221  let g:NERDSpaceDelims = 1
+  222  " Use compact syntax for prettified multi-line comments
+  223  let g:NERDCompactSexyComs = 1
+  224  " Align line-wise comment delimiters flush left instead of following code indentation
+  225  let g:NERDDefaultAlign = 'left'
+  226  " Set a language to use its alternate delimiters by default
+  227  let g:NERDAltDelims_java = 1
+  228  " Add your own custom formats or override the defaults
+  229  let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+  230  " Allow commenting and inverting empty lines (useful when commenting a region)
+  231  let g:NERDCommentEmptyLines = 1
+  232  " Enable trimming of trailing whitespace when uncommenting
+  233  let g:NERDTrimTrailingWhitespace = 1
+  234  " customize keymapping
+  235  map <Leader>cc <plug>NERDComToggleComment
+  236  map <Leader>c<space> <plug>NERDComComment
+  237  git push -u origin main
+  238  vim
+  239  sudo shutdown now
+  240  ls
+  241  cd workdir
+  242  ls
+  243  cd ezoffice/
+  244  ls
+  245  cd ..
+  246  ls
+  247  sudo mkdir -p /mnt/nas
+  248  sudo apt-get install cifs-utils
+  249  sudo mount -t cifs -o username=richard, password=ch1whdrb //192.168.30.81
+  250  sudo mount -t cifs -o username=richard, password=ch1whdrb //192.168.30.81 /mnt/nas
+  251  sudo mount -t cifs -o username=richard, password=ch1whdrb vers=3.0 //192.168.30.81 /mnt/nas
+  252  sudo apt-get install cifs-utils
+  253  sudo apt-get update
+  254  sudo apt-get install cifs-utils
+  255  sudo mount -t cifs -o username=richard, password=ch1whdrb vers=3.0 //192.168.30.81 /mnt/nas
+  256  sudo mount -t cifs -o username=richard, password=ch1whdrb, vers=3.0 //192.168.30.81 /mnt/nas
+  257  sudo mount -t cifs -o username=richard password=ch1whdrb vers=3.0 //192.168.30.81 /mnt/nas
+  258  sudo mount -t cifs
+  259  sudo mount -t cifs -o username=richard password=ch1whdrb
+  260  sudo mount -t cifs -o username=richard password=ch1whdrb  //192.168.30.81/
+  261  sudo mount -t cifs -o username=richard, password=ch1whdrb  //192.168.30.81/
+  262  sudo mount -t cifs -o username=richard, password=ch1whdrb  //192.168.30.81
+  263  sudo mount -t cifs //192.168.30.81 /mnt/nas
+  264  sudo mount -t cifs //192.168.30.81 /mnt/nas -o username=richard
+  265  sudo mount -t cifs //192.168.30.81 /mnt/nas -o user=richard,pass=ch1whdrb,rw
+  266  sudo mount -t cifs //192.168.30.81 /mnt/nas rw 
+  267  sudo mount -t cifs //192.168.30.81/~richard /mnt/nas -o user=richard,pass=ch1whdrb,rw
+  268  sudo mount -t cifs //192.168.30.81 /mnt/nas -o user=[richard,pass=ch1whdrb,rw
+  269  sudo mount -t cifs //192.168.30.81 /mnt/nas -o user=[richard],pass=[ch1whdrb],rw
+  270  sudo mount -t cifs //192.168.30.81/~richard /mnt/nas -o user=richard,pass=ch1whdrb,rw,vers=1.0
+  271  sudo mount -t cifs //192.168.30.81/ /mnt/nas -o user=richard,pass=ch1whdrb,rw,vers=1.0
+  272  sudo mount -t cifs //192.168.30.81 /mnt/nas -o user=richard,pass=ch1whdrb,rw,vers=1.0
+  273  sudo mount -t cifs //192.168.30.81/product /mnt/nas -o user=richard,pass=ch1whdrb,rw,vers=1.0
+  274  sudo mount -t cifs //192.168.30.81/web /mnt/nas -o user=richard,pass=ch1whdrb,rw,vers=1.0
+  275  cd /mnt/nas
+  276  ls
+  277  cd homes
+  278  ls
+  279  vim ajax_t.html 
+  280  vim ~/.vimrc
+  281  cd ..
+  282  cd ~
+  283  ls
+  284  cd workdir/
+  285  ls
+  286  cd ezoffice/
+  287  ls
+  288  cd Bld_framework/
+  289  ls
+  290  cd ..
+  291  ls
+  292  git pull
+  293  ls
+  294  cd Bld_framework/
+  295  ls
+  296  vim make_setenv.sh 
+  297  ls
+  298  ./make_setenv.sh 
+  299  nvm
+  300  vim make_setenv.sh 
+  301  curl
+  302  vim make_setenv.sh 
+  303  ./make_setenv.sh 
+  304  nvm
+  305  ls
+  306  vim make_setenv.sh 
+  307  ./make_setenv.sh 
+  308  vim make_setenv.sh 
+  309  #!/bin/bash -i  
+  310  input=$1
+  311  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+  312  PATH_C=$(pwd) 
+  313  echo "export PATH=\"$PATH_C/bin:\$PATH\"" >> ~/.bashrc
+  314  source ~/.bashrc
+  315  . ~/.bashrc
+  316  vim ~/.bashrc
+  317  if [ $input = "1" ]; then     make_e_vimrcexe; else     make_e_vimrc2exe; fi 
+  318  mv .vimrc ~/ 
+  319  vim +PluginInstall +qall 
+  320  sudo apt-get install -y tmux 
+  321  sudo apt-get install -y curl
+  322  sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+  323  nvm install 12.22.1
+  324  nvm use 12.22.1 
+  325  #!/bin/bash -i  
+  326  input=$1
+  327  suod apt-get insall -y git 
+  328  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+  329  PATH_C=$(pwd) 
+  330  echo "export PATH=\"$PATH_C/bin:\$PATH\"" >> ~/.bashrc
+  331  source ~/.bashrc
+  332  . ~/.bashrc
+  333  if [ $input = "1" ]; then     make_e_vimrcexe; else     make_e_vimrc2exe; fi 
+  334  mv .vimrc ~/ 
+  335  vim +PluginInstall +qall 
+  336  sudo apt-get install -y tmux 
+  337  sudo apt-get install -y curl
+  338  sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+  339  source ~/.bashrc
+  340  . ~/.bashrc
+  341  nvm install 12.22.1
+  342  nvm use 12.22.1 
+  343  #!/bin/bash -i  
+  344  input=$1
+  345  sudo apt-get insall -y git 
+  346  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+  347  PATH_C=$(pwd) 
+  348  echo "export PATH=\"$PATH_C/bin:\$PATH\"" >> ~/.bashrc
+  349  source ~/.bashrc
+  350  . ~/.bashrc
+  351  if [ $input = "1" ]; then     make_e_vimrcexe; else     make_e_vimrc2exe; fi 
+  352  mv .vimrc ~/ 
+  353  vim +PluginInstall +qall 
+  354  sudo apt-get install -y tmux 
+  355  sudo apt-get install -y curl
+  356  sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+  357  source ~/.bashrc
+  358  . ~/.bashrc
+  359  nvm install 12.22.1
+  360  nvm use 12.22.1 
+  361  cd workdir/
+  362  cd gi
+  363  ls
+  364  cd ezoffice/
+  365  ls
+  366  cd Bld_framework/
+  367  ls
+  368  vim make_setenv.sh 
+  369  ./make_setenv.sh 
+  370  nvm
+  371  ls
+  372  vim make_setenv.sh 
+  373  ./make_setenv.sh 
+  374  vim make_setenv.sh 
+  375  ./make_setenv.sh 
+  376  ls
+  377  cd ..
+  378  ls
+  379  git add .
+  380  git commit -m '220118'
+  381  git push -u origin master
+  382  git push -u origin main
+  383  ls
+  384  cd B
+  385  cd Bld_framework/
+  386  ls
+  387  vim make_setenv.sh 
+  388  sudo shutdown now
+  389  ifconfig
+  390  sudo service ssh start
+  391  ifconfig
+  392  ping -n 10 169.254.173.140
+  393  ifconfig
+  394  cd workdir/
+  395  cd workspace/
+  396  cd gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabi/
+  397  ls
+  398  cd bin
+  399  ls
+  400  cd ..
+  401  l
+  402  ls
+  403  cd gcc-arm-9.2-2019.12-x86_64-aarch64-none-elf/
+  404  ls
+  405  cd bin
+  406  ls
+  407  cd workdir/
+  408  cd workspace/
+  409  l
+  410  ls
+  411  cd edk2-platforms/
+  412  git submodule update --init
+  413  ls
+  414  cd ..
+  415  ls
+  416  cd edk2
+  417  ls
+  418  cd .
+  419  cd ..
+  420  git clone https://github.com/tianocore/edk2-platforms.git
+  421  ls
+  422  rm -rf edk2-platforms/
+  423  ls
+  424  git clone https://github.com/tianocore/edk2-platforms.git
+  425  cd edk2-platforms/
+  426  ls
+  427  git submodule update --init
+  428  ls
+  429  cd ..
+  430  ls
+  431  git clone https://github.com/tianocore/edk2-non-osi.git
+  432  ls
+  433  export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms
+  434  export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms:$PWD/edk2-non-osi
+  435  cd edk2
+  436  ls
+  437  . edk2/edksetup.sh
+  438  cd .
+  439  cd ..
+  440  . edk2/edksetup.sh
+  441  make -C edk2/BaseTools
+  442  cd edk2
+  443  git submodule update --init
+  444  git submodule update
+  445  cd ..
+  446  ls
+  447  rm -rf edk2
+  448  l
+  449  ls
+  450  git clone https://github.com/tianocore/edk2.git
+  451  cd edk2
+  452  git submodule update
+  453  ls
+  454  git submodule update
+  455  cd ..
+  456  make -C edk2/BaseTools
+  457  cd edk2
+  458  git submodule update
+  459  ls
+  460  cd BaseTools/
+  461  ls
+  462  cd ..
+  463  git pull
+  464  git submodule update
+  465  cd ..
+  466  make -C edk2/BaseTools
+  467  . edk2/edksetup.sh
+  468  make -C edk2/BaseTools
+  469  cd edk2
+  470  ls
+  471  cd BaseTools/
+  472  cd Source/
+  473  ls
+  474  cd C
+  475  ls
+  476  cd ..
+  477  sudo apt-get update
+  478  sudo apt-get install gcc g++ make uuid-dev
+  479  make -C edk2/BaseTools
+  480  ls
+  481  cd edk2
+  482  ls
+  483  cd BaseTools/
+  484  ls
+  485  cd ..
+  486  ls
+  487  git submodule --init
+  488  git submodule update --init
+  489  cd ..
+  490  make -C edk2/BaseTools
+  491  getconf _NPROCESSORS_ONLN
+  492  NUM_CPUS=$((`getconf _NPROCESSORS_ONLN` +2 ))
+  493  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc
+  494  sudo apt-get install essential-tools
+  495  sudo apt-get install build-essential
+  496  build
+  497  cd edk2
+  498  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc
+  499  cd ..
+  500  export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms:$PWD/edk2-non-osi
+  501  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc
+  502  ls
+  503  cd edk2
+  504  ls
+  505  vim Conf/target.txt
+  506  ls
+  507  cd Conf/
+  508  ls
+  509  vim ReadMe.txt 
+  510  cd ..
+  511  BaseTools/
+  512  ls
+  513  cd BaseTools/
+  514  ls
+  515  cd ..
+  516  . edksetup.sh
+  517  cd ..
+  518  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc
+  519  cd edk2
+  520  ls
+  521  cd Conf/
+  522  ls
+  523  vim target.txt
+  524  cd ..
+  525  cd .
+  526  ls
+  527  cd ..
+  528  ls
+  529  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc
+  530  gcc --version
+  531  sudo apt install g++-5
+  532  sudo apt install gcc-5
+  533  sudo update-alternatives --install /user/bin/gcc gcc /usr/bin/gcc-5 10
+  534  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 10
+  535  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 20
+  536  sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 10
+  537  sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 20
+  538  sudo update-alternatives --install /usr/bin/cc  /usr/bin/gcc 30
+  539  sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30
+  540  sudo update-alternatives --set cc /usr/bin/gcc
+  541  sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30
+  542  sudo update-alternatives --set c++ /usr/bin/g++
+  543  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc
+  544  gcc --version
+  545  ls
+  546  cd gcc-linaro-5.5
+  547  cd gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabi/
+  548  ls
+  549  cd bin
+  550  ls
+  551  cd ..
+  552  ls
+  553  cd ..
+  554  ls
+  555  sudo vim ~/.bashrc
+  556  source ~/.bashrc
+  557  arm-linux-gnueabi-gcc -v
+  558  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc
+  559  sudo update-alternative --config gcc
+  560  sudo update-alternatives --config gcc
+  561  sudo update-alternatives --config 
+  562  sudo update-alternatives --config gcc
+  563  cd /usr/bin/
+  564  ls
+  565  ls | more
+  566  cd gcc-5
+  567  gcc-5
+  568  cd~
+  569  cd ~
+  570  ls
+  571  cd workdir/
+  572  dir
+  573  cd workspace/
+  574  ls
+  575  cd edk2
+  576  ls
+  577  cd ..
+  578  cd edk2-platforms/
+  579  ls
+  580  cd ..
+  581  cd edk2
+  582  ls
+  583  cd Conf/
+  584  ls
+  585  vim target.txt
+  586  vim tools_def.txt 
+  587  cd ..
+  588  ls
+  589  sudo update-alternatives --install /usr/bin/gcc gcc /home/rrr/workdir/workspace/gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-gcc 40
+  590  sudo update-alternatives --config
+  591  sudo update-alternatives --config gcc
+  592  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc
+  593  gcc
+  594  gcc --version
+  595  gcc5
+  596  gcc-5
+  597  gcc-5 --version
+  598  cd edk2
+  599  ls
+  600  cd Conf
+  601  ls
+  602  vim tools_def.txt 
+  603  cd ..
+  604  ls
+  605  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc
+  606  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc GCC5_AARCH64_PREFIX=aarch64-linux-gnu-
+  607  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc GCC5_AARCH64_PREFIX=aarch64-linux-gnu-gcc
+  608  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc GCC5_AARCH64_PREFIX=arm-linux-gnueabi-
+  609  ls
+  610  sudo vim ~/.bashrc
+  611  source ~/.bashrc
+  612  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc 
+  613  arm-linux-gnueabi-gcc
+  614  sudo vim ~/.bashrc
+  615  source ~/.bashrc
+  616  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc 
+  617  sudo vim ~/.bashrc
+  618  source ~/.bashrc
+  619  build -n $NUM_CPUS -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc 
+  620  ls
+  621  git clone https://github.com/tianocore/edk2.git
+  622  git clone https://github.com/acpica/acpica.git
+  623  make -C ./acpica
+  624  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  625  source edk2/edksetup.sh
+  626  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  627  sudo vim ~/.bashrc
+  628  source ~/.bashrc
+  629  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  630  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b RELEASE
+  631  cd acpica/
+  632  cd generate/
+  633  cd unix/
+  634  cd bin
+  635  ls
+  636  cd acpibin
+  637  l
+  638  ls
+  639  cd ..
+  640  cd acpica/
+  641  make -C .
+  642  cd ..
+  643  ls
+  644  sudo apt install bison
+  645  make -C ./acpica
+  646  sudo apt install flex
+  647  make -C ./acpica
+  648  cd acpica/
+  649  s
+  650  ls
+  651  cd generate/
+  652  ls
+  653  cd linux
+  654  ls
+  655  cd ..
+  656  cd unix
+  657  ls
+  658  cd iasl
+  659  ls
+  660  cd obj
+  661  ls
+  662  cd ..
+  663  make -C
+  664  make -C .
+  665  cd obj
+  666  ls
+  667  vim aslcompiler.y 
+  668  cd ..
+  669  ls
+  670  cd .
+  671  cd ..
+  672  cd .
+  673  cd ..
+  674  cd .
+  675  cd ..
+  676  ls
+  677  make clean
+  678  make -C .
+  679  cd ..
+  680  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b RELEASE
+  681  cd acpica/
+  682  ls
+  683  cd generate/
+  684  ls
+  685  cd unix/
+  686  ls
+  687  cd iasl/
+  688  ls
+  689  cd ..
+  690  ls
+  691  cd bin
+  692  ls
+  693  ./iasl
+  694  gcc --version
+  695  gcc-5 --version
+  696  update-alternatives --config
+  697  update-alternatives --config gcc
+  698  sudo update-alternatives --config gcc
+  699  cd ..
+  700  make clean
+  701  make -C .
+  702  sudo update-alternatives --config gcc
+  703  cd ..
+  704  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b RELEASE
+  705  sudo vim ~/.bashrc
+  706  source ~/.bashrc
+  707  sudo vim ~/.bashrc
+  708  source ~/.bashrc
+  709  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b RELEASE
+  710  cd edk2-platforms/
+  711  ls
+  712  cd Platform/
+  713  l
+  714  ls
+  715  cd ARM
+  716  ls
+  717  cd ..
+  718  ls
+  719  cd Ampere/
+  720  ls
+  721  cd JadePkg/
+  722  ls
+  723  cd ..
+  724  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE
+  725  cd edk2-platforms/
+  726  ls
+  727  build -a AARCH64 -t GCC5 -b RELEASE -D SECURE_BOOT_ENABLE -p Platform/Ampere/JadePkg/Jade.dsc
+  728  cd ..
+  729  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE
+  730  build clean
+  731  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE
+  732  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE -D SECURE_BOOT_ENABLE
+  733  build Clean
+  734  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE -D SECURE_BOOT_ENABLE clean
+  735  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE -D SECURE_BOOT_ENABLE 
+  736  cd edk2-platforms/
+  737  ls
+  738  cd Silicon/
+  739  ls
+  740  cd Ampere/
+  741  ls
+  742  cd AmpereAltraPkg/
+  743  ls
+  744  cd Drivers/
+  745  ls
+  746  cd FlashFvDxe
+  747  cd FlashFvbDxe
+  748  ls
+  749  cd ..
+  750  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE -D SECURE_BOOT_ENABLE 
+  751  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE -D SECURE_BOOT_ENABLE cleanall
+  752  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE -D SECURE_BOOT_ENABLE 
+  753  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE -D SECURE_BOOT_ENABLE -n 10
+  754  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE -D SECURE_BOOT_ENABLE -n 10 cleanall
+  755  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE -D SECURE_BOOT_ENABLE -n 10
+  756  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b DEBUG -D SECURE_BOOT_ENABLE -n 10
+  757  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b DEBUG -D SECURE_BOOT_ENABLE -n 10 clean
+  758  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b DEBUG -D SECURE_BOOT_ENABLE -n 10
+  759  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b DEBUG -D SECURE_BOOT_ENABLE -n 10 cleanall
+  760  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b DEBUG -D SECURE_BOOT_ENABLE -n 8
+  761  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b DEBUG -D SECURE_BOOT_ENABLE cleanall 
+  762  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b DEBUG -D SECURE_BOOT_ENABLE 
+  763  build -a AARCH64 -t GCC5 -p Platform/Ampere/JadePkg/Jade.dsc -b RELEASE -D SECURE_BOOT_ENABLE 
+  764  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b RELEASE
+  765  sudo update-alternatives
+  766  sudo update-alternatives --config gcc
+  767  gcc --version
+  768  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b RELEASE
+  769  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b RELEASE cleanall
+  770  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b RELEASE
+  771  sudo reboot now
+  772  cd workdir/
+  773  cd workspace/
+  774  ls
+  775  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  776  source edk2/edksetup.sh
+  777  ./edk2/edksetup.sh
+  778  cd edk2
+  779  ls
+  780  ./edksetup.sh
+  781  cd .
+  782  cd ..
+  783  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  784  gcc --version
+  785  source ~/.bashrc
+  786  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  787  cd edk2-platforms/
+  788  ls
+  789  build
+  790  cd ..
+  791  build
+  792  sudo vim ~/.bashrc
+  793  gcc
+  794  sudo vim ~/.bashrc
+  795  . edk2/edksetup.sh
+  796  echo path
+  797  cd edk2
+  798  ls
+  799  cd BaseTools/
+  800  ls
+  801  cd bin
+  802  ls
+  803  cd Bin
+  804  ls
+  805  build
+  806  cd ..
+  807  . edk2/edksetup.sh
+  808  cd edk2
+  809  . edksetup.sh
+  810  build
+  811  cd ..
+  812  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  813  cd edk2-platforms/
+  814  ls
+  815  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  816  ls
+  817  cd ..
+  818  ls
+  819  sudo vim ~/.bashrc
+  820  source ~/.bashrc
+  821  . edks/edksetup.sh
+  822  . edk2/edksetup.sh
+  823  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  824  sudo vim ~/.bashrc
+  825  source ~/.bashrc
+  826  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  827  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG clean
+  828  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG 
+  829  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b RELEASE
+  830  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  831  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG clean
+  832  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG 
+  833  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG clean
+  834  build -a AARCH64 -t GCC5 -p Platform/ARM/JunoPkg/ArmJuno.dsc -b DEBUG
+  835  $Path
+  836  echo $PATH
+  837  sudo shutdown now
+  838  ls
+  839  vim
+  840  ls
+  841  vim
+  842  cd workdir/
+  843  ls
+  844  vim
+  845  mkdir leeTeam
+  846  cd leeTeam/
+  847  ls
+  848  mkdir study
+  849  cd study/
+  850  ls
+  851  git init
+  852  ls
+  853  npm init
+  854  ls
+  855  vim package.json 
+  856  nano 
+  857  ls
+  858  cd workdir/
+  859  dir
+  860  ls
+  861  cd workspace/
+  862  dir
+  863  ls
+  864  cd ..
+  865  ls
+  866  mkdir gitdn
+  867  cd gitdn/
+  868  ls
+  869  mkdir web_list
+  870  cd web_list/
+  871  sl
+  872  ls
+  873  git clone https://github.com/starshorse/ezworks
+  874  ls
+  875  cd ezworks/
+  876  ls
+  877  npm i
+  878  vim
+  879  ls
+  880  chrome
+  881  sudo apt install chromium-browser
+  882  ls
+  883  chrome
+  884  sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove
+  885  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  886  sudo apt -y install ./google-chrome-stable_current_amd64.deb
+  887  google-chrome --version
+  888  npm test
+  889  ifconfig
+  890  npm test
+  891  ls
+  892  vim
+  893  sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
+  894  sudo apt install xrdp
+  895  sudo systemctl status xrdp
+  896  sudo adduser xrdp ssl-cert
+  897  sudo systemctl restart xrdp
+  898  sudo ufw allow from 192.168.1.0/24 to any port 3389
+  899  sudo ufw allow 3389
+  900  cd ..
+  901  wget http://www.c-nergy.be/downloads/Std-Xrdp-Install-0.5.3.zip # download script
+  902  unzip Std-Xrdp-Install-0.5.3.zip # Unzip the compressed package
+  903  chmod +x Std-Xrdp-Install-0.5.3.sh # Grant execution permissions
+  904  ./Std-Xrdp-Install-0.5.3.sh # Just after the execution is complete
+  905  sudo add-apt-repository ppa:martinx/xrdp-next
+  906  sudo apt install -y ubuntu-mate-desktop
+  907  sudo reboot now
+  908  ls
+  909  cd workdir/
+  910  dir
+  911  ;d
+  912  ld
+  913  ifconfig
+  914  cd workspace/
+  915  cd ..
+  916  cd gitdn/
+  917  cd web_list/
+  918  cd ezworks/
+  919  ls
+  920  npm test
+  921  chrome
+  922  npm test
+  923  dpkg -l
+  924  history
+  925  history > my_ubuntu.txt
