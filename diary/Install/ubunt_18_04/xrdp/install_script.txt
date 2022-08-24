@@ -1,0 +1,16 @@
+893  sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
+  894  sudo apt install xrdp
+  895  sudo systemctl status xrdp
+  896  sudo adduser xrdp ssl-cert
+  897  sudo systemctl restart xrdp
+  898  sudo ufw allow from 192.168.1.0/24 to any port 3389
+  899  sudo ufw allow 3389
+  900  cd ..
+  901  wget http://www.c-nergy.be/downloads/Std-Xrdp-Install-0.5.3.zip # download script
+  902  unzip Std-Xrdp-Install-0.5.3.zip # Unzip the compressed package
+  903  chmod +x Std-Xrdp-Install-0.5.3.sh # Grant execution permissions
+  904  ./Std-Xrdp-Install-0.5.3.sh # Just after the execution is complete
+  905  sudo add-apt-repository ppa:martinx/xrdp-next
+  906  sudo apt install -y ubuntu-mate-desktop
+* sudo apt install xorgxrdp-hwe-18.04
+  907  sudo reboot now

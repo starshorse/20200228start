@@ -904,6 +904,7 @@
   904  ./Std-Xrdp-Install-0.5.3.sh # Just after the execution is complete
   905  sudo add-apt-repository ppa:martinx/xrdp-next
   906  sudo apt install -y ubuntu-mate-desktop
+* sudo apt install xorgxrdp-hwe-18.04
   907  sudo reboot now
   908  ls
   909  cd workdir/
