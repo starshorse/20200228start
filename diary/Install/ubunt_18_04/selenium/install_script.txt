@@ -1,6 +1,6 @@
 google-chrome --version 
 # 버전에 맟추어 chromedriver 다운로드 
-apt-get install unzip -y
+sudo apt-get install unzip -y
 # Unzip 다운로드
 unzip chromedriver_linux64.zip
 # 압축 해제

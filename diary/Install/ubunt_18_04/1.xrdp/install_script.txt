@@ -1,5 +1,5 @@
-sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
-sudo apt install xrdp
+sudo apt install -y xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
+sudo apt install -y xrdp
 sudo systemctl status xrdp
 sudo adduser xrdp ssl-cert
 sudo systemctl restart xrdp
@@ -11,5 +11,5 @@ chmod +x Std-Xrdp-Install-0.5.3.sh # Grant execution permissions
 ./Std-Xrdp-Install-0.5.3.sh # Just after the execution is complete
 sudo add-apt-repository ppa:martinx/xrdp-next
 sudo apt install -y ubuntu-mate-desktop
-* sudo apt install xorgxrdp-hwe-18.04
+sudo apt install xorgxrdp-hwe-18.04
 sudo reboot now

@@ -1,0 +1,3 @@
+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
+git remote set-url origin https://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@https://github.com/starshorse/ezworks.git
+git remote set-url origin https://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@https://github.com/starshorse/ezoffice.git

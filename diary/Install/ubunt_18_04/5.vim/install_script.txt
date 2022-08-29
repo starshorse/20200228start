@@ -1,0 +1,2 @@
+마지막 
+touch ~/.bashrc 
