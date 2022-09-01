@@ -1,4 +1,0 @@
-#리눅스 명령행에서 메일 보내기(send mail from linux command line)
-
-echo -e "Subject: Terminal Email Send\n\nEmail Content line 1\nEmail Content line 2" > content
-sendmail user@example.com < content
