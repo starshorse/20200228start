@@ -1,2 +1,9 @@
-마지막 
-touch ~/.bashrc 
+mkdir workdir 
+cd workdir
+mkdir gitdn
+cd gitdn 
+
+git clone https://github.com/starshorse/ezoffice.git < starshorse < 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
+
+#마지막 
+source ~/.bashrc 
