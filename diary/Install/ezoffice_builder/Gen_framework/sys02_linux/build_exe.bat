@@ -1,0 +1,22 @@
+REM #!/bin/bash
+gcc -Wall -o make_cmdinput_html make_cmdinput_html.c 
+gcc -Wall -o make_db_edit_appjs make_db_edit_appjs.c 
+gcc -Wall -o make_db_edit_html make_db_edit_html.c 
+gcc -Wall -o make_db_edit_spreadjsjs make_db_edit_spreadjsjs.c
+gcc -Wall -o make_db_edit_sqlite3_appjs make_db_edit_sqlite3_appjs.c
+gcc -Wall -o make_db_edit_sqlite3_indexhtml make_db_edit_sqlite3_indexhtml.c
+gcc -Wall -o make_ezworks_appjs make_ezworks_appjs.c
+gcc -Wall -o make_ezworks_html make_ezworks_html.c
+gcc -Wall -o make_rest_api_servicejs make_rest_api_servicejs.c 
+gcc -Wall -o make_s_appjs make_s_appjs.c
+gcc -Wall -o make_s_db_edit_indexjs make_s_db_edit_indexjs.c 
+gcc -Wall -o make_s_db_edit_sqlite3_indexjs make_s_db_edit_sqlite3_indexjs.c
+gcc -Wall -o make_s_ezworks_indexjs make_s_ezworks_indexjs.c 
+gcc -Wall -o make_s_nosqlConfig_fdbJson_indexjs make_s_nosqlConfig_fdbJson_indexjs.c 
+gcc -Wall -o make_s_packageJson make_s_packageJson.c  
+gcc -Wall -o make_s_utils_sql_stmtjs make_s_utils_sql_stmtjs.c  
+gcc -Wall -o make_s_utils_queuejs make_s_utils_queuejs.c  
+gcc -Wall -o make_s_utils_indexjs make_s_utils_indexjs.c  
+gcc -Wall -o make_s_db_config_sqlite3js make_s_db_config_sqlite3js.c
+gcc -Wall -o make_s_db_config_json2sqlite3js make_s_db_config_json2sqlite3js.c 
+gcc -Wall -o make_s_db_config_json2sqlite3_specjs make_s_db_config_json2sqlite3_specjs.c

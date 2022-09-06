@@ -1,0 +1,99 @@
+<!DOCTYPE html>  
+<html ng-app='myBuynsell'>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index,follow" />
+   <link rel="styleSheet" href="/lib/spreadjs/gc.spread.sheets.11.2.5.css" />
+   <script src="/lib/spreadjs/jquery-1.8.2.min.js" type="text/javascript"></script>
+   <script src="/lib/spreadjs/gc.spread.sheets.all.11.2.5.min.js" type="text/javascript"></script>
+    <script src="/Conf/spread/ezworks_vars.00.js" type="text/javascript"></script>
+   <script src="/utils/spreadjs_lib.00.js" ></script> 
+   <script src="/utils/dataMan.js" ></script> 	
+   <script src="/utils/ezworks_ft.00.js" ></script> 	
+   <script src="/utils/ezworks_progressStep.js" ></script> 	
+
+    <script src="/SpDt/sh0/sp0_sh0.js" type="text/javascript"></script>
+	<script src="/SpDt/sh0/sp0_sh0_co_auxTaxYN.js" type="text/javascript"></script>
+    <script src="/SpDt/sh0/sp0_sh0_ft_calcStock.js" type="text/javascript"></script>
+    <script src="/SpDt/sh0/sp0_sh0_co_updateStatus.js" type="text/javascript"></script>
+    <script src="/SpDt/sh1/sp0_sh1.js" type="text/javascript"></script>
+    <script src="/SpDt/sh1/sp0_sh1_ft_calc.js" type="text/javascript"></script>
+    <script src="/SpDt/sh1/sp0_sh1_co_auxTaxYN.js" type="text/javascript"></script>
+    <script src="/SpDt/sh2/sp0_sh2.js" type="text/javascript"></script>
+    <script src="/SpDt/sh2/sp0_sh2_co_vendorName.js" type="text/javascript"></script>
+    <script src="/Libs_0001/sp0_all_date.js" type="text/javascript"></script>
+    <script src="/SpDt/sh3/sp0_sh3.js" type="text/javascript"></script>
+    <script src="/SpDt/sh4/sp0_sh4.js" type="text/javascript"></script>
+    <script src="/SpDt/sh4/sp0_sh4_co_productList.js" type="text/javascript"></script>
+     
+    <script src="/SpDt/sh5/sp0_sh5.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_btnEvent.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_combo.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_comboEvent.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_ft_calcStock.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_co_updateStatus.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_co_pendingCancel.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_data.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_ft_calc.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_ft_save.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_co_auxTaxYN.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_sh6MoveData.js" type="text/javascript"></script>
+    <script src="/SpDt/sh5/sp0_sh5_btnEvent_filter.js" type="text/javascript"></script>
+           
+    <script src="/SpDt/sh6/sp0_sh6.js" type="text/javascript"></script>
+    <script src="/SpDt/sh6/sp0_sh6_data.js" type="text/javascript"></script>
+    <script src="/SpDt/sh6/sp0_sh6_btnEvent.js" type="text/javascript"></script>
+    <script src="/SpDt/sh6/sp0_sh6_ft_calc.js" type="text/javascript"></script>
+    <script src="/SpDt/sh6/sp0_sh6_ft_save.js" type="text/javascript"></script>
+    <script src="/SpDt/sh6/sp0_sh6_co_auxTaxYN.js" type="text/javascript"></script>
+    <script src="/SpDt/sh6/sp0_sh6_btnEvent_filter.js" type="text/javascript"></script>  
+	</head>
+	<body>
+		<div ng-controller='myBuynsellCtrl'>
+			<my-header></my-header> 
+			<my-mainbtn></my-mainbtn>
+			<my-coninfo></my-coninfo>
+			<div ng-controller='myBuynsellSpreadjsCtrl'>
+			    <my-sumtbl></my-sumtbl>
+			    <my-optsel></my-optsel>
+				<my-optsel2></my-optsel2> 
+				<div ng-controller='mySheet0Ctrl'>
+			    </div>
+				<div ng-controller='mySheet1Ctrl'>
+			    </div>
+				<div ng-controller='mySheet2Ctrl'>
+			    </div>
+				<div ng-controller='mySheet3Ctrl'>
+			    </div>
+				<div ng-controller='mySheet4Ctrl'>
+			    </div>
+				<div ng-controller='mySheet5Ctrl'>
+			    </div>
+				<div ng-controller='mySheet6Ctrl'>
+			    </div>
+				<my-spreadjs></my-spreadjs>
+			</div>
+				<my-footer></my-footer> 
+		</div>
+		<script src='/lib/angular/angular.js'></script>
+		<script src='app.js'></script>
+   <script src='/ezworks/sub_app/buynsell/parts/spreadjs/services/highLightRow.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/header.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/mainbtn.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/coninfo.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/sumtbl.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/spreadjs/sheet0/sheet0.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/spreadjs/sheet1/sheet1.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/spreadjs/sheet2/sheet2.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/spreadjs/sheet3/sheet3.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/spreadjs/sheet4/sheet4.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/spreadjs/sheet5/sheet5.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/spreadjs/sheet6/sheet6.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/spreadjs/spreadjs.js'></script>
+		<script src='/ezworks/sub_app/buynsell/parts/optsel.js'></script> 
+		<script src='/ezworks/sub_app/buynsell/parts/optsel2.js'></script> 
+		<script src='/ezworks/sub_app/buynsell/parts/footer.js'></script>
+	</body>
+</html>

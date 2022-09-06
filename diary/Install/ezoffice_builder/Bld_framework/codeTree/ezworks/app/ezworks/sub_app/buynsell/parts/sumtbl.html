@@ -1,0 +1,21 @@
+<div>
+	<table class="tftable s0 s1 s5 s6 h2 h3 h4" border="1" id="ShowMount">
+		<tbody>
+		<tr>
+		<th>총제품가격</th>
+		<th>총공급가액</th>
+		<th>총부가세</th>
+		<th>선지급액</th>
+		<th>지급액</th>
+		<th>미지급액</th>
+		</tr>
+		<tr>
+			<td Id="total_supply" name="mountArr" Align=right>{{ sumtbl.totalProductPrice | currency:"\\":0 }}</td> 
+			<td Id="total_add" name="mountArr" Align=right>{{ sumtbl.totalSupplyPrice | currency:"\\":0 }} </td> 
+			<td Id="total_sum" name="mountArr"  Align=right>{{ sumtbl.totalAddTax | currency:"\\":0 }}</td> 
+			<td Id="pre_pay" name="mountArr" Align=right>{{ sumtbl.prePaid| currency:"\\":0 }}</td> 
+			<td Id="on_pay" name="mountArr" Align=right>{{ sumtbl.paid | currency:"\\":0 }} </td> 
+			<td Id="due_pay"  name="mountArr" Align=right>{{ sumtbl.notPaid | currency:"\\":0 }}</td> </tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,12 @@
+gcc -Wall -o make_cmdinput_html.exe make_cmdinput_html.c 
+gcc -Wall -o make_db_edit_appjs.exe make_db_edit_appjs.c 
+gcc -Wall -o make_db_edit_html.exe make_db_edit_html.c 
+gcc -Wall -o make_db_edit_spreadjsjs.exe make_db_edit_spreadjsjs.c
+gcc -Wall -o make_ezworks_appjs.exe make_ezworks_appjs.c
+gcc -Wall -o make_ezworks_html.exe make_ezworks_html.c
+gcc -Wall -o make_rest_api_servicejs.exe make_rest_api_servicejs.c 
+gcc -Wall -o make_s_appjs.exe make_s_appjs.c
+gcc -Wall -o make_s_db_edit_indexjs.exe make_s_db_edit_indexjs.c 
+gcc -Wall -o make_s_ezworks_indexjs.exe make_s_ezworks_indexjs.c 
+gcc -Wall -o make_s_nosqlConfig_fdbJson_indexjs.exe make_s_nosqlConfig_fdbJson_indexjs.c 
+gcc -Wall -o make_s_packageJson.exe make_s_packageJson.c  

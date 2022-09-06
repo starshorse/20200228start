@@ -1,0 +1,32 @@
+ {
+  "name": "nodee6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "karma start karma.conf.js",
+    "test_node": "nodemon --ext js --exec jasmine \"server/**/*.spec.js\"",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*,socket.io}/**/*\" app/lib -C",
+    "start": "http-server -a localhost -p 8000 ./app -c-1",
+    "startDev": "nodemon --inspect app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.8.2",
+    "angular-mocks": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "cookie-parser": "^1.4.5",
+    "cpx": "^1.5.0",
+    "express": "^4.17.1",
+    "http-server": "^0.12.3",
+    "karma": "^6.3.4",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-firefox-launcher": "^2.1.1",
+    "karma-jasmine": "^4.0.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "socket.io": "^4.1.3",
+    "sqlite3": "^5.0.2"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "_args": [
+    [
+      "angular-resource@1.8.2",
+      "/home/rrr/workdir/gitdown/ezworks"
+    ]
+  ],
+  "_development": true,
+  "_from": "angular-resource@1.8.2",
+  "_id": "angular-resource@1.8.2",
+  "_inBundle": false,
+  "_integrity": "sha512-CbTu8ypkVZMBLm+Wd+jI9xR7QEVCeUgN8WXsr9Yi9l0s/8ZQa5kEIuYX3F/75Ej8Xs1Jp9DoKjAyvACI6Q8IJA==",
+  "_location": "/angular-resource",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "angular-resource@1.8.2",
+    "name": "angular-resource",
+    "escapedName": "angular-resource",
+    "rawSpec": "1.8.2",
+    "saveSpec": null,
+    "fetchSpec": "1.8.2"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-resource/-/angular-resource-1.8.2.tgz",
+  "_spec": "1.8.2",
+  "_where": "/home/rrr/workdir/gitdown/ezworks",
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "description": "AngularJS module for interacting with RESTful server-side data sources",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-resource": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "rest",
+    "client-side"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "angular-resource",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.8.2"
+}
