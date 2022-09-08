@@ -1,9 +1,3 @@
-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
-git remote set-url origin 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@https://github.com/starshorse/ezworks.git
-git remote set-url origin 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@https://github.com/starshorse/ezoffice.git
-
-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
-git remote set-url origin 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@https://github.com/starshorse/ezworks.git
-
-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
-git remote set-url origin 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@https://github.com/starshorse/ezworks.git
+// This key for ezoffice Destop only 
+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
+git remote set-url origin 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@https://github.com/starshorse/ezworks.git
