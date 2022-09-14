@@ -1,5 +1,5 @@
 #!/bin/bash
-baseDir="../../ezoffice/Bld_framework/codeTree/"
+baseDir="../../ezoffice_builder/Bld_framework/codeTree/"
 cp -r  ${baseDir}ezworks/server/ezworks/sub_app/buynsell   ./server/ezworks/sub_app  
 cp -r  ${baseDir}ezworks/app/ezworks/sub_app/buynsell_fdb   ./app/ezworks/sub_app  
 cp -r  ${baseDir}ezworks/app/ezworks/sub_app/buynsell_v01   ./app/ezworks/sub_app  

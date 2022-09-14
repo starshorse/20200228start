@@ -45,7 +45,7 @@ cd db_edit
 make_cmdinput_htmlexe | make_db_edit_htmlexe | make_db_edit_appjsexe | make_db_edit_spreadjsjsexe | make_db_edit_eventsjsexe | make_db_edit_sheet1jsexe 
 mkdir sqlite3 && cd sqlite3 && make_db_edit_sqlite3_appjsexe && make_db_edit_sqlite3_indexhtmlexe && cd ../../
 cd ..
-../../ezoffice/Bld_framework/make_appBuynsell.sh
+../../ezoffice_builder/Bld_framework/make_appBuynsell.sh
 
 shell_path=`pwd -P` 
 cp_data.sh ${shell_path} 

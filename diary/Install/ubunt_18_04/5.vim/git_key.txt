@@ -1,3 +1,7 @@
 // This key for ezoffice Destop only 
 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
 git remote set-url origin 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@https://github.com/starshorse/ezworks.git
+// This key for ezoffice Destop only 
+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
+// This key for  gCloud only 
+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
