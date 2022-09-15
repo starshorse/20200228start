@@ -1,0 +1,78 @@
+<h3>GC-Spread-Sheets</h3>
+<div>
+    <p>아래 샘플에서는 스프레드의 일부 속성을 바인딩하는 방법을 보여 줍니다.</p>
+</div>
+
+<div>
+    <gc-spread-sheets [hostStyle]="hostStyle" [newTabVisible]="newTabVisible"
+                      [tabStripVisible]="tabStripVisible"
+                      [tabStripRatio]="tabStripRatio"
+                      [tabNavigationVisible]="tabNavigationVisible"
+                      [scrollbarShowMax]="scrollbarShowMax"
+                      [scrollbarMaxAlign]="scrollbarMaxAlign"
+                      [showHorizontalScrollbar]="showHorizontalScrollbar"
+                      [showVerticalScrollbar]="showVerticalScrollbar" [backColor]="spreadBackColor"
+                      [grayAreaBackColor]="grayAreaBackColor" [allowUserZoom]="allowUserZoom"
+                      [allowUserResize]="allowUserResize" hostClass="spreadContainer">
+        <gc-worksheet [dataSource]="data" [autoGenerateColumns]="autoGenerateColumns">
+            <gc-column width=150 dataField="Name"></gc-column>
+            <gc-column width=150 dataField="CountryRegionCode"></gc-column>
+            <gc-column width=100 dataField="City"></gc-column>
+            <gc-column width=200 dataField="AddressLine"></gc-column>
+            <gc-column width=100 dataField="PostalCode"></gc-column>
+        </gc-worksheet>
+    </gc-spread-sheets>
+</div>
+
+<div class="settingContainer">
+    <table>
+        <tr>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="newTabVisible"/>새 탭 표시</label>
+            </td>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="tabStripVisible"/>탭 스트립 표시</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="tabStripRatio"/>tabStripRatio</label>
+            </td>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="tabNavigationVisible"/>tabNavigationVisible</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="scrollbarShowMax"/>scrollbarShowMax</label>
+            </td>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="scrollbarMaxAlign"/>scrollbarMaxAlign</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="showHorizontalScrollbar"/>가로 스크롤 막대 표시</label>
+            </td>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="showVerticalScrollbar"/>세로 스크롤 막대 표시</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="allowUserZoom">사용자 확대/측소 허용</label>
+            </td>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="allowUserResize">사용자 크기 조정 허용</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="color" [(ngModel)]="spreadBackColor"/> 배경색
+            </td>
+            <td>
+                <input type="color" [(ngModel)]="grayAreaBackColor"/> 회색 영역 배경색
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,85 @@
+﻿<h3>SpreadJS 레이아웃</h3>
+
+<p>
+    아래 샘플은 스프레드 및 시트의 일부 속성을 서로 바인딩하는 방법을 보여줍니다.
+</p>
+
+<gc-spread-sheets id="ss"
+    newtabvisible="{{newTabVisible}}"
+    tabstripvisible="{{tabStripVisible}}"
+    showhorizontalscrollbar="{{showHorizontalScrollbar}}"
+    showverticalscrollbar="{{showVerticalScrollbar}}"
+    backcolor="{{backColor}}">
+    <worksheets>
+        <worksheet rowcount="20" colcount="10"
+                   frozenrowcount="{{frozenRowCount}}"
+                   frozencolumncount="{{frozenColumnCount}}"
+                   frozentrailingrowcount="{{frozenTrailingRowCount}}"
+                   frozentrailingcolumncount="{{frozenTrailingColumnCount}}"
+                   frozenlinecolor="{{frozenlineColor}}"
+                   rowheadervisible="{{rowHeaderVisible}}"
+                   colheadervisible="{{columnHeaderVisible}}"
+                   selectionbackcolor="{{selectionBackColor}}"
+                   selectionbordercolor="{{selectionBorderColor}}">
+        </worksheet>
+    </worksheets>
+</gc-spread-sheets>
+
+<table>
+    <tr>
+        <td>
+            <label><input type="checkbox" ng-model="newTabVisible" />newTabVisible</label>
+        </td>
+        <td>
+            <label><input type="checkbox" ng-model="tabStripVisible" />tabStripVisible</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label><input type="checkbox" ng-model="showHorizontalScrollbar" />showHorizontalScrollbar</label>
+        </td>
+        <td>
+            <label><input type="checkbox" ng-model="showVerticalScrollbar " />showVerticalScrollbar</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label><input type="checkbox" ng-model="rowHeaderVisible" />rowHeaderVisible</label>
+        </td>
+        <td>
+            <label><input type="checkbox" ng-model="columnHeaderVisible" />columnHeaderVisible</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" ng-model="backColor" />backColor
+        </td>
+        <td>
+            <input type="text" ng-model="frozenlineColor" />frozenlineColor
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" ng-model="frozenRowCount" />frozenRowCount
+        </td>
+        <td>
+            <input type="text" ng-model="frozenColumnCount" />frozenColumnCount
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" ng-model="frozenTrailingRowCount" />frozenTrailingRowCount
+        </td>
+        <td>
+            <input type="text" ng-model="frozenTrailingColumnCount" />frozenTrailingColumnCount
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" ng-model="selectionBackColor" />selectionBackColor
+        </td>
+        <td>
+            <input type="text" ng-model="selectionBorderColor" />selectionBorderColor
+        </td>
+    </tr>
+</table>

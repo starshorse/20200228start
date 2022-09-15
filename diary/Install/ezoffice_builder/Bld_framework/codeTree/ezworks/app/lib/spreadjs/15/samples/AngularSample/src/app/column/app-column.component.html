@@ -1,0 +1,33 @@
+<h3>GC-열</h3>
+<div>
+    <p>아래 샘플은 열의 일부 속성을 바인딩하는 방법을 보여줍니다.</p>
+</div>
+
+<div>
+    <gc-spread-sheets [hostStyle]="hostStyle" hostClass="spreadContainer">
+        <gc-worksheet [dataSource]="data" [autoGenerateColumns]="autoGenerateColumns">
+            <gc-column [width]="width" [formatter]="formatter" [visible]="visible" [resizable]="resizable"></gc-column>
+        </gc-worksheet>
+    </gc-spread-sheets>
+</div>
+
+<div class="settingContainer">
+    <table>
+        <tr>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="visible"/>표시</label>
+            </td>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="resizable"/>크기 조정 가능</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label><input type="text" [(ngModel)]="width"/>너비</label>
+            </td>
+            <td>
+                <label><input type="text" [(ngModel)]="formatter"/>포맷터</label>
+            </td>
+        </tr>
+    </table>
+</div>

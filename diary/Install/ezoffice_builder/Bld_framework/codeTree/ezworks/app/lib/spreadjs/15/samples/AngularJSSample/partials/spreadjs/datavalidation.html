@@ -1,0 +1,23 @@
+﻿<h3>SpreadJS 데이터 유효성 검사</h3>
+
+<p>
+    아래 샘플은 Excel과 유사한 유효성 검사를 만드는 방법을 보여줍니다.
+</p>
+
+<gc-spread-sheets id="ss" newtabvisible="false" highlightinvaliddata="true">
+    <worksheets>
+        <worksheet datasource="employees">
+            <columns>
+                <column width="130" datafield="name" headertext="Name"></column>
+                <column width="90" datafield="phone" headertext="Phone"></column>
+                <column width="80" datafield="country" headertext="Country">
+                    <data-validation>
+                        <list-validator list="Japan,Germany,UK,Italy,US"></list-validator>
+                    </data-validation>
+                </column>
+                <column width="240" datafield="email" headertext="Email"></column>
+                <column datafield="onJob" headertext="OnJob"></column>
+            </columns>
+        </worksheet>
+    </worksheets>
+</gc-spread-sheets>
