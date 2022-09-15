@@ -1,4 +1,4 @@
 1: one
 2: two
-3: three_2
+3: korean 
 4: four
