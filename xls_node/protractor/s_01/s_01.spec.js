@@ -8,8 +8,16 @@ describe('s_01', function(){
  */
 	it('protractor test', async function(){
 		browser.waitForAngularEnabled(false) 
+
+		let domain ='localhost:8000'
+		browser.driver.get('http://' + domain + '/');
+        browser.manage().addCookie({ name: 'user', value: 'star_horse@naver.com'})  // , '/', domain);
+
 		await browser.get('http://localhost:8000/protractor_test.html') 
 		browser.sleep(5000)
+
+	    let cookies =	await browser.manage().getCookies()
+	    console.log( cookies ) 
 //		browser.pause()
 		let first = element.all(by.css('.items li')).first() 
 		expect( first.getText()).toBe('First')
