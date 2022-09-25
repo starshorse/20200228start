@@ -29,17 +29,21 @@ angular.module('myEzworksSpreadjs',[])
 .service('spreadjs_service',[
 'spreadjs_factory',
 'ezch_tbl_editor_appService',	
+'ezch_tbl_editor_eventService',	
 	function(
 		spreadjs_factory,
-		ezch_tbl_editor_appService
+		ezch_tbl_editor_appService,
+		ezch_tbl_editor_eventService
 	){
 		this.initSpread =( spread) =>{
 			spreadjs_factory.spread = spread 
 			ezch_tbl_editor_appService.initSpread( spread ) 
 		}
 		this.sheet1_cellDoubleClick =( sender, args )=>{
+			ezch_tbl_editor_eventService.sheet1_cellDoubleClick( spreadjs_factory.spread, sender ,args )
 		}
 		this.sheet1_cellChanged = ( sender, args )=>{
+			ezch_tbl_editor_eventService.sheet1_cellChanged( spreadjs_factory.spread , sender, args )
 		}
 		this.spread_buttonClicked = ( sender, args)=>{
 		}
