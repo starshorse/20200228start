@@ -1,5 +1,6 @@
  angular.module('myEzworks', ['myApp.rest_api',
-	'myEzworksSpreadjs'
+	'myEzworksSpreadjs',
+	'ezch_tbl_editor_app'
 ])
 .controller('myEzworksCtrl',['$scope',function( $scope){
 	$scope.getData
@@ -27,11 +28,14 @@ angular.module('myEzworksSpreadjs',[])
 }])
 .service('spreadjs_service',[
 'spreadjs_factory',
+'ezch_tbl_editor_appService',	
 	function(
-		spreadjs_factory
+		spreadjs_factory,
+		ezch_tbl_editor_appService
 	){
 		this.initSpread =( spread) =>{
 			spreadjs_factory.spread = spread 
+			ezch_tbl_editor_appService.initSpread( spread ) 
 		}
 		this.sheet1_cellDoubleClick =( sender, args )=>{
 		}
