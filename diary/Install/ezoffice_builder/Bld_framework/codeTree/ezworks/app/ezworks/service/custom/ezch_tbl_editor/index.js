@@ -11,6 +11,9 @@ angular.module('ezch_tbl_editor_app',[])
 			name: 'TableSchema', region: 'east',
 			tbl_schema: []
 		},
+		schema_add :{
+			No: 3 , Field: 'Fomula', Visible: true
+		},
 		tbl_data_columns :[] ,
 		tbl_data_info :{
 			name: 'TableData', region: 'east',
@@ -54,37 +57,63 @@ angular.module('ezch_tbl_editor_app',[])
 //			spread.options.isPaintSuspended( false ) 
 
 		}
-		this.update_schema_table = async ( spread , tbl_name )=>{
+		this.update_schema_table = async ( spread , tbl_name = null )=>{
 			let sheet1 = spread.getSheet(1) 
 			table = sheet1.tables.findByName('TableSchema') 
-            let response = await $http.get(`/Hermes/ezchemtech/TableEditor/${ tbl_name }`)
-			response = response.data.tbl_data 
-			let i = 1
-			ezch_tbl_editor_appFactory.tbl_schema_info.tbl_schema = []
-			for( const [ key, value ] of Object.entries( response ) ){
-				ent = { No: i , Field: key, Comment: value.comment , 
-					Type: value.type , primaryKey : value.primaryKey, Default : value.defaultValue ,
-					Null : value.allowNull , Extra: null , Formatter: '@' , Visible: true }
-				ezch_tbl_editor_appFactory.tbl_schema_info.tbl_schema.push( ent ) 
-				i++  
-			}
-			let tableColumns = Object.keys( ezch_tbl_editor_appFactory.tbl_schema_info.tbl_schema[0])
-			tableColumns = tableColumns.map((ent, index )=>{ 
-				if( ent == 'Visible'){
-					let cellType2 = new GC.Spread.Sheets.CellTypes.ComboBox() 
-					cellType2.items([ true , false ]) 
-				    return new GC.Spread.Sheets.Tables.TableColumn( index +1 , ent, ent, undefined, cellType2 )
-				}else{
-					return new GC.Spread.Sheets.Tables.TableColumn( index +1 , ent, ent )
-                }
-		    })
-			ezch_tbl_editor_appFactory.tbl_schema_columns = tableColumns
+			if( tbl_name != null ){
+				let response = await $http.get(`/Hermes/ezchemtech/TableEditor/${ tbl_name }`)
+				response = response.data.tbl_data 
+				let i = 1
+				ezch_tbl_editor_appFactory.tbl_schema_info.tbl_schema = []
+				for( const [ key, value ] of Object.entries( response ) ){
+					let formatter = '@' 
+					if( value.type == 'DATETIME' )formatter ='YY/MM/DD' 
+					ent = { No: i , Field: key, Comment: value.comment , 
+						Type: value.type , primaryKey : value.primaryKey, Default : value.defaultValue ,
+						Null : value.allowNull , Extra: null , Formatter: formatter , Visible: true }
+					ezch_tbl_editor_appFactory.tbl_schema_info.tbl_schema.push( ent ) 
+					i++  
+				}
+				let tableColumns = Object.keys( ezch_tbl_editor_appFactory.tbl_schema_info.tbl_schema[0])
+				tableColumns = tableColumns.map((ent, index )=>{ 
+					if( ent == 'Visible'){
+						let cellType2 = new GC.Spread.Sheets.CellTypes.ComboBox() 
+						cellType2.items([ true , false ]) 
+						return new GC.Spread.Sheets.Tables.TableColumn( index +1 , ent, ent, undefined, cellType2 )
+					}else{
+						return new GC.Spread.Sheets.Tables.TableColumn( index +1 , ent, ent )
+					}
+				})
+				ezch_tbl_editor_appFactory.tbl_schema_columns = tableColumns
+		   }else{
+				let newEntry = JSON.parse( JSON.stringify( ezch_tbl_editor_appFactory.schema_add ))
+			    ezch_tbl_editor_appFactory.tbl_schema_info.tbl_schema.push( newEntry )
+                this.update_order_column( spread , newEntry.No , ezch_tbl_editor_appFactory.tbl_schema_info.tbl_schema.length )
+		   }
             table.autoGenerateColumns( false ) 	
-			table.bind( tableColumns , 'tbl_schema', ezch_tbl_editor_appFactory.tbl_schema_info )
+//			table.bind( tableColumns , 'tbl_schema', ezch_tbl_editor_appFactory.tbl_schema_info )
+			table.bind( ezch_tbl_editor_appFactory.tbl_schema_columns , 'tbl_schema', ezch_tbl_editor_appFactory.tbl_schema_info )
 
 		}
 		this.initSpread = async ( spread )=>{
 			let sheet1 = spread.getSheet(1)
+			let cell_add = sheet1.getRange('C2:C2') 
+			let cell_button = sheet1.getRange('L2:L2')
+
+			let cellType_button = new GC.Spread.Sheets.CellTypes.Button() 
+			cellType_button.text('ADD') 
+			sheet1.addSpan( cell_button.row , cell_button.col, 2, 1)
+
+			sheet1.getCell( cell_add.row, cell_add.col ).text('No').backColor('#EEEEEE') 
+			sheet1.getCell( cell_add.row, cell_add.col+1 ).text('Field').backColor('#EEEEEE') 
+			sheet1.getCell( cell_button.row, cell_button.col ).backColor('#EEEEEE').cellType( cellType_button )  
+
+
+			let cellSource = new GC.Spread.Sheets.Bindings.CellBindingSource( ezch_tbl_editor_appFactory.schema_add )
+			sheet1.setBindingPath( cell_add.row+1, cell_add.col , 'No' ) 
+			sheet1.setBindingPath( cell_add.row+1, cell_add.col+1 , 'Field' ) 
+            sheet1.setDataSource( cellSource ) 			
+
 			let table = sheet1.tables.add('TableList', 1,0,150,1) 
 			let response = await $http.get('/Hermes/ezchemtech/TableEditor') 
 			response = response.data.tbl_data 
@@ -92,7 +121,7 @@ angular.module('ezch_tbl_editor_app',[])
 			table.bind( [ new GC.Spread.Sheets.Tables.TableColumn( 1, 'tbl_name', 'tbl_name' ) ] , 'tbl_list' , ezch_tbl_editor_appFactory.tbl_list_info )				
 			sheet1.setColumnWidth( 0, 300 ) 
 			table.setColumnName( 0  , 'Table List' )
-			table = sheet1.tables.add('TableSchema', 1,2,150,10) 
+			table = sheet1.tables.add('TableSchema', 4,2,150,10) 
 			let tbl_name = ezch_tbl_editor_appFactory.tbl_list_info.tbl_list[0].tbl_name 
 
 			await this.update_schema_table( spread , tbl_name )
