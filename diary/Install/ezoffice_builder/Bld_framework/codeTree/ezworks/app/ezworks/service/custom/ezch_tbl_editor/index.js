@@ -57,10 +57,30 @@ angular.module('ezch_tbl_editor_app',[])
 //			spread.options.isPaintSuspended( false ) 
 
 		}
+		this.update_data_table = async( spread, tbl_name = null )=>{
+			let sheet0 = spread.getSheet(0) 
+			let table = sheet0.tables.findByName('TableData') 
+			if( tbl_name != null ){
+				let response = await $http.get(`/Hermes/ezchemtech/TableEditor/Data/${ tbl_name }`)
+				ezch_tbl_editor_appFactory.tbl_data_info.tbl_data = response.data.tbl_data 
+			}else{
+			}
+			let headInfo = ezch_tbl_editor_appFactory.tbl_schema_info.tbl_schema.filter((ent)=>ent.Visible == true ) 
+			let tableColumns = [] 
+			headInfo.map((ent, index)=>{
+				tableColumns.push( new GC.Spread.Sheets.Tables.TableColumn( index +1 , ent.Field , ent.Field , ent.Formatter ) )	
+			})
+			sheet0.tables.resize( table , new GC.Spread.Sheets.Range( 8, 1, 4, tableColumns.length ))  
+			table.autoGenerateColumns( false )
+			table.expandBoundRows( true ) 
+			table.bind( tableColumns , 'tbl_data', ezch_tbl_editor_appFactory.tbl_data_info ) 
+
+		}
 		this.update_schema_table = async ( spread , tbl_name = null )=>{
 			let sheet1 = spread.getSheet(1) 
-			table = sheet1.tables.findByName('TableSchema') 
+			let table = sheet1.tables.findByName('TableSchema') 
 			if( tbl_name != null ){
+				ezch_tbl_editor_appFactory.tbl_name = tbl_name 
 				let response = await $http.get(`/Hermes/ezchemtech/TableEditor/${ tbl_name }`)
 				response = response.data.tbl_data 
 				let i = 1
@@ -97,6 +117,7 @@ angular.module('ezch_tbl_editor_app',[])
 		}
 		this.initSpread = async ( spread )=>{
 			let sheet1 = spread.getSheet(1)
+			let sheet0 = spread.getSheet(0)
 			let cell_add = sheet1.getRange('C2:C2') 
 			let cell_button = sheet1.getRange('L2:L2')
 
@@ -123,10 +144,15 @@ angular.module('ezch_tbl_editor_app',[])
 			table.setColumnName( 0  , 'Table List' )
 			table = sheet1.tables.add('TableSchema', 4,2,150,10) 
 			let tbl_name = ezch_tbl_editor_appFactory.tbl_list_info.tbl_list[0].tbl_name 
-
 			await this.update_schema_table( spread , tbl_name )
+			
+			spread.setActiveSheetIndex(1) 
+
+			table = sheet0.tables.add('TableData', 8,1,150,4) 
+			await this.update_data_table( spread , tbl_name )
 		}
 		ezch_tbl_editor_appFactory.update_schema_table = this.update_schema_table
+		ezch_tbl_editor_appFactory.update_data_table = this.update_data_table
 		ezch_tbl_editor_appFactory.update_order_column = this.update_order_column
 		ezch_tbl_editor_appFactory.update_visible_status = this.update_visible_status 
 	}
@@ -146,8 +172,8 @@ angular.module('ezch_tbl_editor_app',[])
 		}
 		this.sheet1_cellChanged = ( spread ,sender, args )=>{
 			let sheet1 = spread.getSheet(1) 
-			let cell_order = sheet1.getRange('C2:C2') 
-			let cell_visible = sheet1.getRange('L2:L2') 
+			let cell_order = sheet1.getRange('C5:C5') 
+			let cell_visible = sheet1.getRange('L5:L5') 
 			switch( args.col){
 				case cell_order.col:
 					if( args.row > cell_order.row )ezch_tbl_editor_appFactory.update_order_column( spread , args.newValue , args.oldValue )
@@ -156,6 +182,30 @@ angular.module('ezch_tbl_editor_app',[])
 					if( args.row > cell_visible.row)ezch_tbl_editor_appFactory.update_visible_status( spread, args.newValue , args.row -  cell_visible.row ) 
 					break;
 				default:	
+			}
+		}
+		this.spread_buttonClicked = ( spread, sender, args )=>{
+			let sheet1 = spread.getSheet(1)
+			let cell_add = sheet1.getRange('L2:L2')
+			let sheet_name = args.sheet.name() 
+			switch( sheet_name ){
+				case 'Sheet1':
+					break;
+				case 'Sheet2':
+					if( args.row == cell_add.row )ezch_tbl_editor_appFactory.update_schema_table( spread ) // only add update. 
+					break;
+			   default:	
+			}
+		}
+		this.spread_activeSheetChanging = ( spread , sender , args )=>{
+			let sheet_name = args.newSheet.name() 
+			switch( sheet_name ){
+				case 'Sheet1':
+					ezch_tbl_editor_appFactory.update_data_table( spread,ezch_tbl_editor_appFactory.tbl_name )
+					break;
+				case 'Sheet2':
+					break;
+				default:
 			}
 		}
 	}
