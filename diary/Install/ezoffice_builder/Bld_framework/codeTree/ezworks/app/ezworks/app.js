@@ -46,6 +46,10 @@ angular.module('myEzworksSpreadjs',[])
 			ezch_tbl_editor_eventService.sheet1_cellChanged( spreadjs_factory.spread , sender, args )
 		}
 		this.spread_buttonClicked = ( sender, args)=>{
+			ezch_tbl_editor_eventService.spread_buttonClicked( spreadjs_factory.spread, sender, args ) 
+		}
+		this.spread_activeSheetChanging = ( sender, args )=>{
+			ezch_tbl_editor_eventService.spread_activeSheetChanging( spreadjs_factory.spread , sender ,args ) 
 		}
 	}
 ])
@@ -84,6 +88,9 @@ angular.module('myEzworksSpreadjs',[])
 	})
 	spread.bind( GC.Spread.Sheets.Events.ButtonClicked, ( sender, args )=>{
 		spreadjs_service.spread_buttonClicked( sender , args ) 
+	})
+	spread.bind( GC.Spread.Sheets.Events.ActiveSheetChanging, ( sender, args )=>{
+		spreadjs_service.spread_activeSheetChanging( sender ,args ) 
 	})
 	$scope.getData = ( data_ ) =>{
 		DbData = data_
