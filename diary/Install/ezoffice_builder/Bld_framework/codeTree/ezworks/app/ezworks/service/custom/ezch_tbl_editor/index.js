@@ -71,6 +71,11 @@ angular.module('ezch_tbl_editor_app',[])
 				tableColumns.push( new GC.Spread.Sheets.Tables.TableColumn( index +1 , ent.Field , ent.Field , ent.Formatter ) )	
 			})
 			sheet0.tables.resize( table , new GC.Spread.Sheets.Range( 8, 1, 4, tableColumns.length ))  
+// mass block clear 
+			let cell_mass = sheet0.getRange('B3:B3')
+			sheet0.getRange( cell_mass.row, cell_mass.col , 5 , 100 ).value('') 
+
+
 			table.autoGenerateColumns( false )
 			table.expandBoundRows( true ) 
 			table.bind( tableColumns , 'tbl_data', ezch_tbl_editor_appFactory.tbl_data_info ) 
@@ -147,6 +152,31 @@ angular.module('ezch_tbl_editor_app',[])
 			await this.update_schema_table( spread , tbl_name )
 			
 			spread.setActiveSheetIndex(1) 
+            sheet0.frozenRowCount(9)  
+			let cell_buttons = sheet0.getRange('B2:B2') 
+			sheet0.addSpan( cell_buttons.row, cell_buttons.col , 1, 2) 
+			let cellType_button1 = new GC.Spread.Sheets.CellTypes.Button() 
+			cellType_button1.text('대량삽입') 
+		    sheet0.getCell( cell_buttons.row, cell_buttons.col ).backColor('#EEEEEE').cellType( cellType_button1 ) 
+
+			sheet0.addSpan( cell_buttons.row, cell_buttons.col+2 , 1, 2) 
+			let cellType_button2 = new GC.Spread.Sheets.CellTypes.Button() 
+			cellType_button2.text('잠금해제') 
+		    sheet0.getCell( cell_buttons.row, cell_buttons.col +2 ).backColor('#EEEEEE').cellType( cellType_button2 ) 
+
+			sheet0.addSpan( cell_buttons.row, cell_buttons.col+4 , 1, 2) 
+			let cellType_button3 = new GC.Spread.Sheets.CellTypes.Button() 
+			cellType_button3.text('업데이트') 
+		    sheet0.getCell( cell_buttons.row, cell_buttons.col +4 ).backColor('#EEEEEE').cellType( cellType_button3 ) 
+
+			sheet0.setRowHeight( cell_buttons.row, 30 )
+
+
+			let cell_mass = sheet0.getRange('B3:B3')
+			sheet0.getRange( cell_mass.row , cell_mass.col , 1 , 100 ).borderTop( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium ))
+			sheet0.getRange( cell_mass.row , cell_mass.col , 5 , 1 ).borderLeft( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium ))
+			sheet0.getRange( cell_mass.row + 4 , cell_mass.col , 1 , 100 ).borderBottom( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium ))
+
 
 			table = sheet0.tables.add('TableData', 8,1,150,4) 
 			await this.update_data_table( spread , tbl_name )
