@@ -49,6 +49,7 @@ cd ..
 
 shell_path=`pwd -P` 
 cp_data.sh ${shell_path} 
+npm i
 npm run startDev 
 
 
