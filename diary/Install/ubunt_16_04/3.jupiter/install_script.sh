@@ -1,4 +1,4 @@
-sudo apt install build-essential -y 
+sudo apt install build-essential npm -y 
 
 DIR="$( cd "$( dirname "$0" )" && pwd -P )"
 echo $DIR

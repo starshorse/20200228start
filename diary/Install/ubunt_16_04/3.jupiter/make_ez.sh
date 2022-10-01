@@ -1,5 +1,6 @@
 #!/bin/bash
 ezoffice_path="~/workdir/gitdn/20200228start/diary/Install/ezoffice_builder/"
+ezoffice_install_path="~/workdir/gitdn/20200228start/diary/Install/ubunt_16_04/3.jupiter/"
 cd ../../
 mkdir ezoffice_output
 cd ezoffice_output
@@ -50,8 +51,9 @@ cd ..
 shell_path=`pwd -P` 
 cp_data.sh ${shell_path} 
 # make_s_packageJsonexe 
-# npm i 
-# npm run startDev 
+cp ${ezoffice_install_path}package.json .
+npm i 
+npm run startDev 
 
 
 
