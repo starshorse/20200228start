@@ -30,8 +30,8 @@ sudo apt-get install -y tmux
 sudo apt-get install -y curl
 #sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 #
-#source ~/.bashrc
-#. ~/.bashrc
+source ~/.bashrc
+. ~/.bashrc
 #
 #nvm install 12.22.1
 #nvm use 12.22.1 
