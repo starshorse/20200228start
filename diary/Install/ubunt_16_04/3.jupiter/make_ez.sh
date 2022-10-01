@@ -1,6 +1,6 @@
 #!/bin/bash
-ezoffice_path="~/workdir/gitdn/20200228start/diary/Install/ezoffice_builder/"
-ezoffice_install_path="~/workdir/gitdn/20200228start/diary/Install/ubunt_16_04/3.jupiter/"
+ezoffice_path="/home/rrr/workdir/gitdn/20200228start/diary/Install/ezoffice_builder/"
+ezoffice_install_path="/home/rrr/workdir/gitdn/20200228start/diary/Install/ubunt_16_04/3.jupiter/"
 cd ../../
 mkdir ezoffice_output
 cd ezoffice_output
