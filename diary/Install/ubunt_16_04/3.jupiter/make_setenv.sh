@@ -6,11 +6,16 @@ sudo apt-get remove vim-tiny
 sudo apt-get install vim-gnome 
 sudo apt-get install vim-gtk3 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+sudo apt-get install build_essential -y 
 
-cd ../Gen_framework/sys02_linux/ 
+ezoffice_path="~/workdir/gitdn/20200228start/diary/Install/ezoffice_builder/"
+
+cd ${ezoffice_path}Gen_framework/sys02_linux/
+chmod +777 *.sh 
 ./build_exe.sh 
-cp ./bin_linux/*  ../../Bld_framework/bin 
-cd ../../Bld_framework
+cp ./bin_linux/*  ${ezoffice_path}Bld_framework/bin 
+cd ${ezoffice_path}Bld_framework
+chmod +777 *.sh 
 
 PATH_C=$(pwd) 
 echo "export PATH=\"$PATH_C/bin:\$PATH\"" >> ~/.bashrc
