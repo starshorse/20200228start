@@ -1,4 +1,4 @@
-sudo apt install build-essential npm -y 
+sudo apt install build-essential npm gnome-terminal sqlite3 -y 
 
 DIR="$( cd "$( dirname "$0" )" && pwd -P )"
 echo $DIR

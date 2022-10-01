@@ -52,6 +52,7 @@ shell_path=`pwd -P`
 cp_data.sh ${shell_path} 
 # make_s_packageJsonexe 
 cp ${ezoffice_install_path}package.json .
+npm i sqlite3 
 npm i 
 npm run startDev 
 
