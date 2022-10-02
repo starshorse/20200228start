@@ -9,6 +9,7 @@ sudo apt install ./slack-desktop-*.deb
 ###############################################################
 #  mysql installation 
 ###############################################################
+sudo apt-cache search mysql-server
 
 sudo apt-get update 
 sudo apt-get install mysql-server -y

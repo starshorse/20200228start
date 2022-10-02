@@ -1,8 +1,11 @@
 SHOW VARIABLES LIKE '%version%';  
 USE mysql;
-SELECT User, Host, plugin FROM mysql.user;
-update user set plugin='mysql_navtive_password' where user='root';
-commit ;
+create user starshorse ;
+create user starshorse@localhost identified by '1234';
+-- create user starshorse@'%' identified by '1234';
+grant all privileges on *.* to starshorse@localhost idnetified by '1234';
 flush privileges;
+show grants for starshorse@localhost;
+SELECT User, Host, plugin FROM mysql.user;
 select user , host, plugin from user; 
 exit;
