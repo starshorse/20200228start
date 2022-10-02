@@ -13,6 +13,9 @@ ITG 동호회 가입신청서 모르니깐 하는 것인다.
 
 SPRMR3021RD02003 – CPU : QW0J / E1A  ,  PCH : QV5S
 
+// 2022. 10. 02. (일) 10:11:48 KST
+VIM에서 창사이즈 조절 고민 => 해결은  Tab 으로 Multi 이용 가능 
+
 VIM:{
 	*+ VIM Block Insert. 
 		After selecting a block of text, press Shift+i or capital I.Lowercase i will not work.
