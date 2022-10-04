@@ -3,7 +3,7 @@ USE mysql;
 
 delete from mysql.user where User='starshorse' ;
 delete from mysql.db where User='starshorse' ;
-drop database starshorse; 
+drop database if exists starshorse; 
 flush privileges ;
 
 create user starshorse ;
