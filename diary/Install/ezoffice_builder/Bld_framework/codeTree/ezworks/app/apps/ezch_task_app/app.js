@@ -30,7 +30,10 @@ async function(
 		getSpread : ()=>spreadjs_factory.spread ,
 		DbData : null ,
 		HeadInfo : null,
-		lastSelection: null 
+		lastSelection: null,
+		currentSelection: [],
+		lock_style : [], 
+		unlock_style : null 
 	}
 	return spreadjs_factory
 }])
@@ -55,7 +58,20 @@ async function(
 			let sheet_name = args.sheet.name() 
 			switch( sheet_name ){
 				case 'Sheet1':
-					 if( args.row == cell_lock.row )console.log( spreadjs_factory.lastSelection ) 
+					 if( args.row == cell_lock.row ){
+						 console.log( spreadjs_factory.lastSelection ) 
+//						 sheet0.removeNamedStyle('LockStyle') 
+//			             sheet0.addNamedStyle( spreadjs_factory.lock_style )
+						 spread.options.isProtected = false 
+						 for( selection of spreadjs_factory.currentSelection ){
+							 sheet0.getRange( selection.row , selection.col , selection.rowCount , selection.colCount ).styleName('LockStyle').locked( true ) 
+						 }
+						 for( selection of spreadjs_factory.lastSelection ){
+							 sheet0.getRange( selection.row , selection.col , selection.rowCount , selection.colCount ).styleName('UNLockStyle').locked( false ) 
+						 }
+						 spreadjs_factory.currentSelection = spreadjs_factory.lastSelection 
+						 spread.options.isProtected = true 
+					 }
 					break;
 				case 'Sheet2':
 //					if( args.row == cell_add.row )ezch_tbl_editor_appFactory.update_schema_table( spread ) // only add update. 
@@ -101,6 +117,16 @@ async function(
 			sheet0.getRange( cell_mass.row , cell_mass.col , 1 , 100 ).borderTop( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium ))
 			sheet0.getRange( cell_mass.row , cell_mass.col , 5 , 1 ).borderLeft( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium ))
 			sheet0.getRange( cell_mass.row + 4 , cell_mass.col , 1 , 100 ).borderBottom( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium ))
+
+			spreadjs_factory.lock_style = new GC.Spread.Sheets.Style() 
+			spreadjs_factory.unlock_style = new GC.Spread.Sheets.Style() 
+			spreadjs_factory.lock_style.name = 'LockStyle' 
+			spreadjs_factory.unlock_style.name = 'UNLockStyle' 
+			spreadjs_factory.lock_style.backColor = '#EEEEEE'
+			spreadjs_factory.unlock_style.backColor = 'LemonChiffon'
+			sheet0.addNamedStyle( spreadjs_factory.lock_style )
+			sheet0.addNamedStyle( spreadjs_factory.unlock_style )
+
 
 			await ezch_tbl_editor_appService.update_schema_table( spread , tbl_name ) 
 			await ezch_tbl_editor_appService.update_data_table( spread , tbl_name ) 
