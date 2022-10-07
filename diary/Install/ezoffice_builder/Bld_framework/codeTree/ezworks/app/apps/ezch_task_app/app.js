@@ -64,7 +64,9 @@ async function(
 //			             sheet0.addNamedStyle( spreadjs_factory.lock_style )
 						 spread.options.isProtected = false 
 						 for( selection of spreadjs_factory.currentSelection ){
-							 sheet0.getRange( selection.row , selection.col , selection.rowCount , selection.colCount ).styleName('LockStyle').locked( true ) 
+							 sheet0.getRange( selection.row , selection.col , selection.rowCount , selection.colCount ).locked( true ) 
+//							 let range = sheet0.getRange( selection.row , selection.col, selection.rowCount, selection.colCount )
+							 sheet0.clear( selection.row, selection.col, selection.rowCount, selection.colCount , GC.Spread.Sheets.SheetArea.viewport, GC.Spread.Sheets.StorageType.style )
 						 }
 						 for( selection of spreadjs_factory.lastSelection ){
 							 sheet0.getRange( selection.row , selection.col , selection.rowCount , selection.colCount ).styleName('UNLockStyle').locked( false ) 
