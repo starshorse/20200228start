@@ -29,8 +29,9 @@ npm init -y
 npm install grunt-cli grunt -g  
 npm install grunt-contrib-connect grunt --save-dev 
 cp ./Install/ubuntu18.04/Gruntfile.js  .
+rm -rf www-root 
 mkdir www-root  
-cp ./install/ubuntu18.04/index.html ./www-root 
+cp ./Install/ubuntu18.04/index.html ./www-root 
 grunt connect 
 
 
