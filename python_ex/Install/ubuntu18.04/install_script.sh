@@ -32,7 +32,8 @@ cp ./Install/ubuntu18.04/Gruntfile.js  .
 rm -rf www-root 
 mkdir www-root  
 cp ./Install/ubuntu18.04/index.html ./www-root 
-grunt connect 
+#grunt connect 
+grunt 
 
 
 ###############################################################
