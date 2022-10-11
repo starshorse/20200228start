@@ -152,6 +152,8 @@ angular.module('ezch_tbl_editor_app',[])
 			await this.update_schema_table( spread , tbl_name )
 			
 			spread.setActiveSheetIndex(1) 
+
+			sheet0.addColumns( 2, 10) 
             sheet0.frozenRowCount(9)  
 			let cell_buttons = sheet0.getRange('B2:B2') 
 			sheet0.addSpan( cell_buttons.row, cell_buttons.col , 1, 2) 
