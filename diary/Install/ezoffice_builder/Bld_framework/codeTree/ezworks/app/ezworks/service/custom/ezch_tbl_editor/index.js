@@ -57,6 +57,13 @@ angular.module('ezch_tbl_editor_app',[])
 //			spread.options.isPaintSuspended( false ) 
 
 		}
+		this.update_database = async( spread , seq , col_index, newValue )=>{
+			let headInfo = ezch_tbl_editor_appFactory.tbl_schema_info.tbl_schema.filter((ent)=>ent.Visible == true ) 
+			let col_info = headInfo[ col_index ]
+            let ent_info = ezch_tbl_editor_appFactory.tbl_data_info.tbl_data.find((ent)=>ent.seq == seq ) 
+			console.log('seq', seq, 'col_name:', col_info.Field , 'currentValue:', ent_info[col_info.Field] , 'newValue:', newValue )  
+
+		}
 		this.update_data_table = async( spread, tbl_name = null )=>{
 			let sheet0 = spread.getSheet(0) 
 			let table = sheet0.tables.findByName('TableData') 
