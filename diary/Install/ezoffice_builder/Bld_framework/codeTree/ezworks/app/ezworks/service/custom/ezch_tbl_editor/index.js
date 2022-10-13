@@ -21,7 +21,8 @@ angular.module('ezch_tbl_editor_app',[])
 		},
 		update_schema_table: null,
 		update_order_column: null,
-		update_visible_status: null 
+		update_visible_status: null ,
+		database_url : '/Hermes/ezchemtech/RegularBusinessBasicInformation/'
 	}
 	return ezch_tbl_editor_appFactory
 }])
@@ -62,7 +63,11 @@ angular.module('ezch_tbl_editor_app',[])
 			let col_info = headInfo[ col_index ]
             let ent_info = ezch_tbl_editor_appFactory.tbl_data_info.tbl_data.find((ent)=>ent.seq == seq ) 
 			console.log('seq', seq, 'col_name:', col_info.Field , 'currentValue:', ent_info[col_info.Field] , 'newValue:', newValue )  
-
+			let url = ezch_tbl_editor_appFactory.database_url + seq 
+			let params = {}
+			params[col_info.Field] = newValue 
+			let response = await $http({ method:'POST', url:url , data: params }) 
+			console.log( response ) 
 		}
 		this.update_data_table = async( spread, tbl_name = null )=>{
 			let sheet0 = spread.getSheet(0) 
