@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h> 
 #define MinGW 1 
 #ifdef MinGW
 	#include <winsock2.h> 
@@ -16,6 +17,6 @@ int main( int argc , char** argv )
 	memset( &serv_addr, 0 , sizeof( serv_addr )); 
 	serv_addr.sin_family = AF_INET ; 
 	serv_addr.sin_addr.s_addr = htonl(INADDR_ANY) ;
-	serv_addr.sin_port = htons( atoi( argv[1] );
+	serv_addr.sin_port = htons( atoi( argv[1] ));
 	return 0 ;
 }
