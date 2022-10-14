@@ -22,12 +22,16 @@ async function(
 	    sheet0.bind( GC.Spread.Sheets.Events.SelectionChanged, ( sender, args )=>{
 			spreadjs_service.sheet0_SelectionChanged( sender , args ) 
 		}) 
+		sheet0.bind( GC.Spread.Sheets.Events.EditEnded, ( sender, args )=>{
+			spreadjs_service.sheet0_EditEnded( sender, args ) 
+		})
 	    
 }])
 .factory('spreadjs_factory', [function(){
 	var spreadjs_factory ={
 		spread: null,
 		getSpread : ()=>spreadjs_factory.spread ,
+		seq_col_index: 1 ,
 		DbData : null ,
 		HeadInfo : null,
 		lastSelection: null,
@@ -46,6 +50,18 @@ async function(
 		$http,
 		ezch_tbl_editor_appService
 	){ 
+		this.sheet0_EditEnded = ( sender , args )=>{
+			let spread = spreadjs_factory.spread
+			let sheet0 = spread.getSheet(0) 
+			if( sheet0.hasPendingChanges() ){
+				let dirtyCells = sheet0.getDirtyCells() 
+				for( cell of dirtyCells ){
+					let seq = sheet0.getValue( cell.row , spreadjs_factory.seq_col_index )
+					ezch_tbl_editor_appService.update_database( spread , seq, cell.col - spreadjs_factory.seq_col_index , cell.newValue )
+				}
+				sheet0.clearPendingChanges() 
+			}
+		}
 		this.sheet0_SelectionChanged = ( sender , args )=>{
 			let spread = spreadjs_factory.spread 
 			let sheet0 = spread.getSheet(0)
@@ -137,6 +153,8 @@ async function(
 			sheet0.getRange('B3:AD9').locked( false )
 			sheet0.options.isProtected = true 
 			sheet0.options.protectionOptions.allowFilter = true  
+
+			sheet0.clearPendingChanges() 
 
 		}
 	}
