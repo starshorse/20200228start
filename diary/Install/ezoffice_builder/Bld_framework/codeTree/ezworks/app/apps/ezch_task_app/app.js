@@ -31,13 +31,15 @@ async function(
 	var spreadjs_factory ={
 		spread: null,
 		getSpread : ()=>spreadjs_factory.spread ,
-		seq_col_index: 1 ,
+		seq_col_index: 1,
+		notnull_col_index: null, 
 		DbData : null ,
 		HeadInfo : null,
 		lastSelection: null,
 		currentSelection: [],
 		lock_style : [], 
-		unlock_style : null 
+		unlock_style : null ,
+		notnull_style : null 
 	}
 	return spreadjs_factory
 }])
@@ -130,25 +132,37 @@ async function(
 
 			sheet0.setRowHeight( cell_buttons.row, 30 )
 
+			spreadjs_factory.lock_style = new GC.Spread.Sheets.Style() 
+			spreadjs_factory.unlock_style = new GC.Spread.Sheets.Style() 
+			spreadjs_factory.notnull_style = new GC.Spread.Sheets.Style() 
+
+			spreadjs_factory.lock_style.name = 'LockStyle' 
+			spreadjs_factory.unlock_style.name = 'UNLockStyle' 
+			spreadjs_factory.notnull_style.name = 'NotNullStyle' 
+			spreadjs_factory.lock_style.backColor = '#EEEEEE'
+			spreadjs_factory.unlock_style.backColor = 'LemonChiffon'
+			spreadjs_factory.notnull_style.backColor = '#F2F7CD'
+
+			sheet0.addNamedStyle( spreadjs_factory.lock_style )
+			sheet0.addNamedStyle( spreadjs_factory.unlock_style )
+			sheet0.addNamedStyle( spreadjs_factory.notnull_style )
+
+		 	await ezch_tbl_editor_appService.update_schema_table( spread , tbl_name ) 
+		    const { notnull_col_index } = await ezch_tbl_editor_appService.update_data_table( spread , tbl_name ) 
 
 			let cell_mass = sheet0.getRange('B3:B3')
+
+			notnull_col_index.forEach((ent, index)=>{
+				if( ent ){
+					sheet0.getRange( cell_mass.row , cell_mass.col + index , 5, 1 ).styleName('NotNullStyle') 
+				}
+				if( index == 0 )	
+					sheet0.getRange( cell_mass.row , cell_mass.col + index , 5, 1 ).styleName('LockStyle') 
+			})
 			sheet0.getRange( cell_mass.row , cell_mass.col , 1 , 100 ).borderTop( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium ))
 			sheet0.getRange( cell_mass.row , cell_mass.col , 5 , 1 ).borderLeft( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium ))
 			sheet0.getRange( cell_mass.row + 4 , cell_mass.col , 1 , 100 ).borderBottom( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium ))
 
-			spreadjs_factory.lock_style = new GC.Spread.Sheets.Style() 
-			spreadjs_factory.unlock_style = new GC.Spread.Sheets.Style() 
-			spreadjs_factory.lock_style.name = 'LockStyle' 
-			spreadjs_factory.unlock_style.name = 'UNLockStyle' 
-			spreadjs_factory.lock_style.backColor = '#EEEEEE'
-			spreadjs_factory.unlock_style.backColor = 'LemonChiffon'
-			sheet0.addNamedStyle( spreadjs_factory.lock_style )
-			sheet0.addNamedStyle( spreadjs_factory.unlock_style )
-
-
-			await ezch_tbl_editor_appService.update_schema_table( spread , tbl_name ) 
-			await ezch_tbl_editor_appService.update_data_table( spread , tbl_name ) 
-			
 			sheet0.options.isProtected = false 
 			sheet0.getRange('B3:AD9').locked( false )
 			sheet0.options.isProtected = true 

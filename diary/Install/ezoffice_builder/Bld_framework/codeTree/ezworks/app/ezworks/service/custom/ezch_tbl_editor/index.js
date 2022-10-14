@@ -79,18 +79,20 @@ angular.module('ezch_tbl_editor_app',[])
 			}
 			let headInfo = ezch_tbl_editor_appFactory.tbl_schema_info.tbl_schema.filter((ent)=>ent.Visible == true ) 
 			let tableColumns = [] 
+			let notnull_col_index = [] 
 			headInfo.map((ent, index)=>{
 				tableColumns.push( new GC.Spread.Sheets.Tables.TableColumn( index +1 , ent.Field , ent.Field , ent.Formatter ) )	
+                notnull_col_index.push( (ent['Null'])? 0:1 )
 			})
 			sheet0.tables.resize( table , new GC.Spread.Sheets.Range( 8, 1, 4, tableColumns.length ))  
 // mass block clear 
 			let cell_mass = sheet0.getRange('B3:B3')
 			sheet0.getRange( cell_mass.row, cell_mass.col , 5 , 100 ).value('') 
 
-
 			table.autoGenerateColumns( false )
 			table.expandBoundRows( true ) 
 			table.bind( tableColumns , 'tbl_data', ezch_tbl_editor_appFactory.tbl_data_info ) 
+			return { notnull_col_index } 
 
 		}
 		this.update_schema_table = async ( spread , tbl_name = null )=>{
