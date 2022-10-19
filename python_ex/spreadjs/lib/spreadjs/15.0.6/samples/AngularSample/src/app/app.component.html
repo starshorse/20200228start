@@ -1,0 +1,27 @@
+<div class="app-container">
+    <div class="app-header content">
+      <img class="logo" src="assets/img/logo.png" alt="로고"><span class="header-text">{{ appHeader }}</span>
+    </div>
+    <div class="body-container">
+        <div class="navigationBar content">
+            <h2>SpreadJS</h2>
+            <nav>
+                <ul>
+                    <li><a routerLink="/quick-start" routerLinkActive="active">빠른 시작</a></li>
+                    <li><a routerLink="/gc-spread-sheets" routerLinkActive="active">GC 스프레드시트</a></li>
+                    <li><a routerLink="/gc-worksheet" routerLinkActive="active">GC-워크시트</a></li>
+                    <li><a routerLink="/gc-column" routerLinkActive="active">GC-열</a></li>
+                    <li><a routerLink="/data-binding" routerLinkActive="active">데이터 바인딩</a></li>
+                    <li><a routerLink="/style" routerLinkActive="active">스타일</a></li>
+                    <li><a routerLink="/outline" routerLinkActive="active">윤곽선</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="componentContainer content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="app-footer content">
+        <span class="footer-text">{{appFooter}}</span>
+    </div>
+</div>
