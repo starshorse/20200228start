@@ -1,0 +1,122 @@
+2022-10-20 16:14:20.93 > LogFile Creates
+2022-10-20 16:14:20.93 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://192.168.0.39:82/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 16:14:20.00 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS": 1, "RESULT": "success", "ERRORMESSAGE": "", "ROWS": [{"url": "https://wh.jandi.com/connect-api/team-webhook/13487135/fb8460c98286b49a7dcd778363228f8a"}], "COLUMNS": ["url"]}
+------------------------------------------------
+2022-10-20 16:14:20.00 > [Elapsed Time] pullFromDB() : 0.074sec(s)
+2022-10-20 16:14:21.00 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://192.168.0.39:82/RPA_SELECT
+body: {"query":"SELECT 회사명, 직위, 성명, 기본메일주소 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL ORDER BY 회사명","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 16:14:21.04 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS": 1, "RESULT": "success", "ERRORMESSAGE": "", "ROWS": [{"회사명": "chem", "직위": "과장", "성명": "윤현경", "기본메일주소": "service@ezchemtech.com"}, {"회사명": "chem", "직위": "대리", "성명": "이원미", "기본메일주소": "info@ezchemtech.com"}, {"회사명": "chem", "직위": "주임", "성명": "심규정", "기본메일주소": "info7@ezchemtech.com"}, {"회사명": "chem", "직위": "매니저", "성명": "김모아", "기본메일주소": "service3@ezchemtech.com"}, {"회사명": "chem", "직위": "주임", "성명": "김지연", "기본메일주소": "info3@ezchemtech.com"}, {"회사명": "chem", "직위": "주임", "성명": "김신영", "기본메일주소": "service2@ezchemtech.com"}, {"회사명": "chem", "직위": "차장", "성명": "김연희", "기본메일주소": "am@ezchemtech.com"},...
+------------------------------------------------
+2022-10-20 16:14:21.05 > [Elapsed Time] pullFromDB() : 0.055sec(s)
+2022-10-20 16:14:21.06 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://192.168.0.39:82/RPA_SELECT
+body: {"query":"SELECT DISTINCT 성명 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL AND 직위 <> '주임' AND 직위 <> '매니저' ORDER BY 성명","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 16:14:21.10 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS": 1, "RESULT": "success", "ERRORMESSAGE": "", "ROWS": [{"성명": "김연희"}, {"성명": "김현선"}, {"성명": "윤현경"}, {"성명": "이상현"}, {"성명": "이원미"}, {"성명": "최성철"}, {"성명": "최아련"}, {"성명": "최종규"}, {"성명": "황인국"}], "COLUMNS": ["성명"]}
+------------------------------------------------
+2022-10-20 16:14:21.11 > [Elapsed Time] pullFromDB() : 0.047sec(s)
+2022-10-20 16:30:06.99 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://192.168.0.80:8000/RPA_SELECT
+body: {"query":"SELECT * FROM [ezchemtech].[dbo].[TB_Log_Collector] WHERE filepath LIKE '%전자결재시스템%' AND query NOT LIKE '%SELECT %' AND query LIKE '%UPDATE %' AND query LIKE '%SET decision%' AND RegDate > '2022-09-07' ORDER BY seq DESC;","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 16:30:28.07 > ErrNumber:-2147012866
+2022-10-20 16:30:28.08 > ErrSource:WinHttp.WinHttpRequest
+2022-10-20 16:30:28.08 > ErrDesc:서버와의 연결이 비정상적으로 종료되었습니다.
+
+2022-10-20 16:30:28.10 > [Elapsed Time] pullFromDB() : 109.836sec(s)
+2022-10-20 16:38:24.00 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://192.168.0.80:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezchemtech].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 16:38:45.06 > ErrNumber:-2147012866
+2022-10-20 16:38:45.07 > ErrSource:WinHttp.WinHttpRequest
+2022-10-20 16:38:45.07 > ErrDesc:서버와의 연결이 비정상적으로 종료되었습니다.
+
+2022-10-20 16:38:45.08 > [Elapsed Time] pullFromDB() : 21.082sec(s)
+2022-10-20 16:40:47.20 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://192.168.0.80:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezchemtech].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 16:43:33.32 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://localhost:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezchemtech].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 16:44:03.73 > ErrNumber:-2147012894
+2022-10-20 16:44:03.73 > ErrSource:WinHttp.WinHttpRequest
+2022-10-20 16:44:03.74 > ErrDesc:작업 시간을 초과했습니다.
+
+2022-10-20 16:44:03.75 > [Elapsed Time] pullFromDB() : 33.066sec(s)
+2022-10-20 17:24:48.36 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://localhost:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezchemtech].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 17:25:19.73 > ErrNumber:-2147012894
+2022-10-20 17:25:19.73 > ErrSource:WinHttp.WinHttpRequest
+2022-10-20 17:25:19.73 > ErrDesc:작업 시간을 초과했습니다.
+
+2022-10-20 17:25:19.73 > [Elapsed Time] pullFromDB() : 35.633sec(s)
+2022-10-20 17:29:56.29 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://localhost:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezchemtech].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 17:30:27.74 > ErrNumber:-2147012894
+2022-10-20 17:30:27.74 > ErrSource:WinHttp.WinHttpRequest
+2022-10-20 17:30:27.74 > ErrDesc:작업 시간을 초과했습니다.
+
+2022-10-20 17:30:27.74 > [Elapsed Time] pullFromDB() : 33.672sec(s)
+2022-10-20 17:31:51.38 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://localhost:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezchemtech].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 17:31:51.47 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":-1,"RESULT":"error","ERRORMESSAGE":""}
+------------------------------------------------
+2022-10-20 17:31:51.47 > [Elapsed Time] pullFromDB() : 1.742sec(s)
+2022-10-20 17:35:10.31 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://localhost:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezoffice_test].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 17:35:20.67 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":-1,"RESULT":"error","ERRORMESSAGE":""}
+------------------------------------------------
+2022-10-20 17:35:20.67 > [Elapsed Time] pullFromDB() : 12.223sec(s)
+2022-10-20 17:56:06.82 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://localhost:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezoffice_test].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [ezoffice_test].[dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [ezoffice_test].[dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"D:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-10-20 17:56:09.90 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":-1,"RESULT":"error","ERRORMESSAGE":""}
+------------------------------------------------
+2022-10-20 17:56:09.91 > [Elapsed Time] pullFromDB() : 5.809sec(s)
