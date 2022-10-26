@@ -16,13 +16,13 @@ decode_ml_key = jwt.decode( encode_jwt , HADES_1_KEY, 'HS256' )
 #print( ezchemtech_ml_key , decode_ml_key ) 
 #print( decode_ml_key['company'] ) 
 
-conn1 = pymssql.connect( server='34.64.110.64', database = 'config' , user='sqlserver' , password = '!csdlwlof#1286' )
+conn1 = pymssql.connect( server='', database = 'config' , user='sqlserver' , password = '' )
 sql = 'select * from dbo.TB_Auth_Machine' 
 df1 = pd.read_sql( sql, con=conn1 ) 
 sql = 'select * from dbo.TB_Auth_Organization' 
 df2 = pd.read_sql( sql, con=conn1 ) 
 
-conn2 = pymssql.connect( server='34.64.110.64', database = 'ezchemtech' , user='sqlserver' , password = '!csdlwlof#1286' )
+conn2 = pymssql.connect( server='', database = 'ezchemtech' , user='sqlserver' , password = '' )
 sql = 'select * from dbo.TB_Admin_1' 
 df3 = pd.read_sql( sql, con=conn2 ) 
 
