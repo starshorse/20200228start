@@ -12,15 +12,20 @@ import bs4
 from lxml import html
 import pandas as pd 
 import pdb 
+from dotenv import load_dotenv 
+from pathlib import Path 
+import os 
 
-public_key ='w8SK7ikbgYbS%2FCk3kIf0odvM6wfrNCFSCjSHGn8JKEQp9YAMW4hDR805UWO8%2BSfherqBEimlZ%2F23oKU7s7hiYg%3D%3D'
+dotenv_path = Path('../.env')
+load_dotenv( dotenv_path = dotenv_path )
+
+public_key = os.environ.get('OPENAPI_PUBLIC_KEY') 
 # url 입력
-
 #url = 'http://api.data.go.kr/openapi/tn_pubr_public_cctv_api?serviceKey=개인인증키입력&pageNo=1&numOfRows=10&type=json'
-url = 'http://api.seibro.or.kr/openapi/service/CorpSvc/getIssucoBasicInfo?serviceKey=w8SK7ikbgYbS%2FCk3kIf0odvM6wfrNCFSCjSHGn8JKEQp9YAMW4hDR805UWO8%2BSfherqBEimlZ%2F23oKU7s7hiYg%3D%3D&issucoCustno=593'
-response = requests.get(url)
+url = os.environ.get('OPENAPI_URL') 
 
 pdb.set_trace() 
+response = requests.get(url)
 
 contents = response.text
 xml_obj = bs4.BeautifulSoup(contents, 'lxml-xml')
