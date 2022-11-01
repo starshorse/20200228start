@@ -2,11 +2,19 @@ import pymssql
 import pandas as pd
 import pdb 
 import sys 
+from dotenv import load_dotenv
+from pathlib import Path 
+import os 
+#load .env 
+dotenv_path = Path('../../.env')
+load_dotenv( dotenv_path = dotenv_path ) 
 
 #
 #  argment[0] : company_name 
 #  argment[1] : user_id   customer_01@demo.co.kr 
-
+sqlserver_host = os.environ.get('SQLsERVER_HOST')
+sqlserver_id = os.environ.get('SQLSERVER_ID') 
+sqlserver_password = os.environ.get('SQLSERVER_PASSWORD') 
 
 if __name__ == '__main__':
     argument = sys.argv 
@@ -17,7 +25,7 @@ if len( argument ) != 2:
     print('need arguement i.e: mk_get_list_by_id.py demo customer_01@demo.co.kr' ) 
     quit()     
 
-conn1 = pymssql.connect( server='34.64.110.64' ,user = 'sqlserver' , password = '!csdlwlof#1286', database = 'ezchemtech' ) 
+conn1 = pymssql.connect( server= sqlserver_host ,user = sqlserver_id , password = sqlserver_password , database = 'ezchemtech' ) 
 
 sql = 'select * from config.dbo.TB_Auth_Machine' 
 df_machine = pd.read_sql( sql , con=conn1 ) 
