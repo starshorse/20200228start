@@ -33,9 +33,11 @@ def get_ml_keys( company_ , id_ ):
     df_user = pd.read_sql( sql , con=conn1 ) 
     org_user_auth_seq = df_user['seq'].values[0]  
     org_auth_seq = df_org_auth.loc[ df_org_auth.orgSeq == org_seq ]['seq'].values[0]
+    org_auth_key = df_org_auth.loc[ df_org_auth.orgSeq == org_seq ]['authKey'].values[0]
+    org_auth_secret = df_org_auth.loc[ df_org_auth.orgSeq == org_seq ]['orgAuthSecret'].values[0]
     df_mk_list = df_machine.loc[ ( df_machine.authOrgSeq == org_auth_seq ) & ( df_machine.authOrgUserSeq == org_user_auth_seq) ]
     print( df_mk_list )
-    return df_mk_list.to_json( orient ='records' ) 
+    return df_mk_list.to_json( orient ='records' ) , org_auth_key, org_auth_secret  
 
 if __name__ == '__main__':
     argument = sys.argv 
