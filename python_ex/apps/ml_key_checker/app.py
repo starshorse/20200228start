@@ -24,3 +24,6 @@ def getUi():
     print( ml_list )
     pdb.set_trace() 
     return render_template('Project(Asiafni)/program.html',companyName = company_name, toPass= ml_list , orgName = org_auth_key , orgAuthSecret = org_auth_secret ) 
+
+#if __name__ == "__main__":
+#    app.run( port = 5010 )
