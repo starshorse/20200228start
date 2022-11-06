@@ -23,7 +23,7 @@ jupiter_token = os.environ.get('JUPITER_TOKEN')
 source_select = 'hades' 
 hades_addr_1 ='ezoffice365.com:8000' 
 hades_addr_2 ='192.168.0.80:8000' 
-hades_addr = hades_addr_2 
+hades_addr = hades_addr_1 
 
 print( sqlserver_host )
 
@@ -39,9 +39,11 @@ def get_ml_keys( company_, id_ ):
     org_db = df_org.loc[ df_org.orgName == company_ ]['mainDB'].values[0]
     org_seq = df_org.loc[ df_org.orgName == company_ ]['seq'].values[0]
     pdb.set_trace() 
-    df_user = requests.get(f"http://{hades_addr}/restapi/data/{ org_db }/admin_1", headers = headers ).json() 
-    df_user = pd.DataFrame( df_user["ROWS"] ) 
-    org_user_auth_seq = df_user.loc[ df_user.email == id_ ]['seq'].values[0]
+#    
+#    df_user = requests.get(f"http://{hades_addr}/restapi/data/{ org_db }/admin_1", headers = headers ).json() 
+#    df_user = pd.DataFrame( df_user["ROWS"] ) 
+#    org_user_auth_seq = df_user.loc[ df_user.email == id_ ]['seq'].values[0]
+    org_user_auth_seq = 1   
     org_auth_seq = df_org_auth.loc[ df_org_auth.orgSeq == org_seq ]['seq'].values[0]
     org_auth_key = df_org_auth.loc[ df_org_auth.orgSeq == org_seq ]['authKey'].values[0]
     org_auth_secret = df_org_auth.loc[ df_org_auth.orgSeq == org_seq ]['orgAuthSecret'].values[0]
