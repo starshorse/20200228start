@@ -1,0 +1,116 @@
+2022-11-13 19:06:23.30 > LogFile Creates
+2022-11-13 19:06:23.30 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\restApi_01.xlsm"}
+------------------------------------------------
+2022-11-13 19:06:23.30 > ErrNumber:9
+2022-11-13 19:06:23.32 > ErrSource:VBAProject
+2022-11-13 19:06:23.32 > ErrDesc:아래 첨자 사용이 잘못되었습니다.
+2022-11-13 19:06:24.76 > [Elapsed Time] pullFromDB() : 23.016sec(s)
+2022-11-13 19:06:59.89 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT 회사명, 직위, 성명, 기본메일주소 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL ORDER BY 회사명","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\restApi_01.xlsm"}
+------------------------------------------------
+2022-11-13 19:06:59.89 > ErrNumber:9
+2022-11-13 19:06:59.89 > ErrSource:VBAProject
+2022-11-13 19:06:59.90 > ErrDesc:아래 첨자 사용이 잘못되었습니다.
+2022-11-13 19:06:59.92 > [Elapsed Time] pullFromDB() : 1.531sec(s)
+2022-11-13 19:07:05.23 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT DISTINCT 성명 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL AND 직위 <> '주임' AND 직위 <> '매니저' ORDER BY 성명","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\restApi_01.xlsm"}
+------------------------------------------------
+2022-11-13 19:07:05.23 > ErrNumber:9
+2022-11-13 19:07:05.23 > ErrSource:VBAProject
+2022-11-13 19:07:05.24 > ErrDesc:아래 첨자 사용이 잘못되었습니다.
+2022-11-13 19:07:05.27 > [Elapsed Time] pullFromDB() : 5.32sec(s)
+2022-11-13 19:13:21.39 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\restApi_01.xlsm"}
+------------------------------------------------
+2022-11-13 19:13:21.42 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"machine key changed"}
+------------------------------------------------
+2022-11-13 19:13:21.42 > [Elapsed Time] pullFromDB() : 65.859sec(s)
+2022-11-13 19:13:21.43 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT 회사명, 직위, 성명, 기본메일주소 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL ORDER BY 회사명","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\restApi_01.xlsm"}
+------------------------------------------------
+2022-11-13 19:13:21.45 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"machine key changed"}
+------------------------------------------------
+2022-11-13 19:13:21.47 > [Elapsed Time] pullFromDB() : 0.016sec(s)
+2022-11-13 19:13:21.47 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT DISTINCT 성명 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL AND 직위 <> '주임' AND 직위 <> '매니저' ORDER BY 성명","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\restApi_01.xlsm"}
+------------------------------------------------
+2022-11-13 19:13:21.48 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"machine key changed"}
+------------------------------------------------
+2022-11-13 19:13:21.49 > [Elapsed Time] pullFromDB() : 0.023sec(s)
+2022-11-13 19:16:30.31 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\restApi_01.xlsm"}
+------------------------------------------------
+2022-11-13 19:16:30.40 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":-1,"RESULT":"error","ERRORMESSAGE":"The server principal \"ezoffice_test\" is not able to access the database \"ezchemtech\" under the current security context."}
+------------------------------------------------
+2022-11-13 19:16:30.40 > [Elapsed Time] pullFromDB() : 0.102sec(s)
+2022-11-13 19:22:02.19 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\restApi_01.xlsm"}
+------------------------------------------------
+2022-11-13 19:22:02.23 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":-1,"RESULT":"error","ERRORMESSAGE":"The server principal \"ezoffice_test\" is not able to access the database \"ezchemtech\" under the current security context."}
+------------------------------------------------
+2022-11-13 19:22:02.24 > [Elapsed Time] pullFromDB() : 0.055sec(s)
+2022-11-13 19:23:07.62 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\restApi_01.xlsm"}
+------------------------------------------------
+2022-11-13 19:23:14.72 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":-1,"RESULT":"error","ERRORMESSAGE":"The server principal \"ezoffice_test\" is not able to access the database \"ezchemtech\" under the current security context."}
+------------------------------------------------
+2022-11-13 19:26:12.34 > [Elapsed Time] pullFromDB() : 203.609sec(s)
+2022-11-13 19:27:12.48 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\restApi_01.xlsm"}
+------------------------------------------------
+2022-11-13 19:27:14.22 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":-1,"RESULT":"error","ERRORMESSAGE":"The server principal \"ezoffice_test\" is not able to access the database \"ezchemtech\" under the current security context."}
+------------------------------------------------
+2022-11-13 19:27:19.19 > [Elapsed Time] pullFromDB() : 6.719sec(s)
+2022-11-13 19:54:21.99 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezoffice_test].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [ezoffice_test].[dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [ezoffice_test].[dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\restApi_01.xlsm"}
+------------------------------------------------
+2022-11-13 19:54:22.07 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":4,"drafterName":"김현선","priority":"일반","requestType":"test","requestTitle":"test","requestDesc":"테스트입니다.","signatoryNameList":"김연희","LineFirst":null,"LineSecond":null,"LineThird":null,"submitStatus":"Y","RegDate":"2022-09-19 11:26:59.940","processDesc":"결재 완료(승인)","resultLatest":"승인","opinion":""},{"seq":5,"drafterName":"김연희","priority":"일반","requestType":"인사","requestTitle":"유연근무제","requestDesc":"김신영주임 근무시간 조정요청 ( 기존: 8시30분~5시30분 변경희망: 8시~5시) ","signatoryNameList":"최성철,황인국","LineFirst":null,"LineSecond":null,"LineThird":null,"subm...
+------------------------------------------------
+2022-11-13 19:54:22.09 > [Elapsed Time] pullFromDB() : 0.109sec(s)

@@ -1,0 +1,28 @@
+2022-11-13 18:24:19.59 > LogFile Creates
+2022-11-13 18:24:19.59 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-11-13 18:24:19.62 > ErrNumber:9
+2022-11-13 18:24:19.62 > ErrSource:VBAProject
+2022-11-13 18:24:19.62 > ErrDesc:아래 첨자 사용이 잘못되었습니다.
+2022-11-13 18:24:19.65 > [Elapsed Time] pullFromDB() : 0.078sec(s)
+2022-11-13 18:24:19.67 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT 회사명, 직위, 성명, 기본메일주소 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL ORDER BY 회사명","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-11-13 18:24:19.70 > ErrNumber:9
+2022-11-13 18:24:19.70 > ErrSource:VBAProject
+2022-11-13 18:24:19.72 > ErrDesc:아래 첨자 사용이 잘못되었습니다.
+2022-11-13 18:24:19.72 > [Elapsed Time] pullFromDB() : 0.07sec(s)
+2022-11-13 18:24:19.73 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT DISTINCT 성명 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL AND 직위 <> '주임' AND 직위 <> '매니저' ORDER BY 성명","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-11-13 18:24:19.73 > ErrNumber:9
+2022-11-13 18:24:19.74 > ErrSource:VBAProject
+2022-11-13 18:24:19.74 > ErrDesc:아래 첨자 사용이 잘못되었습니다.
+2022-11-13 18:24:19.76 > [Elapsed Time] pullFromDB() : 0.023sec(s)
