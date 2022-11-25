@@ -7,17 +7,17 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "1234",
-    "database": "database_test",
-    "host": "13.209.79.194",
-    "port":"59666",
-    "dialect": "mysql"
+    "username": "sa",
+    "password": "!csdlwlof#1286",
+    "database": "madang",
+    "host": "192.168.0.88",
+    "port":"1433",
+    "dialect": "mssql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
+    "username": "starshorse",
+    "password": "1234",
+    "database": "starshorse",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

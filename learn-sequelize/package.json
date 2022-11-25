@@ -16,6 +16,7 @@
     "sequelize": "^6.21.1"
   },
   "devDependencies": {
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "tedious": "^15.1.2"
   }
 }

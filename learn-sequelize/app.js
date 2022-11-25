@@ -7,9 +7,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var sequelize = require('./models').sequelize 
+var models = require('./models')
 
 var app = express();
-sequelize.sync() 
 const { QueryTypes } = require('sequelize');
 require('dotenv').config() 
 if( process.env.NODE_ENV == 'development' ){
@@ -17,7 +17,32 @@ if( process.env.NODE_ENV == 'development' ){
 		const users = await sequelize.query("SELECT * FROM `quotations`", { type: sequelize.QueryTypes.SELECT });
 		console.log( users )
 	})()
-}
+}else if( process.env.NODE_ENV == 'production' ){
+	( async ()=>{
+		const users = await sequelize.query("SELECT * FROM `test`", { type: sequelize.QueryTypes.SELECT });
+		console.log( users )
+	})()
+}else if( process.env.NODE_ENV == 'test' ){
+	( async ()=>{
+		const users = await sequelize.query("SELECT * FROM Book", { type: sequelize.QueryTypes.SELECT });
+		console.log( users )
+	})()
+};
+
+( async ()=>{
+	const t = await sequelize.transaction() 
+	try{
+	     for( const i of [0,1,2,3,4,5] ){
+	     	await  models.User.create({ name:`RICHARD ${i}` , email :`richard.${i}@ez-office.co.kr` },{ transaction: t } ) 
+	     }
+	     await t.commit();	
+	}catch(err){
+	     await t.rollback(); 	
+	}
+
+})()
+
+// sequelize.sync() 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
