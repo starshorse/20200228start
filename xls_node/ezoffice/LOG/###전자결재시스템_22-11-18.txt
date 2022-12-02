@@ -1,0 +1,28 @@
+2022-11-18 11:01:40.68 > LogFile Creates
+2022-11-18 11:01:40.68 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-JC987LD","filepath":"F:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-11-18 11:01:41.20 > ErrNumber:-2146233079
+2022-11-18 11:01:41.20 > ErrSource:EZoffice365
+2022-11-18 11:01:41.21 > ErrDesc:원격 서버에서 (403) 사용할 수 없음 오류를 반환했습니다.
+2022-11-18 11:01:41.25 > [Elapsed Time] pullFromDB() : 0.594sec(s)
+2022-11-18 11:01:41.26 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT 회사명, 직위, 성명, 기본메일주소 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL ORDER BY 회사명","hostname":"DESKTOP-JC987LD","filepath":"F:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-11-18 11:01:41.39 > ErrNumber:-2146233079
+2022-11-18 11:01:41.40 > ErrSource:EZoffice365
+2022-11-18 11:01:41.41 > ErrDesc:원격 서버에서 (403) 사용할 수 없음 오류를 반환했습니다.
+2022-11-18 11:01:41.41 > [Elapsed Time] pullFromDB() : 0.156sec(s)
+2022-11-18 11:01:41.42 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT DISTINCT 성명 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL AND 직위 <> '주임' AND 직위 <> '매니저' ORDER BY 성명","hostname":"DESKTOP-JC987LD","filepath":"F:\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2022-11-18 11:01:41.55 > ErrNumber:-2146233079
+2022-11-18 11:01:41.55 > ErrSource:EZoffice365
+2022-11-18 11:01:41.55 > ErrDesc:원격 서버에서 (403) 사용할 수 없음 오류를 반환했습니다.
+2022-11-18 11:01:41.56 > [Elapsed Time] pullFromDB() : 0.145sec(s)

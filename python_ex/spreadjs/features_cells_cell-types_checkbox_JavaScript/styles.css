@@ -1,0 +1,59 @@
+.sample-tutorial {
+     position: relative;
+     height: 100%;
+     overflow: hidden;
+}
+
+.sample-spreadsheets {
+    width: calc(100% - 280px);
+    height: 100%;
+    overflow: hidden;
+    float: left;
+}
+
+.options-container {
+    float: right;
+    width: 280px;
+    padding: 12px;
+    height: 100%;
+    box-sizing: border-box;
+    background: #fbfbfb;
+    overflow: auto;
+}
+
+
+.option-row {
+    font-size: 14px;
+    padding: 5px;
+}
+
+.option-row {
+    padding-bottom: 5px;
+}
+
+label {
+    padding-bottom: 4px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
+
+input[type=checkbox] {
+    width: auto;
+}
+
+input[type=checkbox]+label {
+    display: inline-block;
+    width: auto;
+}
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html style="height:100%;font-size:14px;">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--    
+    <link rel="stylesheet" type="text/css" href="https://www.grapecity.com/spreadjs/demos/en/purejs/node_modules/@grapecity/spread-sheets/styles/gc.spread.sheets.excel2013white.css">
+    <script src="https://www.grapecity.com/spreadjs/demos/en/purejs/node_modules/@grapecity/spread-sheets/dist/gc.spread.sheets.all.min.js" type="text/javascript"></script>
+ -->
+ 	<link rel="stylesheet" type="text/css" href="../lib/spreadjs/15.0.6/css/gc.spread.sheets.excel2016colorful.15.0.6.css">
+        <script src="../lib/spreadjs/15.0.6/scripts/gc.spread.sheets.all.15.0.6.min.js"></script> 
+    <script src="https://www.grapecity.com/spreadjs/demos/spread/source/js/license.js" type="text/javascript"></script>
+    <script src="app.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+  <div class="sample-tutorial">
+    <div id="ss" class="sample-spreadsheets"></div>
+      <div class="options-container">
+          <div class="option-row">
+              <labe>Select the check box cell in Spread and edit its options with these text boxes.</labe>
+          </div>
+          <div class="option-row">
+              <label>caption:</label>
+              <input type="text" id="txtCheckBoxCellTextCaption" />
+          </div>
+          <div class="option-row">
+              <label>textTrue:</label>
+              <input type="text" id="txtCheckBoxCellTextTrue" value="textTrue" />
+              <label>textIndeterminate(for 3-state option):</label>
+              <input type="text" id="txtCheckBoxCellTextIndeterminate" value="textIndeterminate" />
+              <label>textFalse:</label>
+              <input type="text" id="txtCheckBoxCellTextFalse" value="textFalse" />
+              <label>boxSize</label>
+              <input type="text" id="checkboxSize" min="1">
+          </div>
+          <div class="option-row">
+              <label>textAlign:</label>
+              <select id="selCheckBoxCellAlign">
+                  <option value="0" selected="selected">top</option>
+                  <option value="1">bottom</option>
+                  <option value="2">left</option>
+                  <option value="3">right</option>
+              </select>
+          </div>
+          <div class="option-row">
+              <input type="checkbox" id="ckbCheckBoxCellIsThreeState" checked="checked" />
+              <label for="ckbCheckBoxCellIsThreeState">isThreeState</label>
+          </div>
+          <div class="option-row">
+              <label></label>
+              <input type="button" id="changeProperty" value="Update" />
+          </div>
+      </div>
+</div>
+</body>
+</html>

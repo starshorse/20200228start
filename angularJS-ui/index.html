@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Index</title>
-        <script src="lib/angular.min.js"></script>
-        <script src="lib/angular-ui-router.min.js"></script>
-        <!--
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js" type="text/javascript" charset="utf-8"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" type="text/javascript" charset="utf-8"></script>-->
-        <script src="helloworld.js"></script>
-		<!--        <script src="auth.js"></script>-->
-    </head>
-    <body>
-        <a ui-sref="hello">Hello</a>
-        <a ui-sref="about">About</a>
-        <a ui-sref="inbox.priority">priority</a>
-		<a ui-sref="inbox({inboxId:1, sorted:123456 })">Inbox1</a>
-        <ui-view></ui-view>
-    </body>
-</html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<title>Index</title>
+		<script src="./node_modules/angular/angular.min.js"></script>
+		<script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>	
+		<script src="helloworld.js"></script>
+	</head>
+	<body>
+		<a ui-sref="hello">Hello</a>
+		<a ui-sref="about">About</a>
+		<a ui-sref="priority">priority</a>
+		<a ui-sref="inbox({ inboxId:1 ,sorted:123456 })">Inbox1</a>
+			<ui-view></ui-view>
+	</body>
+</html> 	
