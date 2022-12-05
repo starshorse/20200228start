@@ -1,7 +1,7 @@
 ( function(){
-	'use strict':
+	'use strict';
 	angular.module('app').factory('AuthenticationService', AuthenticationService );
-	uthenticationService.$inject = ['$http','$cookies','$rootScope','$timeout','UserService'];
+	AuthenticationService.$inject = ['$http','$cookies','$rootScope','$timeout','UserService'];
 	function AuthenticationService($http, $cookies, $rootScope, $timeout, UserService ){
 		var service ={};
 		service.Login = Login

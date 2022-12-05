@@ -27,7 +27,7 @@
 		}
 		function GetByUsername( username ){
 			var deferred = $q.defer()
-			var filtered = $filter('filter')( getUser(), { username: username });
+			var filtered = $filter('filter')( getUsers(), { username: username });
 			var user = filtered.length ? filtered[0] : null;
 			deferred.resolve( user );
 			return deferred.promise;		
