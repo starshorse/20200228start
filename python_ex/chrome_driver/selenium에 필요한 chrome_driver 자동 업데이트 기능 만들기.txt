@@ -1,0 +1,261 @@
+01. selenium에 필요한 chrome_driver 자동 업데이트 기능 만들기.chromedriver_autoinstaller2021. 10. 1. 20:58
+CHROMEDriver, chromedriver_autoinstaller, Selenium, 동적크롤링, 웹크롤링, 파이썬
+
+목표 : 현재 크롬 버전을 확인하여 최신 크롬드라이버로 업데이트 하고 구버전 크롬드라이버는 자동 삭제
+
+
+selenium을 사용하기 위해서는 최신버전의 chrome_driver가 필수이다. 만약 크롬 드라이버가 업데이트 되었는데, 내 프로그램의 디렉토리에 해당 버전의 크롬드라이버가 없다면 selenium을 사용한 웹 크롤링이 불가능하다.
+이때 쓰이는 라이브러리가 바로 chromedriver_autoinstaller 이다.
+쓰이는 메서드는 단순하다.
+
+get_chrome_version( ) : 현재 내 크롬 버전값을 반환
+install( ) : 크롬 드라이버 설치 
+get_chrome_version( ) 부터 자세히 설명하겠다. 먼저 chromedriver_autoinstaller은 너무 기니까 AutoChrome로 install하겠다.
+get_chrome_version( ) 
+
+import chromedriver_autoinstaller as AutoChrome
+chrome_ver      = AutoChrome.get_chrome_version()
+print(chrome_ver)
+94.0.4606.61
+
+위처럼 현재 chrome 버전을 출력할 수 있다.  다음으로 install( )이다. 
+
+install( )
+import chromedriver_autoinstaller as AutoChrome
+AutoChrome.install(True)
+
+
+여기서 인수로 True를 주었는데, 이는 현재 디렉토리에 최신 크롬드라이버 버전의 숫자 앞 두자리를 이름으로 하는 폴더를 생성하고 그 안에 최신 크롬드라이버를 넣는 인수 이다. 해당 디렉토리에 폴더가 추가된것을 확인할 수 있다. 
+이를 이용해 현재 디렉토리에 해당 폴더가 존재하는지 여부를 확인하여 최신 크롬 드라이버를 설치하는 함수를 만들 수 있다.
+
+import os
+import chromedriver_autoinstaller as AutoChrome
+
+chrome_ver      = AutoChrome.get_chrome_version().split('.')[0] # 현재 버전의 앞 두숫자
+current_list    = os.listdir(os.getcwd()) 			#현재 디렉토리 내 파일/폴더의 리스트
+    print(chrome_ver)
+    print(current_list)
+    
+if not chrome_ver in current_list:				# 버전명으로 된 폴더가 있는지 확인.
+    print("크롬드라이버 다운로드 실행")
+    AutoChrome.install(True)
+    print("크롬드라이버 다운로드 완료")
+else: print("크롬드라이버 버전이 최신입니다.")
+
+
+여기서 os.getcwd( ) 는 현재 작업중인 디렉토리 이고, os.listdir( )은 디렉토리 내 개체의 리스트를 출력한다.
+get_chrome_version( ) 을통해 얻은 버전값인 94.0.4606.61을 split('.')[0]을 통해 " . " 으로 나누어 0번째 값인 94를 반환해 chrome_ver 변수에 넣는다.
+그리고 current_list에 chrome_ver이 있는지를 if문으로 판단해서 없으면 다운로드를 진행하는 것이다.
+결과는 아래와같다.
+
+94
+['.idea', 'main.py', 'venv']
+크롬드라이버 다운로드 실행
+크롬드라이버 다운로드 완료
+ 
+
+이제 크롬드라이버가 들어있는 폴더만 추리는 함수를 만들어보자.
+*여기서는 테스트를 위해 미리 86폴더와 94폴더를 만들어서 크롬드라이버를 넣어주었다.
+먼저 현재 디렉토리의 파일/폴더의 주소를 만들어줘보자.
+
+import os
+
+current_list    = os.listdir(os.getcwd()) # 현재 디렉토리의 파일/폴더의 리스트
+print(current_list)
+print(os.getcwd())
+
+for i in current_list:
+    path = os.path.join(os.getcwd(),i)	# 현재 디렉토리에 파일/폴더를 더해 주소를 만듦
+    print(path)
+ 
+
+여기서 os.path.join( )은 디렉토리에 파일을 붙여 주소를 만들때 쓰는 함수이다.
+
+['.idea', '86', '94', 'main.py', 'test.py', 'test2.py', 'venv']
+C:\Users\2064055\PycharmProjects\study_selenium
+C:\Users\2064055\PycharmProjects\study_selenium\.idea
+C:\Users\2064055\PycharmProjects\study_selenium\86
+C:\Users\2064055\PycharmProjects\study_selenium\94
+C:\Users\2064055\PycharmProjects\study_selenium\main.py
+C:\Users\2064055\PycharmProjects\study_selenium\test.py
+C:\Users\2064055\PycharmProjects\study_selenium\test2.py
+C:\Users\2064055\PycharmProjects\study_selenium\venv
+위와같이 현재 디렉토리의 주소들을 만들었다. 이제 파일인 경우를 제외하고 폴더만 추려보자.
+
+import os
+
+current_list    = os.listdir(os.getcwd())
+for i in current_list:
+    path = os.path.join(os.getcwd(),i)
+    if os.path.isdir(path):				  # 폴더만 추린다.
+        print(f'폴더명 : {i} / 내용물 {os.listdir(path)}') # 그 폴더의 내용물을 리스트로 출력한다.
+
+
+여기서 isdir( ) 함수는 현재 경로가 폴더이면 True, 아니면 False를 반환하는 메서드이다. 
+폴더명 : .idea / 내용물 ['.gitignore', 'inspectionProfiles', 'misc.xml', 'modules.xml', 'study_selenium.iml', 'workspace.xml']
+폴더명 : 86 / 내용물 ['chromedriver.exe']
+폴더명 : 94 / 내용물 ['chromedriver.exe']
+폴더명 : venv / 내용물 ['Include', 'Lib', 'pyvenv.cfg', 'Scripts']
+이제 해당 폴더에 'chromedriver.exe'가 있는 경우만 추려서 chrome_list 리스트에 넣어보자.
+
+import os
+
+current_list    = os.listdir(os.getcwd())
+chrome_list = []				   # 빈 리스트 생성
+
+for i in current_list:
+    path = os.path.join(os.getcwd(),i)
+    if os.path.isdir(path):
+        if 'chromedriver.exe' in os.listdir(path): #'chromedriver.exe'가 해당 폴더에 있는지 확인
+            chrome_list.append(i)		   # 있다면 chrome_list에 추가.
+
+print(chrome_list)
+
+여기서 .append( ) 는 리스트에 요소를 추가하는 메서드이다.
+
+['86', '94']
+이렇게 크롬드라이버가 들어있는 폴더만 추렸다. 여기서 최신 크롬 버전명을 제외하면 구버전 폴더명만 추릴수가 있다.
+
+import os
+import chromedriver_autoinstaller as AutoChrome
+
+
+chrome_ver      = AutoChrome.get_chrome_version().split('.')[0]
+
+current_list    = os.listdir(os.getcwd())
+chrome_list = []
+for i in current_list:
+    path = os.path.join(os.getcwd(), i)
+    if os.path.isdir(path):
+        if 'chromedriver.exe' in os.listdir(path):
+            chrome_list.append(i)
+
+old_version = list(set(chrome_list)-set([chrome_ver])) # 크롬드라이버가 있는폴더중에 최신폴더 제외
+print(old_version)
+
+여기서 list(set(A)-set(B))는 리스트 A와 B의 차집합을 구하는 코드이다.
+['86']
+ 
+
+이제 이 폴더를 삭제하여보자
+*디렉토리 삭제를 하는 메서드인 rmtree를 사용하기위해 먼저 shutil을 import 한다.
+
+import os
+import chromedriver_autoinstaller as AutoChrome
+import shutil
+
+chrome_ver      = AutoChrome.get_chrome_version().split('.')[0]
+
+current_list    = os.listdir(os.getcwd())
+chrome_list = []
+for i in current_list:
+    path = os.path.join(os.getcwd(), i)
+    if os.path.isdir(path):
+        if 'chromedriver.exe' in os.listdir(path):
+            chrome_list.append(i)
+
+old_version = list(set(chrome_list)-set([chrome_ver]))
+
+for i in old_version:
+    path = os.path.join(os.getcwd(),i)
+print(path)		# 구버전 크롬드라이버가 들어있는 경로
+shutil.rmtree(path)	# 해당 경로의 디렉토리 삭제(파일포함)
+print(os.getcwd())      # 현재 디렉토리 다시 출력.
+
+C:\Users\2064055\PycharmProjects\study_selenium\86
+C:\Users\2064055\PycharmProjects\study_selenium
+구버전 크롬드라이버가 들어있던 86폴더가 삭제된것을 볼 수 있다.
+여기에 아까 만들어두었던 최신 크롬드라이버 다운로드하는 코드를 합치면 아래와 같다.
+구버전이 들어있는 73, 87 폴더를 만들고 최신버전이 들어있는 폴더는 삭제하고 실행하여보자
+
+
+import os
+import chromedriver_autoinstaller as AutoChrome
+import shutil
+
+def chromedriver_update():
+    chrome_ver      = AutoChrome.get_chrome_version().split('.')[0]
+    print(f'현재 버전은 {chrome_ver}입니다.')
+    current_list    = os.listdir(os.getcwd())
+    print(f'전체 객체 확인 : {current_list}')
+    chrome_list = []
+    for i in current_list:
+        path = os.path.join(os.getcwd(), i)
+        print(f'객체 경로 설정 : {path}')
+        if os.path.isdir(path):
+            print(f'[폴더확인]')
+            if 'chromedriver.exe' in os.listdir(path):
+                print(f'[크롬드라이버확인]')
+                chrome_list.append(i)
+    print(f'크롬드라이버가 들어있는 폴더명 : {chrome_list} / 최신버전인 {chrome_ver} 제외' )
+    old_version = list(set(chrome_list)-set([chrome_ver]))
+    print(f'구버전이 포함된 폴더명 : {old_version}')
+
+    for i in old_version:
+        path = os.path.join(os.getcwd(),i)
+        print(f'구버전이 포함된 폴더의 전체 경로: {path} 삭제 진행' )
+        shutil.rmtree(path)
+
+    if not chrome_ver in current_list:
+        print("최신 버전 크롬드라이버가 없습니다.")
+        print("크롬드라이버 다운로드 실행")
+        AutoChrome.install(True)
+        print("크롬드라이버 다운로드 완료")
+    else : print("크롬드라이버 버전이 최신입니다.")
+
+if __name__ == '__main__':
+    chromedriver_update()
+
+실행하면 아래와같다.
+
+현재 버전은 94입니다.
+전체 객체 확인 : ['.idea', '73', '87', 'main.py', 'test.py', 'test2.py', 'venv']
+객체 경로 설정 : C:\Users\2064055\PycharmProjects\study_selenium\.idea
+[폴더확인]
+객체 경로 설정 : C:\Users\2064055\PycharmProjects\study_selenium\73
+[폴더확인]
+[크롬드라이버확인]
+객체 경로 설정 : C:\Users\2064055\PycharmProjects\study_selenium\87
+[폴더확인]
+[크롬드라이버확인]
+객체 경로 설정 : C:\Users\2064055\PycharmProjects\study_selenium\main.py
+객체 경로 설정 : C:\Users\2064055\PycharmProjects\study_selenium\test.py
+객체 경로 설정 : C:\Users\2064055\PycharmProjects\study_selenium\test2.py
+객체 경로 설정 : C:\Users\2064055\PycharmProjects\study_selenium\venv
+[폴더확인]
+크롬드라이버가 들어있는 폴더명 : ['73', '87'] / 최신버전인 94 제외
+구버전이 포함된 폴더명 : ['87', '73']
+구버전이 포함된 폴더의 전체 경로: C:\Users\2064055\PycharmProjects\study_selenium\87 삭제 진행
+구버전이 포함된 폴더의 전체 경로: C:\Users\2064055\PycharmProjects\study_selenium\73 삭제 진행
+최신 버전 크롬드라이버가 없습니다.
+크롬드라이버 다운로드 실행
+크롬드라이버 다운로드 완료
+크롬드라이버가 들어있는 폴더를 확인해서 구버전만 추린 후 해당폴더를 삭제하고 최신버전을 설치하는것이
+정상적으로 진행된 것을 알 수 있다.
+
+*깔끔하게 정리한 최종코드
+
+import os
+import chromedriver_autoinstaller as AutoChrome
+import shutil
+
+def chromedriver_update():
+    chrome_ver      = AutoChrome.get_chrome_version().split('.')[0]
+
+    current_list    = os.listdir(os.getcwd()) 			# 현재 경로의 모든 객체들
+    chrome_list = []
+    for i in current_list:
+        path = os.path.join(os.getcwd(), i) 			# 현재 경로의 모든객체의 전체경로
+        if os.path.isdir(path): 				# 그 경로가 폴더인지 확인
+            if 'chromedriver.exe' in os.listdir(path): 		# 폴더면 안에 chromedriver.exe가 있는지 확인
+                chrome_list.append(i) 				# 있는경우 chrome_list에 추가
+
+    old_version = list(set(chrome_list)-set([chrome_ver])) 	# 그중에 최신버전은 제외
+
+    for i in old_version:
+        path = os.path.join(os.getcwd(),i) 			# 구버전이 있는 폴더의 경로 
+    	shutil.rmtree(path) 					# 그 경로 삭제
+
+    if not chrome_ver in current_list: 				# 최신버전 폴더가 현재 경로에 없으면
+        AutoChrome.install(True) 				# 크롬드라이버 설치
+    else : pass 						# 아니면 무시
