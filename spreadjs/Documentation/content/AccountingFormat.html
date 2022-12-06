@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS provides support for accounting format on cells. Learn about the accounting formatting characters and the formatting characters in SpreadJS docs." />
+    
+    <title>Accounting Format | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n266","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS provides support for accounting format on cells. Learn about the accounting formatting characters and the formatting characters in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="3a9997df-6ff5-4342-9ea9-e8383a9676fc"/>
+    <meta name="Microsoft.Help.TocParent" content="edc33bc6-5882-415f-89f2-158ee31d8259"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / <a href="cellformat.html">Cell Format</a>
+ / Accounting Format</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Accounting Format</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports accounting format on cells to avoid mistakes while reading currency values. This feature&nbsp;is supported&nbsp;in the same way as in Excel.</p>
+
+<p>The accounting format facilitates enhanced readability by allowing users to align the currency symbols and decimal points for numbers in a column. Negative numbers are displayed in parentheses and zeros are displayed as dashes.</p>
+
+<p>The following table lists the accounting formatting characters and the formatting characters that are provided for using the accounting format:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Character</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>_</td>
+
+            <td>You can use the underscore character "_" to create a space that is the width of a character in a number format. For example, _) causes positive numbers to line up with negative numbers that are enclosed in parentheses.</td>
+        </tr>
+
+        <tr>
+            <td>*</td>
+
+            <td>Use the asterisk "*" in the number format to repeat the next character so that it fills the column width. For example, type 0*- to include enough dashes after a number to fill the cell. Type *0 before any format to include leading zeros.</td>
+        </tr>
+
+        <tr>
+            <td>,</td>
+
+            <td>The comma displays the thousands separator in a number. Spread separates thousands by commas if the format contains a comma that is enclosed by number signs "#" or by zeros. A comma that follows a digit placeholder scales the number by 1,000. For example, if the format is #.0,, and you type 12,200,000 in the cell, the number $12200.0 is displayed.</td>
+        </tr>
+
+        <tr>
+            <td>%</td>
+
+            <td>Use the percent sign "%" in the number format to display numbers as a percentage of 100. For example, to display .08 as 8%.</td>
+        </tr>
+
+        <tr>
+            <td>?</td>
+
+            <td>This digit placeholder follows the same rules as 0 (zero); however, Spread adds a space for insignificant zeros on either side of the decimal point.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following list describes some of the things that you need to take care of while&nbsp;using accounting format:</p>
+
+<ul>
+    <li>If word wrap is allowed and the cell contains multiple lines, then the repeat characters do not take effect.</li>
+
+    <li>Repeat characters are ignored if the cell supports text overflow.</li>
+
+    <li>The repeat characters are not used with automatic fit.</li>
+
+    <li>The repeat character does not become blank with shrink to fit.</li>
+
+    <li>The blank area does not display a text decoration.</li>
+
+    <li>The supported cell types for accounting format includes: Text cell type, Button cell type, ComboBox cell type and Header Cell cell type.</li>
+</ul>
+
+<h4>Using Code</h4>
+
+<p>This example sets the accounting format for cells using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~setValue.html">setValue</a>&nbsp;method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+sheet.setValue(1, 0, <span style="COLOR: #800000">'Standard Accounting Format :  _($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'</span>);
+sheet.setValue(2, 0, <span style="COLOR: #800000">'Value'</span>);
+sheet.setValue(3, 0, 12);
+sheet.setValue(4, 0, -12);
+sheet.setValue(5, 0, 0);
+sheet.setValue(6, 0, <span style="COLOR: #800000">'Text'</span>);
+sheet..setValue(2, 2, <span style="COLOR: #800000">'Formatted Result'</span>);
+sheet.getRange(3, 2, 4, 1).formatter(<span style="COLOR: #800000">'_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'</span>);
+sheet.setValue(3, 2, 12);
+sheet.setValue(4, 2, -12);
+sheet.setValue(5, 2, 0);
+sheet.setValue(6, 2, <span style="COLOR: #800000">'Text'</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>This example uses the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~setFormatter.html">setFormatter</a> method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+sheet.setValue(1, 2, 12.34);
+sheet.setFormatter(1, 2, <span style="COLOR: #800000">'$* #.##'</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

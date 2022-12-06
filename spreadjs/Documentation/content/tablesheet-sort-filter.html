@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Sort and Filter | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n380","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="48330fb5-436f-4792-be59-99c7d9629c53"/>
+    <meta name="Microsoft.Help.TocParent" content="99497a2a-22fb-4bfe-a42a-cf54639f3829"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="tablesheet.html">TableSheet</a>
+ / <a href="tablesheet-operations.html">TableSheet Operations</a>
+ / Sort and Filter</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Sort and Filter</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>TableSheet provides the ability to sort and filter by columns in a TableSheet view. You can use the filter button (down arrow icon) on the column headers to display the filter dialog.</p>
+
+<p><img border="0" alt="" src="images/ts-filterdialog.png" /></p>
+
+<p>You can control the visibility of each part of a TableSheet filter dialog using IColumn options such as allowSort, allowFilterByValue and allowFilterByList.</p>
+
+<p>The following code sample shows how to set a filter dialog in each column with specific filter options.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//bind a view to the table sheet
+</span>customerTable.fetch().then(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">var</span> view = customerTable.addView(<span style="COLOR: #800000">"myView"</span>, [
+        { value: <span style="COLOR: #800000">"customerKey"</span>, width: 150, caption: <span style="COLOR: #800000">"Customer Key"</span>, allowSort: <span style="COLOR: #0000ff">false</span>, allowFilterByValue: <span style="COLOR: #0000ff">false</span>, allowFilterByList: <span style="COLOR: #0000ff">false</span> }, <span style="COLOR: #008000">// this will disable the filter button in column header
+</span>        { value: <span style="COLOR: #800000">"customer"</span>, width: 200, caption: <span style="COLOR: #800000">"Customer"</span>, allowSort: <span style="COLOR: #0000ff">false</span> }, <span style="COLOR: #008000">// this will hide only sorting in filter dropdown
+</span>        { value: <span style="COLOR: #800000">"billToCustomer"</span>, width: 200, caption: <span style="COLOR: #800000">"Bill To Customer"</span>, allowFilterByValue: <span style="COLOR: #0000ff">false</span>}, <span style="COLOR: #008000">// this will hide only allowFilterByValue
+</span>        { value: <span style="COLOR: #800000">"category"</span>, width: 120, caption: <span style="COLOR: #800000">"Category"</span>, allowFilterByList: <span style="COLOR: #0000ff">false</span> }, <span style="COLOR: #008000">// this will hide only allowFilterByList
+</span>        { value: <span style="COLOR: #800000">"buyingGroup"</span>, width: 180, caption: <span style="COLOR: #800000">"Buying Group"</span> },
+        { value: <span style="COLOR: #800000">"primaryContact"</span>, width: 170, caption: <span style="COLOR: #800000">"Primary Contact"</span> },
+        { value: <span style="COLOR: #800000">"postalCode"</span>, width: 120, caption: <span style="COLOR: #800000">"Postal Code"</span> },
+        { value: <span style="COLOR: #800000">"validFrom"</span>, width: 150, caption: <span style="COLOR: #800000">"Valid From"</span> },
+        { value: <span style="COLOR: #800000">"validTo"</span>, width: 180, caption: <span style="COLOR: #800000">"Valid To"</span> }
+
+    ]);
+    <span style="COLOR: #008000">//the View has all default columns of the Table
+</span>    sheet.setDataView(view);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Sort</h3>
+
+<p>You can sort data in a field by choosing either ascending or descending option from the Filter Dialog.</p>
+
+<p><img border="0" alt="" src="images/ts-sort.gif" />&nbsp;</p>
+
+<p>The TableSheet is re-sorted automatically by default when values are modified, but you can disable the behavior by setting the&nbsp;<a href="SpreadJS~GC.Data.View~autoSort.html">autoSort</a>&nbsp;property when defining the TableSheet view.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//bind a view to the table sheet
+</span>customerTable.fetch().then(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">var</span> view = customerTable.addView(<span style="COLOR: #800000">"myView"</span>, [
+        { value: <span style="COLOR: #800000">"customerKey"</span>, width: 120, caption: <span style="COLOR: #800000">"Customer Key"</span> },
+        { value: <span style="COLOR: #800000">"customer"</span>, width: 200, caption: <span style="COLOR: #800000">"Customer"</span> },
+        { value: <span style="COLOR: #800000">"billToCustomer"</span>, width: 200, caption: <span style="COLOR: #800000">"Bill To Customer"</span> },
+        { value: <span style="COLOR: #800000">"buyingGroup"</span>, width: 200, caption: <span style="COLOR: #800000">"Buying Group"</span> },
+        { value: <span style="COLOR: #800000">"primaryContact"</span>, width: 170, caption: <span style="COLOR: #800000">"Primary Contact"</span> },
+        { value: <span style="COLOR: #800000">"postalCode"</span>, width: 120, caption: <span style="COLOR: #800000">"Postal Code"</span> },
+        { value: <span style="COLOR: #800000">"validFrom"</span>, width: 190, caption: <span style="COLOR: #800000">"Valid From"</span> }
+
+    ]);
+    <span style="COLOR: #008000">// set autoSort property to false to prevent sorting after editing a cell value in sorted column
+</span>    view.autoSort = <span style="COLOR: #0000ff">false</span>;
+    <span style="COLOR: #008000">//the View has all default columns of the Table
+</span>    sheet.setDataView(view);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Filter</h3>
+
+<p>You can filter data in a field to narrow down the data in the TableSheet and and display the data of interest.</p>
+
+<p><img border="0" alt="TableSheet Filter" src="images/ts-filter.gif" /></p>
+
+<p>You can use any of the following two methods to filter data in a TableSheet.</p>
+
+<ul>
+    <li>
+        <span class="hs-buildflag-markup"><strong>Filter by a value:</strong> Filters data types such as numbers, text, date.</span>
+
+        <p>A custom filter dialog is opened after choosing a filter item ("contains", "ends with", "greater than", "between", "before", and so on).</p>
+    </li>
+
+    <li><strong>Filter by list</strong>: Filters individual values present in the column list.</li>
+</ul>
+
+<p><img border="0" alt="" src="images/ts-filter-types.png" /></p>
+
+<p>The TableSheet is not re-filtered automatically by default when values are modified, but you can enable the behavior by setting the&nbsp;<a href="SpreadJS~GC.Data.View~autoFilter.html">autoFilter</a>&nbsp;property when defining the TableSheet view.</p>
+
+<p>This property filters out any new or updated value if it is the same as a filtered-out value, otherwise any new value will not be filtered regardless of the filter criteria.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//bind a view to the table sheet
+</span>customerTable.fetch().then(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">var</span> view = customerTable.addView(<span style="COLOR: #800000">"myView"</span>, [
+        { value: <span style="COLOR: #800000">"customerKey"</span>, width: 120, caption: <span style="COLOR: #800000">"Customer Key"</span> },
+        { value: <span style="COLOR: #800000">"customer"</span>, width: 200, caption: <span style="COLOR: #800000">"Customer"</span> },
+        { value: <span style="COLOR: #800000">"billToCustomer"</span>, width: 200, caption: <span style="COLOR: #800000">"Bill To Customer"</span> },
+        { value: <span style="COLOR: #800000">"buyingGroup"</span>, width: 200, caption: <span style="COLOR: #800000">"Buying Group"</span> },
+        { value: <span style="COLOR: #800000">"primaryContact"</span>, width: 170, caption: <span style="COLOR: #800000">"Primary Contact"</span> },
+        { value: <span style="COLOR: #800000">"postalCode"</span>, width: 120, caption: <span style="COLOR: #800000">"Postal Code"</span> },
+        { value: <span style="COLOR: #800000">"validFrom"</span>, width: 190, caption: <span style="COLOR: #800000">"Valid From"</span> }
+
+    ]);
+    <span style="COLOR: #008000">// set autoFilter to true to filter any new or updated values that are the same as a filtered value
+</span>    view.autoFilter = <span style="COLOR: #0000ff">true</span>;
+    <span style="COLOR: #008000">//the View has all default columns of the Table
+</span>    sheet.setDataView(view);
+});
+spread.resumePaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

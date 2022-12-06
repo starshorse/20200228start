@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Compatibility Functions | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3313","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="544b7c38-92a9-4638-b9af-c0e6f2d17ea6"/>
+    <meta name="Microsoft.Help.TocParent" content="f00c213a-31d9-4eac-87f4-d899b4be3a44"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / Compatibility Functions</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Compatibility Functions</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Spread provides the following compatibility functions, listed alphabetically.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Function</th>
+
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><a href="BETADIST.html" data-auto-update-caption="true">BETADIST</a></td>
+
+            <td>This function calculates the cumulative beta distribution function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BETAINV.html" data-auto-update-caption="true">BETAINV</a></td>
+
+            <td>This function calculates the inverse of the cumulative beta distribution function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BINOMDIST.html" data-auto-update-caption="true">BINOMDIST</a></td>
+
+            <td>This function calculates the individual term binomial distribution probability.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CHIDIST.html" data-auto-update-caption="true">CHIDIST</a></td>
+
+            <td>This function calculates the one-tailed probability of the chi-squared distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CHIINV.html" data-auto-update-caption="true">CHIINV</a></td>
+
+            <td>This function calculates the inverse of the one-tailed probability of the chi-squared distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CHITEST.html" data-auto-update-caption="true">CHITEST</a></td>
+
+            <td>This function calculates the test for independence from the chi-squared distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CONFIDENCE.html" data-auto-update-caption="true">CONFIDENCE</a></td>
+
+            <td>This function returns confidence interval for a population mean.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COVAR.html" data-auto-update-caption="true">COVAR</a></td>
+
+            <td>This function returns the covariance, which is the average of the products of deviations for each data point pair in two sets of numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CRITBINOM.html" data-auto-update-caption="true">CRITBINOM</a></td>
+
+            <td>This function returns the criterion binomial, the smallest value for which the cumulative binomial distribution is greater than or equal to a criterion value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="EXPONDIST.html" data-auto-update-caption="true">EXPONDIST</a></td>
+
+            <td>This function returns the exponential distribution or the probability density.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FDIST.html" data-auto-update-caption="true">FDIST</a></td>
+
+            <td>This function calculates the F probability distribution, to see degrees of diversity between two sets of data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FLOOR.html" data-auto-update-caption="true">FLOOR</a></td>
+
+            <td>This function rounds a number down to the nearest multiple of a specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FTEST.html" data-auto-update-caption="true">FTEST</a></td>
+
+            <td>This function returns the result of an F-test, which returns the one-tailed probability that the variances in two arrays are not significantly different.</td>
+        </tr>
+
+        <tr>
+            <td><a href="GAMMADIST.html" data-auto-update-caption="true">GAMMADIST</a></td>
+
+            <td>This function returns the gamma distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="GAMMAINV.html" data-auto-update-caption="true">GAMMAINV</a></td>
+
+            <td>This function returns the inverse of the gamma cumulative distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="HYPGEOMDIST.html" data-auto-update-caption="true">HYPGEOMDIST</a></td>
+
+            <td>This function returns the hypergeometric distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LOGINV.html" data-auto-update-caption="true">LOGINV</a></td>
+
+            <td>This function returns the inverse of the lognormal cumulative distribution function of x, where LN(x) is normally distributed with the specified mean and standard deviation.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LOGNORMDIST.html" data-auto-update-caption="true">LOGNORMDIST</a></td>
+
+            <td>This function returns the cumulative natural log normal distribution of x, where LN(x) is normally distributed with the specified mean and standard deviation. Analyze data that has been logarithmically transformed with this function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MODE.html" data-auto-update-caption="true">MODE</a></td>
+
+            <td>This function returns the most frequently occurring value in a set of data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NEGBINOMDIST.html" data-auto-update-caption="true">NEGBINOMDIST</a></td>
+
+            <td>This function returns the negative binomial distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NORM.INV.html" data-auto-update-caption="true">NORM.INV</a></td>
+
+            <td>This function returns the inverse of the normal cumulative distribution for the given mean and standard deviation.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NORMDIST.html" data-auto-update-caption="true">NORMDIST</a></td>
+
+            <td>This function returns the normal cumulative distribution for the specified mean and standard deviation.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NORMSDIST.html" data-auto-update-caption="true">NORMSDIST</a></td>
+
+            <td>This function returns the standard normal cumulative distribution function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NORMSINV.html" data-auto-update-caption="true">NORMSINV</a></td>
+
+            <td>This function returns the inverse of the standard normal cumulative distribution. The distribution has a mean of zero and a standard deviation of one.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PERCENTILE.html" data-auto-update-caption="true">PERCENTILE</a></td>
+
+            <td>This function returns the nth percentile of values in a range.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PERCENTRANK.html" data-auto-update-caption="true">PERCENTRANK</a></td>
+
+            <td>This function returns the rank of a value in a data set as a percentage of the data set.</td>
+        </tr>
+
+        <tr>
+            <td><a href="POISSON.html" data-auto-update-caption="true">POISSON</a></td>
+
+            <td>This function returns the Poisson distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="QUARTILE.html" data-auto-update-caption="true">QUARTILE</a></td>
+
+            <td>This function returns which quartile (which quarter or 25 percent) of a data set a value is.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RANK.html" data-auto-update-caption="true">RANK</a></td>
+
+            <td>This function returns the rank of a number in a set of numbers. If you were to sort the set, the rank of the number would be its position in the list.</td>
+        </tr>
+
+        <tr>
+            <td><a href="STDEV.html" data-auto-update-caption="true">STDEV</a></td>
+
+            <td>This function returns the standard deviation for a set of numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="STDEVP.html" data-auto-update-caption="true">STDEVP</a></td>
+
+            <td>This function returns the standard deviation for an entire specified population (of numeric values).</td>
+        </tr>
+
+        <tr>
+            <td><a href="TDIST.html" data-auto-update-caption="true">TDIST</a></td>
+
+            <td>This function returns the probability for the t-distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TINV.html" data-auto-update-caption="true">TINV</a></td>
+
+            <td>This function returns the t-value of the student's t-distribution as a function of the probability and the degrees of freedom.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TTEST.html" data-auto-update-caption="true">TTEST</a></td>
+
+            <td>This function returns the probability associated with a t-test.</td>
+        </tr>
+
+        <tr>
+            <td><a href="VAR.html" data-auto-update-caption="true">VAR</a></td>
+
+            <td>This function returns the variance based on a sample of a population, which uses only numeric values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="VARP.html" data-auto-update-caption="true">VARP</a></td>
+
+            <td>This function returns variance based on the entire population, which uses only numeric values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="WEIBULL.html" data-auto-update-caption="true">WEIBULL</a></td>
+
+            <td>This function returns the two-parameter Weibull distribution, often used in reliability analysis.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ZTEST.html" data-auto-update-caption="true">ZTEST</a></td>
+
+            <td>This function returns the significance value of a z-test. The z-test generates a standard score for x with respect to the set of data and returns the two-tailed probability for the normal distribution.</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

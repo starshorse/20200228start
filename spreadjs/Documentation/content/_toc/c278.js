@@ -1,0 +1,38 @@
+﻿(function () { Innovasys.DynamicToc.injectNodeInfo("n7555", "c278", [
+{"id":"n7556","t":"AreaSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~AreaSparkline.html"},
+{"id":"n7558","t":"BoxPlotSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~BoxPlotSparkline.html"},
+{"id":"n7560","t":"BulletSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~BulletSparkline.html"},
+{"id":"n7562","t":"CascadeSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~CascadeSparkline.html"},
+{"id":"n7564","t":"ColumnSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~ColumnSparkline.html"},
+{"id":"n7566","t":"GaugeKPISparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~GaugeKPISparkline.html"},
+{"id":"n7568","t":"HBarSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~HBarSparkline.html"},
+{"id":"n7570","t":"HistogramSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~HistogramSparkline.html"},
+{"id":"n7572","t":"ImageSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~ImageSparkline.html"},
+{"id":"n7574","t":"LineSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~LineSparkline.html"},
+{"id":"n7576","t":"MonthSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~MonthSparkline.html"},
+{"id":"n7578","t":"ParetoSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~ParetoSparkline.html"},
+{"id":"n7580","t":"PieSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~PieSparkline.html"},
+{"id":"n7582","t":"RangeBlockSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~RangeBlockSparkline.html"},
+{"id":"n7584","t":"ScatterSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~ScatterSparkline.html"},
+{"id":"n7586","t":"Sparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~Sparkline.html"},
+{"id":"n7588","t":"SparklineEx","u":"SpreadJS~GC.Spread.Sheets.Sparklines~SparklineEx.html"},
+{"id":"n7590","t":"SparklineGroup","u":"SpreadJS~GC.Spread.Sheets.Sparklines~SparklineGroup.html"},
+{"id":"n7592","t":"SparklineSetting","u":"SpreadJS~GC.Spread.Sheets.Sparklines~SparklineSetting.html"},
+{"id":"n7594","t":"SpreadSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~SpreadSparkline.html"},
+{"id":"n7596","t":"StackedSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~StackedSparkline.html"},
+{"id":"n7598","t":"VariSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~VariSparkline.html"},
+{"id":"n7600","t":"VBarSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~VBarSparkline.html"},
+{"id":"n7602","t":"WinlossSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~WinlossSparkline.html"},
+{"id":"n7604","t":"YearSparkline","u":"SpreadJS~GC.Spread.Sheets.Sparklines~YearSparkline.html"},
+])})();
+(function () { Innovasys.DynamicToc.injectNodeInfo("n7607", "c278", [
+{"id":"n7608","t":"DataOrientation","u":"SpreadJS~GC.Spread.Sheets.Sparklines~DataOrientation.html"},
+{"id":"n7610","t":"EmptyValueStyle","u":"SpreadJS~GC.Spread.Sheets.Sparklines~EmptyValueStyle.html"},
+{"id":"n7612","t":"SparklineAxisMinMax","u":"SpreadJS~GC.Spread.Sheets.Sparklines~SparklineAxisMinMax.html"},
+{"id":"n7614","t":"SparklineType","u":"SpreadJS~GC.Spread.Sheets.Sparklines~SparklineType.html"},
+])})();
+(function () { Innovasys.DynamicToc.injectNodeInfo("n7552", "c0", [
+{"id":"n7553","t":"Overview","u":"SpreadJS~GC.Spread.Sheets.Sparklines.html"},
+{"id":"n7555","t":"Methods","cc":"c278"},
+{"id":"n7607","t":"Fields","cc":"c278"},
+])})();

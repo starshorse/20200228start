@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to apply conditional filters such as number filters, text filters, date filters, color filters, etc. based on the data type of cells. " />
+    
+    <title>Filter Rows | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n223","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to apply conditional filters such as number filters, text filters, date filters, color filters, etc. based on the data type of cells. " />
+    
+    <meta name="Microsoft.Help.Id" content="8cfca561-6427-4405-b3d3-2298c032332b"/>
+    <meta name="Microsoft.Help.TocParent" content="f108ca5b-c48b-491f-a225-98f6849aa6a3"/>
+    <meta name="Microsoft.Help.TocOrder" content="8"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="rows-columns.html">Rows and Columns</a>
+ / Filter Rows</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Filter Rows</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to apply conditional filters (Number filters, Text filters, Date filters, Color filters, Custom Auto) based on the data type of the cells. After the filter operation is performed in a worksheet, the rows that match the filter condition will be displayed and the other rows will be hidden.</p>
+
+<p>A filter button is displayed in the column header for a column that allows filtering. The user can click on the button and use the available options in the filter dialog.</p>
+
+<p><img border="0" alt="Filter Dialog" src="images/filter-dialog-basic.png" /></p>
+
+<p>The filter dialog helps you to filter by item, sort the list of items, hide filtered rows, as well as clear any applied filter condition on a column.</p>
+
+<p>You can create a filter in code with the <a href="SpreadJS~GC.Spread.Sheets.Worksheet~rowFilter.html">rowFilter</a> HideRowFilter class. The following code examples shows how to add a filter dialog in a worksheet and apply filter to a range.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Configure Workbook and Worksheet
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(<span style="COLOR: #800000">"ss"</span>);
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();    
+
+activeSheet.setValue(0, 0, <span style="COLOR: #800000">"North"</span>);
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">"South"</span>);
+activeSheet.setValue(2, 0, <span style="COLOR: #800000">"East"</span>);
+activeSheet.setValue(3, 0, <span style="COLOR: #800000">"South"</span>);
+activeSheet.setValue(4, 0, <span style="COLOR: #800000">"North"</span>);
+activeSheet.setValue(5, 0, <span style="COLOR: #800000">"North"</span>);
+activeSheet.setValue(6, 0, <span style="COLOR: #800000">"West"</span>);
+activeSheet.setColumnWidth(0, 80);
+           
+<span style="COLOR: #008000">// Set a row Filter
+</span>activeSheet.rowFilter(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Filter.HideRowFilter(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(0, 0, 7, 1)));
+
+<span style="COLOR: #008000">// Filter column 1 by "North"
+</span><span style="COLOR: #0000ff">var</span> rowFilter = spread.getActiveSheet().rowFilter();
+<span style="COLOR: #0000ff">var</span> condition = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(
+    GC.Spread.Sheets.ConditionalFormatting.ConditionType.textCondition, {
+        compareType: GC.Spread.Sheets.ConditionalFormatting.TextCompareType.equalsTo,
+        expected: <span style="COLOR: #800000">"North"</span>
+});
+rowFilter.addFilterItem(0, condition);
+rowFilter.filter(0);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The users can use the mouse or various keyboard keys to interact with the filter dialog. The Esc key can be used to cancel the dialog. The Tab key can be used to move to different sections and the up and down arrow keys can be used to move in the list of items. The space bar can be used to change the checked status.&nbsp;</p>
+
+<h3>Customize Filter Dialog&nbsp;</h3>
+
+<p>You can control the information shown in the filter dialog by using the <strong>filterDialogVisibleInfo</strong> method.&nbsp;This method helps to get or set the visible info for the row filter.</p>
+
+<p><img border="0" alt="" src="images/filter-hide-options.png" /></p>
+
+<p>The following code sample shows how to hide "sort by value" and list filter area in a filter dialog.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Configure Workbook and Worksheet
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+
+<span style="COLOR: #008000">// Set a row filter
+</span>sheet.rowFilter(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Filter.HideRowFilter(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(1, 1, 10, 3)));
+            
+<span style="COLOR: #008000">// Hide filter options
+</span><span style="COLOR: #0000ff">var</span> filter = sheet.rowFilter();
+filter.filterDialogVisibleInfo({
+    sortByValue: <span style="COLOR: #0000ff">false</span>,
+    sortByColor: <span style="COLOR: #0000ff">true</span>,
+    filterByColor: <span style="COLOR: #0000ff">true</span>,
+    filterByValue: <span style="COLOR: #0000ff">true</span>,
+    listFilterArea: <span style="COLOR: #0000ff">false</span>
+})
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Filter Dialog List Box</h3>
+
+<p>The filter dialog list box supports hierarchical tree display. It displays the data type items which occupy the maximum amount of cells, whether they be numeric, text, or date type. If the filter data contains different kinds of the value type, the filter items will follow a particular order: Date, Number, Text, Logical and Blank, just like in Excel.</p>
+
+<p>If the filter range includes outline columns, the hierarchy will be the same in FilterDialog ListBox with outline column data and the filter items checkbox will support the tree status in the way: check, uncheck and indeterminate (the status of the children is not the same). For more information, please refer to&nbsp;<a href="outlinecolumn.html" data-auto-update-caption="true">Outline Columns</a>.</p>
+
+<p><img border="0" alt="" src="images/FilterListBox.png" /></p>
+
+<p>In the date tree view, the different hierarchy has a different format policy as explained below:</p>
+
+<ol>
+    <li>The date tree display format is based on the first date type cell format. In case the format is not set by the user, an auto date format will apply.</li>
+
+    <li>When the culture is EN and the date formatter string doesn't include the locale ID, the date tree view format will be displayed as : Year pattern: YYYY, Month pattern: MM, Day pattern: DD</li>
+</ol>
+
+<p>The date type value filter is displayed according to the data set as detailed in the following scenarios:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Scenario</th>
+
+            <th>Example</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>If all the values of the filter range lie in different years, none of the levels are expanded.</td>
+
+            <td><img border="0" alt="" src="images/datefilter-year.png" /></td>
+        </tr>
+
+        <tr>
+            <td>If all the values of the filter range lie in the same year, then the year level is expanded.</td>
+
+            <td><img border="0" alt="" src="images/datefilter-month.png" /></td>
+        </tr>
+
+        <tr>
+            <td>If all the values of the filter range lie in the same year and same month, then the year level and month level are expanded.</td>
+
+            <td><img border="0" alt="" src="images/datefilter-date.png" /></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Filter by Color</h3>
+
+<p>You can also apply color filters in the filter columns based on two modes:</p>
+
+<ul>
+    <li>Filter by Font Color - Shows the cells with selected font color.</li>
+
+    <li>Filter by Cell Background Color - Shows the cells with selected background color.</li>
+</ul>
+
+<p>The color filter menu&nbsp;is enabled when the filtered range has more than one type of cell background colors or font colors.&nbsp;</p>
+
+<p><img border="0" alt="" src="images/FilterByColor.gif" />&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Also, refer&nbsp;<a href="filter-operations.html" data-auto-update-caption="true">Filter Operations</a></p>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Filter.HideRowFilter.html">HideRowFilter class</a></div>
+<div class="i-see-also-link">
+<a href="filter-operations.html">Filter Operations</a></div>
+<div class="i-see-also-link">
+<a href="customfilter.html">Customize Row Filter Actions</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

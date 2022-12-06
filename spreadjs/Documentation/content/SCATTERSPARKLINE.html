@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>SCATTERSPARKLINE | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4222","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="283fa012-41f0-47b5-9904-5bcab038f69a"/>
+    <meta name="Microsoft.Help.TocParent" content="327728ba-9663-4490-b8d1-b2ad2faa328d"/>
+    <meta name="Microsoft.Help.TocOrder" content="15"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / <a href="sparkline-functions.html">Sparkline Functions</a>
+ / SCATTERSPARKLINE</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">SCATTERSPARKLINE</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>This function returns a data set used for representing a scatter sparkline.</p>
+
+<h4>Syntax</h4>
+
+<p>SCATTERSPARKLINE(<em>points1, [points2, minX, maxX, minY, maxY, hLine, vLine, xMinZone, xMaxZone, yMinZone, yMaxZone, tags, drawSymbol, drawLines, color1, color2, dash]</em>)</p>
+
+<h4>Arguments</h4>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Argument</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td><em>Points1</em></td>
+
+            <td>
+                <p>The first xy data series.</p>
+
+                <p>If the row count is greater than or equal to the column count, use data from the first two columns. The first column contains x-values and the second column contains y-values.</p>
+
+                <p>If the row count is less than the column count, use data from the first two rows. The first row contains x-values and the second row contains y-values.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td><em>Points2</em></td>
+
+            <td>
+                <p>(Optional) The second XY data series.</p>
+
+                <p>If the row count is greater than or equal to the column count, use data from the first two columns. The first column contains x-values and the second column contains y-values.</p>
+
+                <p>If the row count is less than the column count, use data from the first two rows. The first row contains x-values and the second row contains y-values.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td><em>MinX</em></td>
+
+            <td>(Optional) The x-minimum limit of both series, each series has its own value if it is omitted.</td>
+        </tr>
+
+        <tr>
+            <td><em>MaxX</em></td>
+
+            <td>(Optional) The x-maximum limit of both series, each series has its own value if it is omitted.</td>
+        </tr>
+
+        <tr>
+            <td><em>MinY</em></td>
+
+            <td>(Optional) The y-minimum limit of both series, each series has its own value if it is omitted.</td>
+        </tr>
+
+        <tr>
+            <td><em>MaxY</em></td>
+
+            <td>(Optional) The y-maximum limit of both series, each series has its own value if it is omitted.</td>
+        </tr>
+
+        <tr>
+            <td><em>HLine</em></td>
+
+            <td>(Optional) The horizontal axis position, there is no line if it is omitted.</td>
+        </tr>
+
+        <tr>
+            <td><em>VLine</em></td>
+
+            <td>(Optional) The vertical axis position, there is no line if it is omitted.</td>
+        </tr>
+
+        <tr>
+            <td><em>XMinZone</em></td>
+
+            <td>(Optional) The x-minimum value of the gray zone, there is no grey zone if any of these four parameters are omitted.</td>
+        </tr>
+
+        <tr>
+            <td><em>XMaxZone</em></td>
+
+            <td>(Optional) The x-maximum value of the gray zone, there is no grey zone if any of these four parameters are omitted.</td>
+        </tr>
+
+        <tr>
+            <td><em>YMinZone</em></td>
+
+            <td>(Optional) The y-minimum value of the gray zone, there is no grey zone if any of these four parameters are omitted.</td>
+        </tr>
+
+        <tr>
+            <td><em>YMaxZone</em></td>
+
+            <td>(Optional) The y-maximum value of the gray zone, there is no grey zone if any of these four parameters are omitted.</td>
+        </tr>
+
+        <tr>
+            <td><em>Tags</em></td>
+
+            <td>(Optional) If this option is true, mark the point at which the y-value is the maximum of the first series as "#0000FF", and mark the point at which the y-value is the minimum of the first series as "#CB0000". The default value is false.</td>
+        </tr>
+
+        <tr>
+            <td><em>DrawSymbol</em></td>
+
+            <td>
+                <p>(Optional) If this option is true, draw each point as a symbol. The default value is true.</p>
+
+                <p>The symbol of the first series is a circle, and the symbol of the second series is a square.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td><em>DrawLines</em></td>
+
+            <td>(Optional) If this option is true, connect each point with a line by sequence in each series. The default value is false.</td>
+        </tr>
+
+        <tr>
+            <td><em>Color1</em></td>
+
+            <td>(Optional) The color string of the first point series. The default value is "#969696".</td>
+        </tr>
+
+        <tr>
+            <td><em>Color2</em></td>
+
+            <td>(Optional) The color string of the second point series. The default value is "#CB0000".</td>
+        </tr>
+
+        <tr>
+            <td><em>Dash</em></td>
+
+            <td>(Optional) If this option is true, the line is a dashed line; otherwise, the line is a full line. The default value is&nbsp;false.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Data Types</h4>
+
+<p>Returns sparkline.</p>
+
+<h4>Examples</h4>
+
+<p>activeSheet.setFormula(2, 2, '=SCATTERSPARKLINE(A3:B11,,0,8,0,150,0,0,0,8,100,150,TRUE,TRUE,FALSE,"FD8E2C")');</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

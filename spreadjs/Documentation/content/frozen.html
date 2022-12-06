@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to freeze columns and rows or both in a worksheet. You can even specify whether to have frozen trailing rows or columns." />
+    
+    <title>Freeze Columns and Rows | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n215","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to freeze columns and rows or both in a worksheet. You can even specify whether to have frozen trailing rows or columns." />
+    
+    <meta name="Microsoft.Help.Id" content="58322673-33ca-4a80-9db4-df014abe0ccc"/>
+    <meta name="Microsoft.Help.TocParent" content="f108ca5b-c48b-491f-a225-98f6849aa6a3"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="rows-columns.html">Rows and Columns</a>
+ / Freeze Columns and Rows</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Freeze Columns and Rows</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <h2>Freeze Top Rows and Columns</h2>
+
+<p>You can specify whether to have frozen rows or columns or both in a sheet. Frozen columns and rows do not scroll.</p>
+
+<p>A line is displayed below frozen rows&nbsp;and to the right of frozen columns. You can specify the color of the line with the&nbsp;<strong>options.frozenlineColor</strong> property.</p>
+
+<p><img border="0" alt="Frozen row and column in a sheet" src="images/cfrozen.png" /></p>
+
+<p>Frozen rows stay at the top of the sheet and frozen columns stay on the left of the sheet.</p>
+
+<h4>Using Code</h4>
+
+<p>This example sets&nbsp;the first row&nbsp;and column as&nbsp;frozen row and column.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.frozenRowCount(1);
+activeSheet.frozenColumnCount(1);
+<span style="COLOR: #008000">//activeSheet.options.frozenlineColor = "red";</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Freeze Trailing Rows and Columns</h2>
+
+<p>You can specify whether to have frozen trailing rows or columns or both in a sheet by using the&nbsp;<strong>frozenTrailingRowCount</strong> and <strong>frozenTrailingColumnCount</strong> functions.&nbsp;Frozen trailing rows or columns&nbsp;remain visible while scrolling the sheet.</p>
+
+<p>A line is displayed above frozen trailing rows and to the&nbsp;left of frozen trailing columns. You can&nbsp;set the color of the line by using <strong>options.frozenlineColor</strong> property.</p>
+
+<p><img border="0" alt="Frozen Trailing Row and Column" src="images/trailingrowandcolumn.png" />&nbsp;</p>
+
+<p>By default, when the height of data rows and frozen trailing rows is equal to or greater than the viewport area, the frozen trailing rows are displayed at the extreme bottom of the&nbsp;viewport area. The same holds true for the frozen trailing columns which are displayed at the extreme right of the&nbsp;viewport area.</p>
+
+<p>However, when the height of data rows and frozen trailing rows is&nbsp;less than that of&nbsp;the viewport area, you can&nbsp;choose whether to display the blank space between the data rows and frozen trailing rows or not. The&nbsp;<strong>stickToEdge</strong> parameter of&nbsp;<strong>frozenTrailingRowCount</strong> and <strong>frozenTrailingColumnCount</strong> functions can be used to control this behavior as shown in the image below:</p>
+
+<table style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+    <tbody>
+        <tr>
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">When <strong>stickToEdge =</strong> True (defaut value)</th>
+
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">When <strong>stickToEdge =</strong> False</th>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="Frozen Trailing Rows with stickToEdge Parameter set To True" src="images/sticktoegdeparamtrue.png" /></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="Frozen Trailing Rows with stickToEdge Parameter set To False" src="images/sticktoegdeparamfalse.png" /></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Similarly, you can also choose whether to display the blank space between the data columns and frozen trailing columns or not by using <strong>stickToEdge</strong> parameter.</p>
+
+<h4>Using Code</h4>
+
+<p>This example sets&nbsp;the frozen trailing row and a frozen trailing&nbsp;column with <strong>stickToEdge</strong> parameter set to False.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.frozenTrailingRowCount(1, <span style="COLOR: #0000ff">false</span>);
+activeSheet.frozenTrailingColumnCount(1, <span style="COLOR: #0000ff">false</span>);
+<span style="COLOR: #008000">//activeSheet.options.frozenlineColor = "red";</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Worksheet~frozenColumnCount.html">frozenColumnCount Method</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Worksheet~frozenRowCount.html">frozenRowCount Method</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Worksheet~frozenTrailingColumnCount.html">frozenTrailingColumnCount Method</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Worksheet~frozenTrailingRowCount.html">frozenTrailingRowCount Method</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

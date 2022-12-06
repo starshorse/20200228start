@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Snap shapes to the nearest edge based on gridlines or other shapes in a worksheet using SpreadJS." />
+    
+    <title>Snap Shapes | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n514","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Snap shapes to the nearest edge based on gridlines or other shapes in a worksheet using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="eb9fce53-1329-4a51-80f9-00ba5742c33c"/>
+    <meta name="Microsoft.Help.TocParent" content="6a792bce-5b91-4c0b-810b-ea5df92b0e1a"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="UnderstandingShapes.html">Shapes</a>
+ / <a href="arrange-shapes.html">Arrange Shapes</a>
+ / Snap Shapes</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Snap Shapes</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can snap shapes in SpreadJS by using <strong>snapMode</strong> method which aligns, drags or resizes shapes to the nearest edge based on gridlines or other shapes in the worksheet.</p>
+
+<p>A shape is aligned to the grid or other shapes by using the horizontal or vertical snap lines in the worksheet. The below image shows vertical snap lines:</p>
+
+<p><img border="0" alt="gridlines in shape snap" src="images/shape-snapLines.png" /></p>
+
+<h3>Snap to Shape</h3>
+
+<p>You can use the <strong>snapMode.shape</strong> option to align a shape to the nearest edge of other shapes in the worksheet. When the shape is moved in horizontal or vertical directions, it aligns with the snap lines.</p>
+
+<p><img border="0" alt="shapes snap to other shapes" src="images/shape-snapShape.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+<span style="COLOR: #008000">// Get snap mode
+</span><span style="COLOR: #0000ff">var</span> snap = spread.getActiveSheet().shapes.snapMode();
+<span style="COLOR: #008000">// Set snap to shape
+</span>spread.getActiveSheet().shapes.snapMode(GC.Spread.Sheets.Shapes.SnapMode.shape);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Snap to Grid</h3>
+
+<p>You can use the <strong>snapMode.grid</strong> option to align a shape to the nearest grid intersection (even if it is not visible) on the worksheet. When the shape is moved in horizontal or vertical directions, it aligns with the snap lines.</p>
+
+<p>You can also use the arrow keys (Up, Left, Bottom, and Right) to move a shape instead of dragging it using the mouse.</p>
+
+<p><img border="0" alt="shapes snap according to gridline" src="images/shape-snapGrid.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+<span style="COLOR: #008000">// Get snap mode
+</span><span style="COLOR: #0000ff">var</span> snap = spread.getActiveSheet().shapes.snapMode();
+<span style="COLOR: #008000">// Set snap to grid
+</span>spread.getActiveSheet().shapes.snapMode(GC.Spread.Sheets.Shapes.SnapMode.grid);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>Multiple shapes can be snapped at once by using the <strong>snapMode</strong> method.</p>
+
+<p><img border="0" alt="snap multiple shapes at once" src="images/shape-snapMultiple.gif" /><br /></p>
+
+<p>The <strong>snapMode.shape</strong> and <strong>snapMode.grid</strong> options can be used together to align shapes.</p>
+
+<p><img border="0" alt="snap shapes by both shape and grid modes" src="images/shape-snapBoth.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+<span style="COLOR: #008000">// Set snap to shape and grid
+</span>spread.getActiveSheet().shapes.snapMode(GC.Spread.Sheets.Shapes.SnapMode.grid | GC.Spread.Sheets.Shapes.SnapMode.shape);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

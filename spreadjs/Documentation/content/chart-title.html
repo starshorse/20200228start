@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can configure chart title while visualizing data in the spreadsheets using SpreadJS." />
+    
+    <title>Chart Title | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n550","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can configure chart title while visualizing data in the spreadsheets using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="2c43d70a-c82c-4c02-b239-4ec82577bac8"/>
+    <meta name="Microsoft.Help.TocParent" content="0750c4c2-a97b-44a4-b551-b2d5b9e96832"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / <a href="ConfigureChartElements.html">Chart Elements</a>
+ / Chart Title</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Chart Title</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to configure chart title while visualizing data in the spreadsheets. Basically, chart title refers to the name given to the chart.</p>
+
+<h3 id="a">Customize Chart Title</h3>
+
+<p>Users can add a title to their chart by&nbsp;using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Chart~title.html" data-auto-update-caption="true">title method</a>&nbsp;of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Chart.html" data-auto-update-caption="true">Chart class</a>. Users can set a custom text for their chart; define its font family, change its font size and font color etc. using the various customization options available in this method.&nbsp;&nbsp;&nbsp;</p>
+
+<p>A chart&nbsp;with&nbsp;customization of basic components&nbsp;is shown below. The title of this chart is "Annual Sales Record".</p>
+
+<p>&nbsp;<img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Customized chart title" src="images/spreadjsv13images/chart-title.png" />&nbsp;</p>
+
+<h3 id="b">Using Code</h3>
+
+<p>The following example&nbsp;code shows how to configure a custom title for&nbsp;the chart.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+activeSheet.suspendPaint();
+<span style="COLOR: #008000">// Prepare data for chart
+</span>activeSheet.setValue(0, 1, <span style="COLOR: #800000">"Y-2016"</span>);
+activeSheet.setValue(0, 2, <span style="COLOR: #800000">"Y-2017"</span>);
+activeSheet.setValue(0, 3, <span style="COLOR: #800000">"Y-2018"</span>);
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">"Mobile Phones"</span>);
+activeSheet.setValue(2, 0, <span style="COLOR: #800000">"Laptops"</span>);
+activeSheet.setValue(3, 0, <span style="COLOR: #800000">"Tablets"</span>);       
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> r = 1; r &lt;= 3; r++)
+{
+   <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> c = 1; c &lt;= 3; c++) {
+   activeSheet.setValue(r, c, parseInt(Math.random() * 10000));
+}
+}
+<span style="COLOR: #008000">// Add chart
+</span><span style="COLOR: #0000ff">var</span> chart = activeSheet.charts.add(<span style="COLOR: #800000">'Chart1'</span>, GC.Spread.Sheets.Charts.ChartType.columnClustered, 20, 110, 550, 250, <span style="COLOR: #800000">"A1:D4"</span>);
+        
+<span style="COLOR: #008000">// Configure chart title
+</span><span style="COLOR: #0000ff">var</span> title = chart.title();
+title.text = <span style="COLOR: #800000">"Annual Sales Record"</span>;
+title.fontFamily = <span style="COLOR: #800000">"Cambria"</span>;
+title.fontSize = 28;
+title.color = <span style="COLOR: #800000">"#696969"</span>;
+chart.title(title);
+    
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn about the month sparkline in SpreadJS. Learn the various options available for the month sparkline formula along with their descriptions. " />
+    
+    <title>Month Sparkline | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n651","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn about the month sparkline in SpreadJS. Learn the various options available for the month sparkline formula along with their descriptions. " />
+    
+    <meta name="Microsoft.Help.Id" content="e6d56717-ccb4-46b1-8950-e3fcbc023a17"/>
+    <meta name="Microsoft.Help.TocParent" content="fd9cab4f-16bf-437c-a370-bbba7f456cf3"/>
+    <meta name="Microsoft.Help.TocOrder" content="17"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sparkmain.html">Sparklines</a>
+ / Month Sparkline</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Month Sparkline</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can create a month sparkline using the <strong>MonthSparkline</strong> formula and cell values.</p>
+
+<p><img border="0" alt="Month sparkline" src="images/sparkmonth.png" /></p>
+
+<p>A month sparkline has 6*7 squares. The horizontal direction is the week of the month (from left to right, from 1st to 6th). The vertical direction is the week day (from top to bottom, from Sunday to Saturday).</p>
+
+<p>The month sparkline formula has the following options:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Option</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>year</td>
+
+            <td>A full year number, such as 2017.</td>
+        </tr>
+
+        <tr>
+            <td>month</td>
+
+            <td>A month number, such as 3. The month is 1-based (Jan = 1).</td>
+        </tr>
+
+        <tr>
+            <td>dataRange</td>
+
+            <td>A reference that represents a range where the first column is a date and the second column is a number, such as "A1:B400".</td>
+        </tr>
+
+        <tr>
+            <td>emptyColor</td>
+
+            <td>A color string that represents days with no value or zero value, such as "lightgray".</td>
+        </tr>
+
+        <tr>
+            <td>startColor</td>
+
+            <td>A color string that represents the minimum day value, such as "lightgreen".</td>
+        </tr>
+
+        <tr>
+            <td>middleColor</td>
+
+            <td>A color string that represents the day with the average minimum and maximum value, such as "green".</td>
+        </tr>
+
+        <tr>
+            <td>endColor</td>
+
+            <td>A color string that represents the day with the maximum value, such as "darkgreen".</td>
+        </tr>
+
+        <tr>
+            <td>colorRange</td>
+
+            <td>A reference that represents a range where the data is a color string.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The month sparkline formula has the following formats:</p>
+
+<p><code>=MONTHSPARKLINE(year, month, dataRange, emptyColor, startColor, middleColor, endColor)</code></p>
+
+<p><code>=MONTHSPARKLINE(year, month, dataRange, colorRange)</code></p>
+
+<h4>Using Code</h4>
+
+<p>This example creates a month sparkline.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> rowIndex = 1; rowIndex &lt;= 31; rowIndex++) {
+                activeSheet.setValue(rowIndex, 0, <span style="COLOR: #0000ff">new</span> Date(2017, 0, rowIndex));
+}
+activeSheet.setValue(1,1,10, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(2,1,5, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(3,1,98, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(4,1,50, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(5,1,75, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(6,1,25, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(7,1,65, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(8,1,30, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(9,1,22, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(10,1,82, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(11,1,89, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(12,1,43, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(13,1,15, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(14,1,12, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(15,1,63, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(16,1,54, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(17,1,77, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(18,1,39, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(19,1,20, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(20,1,65, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(21,1,20, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(22,1,20, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(23,1,20, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(24,1,18, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(25,1,20, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(26,1,42, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(27,1,21, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(28,1,20, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(29,1,99, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(30,1,20, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(31,1,9, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setFormula(6, 2, <span style="COLOR: #800000">'=MONTHSPARKLINE(2017,1,A2:B32,"yellow","lightgreen","green","darkgreen")'</span>);
+spread.resumePaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

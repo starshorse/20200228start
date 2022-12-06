@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Text Functions | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4237","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="1b84bbc0-ea91-4101-a874-23c44e12d419"/>
+    <meta name="Microsoft.Help.TocParent" content="f00c213a-31d9-4eac-87f4-d899b4be3a44"/>
+    <meta name="Microsoft.Help.TocOrder" content="13"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / Text Functions</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Text Functions</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Spread provides the following lookup and reference functions, listed alphabetically.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Function</th>
+
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><a href="ASC-function.html" data-auto-update-caption="true">ASC</a></td>
+
+            <td>This function converts full-width (double-byte) characters to half-width (single-byte) characters.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BAHTTEXT.html" data-auto-update-caption="true">BAHTTEXT</a></td>
+
+            <td>This function converts a number to Thai text and adds a suffix of "Baht"</td>
+        </tr>
+
+        <tr>
+            <td><a href="CHAR.html" data-auto-update-caption="true">CHAR</a></td>
+
+            <td>This function returns the character specified by a number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CLEAN.html" data-auto-update-caption="true">CLEAN</a></td>
+
+            <td>This function removes all non-printable characters from text.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CODE.html" data-auto-update-caption="true">CODE</a></td>
+
+            <td>This function returns a numeric code to represent the first character in a text string. The returned code corresponds to the Windows character set (ANSI).</td>
+        </tr>
+
+        <tr>
+            <td><a href="CONCAT.html" data-auto-update-caption="true">CONCAT</a></td>
+
+            <td>This function combines multiple text strings or numbers into one text string, the function will stay available for compatibility with "CONCATENATE" function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CONCATENATE.html" data-auto-update-caption="true">CONCATENATE</a></td>
+
+            <td>This function combines multiple text strings or numbers into one text string.</td>
+        </tr>
+
+        <tr>
+            <td><a href="dbcs-function.html" data-auto-update-caption="true">DBCS</a></td>
+
+            <td>This function converts half-width (single-byte) characters to full-width (double-byte) characters.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DOLLAR.html" data-auto-update-caption="true">DOLLAR</a></td>
+
+            <td>This function converts a number to text using currency format, with the decimals rounded to the specified place.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FIND.html" data-auto-update-caption="true">FIND</a></td>
+
+            <td>This function finds one text value within another and returns the text value’s position in the text you searched.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FINDB.html" data-auto-update-caption="true">FINDB</a></td>
+
+            <td>This function finds one text value within another and returns the text value's position in the text you searched, and counts each double-byte characte as 2 when set DBCS as the default language.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FIXED.html" data-auto-update-caption="true">FIXED</a></td>
+
+            <td>This function rounds a number to the specified number of decimal places, formats the number in decimal format using a period and commas (if so specified), and returns the result as text.</td>
+        </tr>
+
+        <tr>
+            <td><a href="jis-function.html" data-auto-update-caption="true">JIS</a></td>
+
+            <td>This function converts half-width (single-byte) characters to full-width (double-byte) characters. Supported in Japanese and German language packages only.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LEFT.html" data-auto-update-caption="true">LEFT</a></td>
+
+            <td>This function returns the specified leftmost characters from a text value, and based on the number of characters you specify.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LEFTB.html" data-auto-update-caption="true">LEFTB</a></td>
+
+            <td>This function returns the specified leftmost characters from a text value, and based on the number of bytes you specify.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LEN.html" data-auto-update-caption="true">LEN</a></td>
+
+            <td>This function returns the length of the number of characters in a text string.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LENB.html" data-auto-update-caption="true">LENB</a></td>
+
+            <td>This function returns the length of the number of bytes in a text string.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LOWER.html" data-auto-update-caption="true">LOWER</a></td>
+
+            <td>This function converts text to lower case letters.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MID.html" data-auto-update-caption="true">MID</a></td>
+
+            <td>This function returns the requested number of characters from a text string starting at the position you specify, and based on the number of characters you specify.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MIDB.html" data-auto-update-caption="true">MIDB</a></td>
+
+            <td>This function returns the requested number of characters from a text string starting at the position you specify, and based on the number of bytes you specify.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PROPER.html" data-auto-update-caption="true">PROPER</a></td>
+
+            <td>This function capitalizes the first letter in each word of a text string.</td>
+        </tr>
+
+        <tr>
+            <td><a href="REPLACE.html" data-auto-update-caption="true">REPLACE</a></td>
+
+            <td>This function replaces part of a text string with a different text string, based on the number of characters you specify.</td>
+        </tr>
+
+        <tr>
+            <td><a href="REPLACEB.html" data-auto-update-caption="true">REPLACEB</a></td>
+
+            <td>This function replaces part of a text string with a different text string, based on the number of bytes you specify.</td>
+        </tr>
+
+        <tr>
+            <td><a href="REPT.html" data-auto-update-caption="true">REPT</a></td>
+
+            <td>This function repeats text a specified number of times.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RIGHT.html" data-auto-update-caption="true">RIGHT</a></td>
+
+            <td>This function returns the specified rightmost characters from a text value, and based on the number of characters you specify.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RIGHTB.html" data-auto-update-caption="true">RIGHTB</a></td>
+
+            <td>This function returns the specified rightmost characters from a text value, and based on the number of bytes you specify.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SEARCH.html" data-auto-update-caption="true">SEARCH</a></td>
+
+            <td>This function finds one text string in another text string and returns the index of the starting position of the found text.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SEARCHB.html" data-auto-update-caption="true">SEARCHB</a></td>
+
+            <td>This function finds one text string in another text string and returns the index of the starting position of the found text, and counts each double-byte characte as 2 when set DBCS as the default language.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SUBSTITUTE.html" data-auto-update-caption="true">SUBSTITUTE</a></td>
+
+            <td>This function substitutes a new string for specified characters in an existing string.</td>
+        </tr>
+
+        <tr>
+            <td><a href="T.html" data-auto-update-caption="true">T</a></td>
+
+            <td>This function returns the text in a specified cell.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TEXT.html" data-auto-update-caption="true">TEXT</a></td>
+
+            <td>This function formats a number and converts it to text.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TEXTJOIN.html" data-auto-update-caption="true">TEXTJOIN</a></td>
+
+            <td>This function combines multiple ranges and/or strings into one text, and the text includes a delimiter you specify between each text value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TRIM.html" data-auto-update-caption="true">TRIM</a></td>
+
+            <td>This function removes extra spaces from a string and leaves single spaces between words.</td>
+        </tr>
+
+        <tr>
+            <td><a href="UNICHAR.html" data-auto-update-caption="true">UNICHAR</a></td>
+
+            <td>This function returns the Unicode character of a given numeric reference.</td>
+        </tr>
+
+        <tr>
+            <td><a href="UNICODE.html" data-auto-update-caption="true">UNICODE</a></td>
+
+            <td>This function returns the number corresponding to the first character of the text.</td>
+        </tr>
+
+        <tr>
+            <td><a href="UPPER.html" data-auto-update-caption="true">UPPER</a></td>
+
+            <td>This function converts text to uppercase letters.</td>
+        </tr>
+
+        <tr>
+            <td><a href="VALUE.html" data-auto-update-caption="true">VALUE</a></td>
+
+            <td>This function converts a text string that is a number to a numeric value.</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

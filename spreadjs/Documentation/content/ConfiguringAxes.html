@@ -1,0 +1,648 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can configure and customize axes in a chart along with the display units using SpreadJS. Learn more in SpreadJS docs." />
+    
+    <title>Axes | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n560","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can configure and customize axes in a chart along with the display units using SpreadJS. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="946d2240-80ec-4d13-9430-adf0a079d961"/>
+    <meta name="Microsoft.Help.TocParent" content="0750c4c2-a97b-44a4-b551-b2d5b9e96832"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / <a href="ConfigureChartElements.html">Chart Elements</a>
+ / Axes</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Axes</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to configure and customize axes in a chart along with the display units.</p>
+
+<h3 id="a">What are Axes?</h3>
+
+<p>Axes refers to the dimensions of the plot area in terms of a horizontal scale (x-axis or category axis) and a vertical scale (y-axis or value axis).</p>
+
+<p><u>Types of Chart Axes:</u> Typically, a basic two-dimensional chart contains four types of axes, namely the primary category axis, the primary value axis, the secondary category axis and the secondary value axis.</p>
+
+<h3 id="b">Configure Display Units On Value Axis</h3>
+
+<p>Display units can be configured only on the value axis (both primary value axis and secondary value axis).There are two ways to configure axes display units while working with charts in SpreadJS:</p>
+
+<ol>
+    <li><u><strong>Configure Built-inDisplay Units</strong></u>- Users can choose from a predefined list of available options (None, Hundreds, Thousands, 10000, 100000, Millions, 100000000000, 10000000000, Billions, Trillions etc.) while showing the displaying unit values.<br /></li>
+
+    <li><u><strong>Configure CustomDisplay Units</strong></u>- Users can define a custom display unit with a meaningful numeric value which is not available in the built-in options. However, it is important to note that the custom display unit value provided by the user must be a positive number. Also, while defining custom axis display units, custom text valuesi.e. strings are not supported.</li>
+</ol>
+
+<p>The following screenshot depicts a chart with built-in configuration of display unit on primary value axis and custom configuration of display unit on secondary value axis.</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Chart with built-in configuration of display unit" src="images/spreadjsv13images/chart-axis-display-unit.png" /></p>
+
+<p>Users can get or set the axes of the chart using the <a href="SpreadJS~GC.Spread.Sheets.Charts.Chart~axes.html" data-auto-update-caption="true"><u><font color="#0066CC">axes()</font></u></a>&nbsp;method of the <a href="SpreadJS~GC.Spread.Sheets.Charts.Chart.html"><u><font color="#0066CC">Chart</font></u></a> class. While working with charts, users can add, modify and customize the axes display units as per their specific requirements and preferences. If users want to delete the axis display units from the chart, then the value of the axis display unit must be set to null.</p>
+
+<p><strong>Supported Chart Types</strong> - Any chart type that contains value axis supports the configuration of axis display units. Hence, only primary value axis and secondary value axis are supported.</p>
+
+<h3 id="c">Customize Display Unit Labels</h3>
+
+<p>While working with axis display units, users can choose whether to show or hide the display unit labels. Also, users can modify the default appearance of the display unit labels by changing its font, customizing the font color, and configuring the font family of the display units.</p>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> The following limitations must be kept in mind while configuring and customizing the axis display units in a chart:</p>
+
+    <ul>
+        <li>While performing JSON I/O, all properties of DisplayUnit are supported. However while performing Excel I/O, if any style info for DisplayUnit is set, it is not saved to the xml of Excel file. Hence the style of display unit label is lost in the xml file.</li>
+
+        <li>This feature doesn't support the customization of the display unit label text.</li>
+    </ul>
+</div>
+
+<p><strong>Using Code</strong></p>
+
+<p>This code shows how to configure Axes along with display unit labels in the chart.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+activeSheet.suspendPaint();
+<span style="COLOR: #008000">// Prepare data for chart
+</span>activeSheet.setValue(0, 1, <span style="COLOR: #800000">"Y-2015"</span>);
+activeSheet.setValue(0, 2, <span style="COLOR: #800000">"Y-2016"</span>);
+activeSheet.setValue(0, 3, <span style="COLOR: #800000">"Y-2017"</span>);
+activeSheet.setValue(0, 4, <span style="COLOR: #800000">"Y-2018"</span>);
+activeSheet.setValue(0, 5, <span style="COLOR: #800000">"Y-2019"</span>);
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">"Gradlco Corp. Ltd"</span>);
+activeSheet.setValue(2, 0, <span style="COLOR: #800000">"Saagiate Corp. Ltd."</span>);
+activeSheet.setColumnWidth(0, 120);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> r = 1; r &lt;= 2; r++) {
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> c = 1; c &lt;= 5; c++) {
+activeSheet.setValue(r, c, parseInt(Math.random() * 5000));
+}
+}
+
+<span style="COLOR: #008000">// Add columnClustered chart
+</span>chart_columnClustered = activeSheet.charts.add(<span style="COLOR: #800000">'chart_columnClustered'</span>, GC.Spread.Sheets.Charts.ChartType.columnClustered, 50, 100, 500, 400);
+<span style="COLOR: #0000ff">var</span> series = chart_columnClustered.series();
+series.add({
+chartType: GC.Spread.Sheets.Charts.ChartType.columnClustered,
+axisGroup: GC.Spread.Sheets.Charts.AxisGroup.primary,
+name: <span style="COLOR: #800000">"Sheet1!$A$2"</span>,
+xValues: <span style="COLOR: #800000">"Sheet1!$B$1:$F$1"</span>,
+yValues: <span style="COLOR: #800000">"Sheet1!$B$2:$D$2"</span>
+});
+series.add({
+chartType: GC.Spread.Sheets.Charts.ChartType.line,
+axisGroup: GC.Spread.Sheets.Charts.AxisGroup.secondary,
+name: <span style="COLOR: #800000">"Sheet1!$A$3"</span>,
+xValues: <span style="COLOR: #800000">"Sheet1!$B$1:$F$1"</span>,
+yValues: <span style="COLOR: #800000">"Sheet1!$B$3:$D$3"</span>
+});
+<span style="COLOR: #0000ff">var</span> axes = chart_columnClustered.axes();
+
+<span style="COLOR: #008000">// Configure Primary Category Axis
+</span>axes.primaryCategory.style.color = <span style="COLOR: #800000">'green'</span>;
+axes.primaryCategory.title.color = <span style="COLOR: #800000">'green'</span>;
+axes.primaryCategory.title.text = <span style="COLOR: #800000">'Primary Category Axes'</span>;
+<span style="COLOR: #008000">// Configure Primary Value Axis
+</span>axes.primaryValue.style.color = <span style="COLOR: #800000">'blue'</span>;
+axes.primaryValue.title.color = <span style="COLOR: #800000">'blue'</span>;
+axes.primaryValue.title.text = <span style="COLOR: #800000">'Primary Value Axes'</span>;
+axes.primaryValue.title.fontSize = 16;
+<span style="COLOR: #008000">// Configure BuiltIn DisplayUnit for "Primary Value Axis"
+</span>axes.primaryValue.displayUnit = {
+unit: GC.Spread.Sheets.Charts.DisplayUnit.thousands, <span style="COLOR: #008000">// BuiltIn DisplayUnit is thousands
+</span>visible: <span style="COLOR: #0000ff">true</span>,
+style: {
+color: <span style="COLOR: #800000">'red'</span>,
+transparency: 0.1,
+fontFamily: <span style="COLOR: #800000">'arial'</span>,
+fontSize: 14
+}
+};
+<span style="COLOR: #008000">// Configure Secondary Category Axis
+</span>axes.secondaryCategory.visible = <span style="COLOR: #0000ff">true</span>;
+axes.secondaryCategory.style.color = <span style="COLOR: #800000">'green'</span>;
+axes.secondaryCategory.title.color = <span style="COLOR: #800000">'green'</span>;
+axes.secondaryCategory.title.text = <span style="COLOR: #800000">'Secondary Category Axes'</span>;
+axes.secondaryCategory.title.fontSize = 16;
+<span style="COLOR: #008000">// Configure Custom DisplayUnit for "Secondary Value Axis"
+</span>axes.secondaryValue.displayUnit = {
+unit: 500, <span style="COLOR: #008000">// Custom Display unit is 500
+</span>visible: <span style="COLOR: #0000ff">true</span>,
+style: {
+color: <span style="COLOR: #800000">'red'</span>,
+transparency: 0.1,
+fontFamily: <span style="COLOR: #800000">'Verdana'</span>,
+fontSize: 14
+}
+};
+<span style="COLOR: #008000">// Configure Secondary Value Axis
+</span>axes.secondaryValue.style.color = <span style="COLOR: #800000">'blue'</span>;
+axes.secondaryValue.title.color = <span style="COLOR: #800000">'blue'</span>;
+axes.secondaryValue.format = <span style="COLOR: #800000">'General'</span>;
+axes.secondaryValue.title.text = <span style="COLOR: #800000">'Secondary Value Axes'</span>;
+chart_columnClustered.axes(axes);
+<span style="COLOR: #008000">// Configure Chart Title
+</span><span style="COLOR: #0000ff">var</span> title = chart_columnClustered.title();
+title.text = <span style="COLOR: #800000">"Annual Sales Record"</span>;
+title.fontFamily = <span style="COLOR: #800000">"Cambria"</span>;
+title.fontSize = 28;
+title.color = <span style="COLOR: #800000">"Red"</span>;
+chart_columnClustered.title(title);
+activeSheet.resumePaint();
+});
+&lt;<span style="COLOR: #800000">/script&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Configure Dates on Category Axis</h3>
+
+<p>SpreadJS allows users to configure dates on category axis by configuring it as date (time-scale) axis.The data of days, months or years can be plotted on the category axis using various properties, like:</p>
+
+<ul>
+    <li><strong>BaseUnit:</strong>Represents base unit value like Days, Months or Years.</li>
+
+    <li><strong>MajorUnit:</strong> Represents interval number value between two major tick marks.</li>
+
+    <li><strong>MajorUnitScale:</strong> Represents major unit scale value (Days, Months or Years) for the category axis.</li>
+
+    <li><strong>MinorUnit:</strong> Represents interval number value between two minor tick marks.</li>
+
+    <li><strong>MinorUnitScale</strong>: Represents minor unit scale value (Days, Months or Years) for the category axis.</li>
+</ul>
+
+<p>The difference in the intervals of base unit is the smallest difference between the units which can be accommodated by the size of chart. However,this difference can be customized by specifying the value of interval number between two tick marks by using the <strong>MajorUnit</strong> and <strong>MinorUnit</strong> properties.</p>
+
+<p>The following screenshot depicts a chart showing the average viewing time of a webpage on three different browsers in different months. The category axis has been configured as date axis with months as its base unit and 2 as the interval number value between two major tick marks.</p>
+
+<p><img border="0" alt="Chart with date axis" src="images/DateAxis.PNG" /></p>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> Hours, minutes and seconds are not supported by date axis.<br />
+    If value of minorUnitScale is more than majorUnitScale, it will not work for minorUnitScale.</p>
+</div>
+
+<p><strong>Using Code</strong></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+    <span style="COLOR: #008000">// initializing Spread
+</span>    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+    <span style="COLOR: #008000">// get the activesheet
+</span>    <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+    <span style="COLOR: #008000">// create array
+</span>    <span style="COLOR: #0000ff">var</span> dataArray = [
+        [<span style="COLOR: #800000">""</span>, <span style="COLOR: #0000ff">new</span> Date(2019, 1, 1), <span style="COLOR: #0000ff">new</span> Date(2019, 2, 1), <span style="COLOR: #0000ff">new</span> Date(2019, 3, 1), <span style="COLOR: #0000ff">new</span> Date(2019, 4, 1), <span style="COLOR: #0000ff">new</span> Date(2019, 5, 1), <span style="COLOR: #0000ff">new</span> Date(2019, 6, 1)],
+        [<span style="COLOR: #800000">"Chrome"</span>, 5.782, 6.263, 7.766, 8.389, 9.830, 11.260],
+        [<span style="COLOR: #800000">"FireFox"</span>, 4.284, 4.130, 3.951, 3.760, 3.631, 3.504],
+        [<span style="COLOR: #800000">"IE"</span>, 2.814, 2.491, 2.455, 1.652, 1.073, 0.834],
+    ];
+    <span style="COLOR: #008000">// set columns width
+</span>    <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 8; i++) {
+        activeSheet.setColumnWidth(i, 80.0, GC.Spread.Sheets.SheetArea.viewport);
+    }
+    <span style="COLOR: #008000">// set array
+</span>    activeSheet.setArray(0, 0, dataArray);
+    <span style="COLOR: #008000">// set date formatter for a range
+</span>    activeSheet.getRange(0, 0, 1, 7).formatter(<span style="COLOR: #800000">"m/d/yyyy"</span>);
+    <span style="COLOR: #008000">// add chart
+</span>    <span style="COLOR: #0000ff">var</span> chart = activeSheet.charts.add(<span style="COLOR: #800000">'ChartWithDateAxis'</span>, GC.Spread.Sheets.Charts.ChartType.line, 2, 85, 400, 400, <span style="COLOR: #800000">'A1:G4'</span>);
+    <span style="COLOR: #008000">// set chart title
+</span>    chart.title({ text: <span style="COLOR: #800000">"Chart With Date Axis"</span> });
+    <span style="COLOR: #008000">// set chart axes properties
+</span>    <span style="COLOR: #0000ff">var</span> axes = chart.axes();
+
+    <span style="COLOR: #008000">// Setting primaryCategory i.e. DateAxis properties
+</span>    axes.primaryCategory.baseUnit = GC.Spread.Sheets.Charts.TimeUnit.months;
+    axes.primaryCategory.majorUnit = 1;
+   <span style="COLOR: #008000">// axes.primaryCategory.minorUnit = 1;
+</span>    axes.primaryCategory.majorUnitScale = GC.Spread.Sheets.Charts.TimeUnit.months;
+ <span style="COLOR: #008000">//   axes.primaryCategory.minorUnitScale = GC.Spread.Sheets.Charts.TimeUnit.days;
+</span>    chart.axes(axes);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Set Crossed Axis</h3>
+
+<p>You&nbsp;can customize the horizontal axis cross&nbsp;value to change the appearance of the charts, just like in Excel. The crossed axis in a chart is useful to represent data in cases where data points fall between both positive and negative values.To support this, the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.AxisCrossPoint.html">AxisCrossPoint</a> enumeration provides the following three options.</p>
+
+<ul>
+    <li><strong>automatic</strong> - Allows the user to set the axis crossing point</li>
+
+    <li><strong>maximum</strong> - Allows the user to set the axis crosses at the maximum value</li>
+
+    <li><strong>minimum</strong> -&nbsp;Allows the user to set the axis crosses at a minimum value</li>
+</ul>
+
+<p>You can adjust the crosses position by using the <strong>crossPoint</strong> property of primaryCategory and primaryValue class.</p>
+
+<p>Let's see how we can set the crossed axis of a chart. For example in the following use-case, let's say&nbsp;a user wants to evaluate the profit amount before and after 2012 wherein growth exceeds or falls behind 2 percent. In order to represent the growth and profit of the company, we are using a&nbsp;bubble chart where each bubble represents the growth and profit incurred in a particular year. The&nbsp;data labels&nbsp;which we see&nbsp;while hovering on the bubbles will display the growth percent and Profit amount&nbsp;in a particular year.</p>
+
+<p>To analyze the profit amount in which the growth exceeds or falls behind 2 percent, the crossPoint value for primaryCategory (Y-axis) is set to 2012, and the crossPoint for primaryValue (or X-axis) is set to 2. With this crossPoint positioning, the user can easily segregate and comprehend the 'growth' and 'profit amount' data in all the four quadrants of the chart. Using the left upper and lower quadrants of the chart, the user can analyze the profit amount in the years before 2012, where the growth exceeds or falls short of 2 percent. Similarly, using the right upper and lower quadrants of the chart, the user can clearly evaluate the profit amount in the years after 2012, where the growth exceeds or falls behind the value of 2 percent.</p>
+
+<p><img border="0" alt="Image depicting bubble chart with cross axis." src="images/cross-axis-bubblechart.png" /></p>
+
+<p><strong>Using Code</strong></p>
+
+<p>This code shows how to configure crossed axis in charts.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+$(document).ready(function () {
+<span style="COLOR: #008000">// initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+<span style="COLOR: #008000">// get the sheet
+</span><span style="COLOR: #0000ff">var</span> sheet = spread.getSheet(0);
+sheet.suspendPaint();
+<span style="COLOR: #008000">// set column width
+</span>sheet.setColumnWidth(0, 80);
+sheet.setColumnWidth(1, 90);
+sheet.setColumnWidth(2, 110);
+<span style="COLOR: #008000">// create data array
+</span><span style="COLOR: #0000ff">var</span> dataArray = [
+[<span style="COLOR: #800000">"Year"</span>, <span style="COLOR: #800000">"Growth (%)"</span>, <span style="COLOR: #800000">"Profit Amount ($)"</span>],
+[2000, 4, 3123123],
+[2001, -2, 4123123],
+[2002, 1, 8456456],
+[2003, 3, 2345435],
+[2004, 7, 1768678],
+[2005, 5, 5453456],
+[2006, 5, 6676878],
+[2007, -4, 7434234],
+[2008, 3, 3834234],
+[2009, 2, 6756756],
+[2010, 5, 5672123],
+[2011, 9, 9743546],
+[2012, 6, 3464513],
+[2013, 4, 7431545],
+[2014, 7, 7456456],
+[2015, -1, 4567687],
+[2016, 6, 4870231],
+[2017, 3, 4353453],
+[2018, 7, 3459021],
+[2019, 8, 2390123],
+[2020, 5, 2302303],
+];
+<span style="COLOR: #008000">// set data array
+</span>sheet.setArray(0, 0, dataArray);
+<span style="COLOR: #008000">// add chart
+</span><span style="COLOR: #0000ff">var</span> chart = sheet.charts.add(<span style="COLOR: #800000">'BubbleChart1'</span>, GC.Spread.Sheets.Charts.ChartType.bubble, 320, 30, 620, 400, <span style="COLOR: #800000">"A2:C22"</span>);
+<span style="COLOR: #008000">// hide gridlines from the chart
+</span><span style="COLOR: #0000ff">var</span> gridLinesAxes = chart.axes();
+gridLinesAxes.primaryCategory.majorGridLine.visible = <span style="COLOR: #0000ff">false</span>;
+gridLinesAxes.primaryValue.majorGridLine.visible = <span style="COLOR: #0000ff">false</span>;
+chart.axes(gridLinesAxes);
+<span style="COLOR: #008000">// get the series and set its backcolor with a pattern
+</span><span style="COLOR: #0000ff">var</span> series = chart.series().<span style="COLOR: #0000ff">get</span>();
+<span style="COLOR: #0000ff">var</span> seriesItem = series[0];
+seriesItem.backColor = {
+type: GC.Spread.Sheets.Charts.PatternType.dottedPercent40,
+foregroundColor: <span style="COLOR: #800000">"blue"</span>,
+backgroundColor: <span style="COLOR: #800000">"lime"</span>,
+}
+chart.series().<span style="COLOR: #0000ff">set</span>(0, seriesItem);
+<span style="COLOR: #008000">// Configure ChartArea
+</span><span style="COLOR: #0000ff">var</span> chartArea = chart.chartArea();
+chartArea.backColor = <span style="COLOR: #800000">"#FDF2E9"</span>;
+chartArea.fontSize = 16;
+<span style="COLOR: #008000">// Set ChartArea's Border Style
+</span>chartArea.border.width = 3;
+chartArea.border.color = <span style="COLOR: #800000">"darkblue"</span>;
+chart.chartArea(chartArea);
+<span style="COLOR: #008000">// set title for chart
+</span><span style="COLOR: #0000ff">var</span> title = chart.title();
+title.fontSize = <span style="COLOR: #800000">"22.00"</span>;
+title.text = <span style="COLOR: #800000">"Growth and Profit of Hindco Pvt. Ltd."</span>;
+chart.title(title);
+<span style="COLOR: #008000">// hide legend of the chart
+</span><span style="COLOR: #0000ff">var</span> legend = chart.legend();
+legend.visible = <span style="COLOR: #0000ff">false</span>;
+chart.legend(legend);
+<span style="COLOR: #008000">// set crossPoint for x &amp; y axis
+</span><span style="COLOR: #0000ff">var</span> axes = chart.axes();
+axes.primaryCategory.crossPoint = 2012; <span style="COLOR: #008000">// y axis
+</span>axes.primaryValue.crossPoint = 2; <span style="COLOR: #008000">// x axis
+</span>chart.axes(axes);
+<span style="COLOR: #008000">// set the style for cells
+</span><span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style.font = <span style="COLOR: #800000">"bold 12px Arial"</span>;
+style.foreColor = <span style="COLOR: #800000">"white"</span>;
+style.backColor = <span style="COLOR: #800000">"#5B9BD5"</span>;
+style.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+style.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 3; i++)
+sheet.setStyle(0, i, style, GC.Spread.Sheets.SheetArea.viewport);
+sheet.resumePaint();
+});
+&lt;/script&gt;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <strong>Note</strong>: The cross-axis feature is temporarily not supported for the date axis.
+</div>
+
+<h3>Set Axis Orientation</h3>
+
+<p>You can&nbsp;control the orientation of chart axes&nbsp;and choose to display it in the reverse order as well.&nbsp;The below image depicts the default and reverse orientation of&nbsp;primary value axis.</p>
+
+<p><img border="0" alt="default and reverse axis orientation in charts" src="images/axis-order-sample.png" /></p>
+
+<p>The <strong>orientation</strong> property can be&nbsp;set to 0 (for default order)&nbsp;or 1 (for reverse order). Alternatively, it&nbsp;can&nbsp;also be set to&nbsp;<strong>minMax</strong> (default)&nbsp;or <strong>maxMin</strong> (reverse)&nbsp;values of <strong>AxisOrientation</strong> enumeration.</p>
+
+<p><strong>Using Code</strong></p>
+
+<p>This code shows how to set the default and reverse axis orientation in a chart.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> axesMin = minMaxChart.axes();
+axesMin.primaryValue.scaling = {
+    orientation: GC.Spread.Sheets.Charts.AxisOrientation.minMax
+    <span style="COLOR: #008000">// or 
+</span>    <span style="COLOR: #008000">//orientation: 0
+</span>};
+minMaxChart.axes(axesMin);
+
+<span style="COLOR: #0000ff">var</span> axesMax = maxMinChart.axes();
+axesMax.primaryValue.scaling = {
+    orientation: GC.Spread.Sheets.Charts.AxisOrientation.maxMin
+    <span style="COLOR: #008000">// or 
+</span>    <span style="COLOR: #008000">//orientation: 1
+</span>};
+maxMinChart.axes(axesMax);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p><strong>Limitation</strong></p>
+
+<p>The axis orientation&nbsp;cannot be set for&nbsp;pie, sunburst, treemap, and funnel charts.<br /></p>
+
+<h3>Set Axis Label Position</h3>
+
+<p>You can set the position of axis&nbsp;data labels&nbsp;in a chart by using <strong>tickLabelPosition</strong> property. The data labels can be placed in the following positions by using <strong>TickLabelPosition</strong> enumeration:</p>
+
+<ul>
+    <li>High or 0: Top or right side of the chart</li>
+
+    <li>Low or 1: Bottom or left side of the chart</li>
+
+    <li>Next to Axis or 2: Next to axis (where the axis is not at either side of the chart) (Default Value)</li>
+
+    <li>None or 3: No tick labels</li>
+</ul>
+
+<p>The image below depicts the default and&nbsp;high label position of&nbsp;data labels for primary category axis.</p>
+
+<p><img border="0" alt="default and high data label position in charts" src="images/axes-tickLabelPosition.png" /></p>
+
+<p>The following example sets the default and top axis data label positions&nbsp;in a chart.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Example Title</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// set chart axes properties
+</span><span style="COLOR: #0000ff">var</span> axesTickDefault = chart.axes();
+<span style="COLOR: #008000">// set tickLabelPosition to default nextToAxis
+</span>axesTickDefault.primaryCategory.tickLabelPosition = GC.Spread.Sheets.Charts.TickLabelPosition.nextToAxis;
+<span style="COLOR: #008000">// or
+// axesTickDefault.primaryCategory.tickLabelPosition = 2;
+</span>chart.axes(axesTickDefault);
+
+<span style="COLOR: #0000ff">var</span> axesTickHigh = chart.axes();
+<span style="COLOR: #008000">// set tickLabelPosition to High
+</span>axesTickHigh.primaryCategory.tickLabelPosition = GC.Spread.Sheets.Charts.TickLabelPosition.high;
+<span style="COLOR: #008000">// or
+// axesTickDefault.primaryCategory.tickLabelPosition = 0;
+</span>chart.axes(axesTickHigh);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

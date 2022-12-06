@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to deselect specific cells from the selected range and customize the selection as per the requirements in the spreadsheet." />
+    
+    <title>Precision Selection | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n483","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to deselect specific cells from the selected range and customize the selection as per the requirements in the spreadsheet." />
+    
+    <meta name="Microsoft.Help.Id" content="37b0f2d8-aea3-49ae-81a8-a59f6c881748"/>
+    <meta name="Microsoft.Help.TocParent" content="6b7c1b30-5b52-44b5-8ebf-8dbfa40f5b46"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="keyboard-actions.html">Keyboard Actions</a>
+ / Precision Selection</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Precision Selection</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>With SpreadJS, you can select cells, rows, columns, or multiple ranges in a worksheet. Often, while selecting&nbsp;a large number of cells or multiple cell ranges, if you mistakenly select&nbsp;some cells and want to deselect it,&nbsp;the whole process&nbsp;of unselecting the entire selection and then&nbsp;reselecting again becomes too cumbersome to handle. SpreadJS not only allows you to save a significant amount of time but also avoid redundancy by enabling users to deselect specific cells from the selected range and customize the selection as per their requirements while working with spreadsheets.</p>
+
+<p>In order to start selecting an area in a worksheet, simply click and drag with the left mouse button to select a block of cells, columns, or rows. You can also use the mouse click and Ctrl key to select multiple ranges of cells.</p>
+
+<p>In order to deselect a selection, simply press the ctrl key or cmd key in the keyboard and use the left, top, right or down arrow keys to deselect the cells that you want. The <strong>allowUserDeselect</strong> property must be set to boolean "true' in order to enable deselection behavior in a worksheet. By default, this option is set to true. However, if users don't want the deselection behavior while working with SpreadJS, they can set this option to "false".</p>
+
+<p>The following images demonstrate the working of deselection behavior after selecting a range of cells in a worksheet.</p>
+
+<p>The first image shows how to work simultaneously with&nbsp;four selection areas when the deselecting selection task is executed&nbsp;inside the original selection.</p><img alt="This image shows the working of deselection behavior after selecting a range of cells in a worksheet." src="images/Case1_Final.gif" /><br />
+<br />
+
+<p>The second image shows how to work with less than four selection areas when the deselecting selection task crosses the original selection.</p><img alt="This image shows how to work with less than four selection areas when the deselecting selection task crosses the original selection." src="images/Case2_Final.gif" /><br />
+<br />
+
+<p>The third image shows how to work with "No selections" when the deselecting selection task is performed within the original selection. In this case, after deselection is executed, an active cell will be added at the beginning of the deselected selection.</p><img alt="This image shows how to work with 'No selections' when the deselecting selection task is performed within the original selection." src="images/Case3_Final.gif" />
+
+<p>&nbsp;</p>
+
+<p>Navigation keys are listed in&nbsp;<a href="keyboard.html" data-auto-update-caption="true">Keyboard Navigation Shortcuts</a>. You can specify the type of selection unit (cell, column, or row) using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~selectionUnit.html">selectionUnit</a> method. You can specify the range of the selection&nbsp;(single, range, or multiple range) using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~selectionPolicy.html">selectionPolicy</a> method. You can set the selection color and border with the <strong>options.selectionBackColor</strong> and <strong>options.selectionBorderColor</strong> properties. You can use standard colors and theme colors.</p>
+
+<h4>Using Code</h4>
+
+<p>This example selects a range of cells.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.addSelection(4, 0, 2, 2);
+<span style="COLOR: #008000">//activeSheet.clearSelection();
+</span><span style="COLOR: #0000ff">var</span> sels = activeSheet.getSelections();
+alert(sels.length);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>This example allows single row or&nbsp;block row selection.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.selectionUnit(GC.Spread.Sheets.SelectionUnit.Row);
+activeSheet.selectionPolicy(GC.Spread.Sheets.SelectionPolicy.Range);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>This example sets the color for the selected area and border.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.options.selectionBackColor = <span style="COLOR: #800000">"Accent 6"</span>;
+activeSheet.options.selectionBorderColor = <span style="COLOR: #800000">"Accent 1"</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>This example&nbsp;shows how to deselect a selection in the worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+
+<span style="COLOR: #008000">// For "Excel like Precision Selection" - users need to set the allowUserDeselect spread option to true. By default this option is true. In case, you don't want "Excel like Precision Selection, you need to set this option to false"
+</span>         
+spread.options.allowUserDeselect = <span style="COLOR: #0000ff">true</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="colors.html">Cell Colors</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

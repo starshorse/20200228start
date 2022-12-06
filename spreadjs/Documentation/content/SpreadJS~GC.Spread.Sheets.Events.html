@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>Events type | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n7024","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.Events"/>
+    <meta name="Description" content="Defines the events supported in SpreadJS." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets_namespace"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+ / Events type</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Events type</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">Defines the events supported in SpreadJS.</div>
+               
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new GC.Spread.Sheets.<a href="SpreadJS~GC.Spread.Sheets.Events.html">Events</a>();</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function Events;</pre>
+      </div>
+    
+
+      </div>
+    </div>
+
+            <a name="exampleBookmark"></a>
+            
+            
+            
+            
+            
+            <div class="i-section-heading" id="i-inheritance-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Inheritance Hierarchy</span></div><div id="i-inheritance-section-content" class="i-section-content"><P>Object<BR />&nbsp;&nbsp;&nbsp;<STRONG>GC.Spread.Sheets.Events</STRONG><BR /></P></div>
+            
+
+            <a name="ConstructorsBookmark"></a>
+            <div class="i-section-heading" id="i-publicConstructors-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Constructors</span></div><div id="i-publicConstructors-section-content" class="i-section-content"><table class="i-filtered-item-list"><tr><th>&nbsp;</th><th>Name</th><th>Description</th></tr>
+<tr><td class="i-image"><img alt="public Constructor" src="template/packages/core-ajax/images/publicConstructor.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~_ctor.html">Events Constructor</a></td><td class="i-member-description">Defines the events supported in SpreadJS. &nbsp;</td></tr>
+</table><a href="#top">Top</a></div>
+            
+            
+
+            <a name="FieldsBookmark"></a>
+            
+            
+            
+
+            <a name="PropertiesBookmark"></a>
+            
+            
+            
+
+            <a name="MethodsBookmark"></a>
+            
+            
+            
+
+            <a name="EventsBookmark"></a>
+            <div class="i-section-heading" id="i-publicEvents-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Events</span></div><div id="i-publicEvents-section-content" class="i-section-content"><table class="i-filtered-item-list"><tr><th>&nbsp;</th><th>Name</th><th>Description</th></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ActiveSheetChanged_EV.html">ActiveSheetChanged</a></td><td class="i-member-description">Occurs when the user has changed the active sheet. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ActiveSheetChanging_EV.html">ActiveSheetChanging</a></td><td class="i-member-description">Occurs when the user is changing the active sheet. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~BeforePrint_EV.html">BeforePrint</a></td><td class="i-member-description">Occurs before the print &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ButtonClicked_EV.html">ButtonClicked</a></td><td class="i-member-description">Occurs when the user clicks a button, check box, or hyperlink in a cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~CellChanged_EV.html">CellChanged</a></td><td class="i-member-description">Occurs when a change is made to a cell in this sheet that may require the cell to be repainted. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~CellClick_EV.html">CellClick</a></td><td class="i-member-description">Occurs when the user presses down the left mouse button in a cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~CellDoubleClick_EV.html">CellDoubleClick</a></td><td class="i-member-description">Occurs when the user presses down the left mouse button twice (double-clicks) in a cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ClipboardChanged_EV.html">ClipboardChanged</a></td><td class="i-member-description">Occurs when a Clipboard change occurs that affects Spread.Sheets. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ClipboardChanging_EV.html">ClipboardChanging</a></td><td class="i-member-description">Occurs when the Clipboard is changing due to a Spread.Sheets action. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ClipboardPasted_EV.html">ClipboardPasted</a></td><td class="i-member-description">Occurs when the user pastes from the Clipboard. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ClipboardPasting_EV.html">ClipboardPasting</a></td><td class="i-member-description">Occurs when the user is pasting from the Clipboard. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ColumnChanged_EV.html">ColumnChanged</a></td><td class="i-member-description">Occurs when a change is made to a column or range of columns in this sheet that may require the column or range of columns to be repainted. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ColumnChanging_EV.html">ColumnChanging</a></td><td class="i-member-description">Occurs when before a change is made to a column or range of columns in this sheet that may require the column or range of columns to be repainted. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ColumnWidthChanged_EV.html">ColumnWidthChanged</a></td><td class="i-member-description">Occurs when the column width has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ColumnWidthChanging_EV.html">ColumnWidthChanging</a></td><td class="i-member-description">Occurs when the column width is changing. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~CommentChanged_EV.html">CommentChanged</a></td><td class="i-member-description">Occurs when any comment has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~CommentRemoved_EV.html">CommentRemoved</a></td><td class="i-member-description">Occurs when the user has removed the comment. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~CommentRemoving_EV.html">CommentRemoving</a></td><td class="i-member-description">Occurs when the user is removing any comment. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~DragDropBlock_EV.html">DragDropBlock</a></td><td class="i-member-description">Occurs when the user is dragging and dropping a range of cells. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~DragDropBlockCompleted_EV.html">DragDropBlockCompleted</a></td><td class="i-member-description">Occurs when the user completes dragging and dropping a range of cells. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~DragFillBlock_EV.html">DragFillBlock</a></td><td class="i-member-description">Occurs when the user is dragging to fill a range of cells. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~DragFillBlockCompleted_EV.html">DragFillBlockCompleted</a></td><td class="i-member-description">Occurs when the user completes dragging to fill a range of cells. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~DragMerged_EV.html">DragMerged</a></td><td class="i-member-description">Occurs after user drag merge cells. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~DragMerging_EV.html">DragMerging</a></td><td class="i-member-description">Occurs before user drag merge cells. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~EditChange_EV.html">EditChange</a></td><td class="i-member-description">Occurs when a cell is in edit mode and the text is changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~EditEnded_EV.html">EditEnded</a></td><td class="i-member-description">Occurs when a cell leaves edit mode. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~EditEnding_EV.html">EditEnding</a></td><td class="i-member-description">Occurs when a cell is leaving edit mode. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~EditorStatusChanged_EV.html">EditorStatusChanged</a></td><td class="i-member-description">Occurs when the editor's status has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~EditStarting_EV.html">EditStarting</a></td><td class="i-member-description">Occurs when a cell is entering edit mode. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~EnterCell_EV.html">EnterCell</a></td><td class="i-member-description">Occurs when the focus enters a cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~FloatingObjectChanged_EV.html">FloatingObjectChanged</a></td><td class="i-member-description">Occurs when any floating object has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~FloatingObjectLoaded_EV.html">FloatingObjectLoaded</a></td><td class="i-member-description">Occurs when the custom floating object content is loaded. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~FloatingObjectRemoved_EV.html">FloatingObjectRemoved</a></td><td class="i-member-description">Occurs when the user has removed the floating object. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~FloatingObjectRemoving_EV.html">FloatingObjectRemoving</a></td><td class="i-member-description">Occurs when the user is removing any floating object. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~FloatingObjectSelectionChanged_EV.html">FloatingObjectSelectionChanged</a></td><td class="i-member-description">Occurs when the selections of the floating object have changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~InvalidOperation_EV.html">InvalidOperation</a></td><td class="i-member-description">Occurs when an invalid operation is performed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~LeaveCell_EV.html">LeaveCell</a></td><td class="i-member-description">Occurs when the focus leaves a cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~LeftColumnChanged_EV.html">LeftColumnChanged</a></td><td class="i-member-description">Occurs when the left column changes. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~OutlineColumnCheckStatusChanged_EV.html">OutlineColumnCheckStatusChanged</a></td><td class="i-member-description">Occurs when the outline column check status has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~PictureChanged_EV.html">PictureChanged</a></td><td class="i-member-description">Occurs when any picture has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~PictureSelectionChanged_EV.html">PictureSelectionChanged</a></td><td class="i-member-description">Occurs when the selections of the picture have changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~PivotTableChanged_EV.html">PivotTableChanged</a></td><td class="i-member-description">After PivotTable filter/sort/collapse/fieldChanged. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RangeChanged_EV.html">RangeChanged</a></td><td class="i-member-description">Occurs when the cell range has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RangeFilterCleared_EV.html">RangeFilterCleared</a></td><td class="i-member-description">Occurs when a range column has just been clear filtered. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RangeFilterClearing_EV.html">RangeFilterClearing</a></td><td class="i-member-description">Occurs when a range column is about to be automatically clear filter. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RangeFiltered_EV.html">RangeFiltered</a></td><td class="i-member-description">Occurs when a column has just been automatically filtered. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RangeFiltering_EV.html">RangeFiltering</a></td><td class="i-member-description">Occurs when a column is about to be automatically filtered. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RangeGroupStateChanged_EV.html">RangeGroupStateChanged</a></td><td class="i-member-description">Occurs when the user has changed the outline state (range group) for rows or columns. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RangeGroupStateChanging_EV.html">RangeGroupStateChanging</a></td><td class="i-member-description">Occurs before the user changes the outline state (range group) for rows or columns. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RangeSorted_EV.html">RangeSorted</a></td><td class="i-member-description">Occurs when a column has just been automatically sorted. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RangeSorting_EV.html">RangeSorting</a></td><td class="i-member-description">Occurs when a column is about to be automatically sorted. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RowChanged_EV.html">RowChanged</a></td><td class="i-member-description">Occurs when a change is made to a row or range of rows in this sheet that may require the row or range of rows to be repainted. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RowChanging_EV.html">RowChanging</a></td><td class="i-member-description">Occurs when before a change is made to a row or range of rows in this sheet that may require the row or range of rows to be repainted. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RowHeightChanged_EV.html">RowHeightChanged</a></td><td class="i-member-description">Occurs when the row height has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RowHeightChanging_EV.html">RowHeightChanging</a></td><td class="i-member-description">Occurs when the row height is changing. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~RowOperation_EV.html">RowOperation</a></td><td class="i-member-description">Occurs when the applied row action is operated. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SelectionChanged_EV.html">SelectionChanged</a></td><td class="i-member-description">Occurs when the selection of cells on the sheet has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SelectionChanging_EV.html">SelectionChanging</a></td><td class="i-member-description">Occurs when the selection of cells on the sheet is changing. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ShapeChanged_EV.html">ShapeChanged</a></td><td class="i-member-description">Occurs when any shape has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ShapeRemoved_EV.html">ShapeRemoved</a></td><td class="i-member-description">Occurs when the user has removed the shape. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ShapeRemoving_EV.html">ShapeRemoving</a></td><td class="i-member-description">Occurs when the user is removing any shape. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ShapeSelectionChanged_EV.html">ShapeSelectionChanged</a></td><td class="i-member-description">Occurs when the selections of the shape have changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SheetChanged_EV.html">SheetChanged</a></td><td class="i-member-description">After sheet changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SheetChanging_EV.html">SheetChanging</a></td><td class="i-member-description">Before sheet changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SheetMoved_EV.html">SheetMoved</a></td><td class="i-member-description">Occurs after the user drags and moves the sheet. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SheetMoving_EV.html">SheetMoving</a></td><td class="i-member-description">Occurs before the user drags and moves the sheet. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SheetNameChanged_EV.html">SheetNameChanged</a></td><td class="i-member-description">Occurs when the user has changed the sheet name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SheetNameChanging_EV.html">SheetNameChanging</a></td><td class="i-member-description">Occurs when the user is changing the sheet name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SheetTabClick_EV.html">SheetTabClick</a></td><td class="i-member-description">Occurs when the user clicks the sheet tab. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SheetTabDoubleClick_EV.html">SheetTabDoubleClick</a></td><td class="i-member-description">Occurs when the user double-clicks the sheet tab. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SlicerChanged_EV.html">SlicerChanged</a></td><td class="i-member-description">Occurs when any slicer has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~SparklineChanged_EV.html">SparklineChanged</a></td><td class="i-member-description">Occurs when the sparkline has changed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~TableColumnsChanged_EV.html">TableColumnsChanged</a></td><td class="i-member-description">Occurs when the user insert/delete columns in table. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~TableFilterCleared_EV.html">TableFilterCleared</a></td><td class="i-member-description">Occurs when a table column has just been clear filter. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~TableFilterClearing_EV.html">TableFilterClearing</a></td><td class="i-member-description">Occurs when a table column is about to be automatically clear filter. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~TableFiltered_EV.html">TableFiltered</a></td><td class="i-member-description">Occurs when a table column has just been automatically filtered. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~TableFiltering_EV.html">TableFiltering</a></td><td class="i-member-description">Occurs when a table column is about to be automatically filtered. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~TableResized_EV.html">TableResized</a></td><td class="i-member-description">Occurs after the user resized table. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~TableResizing_EV.html">TableResizing</a></td><td class="i-member-description">Occurs when the user resizing table by resize handler. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~TableRowsChanged_EV.html">TableRowsChanged</a></td><td class="i-member-description">Occurs when the user insert/delete rows in table. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~TopRowChanged_EV.html">TopRowChanged</a></td><td class="i-member-description">Occurs when the top row changes. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~TouchToolStripOpening_EV.html">TouchToolStripOpening</a></td><td class="i-member-description">Occurs before the touch toolbar pops up. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~UserFormulaEntered_EV.html">UserFormulaEntered</a></td><td class="i-member-description">Occurs when the user types a formula. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ValidationError_EV.html">ValidationError</a></td><td class="i-member-description">Occurs when the applied cell value is invalid. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ValueChanged_EV.html">ValueChanged</a></td><td class="i-member-description">Occurs when the value in the subeditor changes. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ViewZoomed_EV.html">ViewZoomed</a></td><td class="i-member-description">Occurs after the user zooms. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Event" src="template/packages/core-ajax/images/publicEvent.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Events~ViewZooming_EV.html">ViewZooming</a></td><td class="i-member-description">Occurs when the user zooms. &nbsp;</td></tr>
+</table><a href="#top">Top</a></div>
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

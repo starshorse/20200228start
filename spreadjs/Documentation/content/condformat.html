@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS supports conditional formatting in cells. Learn how you can use various styles to set the visual appearance of the formatted cell." />
+    
+    <title>Conditional Formatting | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n404","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS supports conditional formatting in cells. Learn how you can use various styles to set the visual appearance of the formatted cell." />
+    
+    <meta name="Microsoft.Help.Id" content="84aab15e-a098-42d2-aae4-7faea0853d95"/>
+    <meta name="Microsoft.Help.TocParent" content="da6e2ac1-8472-406f-a292-f03731ed2cd7"/>
+    <meta name="Microsoft.Help.TocOrder" content="10"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / Conditional Formatting</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Conditional Formatting</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports conditional formatting in cells. You can use various styles to set the visual appearance of the formatted cell.</p>
+
+<p>Conditional formatting&nbsp;can be applied to worksheets via conditional formatting&nbsp;rules. These rules&nbsp;have an order of precedence. The last rule in&nbsp;a list of rules has the highest precedence. The first rule in the list has the lowest precedence. By default, new rules are always added last and have the highest precedence. When two rules conflict, the rule with higher precedence is applied. If two rules do not conflict (one rule uses a bold font and the other rule uses a cell backcolor), then both rules are applied.</p><!---->
+
+<p>There are several types of conditional rules. They are as follows:</p>
+
+<ul>
+    <li><a href="averagerule.html" data-auto-update-caption="true">Average Rule</a></li>
+
+    <li><a href="cellvaluerule.html" data-auto-update-caption="true">Cell Value Rule</a></li>
+
+    <li><a href="databarrule.html" data-auto-update-caption="true">Data Bar Rule</a></li>
+
+    <li><a href="dateoccrule.html" data-auto-update-caption="true">Date Occurring Rule</a></li>
+
+    <li><a href="duplicaterule.html" data-auto-update-caption="true">Duplicate Rule</a></li>
+
+    <li><a href="formularule.html" data-auto-update-caption="true">Formula Rule</a></li>
+
+    <li><a href="iconrule.html" data-auto-update-caption="true">Icon Set Rule</a></li>
+
+    <li><a href="scalerule.html" data-auto-update-caption="true">Scale Rule</a></li>
+
+    <li><a href="spectextrule.html" data-auto-update-caption="true">Specific Text Rule</a></li>
+
+    <li><a href="top10rule.html" data-auto-update-caption="true">Top 10 Rule</a></li>
+
+    <li><a href="uniquerule.html" data-auto-update-caption="true">Unique Rule</a>&nbsp;&nbsp;&nbsp;</li>
+</ul>
+
+<p>The following table lists the rules and their descriptions:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Rule</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>Average rule</td>
+
+            <td>The average rule checks for values above or under the average.</td>
+        </tr>
+
+        <tr>
+            <td>Cell value rule</td>
+
+            <td>The cell value rule compares values.</td>
+        </tr>
+
+        <tr>
+            <td>Date rule</td>
+
+            <td>The date rule compares dates.</td>
+        </tr>
+
+        <tr>
+            <td>Formula rule</td>
+
+            <td>The formula rule allows you to use formulas when checking the condition.</td>
+        </tr>
+
+        <tr>
+            <td>Data bar rule</td>
+
+            <td>The data bar rule uses a bar that is displayed as the background for each cell. The length of the bar is based on the cell value.</td>
+        </tr>
+
+        <tr>
+            <td>Icon set rule</td>
+
+            <td>The icon set rule displays icons based on the values. You can specify the type of icon and whether to show the icon or the icon and the data in the cell.</td>
+        </tr>
+
+        <tr>
+            <td>Specific text rule</td>
+
+            <td>The specific text rule searches for text strings.</td>
+        </tr>
+
+        <tr>
+            <td>Top 10 rule</td>
+
+            <td>The top 10 rule checks for values in the top or bottom of the range.</td>
+        </tr>
+
+        <tr>
+            <td>Unique rule</td>
+
+            <td>The unique rule checks to see if the value is the only one of that value in the range.</td>
+        </tr>
+
+        <tr>
+            <td>Duplicate rule</td>
+
+            <td>The duplicate rule checks for duplicate values.</td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>&nbsp;</p>
+
+                <p>Scale rule</p>
+            </td>
+
+            <td>
+                <p>The scale rule uses a sliding color scale. For example if 1 is yellow and 50 is green, then 25 would be light green. The scale rule has an option for two or three colors in the scale.</p>
+
+                <p>The following image is for a three scale rule.</p>
+
+                <p><img border="0" alt="Three scale rule" src="images/c3scale.png" /></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

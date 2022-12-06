@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn about different pattern fill in charts." />
+    
+    <title>Pattern Fill in Charts | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n615","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn about different pattern fill in charts." />
+    
+    <meta name="Microsoft.Help.Id" content="5a62dadc-0e66-40d5-8894-e1d96899b0d1"/>
+    <meta name="Microsoft.Help.TocParent" content="bdba97c4-037f-4cd7-ae56-830374286ef0"/>
+    <meta name="Microsoft.Help.TocOrder" content="12"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / Pattern Fill in Charts</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Pattern Fill in Charts</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides support for pattern-fill in charts. The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.PatternType.html">PatternType</a> enumeration in SpreadJS API allows the users to apply different pattern styles in a chart in the worksheet. You can also specify the foreground and background color for it.</p>
+
+<p>This feature helps the users to enhance the chart customization capabilities and add emphasis to the chart elements by applying pattern-fill. The following are the chart elements that supports the pattern-fill feature:</p>
+
+<ul>
+    <li>Datapoint</li>
+
+    <li>Chart area plot</li>
+
+    <li>Area data series</li>
+
+    <li>Chart title</li>
+
+    <li>Data labels</li>
+
+    <li>Legend</li>
+
+    <li>Header</li>
+
+    <li>Footer axis</li>
+
+    <li>Labels</li>
+
+    <li>Overlays</li>
+</ul>
+
+<p>SpreadJS supports 48 built-in pattern styles. Refer to the following chart that uses pattern-fill to depict the world population.</p>
+
+<p><img border="0" alt="An example for pattern fill in charts" src="images/pattern-fills.png" /></p>
+
+<h3>Using Code</h3>
+
+<p>The following code uses <strong>PatternType</strong> property to apply pattern fill&nbsp;to the&nbsp;chart elements.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #008000">// initializing Spread
+</span>    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+
+    <span style="COLOR: #008000">// Get the activesheet
+</span>    <span style="COLOR: #0000ff">var</span> sheet = spread.getSheet(0);
+
+    <span style="COLOR: #008000">// Set Column Width
+</span>    sheet.setColumnWidth(2, 100);
+    sheet.setColumnWidth(4, 100);
+
+    <span style="COLOR: #008000">// Create Data Array
+</span>    <span style="COLOR: #0000ff">var</span> dataArray =
+[
+    [<span style="COLOR: #800000">'Region'</span>, <span style="COLOR: #800000">'Subregion'</span>, <span style="COLOR: #800000">'country'</span>, <span style="COLOR: #800000">'Population'</span>],
+    [<span style="COLOR: #800000">'Asia'</span>, <span style="COLOR: #800000">'Southern'</span>, <span style="COLOR: #800000">'India'</span>, 1354051854],
+    [, , <span style="COLOR: #800000">'Pakistan'</span>, 200813818],
+    [, , <span style="COLOR: #800000">'Bangladesh'</span>, 166368149],
+    [, , <span style="COLOR: #800000">'Others'</span>, 170220300],
+    [, <span style="COLOR: #800000">'Eastern'</span>, <span style="COLOR: #800000">'China'</span>, 1415045928],
+    [, , <span style="COLOR: #800000">'Japan'</span>, 127185332],
+    [, , <span style="COLOR: #800000">'Others'</span>, 111652273],
+    [, <span style="COLOR: #800000">'South-Eastern'</span>, , 655636576],
+    [, <span style="COLOR: #800000">'Western'</span>, , 272298399],
+    [, <span style="COLOR: #800000">'Central'</span>, , 71860465],
+    [<span style="COLOR: #800000">'Africa'</span>, <span style="COLOR: #800000">'Eastern'</span>, , 433643132],
+    [, <span style="COLOR: #800000">'Western'</span>, , 381980688],
+    [, <span style="COLOR: #800000">'Northern'</span>, , 237784677],
+    [, <span style="COLOR: #800000">'Others'</span>, , 234512021],
+    [<span style="COLOR: #800000">'Europe'</span>, , , 742648010],
+    [<span style="COLOR: #800000">'Others'</span>, , , 1057117703]
+];
+
+    <span style="COLOR: #008000">// Set Array
+</span>    sheet.setArray(1, 1, dataArray);
+    <span style="COLOR: #0000ff">var</span> treemapChart = sheet.charts.add(<span style="COLOR: #800000">'chart1'</span>, GC.Spread.Sheets.Charts.ChartType.treemap, 450, 0, 500, 500, <span style="COLOR: #800000">"B2:E18"</span>);
+
+    <span style="COLOR: #008000">// Get title and set it's backcolor with a pattern
+</span>    <span style="COLOR: #0000ff">var</span> title = treemapChart.title();
+    title.fontSize = <span style="COLOR: #800000">"24.00"</span>;
+    title.text = <span style="COLOR: #800000">"WORLD POPULATION"</span>;
+    title.backColor = {
+        type: GC.Spread.Sheets.Charts.PatternType.divot,
+        foregroundColor: <span style="COLOR: #800000">"Orange"</span>,
+       backgroundColor: <span style="COLOR: #800000">"pink"</span>,
+    };
+    treemapChart.title(title);
+
+    <span style="COLOR: #008000">// get dataPoints and set it's patternType
+</span>    <span style="COLOR: #0000ff">var</span> dataPoints = treemapChart.series().dataPoints();
+    <span style="COLOR: #0000ff">var</span> fillColors = [{
+        type: GC.Spread.Sheets.Charts.PatternType.sphere,
+        foregroundColor: <span style="COLOR: #800000">"LightGreen"</span>,
+        backgroundColor: <span style="COLOR: #800000">"lightgray"</span>,
+    }, {
+        type: GC.Spread.Sheets.Charts.PatternType.darkUpwardDiagonal,
+        foregroundColor: <span style="COLOR: #800000">"pink"</span>,
+        backgroundColor: <span style="COLOR: #800000">"white"</span>,
+    },
+    {
+        type: GC.Spread.Sheets.Charts.PatternType.divot,
+        foregroundColor: <span style="COLOR: #800000">"purple"</span>,
+        backgroundColor: <span style="COLOR: #800000">"white"</span>,
+    },
+    {
+        type: GC.Spread.Sheets.Charts.PatternType.dottedPercent40,
+        foregroundColor: <span style="COLOR: #800000">"LightBlue"</span>,
+        backgroundColor: <span style="COLOR: #800000">"white"</span>,
+    }
+    ];
+    <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; fillColors.length; i++) {
+        <span style="COLOR: #0000ff">var</span> dataPoint = dataPoints.get(i);
+        dataPoint.fillColor = fillColors[i];
+        dataPoints.set(i, dataPoint);
+    }
+
+    <span style="COLOR: #008000">// get datalabels and set it's backcolor to black
+</span>    <span style="COLOR: #0000ff">var</span> dataLabels = treemapChart.dataLabels();
+    dataLabels.color = <span style="COLOR: #800000">'black'</span>;
+    treemapChart.dataLabels(dataLabels);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

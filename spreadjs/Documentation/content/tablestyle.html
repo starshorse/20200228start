@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Customize a table by applying different table style to it while working with spreadsheets using SpreadJS." />
+    
+    <title>Set Table Styles | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n669","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Customize a table by applying different table style to it while working with spreadsheets using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="b4a3fbed-100e-4c4a-8555-1e4bf496ec99"/>
+    <meta name="Microsoft.Help.TocParent" content="9d25871c-c47e-4700-a8b5-50b17e2a631f"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="tablegen.html">Tables</a>
+ / Set Table Styles</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Set Table Styles</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to customize tables by configuring and applying&nbsp;different&nbsp;styles&nbsp;to the table while working with spreadsheets.</p>
+
+<p>Some style properties apply to areas that are not visible or do not have a style setting by default. For example, the <a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~lastFooterCellStyle.html">lastFooterCellStyle</a> is not displayed unless <a href="SpreadJS~GC.Spread.Sheets.Tables.Table~showFooter.html">showFooter</a> is true.</p>
+
+<p>The following table lists the <a href="SpreadJS~GC.Spread.Sheets.Tables.Table.html">Table</a> method that must be true so that the associated table styles&nbsp;are displayed in the table.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Table</strong></td>
+
+            <td><strong>TableTheme</strong></td>
+        </tr>
+
+        <tr>
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.Table~bandColumns.html">bandColumns</a></td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~firstColumnStripSize.html">firstColumnStripSize</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~firstColumnStripStyle.html">firstColumnStripStyle</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~secondColumnStripSize.html">secondColumnStripSize</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~secondColumnStripStyle.html">secondColumnStripStyle</a></td>
+        </tr>
+
+        <tr>
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.Table~bandRows.html">bandRows</a></td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~firstRowStripSize.html">firstRowStripSize</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~firstRowStripStyle.html">firstRowStripStyle</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~secondRowStripSize.html">secondRowStripSize</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~secondRowStripStyle.html">secondRowStripStyle</a></td>
+        </tr>
+
+        <tr>
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.Table~highlightFirstColumn.html">highlightFirstColumn</a></td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~highlightFirstColumnStyle.html">highlightFirstColumnStyle</a></td>
+        </tr>
+
+        <tr>
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.Table~highlightLastColumn.html">highlightLastColumn</a></td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~highlightLastColumnStyle.html">highlightLastColumnStyle</a></td>
+        </tr>
+
+        <tr>
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.Table~showHeader.html">showHeader</a></td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~firstHeaderCellStyle.html">firstHeaderCellStyle</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~lastHeaderCellStyle.html">lastHeaderCellStyle</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~headerRowStyle.html">headerRowStyle</a></td>
+        </tr>
+
+        <tr>
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.Table~showFooter.html">showFooter</a></td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~headerRowStyle.html">footerRowStyle</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~firstFooterCellStyle.html">firstFooterCellStyle</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme~lastFooterCellStyle.html">lastFooterCellStyle</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table~useFooterDropDownList.html" data-auto-update-caption="true">useFooterDropDownList</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="a">Set Table Style</h3>
+
+<p>Users can use a built-in style for the entire table or can also set styles for specific areas of the table such as rows or columns. You can refer to the <a href="SpreadJS~GC.Spread.Sheets.Tables.TableThemes.html">TableThemes</a> class for a list of built-in styles and the <a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme.html">TableTheme</a> class for styles that can be set for specific areas.</p>
+
+<p>The following image shows a built-in style (with Dark Theme)&nbsp;applied to the table.</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Built-in style applied to a table" src="images/spreadjsv13images/table1.png" /></p>
+
+<p>The following&nbsp;example code&nbsp;creates a table and sets the table style using a built-in style.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.tables.add(<span style="COLOR: #800000">"Table1"</span>, 0, 0, 3, 3, GC.Spread.Sheets.Tables.TableThemes.dark1);
+activeSheet.getCell(0,0).text(<span style="COLOR: #800000">"Name"</span>);
+activeSheet.getCell(0,1).text(<span style="COLOR: #800000">"Value"</span>);
+activeSheet.getCell(0,2).text(<span style="COLOR: #800000">"T/F"</span>);
+activeSheet.getCell(1,0).text(<span style="COLOR: #800000">"AW"</span>);
+activeSheet.getCell(1,1).text(<span style="COLOR: #800000">"5"</span>);
+activeSheet.getCell(1,2).text(<span style="COLOR: #800000">"T"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3 id="b">Set Table Footer Style</h3>
+
+<p>Users can configure a custom table footer style easily and quickly by defining a new table style and then setting different properties for the background color, foreground color, borders and fonts.</p>
+
+<p>The following image depicts a custom style for table footer along with the table styling.</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Custom style for table footer along with the table styling" src="images/spreadjsv13images/table2.png" /></p>
+
+<p>The following&nbsp;example code&nbsp;displays a spreadsheet with custom&nbsp;style applied to the table footer.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+window.onload = <span style="COLOR: #0000ff">function</span>(){
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+        
+<span style="COLOR: #008000">// Add data
+</span> <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> col = 1; col &lt; 6; col++) {
+     <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> row = 2; row &lt; 11; row++) {
+        activeSheet.setValue(row, col, row + col);
+     }
+ }
+<span style="COLOR: #0000ff">var</span> tableStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableTheme();
+<span style="COLOR: #0000ff">var</span> thinBorder = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"black"</span>, GC.Spread.Sheets.LineStyle.dotted);
+tableStyle.wholeTableStyle(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableStyle(<span style="COLOR: #800000">"aliceblue"</span>, <span style="COLOR: #800000">"green"</span>, <span style="COLOR: #800000">"bold 10pt arial"</span>, thinBorder, thinBorder, thinBorder, thinBorder, thinBorder, thinBorder, GC.Spread.Sheets.TextDecorationType.none));
+ 
+<span style="COLOR: #0000ff">var</span> tStyleInfo = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableStyle();
+tStyleInfo.backColor = <span style="COLOR: #800000">"green"</span>;
+tStyleInfo.foreColor = <span style="COLOR: #800000">"red"</span>;
+tStyleInfo.borderBottom = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"green"</span>, GC.Spread.Sheets.LineStyle.thin);
+tStyleInfo.borderLeft = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"yellow"</span>, GC.Spread.Sheets.LineStyle.medium);
+tStyleInfo.borderTop = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"green"</span>, GC.Spread.Sheets.LineStyle.thin);
+tStyleInfo.borderRight = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"green"</span>, GC.Spread.Sheets.LineStyle.thin);
+tStyleInfo.font = <span style="COLOR: #800000">"bold 11pt arial"</span>;
+tableStyle.footerRowStyle(tStyleInfo);
+<span style="COLOR: #0000ff">var</span> sTable = activeSheet.tables.add(<span style="COLOR: #800000">"Custom"</span>, 1, 1, 10, 5, tableStyle);
+sTable.showFooter(<span style="COLOR: #0000ff">true</span>);
+
+<span style="COLOR: #008000">// Set footer value
+</span>sTable.setColumnValue(0, <span style="COLOR: #800000">"Total"</span>);
+
+<span style="COLOR: #008000">// Set footer formula
+</span>sTable.setColumnFormula(4, <span style="COLOR: #800000">"SUM(F3:F11)"</span>);
+}
+&lt;div id=<span style="COLOR: #800000">"ss"</span> style=<span style="COLOR: #800000">"height: 500px; width: 800px"</span>&gt;&lt;<span style="COLOR: #800000">/div&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3 id="b">Display Table Footer Dropdown</h3>
+
+<p>Apart from setting table footer style, users can also display a dropdown list in the table footer using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table~useFooterDropDownList.html" data-auto-update-caption="true">useFooterDropDownList</a>&nbsp;method. This method shows a complete dropdown list (with several options -"None", "Average", "Count", "Count Numbers", "Max", "Min", "Sum", "StdDev' and Var etc.)&nbsp;when the dropdown indicator in the footer cell is clicked, as depicted in the image shared below:</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Table footer dropdown list in a spreadsheet" src="images/spreadjsv13images/table3.png" /></p>
+
+<p>The following&nbsp;example code&nbsp;shows how to display a table footer dropdown list in the spreadsheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+<span style="COLOR: #008000">// Add Table
+</span><span style="COLOR: #0000ff">var</span> table = activeSheet.tables.add(<span style="COLOR: #800000">"table1"</span>, 1, 1, 4, 4, GC.Spread.Sheets.Tables.TableThemes.light1);
+
+<span style="COLOR: #008000">// Enable table's footer using showFooter method
+</span>table.showFooter(<span style="COLOR: #0000ff">true</span>);
+
+<span style="COLOR: #008000">// Enable table's useFooterDropDownList to true
+</span>table.useFooterDropDownList(<span style="COLOR: #0000ff">true</span>);
+activeSheet.getCell(1, 1).text(<span style="COLOR: #800000">"First Name"</span>);
+activeSheet.getCell(1, 2).text(<span style="COLOR: #800000">"Last Name"</span>);
+activeSheet.getCell(1, 3).text(<span style="COLOR: #800000">"Score"</span>);
+activeSheet.getCell(1, 4).text(<span style="COLOR: #800000">"Position"</span>);
+activeSheet.getCell(2, 1).text(<span style="COLOR: #800000">"Alexa"</span>);
+activeSheet.getCell(2, 2).text(<span style="COLOR: #800000">"Wilder"</span>);
+activeSheet.getCell(2, 3).text(<span style="COLOR: #800000">"90"</span>);
+activeSheet.getCell(2, 4).text(<span style="COLOR: #800000">"Web Developer"</span>);
+activeSheet.getCell(3, 1).text(<span style="COLOR: #800000">"Victor"</span>);
+activeSheet.getCell(3, 2).text(<span style="COLOR: #800000">"Wooten"</span>);
+activeSheet.getCell(3, 3).text(<span style="COLOR: #800000">"70"</span>);
+activeSheet.getCell(3, 4).text(<span style="COLOR: #800000">".NET Developer"</span>);
+activeSheet.getCell(4, 1).text(<span style="COLOR: #800000">"Ifeoma"</span>);
+activeSheet.getCell(4, 2).text(<span style="COLOR: #800000">"Mays"</span>);
+activeSheet.getCell(4, 3).text(<span style="COLOR: #800000">"85"</span>);
+activeSheet.getCell(4, 4).text(<span style="COLOR: #800000">"Sales Manager"</span>);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 3; i++)
+activeSheet.setColumnWidth(i, 90.0, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setColumnWidth(4, 120);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

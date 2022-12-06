@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Detailed release notes for SpreadJS version 13.1.0" />
+    
+    <title>Release Notes for Version 13.1.0 | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n12106","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Detailed release notes for SpreadJS version 13.1.0" />
+    
+    <meta name="Microsoft.Help.Id" content="8dd437d6-b378-44de-920d-ea6eb8079628"/>
+    <meta name="Microsoft.Help.TocParent" content="80753e0a-efcf-407b-89ce-337c2fd3b27e"/>
+    <meta name="Microsoft.Help.TocOrder" content="7"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="rnotes.html">Release Notes</a>
+ / Release Notes for Version 13.1.0</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Release Notes for Version 13.1.0</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <h1>Enhancements from the Previous Release</h1>
+
+<p>The following features have been added with this version of the product.</p>
+
+<ul>
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/ConfiguringSeries.html">Chart Series LineType</a>&nbsp;is now supported which allows users&nbsp;to customize the line type of data series in a chart.</li>
+
+    <li>Various detailed rendering options on Sparklines are provided.&nbsp;The&nbsp;<a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/sparkbullet.html">Bullet</a>,&nbsp;<a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/sparkhbar.html">Hbar</a>,&nbsp;<a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/sparkvbar.html">Vbar</a>&nbsp;and&nbsp;<a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/sparkpareto.html">Pareto Sparklines</a> can be customized using these additional options.</li>
+
+    <li>Users can <a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/select_multiple_worksheets.html">select multiple worksheets</a>&nbsp;and apply hide or delete operations on them.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/hyperlink_cells.html">Hyperlink</a> is supported where users can link any relevant information on a webpage, any range in the workbook or even send an email.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/cell-dropdowns.html">Selection of multiple list items</a> is&nbsp;now supported which allows users to select&nbsp;multiple options form the drop-down list.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/percentage-format-in-cells.html">Percentage format in cells</a> is supported to automatically add % sign in cells with percentage format, like Excel.</li>
+
+    <li>PDF files can now be exported from spreadsheets in&nbsp;<a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/CustomPDFExport.html">black and white</a>.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/custom-sorting.html">Custom sorting</a> is supported which allows users to sort data based on their customized requirements like sorting based on software versions or clothing sizes etc.</li>
+
+    <li>Formulas in the cells can now be viewed using&nbsp;<a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/show_cell_formulas.html">ShowFormulas property</a>. Using this, users can view as well as copy formulas to clipboard from SpreadJS.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/autosum_functions.html">AutoSum functions</a> are now supported in the Designer&nbsp;to&nbsp;calculate the range of cells on which it&nbsp;is to be applied,&nbsp;automatically, like&nbsp;Excel.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/SpreadJS~GC.Spread.Sheets.Events~RangeChanged_EV.html">RangeChanged event</a> is provided in SpreadJS API which is fired when delete, drag drop or paste operation is executed on a table.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/auto_expand_tables.html">Automatic expansion of tables</a> is supported&nbsp;to allow users to enable or disable table expansion.</li>
+
+    <li>The operation to <a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/insert-cut-or-copied-cells.html">Insert cut or copied cells</a> is supported which allows users to insert cut/copied cells using context menu.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/cell-states.html">Dirty cell state</a> is supported&nbsp;which changes a cell state to dirty when its value is changed. Using the dirty cell state,&nbsp;users can set any style on the cell when its state changes to dirty which&nbsp;helps in&nbsp;keeping an easy&nbsp;track of&nbsp;changes.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/format_string.html">Format String</a>&nbsp;is supported in SpreadJS which allows users to set the values and formulas in a cell at the same time. Using this feature, users can display numeric values as words, format a long display string and much more.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/scroll-by-pixel.html">Scrolling by pixel via code</a>&nbsp;is now supported using which users can traverse to a specific viewport or cells containing desired data in a spreadsheet containing large amount of data.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/hidden_rows_columns_chart.html">Chart Hidden row and column settings</a> are supported which allow users to choose&nbsp;whether to show the data of hidden rows or columns in a chart or not.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/ellipsis_tips_cell_overflow.html">Ellipsis&nbsp;or Tips for Cell Overflow</a>&nbsp;is supported to display ellipsis when the cell content is longer than&nbsp;the column width.&nbsp;Also, the tips are displayed when the cell with ellipsis is hovered upon to show the complete content of cell.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/ConfiguringAxes.html">Date Axis</a>&nbsp;is supported in charts which allows users to configure dates on category axis by configuring it as date (time-scale) axis.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/AddingShapeswithFormulas.html">Data Driven Shapes with Property Formulas</a> are supported&nbsp;which&nbsp;allow users to create dynamic shapes whose properties are evaluated through the expressions defined&nbsp;in the sheet, another shape or a data source.</li>
+
+    <li>SpreadJS supports [$-ja-JP-x-gannen] formatter to display&nbsp;<a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/eraformat.html">Japanese era "元"</a>.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/display_na_cells_chart.html">Charts displaying #N/A cells as blank cells</a> is now&nbsp;supported.</li>
+
+    <li><a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/SpreadJS~GC.Spread.Sheets.Events~TableRowsChanged_EV.html">TableRowsChanged</a> and&nbsp;<a href="https://www.grapecity.com/spreadjs/docs/versions/v13/online/SpreadJS~GC.Spread.Sheets.Events~TableColumnsChanged_EV.html">TableColumnsChanged</a> events are provided in SpreadJS API to&nbsp;handle the add or delete operations&nbsp;of table rows or columns with added support for undo operation.</li>
+
+    <li>The document properties of a file are now retained while importing or exporting through SpreadJS.</li>
+
+    <li>Compatibility Flag is added in SpreadJS&nbsp;to&nbsp;match the calculation results with Excel.</li>
+
+    <li>DBNum4 Formatter pattern is supported in&nbsp;Korean culture which automatically changes a number to Korean number.</li>
+
+    <li>SpreadJS Designer now supports "Add current selection to filter"&nbsp;option in the filter dialog.</li>
+
+    <li>'Calculate on demand' option&nbsp;is now available&nbsp;in SpreadJS Designer to enhance the calculation process.</li>
+
+    <li>SpreadJS Designer supports macOS Catalina.</li>
+
+    <li>Vue samples have been updated to latest CLI 3.</li>
+
+    <li>The latest version of React is supported.</li>
+</ul>
+
+<h2>Resolved Issues</h2>
+
+<p>The following issues have been resolved since the last release.</p>
+
+<ul>
+    <li>Chart styles are now consistent with Excel.</li>
+
+    <li>The series labels and their&nbsp;order in charts is consistent with&nbsp;Excel.</li>
+
+    <li>Input line break is supported&nbsp;in formula bar.</li>
+
+    <li>Filter dialog can be closed using 'Esc' key without explicitly setting focus on filter dialog.</li>
+
+    <li>Category names are displayed when category has more than one row.</li>
+
+    <li>Trendline formula now displays correctly.</li>
+
+    <li>Custom named range is now updated correctly during cut paste operations.</li>
+
+    <li>The chart format is now displayed correctly when the horizontal axis of the chart is in time format.</li>
+
+    <li>Spread Designer can now&nbsp;set style for column in formatter dialog.</li>
+
+    <li>Chart transparency is maintained after importing an Excel file into SpreadJS.</li>
+
+    <li>Extra rows or columns are not added during Excel import.</li>
+
+    <li>During Excel import, cell number formatter&nbsp;does not&nbsp;change from 'General' to 'Short Date'.</li>
+
+    <li>SpreadJS Designer buttons in all the&nbsp;dialogs&nbsp;are now&nbsp;enabled.</li>
+
+    <li>XIRR function now&nbsp;returns correct result as Excel.</li>
+
+    <li>SUMIFS formula does not return #REF! error with array formula.</li>
+
+    <li>Function SUMIF calculates correct&nbsp;results.</li>
+
+    <li>Font is consistent in rich text editor in online Excel editor.</li>
+
+    <li>The original tables are cleared after invoking sheet.fromJSON().</li>
+
+    <li>Formula =VALUE("100:30")*24 produces correct result&nbsp;as Excel.</li>
+
+    <li>In Internet explorer, cells can be selected&nbsp;using cursor key while editing formula in a cell.</li>
+
+    <li>Undo&nbsp;operation now&nbsp;restores a shape correctly.</li>
+
+    <li>While using filter dialog, Clear is not&nbsp;applied&nbsp;on column sorting.</li>
+
+    <li>Performance issue on extending a table is fixed.</li>
+
+    <li>Fuction STDEVA calculates the correct value when ssjson file is imported.</li>
+
+    <li>In SpreadJS designer, when a cell is set to slider and&nbsp;value of step&nbsp;is set to 0.1, the slider works fine.</li>
+
+    <li>Date formatted text can now be treated as Date value.</li>
+
+    <li>A shape is rendered correctly after rotating or changing its size and then saving/restoring it&nbsp;from JSON.</li>
+
+    <li>A shape is rendered correctly after rotating or changing its size and then applying copy/paste operation.</li>
+
+    <li>When a Shape is selected and deleted (by repeating the delete&nbsp;operaion&nbsp;quickly), the last&nbsp;shape is&nbsp;also deleted.</li>
+
+    <li>Reverse selection performance is improved in IE11.</li>
+
+    <li>CheckBoxList value is&nbsp;retained when exported to Excel.</li>
+
+    <li>Performance of expand or&nbsp;collapse&nbsp;button on&nbsp;row outline is improved.</li>
+
+    <li>Original style is&nbsp;retained when PrintLineVisible is set.</li>
+
+    <li>Binding table columns with empty data field now behaves correctly.</li>
+
+    <li>In macOS, ctrl+click can be used to perform right click operation.</li>
+
+    <li>In SpreadJS Designer, chart preview does not&nbsp;disappear after scrolling.</li>
+
+    <li>There are no content changes when Excel import and export is performed.</li>
+
+    <li>Formula result does not change after undo operation.</li>
+
+    <li>When an Excel file is imported and exported to pdf, the&nbsp;shape does not change.</li>
+
+    <li>IRR function now&nbsp;returns correct result as Excel.</li>
+
+    <li>Text inside a shape&nbsp;doesn't shift down when the width of shape is changed.</li>
+
+    <li>There is no page style error when two forms&nbsp;are set in online excel editor.</li>
+
+    <li>Function ROUND produces correct calculation results.</li>
+
+    <li>Correct formula&nbsp;results are calculated when they are used in cross sheets across a workbook.</li>
+
+    <li>AutoFit results are generated correctly.</li>
+
+    <li>Form style error is not thrown&nbsp;while setting&nbsp;data validation or freezing rows.</li>
+
+    <li>The total rows&nbsp;in a table&nbsp;is displayed&nbsp;correctly even after&nbsp;table binding is done.</li>
+
+    <li>Viewing a&nbsp;sheet no longer throws error when a <span style='FONT-SIZE: 14px; FONT-FAMILY: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: 400; COLOR: rgb(23,43,77); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial'>cell value in the sheet&nbsp;is a string with space.</span></li>
+
+    <li>While building an Angular application in production mode, scroll using mouse wheel and double click to edit cell now works fine.</li>
+
+    <li>No error is thrown when an Excel containing a shape is imported to SpreadJS and again&nbsp;exported to&nbsp;Excel.</li>
+
+    <li>When scrollbarMaxAlign is set to true and any bottom row(s) is deleted, the viewport's top row is adjusted to enable top scrolling.</li>
+
+    <li>The rangeSelectMode works properly&nbsp;even when allowUserEditFormula is set to&nbsp;false.</li>
+
+    <li>List Validation containing an item with space is retained with space in the&nbsp;dropdown also.</li>
+
+    <li>Load performance in Vue&nbsp;is improved significantly.</li>
+
+    <li>Chart range is updated correctly during cut paste operation.</li>
+
+    <li>When an Excel file is imported to SJS, formulas are updated correctly.</li>
+
+    <li>The result&nbsp;of getViewportBottomRow is generated correctly when the&nbsp;browser zoom factor is changed.</li>
+
+    <li>The behavior of getDeleteRow and getInsertRow is consistent while performing undo operation.</li>
+
+    <li>Edate formula is resolved correctly in Firefox for text formatted values.</li>
+
+    <li>The SUMPRODUCT formula generates same result&nbsp;as Excel.</li>
+
+    <li>The table name is&nbsp;shown in autocomplete even in&nbsp;different sheets of a workbook.</li>
+
+    <li>In case of table binding, if a filter is added in a row and data is entered after the table, the filter is not reset.</li>
+
+    <li>In SpreadJS Designer, if large amount of data is pasted, the page does not freeze.&nbsp;</li>
+
+    <li>In SpreadJS designer, the text area of filter&nbsp;can also be clicked to select the items for filtering.</li>
+
+    <li>The format of cells is not changed when an excel file is imported to SJS and again exported to excel.</li>
+
+    <li>When borderWidth is set to to 0 or borderStyle is set to 'none' or 'hidden', the border is not set in exported Excel.</li>
+
+    <li>All the&nbsp;data labels are shown in SpreadJS as&nbsp;Excel.</li>
+
+    <li>When an Excel file is imported, the style and cell format are consistent.</li>
+</ul>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

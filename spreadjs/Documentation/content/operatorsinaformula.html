@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="This topic lists all the available operators in SpreadJS along with its example syntax and result." />
+    
+    <title>Operators in a Formula | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3255","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="This topic lists all the available operators in SpreadJS along with its example syntax and result." />
+    
+    <meta name="Microsoft.Help.Id" content="aa25f1c4-9419-4a0f-acb9-5c8741edbfe6"/>
+    <meta name="Microsoft.Help.TocParent" content="85a8a863-302f-4eb0-9304-dc26ab5bcb2c"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="formulaoverview.html">Formula Overview</a>
+ / Operators in a Formula</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Operators in a Formula</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>The following table lists the available operators. For each operator, an example is given of the syntax of using a literal value as well as a cell reference. The type of value returned is given for each type of operator.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Type of Operator</th>
+
+            <th>Example Syntax</th>
+
+            <th colspan="3">Result</th>
+        </tr>
+
+        <tr>
+            <td>Operator</td>
+
+            <td>Description</td>
+
+            <td>Literal &amp; Literal</td>
+
+            <td>Cell Ref &amp; Literal</td>
+
+            <td>Type Returned</td>
+        </tr>
+
+        <tr>
+            <td colspan="5">Binary Operators</td>
+        </tr>
+
+        <tr>
+            <td>+</td>
+
+            <td>Add</td>
+
+            <td>5 + 3</td>
+
+            <td>A1 + 3</td>
+
+            <td>double</td>
+        </tr>
+
+        <tr>
+            <td>–</td>
+
+            <td>Subtract</td>
+
+            <td>5 – 3</td>
+
+            <td>A1 – 3</td>
+
+            <td>double</td>
+        </tr>
+
+        <tr>
+            <td>*</td>
+
+            <td>Multiply</td>
+
+            <td>5 * 3</td>
+
+            <td>A1 * 3</td>
+
+            <td>double</td>
+        </tr>
+
+        <tr>
+            <td>/</td>
+
+            <td>Divide</td>
+
+            <td>5 / 3</td>
+
+            <td>A1 / 3</td>
+
+            <td>double</td>
+        </tr>
+
+        <tr>
+            <td>^</td>
+
+            <td>Exponent</td>
+
+            <td>5 ^ 3</td>
+
+            <td>A1 ^ 3</td>
+
+            <td>double</td>
+        </tr>
+
+        <tr>
+            <td>&amp;</td>
+
+            <td>Concatenate</td>
+
+            <td>"F" &amp; "p"</td>
+
+            <td>A1 &amp; "p"</td>
+
+            <td>string</td>
+        </tr>
+
+        <tr>
+            <td>=</td>
+
+            <td>Equal</td>
+
+            <td>&nbsp;</td>
+
+            <td>A1 &lt;&gt; 3</td>
+
+            <td>boolean</td>
+        </tr>
+
+        <tr>
+            <td>&lt; &gt;</td>
+
+            <td>Not Equal</td>
+
+            <td>&nbsp;</td>
+
+            <td>A1 = 3</td>
+
+            <td>boolean</td>
+        </tr>
+
+        <tr>
+            <td>&lt;</td>
+
+            <td>Less Than</td>
+
+            <td>&nbsp;</td>
+
+            <td>A1 &lt;3</td>
+
+            <td>boolean</td>
+        </tr>
+
+        <tr>
+            <td>&gt;</td>
+
+            <td>Greater Than</td>
+
+            <td>&nbsp;</td>
+
+            <td>A1 &gt; 3</td>
+
+            <td>boolean</td>
+        </tr>
+
+        <tr>
+            <td>&lt;=</td>
+
+            <td>Less Than Or Equal</td>
+
+            <td>&nbsp;</td>
+
+            <td>A1 &lt;= 3</td>
+
+            <td>boolean</td>
+        </tr>
+
+        <tr>
+            <td>&gt;=</td>
+
+            <td>Greater Than Or Equal</td>
+
+            <td>&nbsp;</td>
+
+            <td>A1 &gt;= 3</td>
+
+            <td>boolean</td>
+        </tr>
+
+        <tr>
+            <td colspan="5">Unary Operators</td>
+        </tr>
+
+        <tr>
+            <td>-</td>
+
+            <td>Negate</td>
+
+            <td>-(5/3)</td>
+
+            <td>-(A1/3)</td>
+
+            <td>double</td>
+        </tr>
+
+        <tr>
+            <td>+</td>
+
+            <td>Plus</td>
+
+            <td>+(5/3)</td>
+
+            <td>+(A1/3)</td>
+
+            <td>double</td>
+        </tr>
+
+        <tr>
+            <td>%</td>
+
+            <td>Percent</td>
+
+            <td>(5/3)%</td>
+
+            <td>(A1/3)%</td>
+
+            <td>double</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Operators specify the type of calculation that you want to perform on the elements of a formula. Most of the operators return double-precision floating point values for mathematical operations and boolean (or logical) values for comparison operators.</p>
+
+<p>In&nbsp;SpreadJS, all arithmetic operators (including the unary +) check their arguments and return a #VALUE error if any of the arguments are strings that cannot be converted to a number. This is mathematically correct behavior and cannot be overridden. For example, the three formulas +B5 and 0+B5 and --B5 should all produce the same result and, in&nbsp;SpreadJS, they do.</p>
+
+<p>For more information about operators, see&nbsp;<a href="orderofprecedence.html" data-auto-update-caption="true">Order of Precedence</a>&nbsp;and&nbsp;<a href="opdatetime.html" data-auto-update-caption="true">Operators with Dates and Times</a>.</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

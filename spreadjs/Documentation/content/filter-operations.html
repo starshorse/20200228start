@@ -1,0 +1,498 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Filter Operations | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n224","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="8f814b87-138b-4763-893c-44276da0433d"/>
+    <meta name="Microsoft.Help.TocParent" content="8cfca561-6427-4405-b3d3-2298c032332b"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="rows-columns.html">Rows and Columns</a>
+ / <a href="filter.html">Filter Rows</a>
+ / Filter Operations</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Filter Operations</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows you to perform various operations on row filters.</p>
+
+<h3>Create Custom Filter</h3>
+
+<p>You can create and add a custom filter item to the row filter.</p>
+
+<p><img border="0" alt="" src="images/customfilter.gif" /></p>
+
+<p>The following code example shows how to create a custom filter which only displays numerical ranging from 10 to 50.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//Create a custom condition.
+</span><span style="COLOR: #0000ff">function</span> CustomFilter(){
+    GC.Spread.Sheets.ConditionalFormatting.Condition.apply(<span style="COLOR: #0000ff">this</span>, arguments);
+    <span style="COLOR: #008000">//this.conditionType("CustomFilter");
+</span>};
+CustomFilter.prototype = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition();
+CustomFilter.prototype.evaluate = <span style="COLOR: #0000ff">function</span> (evaluator, row, col) {
+    <span style="COLOR: #0000ff">var</span> value = evaluator.getValue(row, col);
+    <span style="COLOR: #0000ff">if</span> (value !== <span style="COLOR: #0000ff">null</span> &amp;&amp; value &gt;= 10 &amp;&amp; value &lt;= 50) {
+        <span style="COLOR: #008000">//Return True only when the following conditions are satisfied.
+</span>        <span style="COLOR: #008000">// (1)Values are entered.
+</span>        <span style="COLOR: #008000">// (2)Values are not lower than 10.
+</span>        <span style="COLOR: #008000">// (3)Values are not greater than 50.
+</span>        <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">true</span>;
+    } <span style="COLOR: #0000ff">else</span> {
+        <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">false</span>;
+    }
+};
+
+<span style="COLOR: #008000">// Configure Workbook and Worksheet
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+
+activeSheet.setValue(0, 0, 10);
+activeSheet.setValue(1, 0, 100);
+activeSheet.setValue(2, 0, 50);
+activeSheet.setValue(3, 0, 40);
+activeSheet.setValue(4, 0, 80);
+activeSheet.setValue(5, 0, 1);
+activeSheet.setValue(6, 0, 65);
+activeSheet.setValue(7, 0, 20);
+activeSheet.setValue(8, 0, 30);
+activeSheet.setValue(9, 0, 35);
+
+<span style="COLOR: #008000">//Set a row Filter.
+</span><span style="COLOR: #0000ff">var</span> rowFilter = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Filter.HideRowFilter(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(0, 0, 7, 1));
+activeSheet.rowFilter(rowFilter);
+rowFilter.addFilterItem(0, <span style="COLOR: #0000ff">new</span> CustomFilter());
+rowFilter.filter(0);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Get Row Filter Status</h3>
+
+<p>You can get various row filter status by using <strong>RowFilterBase</strong> class methods such as <strong>isFiltered</strong>, <strong>isRowFilteredOut</strong>, <strong>onFilter</strong>, and so on.</p>
+
+<p><img border="0" alt="" src="images/filter-status.gif" /></p>
+
+<p>The following code example shows a button set to indicate whether any row or column has been filtered.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span>()   
+{
+    <span style="COLOR: #0000ff">var</span> rowFilter = spread.getActiveSheet().rowFilter();
+    <span style="COLOR: #0000ff">if</span> (rowFilter.isFiltered(0))
+    {
+        console.log(<span style="COLOR: #800000">"Row-filtering executed for Column1"</span>);
+    }
+    <span style="COLOR: #0000ff">else</span>
+    {
+        console.log(<span style="COLOR: #800000">"Row-filtering not executed for Column1"</span>);
+    }
+})
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Get Row Filter Results</h3>
+
+<p>You can get filter items and show results using <strong>RowFilterBase</strong> class methods such as <strong>getFilterItems</strong>.</p>
+
+<p><img border="0" alt="" src="images/filter-result.gif" /></p>
+
+<p>The following code example shows how to get filter results on a browser console.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span> ()
+{
+    <span style="COLOR: #0000ff">var</span> rowFilter = spread.getActiveSheet().rowFilter();
+    <span style="COLOR: #008000">//*********************************************
+</span>    
+    <span style="COLOR: #008000">// Exit if Column1 has not been filtered.
+</span>    <span style="COLOR: #008000">//*********************************************
+</span>    <span style="COLOR: #0000ff">if</span> (!rowFilter.isFiltered(0))
+    {
+        <span style="COLOR: #0000ff">return</span>;
+    }
+    
+    <span style="COLOR: #008000">//*********************************************
+</span>    <span style="COLOR: #008000">// Filtered strings
+</span>    <span style="COLOR: #008000">//*********************************************
+</span>    <span style="COLOR: #0000ff">var</span> filterItems = rowFilter.getFilterItems(0);
+    <span style="COLOR: #0000ff">var</span> str = <span style="COLOR: #800000">"Filtered strings:"</span>;
+    filterItems.forEach(<span style="COLOR: #0000ff">function</span> (item)
+    {
+        str += <span style="COLOR: #800000">" "</span> + item.expected();
+    })
+    console.log(str);
+    console.log(<span style="COLOR: #800000">""</span>);
+    
+    <span style="COLOR: #008000">//*********************************************
+</span>    <span style="COLOR: #008000">// Number of Filtered-In (displayed) rows
+</span>    <span style="COLOR: #008000">//*********************************************
+</span>    <span style="COLOR: #0000ff">var</span> range = rowFilter.range;
+    <span style="COLOR: #0000ff">var</span> filteredInRows = [], filteredOutRows = [];
+    <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = range.row, last = range.row + range.rowCount; i &lt; last; i++)
+    {
+        <span style="COLOR: #0000ff">if</span> (rowFilter.isRowFilteredOut(i))
+        {
+            filteredOutRows.push(i);
+        }
+        <span style="COLOR: #0000ff">else</span>
+        {
+            filteredInRows.push(i);
+        }
+    }
+    
+    console.log(<span style="COLOR: #800000">"Number of Filtered-In (displayed) rows: "</span> + filteredInRows.length);
+    console.log(<span style="COLOR: #800000">""</span>);
+    <span style="COLOR: #008000">// *********************************************
+</span>    <span style="COLOR: #008000">// Number of Filtered-Out (hidden) rows
+</span>    <span style="COLOR: #008000">// *********************************************
+</span>    console.log(<span style="COLOR: #800000">"Number of Filtered-Out (hidden) rows: "</span> + filteredOutRows.length);
+    console.log(<span style="COLOR: #800000">""</span>);
+    filteredOutRows.forEach(<span style="COLOR: #0000ff">function</span>(item){
+        console.log(<span style="COLOR: #800000">"Filtered-Out (hidden) row index: "</span> + item);
+    });
+    
+    console.log(<span style="COLOR: #800000">""</span>);
+    <span style="COLOR: #008000">//*********************************************
+</span>    <span style="COLOR: #008000">//Filtered-In (displayed)/Filtered-Out (hidden) rows
+</span>    <span style="COLOR: #008000">//*********************************************
+</span>    filteredOutRows.forEach(<span style="COLOR: #0000ff">function</span>(item){
+        console.log(<span style="COLOR: #800000">"Data of Filtered-Out (hidden) row: "</span> + activeSheet.getValue(item, 0));
+    });
+    
+    console.log(<span style="COLOR: #800000">""</span>);
+    filteredInRows.forEach(<span style="COLOR: #0000ff">function</span>(item)
+    {
+        console.log(<span style="COLOR: #800000">"Data of Filtered-In (displayed) row: "</span> + activeSheet.getValue(item, 0));
+    });
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Hide Filter Indicator</h3>
+
+<p>You can choose whether to display the filter indicator using the RowFilterBase.<strong>filterButtonVisible</strong> method. Set it to false to hide the filter indicator otherwise it is true by default.</p>
+
+<p><img border="0" alt="" src="images/filter-icon-display.gif" /></p>
+
+<p>The following code example shows how to hide or show filter indicator with a dedicated button.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span>()
+{
+    <span style="COLOR: #008000">// Hide the filter indicator.                        
+</span>    <span style="COLOR: #0000ff">var</span> rowFilter = spread.getActiveSheet().rowFilter();
+    rowFilter.filterButtonVisible(0, <span style="COLOR: #0000ff">false</span>);
+    activeSheet.repaint();
+});
+           
+$(<span style="COLOR: #800000">"#button2"</span>).click(<span style="COLOR: #0000ff">function</span>()
+{
+    <span style="COLOR: #008000">// Display the filter indicator again.                        
+</span>    <span style="COLOR: #0000ff">var</span> rowFilter = spread.getActiveSheet().rowFilter();
+    rowFilter.filterButtonVisible(0, <span style="COLOR: #0000ff">true</span>);
+    activeSheet.repaint();
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Auto Extend Filter Range</h3>
+
+<p>You can choose whether to extend the filter range beyond the original filter range in SpreadJS.</p>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~options.html">allowAutoExtendFilterRange</a> property, when set to true, extends the filter range until any non-empty cells are encountered either in the same or adjacent columns. By default, the property is set to false.</p>
+
+<p>You can also fetch the extended filter range by using the rowFilter's&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Filter.RowFilterBase~extendedRange.html">extendedRange</a> property which returns an array. If the allowAutoExtendFilterRange property is set to false, then the extendedRange value is the same as GC.Spread.Sheets.Filter.RowFilterBase.range.</p>
+
+<p>The following GIF and the corresponding code example illustrate the usage of the extended filter range and fetch the extended range from the worksheet.</p>
+
+<p><img border="0" alt="" src="images/filter-extendrange-example.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> AllowAutoExtend(spread, rowFilter) {
+    <span style="COLOR: #008000">// set allowAutoExtendFilterRange to true
+</span>    spread.options.allowAutoExtendFilterRange = <span style="COLOR: #0000ff">true</span>;
+
+    <span style="COLOR: #008000">// to get the extended range
+</span>    <span style="COLOR: #0000ff">var</span> extendedFilterRange = rowFilter.extendedRange;
+    <span style="COLOR: #008000">// it will return -  row: 2, rowCount: 5, col: 0, colCount: 5
+</span>}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> This property is set to true when importing an Excel file containing a filter.</p>
+</div>
+
+<p>The table below depicts the different scenarios that can be observed when the auto-extend filter range is set to true.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Scenario</th>
+
+            <th>Example</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>When a filter is created and only a single cell is selected, SpreadJS will extend the filter range until the cells around the range are all empty.</td>
+
+            <td>&nbsp;<img border="0" alt="" src="images/filter-extendrange-case6.png" /></td>
+        </tr>
+
+        <tr>
+            <td>After a filter is created, SpreadJS extends the filter range below the original value until there is a null value.</td>
+
+            <td>&nbsp;<img border="0" alt="" src="images/filter-extendrange-case1.png" /></td>
+        </tr>
+
+        <tr>
+            <td>If a value is deleted from one of the extended filter range cells, the filter list is updated.</td>
+
+            <td>&nbsp;<img border="0" alt="" src="images/filter-extendrange-case3.png" /></td>
+        </tr>
+
+        <tr>
+            <td>If a value is deleted from the base filter range cells, a blank is shown in the filter list.</td>
+
+            <td>&nbsp;<img border="0" alt="" src="images/filter-extendrange-case4.png" /></td>
+        </tr>
+
+        <tr>
+            <td>If multiple column filters are created, SpreadJS auto-extends the filter range until the row where the value of each column is null.</td>
+
+            <td>&nbsp;<img border="0" alt="" src="images/filter-extendrange-case5.png" /></td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

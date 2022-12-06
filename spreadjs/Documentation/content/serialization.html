@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS provides support for serialization of custom cell types, custom functions, custom formatters, custom tags, and custom sparklineEx." />
+    
+    <title>Serialization | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n476","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS provides support for serialization of custom cell types, custom functions, custom formatters, custom tags, and custom sparklineEx." />
+    
+    <meta name="Microsoft.Help.Id" content="5d5fbe31-fd65-4312-b35e-e803d14608f4"/>
+    <meta name="Microsoft.Help.TocParent" content="da6e2ac1-8472-406f-a292-f03731ed2cd7"/>
+    <meta name="Microsoft.Help.TocOrder" content="16"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / Serialization</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Serialization</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports serialization of custom cell types, custom functions, custom formatters, custom tags, and custom sparklineEx.</p>
+
+<p>When serialized, a custom type's <strong>toJSON</strong> method stores a string field type that indicates itself. The string type is related to the window, such as "mynamespace.MyCellType". When deserialized, the&nbsp;<strong>getTypeFromString</strong> method gets the custom type by parsing the type string, then creates an instance of the custom type, and then invokes the <strong>fromJSON</strong> method of the instance.</p>
+
+<p>If you assign the actual type string to the type field of a custom type, the custom type is serialized and deserialized. If a custom type has a circular dependency or you want to reduce the JSON size or have some other requirement, the custom type also needs to override the <strong>toJSON</strong> and <strong>fromJSON</strong> methods.</p>
+
+<p>If you do not want to put the custom type on a window object, you also need to override the <strong>getTypeFromString</strong> method for parsing the type string.</p>
+
+<h4>Using Code</h4>
+
+<p>This example uses spread1’s toJSON and spread2’s fromJSON function to implement serializing all data from spread1 to spread2. The&nbsp;“MyTag” instance is on spread2 after selecting the button.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;!DOCTYPE html&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Spread HTML test page&lt;<span style="COLOR: #800000">/title&gt;
+</span> &lt;link type=<span style="COLOR: #800000">"text/css"</span> href=<span style="COLOR: #800000">"./css/gc.spread.sheets.x.x.x.css"</span> rel=<span style="COLOR: #800000">"stylesheet"</span> <span style="COLOR: #800000">/&gt;
+</span> &lt;script src=<span style="COLOR: #800000">"http://code.jquery.com/jquery-2.0.2.js"</span> type=<span style="COLOR: #800000">"text/javascript"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span> &lt;script type=<span style="COLOR: #800000">"text/javascript"</span> src=<span style="COLOR: #800000">"./scripts/gc.spread.sheets.all.x.x.x.min.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;script type=<span style="COLOR: #800000">"text/javascript"</span>&gt;
+    <span style="COLOR: #008000">//Custom tag
+</span>         <span style="COLOR: #0000ff">function</span> MyTag(name, age) {
+             <span style="COLOR: #0000ff">this</span>.name = name;
+             <span style="COLOR: #0000ff">this</span>.age = age;
+             <span style="COLOR: #0000ff">this</span>.typeName = <span style="COLOR: #800000">"MyTag"</span>;
+         }
+         MyTag.prototype.toJSON = <span style="COLOR: #0000ff">function</span> () {
+             <span style="COLOR: #0000ff">var</span> settings = {};
+             settings.name = <span style="COLOR: #0000ff">this</span>.name;
+             settings.age = <span style="COLOR: #0000ff">this</span>.age;
+             settings.typeName = <span style="COLOR: #0000ff">this</span>.typeName;
+             <span style="COLOR: #0000ff">return</span> settings;
+         };
+         MyTag.prototype.fromJSON = <span style="COLOR: #0000ff">function</span> (settings) {
+             <span style="COLOR: #0000ff">this</span>.name = settings.name;
+             <span style="COLOR: #0000ff">this</span>.age = settings.age;
+             <span style="COLOR: #0000ff">this</span>.typeName = settings.typeName;
+         };
+         $(<span style="COLOR: #0000ff">function</span> () {
+<span style="COLOR: #0000ff">var</span> spread1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+             <span style="COLOR: #0000ff">var</span> sheet1 = spread1.getActiveSheet();
+             sheet1.tag(<span style="COLOR: #0000ff">new</span> MyTag(<span style="COLOR: #800000">"Ivy"</span>, 24));
+             sheet1.setTag(0, 0, <span style="COLOR: #0000ff">new</span> MyTag(<span style="COLOR: #800000">"Yang"</span>, 25));
+             $(<span style="COLOR: #800000">"#btn1"</span>).click(<span style="COLOR: #0000ff">function</span> () {
+                 <span style="COLOR: #008000">//Serialize ss to ss1.
+</span>                 <span style="COLOR: #0000ff">var</span> jsonStr = JSON.stringify(spread1.toJSON());
+               
+ <span style="COLOR: #0000ff">var</span> spread2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss1"</span>),{sheetCount:3});
+                 spread2.fromJSON(JSON.parse(jsonStr));
+                 <span style="COLOR: #0000ff">var</span> sheet2 = spread2.getActiveSheet();
+                 alert(<span style="COLOR: #800000">"Tag of sheet:"</span> + JSON.stringify(sheet2.tag()));
+                 alert(<span style="COLOR: #800000">"Tag of Cell[0,0]: "</span> + JSON.stringify(sheet2.getTag(0, 0)));
+             });
+         });
+ &lt;<span style="COLOR: #800000">/script&gt;
+</span> &lt;<span style="COLOR: #800000">/head&gt;
+</span> &lt;body&gt;
+     &lt;div&gt;
+         &lt;div id=<span style="COLOR: #800000">"ss"</span> style=<span style="COLOR: #800000">"height: 200px; width: 500px"</span>&gt;&lt;<span style="COLOR: #800000">/div&gt;
+</span>         &lt;div id=<span style="COLOR: #800000">"ss1"</span> style=<span style="COLOR: #800000">"height: 200px; width: 500px"</span>&gt;&lt;<span style="COLOR: #800000">/div&gt;
+</span>     &lt;<span style="COLOR: #800000">/div&gt;
+</span>     &lt;input type=<span style="COLOR: #800000">"button"</span> id=<span style="COLOR: #800000">"btn1"</span> value=<span style="COLOR: #800000">"Serialization"</span> <span style="COLOR: #800000">/&gt;
+</span> &lt;<span style="COLOR: #800000">/body&gt;
+</span> &lt;<span style="COLOR: #800000">/html&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can configure data markers using different types of shapes and lines in SpreadJS. Learn more in SpreadJS docs." />
+    
+    <title>Data Markers | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n566","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can configure data markers using different types of shapes and lines in SpreadJS. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="7931fb67-4a88-436e-ba86-696535bc4b45"/>
+    <meta name="Microsoft.Help.TocParent" content="0750c4c2-a97b-44a4-b551-b2d5b9e96832"/>
+    <meta name="Microsoft.Help.TocOrder" content="8"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / <a href="ConfigureChartElements.html">Chart Elements</a>
+ / Data Markers</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Data Markers</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS enables users to create powerful charts by allowing them to&nbsp;configure data markers&nbsp;using different types of shapes and lines.&nbsp;Data markers are used to highlight data points in charts.&nbsp;While working with line charts and radar charts, you can change the appearance of the data markers to distinguish a&nbsp;series and enhance data visualization.</p>
+
+<p>The following chart types support configuration of data markers in the worksheet.</p>
+
+<ul>
+    <li>Line Chart with Markers</li>
+
+    <li>100% Stacked Line Chart with Markers</li>
+
+    <li>Stacked Line Chart &nbsp;with Markers</li>
+
+    <li>Scatter Chart with Straight Lines and Markers</li>
+
+    <li>Scatter Chart with Smooth Lines and Markers</li>
+
+    <li>Radar Chart with Markers</li>
+</ul>
+
+<p>The <a href="SpreadJS~GC.Spread.Sheets.Charts.SymbolShape.html" data-auto-update-caption="true">SymbolShape&nbsp;</a>enumeration offers the following types of shapes while configuring data markers in charts.</p>
+
+<table style="HEIGHT: 529px; WIDTH: 50.39%">
+    <thead>
+        <tr>
+            <th width="140"><strong>SymbolShape</strong></th>
+
+            <th width="105"><strong>Value</strong></th>
+
+            <th><strong>Image</strong></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td width="140">circle</td>
+
+            <td width="105">0</td>
+
+            <td><img style="HEIGHT: 52px; WIDTH: 49px" border="0" alt="Circle" src="images/image-table/circle.jpg" width="65" height="69" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">dash</td>
+
+            <td width="105">1</td>
+
+            <td><img style="HEIGHT: 48px; WIDTH: 44px" border="0" alt="Dash" src="images/image-table/dash.jpg" width="72" height="68" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">diamond</td>
+
+            <td width="105">2</td>
+
+            <td><img style="HEIGHT: 44px; WIDTH: 46px" border="0" alt="Diamond" src="images/image-table/diamond.jpg" width="72" height="73" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">dot</td>
+
+            <td width="105">3</td>
+
+            <td><img style="HEIGHT: 33px; WIDTH: 45px" border="0" alt="Dot" src="images/image-table/dot.jpg" width="72" height="67" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">none</td>
+
+            <td width="105">4</td>
+
+            <td>&nbsp;&nbsp; none</td>
+        </tr>
+
+        <tr>
+            <td width="140">plus</td>
+
+            <td width="105">6</td>
+
+            <td><img style="HEIGHT: 36px; WIDTH: 40px" border="0" alt="Plus" src="images/image-table/plus.jpg" width="69" height="70" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">square&nbsp;</td>
+
+            <td width="105">7</td>
+
+            <td><img style="HEIGHT: 42px; WIDTH: 42px" border="0" alt="Square" src="images/image-table/square.jpg" width="71" height="72" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">star</td>
+
+            <td width="105">8</td>
+
+            <td><img style="HEIGHT: 33px; WIDTH: 39px" border="0" alt="Star" src="images/image-table/star.jpg" width="71" height="72" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">triangle</td>
+
+            <td width="105">9</td>
+
+            <td><img style="HEIGHT: 34px; WIDTH: 39px" border="0" alt="Triangle" src="images/image-table/triangle.jpg" width="57" height="56" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">x</td>
+
+            <td width="105">10</td>
+
+            <td><img style="HEIGHT: 36px; WIDTH: 38px" border="0" alt="Cross" src="images/image-table/cross.jpg" width="71" height="72" /></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.LineType.html" data-auto-update-caption="true">LineType&nbsp;</a>enumeration offers the following line types while configuring data markers in charts.</p>
+
+<table style="HEIGHT: 354px; WIDTH: 61.61%">
+    <thead>
+        <tr>
+            <th width="140"><strong>LineType</strong></th>
+
+            <th width="105"><strong>Value</strong></th>
+
+            <th><strong>Image</strong></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td width="140">solid</td>
+
+            <td width="105">0</td>
+
+            <td><img border="0" alt="Solid" src="images/line-type/solid.png" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">dot</td>
+
+            <td width="105">1</td>
+
+            <td><img border="0" alt="Dot" src="images/line-type/dot.png" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">dash</td>
+
+            <td width="105">2</td>
+
+            <td><img border="0" alt="Dashed" src="images/line-type/dash.png" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">lgDash</td>
+
+            <td width="105">3</td>
+
+            <td><img border="0" alt="Lgdash" src="images/line-type/lgdash.png" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">dashDot</td>
+
+            <td width="105">4</td>
+
+            <td><img border="0" alt="Dashdot" src="images/line-type/dashDot.png" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">lgDashDot</td>
+
+            <td width="105">5</td>
+
+            <td><img border="0" alt="LgDashDot" src="images/line-type/lgdashdot.png" /></td>
+        </tr>
+
+        <tr>
+            <td width="140"><br />
+            lgDashDotDot</td>
+
+            <td width="105">6</td>
+
+            <td><img border="0" alt="LgDashDotDot" src="images/line-type/lgdashdotdot.png" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">sysDash</td>
+
+            <td width="105">7</td>
+
+            <td><img border="0" alt="SysDash" src="images/line-type/sysDash.png" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">sysDot</td>
+
+            <td width="105">8</td>
+
+            <td><img border="0" alt="SysDot" src="images/line-type/sysDot.png" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">sysDashDot</td>
+
+            <td width="105">9</td>
+
+            <td><img border="0" alt="SysDashDot" src="images/line-type/sysDashDot.png" /></td>
+        </tr>
+
+        <tr>
+            <td width="140">sysDashDotDot</td>
+
+            <td width="105">10</td>
+
+            <td><img border="0" alt="SysDashDotDot" src="images/line-type/sysDashDotDot.png" /></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Example</h3>
+
+<p>For example, let's say you're working with a business application that shows the usage of different web browsers using a line chart. Now, you may want to highlight the color and shape of an individual point in the chart or modify all the data points in a series without altering other data in the chart. Configuring data markers of different colors and shapes will enable your chart to stand out from the rest and will make it easy for business analysts to manipulate and highlight crucial information quickly and effectively.</p>
+
+<p>The following image depicts a Line Chart with markers.&nbsp;Each point on the line&nbsp;is a data marker that represents a single data value located in the cell.</p>
+
+<p><img border="0" alt="Line Chart with markers" src="images/chart.jpg" />&nbsp;</p>
+
+<h3>Using Code</h3>
+
+<p>Refer to the following code in order to configure data markers in a line chart.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+<span style="COLOR: #0000ff">var</span> chart_line, chart_lineStacked, chart_lineStacked100, sheet;
+window.onload = <span style="COLOR: #0000ff">function</span> ()
+{
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+<span style="COLOR: #0000ff">var</span> dataArray =
+[
+  [<span style="COLOR: #800000">""</span>, <span style="COLOR: #800000">'2012'</span>, <span style="COLOR: #800000">'2013'</span>, <span style="COLOR: #800000">'2014'</span>, <span style="COLOR: #800000">'2015'</span>, <span style="COLOR: #800000">'2016'</span>, <span style="COLOR: #800000">'2017'</span>],
+  [<span style="COLOR: #800000">"Chrome"</span>, 0.3782, 0.4663, 0.4966, 0.5689, 0.6230, 0.6360],
+  [<span style="COLOR: #800000">"FireFox"</span>, 0.2284, 0.2030, 0.1801, 0.1560, 0.1531, 0.1304],
+  [<span style="COLOR: #800000">"IE"</span>, 0.3214, 0.2491, 0.2455, 0.1652, 0.1073, 0.0834],
+  ];
+sheet.setArray(0, 0, dataArray);
+<span style="COLOR: #0000ff">var</span> chart = sheet.charts.add(<span style="COLOR: #800000">'chart1'</span>, GC.Spread.Sheets.Charts.ChartType.lineMarkers, 30, 85, 400, 250, <span style="COLOR: #800000">'A1:G4'</span>);
+<span style="COLOR: #0000ff">var</span> ser1 = chart.series().get(0);
+ser1.symbol =
+{
+  fill: <span style="COLOR: #800000">'red'</span>,
+  fillColorTransparency: 0.3,
+  size: 20,
+  shape: GC.Spread.Sheets.Charts.SymbolShape.triangle,
+  border:
+   {
+     color: <span style="COLOR: #800000">"green"</span>,
+     width: 2,
+     lineType: GC.Spread.Sheets.Charts.LineType.solid,
+     colorTransparency: 0.5,
+   }
+}
+chart.series().set(0, ser1);
+};
+});
+&lt;<span style="COLOR: #800000">/script&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

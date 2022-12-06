@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can display a horizontal axis and vertical orientation with line, column, and winloss sparklines using SpreadJS." />
+    
+    <title>Horizontal and Vertical Axes | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n623","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can display a horizontal axis and vertical orientation with line, column, and winloss sparklines using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="39479a78-7390-4848-a5cc-1294d6387156"/>
+    <meta name="Microsoft.Help.TocParent" content="fd9cab4f-16bf-437c-a370-bbba7f456cf3"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sparkmain.html">Sparklines</a>
+ / Horizontal and Vertical Axes</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Horizontal and Vertical Axes</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can display a horizontal axis or vertical orientation with line, column, and winloss sparklines.</p>
+
+<p>You can display the horizontal axis with the&nbsp;<strong>options.displayXAxis</strong> property when adding the sparkline with a method. You can specify horizontal or vertical orientation with the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Sparklines.Sparkline~dataOrientation.html">dataOrientation</a> method when adding the sparkline with a method. You can specify a data range or a date axis range. The line, column, and winloss formulas have options for setting the axis or orientation.</p>
+
+<p>The following image displays a data range with horizontal and vertical data and a date axis range. The horizontal date range is similar to the horizontal data range.</p>
+
+<p><img border="0" alt="Date range" src="images/sparklinedata.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>This example displays a date axis.</p>
+
+<p><img border="0" alt="Date axis" src="images/csparklinedate.png" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.setValue(0, 0, <span style="COLOR: #800000">"Data Range is A2-A9"</span>);
+activeSheet.setValue(1, 0, 1);
+activeSheet.setValue(2, 0, -2);
+activeSheet.setValue(3, 0, -1);
+activeSheet.setValue(4, 0, 6);
+activeSheet.setValue(5, 0, 4);
+activeSheet.setValue(6, 0, -4);
+activeSheet.setValue(7, 0, 3);
+activeSheet.setValue(8, 0, 8);
+activeSheet.setValue(0, 2, <span style="COLOR: #800000">"Date axis range is C2-C9"</span>);
+activeSheet.setValue(1, 2, <span style="COLOR: #800000">'2011/1/5'</span>);
+activeSheet.setValue(2, 2, <span style="COLOR: #800000">'2011/1/1'</span>);
+activeSheet.setValue(3, 2, <span style="COLOR: #800000">'2011/2/11'</span>);
+activeSheet.setValue(4, 2, <span style="COLOR: #800000">'2011/3/1'</span>);
+activeSheet.setValue(5, 2, <span style="COLOR: #800000">'2011/2/1'</span>);
+activeSheet.setValue(6, 2, <span style="COLOR: #800000">'2011/2/3'</span>);
+activeSheet.setValue(7, 2, <span style="COLOR: #800000">'2011/3/6'</span>);
+activeSheet.setValue(8, 2, <span style="COLOR: #800000">'2011/2/19'</span>);
+<span style="COLOR: #0000ff">var</span> data = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(1, 0, 8, 1);
+<span style="COLOR: #0000ff">var</span> dateAxis = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(1, 2, 8, 1);
+<span style="COLOR: #0000ff">var</span> setting = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Sparklines.SparklineSetting();
+setting.options.showMarkers = <span style="COLOR: #0000ff">true</span>;
+setting.options.lineWeight = 3;
+setting.options.displayXAxis = <span style="COLOR: #0000ff">true</span>;
+setting.options.showFirst = <span style="COLOR: #0000ff">true</span>;
+setting.options.showLast = <span style="COLOR: #0000ff">true</span>;
+setting.options.showLow = <span style="COLOR: #0000ff">true</span>;
+setting.options.showHigh = <span style="COLOR: #0000ff">true</span>;
+setting.options.showNegative = <span style="COLOR: #0000ff">true</span>;
+setting.options.seriesColor = <span style="COLOR: #800000">"Text 2 1"</span>;
+setting.options.firstMarkerColor = <span style="COLOR: #800000">"Text 2 3"</span>;
+setting.options.negativeColor = <span style="COLOR: #800000">"Accent 2 1"</span>;
+setting.options.markersColor = <span style="COLOR: #800000">"Accent 3 1"</span>;
+setting.options.lowMarkerColor = <span style="COLOR: #800000">"Accent 4 1"</span>;
+setting.options.highMarkerColor = <span style="COLOR: #800000">"Accent 6 1"</span>;
+setting.options.lastMarkerColor = <span style="COLOR: #800000">"Accent 6 6"</span>;
+setting.options.axisColor = <span style="COLOR: #800000">"Text 1 1"</span>;
+activeSheet.addSpan(11, 0, 1, 3, <span style="COLOR: #0000ff">null</span>)
+activeSheet.setText(11, 0, <span style="COLOR: #800000">"Sparkline with dateAxis:"</span>, <span style="COLOR: #0000ff">null</span>);
+activeSheet.setText(12, 0, <span style="COLOR: #800000">"(1) Line"</span>, <span style="COLOR: #0000ff">null</span>);
+activeSheet.setText(12, 3, <span style="COLOR: #800000">"(2)Column"</span>, <span style="COLOR: #0000ff">null</span>);
+activeSheet.setText(12, 6, <span style="COLOR: #800000">"(3)Winloss"</span>, <span style="COLOR: #0000ff">null</span>);
+<span style="COLOR: #008000">//line
+</span>activeSheet.addSpan(14, 0, 4, 3, <span style="COLOR: #0000ff">null</span>);
+activeSheet.setSparkline(14, 0, data
+             , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+             , GC.Spread.Sheets.Sparklines.SparklineType.line
+             , setting
+             , dateAxis
+             , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+         );
+<span style="COLOR: #008000">//column
+</span>activeSheet.addSpan(14, 3, 4, 3, <span style="COLOR: #0000ff">null</span>);
+activeSheet.setSparkline(14, 3, data
+             , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+             , GC.Spread.Sheets.Sparklines.SparklineType.column
+             , setting
+             , dateAxis
+             , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+         );
+<span style="COLOR: #008000">//winloss
+</span>activeSheet.addSpan(14, 6, 4, 3, <span style="COLOR: #0000ff">null</span>);
+activeSheet.setSparkline(14, 6, data
+             , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+             , GC.Spread.Sheets.Sparklines.SparklineType.winloss
+             , setting
+             , dateAxis
+             , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+         );
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>The following example creates a sparkline that uses horizontal data (1,2,4,8,6) from the data range. The numbers below the image were added for illustration.</p>
+
+<p><img border="0" alt="" src="images/sparkhoriz.png" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.setValue(1, 0, 10);
+activeSheet.setValue(2, 0, 0);
+activeSheet.setValue(3, 0, -3);
+activeSheet.setValue(4, 0, -5);
+activeSheet.setValue(0, 0, 1);
+activeSheet.setValue(0, 1, 2);
+activeSheet.setValue(0, 2, 4);
+activeSheet.setValue(0, 3, 8);
+activeSheet.setValue(0, 4, 6);
+activeSheet.setValue(0, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 1, 1));
+activeSheet.setValue(1, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 9, 1));
+activeSheet.setValue(2, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 7, 1));
+activeSheet.setValue(3, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 5, 1));
+activeSheet.setValue(4, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 3, 1));
+<span style="COLOR: #0000ff">var</span> sparkline = activeSheet.setSparkline(5, 0, <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(0, 0, 5, 5), GC.Spread.Sheets.Sparklines.DataOrientation.Horizontal, GC.Spread.Sheets.Sparklines.SparklineType.line, <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Sparklines.SparklineSetting(), <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(0, 5, 5, 1), GC.Spread.Sheets.Sparklines.DataOrientation.Vertical);
+sparkline.displayDateAxis(<span style="COLOR: #0000ff">false</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>The following example creates a sparkline that uses vertical data (1,10,0,-3,-5) from the data range. The numbers below the image were added for illustration.</p>
+
+<p><img border="0" alt="" src="images/sparkvert.png" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.setValue(1, 0, 10);
+activeSheet.setValue(2, 0, 0);
+activeSheet.setValue(3, 0, -3);
+activeSheet.setValue(4, 0, -5);
+activeSheet.setValue(0, 0, 1);
+activeSheet.setValue(0, 1, 2);
+activeSheet.setValue(0, 2, 4);
+activeSheet.setValue(0, 3, 8);
+activeSheet.setValue(0, 4, 6);
+activeSheet.setValue(0, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 1, 1));
+activeSheet.setValue(1, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 9, 1));
+activeSheet.setValue(2, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 7, 1));
+activeSheet.setValue(3, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 5, 1));
+activeSheet.setValue(4, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 3, 1));
+<span style="COLOR: #0000ff">var</span> sparkline = activeSheet.setSparkline(5, 0, <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(0, 0, 5, 5), GC.Spread.Sheets.Sparklines.DataOrientation.Horizontal, GC.Spread.Sheets.Sparklines.SparklineType.line, <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Sparklines.SparklineSetting(), <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(0, 5, 5, 1), GC.Spread.Sheets.Sparklines.DataOrientation.Vertical);
+sparkline.displayDateAxis(<span style="COLOR: #0000ff">false</span>);
+sparkline.dataOrientation(GC.Spread.Sheets.Sparklines.DataOrientation.Vertical);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>The following example creates a sparkline that uses vertical data (1,10,0,-3,-5) with the date range. The numbers&nbsp;in the image were added for illustration.</p>
+
+<p><img border="0" alt="" src="images/sparkdate.png" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.setValue(1, 0, 10);
+activeSheet.setValue(2, 0, 0);
+activeSheet.setValue(3, 0, -3);
+activeSheet.setValue(4, 0, -5);
+activeSheet.setValue(0, 0, 1);
+activeSheet.setValue(0, 1, 2);
+activeSheet.setValue(0, 2, 4);
+activeSheet.setValue(0, 3, 8);
+activeSheet.setValue(0, 4, 6);
+activeSheet.setValue(0, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 1, 1));
+activeSheet.setValue(1, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 9, 1));
+activeSheet.setValue(2, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 7, 1));
+activeSheet.setValue(3, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 5, 1));
+activeSheet.setValue(4, 5, <span style="COLOR: #0000ff">new</span> Date(2014, 3, 1));
+<span style="COLOR: #0000ff">var</span> sparkline = activeSheet.setSparkline(5, 0, <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(0, 0, 5, 5), GC.Spread.Sheets.Sparklines.DataOrientation.Horizontal, GC.Spread.Sheets.Sparklines.SparklineType.line, <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Sparklines.SparklineSetting(), <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(0, 5, 5, 1), GC.Spread.Sheets.Sparklines.DataOrientation.Vertical);
+sparkline.dataOrientation(GC.Spread.Sheets.Sparklines.DataOrientation.Vertical);
+sparkline.displayDateAxis(<span style="COLOR: #0000ff">true</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="sparkcomp.html">Column, Line, and Winloss Sparklines with Formulas</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Sparklines.Sparkline.html">Sparkline class</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Sparklines.SparklineSetting~options.html">options Field</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Sparklines.DataOrientation.html">DataOrientation Enumeration</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

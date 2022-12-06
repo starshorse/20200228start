@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>add Method (PivotTableManager) | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n7338","initialNodeContainer":"c270","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.PivotTableManager~add"/>
+    
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets.PivotTableManager_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+ / <a href="SpreadJS~GC.Spread.Sheets.PivotTableManager.html">PivotTableManager type</a>
+ / add Method</div></div>
+
+    
+<div id="namePopupContent" class="i-popup-content">
+Indicates the pivot table name, it should be unique in the whole workbook.
+</div>
+<div id="sourceDataPopupContent" class="i-popup-content">
+Indicates the sourceData is using for pivot table. It supports two types: a table name or the formula which references a range absolutely.
+</div>
+<div id="rowPopupContent" class="i-popup-content">
+Indicates the pivot table start row position.
+</div>
+<div id="colPopupContent" class="i-popup-content">
+Indicates the pivot table start col position.
+</div>
+<div id="layoutPopupContent" class="i-popup-content">
+Indicates the pivot table layout.
+</div>
+<div id="themePopupContent" class="i-popup-content">
+Indicates the pivot table theme style.
+</div>
+<div id="optionsPopupContent" class="i-popup-content">
+Indicates the options of pivot table.
+</div>
+<div id="options.allowMultipleFiltersPerFieldPopupContent" class="i-popup-content">
+Indicates whether use multiple filter in one field.
+</div>
+<div id="options.insertBlankLineAfterEachItemPopupContent" class="i-popup-content">
+Indicates whether insert a blank row at end of each item.
+</div>
+<div id="options.grandTotalPositionPopupContent" class="i-popup-content">
+Indicates whether show grandtotal in row, column or both.
+</div>
+<div id="options.subTotalsPositionPopupContent" class="i-popup-content">
+Indicates show subtotal top or bottom or not show.
+</div>
+<div id="options.displayFieldsInPageFilterAreaPopupContent" class="i-popup-content">
+Indicates the field display in page area show first over then down or first down then over.
+</div>
+<div id="options.reportFilterFieldsPerColumnPopupContent" class="i-popup-content">
+Indicates the number of report filer field per column.
+</div>
+<div id="options.bandRowsPopupContent" class="i-popup-content">
+Indicates show band row or not.
+</div>
+<div id="options.bandColumnsPopupContent" class="i-popup-content">
+Indicates show band column or not.
+</div>
+<div id="options.showRowHeaderPopupContent" class="i-popup-content">
+Indicates show row header style or not.
+</div>
+<div id="options.showColumnHeaderPopupContent" class="i-popup-content">
+Indicates show column header style or not.
+</div>
+<div id="options.showDrillPopupContent" class="i-popup-content">
+Indicates show expand/collapse button or not.
+</div>
+<div id="options.showMissingPopupContent" class="i-popup-content">
+Indicates whether the missingCaption option is effected.
+</div>
+<div id="options.missingCaptionPopupContent" class="i-popup-content">
+Indicates what value should be shown when the actual value is empty
+</div>
+<div id="options.fillDownLabelsPopupContent" class="i-popup-content">
+Indicates show repeat label items or not.
+</div>
+<div id="options.rowLabelIndentPopupContent" class="i-popup-content">
+Indicates the indent of the title of each level.
+</div>
+<div id="options.printDrillPopupContent" class="i-popup-content">
+Print expand/collapse buttons when displayed on PivotTable.
+</div>
+<div id="options.itemPrintTitlesPopupContent" class="i-popup-content">
+Repeat row labels on each PivotTable.
+</div>
+<div id="options.fieldPrintTitlesPopupContent" class="i-popup-content">
+Set Print titles.
+</div>
+<div id="options.showFilterPopupContent" class="i-popup-content">
+Indicates show filter button or not.
+</div>
+<div id="options.showToolTipPopupContent" class="i-popup-content">
+Indicates show tooltip or not.
+</div>
+<div id="options.mergeItemPopupContent" class="i-popup-content">
+Indicates wether merge and center the cells with labels.
+</div>
+
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">add Method</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new <a href="SpreadJS~GC.Spread.Sheets.PivotTableManager.html">GC.Spread.Sheets.PivotTableManager</a>(sheet);
+var value; // Type: <a href="SpreadJS~GC.Spread.Pivot.PivotTable.html">PivotTable</a>
+value = instance.add(name,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sourceData,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;col,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layout,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theme,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowMultipleFiltersPerField,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.insertBlankLineAfterEachItem,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.grandTotalPosition,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.subTotalsPosition,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.displayFieldsInPageFilterArea,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.reportFilterFieldsPerColumn,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.bandRows,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.bandColumns,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showRowHeader,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showColumnHeader,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showDrill,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showMissing,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.missingCaption,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.fillDownLabels,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.rowLabelIndent,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.printDrill,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.itemPrintTitles,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.fieldPrintTitles,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showFilter,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showToolTip,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.mergeItem);</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function add( 
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="namePopupLink" data-popup-contentsource="#namePopupContent" data-popup-showevent="click mouseenter">name</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="sourceDataPopupLink" data-popup-contentsource="#sourceDataPopupContent" data-popup-showevent="click mouseenter">sourceData</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="rowPopupLink" data-popup-contentsource="#rowPopupContent" data-popup-showevent="click mouseenter">row</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="colPopupLink" data-popup-contentsource="#colPopupContent" data-popup-showevent="click mouseenter">col</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="layoutPopupLink" data-popup-contentsource="#layoutPopupContent" data-popup-showevent="click mouseenter">layout</a></i> : <a href="SpreadJS~GC.Spread.Pivot.PivotTableLayoutType.html">PivotTableLayoutType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="themePopupLink" data-popup-contentsource="#themePopupContent" data-popup-showevent="click mouseenter">theme</a></i> : <a href="SpreadJS~GC.Spread.Pivot.PivotTableTheme.html">PivotTableTheme</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="optionsPopupLink" data-popup-contentsource="#optionsPopupContent" data-popup-showevent="click mouseenter">options</a></i> : Object,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.allowMultipleFiltersPerFieldPopupLink" data-popup-contentsource="#options.allowMultipleFiltersPerFieldPopupContent" data-popup-showevent="click mouseenter">options.allowMultipleFiltersPerField</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.insertBlankLineAfterEachItemPopupLink" data-popup-contentsource="#options.insertBlankLineAfterEachItemPopupContent" data-popup-showevent="click mouseenter">options.insertBlankLineAfterEachItem</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.grandTotalPositionPopupLink" data-popup-contentsource="#options.grandTotalPositionPopupContent" data-popup-showevent="click mouseenter">options.grandTotalPosition</a></i> : <a href="SpreadJS~GC.Spread.Pivot.GrandTotalPosition.html">GrandTotalPosition</a>,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.subTotalsPositionPopupLink" data-popup-contentsource="#options.subTotalsPositionPopupContent" data-popup-showevent="click mouseenter">options.subTotalsPosition</a></i> : <a href="SpreadJS~GC.Spread.Pivot.SubtotalsPosition.html">SubtotalsPosition</a>,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.displayFieldsInPageFilterAreaPopupLink" data-popup-contentsource="#options.displayFieldsInPageFilterAreaPopupContent" data-popup-showevent="click mouseenter">options.displayFieldsInPageFilterArea</a></i> : <a href="SpreadJS~GC.Spread.Pivot.DisplayFields.html">DisplayFields</a>,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.reportFilterFieldsPerColumnPopupLink" data-popup-contentsource="#options.reportFilterFieldsPerColumnPopupContent" data-popup-showevent="click mouseenter">options.reportFilterFieldsPerColumn</a></i> : number,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.bandRowsPopupLink" data-popup-contentsource="#options.bandRowsPopupContent" data-popup-showevent="click mouseenter">options.bandRows</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.bandColumnsPopupLink" data-popup-contentsource="#options.bandColumnsPopupContent" data-popup-showevent="click mouseenter">options.bandColumns</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.showRowHeaderPopupLink" data-popup-contentsource="#options.showRowHeaderPopupContent" data-popup-showevent="click mouseenter">options.showRowHeader</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.showColumnHeaderPopupLink" data-popup-contentsource="#options.showColumnHeaderPopupContent" data-popup-showevent="click mouseenter">options.showColumnHeader</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.showDrillPopupLink" data-popup-contentsource="#options.showDrillPopupContent" data-popup-showevent="click mouseenter">options.showDrill</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.showMissingPopupLink" data-popup-contentsource="#options.showMissingPopupContent" data-popup-showevent="click mouseenter">options.showMissing</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.missingCaptionPopupLink" data-popup-contentsource="#options.missingCaptionPopupContent" data-popup-showevent="click mouseenter">options.missingCaption</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.fillDownLabelsPopupLink" data-popup-contentsource="#options.fillDownLabelsPopupContent" data-popup-showevent="click mouseenter">options.fillDownLabels</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.rowLabelIndentPopupLink" data-popup-contentsource="#options.rowLabelIndentPopupContent" data-popup-showevent="click mouseenter">options.rowLabelIndent</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.printDrillPopupLink" data-popup-contentsource="#options.printDrillPopupContent" data-popup-showevent="click mouseenter">options.printDrill</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.itemPrintTitlesPopupLink" data-popup-contentsource="#options.itemPrintTitlesPopupContent" data-popup-showevent="click mouseenter">options.itemPrintTitles</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.fieldPrintTitlesPopupLink" data-popup-contentsource="#options.fieldPrintTitlesPopupContent" data-popup-showevent="click mouseenter">options.fieldPrintTitles</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.showFilterPopupLink" data-popup-contentsource="#options.showFilterPopupContent" data-popup-showevent="click mouseenter">options.showFilter</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.showToolTipPopupLink" data-popup-contentsource="#options.showToolTipPopupContent" data-popup-showevent="click mouseenter">options.showToolTip</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.mergeItemPopupLink" data-popup-contentsource="#options.mergeItemPopupContent" data-popup-showevent="click mouseenter">options.mergeItem</a></i> : boolean
+) : <a href="SpreadJS~GC.Spread.Pivot.PivotTable.html">PivotTable</a>;</pre>
+      </div>
+    
+
+      </div>
+    
+            <h4 class=dxh4>Parameters</h4><dl><dt><I>name</I></dt>
+<dd>Indicates the pivot table name, it should be unique in the whole workbook.</dd><dt><I>sourceData</I></dt>
+<dd>Indicates the sourceData is using for pivot table. It supports two types: a table name or the formula which references a range absolutely.</dd><dt><I>row</I></dt>
+<dd>Indicates the pivot table start row position.</dd><dt><I>col</I></dt>
+<dd>Indicates the pivot table start col position.</dd><dt><I>layout</I></dt>
+<dd>Indicates the pivot table layout.</dd><dt><I>theme</I></dt>
+<dd>Indicates the pivot table theme style.</dd><dt><I>options</I></dt>
+<dd>Indicates the options of pivot table.</dd><dt><I>options.allowMultipleFiltersPerField</I></dt>
+<dd>Indicates whether use multiple filter in one field.</dd><dt><I>options.insertBlankLineAfterEachItem</I></dt>
+<dd>Indicates whether insert a blank row at end of each item.</dd><dt><I>options.grandTotalPosition</I></dt>
+<dd>Indicates whether show grandtotal in row, column or both.</dd><dt><I>options.subTotalsPosition</I></dt>
+<dd>Indicates show subtotal top or bottom or not show.</dd><dt><I>options.displayFieldsInPageFilterArea</I></dt>
+<dd>Indicates the field display in page area show first over then down or first down then over.</dd><dt><I>options.reportFilterFieldsPerColumn</I></dt>
+<dd>Indicates the number of report filer field per column.</dd><dt><I>options.bandRows</I></dt>
+<dd>Indicates show band row or not.</dd><dt><I>options.bandColumns</I></dt>
+<dd>Indicates show band column or not.</dd><dt><I>options.showRowHeader</I></dt>
+<dd>Indicates show row header style or not.</dd><dt><I>options.showColumnHeader</I></dt>
+<dd>Indicates show column header style or not.</dd><dt><I>options.showDrill</I></dt>
+<dd>Indicates show expand/collapse button or not.</dd><dt><I>options.showMissing</I></dt>
+<dd>Indicates whether the missingCaption option is effected.</dd><dt><I>options.missingCaption</I></dt>
+<dd>Indicates what value should be shown when the actual value is empty</dd><dt><I>options.fillDownLabels</I></dt>
+<dd>Indicates show repeat label items or not.</dd><dt><I>options.rowLabelIndent</I></dt>
+<dd>Indicates the indent of the title of each level.</dd><dt><I>options.printDrill</I></dt>
+<dd>Print expand/collapse buttons when displayed on PivotTable.</dd><dt><I>options.itemPrintTitles</I></dt>
+<dd>Repeat row labels on each PivotTable.</dd><dt><I>options.fieldPrintTitles</I></dt>
+<dd>Set Print titles.</dd><dt><I>options.showFilter</I></dt>
+<dd>Indicates show filter button or not.</dd><dt><I>options.showToolTip</I></dt>
+<dd>Indicates show tooltip or not.</dd><dt><I>options.mergeItem</I></dt>
+<dd>Indicates wether merge and center the cells with labels.</dd></dl>
+
+            <h4 class=dxh4>Return Value</h4><div class="i-returns-content">The new pivot table instance.</div></div>
+            
+
+            <a name="exampleBookmark"></a>
+            
+            
+            <div class="i-section-heading" id="i-example-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Example</span></div><div id="i-example-section-content" class="i-section-content"><div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-7610daab-86cf-4ccb-bdd3-2b41ab3bed96">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-7610daab-86cf-4ccb-bdd3-2b41ab3bed96" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> spread = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="color: #800000; ">&quot;ss&quot;</span>),{sheetCount:3});
+<span style="color: #0000FF; ">var</span> sourceSheet = spread.getSheet(0);
+<span style="color: #0000FF; ">var</span> sheet = spread.getSheet(1);
+<span style="color: #0000FF; ">var</span> sourceData = [[<span style="color: #800000; ">&quot;Date&quot;</span>,<span style="color: #800000; ">&quot;Buyer&quot;</span>,<span style="color: #800000; ">&quot;Type&quot;</span>,<span style="color: #800000; ">&quot;Amount&quot;</span>],
+                  [<span style="color: #800000; ">&quot;01-Jan&quot;</span>,<span style="color: #800000; ">&quot;Mom&quot;</span>,<span style="color: #800000; ">&quot;Fuel&quot;</span>,74],
+                  [<span style="color: #800000; ">&quot;15-Jan&quot;</span>,<span style="color: #800000; ">&quot;Mom&quot;</span>,<span style="color: #800000; ">&quot;Food&quot;</span>,235],
+                  [<span style="color: #800000; ">&quot;17-Jan&quot;</span>,<span style="color: #800000; ">&quot;Dad&quot;</span>,<span style="color: #800000; ">&quot;Sports&quot;</span>,20],
+                  [<span style="color: #800000; ">&quot;21-Jan&quot;</span>,<span style="color: #800000; ">&quot;Kelly&quot;</span>,<span style="color: #800000; ">&quot;Books&quot;</span>,125]];
+sourceSheet.setArray(0, 0, sourceData );
+sourceSheet.tables.add(<span style="color: #800000; ">'sourceData'</span>, 0, 0, 5, 4);
+<span style="color: #0000FF; ">var</span> layout = GC.Spread.Pivot.PivotTableLayoutType.compact;
+<span style="color: #0000FF; ">var</span> theme = GC.Spread.Pivot.PivotTableThemes.medium2;
+sheet.pivotTables.add(<span style="color: #800000; ">&quot;pivotTable_1&quot;</span>, <span style="color: #800000; ">'sourceData'</span>, 1, 1, layout, theme);</pre></div>
+	</div>
+</div>
+</div>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets.PivotTableManager.html">PivotTableManager type</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Choose whether to paste the data in an invisible range or not in a worksheet using SpreadJS." />
+    
+    <title>Paste or Skip Data in Invisible Range | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n229","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Choose whether to paste the data in an invisible range or not in a worksheet using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="19758710-d415-4b6b-beb5-3809a3c3cdd8"/>
+    <meta name="Microsoft.Help.TocParent" content="f108ca5b-c48b-491f-a225-98f6849aa6a3"/>
+    <meta name="Microsoft.Help.TocOrder" content="9"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="rows-columns.html">Rows and Columns</a>
+ / Paste or Skip Data in Invisible Range</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Paste or Skip Data in Invisible Range</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>In a spreadsheet, you can&nbsp;choose whether to paste&nbsp;the data in an&nbsp;invisible range or not by using the <strong>pasteSkipInvisibleRange</strong> property. By default,&nbsp;the data gets pasted into the invisible cells, rows, and columns, as well.</p>
+
+<p>However,&nbsp;you can&nbsp;skip pasting&nbsp;in an&nbsp;invisible range by&nbsp;setting the <strong>pasteSkipInvisibleRange</strong> property&nbsp;to True. This will ensure that the data is pasted to the next visible cell in the range instead&nbsp;of invisible cells, rows, or columns.</p>
+
+<table style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+    <tbody>
+        <tr>
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">When&nbsp;<strong>pasteSkipInvisibleRange</strong> <strong>=</strong> True</th>
+
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">When&nbsp;<strong>pasteSkipInvisibleRange</strong> <strong>=</strong> False (default value)</th>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="Pasting Data in Invisible Range" src="images/pasteskipinvisblerangetrue.png" align="left" /></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="Skip Pasting Data in Invisible Range" src="images/pasteskipinvisblerange.png" /></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>In&nbsp;SpreadJS, the following conditions are considered as invisible cells, rows, or columns:</p>
+
+<ul>
+    <li>Filtered Rows or Columns</li>
+
+    <li>Grouped Rows or Columns</li>
+
+    <li>Rows or Columns with ColumnWidth or RowHeight set to&nbsp;0</li>
+
+    <li>Hidden Rows or Columns</li>
+</ul>
+
+<p>The following table&nbsp;lists the features&nbsp;where <strong>pasteSkipInvisibleRange</strong> property is supported along with their corresponding behaviors.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th width="150"><strong>Copied Object</strong></th>
+
+            <th width="169"><strong>Before Copy</strong></th>
+
+            <th width="250"><strong>pasteSkipInvisibleRange = True</strong></th>
+
+            <th><strong>pasteSkipInvisibleRange = False</strong></th>
+        </tr>
+
+        <tr>
+            <td width="150">Value</td>
+
+            <td width="169">Belongs to the cell</td>
+
+            <td width="250">
+                <p>If the target cell is invisible, will paste to&nbsp;the next legal visible row or column.</p>
+
+                <p>If the range remains invisible, the effect is same as the copied range.</p>
+
+                <p>If the copied range is illegal, it won' t paste.</p>
+
+                <p>If the pasted range' s next visible row/column count is less than the copied range' s row/column count, it won' t paste the whole range.</p>
+            </td>
+
+            <td>
+                <p style='FONT-SIZE: 14px; FONT-FAMILY: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(23,43,77); PADDING-BOTTOM: 0px; FONT-STYLE: normal; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; text-decoration-thickness: initial'>It will&nbsp;be invisible when the cell remains invisible and will show the value once the cell gets visible.</p>
+
+                <p style='FONT-SIZE: 14px; FONT-FAMILY: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(23,43,77); PADDING-BOTTOM: 0px; FONT-STYLE: normal; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; ORPHANS: 2; WIDOWS: 2; MARGIN: 10px 0px 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; text-decoration-thickness: initial'>If the range changes to visible, the effect is the same as the copied range.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="150">Formula &amp;&amp; SparklineEx</td>
+
+            <td width="169">Connects with the cell</td>
+
+            <td width="250">
+                <p>If the target cell is invisible, it will paste to the next legal visible row or column.</p>
+
+                <p>Since the formula reference will consider the invisible range, so the result of the formula can differ from the previous result.</p>
+
+                <p>This property does not support the&nbsp;pasting of DynamicArray and ArrayFormula in the sheet. For example, if you try&nbsp;to copy&nbsp;a DynamicArray, it will paste nothing in the sheet.</p>
+            </td>
+
+            <td>
+                <p>Same as the pasted value.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Style (CellStyle, CellButton, formatter, and CellType )</td>
+
+            <td>Belongs to the cell</td>
+
+            <td width="250">
+                <p>If the target cell is invisible, will paste to the next legal visible row or column.</p>
+
+                <p>If the range remains invisible, the effect will be the same as that of the copied range.</p>
+            </td>
+
+            <td>
+                <p>Same as the pasted value.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>DragMove<br /></td>
+
+            <td>Selects a range</td>
+
+            <td width="250">The move rectangle will consider the invisible range and the range rectangle will expand.</td>
+
+            <td>It will consider the invisible range.</td>
+        </tr>
+
+        <tr>
+            <td>Shift Copied Cells</td>
+
+            <td>Copies or cuts a range</td>
+
+            <td width="250">When shifting the range down/right, the moved range will consider the invisible range and the move to range will skip the&nbsp;invisible range.<br /></td>
+
+            <td>It will consider the invisible range.</td>
+        </tr>
+
+        <tr>
+            <td>CustomName<br /></td>
+
+            <td>Cell or range reference</td>
+
+            <td width="250">
+                <p>If the reference type is cell, new customName reference will change to a new cell and skip the&nbsp;invisible range.</p>
+
+                <p>If the reference type is range, the new customName reference will consider the invisible range.</p>
+            </td>
+
+            <td>After moving, the customName reference will change to a&nbsp;new range.</td>
+        </tr>
+
+        <tr>
+            <td>Comment</td>
+
+            <td>Belongs to the cell</td>
+
+            <td width="250">
+                <p>Same as the pasted value.</p>
+            </td>
+
+            <td>
+                <p>Same as the pasted value.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Tag</td>
+
+            <td>Belongs to the cell</td>
+
+            <td width="250">
+                <p>Same as the pasted value.</p>
+            </td>
+
+            <td>
+                <p>Same as the pasted value.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Hyperlink</td>
+
+            <td>Belongs to the cell</td>
+
+            <td width="250">
+                <p>Same as the pasted value.</p>
+            </td>
+
+            <td>
+                <p>Same as the pasted value.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>BindingPath</td>
+
+            <td>Belongs to the cell</td>
+
+            <td width="250">
+                <p>Same as the pasted value.</p>
+            </td>
+
+            <td>
+                <p>Same as the pasted value.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+
+            <td>Belongs to the cell</td>
+
+            <td width="250">If the target row/column is invisible, it will paste to the next legal visible row or column in the header area, if the copied row/column count is more than the&nbsp;visible pasted row/column count, it will then&nbsp;paste only a part of the value.</td>
+
+            <td>It will only copy/paste the changed value.</td>
+        </tr>
+
+        <tr>
+            <td>CellStates</td>
+
+            <td>Belongs to the cell</td>
+
+            <td width="250">It will only copy the cell value and not the cell states.</td>
+
+            <td>It will only copy the cell value and not the cell states.</td>
+        </tr>
+
+        <tr>
+            <td>Sparkline</td>
+
+            <td>Belongs to the cell</td>
+
+            <td width="250">The reference of the data range is same as that of the formula. The sparkline area is the same as the pasting value.</td>
+
+            <td>
+                <p>Same as the pasted value.</p>
+
+                <p>If the sparkline data range is invisible, it will ignore the invisible range while calculating.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>DataValidation</td>
+
+            <td>
+                <p>While creating a DataValidation for a range, it will be saved as a range.<br /></p>
+            </td>
+
+            <td width="250">If the target cell is invisible, will paste to the next legal visible row or column.</td>
+
+            <td>
+                <p>When pasting a copied dataValidation range, it will be saved as multiple cell.</p>
+
+                <p>It will&nbsp;be invisible when the cell is invisible and&nbsp;will display the value once the cell&nbsp;gets visible.<br /></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>ConditionalFormat</td>
+
+            <td>While creating a ConditionalFormat for a range, it will be saved as a range.</td>
+
+            <td width="250">
+                <p>If the target cell is invisible, it will paste to the next legal visible row or column.</p>
+
+                <p>a. copy and paste a range in the sheet, it will split into two or more ranges because it&nbsp;skipped the invisible range.</p>
+
+                <p>b. copy multiple range with the same row or same column, it will split into more little ranges just like [a].</p>
+
+                <p>c. copy a range and paste it to multiple ranges, the range will split into two or more ranges just like [a].</p>
+
+                <p>It does not support copying and pasting of multiple ranges in the sheet.</p>
+            </td>
+
+            <td>
+                <p>It will be invisible while the cell is invisible and&nbsp;will show the value when the cell gets visible.</p>
+
+                <p>a. copy and paste&nbsp;a range in the sheet, it will be the same as the copied range when it gets&nbsp;visible.</p>
+
+                <p>b. copy multiple range with the same row or same column, it will be pasted as one range but will be saved as two ranges, each range is calculated independently.</p>
+
+                <p>c. copy a range and paste it to multiple ranges, each range will calculate independently and will show the same result.</p>
+
+                <p>It does not support copying and pasting&nbsp;of multiple ranges in the sheet.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Span</td>
+
+            <td>A whole range</td>
+
+            <td width="250">
+                <p>It does not support pasting of&nbsp;span with skipping invisible range. The span result is the same as that of the pasting to invisible range. But the cells in span will paste by skipping invisible range.</p>
+
+                <p>If the range changes to visible, the span is the same as that of the copied span.<br /></p>
+            </td>
+
+            <td>
+                <p>It is still a whole range.</p>
+
+                <p>If the range changes to visible, the span is same as the copied span.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Table</td>
+
+            <td>A whole table</td>
+
+            <td width="250">
+                <p>If you copy only a part of table, it will only paste the values and styles to the next legal visible row or column.</p>
+
+                <p>If you copy a range that contains the whole table and pastes it&nbsp;to the invisible range, the table won' t expand but the value of the table will paste with&nbsp;skipping the&nbsp;invisible range.</p>
+
+                <p>When you paste to right or below of the table, and the table&nbsp;supports auto expand, the expand range will include the&nbsp;invisible range and the invisible range contains no value.</p>
+            </td>
+
+            <td>
+                <p>If you copy only a part of table, it will only paste the values and styles.</p>
+
+                <p>But, if you copy a range that contains the whole table, it will then paste the whole table.</p>
+
+                <p>If the range changes to visible, the effect remains the same as that of the copied range.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Using Code</h4>
+
+<p>This example allows&nbsp;you to skip pasting the data in an&nbsp;invisible range.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+workbook.options.pasteSkipInvisibleRange = <span style="COLOR: #0000ff">true</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Using SpreadJS Designer</h3>
+
+<p>In SpreadJS Designer,&nbsp;click 'Settings' tab and&nbsp;select 'General' option from 'Spread Settings'&nbsp;group to display the 'Spread Settings' dialog as&nbsp;shown below.&nbsp;Select the Clipboard tab&nbsp;to check or uncheck&nbsp;the <b>Allow Paste Skip Invisible Range</b> option to&nbsp;enable or disable the pasting of data into the invisible range in the spreadsheet.</p>
+
+<p><img border="0" alt="Enabling pasting of data with skipping invisible range" src="images/skipinvisblerangedesigner.png" /></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

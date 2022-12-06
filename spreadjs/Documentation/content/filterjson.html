@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Use the FILTERJSON to parse data from a JSON string." />
+    
+    <title>FILTERJSON | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4316","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Use the FILTERJSON to parse data from a JSON string." />
+    
+    <meta name="Microsoft.Help.Id" content="804f836a-7850-4b6b-9002-16a535c54cc4"/>
+    <meta name="Microsoft.Help.TocParent" content="16874556-04a0-47c1-8312-5f4a50de03d2"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / <a href="web-functions.html">Web Functions</a>
+ / FILTERJSON</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">FILTERJSON</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>This function parses data from a JSON string.</p>
+
+<h4>Syntax</h4>
+
+<p>FILTERJSON(<em>json_string</em>)</p>
+
+<h4>Arguments</h4>
+
+<p>This function has the following argument:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Argument</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td><i>json_string</i></td>
+
+            <td>[required] JSON string data in a valid format.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Remarks</h4>
+
+<p>If the JSON string has invalid format, it returns #VALUE! error. A few&nbsp;examples with their expected results are shown below:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>JSON String</th>
+
+            <th>Formula</th>
+
+            <th>Result</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>{"a": 123}</td>
+
+            <td>FILTERJSON("{""a"": 123}")</td>
+
+            <td>[object Object]</td>
+        </tr>
+
+        <tr>
+            <td>"123"</td>
+
+            <td>FILTERJSON("123")</td>
+
+            <td>123</td>
+        </tr>
+
+        <tr>
+            <td>[1,2, "string"]</td>
+
+            <td>FILTERJSON([1,2,"string"])</td>
+
+            <td>#VALUE!</td>
+        </tr>
+
+        <tr>
+            <td>{a: 123}</td>
+
+            <td>FILTERJSON("{a: 123}")</td>
+
+            <td>#VALUE!</td>
+        </tr>
+
+        <tr>
+            <td>'[1, "string", {"a": 123}]'</td>
+
+            <td>FILTERJSON("[1, ""string"", {""a"": 123}]")</td>
+
+            <td>1 | string | [object Object]</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Data Types</h4>
+
+<p>Accepts string data. Returns scalar value, an object, or an array of objects.</p>
+
+<h4>Examples</h4>
+
+<p>You can parse the data from a&nbsp;JSON string.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> json_string = `{
+    <span style="COLOR: #800000">"store"</span>: {
+        <span style="COLOR: #800000">"book"</span>: [
+            {
+                <span style="COLOR: #800000">"category"</span>: <span style="COLOR: #800000">"reference"</span>,
+                <span style="COLOR: #800000">"author"</span>: <span style="COLOR: #800000">"Nigel Rees"</span>,
+                <span style="COLOR: #800000">"title"</span>: <span style="COLOR: #800000">"Sayings of the Century"</span>,
+                <span style="COLOR: #800000">"price"</span>: 8.95
+            },
+            {
+                <span style="COLOR: #800000">"category"</span>: <span style="COLOR: #800000">"fiction"</span>,
+                <span style="COLOR: #800000">"author"</span>: <span style="COLOR: #800000">"Evelyn Waugh"</span>,
+                <span style="COLOR: #800000">"title"</span>: <span style="COLOR: #800000">"Sword of Honour"</span>,
+                <span style="COLOR: #800000">"price"</span>: 12.99
+            },
+            {
+                <span style="COLOR: #800000">"category"</span>: <span style="COLOR: #800000">"fiction"</span>,
+                <span style="COLOR: #800000">"author"</span>: <span style="COLOR: #800000">"Herman Melville"</span>,
+                <span style="COLOR: #800000">"title"</span>: <span style="COLOR: #800000">"Moby Dick"</span>,
+                <span style="COLOR: #800000">"isbn"</span>: <span style="COLOR: #800000">"0-553-21311-3"</span>,
+                <span style="COLOR: #800000">"price"</span>: 8.99
+            },
+            {
+                <span style="COLOR: #800000">"category"</span>: <span style="COLOR: #800000">"fiction"</span>,
+                <span style="COLOR: #800000">"author"</span>: <span style="COLOR: #800000">"J. R. R. Tolkien"</span>,
+                <span style="COLOR: #800000">"title"</span>: <span style="COLOR: #800000">"The Lord of the Rings"</span>,
+                <span style="COLOR: #800000">"isbn"</span>: <span style="COLOR: #800000">"0-395-19395-8"</span>,
+                <span style="COLOR: #800000">"price"</span>: 22.99
+            }
+        ],
+        <span style="COLOR: #800000">"bicycle"</span>: {
+            <span style="COLOR: #800000">"color"</span>: <span style="COLOR: #800000">"red"</span>,
+            <span style="COLOR: #800000">"price"</span>: 19.95
+        }
+    },
+    <span style="COLOR: #800000">"expensive"</span>: 10
+}`;
+sheet.setValue(4,0,json_string);
+sheet.setFormula(5,0,<span style="COLOR: #800000">'=FILTERJSON(A5)'</span>);
+sheet.setFormula(6,0,<span style="COLOR: #800000">'=PROPERTY(A6,"store.book.0.title")'</span>); <span style="COLOR: #008000">// "Sayings of the Century"</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can use FILTERJSON function with a nested&nbsp;<a href="webservice.html">WEBSERVICE</a> function&nbsp;to parse a URL containing JSON data. The parsed data can be displayed by&nbsp;using&nbsp;<a href="property-function.html">PROPERTY</a> function.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+sheet.setFormula(0,0,<span style="COLOR: #800000">'=FILTERJSON(WEBSERVICE("https://cors-demo.glitch.me/allow-cors"))'</span>); <span style="COLOR: #008000">// WEBSERVICE get the json data.
+</span>sheet.setFormula(1,0,<span style="COLOR: #800000">'=PROPERTY(A1,"message")'</span>); <span style="COLOR: #008000">// "You are handling CORS like a pro!"
+</span>
+spread.options.allowDynamicArray = <span style="COLOR: #0000ff">true</span>; <span style="COLOR: #008000">// allow dynamicArray
+</span>sheet.setFormula(2,0,<span style="COLOR: #800000">'=FILTERJSON(WEBSERVICE("https://restcountries.eu/rest/v2/name/Japan"))'</span>); <span style="COLOR: #008000">// WEBSERVICE get the json data.
+</span>sheet.setFormula(3,0,<span style="COLOR: #800000">'=PROPERTY(A3,"name")'</span>); <span style="COLOR: #008000">// "Japan"</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

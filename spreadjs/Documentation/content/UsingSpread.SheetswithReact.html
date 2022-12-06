@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can use SpreadJS with React through Node Package Manager and traditional HTML methods." />
+    
+    <title>SpreadJS with React | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n122","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can use SpreadJS with React through Node Package Manager and traditional HTML methods." />
+    
+    <meta name="Microsoft.Help.Id" content="bd3093d8-fe47-4f10-bff1-d4438599f71e"/>
+    <meta name="Microsoft.Help.TocParent" content="634a0351-9d0d-4a01-be54-29ccda776eb9"/>
+    <meta name="Microsoft.Help.TocOrder" content="5"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="javascript_frameworks.html">JavaScript Frameworks</a>
+ / SpreadJS with React</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">SpreadJS with React</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports React - a JavaScript library that allows developers to build user interfaces for web applications and mobile applications by handling the view layer of the MVC framework.</p>
+
+<p>With React, you can modify data without reloading the page while creating reusable components and large applications.</p>
+
+<p>SpreadJS can be used with React in the following two ways:</p>
+
+<ol>
+    <li><a href="#a">Using Node Package Manager</a></li>
+
+    <li><a href="#b">Using Traditional HTML</a></li>
+</ol>
+
+<h3 id="a">Using Node Package Manager</h3>
+
+<p>This method involves the following steps:</p>
+
+<ol>
+    <li>
+        <strong>Create a React Project</strong>
+
+        <p>Open the Command Prompt window and type the following commands:</p>
+
+        <div class="i-filtered-content-" data-title="" data-itemid="">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Command Prompt</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+npm install -g create-react-app
+create-react-app quick-start
+cd quick-start
+npm start
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>After you finish, the react project will be created at the specified location in the directory. For more information on how to create a React project, refer to&nbsp;<a href="https://reactjs.org/docs/create-a-new-react-app.html" target="_blank">https://reactjs.org/docs/create-a-new-react-app.html</a></p>
+    </li>
+
+    <li>
+        <strong>Install SpreadJS React modules in project</strong>
+
+        <p>Install SpreadJS React modules in your project using the following command:</p>
+
+        <div class="i-filtered-content-" data-title="" data-itemid="">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Command Prompt</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+npm install @grapecity/spread-sheets
+npm install @grapecity/spread-sheets-react
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>
+        <strong>Import SpreadJS CSS into index.js file</strong>
+
+        <p>Import the SpreadJS CSS in your index.js file using the following code:</p>
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+import <span style="COLOR: #800000">'@grapecity/spread-sheets/styles/gc.spread.sheets.excel2013white.css'</span>;
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>
+        <strong>Use SpreadJS in React application</strong>
+
+        <p>Modify the App.js file as per your requirements. Changes will be reflected when the browser window is refreshed. As an example, you can use the sample code given below:</p>
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+import React, { Component } from <span style="COLOR: #800000">'react'</span>;
+import { SpreadSheets, Worksheet, Column } from <span style="COLOR: #800000">'@grapecity/spread-sheets-react'</span>;
+import GC from <span style="COLOR: #800000">'@grapecity/spread-sheets'</span>;
+<span style="COLOR: #0000ff">var</span> SpreadJSKey = <span style="COLOR: #800000">"xxx"</span>;
+GC.Spread.Sheets.LicenseKey = SpreadJSKey;
+class APP extends Component {
+ constructor(props) {
+  super(props);
+  <span style="COLOR: #0000ff">this</span>.spreadBackColor = <span style="COLOR: #800000">'aliceblue'</span>;
+  <span style="COLOR: #0000ff">this</span>.sheetName = <span style="COLOR: #800000">'Goods List'</span>;
+  <span style="COLOR: #0000ff">this</span>.hostStyle =
+  {
+   width: <span style="COLOR: #800000">'800px'</span>,
+   height: <span style="COLOR: #800000">'600px'</span>
+  };
+  <span style="COLOR: #0000ff">this</span>.data = [{ Name: <span style="COLOR: #800000">'Apple'</span>, Category: <span style="COLOR: #800000">'Fruit'</span>, Price: 1, <span style="COLOR: #800000">'Shopping Place'</span>: <span style="COLOR: #800000">'Wal-Mart'</span> },{ Name: <span style="COLOR: #800000">'Potato'</span>, Category: <span style="COLOR: #800000">'Fruit'</span>, Price: 2.01,       <span style="COLOR: #800000">'Shopping Place'</span>: <span style="COLOR: #800000">'Other'</span> },{ Name: <span style="COLOR: #800000">'Tomato'</span>, Category: <span style="COLOR: #800000">'Vegetable'</span>, Price: 3.21, <span style="COLOR: #800000">'Shopping Place'</span>: <span style="COLOR: #800000">'Other'</span> },{ Name:<span style="COLOR: #800000">'Sandwich'</span>, Category:<span style="COLOR: #800000">'Food'</span>, Price: 2, <span style="COLOR: #800000">'Shopping Place'</span>: <span style="COLOR: #800000">'Wal-Mart'</span> },{ Name: <span style="COLOR: #800000">'Hamburger'</span>, Category: <span style="COLOR: #800000">'Food'</span>, Price: 2, <span style="COLOR: #800000">'Shopping Place'</span>: <span style="COLOR: #800000">'Wal-Mart'</span> },{ Name:<span style="COLOR: #800000">'Grape'</span>, Category: <span style="COLOR: #800000">'Fruit'</span>, Price: 4, <span style="COLOR: #800000">'Shopping Place'</span>: <span style="COLOR: #800000">'Sun Store'</span> }
+  ];
+  <span style="COLOR: #0000ff">this</span>.columnWidth = 100;
+ }
+ render() {
+  <span style="COLOR: #0000ff">return</span> (
+   &lt;div&gt;
+   &lt;SpreadSheets backColor={<span style="COLOR: #0000ff">this</span>.spreadBackColor} hostStyle={<span style="COLOR: #0000ff">this</span>.hostStyle}&gt;
+   &lt;Worksheet name={<span style="COLOR: #0000ff">this</span>.sheetName} dataSource={<span style="COLOR: #0000ff">this</span>.data}&gt;
+   &lt;Column dataField=<span style="COLOR: #800000">'Name'</span> width={300}&gt;&lt;<span style="COLOR: #800000">/Column&gt;
+</span>   &lt;Column dataField=<span style="COLOR: #800000">'Category'</span> width={<span style="COLOR: #0000ff">this</span>.columnWidth}&gt;&lt;<span style="COLOR: #800000">/Column&gt;
+</span>   &lt;Column dataField=<span style="COLOR: #800000">'Price'</span> width={<span style="COLOR: #0000ff">this</span>.columnWidth}
+   formatter=<span style="COLOR: #800000">"$#.00"</span>&gt;&lt;<span style="COLOR: #800000">/Column&gt;
+</span>   &lt;Column dataField=<span style="COLOR: #800000">'Shopping Place'</span> width={<span style="COLOR: #0000ff">this</span>.columnWidth}&gt;&lt;<span style="COLOR: #800000">/Column&gt;
+</span>   &lt;<span style="COLOR: #800000">/Worksheet&gt;
+</span>   &lt;<span style="COLOR: #800000">/SpreadSheets&gt;
+</span>   &lt;<span style="COLOR: #800000">/div&gt;
+</span>  )
+ }
+}
+export <span style="COLOR: #0000ff">default</span> APP
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+
+<h3 id="a">Using Traditional HTML</h3>
+
+<p>This method involves the following steps:</p>
+
+<ol>
+    <li>
+        <strong>Download the React HTML template</strong>
+
+        <p>You can download the react HTML template using the link&nbsp;<a href="https://reactjs.org/docs/getting-started.html" target="_blank">https://reactjs.org/docs/getting-started.html</a></p>
+    </li>
+
+    <li>
+        <strong>Add SpreadJS and React - SpreadJS to HTML template</strong>
+
+        <p>Add references to&nbsp;the <strong>gc.spread.sheets.all.*.*.*.min.js,&nbsp; gc.SpreadJS.*.*.*.css and&nbsp;gc.spread.sheets.react.*.*.*.js</strong>&nbsp;files in the HTML template (i.e. your&nbsp;index.html file).</p>
+    </li>
+
+    <li>
+        <strong>Use SpreadJS in React application</strong>
+
+        <p>Now, you can use SpreadJS in your react application. As an example, you can use the sample code given below:</p>
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=<span style="COLOR: #800000">"UTF-8"</span> <span style="COLOR: #800000">/&gt;
+</span>        &lt;title&gt;Hello World&lt;<span style="COLOR: #800000">/title&gt;
+</span>        &lt;script src=<span style="COLOR: #800000">"https://unpkg.com/react@16/umd/react.development.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>        &lt;script src=<span style="COLOR: #800000">"https://unpkg.com/react-dom@16/umd/react-dom.development.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>        &lt;script src=<span style="COLOR: #800000">"https://unpkg.com/babel-standalone@6.15.0/babel.min.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>        &lt;script src=<span style="COLOR: #800000">"./lib/gc.spread.sheets.all.*.*.*.min.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>        &lt;link rel=<span style="COLOR: #800000">"stylesheet"</span> type=<span style="COLOR: #800000">"text/css"</span> href=<span style="COLOR: #800000">"./lib/gc.spread.sheets.excel2013white.*.*.*.min.css"</span>&gt;
+        &lt;script src=<span style="COLOR: #800000">"./lib/gc.spread.sheets.react.*.*.*.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>    &lt;<span style="COLOR: #800000">/head&gt;
+</span>    &lt;body&gt;
+        &lt;div id=<span style="COLOR: #800000">"root"</span>&gt;&lt;<span style="COLOR: #800000">/div&gt;
+</span>        &lt;script type=<span style="COLOR: #800000">"text/babel"</span>&gt;
+            const {SpreadSheets, Worksheet, Column} = window.SpreadSheetsComponents;
+            class App extends React.Component{
+                (){
+                    (
+                        &lt;div style={{width: <span style="COLOR: #800000">'800px'</span>,height: <span style="COLOR: #800000">'600px'</span>}}&gt;
+                            &lt;SpreadSheets&gt;
+                                &lt;Worksheet name=<span style="COLOR: #800000">'first'</span>&gt;
+                                    &lt;Column dataField=<span style="COLOR: #800000">"Name"/&gt;
+</span>                                &lt;<span style="COLOR: #800000">/Worksheet&gt;
+</span>                            &lt;<span style="COLOR: #800000">/SpreadSheets&gt;
+</span>                        &lt;<span style="COLOR: #800000">/div&gt;
+</span>                    )
+                }
+            }
+            ReactDOM.render(
+                &lt;App<span style="COLOR: #800000">/&gt;,
+</span>                document.getElementById(<span style="COLOR: #800000">'root'</span>)
+            );
+        &lt;<span style="COLOR: #800000">/script&gt;
+</span>    &lt;<span style="COLOR: #800000">/body&gt;
+</span>&lt;<span style="COLOR: #800000">/html&gt;    </span>
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="InnovaContentWidget" contenteditable="false" style="BORDER-TOP: white 2px solid; MARGIN-TOP: 2px; BORDER-BOTTOM: white 1px solid" data-widget-layout="block" data-source-widget-type="Colorized Example Code" data-widget-type="Colorized Example Code"></p>
+    </li>
+</ol>
+
+<p>The SpreadSheets, Worksheet, and Column are the basic elements with tag hierarchy. Other elements work by setting them. The main tag hierarchy is:</p>
+
+<div class="i-filtered-content-HTML" data-title="HTML" data-itemid="HTML">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Tag Hierarchy</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">SpreadSheets</span><span style="COLOR: #0000ff">&gt;</span>
+  <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Worksheet</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">Column</span><span style="COLOR: #0000ff">&gt;&lt;/</span><span style="COLOR: #800000">Column</span><span style="COLOR: #0000ff">&gt;</span>
+    ...
+  <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">Worksheet</span><span style="COLOR: #0000ff">&gt;</span>
+  ...
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">SpreadSheets</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The following topics list the element directives.</p>
+
+<ul>
+    <li><a href="UsingtheSpreadSheetsElement.html">Using the SpreadSheets Element</a></li>
+
+    <li><a href="UsingtheWorksheetElement.html">Using the Worksheet Element</a></li>
+
+    <li><a href="UsingtheColumnElement.html">Using the Column Element</a></li>
+
+    <li><a href="UsingtheChartElement.html" data-auto-update-caption="true">Chart Element</a></li>
+
+    <li><a href="UsingtheExcelIOElement.html" data-auto-update-caption="true">Excel IO Element</a></li>
+
+    <li><a href="UsingtheShapeElement.html" data-auto-update-caption="true">Shape Element</a></li>
+</ul>
+
+<div class="i-box i-box-note">
+    To use the ExcelIO element in SpreadJS with React, you need to import the Excel IO module and license it separately using the same license key, for more information refer to&nbsp;<a href="UsingtheExcelIOElement.html" data-auto-update-caption="true">Excel IO Element</a>.
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

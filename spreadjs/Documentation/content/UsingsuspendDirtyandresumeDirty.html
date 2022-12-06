@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to fetch the details of the cell values that have been changed in the worksheet by marking the dirty status of the cells." />
+    
+    <title>suspendDirty and resumeDirty | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n158","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to fetch the details of the cell values that have been changed in the worksheet by marking the dirty status of the cells." />
+    
+    <meta name="Microsoft.Help.Id" content="619c2a82-db74-4283-b122-8a20a2a8eec5"/>
+    <meta name="Microsoft.Help.TocParent" content="734ca86c-e630-4369-85bf-6d8075a578a0"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="BestPractices.html">Best Practices</a>
+ / suspendDirty and resumeDirty</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">suspendDirty and resumeDirty</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to fetch the details of the cell values that have been&nbsp;changed in the worksheet by&nbsp;marking the dirty status of the cells.&nbsp;This option provides information on cell modifications but it also causes a lot of performance overhead especially when users need to&nbsp;execute sorting operation on the bulk data.</p>
+
+<p>For performance tuning, it is recommended to use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~suspendDirty.html"><font color="#0066CC">suspendDirty</font></a> method and the <a href="SpreadJS~GC.Spread.Sheets.Worksheet~resumeDirty.html"><font color="#0066CC">resumeDirty</font></a> method.&nbsp;</p>
+
+<p>The&nbsp;suspendDirty method stops SpreadJS from marking the&nbsp;dirty status in the cells until the sorting is complete and&nbsp;the resumeDirty method allows you to restore the dirty status of the cells as and when required. Both of these methods enhance performance to a great extent.</p>
+
+<p>Refer to the following code snippet in order to use <strong>suspendDirty</strong> method&nbsp;and <strong>resumeDirty</strong> method in order to improve performance while working with SpreadJS.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> startTime, endTime;
+window.onload = <span style="COLOR: #0000ff">function</span> () 
+{
+    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+    <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+    <span style="COLOR: #0000ff">var</span> data = generateData(50000);
+    <span style="COLOR: #0000ff">var</span> colInfos = generateBindingColumnInfos(7);
+    loadingData(sheet, colInfos, data);
+    spread.bind(GC.Spread.Sheets.Events.RangeSorting, <span style="COLOR: #0000ff">function</span> (sneder, args) 
+    {
+     <span style="COLOR: #008000">// Calling suspendDirty() method to stop the marking sorted cells dirty
+</span>     sheet.suspendDirty();
+    });
+    spread.bind(GC.Spread.Sheets.Events.RangeSorted, <span style="COLOR: #0000ff">function</span> (sender, args) 
+    {
+     <span style="COLOR: #008000">// Calling resumeDirty() method to restore dirty status of cells
+</span>     sheet.resumeDirty();
+    });
+};
+<span style="COLOR: #0000ff">function</span> loadingData(sheet, colInfos, data)
+    {
+     sheet.suspendPaint();
+     sheet.autoGenerateColumns = <span style="COLOR: #0000ff">false</span>;
+     sheet.bindColumns(colInfos);
+     sheet.setDataSource(data);
+     sheet.rowFilter(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Filter.HideRowFilter(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(0, 0, sheet.getRowCount(), sheet.getColumnCount())));
+     sheet.resumePaint();
+    }
+<span style="COLOR: #0000ff">function</span> generateData(itemCount) 
+{
+     <span style="COLOR: #0000ff">var</span> data = [];
+     <span style="COLOR: #0000ff">var</span> countries = [<span style="COLOR: #800000">"China"</span>, <span style="COLOR: #800000">"American"</span>, <span style="COLOR: #800000">"UK"</span>, <span style="COLOR: #800000">"Japan"</span>, <span style="COLOR: #800000">"France"</span>];
+     <span style="COLOR: #0000ff">var</span> products = [<span style="COLOR: #800000">"Computer"</span>, <span style="COLOR: #800000">"Car"</span>, <span style="COLOR: #800000">"Others"</span>];
+     <span style="COLOR: #0000ff">var</span> colors = [<span style="COLOR: #800000">"Red"</span>, <span style="COLOR: #800000">"Green"</span>, <span style="COLOR: #800000">"Blue"</span>, <span style="COLOR: #800000">"White"</span>, <span style="COLOR: #800000">"Black"</span>, <span style="COLOR: #800000">"Yellow"</span>, <span style="COLOR: #800000">"Pink"</span>, <span style="COLOR: #800000">"Orange"</span>];
+     <span style="COLOR: #0000ff">var</span> dt = <span style="COLOR: #0000ff">new</span> Date();
+    <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; itemCount; i++)
+        {
+            <span style="COLOR: #0000ff">var</span> item =
+            {
+             id: i,
+             date: <span style="COLOR: #0000ff">new</span> Date(dt.getFullYear(), i % 12, 1),
+             country: countries[Math.floor(Math.random() * countries.length)],
+             product: products[Math.floor(Math.random() * products.length)],
+             color: colors[Math.floor(Math.random() * colors.length)],
+             amount: 1000 + Math.random() * 10000,
+             big: Math.random() &gt; .5
+            };
+         data.push(item);
+        }
+    <span style="COLOR: #0000ff">return</span> data;
+}
+<span style="COLOR: #0000ff">function</span> generateBindingColumnInfos(colCount) 
+{
+     <span style="COLOR: #0000ff">var</span> bindColumnInfos = [
+     { name: <span style="COLOR: #800000">"id"</span>, displayName: <span style="COLOR: #800000">"ID"</span>, size: 60 },
+     { name: <span style="COLOR: #800000">"product"</span>, displayName: <span style="COLOR: #800000">"Product"</span>, size: 90 },
+     { name: <span style="COLOR: #800000">"country"</span>, displayName: <span style="COLOR: #800000">"Country"</span>, size: 90 },
+     { name: <span style="COLOR: #800000">"amount"</span>, displayName: <span style="COLOR: #800000">"Amount"</span>, size: 90, formatter: <span style="COLOR: #800000">"#,##0"</span> },
+     { name: <span style="COLOR: #800000">"date"</span>, displayName: <span style="COLOR: #800000">"Date"</span>, size: 90, formatter: <span style="COLOR: #800000">'yyyy-mm-dd'</span> },
+     { name: <span style="COLOR: #800000">"color"</span>, displayName: <span style="COLOR: #800000">"Color"</span>, size: 85 },
+     { name: <span style="COLOR: #800000">"big"</span>, displayName: <span style="COLOR: #800000">"Big"</span>, size: 90, cellType: <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.CheckBox() }
+     ];
+   <span style="COLOR: #0000ff">return</span> bindColumnInfos;
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

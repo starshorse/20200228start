@@ -1,0 +1,559 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how easily you can copy and paste styles from SpreadJS to Excel." />
+    
+    <title>Copy Excel Objects to SpreadJS | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4369","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how easily you can copy and paste styles from SpreadJS to Excel." />
+    
+    <meta name="Microsoft.Help.Id" content="8ccb56fd-1550-4e9e-8616-e94a3514ac07"/>
+    <meta name="Microsoft.Help.TocParent" content="f8b9be7b-fbea-49f0-b469-68819d5d4a54"/>
+    <meta name="Microsoft.Help.TocOrder" content="8"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="excelimpexp.html">Import and Export Reference</a>
+ / <a href="excelimport.html">Excel-Formatted Files Import</a>
+ / Copy Excel Objects to SpreadJS</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Copy Excel Objects to SpreadJS</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can copy&nbsp;Excel styles and floating objects from Excel and paste them&nbsp;to worksheets in SpreadJS. This makes it easy for you to copy Excel styles and&nbsp;floating objects&nbsp;without importing the entire spreadsheet. You can enable copying and pasting of styles and&nbsp;objects by setting the&nbsp;<strong>allowCopyPasteExcelStyle</strong> property to true.</p>
+
+<h3>Excel Styles</h3>
+
+<p>Set the <strong>allowCopyPasteExcelStyle</strong> property to true to allow copying and pasting of styles.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>C#</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+spread.options.allowCopyPasteExcelStyle = <span style="COLOR: #0000ff">true</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The following table displays the style options that are copied from Excel and pasted into SpreadJS.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td></td>
+
+            <td>Google Chrome</td>
+
+            <td>Mozilla Firefox</td>
+
+            <td>Microsoft Edge</td>
+
+            <td>Microsoft Internet Explorer</td>
+
+            <td>Safari on Mac</td>
+
+            <td>Chrome on Mac</td>
+        </tr>
+
+        <tr>
+            <td>backColor</td>
+
+            <td colspan="2">Supported</td>
+
+            <td colspan="2">Supported</td>
+
+            <td>Supported</td>
+
+            <td>Supported</td>
+        </tr>
+
+        <tr>
+            <td>foreColor</td>
+
+            <td colspan="2">Supported</td>
+
+            <td colspan="2">Supported</td>
+
+            <td>Supported</td>
+
+            <td>Supported</td>
+        </tr>
+
+        <tr>
+            <td>font</td>
+
+            <td colspan="2">Supported</td>
+
+            <td colspan="2">Supported</td>
+
+            <td>Supported</td>
+
+            <td>Supported</td>
+        </tr>
+
+        <tr>
+            <td>vAlign</td>
+
+            <td colspan="2">
+                <p>top -&gt; top</p>
+
+                <p>center -&gt; center</p>
+
+                <p>bottom -&gt; bottom</p>
+
+                <p>justify -&gt; bottom</p>
+
+                <p>distributed -&gt; bottom</p>
+            </td>
+
+            <td colspan="2">
+                <p>top -&gt; center</p>
+
+                <p>center -&gt; center</p>
+
+                <p>bottom -&gt; center</p>
+
+                <p>justify -&gt; center</p>
+
+                <p>distributed -&gt; center</p>
+            </td>
+
+            <td>
+                <p>top -&gt; top</p>
+
+                <p>center -&gt; center</p>
+
+                <p>bottom -&gt; bottom</p>
+
+                <p>justify -&gt; bottom</p>
+
+                <p>distributed -&gt; bottom</p>
+            </td>
+
+            <td>
+                <p>top -&gt; top</p>
+
+                <p>center -&gt; center</p>
+
+                <p>bottom -&gt; bottom</p>
+
+                <p>justify -&gt; bottom</p>
+
+                <p>distributed -&gt; bottom</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>hAlign</td>
+
+            <td colspan="2">
+                <p>left -&gt; left</p>
+
+                <p>center -&gt; center</p>
+
+                <p>right -&gt; right</p>
+
+                <p>general -&gt; general</p>
+
+                <p>fill -&gt; general</p>
+
+                <p>justify -&gt; general</p>
+
+                <p>center across selection -&gt; general</p>
+
+                <p>distributed -&gt; general</p>
+            </td>
+
+            <td colspan="2">
+                <p>left -&gt; left</p>
+
+                <p>center -&gt; left</p>
+
+                <p>right -&gt; left</p>
+
+                <p>general -&gt; left</p>
+
+                <p>fill -&gt; left</p>
+
+                <p>justify -&gt; left</p>
+
+                <p>center across selection -&gt; center</p>
+
+                <p>distributed -&gt; left</p>
+            </td>
+
+            <td>
+                <p>left -&gt; left</p>
+
+                <p>center -&gt; center</p>
+
+                <p>right -&gt; right</p>
+
+                <p>general -&gt; general</p>
+
+                <p>fill -&gt; general</p>
+
+                <p>justify -&gt; general</p>
+
+                <p>center across selection -&gt; general</p>
+
+                <p>distributed -&gt; general</p>
+            </td>
+
+            <td>
+                <p>left -&gt; left</p>
+
+                <p>center -&gt; center</p>
+
+                <p>right -&gt; right</p>
+
+                <p>general -&gt; general</p>
+
+                <p>fill -&gt; general</p>
+
+                <p>justify -&gt; general</p>
+
+                <p>center across selection -&gt; general</p>
+
+                <p>distributed -&gt; general</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>borderLeft</td>
+
+            <td rowspan="4" colspan="2">
+                <p>thin -&gt; medium</p>
+
+                <p>medium -&gt; medium</p>
+
+                <p>dashed -&gt; mediumDashed</p>
+
+                <p>dotted -&gt; dotted</p>
+
+                <p>thick -&gt; medium</p>
+
+                <p>double -&gt; double</p>
+
+                <p>hair -&gt; None</p>
+
+                <p>mediumDashed -&gt; mediumDashed</p>
+
+                <p>dashDot -&gt; None</p>
+
+                <p>mediumDashDot -&gt; None</p>
+
+                <p>dashDotDot -&gt; None</p>
+
+                <p>mediumDashDotDot -&gt; None</p>
+
+                <p>slantedDashDot -&gt; None</p>
+            </td>
+
+            <td rowspan="4" colspan="2">
+                <p>thin -&gt; medium</p>
+
+                <p>medium -&gt; medium</p>
+
+                <p>dashed -&gt; mediumDashed</p>
+
+                <p>dotted -&gt; dotted</p>
+
+                <p>thick -&gt; medium</p>
+
+                <p>double -&gt; double</p>
+
+                <p>hair -&gt; None</p>
+
+                <p>mediumDashed -&gt; mediumDashed</p>
+
+                <p>dashDot -&gt; None</p>
+
+                <p>mediumDashDot -&gt; None</p>
+
+                <p>dashDotDot -&gt; None</p>
+
+                <p>mediumDashDotDot -&gt; None</p>
+
+                <p>slantedDashDot -&gt; None</p>
+            </td>
+
+            <td rowspan="4">
+                <p>thin -&gt; medium</p>
+
+                <p>medium -&gt; medium</p>
+
+                <p>dashed -&gt; mediumDashed</p>
+
+                <p>dotted -&gt; dotted</p>
+
+                <p>thick -&gt; medium</p>
+
+                <p>double -&gt; double</p>
+
+                <p>hair -&gt; None</p>
+
+                <p>mediumDashed -&gt; mediumDashed</p>
+
+                <p>dashDot -&gt; None</p>
+
+                <p>mediumDashDot -&gt; None</p>
+
+                <p>dashDotDot -&gt; None</p>
+
+                <p>mediumDashDotDot -&gt; None</p>
+
+                <p>slantedDashDot -&gt; None</p>
+            </td>
+
+            <td rowspan="4">
+                <p>thin -&gt; medium</p>
+
+                <p>medium -&gt; medium</p>
+
+                <p>dashed -&gt; mediumDashed</p>
+
+                <p>dotted -&gt; dotted</p>
+
+                <p>thick -&gt; medium</p>
+
+                <p>double -&gt; double</p>
+
+                <p>hair -&gt; None</p>
+
+                <p>mediumDashed -&gt; mediumDashed</p>
+
+                <p>dashDot -&gt; None</p>
+
+                <p>mediumDashDot -&gt; None</p>
+
+                <p>dashDotDot -&gt; None</p>
+
+                <p>mediumDashDotDot -&gt; None</p>
+
+                <p>slantedDashDot -&gt; None</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>borderRight</td>
+        </tr>
+
+        <tr>
+            <td>borderTop</td>
+        </tr>
+
+        <tr>
+            <td>borderBottom</td>
+        </tr>
+
+        <tr>
+            <td>textDecoration</td>
+
+            <td colspan="2">
+                <p>strikethrough -&gt; lineThrough</p>
+
+                <p>single -&gt; underline</p>
+
+                <p>double -&gt; underline</p>
+
+                <p>single accounting -&gt; underline</p>
+
+                <p>double accounting -&gt; underline</p>
+            </td>
+
+            <td colspan="2">
+                <p>strikethrough -&gt; lineThrough</p>
+
+                <p>single -&gt; underline</p>
+
+                <p>double -&gt; underline</p>
+
+                <p>single accounting -&gt; underline</p>
+
+                <p>double accounting -&gt; underline</p>
+            </td>
+
+            <td>
+                <p>strikethrough -&gt; lineThrough</p>
+
+                <p>single -&gt; underline</p>
+
+                <p>double -&gt; underline</p>
+
+                <p>single accounting -&gt; underline</p>
+
+                <p>double accounting -&gt; underline</p>
+            </td>
+
+            <td>
+                <p>strikethrough -&gt; lineThrough</p>
+
+                <p>single -&gt; underline</p>
+
+                <p>double -&gt; underline</p>
+
+                <p>single accounting -&gt; underline</p>
+
+                <p>double accounting -&gt; underline</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Floating Objects</h3>
+
+<p>Floating objects such as images, charts and shapes&nbsp;can also be copied&nbsp;from Excel and pasted in SpreadJS worksheets&nbsp;by setting the <strong>allowCopyPasteExcelStyle</strong> property to true. Note that you can copy charts and shapes from Excel and paste them in SpreadJS as images. This feature is already enabled in SpreadJS by default,&nbsp;however it does not provide support for copying and pasting images from SpreadJS to Excel.</p>
+
+<p>You can use the Ctrl + V and Command + V keyboard combination in Windows and Mac while pasting the images&nbsp;to SpreadJS worksheets as shown in the following gif.</p>
+
+<p><img border="0" alt="Copying image from Excel and pasting to SpreadJS" src="images/copy_image_spreadjs.gif" /></p>
+
+<p>You can observe that there was no impact on the size and content of the original image while pasting it in SpreadJS. However, you can resize the pasted image by using the resize handlers. The location of the image in worksheet is determined by the active cell of SpreadJS. You can either copy paste&nbsp;images one by one in SpreadJS worksheet, or copy&nbsp;all the images from Excel&nbsp;and paste them as a single&nbsp;big image in the worksheet.</p>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="clipboard.html">Clipboard Operations </a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Workbook~options.html">options Field</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

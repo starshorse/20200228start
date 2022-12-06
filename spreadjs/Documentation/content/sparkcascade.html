@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn about the cascade sparkline in SpreadJS. Learn the various options available for the cascade sparkline formula along with their descriptions. " />
+    
+    <title>Cascade Sparkline | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n647","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn about the cascade sparkline in SpreadJS. Learn the various options available for the cascade sparkline formula along with their descriptions. " />
+    
+    <meta name="Microsoft.Help.Id" content="283e5fab-4967-4cb2-a332-0b4abdd043e4"/>
+    <meta name="Microsoft.Help.TocParent" content="fd9cab4f-16bf-437c-a370-bbba7f456cf3"/>
+    <meta name="Microsoft.Help.TocOrder" content="15"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sparkmain.html">Sparklines</a>
+ / Cascade Sparkline</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Cascade Sparkline</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>A cascade sparkline is generally used to analyze a value over time like yearly sales, total profit, net tax etc.&nbsp;It is used widely in finance, sales, legal and construction sectors, to name a few.</p>
+
+<p>Listed below&nbsp;are the different parameters of a CASCADESPARKLINE formula:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Option</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>pointsRange</td>
+
+            <td>A reference that represents the range of cells that contains values, such as "B2:B8".</td>
+        </tr>
+
+        <tr>
+            <td>pointIndex</td>
+
+            <td>A number or reference that represents the points index. The pointIndex is &gt;= 1 such as 1 or "D2".</td>
+        </tr>
+
+        <tr>
+            <td>labelsRange</td>
+
+            <td>A reference that represents the range of cells that contains the labels, such as "A2:A8". This setting is optional. The default value is no label.</td>
+        </tr>
+
+        <tr>
+            <td>minimum</td>
+
+            <td>A number or reference that represents the minimum values of the display area. This setting is optional. The default value is the minimum of the sum (the sum of the points' value), such as -2000. The minimum you set must be less than the default minimum; otherwise, the default minimum is used.</td>
+        </tr>
+
+        <tr>
+            <td>maximum</td>
+
+            <td>A number or reference that represents the maximum values of the display area. This setting is optional. The default value is the maximum of the sum (the sum of the points' value), such as 6000. The maximum you set must be greater than the default maximum; otherwise, the default maximum is used.</td>
+        </tr>
+
+        <tr>
+            <td>colorPositive</td>
+
+            <td>A string that represents the color of the first or last positive sparkline's box (this point's value is positive). This setting is optional. The default value is "#8CBF64". If the first or last box represents a positive value, the box's color is set to colorPositive. The middle positive box is set to a lighter color than colorPositive.</td>
+        </tr>
+
+        <tr>
+            <td>colorNegative</td>
+
+            <td>A string that represents the color of the first or last negative sparkline's box (this point's value is negative). This setting is optional. The default value is "#D6604D". If the first or last box represents the negative value, the box's color is set to colorNegative. The middle negative box is set to a lighter color than colorNegative.</td>
+        </tr>
+
+        <tr>
+            <td>vertical</td>
+
+            <td>A boolean that represents whether the box's direction is vertical or horizontal. This setting is optional. The default value is FALSE. You must&nbsp;set&nbsp;vertical to true or false for a group of formulas, because all the formulas represent the entire sparkline.</td>
+        </tr>
+
+        <tr>
+            <td>itemTypeRange</td>
+
+            <td>An array or reference that represents&nbsp;all the item types of the data range. The values should be {"-", "+", "="} or "A1:A7" that reference the value of {"+", "-", "="}, where&nbsp;"+"&nbsp;indicates positive change, "-"&nbsp;indicates negative change and "="&nbsp;indicates total columns. This setting is optional.</td>
+        </tr>
+
+        <tr>
+            <td>colorTotal</td>
+
+            <td>A string that either represents the color of the last sparkline's box when itemTypeRange does not exist or represents the color of the resulting sparkline's box when itemTypeRange exists. This setting is optional.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>There are different usecases for&nbsp;Cascade sparkline&nbsp;upon the parameters used in CASCADESPARKLINE formula. The below section discusses about two such use-cases.</p>
+
+<p><strong>UseCase&nbsp;1</strong></p>
+
+<p>Cascade sparkline can be used to depict a “salesman’s expense and pay” using sparkline wherein&nbsp;CASCADESPARKLINE formula is used with following parameters.</p>
+
+<p><code>= CASCADESPARKLINE(pointsRange, pointIndex, labelsRange, minimum, maximum, colorPositive, colorNegative, vertical)</code></p><img border="0" alt="A general example of cascade sparkline." src="images/sparkcascade.png" />
+
+<p>The following code creates a cascade sparkline using the&nbsp;above formula in the usecase.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>C#</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.addSpan(0, 0, 1, 3);
+activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).value(<span style="COLOR: #800000">"A salesman's expenses and pay"</span>)
+                .font(<span style="COLOR: #800000">"20px Arial"</span>)
+                .hAlign(GC.Spread.Sheets.HorizontalAlign.center)
+                .vAlign(GC.Spread.Sheets.VerticalAlign.center)
+                .backColor(<span style="COLOR: #800000">"purple"</span>)
+                .foreColor(<span style="COLOR: #800000">"white"</span>);
+activeSheet.getRange(1, 2, 7, 1, GC.Spread.Sheets.SheetArea.viewport).setBorder(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"transparent"</span>, GC.Spread.Sheets.LineStyle.thin),
+                { inside: <span style="COLOR: #0000ff">true</span> });
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">"Salary"</span>);
+activeSheet.setValue(2, 0, <span style="COLOR: #800000">"Performance pay"</span>);
+activeSheet.setValue(3, 0, <span style="COLOR: #800000">"Pay for customers"</span>);
+activeSheet.setValue(4, 0, <span style="COLOR: #800000">"Food spending"</span>);
+activeSheet.setValue(5, 0, <span style="COLOR: #800000">"Hotel expenses"</span>);
+activeSheet.setValue(6, 0, <span style="COLOR: #800000">"Financial  management"</span>);
+activeSheet.setValue(7, 0, <span style="COLOR: #800000">"Deposit"</span>);
+activeSheet.setValue(1, 1, 3500);
+activeSheet.setValue(2, 1, 2500);
+activeSheet.setValue(3, 1, -1000);
+activeSheet.setValue(4, 1, -1000);
+activeSheet.setValue(5, 1, -900);
+activeSheet.setValue(6, 1, 300);
+activeSheet.setFormula(7, 1, <span style="COLOR: #800000">'=sum(B2:B7)'</span>);
+activeSheet.setColumnWidth(0,150);
+activeSheet.setColumnWidth(1,100);
+activeSheet.setColumnWidth(2, 340);
+activeSheet.setRowHeight(0, 30);
+activeSheet.setRowHeight(1, 30);
+activeSheet.setRowHeight(2, 30);
+activeSheet.setRowHeight(3, 30);
+activeSheet.setRowHeight(4, 30);
+activeSheet.setRowHeight(5, 30);
+activeSheet.setRowHeight(6, 30);
+activeSheet.setRowHeight(7, 30);
+activeSheet.setFormula(1, 2, <span style="COLOR: #800000">'=CASCADESPARKLINE(B2:B8,1,A2:A8,,,"#8CBF64","#D6604D",false)'</span>);
+activeSheet.setFormula(2, 2, <span style="COLOR: #800000">'=CASCADESPARKLINE(B2:B8,2,A2:A8,,,"#8CBF64","#D6604D",false)'</span>);
+activeSheet.setFormula(3, 2, <span style="COLOR: #800000">'=CASCADESPARKLINE(B2:B8,3,A2:A8,,,"#8CBF64","#D6604D",false)'</span>);
+activeSheet.setFormula(4, 2, <span style="COLOR: #800000">'=CASCADESPARKLINE(B2:B8,4,A2:A8,,,"#8CBF64","#D6604D",false)'</span>);
+activeSheet.setFormula(5, 2, <span style="COLOR: #800000">'=CASCADESPARKLINE(B2:B8,5,A2:A8,,,"#8CBF64","#D6604D",false)'</span>);
+activeSheet.setFormula(6, 2, <span style="COLOR: #800000">'=CASCADESPARKLINE(B2:B8,6,A2:A8,,,"#8CBF64","#D6604D",false)'</span>);
+activeSheet.setFormula(7, 2, <span style="COLOR: #800000">'=CASCADESPARKLINE(B2:B8,7,A2:A8,,,"#8CBF64","#D6604D",false)'</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p><strong>UseCase 2</strong></p>
+
+<p>The Cascade Sparkline can also be&nbsp;used to specifically&nbsp;depict how an initial value increases and decreases, leading to a final value. For this purpose, you can use the <strong>itemTypeRange</strong>&nbsp;parameter in the Cascade formula. The itemTypeRange parameter is useful in accounting and finance&nbsp;applications to show the net inflows and outflows that result in organizations.</p>
+
+<p><code>CASCADESPARKLINE(pointsRange, pointIndex, labelsRange, minimum, maximum, colorPositive, colorNegative, vertical, itemTypeRange, colorTotal)</code></p>
+
+<p>Refer to the following example, where the <strong>itemTypeRange</strong>&nbsp;parameter has been applied&nbsp;on the E2: E15 cell range of the worksheet in which&nbsp;CASCADESPARKLINE formula is used to show the consolidated profit and loss scenario for the net sales in a company. The&nbsp;sparklines of 'Operating Profit', 'Profit before tax', and 'Net Profit' represent the total columns, and that's why these have their corresponding itemType as "=". The&nbsp;sparklines with positive and negative changes are represented using "+" and "-" itemType.</p>
+
+<p><img border="0" alt="An example for cascade sparkline" src="images/cascadesparkline.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>The following code creates a cascade sparkline using the formula in this usecase.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// set text in cells
+</span>sheet.setText(0, 1, <span style="COLOR: #800000">'000$'</span>);
+sheet.setText(0, 2, <span style="COLOR: #800000">'LABELS'</span>);
+sheet.setText(0, 3, <span style="COLOR: #800000">'ITEMS'</span>);
+sheet.setText(0, 4, <span style="COLOR: #800000">'ITEM TYPE'</span>);
+
+<span style="COLOR: #008000">// create displayLabels array
+</span><span style="COLOR: #0000ff">var</span> displayLabels = [
+    <span style="COLOR: #800000">'CONSOLIDATED PROFIT &amp; LOSS ACCOUNT'</span>, <span style="COLOR: #800000">'Net Sales'</span>,
+    <span style="COLOR: #800000">'   Cost of Sales'</span>, <span style="COLOR: #800000">'   Research and development'</span>, <span style="COLOR: #800000">'   Selling, general and administrative'</span>, <span style="COLOR: #800000">'   Customer Finance impairment'</span>,
+    <span style="COLOR: #800000">'   Impairment of goodwill'</span>, <span style="COLOR: #800000">'   Amortization of goodwill'</span>, <span style="COLOR: #800000">'Operating Profit'</span>, <span style="COLOR: #800000">'   Share of results of associates'</span>, <span style="COLOR: #800000">'   Financial income and expenses'</span>,
+    <span style="COLOR: #800000">'Profit before tax'</span>, <span style="COLOR: #800000">'  Tax'</span>, <span style="COLOR: #800000">'   Minority interests'</span>, <span style="COLOR: #800000">'Net Profit'</span>
+];
+
+<span style="COLOR: #008000">// create items array
+</span><span style="COLOR: #0000ff">var</span> items = [
+    29616, 17278, 7052, 6239, 292, 103, 206, 1554, 3300, 1506, 3252, 1484, 92, 1676
+];
+
+<span style="COLOR: #008000">// create labels array
+</span><span style="COLOR: #0000ff">var</span> labels = [29616, 12338, 5286, -953, -1245, -1348, -1554, 1554, 4854, 6360, 3252, 1768, 1676, 1676
+];
+
+<span style="COLOR: #008000">// create itemTypes array
+</span><span style="COLOR: #0000ff">var</span> itemTypes = [
+    <span style="COLOR: #800000">'+'</span>, <span style="COLOR: #800000">'-'</span>, <span style="COLOR: #800000">'-'</span>, <span style="COLOR: #800000">'-'</span>, <span style="COLOR: #800000">'-'</span>, <span style="COLOR: #800000">'-'</span>, <span style="COLOR: #800000">'-'</span>, <span style="COLOR: #800000">'='</span>, <span style="COLOR: #800000">'+'</span>, <span style="COLOR: #800000">'+'</span>, <span style="COLOR: #800000">'='</span>, <span style="COLOR: #800000">'-'</span>, <span style="COLOR: #800000">'-'</span>, <span style="COLOR: #800000">'='</span>
+];
+
+<span style="COLOR: #008000">// set arrays
+</span>sheet.setArray(0, 0, displayLabels);
+sheet.setArray(1, 2, items);
+sheet.setArray(1, 3, labels);
+sheet.setArray(1, 4, itemTypes);
+
+<span style="COLOR: #008000">// set CASCADESPARKLINE formula
+</span>sheet.setFormula(1, 1, <span style="COLOR: #800000">'=CASCADESPARKLINE(D2:D15, SEQUENCE(COUNTA(D2:D15),1,1,1),C2:C15,,,"#66C2A5","#FF7722",false,E2:E15,"#A9A9A9")'</span>0);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Worksheet~setFormula.html">setFormula Method</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can display preview lines for printing such that only the desired data is printed using SpreadJS." />
+    
+    <title>Display Preview Lines | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n727","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can display preview lines for printing such that only the desired data is printed using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="113a269e-7da8-412b-9a65-45042a24b828"/>
+    <meta name="Microsoft.Help.TocParent" content="4938901c-996c-4cf4-b1ac-a40b6edf52a6"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="printing.html">Print</a>
+ / Display Preview Lines</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Display Preview Lines</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Usually, before printing any report data, users tend to preview how the document will look like after the printing job is executed. This is done using the&nbsp;Print Preview dialog that&nbsp;helps to identify, view and fix any potential&nbsp;page layout glitches. But, unfortunately, the&nbsp;Print Preview dialog can only&nbsp;generate a preview of the entire worksheet and doesn't allow users to preview and print specific&nbsp;data.</p>
+
+<p>SpreadJS allows users to display preview lines for printing so that only the desired data is printed as per their custom requirements.&nbsp;This feature is useful especially when you're working with large worksheets but you want to print only specific chunks of data (or cell ranges) on different pages.&nbsp;</p>
+
+<p>Users can use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~isPrintLineVisible.html" data-auto-update-caption="true">isPrintLineVisible()</a> method of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet.html" data-auto-update-caption="true">Worksheet</a> class to get or set whether to display preview lines in the worksheet.</p>
+
+<h3>Example</h3>
+
+<p>For instance, let's assume that you're working on a marketing application containing product sales information and other statistical figures from different regions. Now, you want to print the sales data of different regions on different pages. In such a scenario,&nbsp;it becomes important to check and preview whether the data selected for printing will print on the correct page. By displaying preview lines for printing, users can correctly print desired data on specific pages.</p>
+
+<p>An example image displaying preview lines for printing is shown below. When users set the starting row as 2, starting column as 1, end row&nbsp;as 6 and end column as 4;&nbsp;preview lines will be displayed&nbsp;to indicate the printing area as B3:E7.&nbsp;</p>
+
+<p><img border="0" alt="Display preview line for printing" src="images/display-print-line-2.jpg" />&nbsp;</p>
+
+<h3>Using Code</h3>
+
+<p>Refer to the following code to display preview lines for printing.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src=<span style="COLOR: #800000">"https://code.jquery.com/jquery-2.1.1.min.js"</span> type=<span style="COLOR: #800000">"text/javascript"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;link href=<span style="COLOR: #800000">"css/gc.spread.sheets.excel2013white.12.2.0.css"</span> rel=<span style="COLOR: #800000">"stylesheet"</span> <span style="COLOR: #800000">/&gt;
+</span>&lt;script src=<span style="COLOR: #800000">"scripts/gc.spread.sheets.all.12.2.0.min.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;script src=<span style="COLOR: #800000">"scripts/gc.spread.sheets.print.12.2.0.min.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;script&gt;
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+ <span style="COLOR: #008000">// Initialize spread
+</span> <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>),
+   { sheetCount: 1 });
+ spread.suspendPaint();
+
+ <span style="COLOR: #008000">// Fetch the ActiveSheet
+</span> <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+ sheet.setRowCount(600);
+ sheet.setColumnCount(80);
+ 
+ <span style="COLOR: #008000">// Set value
+</span> <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> r = 0, rc = sheet.getRowCount() + 150; r &lt; rc; r++) {
+ <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> c = 0, cc = sheet.getColumnCount() + 20; c &lt; cc; c++) {
+ sheet.setValue(r, c, r + c);
+ }
+ }
+ 
+ <span style="COLOR: #008000">// Set print info
+</span> <span style="COLOR: #0000ff">var</span> printInfo = sheet.printInfo();
+ spread.resumePaint();
+ $(<span style="COLOR: #800000">"#print"</span>).click(<span style="COLOR: #0000ff">function</span> () {
+ spread.print();
+ });
+ $(<span style="COLOR: #800000">"#printLine"</span>).click(<span style="COLOR: #0000ff">function</span> () {
+ <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+ <span style="COLOR: #0000ff">var</span> isDisplayPrintLine = activeSheet.isPrintLineVisible();
+ activeSheet.isPrintLineVisible(!isDisplayPrintLine);
+ });
+ $(<span style="COLOR: #800000">"#updatePrintInfo"</span>).click(<span style="COLOR: #0000ff">function</span> () {
+ <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+ <span style="COLOR: #0000ff">var</span> printInfo = activeSheet.printInfo();
+ <span style="COLOR: #0000ff">var</span> startRow = parseInt(document.getElementById(<span style="COLOR: #800000">"startRow"</span>).value);
+ <span style="COLOR: #0000ff">var</span> endRow = parseInt(document.getElementById(<span style="COLOR: #800000">"endRow"</span>).value);
+ <span style="COLOR: #0000ff">var</span> startColumn = parseInt(document.getElementById(<span style="COLOR: #800000">"startColumn"</span>).value);
+ <span style="COLOR: #0000ff">var</span> endColumn = parseInt(document.getElementById(<span style="COLOR: #800000">"endColumn"</span>).value);
+ printInfo.rowStart(startRow);
+ printInfo.rowEnd(endRow)
+ printInfo.columnStart(startColumn);
+ printInfo.columnEnd(endColumn);
+ });
+ });
+&lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;<span style="COLOR: #800000">/head&gt;
+</span>&lt;body&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;StartRow: &lt;<span style="COLOR: #800000">/td&gt;
+</span>&lt;td&gt; &lt;input id=<span style="COLOR: #800000">"startRow"</span> type=<span style="COLOR: #800000">"text"</span> value=<span style="COLOR: #800000">"0"</span> <span style="COLOR: #800000">/&gt; &lt;/</span>td&gt;
+&lt;<span style="COLOR: #800000">/tr&gt;
+</span>&lt;tr&gt;
+&lt;td&gt;StartColumn: &lt;<span style="COLOR: #800000">/td&gt;
+</span>&lt;td&gt;&lt;input id=<span style="COLOR: #800000">"startColumn"</span> type=<span style="COLOR: #800000">"text"</span> value=<span style="COLOR: #800000">"0"</span> <span style="COLOR: #800000">/&gt; &lt;/</span>td&gt;
+&lt;<span style="COLOR: #800000">/tr&gt;
+</span>&lt;tr&gt;
+&lt;td&gt;EndRow: &lt;<span style="COLOR: #800000">/td&gt;
+</span>&lt;td&gt; &lt;input id=<span style="COLOR: #800000">"endRow"</span> type=<span style="COLOR: #800000">"text"</span> value=<span style="COLOR: #800000">"12"</span> <span style="COLOR: #800000">/&gt; &lt;/</span>td&gt;
+&lt;<span style="COLOR: #800000">/tr&gt;
+</span>&lt;tr&gt;
+&lt;td&gt;EndColumn: &lt;<span style="COLOR: #800000">/td&gt;
+</span>&lt;td&gt; &lt;input id=<span style="COLOR: #800000">"endColumn"</span> type=<span style="COLOR: #800000">"text"</span> value=<span style="COLOR: #800000">"12"</span> <span style="COLOR: #800000">/&gt; &lt;/</span>td&gt;
+&lt;<span style="COLOR: #800000">/tr&gt;
+</span>&lt;<span style="COLOR: #800000">/table&gt;
+</span>&lt;div style=<span style="COLOR: #800000">" margin-top:10px"</span>&gt;
+&lt;input type=<span style="COLOR: #800000">"button"</span> id=<span style="COLOR: #800000">"updatePrintInfo"</span> value=<span style="COLOR: #800000">"Update PrintInfo"</span>&gt;
+&lt;input type=<span style="COLOR: #800000">"button"</span> style=<span style="COLOR: #800000">" margin-left:16px"</span> id=<span style="COLOR: #800000">"printLine"</span> value=<span style="COLOR: #800000">"Print Line"</span>&gt;
+&lt;input type=<span style="COLOR: #800000">"button"</span> style=<span style="COLOR: #800000">" margin-left:16px"</span> id=<span style="COLOR: #800000">"print"</span> value=<span style="COLOR: #800000">"Print"</span>&gt;
+&lt;<span style="COLOR: #800000">/div&gt;
+</span>&lt;div id=<span style="COLOR: #800000">"ss"</span> style=<span style="COLOR: #800000">"height:650px;width:1000px; margin-top:20px"</span>&gt;&lt;<span style="COLOR: #800000">/div&gt;
+</span>&lt;<span style="COLOR: #800000">/body&gt;
+</span>&lt;<span style="COLOR: #800000">/html&gt; </span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

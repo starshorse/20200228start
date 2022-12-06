@@ -1,0 +1,518 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Slicer | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n686","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="e815319d-17dd-445e-af9c-a9128310a190"/>
+    <meta name="Microsoft.Help.TocParent" content="eee6e5be-7f7f-4703-a621-aea0f3f997ad"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="pivot-table.html">Pivot Table</a>
+ / <a href="filter-pt.html">Filter</a>
+ / Slicer</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Slicer</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides a slicer that enables filtering a pivot table with a single click. You can filter an aggregate target by connecting multiple pivot tables using a slicer. It can filter a pivot table's data using manual filters. It offers a user friendly interface, enabling you to manage the filter state of row and column fields of your pivot table efficiently.</p>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTableItemSlicer.html">PivotTableItemSlicer</a> class provides various slicer-related methods to work with the pivot table slicer.</p>
+
+<p><img border="0" alt="" src="images/slicer_filter_pivottable.gif" /></p>
+
+<p>The following code sample shows how to add a pivot table slicer using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Slicers.SlicerCollection~add.html">SlicerCollection.add</a> method.&nbsp;The SlicerType should be set to "pivotTable".</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #008000">// initializing Spread
+</span>    spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 2 });
+    spread.options.allowDynamicArray = <span style="COLOR: #0000ff">true</span>;
+    spread.suspendPaint();
+    <span style="COLOR: #008000">// get sheets
+</span>    pivotLayoutSheet = spread.getSheet(0);
+    dataSourceSheet = spread.getSheet(1);
+
+    <span style="COLOR: #008000">// Hide gridlines
+</span>    pivotLayoutSheet.options.gridline = { showVerticalGridline: <span style="COLOR: #0000ff">false</span>, showHorizontalGridline: <span style="COLOR: #0000ff">false</span> };
+
+    <span style="COLOR: #008000">// set sheet name
+</span>    pivotLayoutSheet.name(<span style="COLOR: #800000">"PivotLayout"</span>);
+    dataSourceSheet.name(<span style="COLOR: #800000">"DataSource"</span>);
+    <span style="COLOR: #008000">// set row count
+</span>    dataSourceSheet.setRowCount(245);
+    <span style="COLOR: #008000">// set datasource
+</span>    dataSourceSheet.setArray(0, 0, pivotDB_UseCase);
+    <span style="COLOR: #008000">// add table to dataSourceSheet
+</span>    dataSourceSheet.tables.add(<span style="COLOR: #800000">'tableSales'</span>, 0, 0, 245, 8);
+
+    <span style="COLOR: #008000">// initialize pivottable
+</span>    <span style="COLOR: #0000ff">var</span> pt = initPivotTable(pivotLayoutSheet);
+    pivotLayoutSheet.setColumnCount(200);
+    initSlicer(pivotLayoutSheet, pt);
+
+    <span style="COLOR: #008000">// auto fit columns in both the sheets
+</span>    autoFit(pivotLayoutSheet);
+    autoFit(dataSourceSheet);
+    spread.resumePaint();
+});
+
+<span style="COLOR: #0000ff">function</span> initPivotTable(sheet) {
+    myPivotTable = sheet.pivotTables.add(<span style="COLOR: #800000">"pivotTable"</span>, <span style="COLOR: #800000">"tableSales"</span>, 1, 1, GC.Spread.Pivot.PivotTableLayoutType.outline, GC.Spread.Pivot.PivotTableThemes.dark3);
+    myPivotTable.suspendLayout();
+    myPivotTable.add(<span style="COLOR: #800000">"City"</span>, <span style="COLOR: #800000">"City"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+    myPivotTable.add(<span style="COLOR: #800000">"Category"</span>, <span style="COLOR: #800000">"Category"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+
+    myPivotTable.add(<span style="COLOR: #800000">"OrderDate"</span>, <span style="COLOR: #800000">"OrderDate"</span>, GC.Spread.Pivot.PivotTableFieldType.columnField);
+    let groupInfo = {
+        originFieldName: <span style="COLOR: #800000">"OrderDate"</span>,
+        dateGroups: [
+            {
+                by: GC.Pivot.DateGroupType.quarters
+            }
+        ]
+    };
+    myPivotTable.group(groupInfo);
+    myPivotTable.add(<span style="COLOR: #800000">"TotalPrice"</span>, <span style="COLOR: #800000">"TotalPrice"</span>, GC.Spread.Pivot.PivotTableFieldType.valueField, GC.Pivot.SubtotalType.sum);
+    formatValueField(myPivotTable);
+    myPivotTable.resumeLayout();
+    myPivotTable.autoFitColumn();
+    <span style="COLOR: #0000ff">return</span> myPivotTable;
+}
+
+<span style="COLOR: #0000ff">function</span> initSlicer(sheet, pt) {
+    slicer_City = sheet.slicers.add(<span style="COLOR: #800000">"slicer_City"</span>, pt.name(), <span style="COLOR: #800000">"City"</span>, GC.Spread.Sheets.Slicers.SlicerStyles.light4(), GC.Spread.Sheets.Slicers.SlicerType.pivotTable);
+    slicer_City.position(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Point(1020, 10));
+    slicer_Category = sheet.slicers.add(<span style="COLOR: #800000">"slicer_Category"</span>, pt.name(), <span style="COLOR: #800000">"Category"</span>, GC.Spread.Sheets.Slicers.SlicerStyles.light1(), GC.Spread.Sheets.Slicers.SlicerType.pivotTable)
+    slicer_Category.position(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Point(1220, 10));
+    slicer_Date = sheet.slicers.add(<span style="COLOR: #800000">"slicer_Date"</span>, pt.name(), <span style="COLOR: #800000">"OrderDate"</span>, GC.Spread.Sheets.Slicers.SlicerStyles.other2(), GC.Spread.Sheets.Slicers.SlicerType.pivotTable);
+    slicer_Date.position(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Point(1020, 280));
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Sort Items in Slicer</h3>
+
+<p>You can sort items in a pivot table slicer along with filtering.&nbsp;The following options are available in the Slicer settings dialog box:</p>
+
+<ol>
+    <li><strong>Source Name:</strong> Specifies the name of the Slicer</li>
+
+    <li>
+        <strong>Header:</strong>
+
+        <ul>
+            <li>Display Header CheckBox : Check if you want to display the name of the slicer on the header.</li>
+
+            <li>Caption: Name of the slicer you want to display on the header.</li>
+        </ul>
+    </li>
+
+    <li><strong>Sort State:</strong> Refers to the check bullets for Ascending/Descending order.</li>
+
+    <li>
+        <strong>No Data Items Show:</strong> Refers to options below:
+
+        <ul>
+            <li><strong>Hide items with no data:</strong> When true, it does not show the items with no data in the slicer.</li>
+
+            <li>
+                <strong>Show items with no data last:</strong> If True, it shows the items with no data&nbsp;last. If false, items are sorted by the sort state.
+
+                <p>For example: Order dates&nbsp;like &lt;1/1/2013 5:30:00 and &gt;12/30/2014 5:30:00 are sorted by the sort state.</p>&nbsp;
+
+                <p><img border="0" alt="" src="images/nodataitemsinlast.png" /></p>
+            </li>
+
+            <li>
+                <strong>Visually indicate items with NoData:</strong> If true, it shows the items with no data as grayed out. When false, the items with no data are displayed in the same way as data items.
+
+                <p>For example: When order dates&nbsp;like &lt;1/1/2013 5:30:00 and &gt;12/30/2014 5:30:00 do not include any data, they are still shown in the list.</p>
+
+                <p><img border="0" alt="" src="images/visuallynodataitems.png" /></p>
+            </li>
+        </ul>
+    </li>
+</ol>
+
+<p>Default Sort values are "Hide items with no data" and "Show Items with no data last". The slicer items are divided into two-parts and each part is sorted in the ascending or descending order.</p>
+
+<p>The following code sample&nbsp;defines&nbsp;different sorting or filtering functions.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> setMultiSelectFalseForSlicerCity() {
+    <span style="COLOR: #008000">// set MultiSelect to True
+</span>    slicer_City.multiSelect(<span style="COLOR: #0000ff">true</span>);
+}
+<span style="COLOR: #0000ff">function</span> setSortStateForSlicerCity() {
+    <span style="COLOR: #008000">// set sort state to descending
+</span>    slicer_City.sortState(GC.Spread.Sheets.SortState.descending);
+}
+
+<span style="COLOR: #0000ff">function</span> showNoDataItem() {
+    myPivotTable.updateSource();
+    <span style="COLOR: #008000">// to check this delete City "Jersey"( or any one city from DataSource and click this button- on clicking this button, PT will be updated first)
+</span>    slicer_City.showNoDataItems(<span style="COLOR: #0000ff">false</span>);
+}
+
+<span style="COLOR: #0000ff">function</span> visuallyNoDataItems() {
+    myPivotTable.updateSource();
+    slicer_Date.visuallyNoDataItems(<span style="COLOR: #0000ff">false</span>);
+}
+<span style="COLOR: #0000ff">function</span> showNoDataItemsInLast() {
+    slicer_Date.showNoDataItemsInLast(<span style="COLOR: #0000ff">false</span>);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Slicer and Pivot Table Connection</h3>
+
+<p>You can establish a&nbsp;connection&nbsp;between a slicer and the pivot table using&nbsp;the&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTableItemSlicer~connectPivotTable.html">PivotTableItemSlicer.connectPivotTable</a> method. The connection is controlled by either side as&nbsp;both slicer&nbsp;and pivot table can connect or disconnect from one another. If the slicer disconnects with the pivot table, its filter action does not&nbsp;affect the pivot table and the&nbsp;same follows in the slicer.</p>
+
+<p>The following code sample shows how to disconnect a connection.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> disconnectSlicerWithPivotTable() {
+    <span style="COLOR: #008000">// slicer_Date disconnect with PivotTable.
+</span>    slicer_Date.disconnectPivotTable(myPivotTable.name());
+    slicer_Date.captionName(<span style="COLOR: #800000">"Disconnected"</span>);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Timeline Slicers</h3>
+
+<p>Timeline slicers are interactive filters that allow you to filter data quickly by date, month, year, and quarter. A visual interface is provided with controllers to help you zoom in and out on any period to view and filter the pivot data.</p>
+
+<p><img border="0" alt="" src="images/pt-timelineslicer-ui.png" />&nbsp;</p>
+
+<p>The timeline slicer only works on date fields of a pivot table using a label condition filter. It can be added in a pivot table using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Slicers.SlicerCollection~add.html">Slicers.add</a>&nbsp;class method. Set&nbsp;<em>PivotTimeline</em>&nbsp;as the slicer type and apply&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Slicers.TimelineLevel.html">TimelineLevel</a><strong>&nbsp;</strong>enumeration options such as years, quarters, months, and dates to specify how to filter the data in a slicer.</p>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTableTimelineSlicer.html">PivotTableTimelineSlicer</a>&nbsp;class provides various methods to customize the slicer UI.</p>
+
+<h4>Use Case Scenario</h4>
+
+<p>Consider the example where the food sales company selling food and beverage products wants to display the sales data of products across various quarters of a year.</p>
+
+<p>The timeline slicer can help in analyzing the data based on the period as illustrated in the GIF below.</p>
+
+<p><img border="0" alt="" src="images/pt-timelineslicer.gif" />&nbsp;</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Add timeline slicers for year, quarter, month filters
+</span><span style="COLOR: #0000ff">var</span> timeline_year = sheet.slicers.add(<span style="COLOR: #800000">"timeline_year"</span>, pt.name(), <span style="COLOR: #800000">"OrderDate"</span>, GC.Spread.Sheets.Slicers.TimelineStyles.dark6(), GC.Spread.Sheets.Slicers.SlicerType.pivotTimeline);
+timeline_year.position(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Point(600, 10));
+timeline_year.level(GC.Spread.Sheets.Slicers.TimelineLevel.years);
+timeline_year.showSelectionLabel(<span style="COLOR: #0000ff">false</span>);
+timeline_year.showTimeLevel(<span style="COLOR: #0000ff">false</span>);
+timeline_year.showHorizontalScrollbar(<span style="COLOR: #0000ff">false</span>);
+timeline_year.height(100);
+timeline_year.captionName(<span style="COLOR: #800000">"Years"</span>);
+
+<span style="COLOR: #0000ff">var</span> timeline_quarter = sheet.slicers.add(<span style="COLOR: #800000">"timeline_quarter"</span>, pt.name(), <span style="COLOR: #800000">"OrderDate"</span>, GC.Spread.Sheets.Slicers.TimelineStyles.dark1(), GC.Spread.Sheets.Slicers.SlicerType.pivotTimeline);
+timeline_quarter.position(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Point(600, 130));
+timeline_quarter.level(GC.Spread.Sheets.Slicers.TimelineLevel.quarters);
+timeline_quarter.captionName(<span style="COLOR: #800000">"Quarters"</span>);
+timeline_quarter.showSelectionLabel(<span style="COLOR: #0000ff">false</span>);
+
+<span style="COLOR: #0000ff">var</span> timeline_month = sheet.slicers.add(<span style="COLOR: #800000">"timeline_month"</span>, pt.name(), <span style="COLOR: #800000">"OrderDate"</span>, GC.Spread.Sheets.Slicers.TimelineStyles.light4(), GC.Spread.Sheets.Slicers.SlicerType.pivotTimeline);
+timeline_month.position(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Point(600, 290));
+timeline_month.captionName(<span style="COLOR: #800000">"Months"</span>);
+timeline_month.showTimeLevel(<span style="COLOR: #0000ff">false</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Select Slicer Items Using Designer</h3>
+
+<p>In the SpreadJS Designer, the following actions can be performed to select pivot table slicer items:</p>
+
+<ul>
+    <li>Actions: Click/Drag</li>
+
+    <li>Modes: Single/Multi</li>
+
+    <li>Additional keys: Ctrl/Shift/None</li>
+</ul>
+
+<table>
+    <thead>
+        <tr>
+            <th>Parameter (Action + Mode + Key)</th>
+
+            <th>Case</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>click + single + none</td>
+
+            <td>Selects the clicked item.</td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>click + single + ctrl</p>
+
+                <p>click + multi + none</p>
+
+                <p>click + multi + ctrl</p>
+            </td>
+
+            <td>Switches the clicked item's selection status.</td>
+        </tr>
+
+        <tr>
+            <td>click + single + shift</td>
+
+            <td>Sets the selection range from start point to click item index. Items in the range remains selected, others remains unselected.</td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>click + multi + shift</p>
+
+                <p>drag + multi + shift</p>
+            </td>
+
+            <td>Sets the selection range from start point to click item index, and sets selection status to true. (Never False)</td>
+        </tr>
+
+        <tr>
+            <td>drag + single + none</td>
+
+            <td>Sets the dragged items status to true, others to false.</td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>drag + single + ctrl</p>
+
+                <p>drag + multi + none</p>
+
+                <p>drag + multi + ctrl</p>
+            </td>
+
+            <td>Switches the dragged item's selection status.</td>
+        </tr>
+
+        <tr>
+            <td>drag + single + shift</td>
+
+            <td>
+                <p>Sets the selection range from start point to drag end item index.</p>
+
+                <p>Items in the range are selected.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

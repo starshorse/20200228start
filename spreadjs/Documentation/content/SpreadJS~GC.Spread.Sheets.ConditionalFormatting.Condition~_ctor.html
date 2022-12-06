@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>Condition Constructor (Condition) | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n9541","initialNodeContainer":"c412","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.Condition~_ctor"/>
+    <meta name="Description" content="Represents a conditional item using the parameter object." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.Condition"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" /><meta name="Microsoft.Help.TocOrder" content="10"/>
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets.ConditionalFormatting_namespace.html">GC.Spread.Sheets.ConditionalFormatting Namespace</a>
+ / <a href="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.Condition.html">Condition type</a>
+ / Condition Constructor</div></div>
+
+    
+<div id="conditionTypePopupContent" class="i-popup-content">
+
+</div>
+<div id="argsPopupContent" class="i-popup-content">
+
+</div>
+
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Condition Constructor</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">Represents a conditional item using the parameter object.</div>
+            
+            
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new GC.Spread.Sheets.ConditionalFormatting.<a href="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.Condition.html">Condition</a>(conditionType, args);</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function Condition( 
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="conditionTypePopupLink" data-popup-contentsource="#conditionTypePopupContent" data-popup-showevent="click mouseenter">conditionType</a></i> : <a href="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.ConditionType.html">ConditionType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="argsPopupLink" data-popup-contentsource="#argsPopupContent" data-popup-showevent="click mouseenter">args</a></i> : Object
+) : <a href="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.Condition.html">Condition</a>;</pre>
+      </div>
+    
+
+      </div>
+    
+            <h4 class=dxh4>Parameters</h4><dl><dt><I>conditionType</I></dt>
+<dd></dd><dt><I>args</I></dt>
+<dd></dd></dl>
+            </div>
+            
+
+            <a name="exampleBookmark"></a>
+            <div class="i-section-heading" id="i-example-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Example</span></div><div id="i-example-section-content" class="i-section-content">The following examples use conditions.
+            
+             <div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-d4807951-8655-4cb0-8d13-da696ee089b6">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-d4807951-8655-4cb0-8d13-da696ee089b6" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> nCondition = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.averageCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.AverageConditionType.above});
+nCondition.ranges([<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Range(0, 0, 10, 3)]);
+<span style="color: #0000FF; ">var</span> validator = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.DataValidation.DefaultDataValidator(nCondition);
+validator.type(GC.Spread.Sheets.DataValidation.CriteriaType.custom);
+activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).validator(validator);
+spread.options.highlightInvalidData = <span style="color: #0000FF; ">true</span>;
+activeSheet.setValue(0, 0, 5);
+activeSheet.setValue(1, 0, 15);</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-1f691822-c179-4902-bac7-d51f7fd88813">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-1f691822-c179-4902-bac7-d51f7fd88813" class="i-filtered-content-Javascript i-code"><pre>activeSheet.suspendPaint();
+<span style="color: #0000FF; ">var</span> rowFilter = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Filter.HideRowFilter(<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Range(-1, 0, -1, 1));
+activeSheet.rowFilter(rowFilter);
+activeSheet.getCell(0, 0).value(<span style="color: #800000; ">&quot;A1&quot;</span>).backColor(<span style="color: #800000; ">&quot;blue&quot;</span>);
+activeSheet.getCell(1, 0).value(<span style="color: #800000; ">&quot;A2&quot;</span>).backColor(<span style="color: #800000; ">&quot;yellow&quot;</span>);
+activeSheet.getCell(2, 0).value(<span style="color: #800000; ">&quot;A3&quot;</span>).backColor(<span style="color: #800000; ">&quot;red&quot;</span>);
+activeSheet.getCell(3, 0).value(<span style="color: #800000; ">&quot;A4&quot;</span>).backColor(<span style="color: #800000; ">&quot;green&quot;</span>);
+activeSheet.getCell(4, 0).value(<span style="color: #800000; ">&quot;A5&quot;</span>).backColor(<span style="color: #800000; ">&quot;yellow&quot;</span>);
+<span style="color: #0000FF; ">var</span> nCondition = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.colorCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.ColorCompareType.backgroundColor, expected: <span style="color: #800000; ">&quot;yellow&quot;</span>});
+<span style="color: #0000FF; ">var</span> filter = activeSheet.rowFilter();
+filter.addFilterItem(0, nCondition);
+filter.filter(0);
+activeSheet.resumePaint();</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-cbede9b8-9b84-4388-bb09-2f586514bff8">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-cbede9b8-9b84-4388-bb09-2f586514bff8" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> nCondition = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.dateCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.DateCompareType.before, expected: <span style="color: #0000FF; ">new</span> Date(2012, 11, 31)});
+<span style="color: #0000FF; ">var</span> validator = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.DataValidation.DefaultDataValidator(nCondition);
+validator.type(GC.Spread.Sheets.DataValidation.CriteriaType.custom);
+activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).validator(validator);
+spread.options.highlightInvalidData = <span style="color: #0000FF; ">true</span>;
+activeSheet.setValue(0, 0, <span style="color: #0000FF; ">new</span> Date(2012, 12, 12));</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-5f5f8b77-98ee-4e5e-9b4e-26288ca9577c">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-5f5f8b77-98ee-4e5e-9b4e-26288ca9577c" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> style = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Style();
+style.backColor = <span style="color: #800000; ">&quot;red&quot;</span>;
+<span style="color: #0000FF; ">var</span> rule = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.NormalConditionRule(GC.Spread.Sheets.ConditionalFormatting.RuleType.dateOccurringRule, [<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Range(0,0,10,1)], style, <span style="color: #0000FF; ">null</span>, <span style="color: #0000FF; ">null</span>, <span style="color: #0000FF; ">null</span>, <span style="color: #0000FF; ">null</span>, <span style="color: #0000FF; ">null</span>, GC.Spread.Sheets.ConditionalFormatting.DateOccurringType.nextWeek);
+activeSheet.conditionalFormats.addRule(rule);
+
+<span style="color: #0000FF; ">var</span> d = <span style="color: #0000FF; ">new</span> Date();
+activeSheet.setValue(0, 0, d);
+activeSheet.setValue(1, 0, <span style="color: #0000FF; ">new</span> Date(d.setDate(d.getDate()+1)));
+activeSheet.setValue(2, 0, <span style="color: #0000FF; ">new</span> Date(d.setDate(d.getDate()+5)));
+activeSheet.setValue(3, 0,<span style="color: #0000FF; ">new</span> Date(d.setDate(d.getDate()+6)));
+activeSheet.setValue(4, 0,<span style="color: #0000FF; ">new</span> Date(d.setDate(d.getDate()+7)));
+activeSheet.setValue(5, 0, <span style="color: #0000FF; ">new</span> Date(d.setDate(d.getDate()+8)));</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-759de24a-fc07-44e6-9526-8e7d8760d3a5">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-759de24a-fc07-44e6-9526-8e7d8760d3a5" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> nCondition = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.formulaCondition, {customValueType: GC.Spread.Sheets.ConditionalFormatting.CustomValueType.formula,
+    formula: <span style="color: #800000; ">&quot;A1&gt;0&quot;</span>});
+<span style="color: #0000FF; ">var</span> validator = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.DataValidation.DefaultDataValidator(nCondition);
+validator.type(GC.Spread.Sheets.DataValidation.CriteriaType.custom);
+activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).validator(validator);
+spread.options.highlightInvalidData = <span style="color: #0000FF; ">true</span>;
+activeSheet.setValue(0, 0, -4);</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-48016544-1b23-43e8-b0db-4257f7d632e5">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-48016544-1b23-43e8-b0db-4257f7d632e5" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> nCondition = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.numberCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.greaterThan, expected: 5});
+<span style="color: #0000FF; ">var</span> validator = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.DataValidation.DefaultDataValidator(nCondition);
+validator.type(GC.Spread.Sheets.DataValidation.CriteriaType.custom);
+activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).validator(validator);
+spread.options.highlightInvalidData = <span style="color: #0000FF; ">true</span>;
+activeSheet.setValue(0, 0, 5);</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-e750cdd5-f85a-40ce-943c-de40acb7ee9a">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-e750cdd5-f85a-40ce-943c-de40acb7ee9a" class="i-filtered-content-Javascript i-code"><pre>spread.options.highlightInvalidData = <span style="color: #0000FF; ">true</span>;
+<span style="color: #0000FF; ">var</span> dv = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.DataValidation.createTextLengthValidator(GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.greaterThan, 5);
+activeSheet.setDataValidator(0, 0, 1, 1, dv, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setValue(0, 0, <span style="color: #800000; ">&quot;abcf&quot;</span>);</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-bb16ca76-8c27-4d77-bbc0-ec151e1543c2">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-bb16ca76-8c27-4d77-bbc0-ec151e1543c2" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> nCondition = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.textCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.TextCompareType.contains, expected: <span style="color: #800000; ">&quot;test&quot;</span>});
+<span style="color: #0000FF; ">var</span> validator = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.DataValidation.DefaultDataValidator(nCondition);
+validator.type(GC.Spread.Sheets.DataValidation.CriteriaType.custom);
+activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).validator(validator);
+spread.options.highlightInvalidData = <span style="color: #0000FF; ">true</span>;
+activeSheet.setValue(0, 0, <span style="color: #800000; ">&quot;testing&quot;</span>);
+<span style="color: #008000; ">//Type text in 0,0 that does not contain &quot;test&quot; to see invalid symbol</span></pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-7b393b98-bdda-4ae5-8576-911412bc157a">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-7b393b98-bdda-4ae5-8576-911412bc157a" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> nCondition = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.uniqueCondition, {expected: <span style="color: #0000FF; ">true</span>, ranges: GC.Spread.Sheets.Range(0, 5, 1, 1)});
+<span style="color: #0000FF; ">var</span> validator = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.DataValidation.DefaultDataValidator(nCondition);
+validator.type(GC.Spread.Sheets.DataValidation.CriteriaType.Custom);
+activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).validator(validator);
+spread.options.highlightInvalidData = <span style="color: #0000FF; ">true</span>;
+activeSheet.setValue(0, 0, 5);</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-291e1509-043a-46db-b9e6-f050bb2e0dd6">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-291e1509-043a-46db-b9e6-f050bb2e0dd6" class="i-filtered-content-Javascript i-code"><pre>activeSheet.suspendPaint();
+<span style="color: #0000FF; ">for</span> (<span style="color: #0000FF; ">var</span> row = 0; row &lt; 25; row++) {
+    activeSheet.setValue(row, 0, row, GC.Spread.Sheets.SheetArea.viewport);
+}
+<span style="color: #0000FF; ">var</span> rowFilter = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Filter.HideRowFilter(<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Range(0, 0, 25, 1));
+activeSheet.rowFilter(rowFilter);
+<span style="color: #0000FF; ">var</span> top10Con = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.top10Condition, {compareType: GC.Spread.Sheets.ConditionalFormatting.Top10ConditionType.top, expected: 10});
+<span style="color: #0000FF; ">var</span> filter = activeSheet.rowFilter();
+filter.addFilterItem(0, top10Con);
+filter.filter(0);
+activeSheet.resumePaint();</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-634223c6-cd72-490e-a34e-3de8d0c4614d">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-634223c6-cd72-490e-a34e-3de8d0c4614d" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> condition1 = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.dateCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.DateCompareType.afterEqualsTo, expected: <span style="color: #0000FF; ">new</span> Date(2012, 11, 31)});
+<span style="color: #0000FF; ">var</span> condition2 = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.dateCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.DateCompareType.beforeEqualsTo, expected: <span style="color: #0000FF; ">new</span> Date(2013, 11, 31)});
+<span style="color: #0000FF; ">var</span> nCondition = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.relationCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.LogicalOperators.and, item1: condition1, item2: condition2});
+<span style="color: #0000FF; ">var</span> validator = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.DataValidation.DefaultDataValidator(nCondition);
+validator.type(GC.Spread.Sheets.DataValidation.CriteriaType.custom);
+activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).validator(validator);
+spread.options.highlightInvalidData = <span style="color: #0000FF; ">true</span>;
+activeSheet.setValue(0, 0, <span style="color: #0000FF; ">new</span> Date(2012, 11, 25));</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-74c3720f-bba5-4838-84a7-d61a6516b3e5">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-74c3720f-bba5-4838-84a7-d61a6516b3e5" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> nCondition = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.cellValueCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.GeneralComparisonOperators.greaterThan, expected: 4, formula: <span style="color: #800000; ">&quot;$A$1&quot;</span>});
+<span style="color: #0000FF; ">var</span> validator = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.DataValidation.DefaultDataValidator(nCondition);
+validator.type(GC.Spread.Sheets.DataValidation.CriteriaType.custom);
+activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).validator(validator);
+spread.options.highlightInvalidData = <span style="color: #0000FF; ">true</span>;
+activeSheet.setValue(0, 0, -1);</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-51ef8cb7-beaf-4e37-bafb-d548045ed7fd">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-51ef8cb7-beaf-4e37-bafb-d548045ed7fd" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> nCondition = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.areaCondition, {expected: 4});
+nCondition.formula(<span style="color: #800000; ">&quot;$C$1&quot;</span>);
+<span style="color: #0000FF; ">var</span> validator = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.DataValidation.DefaultDataValidator(nCondition);
+validator.type(GC.Spread.Sheets.DataValidation.CriteriaType.custom);
+activeSheet.getCell(1, 2, GC.Spread.Sheets.SheetArea.viewport).validator(validator);
+spread.options.highlightInvalidData = <span style="color: #0000FF; ">true</span>;
+activeSheet.setValue(0, 2, 3);
+activeSheet.setValue(1, 2, 5);
+</pre></div>
+	</div>
+</div>
+</div>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.Condition.html">Condition type</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

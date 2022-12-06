@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>setBorder Method | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n6504","initialNodeContainer":"c248","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.CellRange~setBorder"/>
+    <meta name="Description" content="Sets the border for the specified area." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets.CellRange_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+ / <a href="SpreadJS~GC.Spread.Sheets.CellRange.html">CellRange type</a>
+ / setBorder Method</div></div>
+
+    
+<div id="borderPopupContent" class="i-popup-content">
+The border line.
+</div>
+<div id="optionPopupContent" class="i-popup-content">
+<p>For example, {all:true}, {left:true, right:true}. The following settings are available:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>option.all</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies all directions for the border.</td>
+        </tr>
+
+        <tr>
+            <td>option.left</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the left border.</td>
+        </tr>
+
+        <tr>
+            <td>option.top</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the top border.</td>
+        </tr>
+
+        <tr>
+            <td>option.right</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the right border.</td>
+        </tr>
+
+        <tr>
+            <td>option.bottom</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the bottom border.</td>
+        </tr>
+
+        <tr>
+            <td>option.outline</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the left, top, right, and bottom borders.</td>
+        </tr>
+
+        <tr>
+            <td>option.inside</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the inner horizontal and vertical borders.</td>
+        </tr>
+
+        <tr>
+            <td>option.innerHorizontal</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the horizontal border.</td>
+        </tr>
+
+        <tr>
+            <td>option.innerVertical</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the vertical border.</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div id="options.allPopupContent" class="i-popup-content">
+all border.
+</div>
+<div id="options.leftPopupContent" class="i-popup-content">
+left border.
+</div>
+<div id="options.topPopupContent" class="i-popup-content">
+top border.
+</div>
+<div id="options.rightPopupContent" class="i-popup-content">
+right border.
+</div>
+<div id="options.bottomPopupContent" class="i-popup-content">
+bottom border.
+</div>
+<div id="options.outlinePopupContent" class="i-popup-content">
+outline border.
+</div>
+<div id="options.insidePopupContent" class="i-popup-content">
+inside border.
+</div>
+<div id="options.innerHorizontalPopupContent" class="i-popup-content">
+innerHorizontal border.
+</div>
+<div id="options.innerVerticalPopupContent" class="i-popup-content">
+innerVertical border.
+</div>
+<div id="options.diagonalUpPopupContent" class="i-popup-content">
+diagonalUp border.
+</div>
+<div id="options.diagonalDownPopupContent" class="i-popup-content">
+diagonalDown border.
+</div>
+
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">setBorder Method</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">Sets the border for the specified area.</div>
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new <a href="SpreadJS~GC.Spread.Sheets.CellRange.html">GC.Spread.Sheets.CellRange</a>(sheet, row, col, rowCount, colCount, sheetArea);
+var value; // Type: any
+value = instance.setBorder(border,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;option,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.all,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.left,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.top,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.right,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.bottom,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.outline,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.inside,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.innerHorizontal,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.innerVertical,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.diagonalUp,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.diagonalDown);</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function setBorder( 
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="borderPopupLink" data-popup-contentsource="#borderPopupContent" data-popup-showevent="click mouseenter">border</a></i> : <a href="SpreadJS~GC.Spread.Sheets.LineBorder.html">LineBorder</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="optionPopupLink" data-popup-contentsource="#optionPopupContent" data-popup-showevent="click mouseenter">option</a></i> : Object,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.allPopupLink" data-popup-contentsource="#options.allPopupContent" data-popup-showevent="click mouseenter">options.all</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.leftPopupLink" data-popup-contentsource="#options.leftPopupContent" data-popup-showevent="click mouseenter">options.left</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.topPopupLink" data-popup-contentsource="#options.topPopupContent" data-popup-showevent="click mouseenter">options.top</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.rightPopupLink" data-popup-contentsource="#options.rightPopupContent" data-popup-showevent="click mouseenter">options.right</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.bottomPopupLink" data-popup-contentsource="#options.bottomPopupContent" data-popup-showevent="click mouseenter">options.bottom</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.outlinePopupLink" data-popup-contentsource="#options.outlinePopupContent" data-popup-showevent="click mouseenter">options.outline</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.insidePopupLink" data-popup-contentsource="#options.insidePopupContent" data-popup-showevent="click mouseenter">options.inside</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.innerHorizontalPopupLink" data-popup-contentsource="#options.innerHorizontalPopupContent" data-popup-showevent="click mouseenter">options.innerHorizontal</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.innerVerticalPopupLink" data-popup-contentsource="#options.innerVerticalPopupContent" data-popup-showevent="click mouseenter">options.innerVertical</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.diagonalUpPopupLink" data-popup-contentsource="#options.diagonalUpPopupContent" data-popup-showevent="click mouseenter">options.diagonalUp</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.diagonalDownPopupLink" data-popup-contentsource="#options.diagonalDownPopupContent" data-popup-showevent="click mouseenter">options.diagonalDown</a></i> : boolean
+) : any;</pre>
+      </div>
+    
+
+      </div>
+    
+            <h4 class=dxh4>Parameters</h4><dl><dt><I>border</I></dt>
+<dd>The border line.</dd><dt><I>option</I></dt>
+<dd><p>For example, {all:true}, {left:true, right:true}. The following settings are available:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>option.all</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies all directions for the border.</td>
+        </tr>
+
+        <tr>
+            <td>option.left</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the left border.</td>
+        </tr>
+
+        <tr>
+            <td>option.top</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the top border.</td>
+        </tr>
+
+        <tr>
+            <td>option.right</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the right border.</td>
+        </tr>
+
+        <tr>
+            <td>option.bottom</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the bottom border.</td>
+        </tr>
+
+        <tr>
+            <td>option.outline</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the left, top, right, and bottom borders.</td>
+        </tr>
+
+        <tr>
+            <td>option.inside</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the inner horizontal and vertical borders.</td>
+        </tr>
+
+        <tr>
+            <td>option.innerHorizontal</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the horizontal border.</td>
+        </tr>
+
+        <tr>
+            <td>option.innerVertical</td>
+
+            <td>boolean type</td>
+
+            <td>Specifies the vertical border.</td>
+        </tr>
+    </tbody>
+</table></dd><dt><I>options.all</I></dt>
+<dd>all border.</dd><dt><I>options.left</I></dt>
+<dd>left border.</dd><dt><I>options.top</I></dt>
+<dd>top border.</dd><dt><I>options.right</I></dt>
+<dd>right border.</dd><dt><I>options.bottom</I></dt>
+<dd>bottom border.</dd><dt><I>options.outline</I></dt>
+<dd>outline border.</dd><dt><I>options.inside</I></dt>
+<dd>inside border.</dd><dt><I>options.innerHorizontal</I></dt>
+<dd>innerHorizontal border.</dd><dt><I>options.innerVertical</I></dt>
+<dd>innerVertical border.</dd><dt><I>options.diagonalUp</I></dt>
+<dd>diagonalUp border.</dd><dt><I>options.diagonalDown</I></dt>
+<dd>diagonalDown border.</dd></dl>
+
+            </div>
+            
+
+            <a name="exampleBookmark"></a>
+            <div class="i-section-heading" id="i-example-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Example</span></div><div id="i-example-section-content" class="i-section-content">This example creates borders.
+            
+             <div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-46fe2b82-7fdd-4637-8a2e-11a31e6fcbdd">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-46fe2b82-7fdd-4637-8a2e-11a31e6fcbdd" class="i-filtered-content-Javascript i-code"><pre>sheet.getCell(1, 1).borderTop(<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#F0F8FF&quot;</span>,GC.Spread.Sheets.LineStyle.double));
+sheet.getCell(1, 1).borderLeft(<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#F0F8FF&quot;</span>,GC.Spread.Sheets.LineStyle.hair));
+sheet.getCell(1, 1).borderRight(<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#FAEBD7&quot;</span>,GC.Spread.Sheets.LineStyle.dashDot));
+sheet.getCell(1, 1).borderBottom(<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#00FFFF&quot;</span>,GC.Spread.Sheets.LineStyle.medium));
+sheet.getRange(-1, 5, -1, 1, GC.Spread.Sheets.SheetArea.viewport).borderTop(<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#F0FFFF&quot;</span>,GC.Spread.Sheets.LineStyle.medium));
+sheet.getRange(-1, 5, -1, 1, GC.Spread.Sheets.SheetArea.viewport).borderLeft(<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#F5F5DC&quot;</span>,GC.Spread.Sheets.LineStyle.medium));
+sheet.getRange(-1, 5, -1, 1, GC.Spread.Sheets.SheetArea.viewport).borderRight(<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#FF02FF&quot;</span>, GC.Spread.Sheets.LineStyle.dashDot));
+sheet.getRange(-1, 5, -1, 1, GC.Spread.Sheets.SheetArea.viewport).borderBottom (<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#FFE4C4&quot;</span>,GC.Spread.Sheets.LineStyle.thin));
+sheet.getRange(2, 2, 2, 2, GC.Spread.Sheets.SheetArea.viewport).setBorder(<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#8A2BE2&quot;</span>,GC.Spread.Sheets.LineStyle.thick), { all:<span style="color: #0000FF; ">true</span> });
+sheet.getRange(5, -1, 1, -1, GC.Spread.Sheets.SheetArea.viewport).borderTop( <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#A52A2A&quot;</span>,GC.Spread.Sheets.LineStyle.mediumDashed));
+sheet.getRange(5, -1, 1, -1, GC.Spread.Sheets.SheetArea.viewport).borderLeft( <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#FF02FF&quot;</span>,GC.Spread.Sheets.LineStyle.medium));
+sheet.getRange(5, -1, 1, -1, GC.Spread.Sheets.SheetArea.viewport).borderRight(<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#5F9EA0&quot;</span>, GC.Spread.Sheets.LineStyle.dashDot));
+sheet.getRange(5, -1, 1, -1, GC.Spread.Sheets.SheetArea.viewport).borderBottom (<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;#6495ED&quot;</span>,GC.Spread.Sheets.LineStyle.dotted));</pre></div>
+	</div>
+</div>
+</div>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets.CellRange.html">CellRange type</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

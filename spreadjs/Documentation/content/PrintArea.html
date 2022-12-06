@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Print Area | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n723","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="e68bb7d2-1ce1-4518-bf12-b0acdb69d8a6"/>
+    <meta name="Microsoft.Help.TocParent" content="4938901c-996c-4cf4-b1ac-a40b6edf52a6"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="printing.html">Print</a>
+ / Print Area</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Print Area</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS defines a print range in a worksheet by the custom name “Print_Area” whenever the user sets a print area. The main benefits of the “Print_Area” custom name are:</p>
+
+<ul>
+    <li>The print area updates when the user inserts or deletes a row or column.</li>
+
+    <li>The custom name can be used in formula functions.</li>
+
+    <li>The print area updates automatically when a user sets "Print_Area" to a formula.</li>
+</ul>
+
+<h3>Interaction with Name Manager</h3>
+
+<p>The SpreadJS Name Manager adds a "Print_Area" custom name with the same reference as the set print area. It can be selected in the worksheet by accessing it through the name box dropdown.</p>
+
+<p><img border="0" alt="" src="images/printarea.gif" /></p>
+
+<p>The users can also manually create or edit the "Print_Area" custom name like any other custom name through the Name Manager dialog. The custom name is neither culture-related nor case-sensitive.</p>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> The “Print_Area” custom name is valid when it is in sheet scope and refers to the range of the sheet. It acts only as a custom name if invalid.</p>
+
+    <p>Hence, users can add a custom name "Print_Area" with the workbook scope, but not affect the print area.</p>
+</div>
+
+<h3>Interaction with&nbsp;Print Information</h3>
+
+<p>The print range fetched from the “Print_Area” custom name sets the values of the following&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo.html">PrintInfo</a> class methods: <em>rowStart</em>, <em>rowEnd</em>, <em>columnStart</em>, and <em>columnEnd</em>.</p>
+
+<p>Conversely, the class methods set up the “Print_Area” custom name in the SpreadJS worksheet. It is recommended to set the print range either through the custom name "Print_Area" or through the PrintInfo methods, and not together.</p>
+
+<h4>Examples</h4>
+
+<p>The following code sample shows how the “Print_Area” custom name affects the PrintInfo methods.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Configure Workbook and Worksheet
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(<span style="COLOR: #800000">"ss"</span>);
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+
+<span style="COLOR: #0000ff">var</span> printInfo = sheet.printInfo();
+
+<span style="COLOR: #008000">// Print_Area affecting PrintInfo
+</span>sheet.addCustomName(<span style="COLOR: #800000">"Print_Area"</span>, <span style="COLOR: #800000">"=A1:B5"</span>)
+console.log(printInfo.rowStart())   <span style="COLOR: #008000">// Output: 0
+</span>console.log(printInfo.rowEnd())     <span style="COLOR: #008000">// Output: 4
+</span>
+sheet.removeCustomName(<span style="COLOR: #800000">"Print_Area"</span>, <span style="COLOR: #800000">""</span>)
+console.log(printInfo.rowStart())   <span style="COLOR: #008000">// Output: -1
+</span>console.log(printInfo.rowEnd())     <span style="COLOR: #008000">// Output: -1</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The following code sample shows how&nbsp;the PrintInfo methods affect the “Print_Area” custom name.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// PrintInfo affecting Print_Area
+</span>printInfo.rowStart(1)
+<span style="COLOR: #008000">// Assume the rowCount of the sheet is 20
+</span>sheet.getCustomName(<span style="COLOR: #800000">"Print_Area"</span>)
+<span style="COLOR: #008000">// Return a NameInfo instance, and the formula is "=2:20"
+</span>console.log(printInfo.rowStart())   <span style="COLOR: #008000">// Output: 1
+</span>console.log(printInfo.rowEnd())     <span style="COLOR: #008000">// Output: -1
+</span>
+printInfo.rowEnd(15)
+sheet.getCustomName(<span style="COLOR: #800000">"Print_Area"</span>)
+<span style="COLOR: #008000">// Return a NameInfo instance, and the formula is "=2:16"
+</span>console.log(printInfo.rowEnd())     <span style="COLOR: #008000">// Output: 15</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The following code sample shows how the “Print_Area” custom name and the PrintInfo methods affect each other.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Print_Area and PrintInfo affecting each other
+</span>sheet.addCustomName(<span style="COLOR: #800000">"Print_Area"</span>, <span style="COLOR: #800000">"=A1:B5"</span>)
+console.log(printInfo.rowStart())   <span style="COLOR: #008000">// Output: 0
+</span>console.log(printInfo.rowEnd())     <span style="COLOR: #008000">// Output: 4
+</span>
+printInfo.rowStart(1);
+sheet.getCustomName(<span style="COLOR: #800000">"Print_Area"</span>)
+<span style="COLOR: #008000">// Return a NameInfo instance, and the formula is "=A2:B5"</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Interaction with&nbsp;Formulas</h3>
+
+<p>SpreadJS provides the ability to use the custom name “Print_Area” in formulas. This helps to apply conditional statements that can create dynamic print areas in a worksheet.</p>
+
+<p>For example, you can enter the formula “=IFERROR(ROWS(Print_Area),"none")” to display the number of rows to print, and display "none" if it does not exist.</p>
+
+<p>You can also update the print area automatically depending on whether values are inserted in a cell as shown in the code example below.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Configure Workbook and Worksheet
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(<span style="COLOR: #800000">"ss"</span>);
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+
+<span style="COLOR: #0000ff">var</span> printInfo = sheet.printInfo();
+
+<span style="COLOR: #008000">// Formula with conditional statement
+</span>sheet.addCustomName(<span style="COLOR: #800000">"Print_Area"</span>, <span style="COLOR: #800000">"=IF(Sheet1!$A$1,Sheet1!$B$1:$C$5,Sheet1!$D$5:$F$8)"</span>)
+<span style="COLOR: #008000">// Assume A1 is a truthy value
+</span>console.log(printInfo.rowStart())
+<span style="COLOR: #008000">// Output: 0
+</span>console.log(printInfo.rowEnd())
+<span style="COLOR: #008000">// Output: 4
+</span>
+printInfo.rowStart(1);
+sheet.getCustomName(<span style="COLOR: #800000">"Print_Area"</span>)
+<span style="COLOR: #008000">// Return a NameInfo instance, and the formula is "=B2:C5"</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

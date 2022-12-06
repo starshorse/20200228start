@@ -1,0 +1,540 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Work with Cells | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n235","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="16969aa5-6438-4ae0-a478-052f9cb7b12f"/>
+    <meta name="Microsoft.Help.TocParent" content="e9628ea1-c098-40b6-a16a-ca0248291974"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / Work with Cells</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Work with Cells</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows you to perform various operations on cells as explained below:</p>
+
+<h3>Get and Set Cell Values</h3>
+
+<p><img border="0" alt="Cell values" src="images/codecellvalue.png" /></p>
+
+<p>This example gets and sets cell values.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+    <span style="COLOR: #0000ff">var</span> spread =
+    <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+    <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+    sheet.getCell(0, 0).formatter(<span style="COLOR: #800000">"0.00_);(0.00)"</span>);
+    sheet.getCell(1, 0).formatter(<span style="COLOR: #800000">"0.00_);(0.00)"</span>);
+    sheet.getCell(0, 1).formatter(<span style="COLOR: #800000">"0.00_);(0.00)"</span>);
+    sheet.getCell(1, 1).formatter(<span style="COLOR: #800000">"0.00_);(0.00)"</span>);
+   
+    <span style="COLOR: #008000">// Set values to Text property
+</span>    sheet.getCell(0, 0).text(<span style="COLOR: #800000">"10"</span>);
+   
+    <span style="COLOR: #008000">//Set values by calling SetText method
+</span>    sheet.setText(1, 0, <span style="COLOR: #800000">"10"</span>);
+   
+    <span style="COLOR: #008000">//Set values to Value property.
+</span>    sheet.getCell(0, 1).value(10);
+   
+    <span style="COLOR: #008000">//Set values by calling SetValue method.
+</span>    sheet.setValue(1, 1, 10);
+
+    <span style="COLOR: #008000">//Get cell values
+</span>    $(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span>()
+     {
+       alert(<span style="COLOR: #800000">"Obtaining cell values by referring to Text property: "</span> +
+       sheet.getCell(0, 0).text() + <span style="COLOR: #800000">"\n"</span> +
+       <span style="COLOR: #800000">"Obtaining cell values by calling GetText method: "</span> + sheet.getText(1, 0) + <span style="COLOR: #800000">"\n"</span> +
+       <span style="COLOR: #800000">"Obtaining cell values by referring to Value property: "</span> +
+       sheet.getCell(0, 1).value() + <span style="COLOR: #800000">"\n"</span> +
+       <span style="COLOR: #800000">"Obtaining cell values by calling GetValue method: "</span> + sheet.getValue(1, 1));
+     });
+
+}); 
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Set Active Cell</h3>
+
+<p>This example sets the active cell.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span> ()
+{  
+     <span style="COLOR: #008000">// Set cell (3,3) to active
+</span>     activeSheet.setActiveCell(3, 3);
+ }); 
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div><br />
+
+<h3>Set&nbsp;Location of&nbsp;Active Cell</h3>
+
+<p><img border="0" alt="Active cell" src="images/codecellact.png" /></p>
+
+<p>This example sets the location of active cell.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span> ()
+{
+   <span style="COLOR: #008000">// Set cell (3,3) to active
+</span>   sheet.setActiveCell(3, 3);
+    
+   <span style="COLOR: #008000">// Display the active cell on top left
+</span>   sheet.showCell(3, 3,
+    GC.Spread.Sheets.VerticalPosition.top,
+    GC.Spread.Sheets.HorizontalPosition.left);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Select Multiple Cells</h3>
+
+<p><img border="0" alt="Multiple selections in a worksheet" src="images/codeselect.png" /></p>
+
+<p>This example creates multiple selections.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+    <span style="COLOR: #0000ff">var</span> spread =
+    <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+    <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+   
+    <span style="COLOR: #008000">// Allow selection of multiple ranges
+</span>    sheet.selectionPolicy(GC.Spread.Sheets.SelectionPolicy.MultiRange);
+   
+    <span style="COLOR: #008000">// Create two different selection ranges.
+</span>    sheet.addSelection(0, 0, 2, 2);
+    sheet.addSelection(3, 3, 2, 2);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3><br />
+Get Ranges of Selected Cells</h3>
+
+<p>This example gets the selected ranges.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+window.onload = <span style="COLOR: #0000ff">function</span>()
+{
+   <span style="COLOR: #0000ff">var</span> spread =
+   <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+   <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+   activeSheet.setRowCount(5);
+   activeSheet.setColumnCount(5);
+   $(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span>()
+   {       
+     <span style="COLOR: #008000">// Acquiring selection ranges
+</span>     <span style="COLOR: #0000ff">var</span> selectedRanges = spread.getActiveSheet().getSelections();
+     <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> i = 0; i &lt; selectedRanges.length; i++)
+        {
+             console.log(<span style="COLOR: #800000">"---------------------------"</span>);
+             console.log(<span style="COLOR: #800000">"Using Range class"</span>);
+             console.log(<span style="COLOR: #800000">"-------------------------"</span>);
+             console.log(<span style="COLOR: #800000">"Selected top row index: "</span> + selectedRanges[i].row);
+             console.log(<span style="COLOR: #800000">"Number of selected rows: "</span> + selectedRanges[i].rowCount);
+             console.log(<span style="COLOR: #800000">"Selected first column index: "</span> + selectedRanges[i].col);
+             console.log(<span style="COLOR: #800000">"Number of selected columns: "</span> + selectedRanges[i].colCount);
+         }
+   });
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Set Conditional Formatting for Cells</h3>
+
+<p>This example sets conditional formattinmg styles&nbsp;for cells.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+window.onload = <span style="COLOR: #0000ff">function</span>()
+{
+  <span style="COLOR: #0000ff">var</span> spread =
+  <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+  <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+
+  <span style="COLOR: #008000">// Create respective conditional styles.
+</span>  <span style="COLOR: #0000ff">var</span> styleBlue = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+  <span style="COLOR: #0000ff">var</span> stylePink = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+  <span style="COLOR: #0000ff">var</span> styleLime = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+  <span style="COLOR: #0000ff">var</span> styleYellow = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+  <span style="COLOR: #0000ff">var</span> styleEmpty = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+  styleBlue.backColor = <span style="COLOR: #800000">"blue"</span>;
+  styleBlue.foreColor = <span style="COLOR: #800000">"white"</span>;
+  stylePink.backColor = <span style="COLOR: #800000">"pink"</span>;
+  styleLime.backColor = <span style="COLOR: #800000">"lime"</span>;
+  styleYellow.backColor = <span style="COLOR: #800000">"yellow"</span>;
+  styleEmpty.backColor = undefined;
+  styleEmpty.foreColor = undefined;
+
+  <span style="COLOR: #008000">// Set conditional formats to respective cells.
+</span>  activeSheet.conditionalFormats.addCellValueRule(
+  GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.EqualsTo,
+  0, undefined, styleEmpty,
+  [<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(1, 1, 1, 1)]);
+  activeSheet.conditionalFormats.addCellValueRule(
+  GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.LessThan,
+  10,undefined,styleBlue,
+  [<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(1, 1, 1, 1)]);
+  activeSheet.conditionalFormats.addCellValueRule(
+  GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.Between,
+  20,50,stylePink,
+  [<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(2, 1, 1, 1)]);
+  activeSheet.conditionalFormats.addCellValueRule(
+  GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.Between,
+  50,80,styleLime,
+  [<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(3, 1, 1, 1)]);
+  activeSheet.conditionalFormats.addCellValueRule(
+  GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.GreaterThan,
+  80, undefined, styleYellow,
+  [<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(4, 1, 1, 1)]);
+  activeSheet.getCell(2, 1).value(25);
+  activeSheet.getCell(3, 1).value(77);
+  activeSheet.getCell(4, 1).value(88);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3><br />
+Get Cell Position and Size</h3>
+
+<p>This example gets the location and size of specific cells.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+spread.getActiveSheet().bind(GC.Spread.Sheets.Events.CellClick, <span style="COLOR: #0000ff">function</span> (e, info)
+{
+     <span style="COLOR: #0000ff">if</span>(info.sheetArea ===GC.Spread.Sheets.SheetArea.viewport)
+   {
+     console.log(<span style="COLOR: #800000">"Clicked cell index ("</span> + info.row + <span style="COLOR: #800000">","</span> + info.col + <span style="COLOR: #800000">")"</span>);
+    
+     <span style="COLOR: #008000">/* Acquire the coordinate information of regular cells which exist at
+     the specified index position */</span>
+
+     <span style="COLOR: #0000ff">var</span> cellRect = spread.getActiveSheet().getCellRect(info.row, info.col);
+     console.log(<span style="COLOR: #800000">"X coordinate:"</span> + cellRect.x);
+     console.log(<span style="COLOR: #800000">"Y coordinate:"</span> + cellRect.y);
+     console.log(<span style="COLOR: #800000">"Cell width:"</span> + cellRect.width);
+     console.log(<span style="COLOR: #800000">"Cell height:"</span> + cellRect.height);
+     }
+ });
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Get Cell Index from Mouse Click</h3>
+
+<p>You can get the cell index when clicking on a cell.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook($(<span style="COLOR: #800000">"#ss"</span>)[0]);
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+$(<span style="COLOR: #800000">"#ss"</span>).click(<span style="COLOR: #0000ff">function</span> (e)
+{
+    
+  <span style="COLOR: #008000">/* Acquire cell index from mouse-clicked point of regular cells which are
+    neither fixed rows/columns nor row/column headers.*/</span>
+
+     <span style="COLOR: #0000ff">var</span> offset = $(<span style="COLOR: #800000">"#ss"</span>).offset();
+     <span style="COLOR: #0000ff">var</span> x = e.pageX - offset.left;
+     <span style="COLOR: #0000ff">var</span> y = e.pageY - offset.top;
+     <span style="COLOR: #0000ff">var</span> target = spread.getActiveSheet().hitTest(x, y);
+     <span style="COLOR: #0000ff">if</span>(target &amp;&amp;
+     (target.rowViewportIndex === 0 || target.rowViewportIndex === 1) &amp;&amp;
+     (target.colViewportIndex === 0 || target.colViewportIndex === 1))
+     {
+         console.log(<span style="COLOR: #800000">"Row index of mouse-clicked cells: "</span> + target.row);
+         console.log(<span style="COLOR: #800000">"Column index of mouse-clicked cells: "</span> + target.col);
+     }
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

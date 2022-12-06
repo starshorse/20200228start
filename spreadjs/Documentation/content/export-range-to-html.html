@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="In this topic you will learn about exporting a whole worksheet or a range of cells to html string." />
+    
+    <title>Export Range to HTML | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4396","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="In this topic you will learn about exporting a whole worksheet or a range of cells to html string." />
+    
+    <meta name="Microsoft.Help.Id" content="4451aebe-b926-48ba-81ac-0bc27c6d9acb"/>
+    <meta name="Microsoft.Help.TocParent" content="1e75489c-59d6-4b0a-9a1b-127166ecb911"/>
+    <meta name="Microsoft.Help.TocOrder" content="9"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="excelimpexp.html">Import and Export Reference</a>
+ / Export Range to HTML</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Export Range to HTML</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can export a range of cells or an entire worksheet to an HTML string using&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~toHtml.html">toHTML</a> method of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange.html">CellRange</a> class.</p>
+
+<p>The <strong>toHTML</strong> method provides two parameters, <strong>includeStyle</strong> and <strong>headerOptions</strong>. The <strong>includeStyle</strong> parameter indicates whether or not to include style and span, and its default value is true. The <strong>headerOptions</strong> parameter indicates whether or not to include row or column header, when the cell range is whole rows or whole columns in the view port area.</p>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.HeaderOptions.html">HeaderOptions</a> enumeration has 4 options as follows:</p>
+
+<ul>
+    <li><strong>noHeaders</strong>: This is the default value. Removes column and row headers when exporting range data to HTML.</li>
+
+    <li><strong>rowHeaders</strong>: Includes specified row headers when exporting range data to HTML.</li>
+
+    <li><strong>columnHeaders</strong>: Includes specified column headers when exporting range data to HTML.</li>
+
+    <li><strong>allHeaders</strong>: Includes both the specified row and column headers when exporting range data to HTML.</li>
+</ul>
+
+<p>You can use the <strong>includeStyles</strong> parameter to specify whether you want to include the cell styling when exporting the range to HTML string. The default value for this parameter is true.</p>
+
+<p>Below are the features that are supported when exporting range to HTML.</p>
+
+<ul>
+    <li>Cell text</li>
+
+    <li>Cell span</li>
+
+    <li>Cell style settings such as backColor, foreColor, font, vAlign, hAlign, borderLeft, borderRight, borderTop, borderBottom, and textDecoration</li>
+
+    <li>Gridlines</li>
+
+    <li>Row height / Column width</li>
+</ul>
+
+<p>Below are the features that are unsupported when exporting a range to HTML.</p>
+
+<ul>
+    <li>Cell style properties such as textIndent, wordWrap, showEllipsis, shrinkToFit, backgroundImage, cellType, watermark, diagonalDown, diagonalUp, isVerticalText, cellButtons, dropDowns, textOrientation, etc.</li>
+
+    <li>Zoom</li>
+
+    <li>Scrollbar</li>
+
+    <li>TabStrip</li>
+
+    <li>AutoMerge</li>
+
+    <li>Barcode</li>
+
+    <li>Chart</li>
+
+    <li>Comment</li>
+
+    <li>Data bar and Icon set</li>
+
+    <li>Filter</li>
+
+    <li>Picture and custom floating object</li>
+
+    <li>Formula TextBox</li>
+
+    <li>Group</li>
+
+    <li>Hyperlink</li>
+
+    <li>OutlineColumn</li>
+
+    <li>Pivot table</li>
+
+    <li>Shape</li>
+
+    <li>Slicer</li>
+
+    <li>Sparkline</li>
+
+    <li>Status bar</li>
+
+    <li>Table</li>
+
+    <li>Validation</li>
+</ul>
+
+<h3>Export Range to HTML</h3>
+
+<p>Use the <strong>toHTML</strong> method to export&nbsp;selected range to HTML string both at runtime and via code.</p>
+
+<p>You can use&nbsp;the&nbsp;<strong>toHTML</strong> method to export the selected range of viewport area to HTML string at runtime. The following example exports the selected range of cells at runtime in html.</p>
+
+<p><img border="0" alt="Image showing exporting range to html at runtime." src="images/export-range-to-html-runtime.png" /></p>
+
+<p>&nbsp;The following code exports the selected range of viewport area to HTML string at runtime.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//Gets the Html content from selected range of viewport area to an htmlContainer
+</span><span style="COLOR: #0000ff">var</span> r, c, rc, cc;
+<span style="COLOR: #008000">// Acquiring selection range
+</span><span style="COLOR: #0000ff">var</span> selectedRanges = activeSheet.getSelections();
+r = selectedRanges[0].row;
+rc = selectedRanges[0].rowCount;
+c = selectedRanges[0].col;
+cc = selectedRanges[0].colCount;
+<span style="COLOR: #0000ff">var</span> html = activeSheet.getRange(r, c, rc, cc).toHtml();
+document.getElementById(<span style="COLOR: #800000">"htmlContainer"</span>).innerHTML = html;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can also export the selected range of viewport area to HTML string at backend, using code and not at runtime.</p>
+
+<p>The following code exports a specific range of cells [A1:B8] in the worksheet to HTML string.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Gets the Html content from range "A1:B8" of viewport area to an htmlContainer
+</span><span style="COLOR: #0000ff">var</span> html = activeSheet.getRange(<span style="COLOR: #800000">"A1:B8"</span>).toHtml();
+document.getElementById(<span style="COLOR: #800000">"htmlContainer"</span>).innerHTML = html;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Export Whole Worksheet to HTML</h3>
+
+<p>Use the <strong>toHTML</strong> method to export the entire worksheet to HTML string. The following example exports the entire worksheet containing information about the sale of products in different cities and states across the countries.</p>
+
+<p>The following code exports the whole worksheet to HTML string.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Gets the Html content from viewport area having data to an htmlContainer
+</span><span style="COLOR: #0000ff">var</span> html = activeSheet.getRange(-1, -1, -1, -1).toHtml(GC.Spread.Sheets.HeaderOptions.allHeaders);
+document.getElementById(<span style="COLOR: #800000">"htmlContainer"</span>).innerHTML = html;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

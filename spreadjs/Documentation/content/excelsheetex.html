@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="This topic summarizes how the sheet settings are handled when SpreadJS exports to an Excel-formatted file." />
+    
+    <title>Sheet Settings Exported | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4375","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="This topic summarizes how the sheet settings are handled when SpreadJS exports to an Excel-formatted file." />
+    
+    <meta name="Microsoft.Help.Id" content="460572a6-b588-461f-9221-d0691c670f96"/>
+    <meta name="Microsoft.Help.TocParent" content="b53685fc-fd73-4ed5-9eb7-d2fee162bb19"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="excelimpexp.html">Import and Export Reference</a>
+ / <a href="excelexport.html">Excel-Formatted Files Export</a>
+ / Sheet Settings Exported</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Sheet Settings Exported</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>This table summarizes how the Sheet settings are handled when&nbsp;SpreadJS exports to an Excel-formatted file. These functions are in the GC.Spread.Sheets.Worksheet class unless otherwise noted.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Sheet Setting</strong></td>
+
+            <td><strong>Excel Setting and Remarks</strong></td>
+        </tr>
+
+        <tr>
+            <td>name</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>defaults : rowHeight, columnWidth,<br />
+            columnHeaderRowHeight, rowHeaderColumnWidth</td>
+
+            <td>Excel only use the default.colWidth setting, but loads other settings to the column or row header.</td>
+        </tr>
+
+        <tr>
+            <td>columns</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>rows</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>autoGenerateColumns</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>dataSource</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>frozenRowCount or frozenColumnCount</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>frozenTrailingRowCount or frozenTrailingColumnCount</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>rowCount</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>columnCount</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>data</td>
+
+            <td>Excel loads the data from&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>sparkline</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>spans</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>selections</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>selectionBackColor</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>selectionBorderColor</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>activeRowIndex</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>activeColumnIndex</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>gridline</td>
+
+            <td>Excel uses this setting, but if the vertical or horizontal grid line is hidden, then both are exported as hidden in Excel.</td>
+        </tr>
+
+        <tr>
+            <td>allowCellOverflow</td>
+
+            <td>Excel ignores the Sheet setting. allowCellOverflow is always true in Excel.</td>
+        </tr>
+
+        <tr>
+            <td>zoomFactor</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>theme</td>
+
+            <td>Excel uses the first sheet theme as the current theme and ignores other sheet theme settings.</td>
+        </tr>
+
+        <tr>
+            <td>showRowOutline&nbsp;or&nbsp;showColumnOutline</td>
+
+            <td>Excel ignores the Sheet setting. Excel uses the range group that is shown.</td>
+        </tr>
+
+        <tr>
+            <td>rowOutlines or columnOutlines</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>rowFilter</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>conditional formats</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td height="22">sheetTabColor</td>
+
+            <td height="22">Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>frozenlineColor</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>rowHeaderAutoText(Index)&nbsp;or colHeaderAutoText(Index)</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>rowHeaderVisible or colHeaderVisible</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>row header column count</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>column header row count</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>clipboardOptions</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>isProtected</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>borderColor</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>borderWidth</td>
+
+            <td>Excel ignores&nbsp;the Sheet&nbsp;setting. This is specific to&nbsp;SpreadJS.</td>
+        </tr>
+
+        <tr>
+            <td>table</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+
+        <tr>
+            <td>named styles</td>
+
+            <td>Excel uses this setting.</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

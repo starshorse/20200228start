@@ -1,0 +1,35 @@
+﻿(function () { Innovasys.DynamicToc.injectNodeInfo("n7463", "c276", [
+{"id":"n7464","t":"CameraShape","u":"SpreadJS~GC.Spread.Sheets.Shapes~CameraShape.html"},
+{"id":"n7466","t":"ConnectorShape","u":"SpreadJS~GC.Spread.Sheets.Shapes~ConnectorShape.html"},
+{"id":"n7468","t":"GroupShape","u":"SpreadJS~GC.Spread.Sheets.Shapes~GroupShape.html"},
+{"id":"n7470","t":"Shape","u":"SpreadJS~GC.Spread.Sheets.Shapes~Shape.html"},
+{"id":"n7472","t":"ShapeBase","u":"SpreadJS~GC.Spread.Sheets.Shapes~ShapeBase.html"},
+{"id":"n7474","t":"ShapeCollection","u":"SpreadJS~GC.Spread.Sheets.Shapes~ShapeCollection.html"},
+{"id":"n7476","t":"ShapeStyle","u":"SpreadJS~GC.Spread.Sheets.Shapes~ShapeStyle.html"},
+])})();
+(function () { Innovasys.DynamicToc.injectNodeInfo("n7479", "c276", [
+{"id":"n7480","t":"ArrowheadLength","u":"SpreadJS~GC.Spread.Sheets.Shapes~ArrowheadLength.html"},
+{"id":"n7482","t":"ArrowheadStyle","u":"SpreadJS~GC.Spread.Sheets.Shapes~ArrowheadStyle.html"},
+{"id":"n7484","t":"ArrowheadWidth","u":"SpreadJS~GC.Spread.Sheets.Shapes~ArrowheadWidth.html"},
+{"id":"n7486","t":"AutoShapeType","u":"SpreadJS~GC.Spread.Sheets.Shapes~AutoShapeType.html"},
+{"id":"n7488","t":"CompoundType","u":"SpreadJS~GC.Spread.Sheets.Shapes~CompoundType.html"},
+{"id":"n7490","t":"ConnectorType","u":"SpreadJS~GC.Spread.Sheets.Shapes~ConnectorType.html"},
+{"id":"n7492","t":"GradientFillType","u":"SpreadJS~GC.Spread.Sheets.Shapes~GradientFillType.html"},
+{"id":"n7494","t":"HorizontalAlign","u":"SpreadJS~GC.Spread.Sheets.Shapes~HorizontalAlign.html"},
+{"id":"n7496","t":"LinearGradientFillDirection","u":"SpreadJS~GC.Spread.Sheets.Shapes~LinearGradientFillDirection.html"},
+{"id":"n7498","t":"LineCapStyle","u":"SpreadJS~GC.Spread.Sheets.Shapes~LineCapStyle.html"},
+{"id":"n7500","t":"LineJoinStyle","u":"SpreadJS~GC.Spread.Sheets.Shapes~LineJoinStyle.html"},
+{"id":"n7502","t":"ListBoxSelectionType","u":"SpreadJS~GC.Spread.Sheets.Shapes~ListBoxSelectionType.html"},
+{"id":"n7504","t":"PresetLineDashStyle","u":"SpreadJS~GC.Spread.Sheets.Shapes~PresetLineDashStyle.html"},
+{"id":"n7506","t":"RadialGradientFillDirection","u":"SpreadJS~GC.Spread.Sheets.Shapes~RadialGradientFillDirection.html"},
+{"id":"n7508","t":"ShapeFillType","u":"SpreadJS~GC.Spread.Sheets.Shapes~ShapeFillType.html"},
+{"id":"n7510","t":"SnapMode","u":"SpreadJS~GC.Spread.Sheets.Shapes~SnapMode.html"},
+{"id":"n7512","t":"TextureFillAlignment","u":"SpreadJS~GC.Spread.Sheets.Shapes~TextureFillAlignment.html"},
+{"id":"n7514","t":"TextureFillMirrorType","u":"SpreadJS~GC.Spread.Sheets.Shapes~TextureFillMirrorType.html"},
+{"id":"n7516","t":"VerticalAlign","u":"SpreadJS~GC.Spread.Sheets.Shapes~VerticalAlign.html"},
+])})();
+(function () { Innovasys.DynamicToc.injectNodeInfo("n7460", "c0", [
+{"id":"n7461","t":"Overview","u":"SpreadJS~GC.Spread.Sheets.Shapes.html"},
+{"id":"n7463","t":"Methods","cc":"c276"},
+{"id":"n7479","t":"Fields","cc":"c276"},
+])})();

@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to set sheet area offset in a worksheet. Learn more in SpreadJS docs." />
+    
+    <title>Sheet Area Offset | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n195","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to set sheet area offset in a worksheet. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="8ddf9834-113a-4be8-92fb-e03e0d2d8fa0"/>
+    <meta name="Microsoft.Help.TocParent" content="bce304a2-3ad1-40e2-a047-d6e21bdbf9c8"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="worksheet.html">Worksheet</a>
+ / Sheet Area Offset</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Sheet Area Offset</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to ensure that the entire sheet is rendered completely. You can configure sheet area offset in order to ensure that the left/top borders, gridlines, double lines&nbsp;and selection border of first column/row is rendered completely when the row header or the column header is hidden.</p>You can move the sheet area by setting the offset from the host left or top point as per your requirements. By default, the value is {left:0, top:0} in order to keep the downward compatibility.
+
+<p>&nbsp;</p>
+
+<p>The following image illustrates the significance of setting the sheet area offset in a worksheet.</p>
+
+<p><img alt="Sheet area offset in a worksheet" src="images/sheetareaoffset.png" /></p>
+
+<p>Shared below is a table that describes different scenarios along with their descriptions that you&nbsp;may need to refer&nbsp;while working with sheet area offset in&nbsp;a spreadsheet:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Scenario</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>When the row header is visible</td>
+
+            <td>
+                The&nbsp;first column refers to the first visible column of the row header.
+
+                <p>The selection border renders completely.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>When the row header is hidden</td>
+
+            <td>
+                <p>The first column refers to the left column of the viewport.</p>
+
+                <p>The selection left border will not be clipped and can be rendered completely.</p>
+
+                <p>The double lines in left will be rendered partially.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>When the column header is visible</td>
+
+            <td>
+                The first row refers to the first visible row of the column header.
+
+                <p>The selection border renders completely.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>When the column header is hidden</td>
+
+            <td>
+                The first row refers to the top row of the viewport.
+
+                <p>The selection top&nbsp;border will not be clipped and can be rendered completely.</p>
+
+                <p>The double lines in top will be rendered partially.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>When the selection starts from first row/column</td>
+
+            <td>The left/top selection border will be lost.</td>
+        </tr>
+
+        <tr>
+            <td>When the worksheet has row outlines or column outlines</td>
+
+            <td>
+                The double line is not rendered completely.
+
+                <p>The selection border will be rendered completely covering the outline area.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>While printing the worksheet</td>
+
+            <td>
+                If the print option: showBorder is set to false, and the sheet option: sheetAreaOffset contains the default value, it will set the offset to 2 pixels for rendering the double lines in left/top border.
+
+                <p>If the print option: showBorder is set to true, the behavior will remain same as before.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>While scrolling the worksheet in touch-enabled devices</td>
+
+            <td>
+                <p>The double lines in left or top will always be rendered besides the sheet.</p>
+
+                <p>The left or top border&nbsp;can be rendered completely.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Using Code</h4>
+
+<p>This example shows how to set the sheet area offset in a worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+sheet.options.sheetAreaOffset= {left : 2, top : 2};
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

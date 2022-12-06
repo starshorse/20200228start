@@ -1,0 +1,560 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Vue | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n831","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="5965d780-9b77-478f-9009-9e06d923231b"/>
+    <meta name="Microsoft.Help.TocParent" content="ea700174-a666-4dc2-baac-498a53ec2422"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="spreadjs_designer_component.html">SpreadJS Designer Component</a>
+ / <a href="designer-javaScript-frameworks.html">JavaScript Frameworks</a>
+ / Vue</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Vue</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can perform the following steps to add SpreadJS Designer Component in a Vue application:</p>
+
+<div class="i-tab-container i-tab-container-widget">
+    <ul class="i-tab-header-container">
+        <li class="i-tab-header"><a href="#i-tab-content-1363934c-3a47-4d70-be01-e195b18276fe">Vue 3</a></li>
+
+        <li class="i-tab-header"><a href="#i-tab-content-9531209b-b67f-4f86-a9ad-3754b61e685b">Vue 2</a></li>
+    </ul>
+
+    <div id="i-tab-content-1363934c-3a47-4d70-be01-e195b18276fe" class="i-tab-content">
+        <div data-title="Vue 3">
+            <ol>
+                <li>Create a Vue project by typing the following command in Command Prompt.
+
+                    <div class="i-filtered-content-" data-title="" data-itemid="">
+                        <table class="i-syntax-table">
+                            <tbody>
+                                <tr>
+                                    <th>Command Prompt</th>
+
+                                    <th>
+                                        <div class="i-copy-code-wrapper">
+                                            <span class="i-copy-code">Copy Code</span>
+                                        </div>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td class="i-code" colspan="2">
+                                        <pre>
+npm init vue@latest
+</pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>The command will present prompts for the project name and other optional features that can be added to the Vue project.</p>
+                </li>
+
+                <li>Import the following SpreadJS and SpreadJS Designer Vue modules in the project.
+
+                    <div class="i-filtered-content-" data-title="" data-itemid="">
+                        <table class="i-syntax-table">
+                            <tbody>
+                                <tr>
+                                    <th>Command Prompt</th>
+
+                                    <th>
+                                        <div class="i-copy-code-wrapper">
+                                            <span class="i-copy-code">Copy Code</span>
+                                        </div>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td class="i-code" colspan="2">
+                                        <pre>
+npm install @grapecity/spread-sheets-designer
+npm install @grapecity/spread-sheets-designer-resources-en
+npm install @grapecity/spread-sheets-designer-vue
+npm install @grapecity/spread-sheets
+npm install @grapecity/spread-excelio
+npm install @grapecity/spread-sheets-barcode
+npm install @grapecity/spread-sheets-charts
+npm install @grapecity/spread-sheets-languagepackages
+npm install @grapecity/spread-sheets-print
+npm install @grapecity/spread-sheets-pdf
+npm install @grapecity/spread-sheets-shapes
+npm install @grapecity/spread-sheets-pivot-addon
+npm install @grapecity/spread-sheets-tablesheet
+</pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><br />
+                </li>
+
+                <li>Register SpreadJS Designer Vue Component to the application in main.js file.
+
+                    <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+                        <table class="i-syntax-table">
+                            <tbody>
+                                <tr>
+                                    <th>main.js</th>
+
+                                    <th>
+                                        <div class="i-copy-code-wrapper">
+                                            <span class="i-copy-code">Copy Code</span>
+                                        </div>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td class="i-code" colspan="2">
+                                        <pre>
+import { createApp } from <span style="COLOR: #800000">'vue'</span>
+import App from <span style="COLOR: #800000">'./App.vue'</span>
+import Designer from <span style="COLOR: #800000">"@grapecity/spread-sheets-designer-vue"</span>
+let app = createApp(App);
+app.component(<span style="COLOR: #800000">"gc-spread-sheets-designer"</span>, Designer);
+app.mount(<span style="COLOR: #800000">'#app'</span>);
+</pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><br />
+                </li>
+
+                <li>Add the SpreadJS Designer Vue Component to the application by modifying the App.vue file.
+
+                    <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+                        <table class="i-syntax-table">
+                            <tbody>
+                                <tr>
+                                    <th>App.vue</th>
+
+                                    <th>
+                                        <div class="i-copy-code-wrapper">
+                                            <span class="i-copy-code">Copy Code</span>
+                                        </div>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td class="i-code" colspan="2">
+                                        <pre>
+&lt;script setup&gt;
+import <span style="COLOR: #800000">'@grapecity/spread-sheets/styles/gc.spread.sheets.excel2013white.css'</span>;
+import <span style="COLOR: #800000">"@grapecity/spread-sheets-designer/styles/gc.spread.sheets.designer.min.css"</span>;
+import * as GC from <span style="COLOR: #800000">"@grapecity/spread-sheets"</span>;
+import <span style="COLOR: #800000">"@grapecity/spread-sheets-print"</span>;
+import <span style="COLOR: #800000">"@grapecity/spread-sheets-shapes"</span>;
+import <span style="COLOR: #800000">"@grapecity/spread-sheets-pivot-addon"</span>;
+import <span style="COLOR: #800000">"@grapecity/spread-sheets-tablesheet"</span>;
+import <span style="COLOR: #800000">"@grapecity/spread-sheets-designer-resources-en"</span>;
+import <span style="COLOR: #800000">"@grapecity/spread-sheets-designer"</span>;
+
+&lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;script&gt;
+export <span style="COLOR: #0000ff">default</span> {
+  name: <span style="COLOR: #800000">"App"</span>,
+  data: <span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">return</span> {
+      styleInfo: { height: <span style="COLOR: #800000">"98vh"</span>, width: <span style="COLOR: #800000">"100%"</span> },
+      config: config,
+      spreadOptions: {
+        sheetCount: 2,
+      },
+      designer: <span style="COLOR: #0000ff">null</span>,
+    };
+  },
+  methods: {
+    designerInitialized(value) {
+      <span style="COLOR: #0000ff">this</span>.designer = value;
+    },
+  },
+};
+&lt;<span style="COLOR: #800000">/script&gt;
+</span>
+&lt;template&gt;
+  &lt;div id=<span style="COLOR: #800000">"gc-designer-container"</span>&gt;
+    &lt;gc-spread-sheets-designer
+      :styleInfo=<span style="COLOR: #800000">"styleInfo"</span>
+      :config=<span style="COLOR: #800000">"config"</span>
+      :spreadOptions=<span style="COLOR: #800000">"spreadOptions"</span>
+      @designerInitialized=<span style="COLOR: #800000">"designerInitialized"/&gt;
+</span>  &lt;<span style="COLOR: #800000">/div&gt;
+</span>&lt;<span style="COLOR: #800000">/template&gt;
+</span>
+&lt;style&gt;
+&lt;<span style="COLOR: #800000">/style&gt;</span>
+</pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><br />
+                </li>
+
+                <li>Run the application.
+
+                    <div class="i-filtered-content-" data-title="" data-itemid="">
+                        <table class="i-syntax-table">
+                            <tbody>
+                                <tr>
+                                    <th>Command Prompt</th>
+
+                                    <th>
+                                        <div class="i-copy-code-wrapper">
+                                            <span class="i-copy-code">Copy Code</span>
+                                        </div>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td class="i-code" colspan="2">
+                                        <pre>
+npm run dev
+</pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><br />
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="i-tab-content-9531209b-b67f-4f86-a9ad-3754b61e685b" class="i-tab-content">
+        <div data-title="Vue 2">
+            <ol>
+                <li>Create a Vue project by typing the following commands in Command Prompt.
+
+                    <div class="i-filtered-content-" data-title="" data-itemid="">
+                        <table class="i-syntax-table">
+                            <tbody>
+                                <tr>
+                                    <th>Command Prompt</th>
+
+                                    <th>
+                                        <div class="i-copy-code-wrapper">
+                                            <span class="i-copy-code">Copy Code</span>
+                                        </div>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td class="i-code" colspan="2">
+                                        <pre>
+npm install -g @vue/cli
+npm i -g @vue/cli-init
+vue init webpack designercomponent
+cd designercomponent
+npm run dev
+</pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><br />
+                </li>
+
+                <li>Import&nbsp;the following&nbsp;SpreadJS Vue modules in the project.
+
+                    <div class="i-filtered-content-" data-title="" data-itemid="">
+                        <table class="i-syntax-table">
+                            <tbody>
+                                <tr>
+                                    <th>Command Prompt</th>
+
+                                    <th>
+                                        <div class="i-copy-code-wrapper">
+                                            <span class="i-copy-code">Copy Code</span>
+                                        </div>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td class="i-code" colspan="2">
+                                        <pre>
+npm install @grapecity/spread-excelio
+npm install @grapecity/spread-sheets
+npm install @grapecity/spread-sheets-barcode
+npm install @grapecity/spread-sheets-charts
+npm install @grapecity/spread-sheets-languagepackages
+npm install @grapecity/spread-sheets-pdf
+npm install @grapecity/spread-sheets-print
+npm install @grapecity/spread-sheets-shapes
+npm install @grapecity/spread-sheets-tablesheet
+npm install @grapecity/spread-sheets-pivot-addon
+npm install @grapecity/spread-sheets-designer
+npm install @grapecity/spread-sheets-designer-resources-en
+npm install @grapecity/spread-sheets-vue
+npm install @grapecity/spread-sheets-designer-vue
+</pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><br />
+                </li>
+
+                <li>Import the required modules and add designer tag into the template using the following code snippet in App.vue.
+
+                    <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+                        <table class="i-syntax-table">
+                            <tbody>
+                                <tr>
+                                    <th>App.vue</th>
+
+                                    <th>
+                                        <div class="i-copy-code-wrapper">
+                                            <span class="i-copy-code">Copy Code</span>
+                                        </div>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td class="i-code" colspan="2">
+                                        <pre>
+&lt;!--Add designer tag into the template--&gt;
+&lt;template&gt;
+  &lt;div id=<span style="COLOR: #800000">"app"</span>&gt;
+    &lt;gc-spread-sheets-designer :styleInfo=<span style="COLOR: #800000">'styleInfo'</span>
+                               :config=<span style="COLOR: #800000">'config'</span>
+                               @designerInitialized=<span style="COLOR: #800000">"designerInitialized"</span>&gt;
+    &lt;<span style="COLOR: #800000">/gc-spread-sheets-designer&gt;
+</span>  &lt;<span style="COLOR: #800000">/div&gt;
+</span>&lt;<span style="COLOR: #800000">/template&gt;
+</span>&lt;script&gt;
+
+<span style="COLOR: #008000">// import the required modules
+</span>import <span style="COLOR: #800000">'@grapecity/spread-sheets/styles/gc.spread.sheets.excel2013white.css'</span>
+import <span style="COLOR: #800000">'@grapecity/spread-sheets-designer/styles/gc.spread.sheets.designer.min.css'</span>
+import <span style="COLOR: #800000">'@grapecity/spread-sheets-designer-resources-en'</span>
+import <span style="COLOR: #800000">'@grapecity/spread-sheets-designer-vue'</span>
+export <span style="COLOR: #0000ff">default</span> {
+  name: <span style="COLOR: #800000">'App'</span>,
+  data: <span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">return</span> {
+      styleInfo: { height: <span style="COLOR: #800000">'800px'</span>, width: <span style="COLOR: #800000">'1200px'</span>, border: <span style="COLOR: #800000">'solid black 1px'</span> },
+      config: <span style="COLOR: #0000ff">null</span>,
+      designer: <span style="COLOR: #0000ff">null</span>
+    }
+  },
+  methods: {
+    designerInitialized (value) {
+      <span style="COLOR: #0000ff">this</span>.designer = value
+    }
+  }
+}
+&lt;<span style="COLOR: #800000">/script&gt;</span>
+</pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><br />
+                </li>
+
+                <li>Run the application.
+
+                    <div class="i-filtered-content-" data-title="" data-itemid="">
+                        <table class="i-syntax-table">
+                            <tbody>
+                                <tr>
+                                    <th>Command Prompt</th>
+
+                                    <th>
+                                        <div class="i-copy-code-wrapper">
+                                            <span class="i-copy-code">Copy Code</span>
+                                        </div>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <td class="i-code" colspan="2">
+                                        <pre>
+npm run dev
+</pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><br />
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<h3>Apply License</h3>
+
+<p>The licensed version allows you to use all features of SpreadJS Designer Component. You need to set the license key for SpreadJS, ExcelIO, and the Designer Component which can be done by using the following code snippet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+import <span style="COLOR: #800000">'@grapecity/spread-sheets-designer-resources-en'</span>
+import { Designer } from <span style="COLOR: #800000">'@grapecity/spread-sheets-designer-vue'</span>
+import * as GC from <span style="COLOR: #800000">'@grapecity/spread-sheets'</span>
+import * as ExcelIO from <span style="COLOR: #800000">'@grapecity/spread-excelio'</span>
+<span style="COLOR: #008000">// license keys
+</span><span style="COLOR: #0000ff">var</span> sjsLicense = <span style="COLOR: #800000">'sjs-distribution-key'</span>
+GC.Spread.Sheets.LicenseKey = sjsLicense
+ExcelIO.LicenseKey = sjsLicense
+GC.Spread.Sheets.Designer.LicenseKey = <span style="COLOR: #800000">'designer-component-distribution-key'</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

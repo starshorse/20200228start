@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Set Layouts using States | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n857","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="2e477587-49b5-4d90-a4cd-fc92a6721edf"/>
+    <meta name="Microsoft.Help.TocParent" content="40fc646a-ce18-4d8b-bb36-97708d49c2ba"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="spreadjs_designer_component.html">SpreadJS Designer Component</a>
+ / <a href="designer-toolbar-ribbon.html">Toolbar Ribbon</a>
+ / Set Layouts using States</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Set Layouts using States</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS Designer Component provides different states which can be defined in the command options to display&nbsp;specific layouts.</p>
+
+<ul>
+    <li><strong>inDropdown</strong>: Represents that the command is in dropdown.</li>
+
+    <li><strong>isToolbarMode</strong>: Represents the toolbar ribbon mode.</li>
+</ul>
+
+<p>You can add custom states by using the <a href="SpreadJSDesigner~GC.Spread.Sheets.Designer.Designer~setData.html" target="_blank">designer.setData</a> method.</p>
+
+<p>You can define the above states in the command options by using formula expressions such as IF, AND, NOT. The following code statements use different formula expressions to set the states in&nbsp;"text" and "bigButton" command options:</p>
+
+<ul>
+    <li>
+        <p><code>text: '=IF(isToolbarMode,"Toolbar Ribbon","Default Ribbon")'</code></p>
+
+        <p>Sets the text as "Toolbar Ribbon" when in toolbar ribbon mode, otherwise sets as "Default Ribbon".</p>
+    </li>
+
+    <li>
+        <p><code>bigButton: '=AND(NOT(inDropdown), NOT(isToolbarMode))'</code></p>
+
+        <p>Sets the bigButton option to true when the command is not in dropdown and when the ribbon is not in toolbar mode.</p>
+    </li>
+</ul>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> The <em>commandName</em> option does not support formula expressions.
+</div>
+
+<h3>Example</h3>
+
+<p>The image below illustrates different command text and icons between both the ribbon modes (default and toolbar) respectively.</p>
+
+<p><img border="0" alt="" src="images/designer-status-example.png" /></p>
+
+<p>The following code sample shows how to set the <em>config</em> states in the command options shown in the above image.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Define Command "Welcome"
+</span><span style="COLOR: #0000ff">var</span> command = {
+    title: <span style="COLOR: #800000">"Welcome"</span>,
+    text: <span style="COLOR: #800000">'=IF(isToolbarMode,"Toolbar Ribbon","Default Ribbon")'</span>,
+    iconClass: <span style="COLOR: #800000">'=IF(inDropdown, "ribbon-button-sjs","ribbon-button-hi")'</span>,
+    bigButton: <span style="COLOR: #800000">'=AND(NOT(inDropdown), NOT(isToolbarMode))'</span>,
+    direction: <span style="COLOR: #800000">'=IF(isToolbarMode, "horizontal","vertical")'</span>,
+    visiblePriority: 1000,
+    commandName: <span style="COLOR: #800000">"Welcome"</span>,
+    execute: async (context, propertyName, fontItalicChecked) =&gt; {
+        alert(<span style="COLOR: #800000">'Welcome to new designer.'</span>);
+    }
+};
+
+<span style="COLOR: #008000">// Add command in default config command map
+</span>window.customRibbonConfig = GC.Spread.Sheets.Designer.DefaultConfig;
+        
+customRibbonConfig.commandMap = {
+    Welcome: command
+}
+        
+<span style="COLOR: #008000">// Add button in default ribbon
+</span>customRibbonConfig.ribbon[0].buttonGroups.unshift({
+    <span style="COLOR: #800000">"label"</span>: <span style="COLOR: #800000">"New Button"</span>,
+    <span style="COLOR: #800000">"thumbnailClass"</span>: <span style="COLOR: #800000">"welcome"</span>,
+    <span style="COLOR: #800000">"commandGroup"</span>: {
+        <span style="COLOR: #800000">"children"</span>: [
+            {
+                <span style="COLOR: #800000">"direction"</span>: <span style="COLOR: #800000">"vertical"</span>,
+                <span style="COLOR: #800000">"commands"</span>: [
+                    <span style="COLOR: #800000">"Welcome"</span>
+                ]
+            }
+        ]
+    }
+});
+customRibbonConfig.ribbon[0].buttonGroups[2].commandGroup.children[0].children.push(<span style="COLOR: #800000">'Welcome'</span>);
+
+<span style="COLOR: #008000">// Add command in toolbar config command map
+</span>window.customToolbarConfig = GC.Spread.Sheets.Designer.ToolBarModeConfig;
+customToolbarConfig.commandMap = {
+    Welcome: command
+}
+
+<span style="COLOR: #008000">// Add button in toolbar ribbon
+</span>customToolbarConfig.ribbon.panels[0].buttonGroups.unshift({
+    <span style="COLOR: #800000">"buttonGroupName"</span>: <span style="COLOR: #800000">"Welcome"</span>,
+    <span style="COLOR: #800000">"commandGroup"</span>: {
+        <span style="COLOR: #800000">"children"</span>: [
+            <span style="COLOR: #800000">"Welcome"</span>
+        ]
+    }
+});
+
+<span style="COLOR: #008000">// Initialize designer component with default ribbon mode
+</span><span style="COLOR: #0000ff">var</span> designer = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Designer.Designer(document.getElementById(<span style="COLOR: #800000">"designer_host"</span>));
+designer.setConfig(customRibbonConfig);
+        
+<span style="COLOR: #008000">// Set a button for switching between default and toolbar ribbon modes
+</span>document.getElementById(<span style="COLOR: #800000">'switch'</span>).addEventListener(<span style="COLOR: #800000">'click'</span>, <span style="COLOR: #0000ff">function</span> () {
+    designer.setConfig(designer.getData(<span style="COLOR: #800000">'isToolbarMode'</span>) ? customRibbonConfig : customToolbarConfig)
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

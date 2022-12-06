@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Range Template Cell | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n248","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="71331a01-76e9-4c1b-8fe0-1add56512578"/>
+    <meta name="Microsoft.Help.TocParent" content="0766f934-9f27-46c7-9689-95ccbc9232f4"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / <a href="celltypes.html">Cell Types</a>
+ / Range Template Cell</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Range Template Cell</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides support for creating a range celltype that allows users to specify a cell range in the worksheet as a template.</p>
+
+<h3 id="a">Usage Scenario</h3>
+
+<p>Range celltype is a very powerful feature that enables users and developers to define a template of cell ranges as a single celltype and apply that template to a cell to load different types of data into the template (including multiple rows and/or columns). Once the celltype is applied to a cell or a cell range, then the&nbsp;range template will use the cell value (or values) as a data source to resolve the binding path of the specified range.</p>
+
+<p>Using range templates is beneficial especially in the following scenarios:</p>
+
+<ul>
+    <li>When users want to display some specific ranges of data with identical structures easily and quickly (as shown in the screenshot shared below) without having to configure the same style for each and every range one by one.<br />
+    <br />
+    <img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Template" src="images/spreadjsv13images/template.png" /><br />
+    <img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Range template" src="images/spreadjsv13images/range-template.png" /><br />
+    <br /></li>
+
+    <li>When users want to use range cell type to create custom sparklines, as shown in the example of data analytics report shared below:<br />
+    <br />
+    <img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Using range cell type to create custom sparklines" src="images/spreadjsv13images/sparkline.png" /><br />
+    <br /></li>
+
+    <li>When users want to use range template celltype to&nbsp;create KPI blocks (for example - financial KPI) as shown in the below screenshot.<br />
+    <br />
+    <img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Using range cell type to create KPI blocks" src="images/spreadjsv13images/range8.png" /><br />
+    <br /></li>
+
+    <li>When users want to define a range template and use it as a shape as shown in the image shared below. This will insert a shape that renders as a template based on the specific task, which can help users to create a work based schedule for project management while working with spreadsheets.<br />
+    <br />
+    <img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Using range cell type to create shapes" src="images/spreadjsv13images/range9.png" /><br />
+    <br /></li>
+
+    <li>When users want to combine array functions to create&nbsp;a dashboard block that shows top product sales in a specific region. For example - the template can be created in such a way that it takes the region parameter and then uses array functions to filter out a dataset and show top product sales captured by the range template.&nbsp;</li>
+</ul>
+
+<h3 id="b">How Range Templates Work?</h3>
+
+<p>Creating range cell types and configuring range templates in spreadsheets allows users to modify the display mode of the batch fragments and tweak its appearance simply by changing the template.&nbsp;</p>
+
+<p>A range-cell type can be set as a normal celltype&nbsp;(using&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Style_namespace.html">GC.Spread.Sheets.Style</a>). Users need to create an instance of a range celltype and this object can be used for resolving the&nbsp;data&nbsp;binding path and&nbsp;providing the range layout &amp; cell style information for every cell&nbsp;in the specified range.</p>
+
+<p>The following images depict the workflow for a range celltype in a spreadsheet:</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Range celltype workflow" src="images/spreadjsv13images/range4.png" /></p>
+
+<p>&nbsp;</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Range celltype workflow" src="images/spreadjsv13images/range3.png" />&nbsp;</p>
+
+<p>The following steps must be performed for creating a range template celltype in the worksheet:</p>
+
+<ol>
+    <li><strong>Create a&nbsp;Template</strong> - A template&nbsp;can be created&nbsp;by designing a range in the worksheet. To bind data to the template, you can&nbsp;use the setBindingPath() method.</li>
+
+    <li><strong>Configure Data</strong> -&nbsp;Next, users need to configure a DataSource in the worksheet to be binded to the template.</li>
+
+    <li><strong>Create &amp; Apply&nbsp;Range Template Celltype -</strong> Now, create a RangeTemplate celltype using a range of cells from TemplateSheet and apply this RangeTemplate celltype in RenderSheet. RangeTemplate celltype can be set using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~cellType.html">cellType()</a> method of&nbsp;the <a href="SpreadJS~GC.Spread.Sheets.CellRange.html" data-auto-update-caption="true">CellRange class</a>. Here, a range template celltype is created by resolving the binding path to include the template information (provided in Step 1) and then using the data source (provided in Step 2) to configure the celltype in a range.</li>
+</ol>
+
+<h3 id="c">Using Code</h3>
+
+<p>Refer to the following example code for creating and adding range template celltype&nbsp;in the worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+<span style="COLOR: #008000">// Get the activesheet as renderSheet
+</span><span style="COLOR: #0000ff">var</span> renderSheet = spread.getActiveSheet();
+
+<span style="COLOR: #008000">// Step 1. Create a new Worksheet as templateSheet
+</span><span style="COLOR: #0000ff">var</span> templateSheet = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Worksheet();
+
+<span style="COLOR: #008000">// This templateSheet is used to create a template for RangeTemplate CellType
+</span>templateSheet.suspendPaint();
+templateSheet.addSpan(0, 0, 1, 4);
+templateSheet.getCell(0, 0).font(<span style="COLOR: #800000">"20px Arial"</span>).hAlign(GC.Spread.Sheets.HorizontalAlign.center).vAlign(GC.Spread.Sheets.VerticalAlign.center);
+templateSheet.setBindingPath(0, 0, <span style="COLOR: #800000">"name"</span>);
+templateSheet.setValue(1, 0, <span style="COLOR: #800000">"Asset Type"</span>);
+templateSheet.setValue(1, 1, <span style="COLOR: #800000">"Amount"</span>);
+templateSheet.setValue(1, 2, <span style="COLOR: #800000">"Diagram"</span>);
+templateSheet.setValue(1, 3, <span style="COLOR: #800000">"Note"</span>);
+templateSheet.setValue(2, 0, <span style="COLOR: #800000">"Savings"</span>);
+templateSheet.setBindingPath(2, 1, <span style="COLOR: #800000">"savings"</span>);
+templateSheet.setValue(3, 0, <span style="COLOR: #800000">"Shares"</span>);
+templateSheet.setBindingPath(3, 1, <span style="COLOR: #800000">"shares"</span>);
+templateSheet.setValue(4, 0, <span style="COLOR: #800000">"Stocks"</span>);
+templateSheet.setBindingPath(4, 1, <span style="COLOR: #800000">"stocks"</span>);
+templateSheet.setValue(5, 0, <span style="COLOR: #800000">"House"</span>);
+templateSheet.setBindingPath(5, 1, <span style="COLOR: #800000">"house"</span>);
+templateSheet.setValue(6, 0, <span style="COLOR: #800000">"Bonds"</span>);
+templateSheet.setBindingPath(6, 1, <span style="COLOR: #800000">"bonds"</span>);
+templateSheet.setValue(7, 0, <span style="COLOR: #800000">"Car"</span>);
+templateSheet.setBindingPath(7, 1, <span style="COLOR: #800000">"car"</span>);
+templateSheet.setFormatter(-1, 1, <span style="COLOR: #800000">"$#,##0"</span>);
+templateSheet.addSpan(2, 2, 6, 1);
+templateSheet.addSpan(8, 1, 1, 3);
+templateSheet.setValue(8, 0, <span style="COLOR: #800000">"Total"</span>);
+templateSheet.getCell(8, 0).font(<span style="COLOR: #800000">"14px Arial"</span>);
+templateSheet.setFormula(8, 1, <span style="COLOR: #800000">"=SUM(B3:B8)"</span>);
+templateSheet.getCell(8, 1).hAlign(GC.Spread.Sheets.HorizontalAlign.center);
+templateSheet.setFormula(2, 2, <span style="COLOR: #800000">'=PIESPARKLINE(B3:B8,"#919F81","#D7913E","CEA722","#B58091","#8974A9","#728BAD")'</span>);
+templateSheet.getCell(2, 3).backColor(<span style="COLOR: #800000">"#919F81"</span>).formula(<span style="COLOR: #800000">"=B3/$B$9"</span>);
+templateSheet.getCell(3, 3).backColor(<span style="COLOR: #800000">"#D7913E"</span>).formula(<span style="COLOR: #800000">"=B4/$B$9"</span>);
+templateSheet.getCell(4, 3).backColor(<span style="COLOR: #800000">"#CEA722"</span>).formula(<span style="COLOR: #800000">"=B5/$B$9"</span>);
+templateSheet.getCell(5, 3).backColor(<span style="COLOR: #800000">"#B58091"</span>).formula(<span style="COLOR: #800000">"=B6/$B$9"</span>);
+templateSheet.getCell(6, 3).backColor(<span style="COLOR: #800000">"#8974A9"</span>).formula(<span style="COLOR: #800000">"=B7/$B$9"</span>);
+templateSheet.getCell(7, 3).backColor(<span style="COLOR: #800000">"#728BAD"</span>).formula(<span style="COLOR: #800000">"=B8/$B$9"</span>);
+templateSheet.setFormatter(-1, 3, <span style="COLOR: #800000">"0.00%"</span>);
+templateSheet.setRowHeight(0, 50);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 1; i &lt; 8; i++) {
+     templateSheet.setRowHeight(i, 25);
+}
+templateSheet.setColumnWidth(0, 100);
+templateSheet.setColumnWidth(1, 100);
+templateSheet.setColumnWidth(2, 200);
+templateSheet.resumePaint();
+<span style="COLOR: #008000">// Step 2. Configure &amp; Add Data to renderSheet
+// Configure Data
+</span><span style="COLOR: #0000ff">var</span> data = [{
+     <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Peyton's Assets"</span>,
+     <span style="COLOR: #800000">"savings"</span>: 25000,
+     <span style="COLOR: #800000">"shares"</span>: 55000,
+     <span style="COLOR: #800000">"stocks"</span>: 15000,
+     <span style="COLOR: #800000">"house"</span>: 250000,
+     <span style="COLOR: #800000">"bonds"</span>: 11000,
+     <span style="COLOR: #800000">"car"</span>: 7500
+}, {
+     <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Icey's Assets"</span>,
+     <span style="COLOR: #800000">"savings"</span>: 30000,
+     <span style="COLOR: #800000">"shares"</span>: 45000,
+     <span style="COLOR: #800000">"stocks"</span>: 25000,
+     <span style="COLOR: #800000">"house"</span>: 20000,
+     <span style="COLOR: #800000">"bonds"</span>: 18000,
+     <span style="COLOR: #800000">"car"</span>: 75000
+}, {
+     <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Walter's Assets"</span>,
+     <span style="COLOR: #800000">"savings"</span>: 20000,
+     <span style="COLOR: #800000">"shares"</span>: 4000,
+     <span style="COLOR: #800000">"stocks"</span>: 95000,
+     <span style="COLOR: #800000">"house"</span>: 30000,
+     <span style="COLOR: #800000">"bonds"</span>: 10000,
+     <span style="COLOR: #800000">"car"</span>: 56000
+}, {
+     <span style="COLOR: #800000">"name"</span>: <span style="COLOR: #800000">"Chris's Assets"</span>,
+     <span style="COLOR: #800000">"savings"</span>: 70000,
+     <span style="COLOR: #800000">"shares"</span>: 85000,
+     <span style="COLOR: #800000">"stocks"</span>: 35000,
+     <span style="COLOR: #800000">"house"</span>: 20000,
+     <span style="COLOR: #800000">"bonds"</span>: 15000,
+     <span style="COLOR: #800000">"car"</span>: 45000
+}];
+<span style="COLOR: #008000">// Add Data to renderSheet
+</span>renderSheet.setValue(0, 0, data[0]);
+renderSheet.setValue(0, 1, data[1]);
+renderSheet.setValue(1, 0, data[2]);
+renderSheet.setValue(1, 1, data[3]);
+<span style="COLOR: #008000">// Step 3. Create RangeTemplate CellType using range of cells[0,0,9,4] from templateSheet
+</span><span style="COLOR: #0000ff">var</span> rangeTemplateCelltype = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.RangeTemplate(templateSheet, 0, 0, 9, 4);
+<span style="COLOR: #008000">// Apply RangeTemplate CellType to a range of cells in renderSheet
+</span>renderSheet.getRange(0, 0, 2, 2).cellType(rangeTemplateCelltype);
+renderSheet.setColumnWidth(0, 400);
+renderSheet.setRowHeight(0, 250);
+renderSheet.setColumnWidth(1, 400);
+renderSheet.setRowHeight(1, 250);
+renderSheet.resumePaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

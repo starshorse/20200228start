@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Locale-based Date Format Imported | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4367","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="aef21e9f-2f1f-4b8f-a756-120df9cddb5c"/>
+    <meta name="Microsoft.Help.TocParent" content="f8b9be7b-fbea-49f0-b469-68819d5d4a54"/>
+    <meta name="Microsoft.Help.TocOrder" content="7"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="excelimpexp.html">Import and Export Reference</a>
+ / <a href="excelimport.html">Excel-Formatted Files Import</a>
+ / Locale-based Date Format Imported</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Locale-based Date Format Imported</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows you to&nbsp;customize the date format&nbsp;based on your system locale settings while&nbsp;importing an&nbsp;Excel file.</p>
+
+<p>For example, when an Excel file containing the date format as dd/mm/yyyy is imported in EN culture, the date format is displayed as dd/mm/yyyy&nbsp;in SpreadJS.&nbsp;But when&nbsp;the same Excel file is imported in French culture,&nbsp;the date format is displayed&nbsp;as yyyy-MM-dd in SpreadJS&nbsp;as&nbsp;it is the default date format in French.&nbsp;The default number format id for French culture is 14. You can set the default number format id&nbsp;to any other number format like: {14: yyyy-M-d} to display the custom&nbsp;date format.</p>
+
+<p>The custom date format can be specified to the default number format id&nbsp;using <strong>LocalNumberFormat</strong> field, before importing the Excel&nbsp;file in SpreadJS.</p>
+
+<p>The custom&nbsp;date format can be set&nbsp;by using following steps:</p>
+
+<ol>
+    <li>Get the&nbsp;<a href="https://docs.microsoft.com/en-us/dotnet/api/documentformat.openxml.spreadsheet.numberingformat?view=openxml-2.8.1">Excel built-in number format</a>.</li>
+
+    <li>Create new culture info and set the Excel number format to custom format.</li>
+
+    <li>Set culture info to Culture Manager.</li>
+
+    <li>Import the Excel file.</li>
+</ol>
+
+<p>The example below&nbsp;demonstrates how&nbsp;to set the custom date format to default number format id of&nbsp;French culture.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Initialize Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+<span style="COLOR: #008000">// Get the sheet
+</span><span style="COLOR: #0000ff">var</span> sheet = spread.sheets[0];
+<span style="COLOR: #0000ff">var</span> excelIO = <span style="COLOR: #0000ff">new</span> GC.Spread.Excel.IO();
+$(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span> () {
+    spread.suspendPaint();
+    <span style="COLOR: #008000">// Create new culture info
+</span>    <span style="COLOR: #0000ff">var</span> culture = <span style="COLOR: #0000ff">new</span> GC.Spread.Common.CultureInfo();
+    culture.LocalNumberFormat = {
+       14: <span style="COLOR: #800000">"yyyy/m/d"</span>
+    };
+    <span style="COLOR: #008000">// Set culture info to Culture Manager
+</span>    GC.Spread.Common.CultureManager.addCultureInfo(<span style="COLOR: #800000">"fr"</span>, culture);
+    GC.Spread.Common.CultureManager.culture(<span style="COLOR: #800000">"fr"</span>);
+    <span style="COLOR: #008000">// Import Excel file
+</span>    <span style="COLOR: #0000ff">var</span> excelFile = document.getElementById(<span style="COLOR: #800000">"fileDemo"</span>).files[0];
+    excelIO.open(excelFile, <span style="COLOR: #0000ff">function</span> (json) {
+        <span style="COLOR: #0000ff">var</span> workbookObj = json;
+        spread.fromJSON(workbookObj);
+    }, <span style="COLOR: #0000ff">function</span> (e) {
+        console.log(e);
+    });
+    spread.resumePaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

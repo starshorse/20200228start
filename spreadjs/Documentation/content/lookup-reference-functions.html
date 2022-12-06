@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Lookup and Reference Functions | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3755","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="589d39b2-c1bb-4ebb-9344-7214183a4d8d"/>
+    <meta name="Microsoft.Help.TocParent" content="f00c213a-31d9-4eac-87f4-d899b4be3a44"/>
+    <meta name="Microsoft.Help.TocOrder" content="9"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / Lookup and Reference Functions</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Lookup and Reference Functions</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Spread provides the following lookup and reference functions, listed alphabetically.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Function</th>
+
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><a href="ADDRESS.html" data-auto-update-caption="true">ADDRESS</a></td>
+
+            <td>This function uses the row and column numbers to create a cell address in text.</td>
+        </tr>
+
+        <tr>
+            <td><a href="AREAS.html" data-auto-update-caption="true">AREAS</a></td>
+
+            <td>This function returns the number of areas in a reference.</td>
+        </tr>
+
+        <tr>
+            <td><a href="calculate-function.html" data-auto-update-caption="true">CALCULATE</a></td>
+
+            <td>This function can be used to expand the group context when summarizing at the group level of a TableSheet.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CHOOSE.html" data-auto-update-caption="true">CHOOSE</a></td>
+
+            <td>This function returns a value from a list of values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COLUMN.html" data-auto-update-caption="true">COLUMN</a></td>
+
+            <td>This function returns the column number of a reference.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COLUMNS.html" data-auto-update-caption="true">COLUMNS</a></td>
+
+            <td>This function returns the number of columns in an array.</td>
+        </tr>
+
+        <tr>
+            <td><a href="filter-dynamic-array.html" data-auto-update-caption="true">FILTER</a></td>
+
+            <td>This function filter a range or array.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FORMULATEXT.html" data-auto-update-caption="true">FORMULATEXT</a></td>
+
+            <td>This function returns a formula as a string.</td>
+        </tr>
+
+        <tr>
+            <td><a href="getpivotdata.html" data-auto-update-caption="true">GETPIVOTDATA</a></td>
+
+            <td>This function extracts data stored in a PivotTable.</td>
+        </tr>
+
+        <tr>
+            <td><a href="HLOOKUP.html" data-auto-update-caption="true">HLOOKUP</a></td>
+
+            <td>This function searches for a value in the top row and then returns a value in the same column from a specified row.</td>
+        </tr>
+
+        <tr>
+            <td><a href="HYPERLINK.html" data-auto-update-caption="true">HYPERLINK</a></td>
+
+            <td>This function creates a shortcut or jump that opens a document stored on a network server, an intranet, or the Internet.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FORMULA_INDEX.html" data-auto-update-caption="true">INDEX</a></td>
+
+            <td>This function returns a value or the reference to a value from within an array or range.</td>
+        </tr>
+
+        <tr>
+            <td><a href="INDIRECT.html" data-auto-update-caption="true">INDIRECT</a></td>
+
+            <td>This function returns the reference specified by a text string. References are immediately evaluated to display their contents.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LOOKUP.html" data-auto-update-caption="true">LOOKUP</a></td>
+
+            <td>This function searches for a value and returns a value from the same location in a second area.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MATCH.html" data-auto-update-caption="true">MATCH</a></td>
+
+            <td>This function returns the relative position of a specified item in a range.</td>
+        </tr>
+
+        <tr>
+            <td><a href="OFFSET.html" data-auto-update-caption="true">OFFSET</a></td>
+
+            <td>This function returns a reference to a range. The range is a specified number of rows and columns from a cell or range of cells. The function returns a single cell or a range of cells.</td>
+        </tr>
+
+        <tr>
+            <td><a href="removefilters-function.html" data-auto-update-caption="true">REMOVEFILTERS</a></td>
+
+            <td>This function can be used to expand the group context when summarizing at the group level of a TableSheet.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ROW.html" data-auto-update-caption="true">ROW</a></td>
+
+            <td>This function returns the number of a row from a reference.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ROWS.html" data-auto-update-caption="true">ROWS</a></td>
+
+            <td>This function returns the number of rows in an array.</td>
+        </tr>
+
+        <tr>
+            <td><a href="single.html" data-auto-update-caption="true">SINGLE</a></td>
+
+            <td>This function returns a single value when given a value, range or array.</td>
+        </tr>
+
+        <tr>
+            <td><a href="sort.html" data-auto-update-caption="true">SORT</a></td>
+
+            <td>This function sorts a range or array.</td>
+        </tr>
+
+        <tr>
+            <td><a href="sortby.html" data-auto-update-caption="true">SORTBY</a></td>
+
+            <td>This function sorts a range or array based on the values in a corresponding range or array.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TRANSPOSE.html" data-auto-update-caption="true">TRANSPOSE</a></td>
+
+            <td>This function returns a vertical range of cells as a horizontal range or a horizontal range of cells as a vertical range.</td>
+        </tr>
+
+        <tr>
+            <td><a href="unique.html" data-auto-update-caption="true">UNIQUE</a></td>
+
+            <td>This function returns the unique values from a range or array.</td>
+        </tr>
+
+        <tr>
+            <td><a href="VLOOKUP.html" data-auto-update-caption="true">VLOOKUP</a></td>
+
+            <td>This function searches for a value in the leftmost column and returns a value in the same row from a column you specify.</td>
+        </tr>
+
+        <tr>
+            <td><a href="XLOOKUP.html" data-auto-update-caption="true">XLOOKUP</a></td>
+
+            <td>This function searches a range or an array for a match and returns the corresponding item from a second range or array. By default, an exact match is used.</td>
+        </tr>
+
+        <tr>
+            <td><a href="XMATCH.html" data-auto-update-caption="true">XMATCH</a></td>
+
+            <td>This function returns the relative position of an item in an array. By default, an exact match is required.</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

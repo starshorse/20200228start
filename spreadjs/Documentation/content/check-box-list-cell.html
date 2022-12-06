@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Check Box List Cell | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n242","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="696ad810-f749-437b-9a2e-b4391bca6c12"/>
+    <meta name="Microsoft.Help.TocParent" content="0766f934-9f27-46c7-9689-95ccbc9232f4"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / <a href="celltypes.html">Cell Types</a>
+ / Check Box List Cell</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Check Box List Cell</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to create check box lists within the cells of the spreadsheet.</p>
+
+<h3 id="a">What is a Check Box List?</h3>
+
+<p>A check box list refers to an interactive checklist or a to-do list&nbsp;with multi-selection field values. It displays a group of items via multiple check boxes (small square shaped selection boxes)&nbsp;embedded within a single cell. Users can click the check box in order to select or deselect a specific option.</p>
+
+<h3 id="b">Usage Scenario</h3>
+
+<p>A check box list celltype is helpful when users need to select multiple field values in a cell while working with spreadsheets. With the help of a check box list, users can create a customer feedback survey, an input form, interactive checklists and dynamic reports quickly and efficiently.<br />
+<br />
+<strong>Example</strong> - Let's say&nbsp;you want to&nbsp;analyse the end-user response of company products in an easy and effective way. In such a scenario, creating a user-friendly check box list in&nbsp;the worksheet is a great idea to&nbsp;record customer response, as shown in the snapshot below:&nbsp;&nbsp;<br />
+<img border="0" alt="Check box list cell" src="images/spreadjsv13images/checkbox.png" /><br /></p>
+
+<h3 id="c">Customize a Check Box List</h3>
+
+<p>While working with check box list cell type in SpreadJS, users can execute the following tasks in order to customize it as per their specific preferences:</p>
+
+<ul>
+    <li>Users can configure the text alignment using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellTypes.CheckBoxList~textAlign.html">textAlign()</a> method. The available options in the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellTypes.TextAlign.html" data-auto-update-caption="true">TextAlign</a> enumeration are left and right.</li>
+
+    <li>Users can identify whether the layout of the check box list is autofit or not by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellTypes.CheckBoxList~isFlowLayout.html">isFlowLayout()</a> method. By default, the value parameter&nbsp;of this method&nbsp;is set to&nbsp;"true".</li>
+
+    <li>Users can set the direction of the check box list cell type as horizontal or vertical, using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellTypes.Direction.html">Direction</a> enumeration.</li>
+
+    <li>Users can get or set the items for the row count and the column count of the check box list using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellTypes.CheckBoxList~maxRowCount.html">maxRowCount()</a> method and the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellTypes.CheckBoxList~maxColumnCount.html">maxColumnCount()</a>&nbsp;method respectively. This can be done only when the value parameter of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellTypes.CheckBoxList~isFlowLayout.html">isFlowLayout()</a> method is set to true and the direction is horizontal.</li>
+
+    <li>Users can configure spacing between the two list items in order to avoid congestion and clutter within the list items inside the cell. This can be done by&nbsp;using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellTypes.CheckBoxList~itemSpacing.html">itemSpacing()</a> method.</li>
+
+    <li>Users can&nbsp;change the size of a&nbsp;check box&nbsp;using the <strong>boxSize()</strong> method&nbsp;whose value can be&nbsp;set to any number or "auto". If the method is set to any illegal value, the check box size&nbsp;is not changed. The standard size of the check box in check box list cell type is 12*12. However, this method only works on Chrome, Edge, Firefox, Internet Explorer, Opera, Safari, Android webview, Chrome for Android, Firefox for Android, Opera for Android, Safari on IOS, and Samsung Internet browsers.</li>
+</ul>
+
+<h3 id="d">Using Code</h3>
+
+<p>Refer to the following example code to create a basic check box list in a cell while working with spreadsheets.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+  $(document).ready(<span style="COLOR: #0000ff">function</span> () {
+  <span style="COLOR: #008000">// Initializing Spread
+</span>  <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+
+  <span style="COLOR: #008000">// Get the activesheet
+</span>  <span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+
+  <span style="COLOR: #008000">// This example creates a CheckBoxList celltype
+</span>  <span style="COLOR: #0000ff">var</span> checkBoxListCellType = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.CheckBoxList();
+  activeSheet.getCell(0, 1).font(<span style="COLOR: #800000">"italic 16px Calibri"</span>);
+  activeSheet.getCell(0, 1).foreColor(<span style="COLOR: #800000">"Red"</span>);
+  activeSheet.getCell(0, 1, GC.Spread.Sheets.SheetArea.viewport).value(<span style="COLOR: #800000">"What factors are important to you when buying software products? "</span>).wordWrap(<span style="COLOR: #0000ff">true</span>);
+  checkBoxListCellType.items([{ text: <span style="COLOR: #800000">"Price"</span>, value: 1 }, { text: <span style="COLOR: #800000">"Usability"</span>, value: 2 }, { text: <span style="COLOR: #800000">"Features"</span>, value: 3 }, { text: <span style="COLOR: #800000">"Support"</span>, value: 4 }, { text: <span style="COLOR: #800000">"Others"</span>, value: 5 }]);
+
+  <span style="COLOR: #008000">// Configure spacing for two items in the CheckBoxList
+</span>  checkBoxListCellType.itemSpacing({
+      horizontal: 20, vertical: 10
+  });
+
+  <span style="COLOR: #008000">// Configure the checkBoxListCellType to vertical
+</span>  checkBoxListCellType.direction(GC.Spread.Sheets.CellTypes.Direction.vertical);
+
+  <span style="COLOR: #008000">// Configure the position of text in CheckBoxList, only support left and right
+</span>  checkBoxListCellType.textAlign(GC.Spread.Sheets.CellTypes.CheckBoxTextAlign.right);
+
+  <span style="COLOR: #008000">// Configure the check box size in CheckBoxList, only support number and "auto"
+</span>  checkBoxListCellType.boxSize(20);
+  activeSheet.getCell(1, 1).cellType(checkBoxListCellType);
+
+  <span style="COLOR: #008000">// Configure the row height
+</span>  activeSheet.setRowHeight(0, 70.0, GC.Spread.Sheets.SheetArea.viewport);
+  activeSheet.setRowHeight(1, 160.0, GC.Spread.Sheets.SheetArea.viewport);
+
+  <span style="COLOR: #008000">// Configure the column width
+</span>  activeSheet.setColumnWidth(1, 200.0, GC.Spread.Sheets.SheetArea.viewport);
+
+    });
+&lt;<span style="COLOR: #800000">/script&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

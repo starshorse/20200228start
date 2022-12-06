@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="This topic provides information about Object function." />
+    
+    <title>OBJECT | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4338","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="This topic provides information about Object function." />
+    
+    <meta name="Microsoft.Help.Id" content="e6c42f13-eb10-44bc-950d-546e8755474c"/>
+    <meta name="Microsoft.Help.TocParent" content="29687170-5432-4d61-a3d1-001debf68868"/>
+    <meta name="Microsoft.Help.TocOrder" content="9"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / <a href="other-functions.html">Other Functions</a>
+ / OBJECT</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">OBJECT</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>The OBJECT function is used to define an object,&nbsp;and specify the props and values. The OBJECT function result will be an object of these props and values.</p>
+
+<p>The OBJECT function can be used to create&nbsp;<a href="rangeblock-sparkline.html">RANGEBLOCK</a> sparklines.</p>
+
+<h4>Syntax</h4>
+
+<p>OBJECT(<em>property1, expression1, property2, expression2, ...</em>)</p>
+
+<p>OBJECT(<em>properties_range, expressions_range</em>)</p>
+
+<p>OBJECT(<em>property1, expressionArray1, property2, expressionArray2, ...</em>)</p>
+
+<h4>Arguments</h4>
+
+<p>The OBJECT(property1, expression1, property2, expression2, ...) function has four arguments:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th><strong>Argument</strong></th>
+
+            <th><strong>Description</strong></th>
+        </tr>
+
+        <tr>
+            <td>property1</td>
+
+            <td>Refers to the first property of current object. It can be a string or a cell reference.</td>
+        </tr>
+
+        <tr>
+            <td><i>expression1</i></td>
+
+            <td>Refers to the first property value of current object. It can be any type value or a cell reference.</td>
+        </tr>
+
+        <tr>
+            <td>property2</td>
+
+            <td>Refers to the second property of current object. It can be a string or a cell reference.</td>
+        </tr>
+
+        <tr>
+            <td>expression2</td>
+
+            <td>Refers to the second property value of current object. It can be any type value or a cell reference.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>This OBJECT(<em>properties_range, expressions_range</em>) function has four arguments:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th><strong>Argument</strong></th>
+
+            <th><strong>Description</strong></th>
+        </tr>
+
+        <tr>
+            <td><i>properties_range1</i></td>
+
+            <td>Refers to the first property of current object. It should be a range reference.</td>
+        </tr>
+
+        <tr>
+            <td><i>expressions_range1</i></td>
+
+            <td>Refers to the first property value of current object. It should be a range reference, and the length of this range should be equal to the length of property range.</td>
+        </tr>
+
+        <tr>
+            <td>properties_range2</td>
+
+            <td>Refers to the second property of current object. It should be a range reference, and the length of this range should be equal to the length of first property range.</td>
+        </tr>
+
+        <tr>
+            <td>expressions_range2</td>
+
+            <td>Refers to the second property value of current object. It should be a range reference, and the length of this range should be&nbsp;equal to the length of first property range.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The OBJECT(property1, expressionArray1, property2, expressionArray2, ...) function has&nbsp;four arguments:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th><strong>Argument</strong></th>
+
+            <th><strong>Description</strong></th>
+        </tr>
+
+        <tr>
+            <td><i>property1</i></td>
+
+            <td>Refers to the first property of current object. It can be a string or a cell reference.</td>
+        </tr>
+
+        <tr>
+            <td><i>expressionArray1</i></td>
+
+            <td>Refers to the first property value of current object. It should be an array of reference.</td>
+        </tr>
+
+        <tr>
+            <td>property2</td>
+
+            <td>Refers to the second property of current object. It can be a string or a cell reference.</td>
+        </tr>
+
+        <tr>
+            <td>expressionArray2</td>
+
+            <td>Refers to the second property value of current object. It should be an array of reference, and its length should be equal to the length of first property value.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Remarks</h4>
+
+<p>The&nbsp;OBJECT function will return CalcError&nbsp;if the parameters&nbsp;are not in key-value order and in pairs.</p>
+
+<h4>Data Types</h4>
+
+<p>The OBJECT(property1, expression1, property2, expression2, ...) and OBJECT(properties_range, expressions_range) returns object value data types, while OBJECT(property1, expressionArray1, property2, expressionArray2, ...) returns object array data type.</p>
+
+<h4>Examples</h4>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+        $(document).ready(function () {
+            <span style="COLOR: #008000">// initializing Spread
+</span>            <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+            <span style="COLOR: #008000">// get the activesheet
+</span>            <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+            <span style="COLOR: #008000">// DataSource is array
+</span>            <span style="COLOR: #0000ff">let</span> dataSource = [
+                {
+                    <span style="COLOR: #800000">"NAME"</span>: <span style="COLOR: #800000">"James Smith"</span>,
+                    <span style="COLOR: #800000">"POSITION"</span>: <span style="COLOR: #800000">"AVP"</span>,
+                    <span style="COLOR: #800000">"OFFICE"</span>: <span style="COLOR: #800000">"Fox Studios"</span>,
+                    <span style="COLOR: #800000">"EXTN"</span>: 71,
+                    <span style="COLOR: #800000">"START_DATE"</span>: <span style="COLOR: #800000">'3/08/2008'</span>,
+                    <span style="COLOR: #800000">"JOINING_YEAR"</span>: 2008
+                }
+            ];
+            <span style="COLOR: #0000ff">let</span> colInfos = [
+                { name: <span style="COLOR: #800000">"NAME"</span>, displayName: <span style="COLOR: #800000">"NAME"</span>, size: <span style="COLOR: #800000">"2*"</span> },
+                { name: <span style="COLOR: #800000">"POSITION"</span>, displayName: <span style="COLOR: #800000">"POSITION"</span>, size: <span style="COLOR: #800000">"*"</span> },
+                { name: <span style="COLOR: #800000">"OFFICE"</span>, size: <span style="COLOR: #800000">"*"</span> },
+                { name: <span style="COLOR: #800000">"EXTN"</span>, size: <span style="COLOR: #800000">"*"</span> },
+                { name: <span style="COLOR: #800000">"START_DATE"</span>, size: 100 },
+                { name: <span style="COLOR: #800000">"JOINING_YEAR"</span>, size: 100 }
+            ];
+            <span style="COLOR: #008000">// create style
+</span>            <span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+            style.cellButtons = [
+                {
+                    imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+                    command: <span style="COLOR: #800000">"openMultiColumn"</span>,
+                    useButtonStyle: <span style="COLOR: #0000ff">true</span>,
+                }
+            ];
+            style.dropDowns = [
+                {
+                    type: GC.Spread.Sheets.DropDownType.multiColumn,
+                    option: {
+                        width: 600,
+                        height: 150,
+                        dataSource: dataSource,
+                        bindingInfos: colInfos
+                    }
+                }
+            ];
+            <span style="COLOR: #008000">// set style's formatter
+</span>            style.formatter = <span style="COLOR: #800000">'=PROPERTY(@, "OFFICE")'</span>;
+            <span style="COLOR: #008000">// set style
+</span>            sheet.setStyle(0, 1, style);
+            <span style="COLOR: #008000">// set text
+</span>            sheet.setText(0, 0, <span style="COLOR: #800000">"DataSource is array, return data parsed to the value of property 'OFFICE'."</span>);
+            <span style="COLOR: #008000">// set wordwrap
+</span>            sheet.getCell(0, 0).wordWrap(<span style="COLOR: #0000ff">true</span>);
+            sheet.getCell(0, 1).wordWrap(<span style="COLOR: #0000ff">true</span>);
+            <span style="COLOR: #008000">// set column width
+</span>            sheet.setColumnWidth(0, 200);
+            sheet.setColumnWidth(1, 400);
+            <span style="COLOR: #008000">// set row height
+</span>            sheet.setRowHeight(0, 70);
+        });
+    &lt;/script&gt;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>See Also</h4>
+
+<p><a href="HLOOKUP.html">HLOOKUP</a> | <a href="LOOKUP.html">LOOKUP</a></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

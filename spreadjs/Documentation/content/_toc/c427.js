@@ -1,0 +1,37 @@
+﻿(function () { Innovasys.DynamicToc.injectNodeInfo("n10059", "c427", [
+{"id":"n10060","t":"allowMove","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~allowMove.html"},
+{"id":"n10062","t":"allowResize","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~allowResize.html"},
+{"id":"n10064","t":"alt","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~alt.html"},
+{"id":"n10066","t":"cloneContent","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~cloneContent.html"},
+{"id":"n10068","t":"content","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~content.html"},
+{"id":"n10070","t":"dynamicMove","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~dynamicMove.html"},
+{"id":"n10072","t":"dynamicSize","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~dynamicSize.html"},
+{"id":"n10074","t":"endColumn","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~endColumn.html"},
+{"id":"n10076","t":"endColumnOffset","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~endColumnOffset.html"},
+{"id":"n10078","t":"endRow","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~endRow.html"},
+{"id":"n10080","t":"endRowOffset","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~endRowOffset.html"},
+{"id":"n10082","t":"fixedPosition","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~fixedPosition.html"},
+{"id":"n10084","t":"getHost","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~getHost.html"},
+{"id":"n10086","t":"height","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~height.html"},
+{"id":"n10088","t":"isLocked","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~isLocked.html"},
+{"id":"n10090","t":"isSelected","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~isSelected.html"},
+{"id":"n10092","t":"isVisible","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~isVisible.html"},
+{"id":"n10094","t":"name","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~name.html"},
+{"id":"n10096","t":"refreshContent","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~refreshContent.html"},
+{"id":"n10098","t":"startColumn","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~startColumn.html"},
+{"id":"n10100","t":"startColumnOffset","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~startColumnOffset.html"},
+{"id":"n10102","t":"startRow","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~startRow.html"},
+{"id":"n10104","t":"startRowOffset","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~startRowOffset.html"},
+{"id":"n10106","t":"width","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~width.html"},
+{"id":"n10108","t":"x","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~x.html"},
+{"id":"n10110","t":"y","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~y.html"},
+])})();
+(function () { Innovasys.DynamicToc.injectNodeInfo("n10113", "c427", [
+{"id":"n10114","t":"typeName","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~typeName.html"},
+])})();
+(function () { Innovasys.DynamicToc.injectNodeInfo("n10054", "c0", [
+{"id":"n10055","t":"Overview","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject.html"},
+{"id":"n10057","t":"FloatingObject Constructor","u":"SpreadJS~GC.Spread.Sheets.FloatingObjects.FloatingObject~_ctor.html"},
+{"id":"n10059","t":"Methods","cc":"c427"},
+{"id":"n10113","t":"Fields","cc":"c427"},
+])})();

@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Group and Collapse | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n691","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="12927d00-20a0-42a5-9816-2a272e947396"/>
+    <meta name="Microsoft.Help.TocParent" content="f1825637-2866-4514-bd4c-8b65379a3900"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="pivot-table.html">Pivot Table</a>
+ / Group and Collapse</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Group and Collapse</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows you to use group and collapse operations in a&nbsp;pivot table&nbsp;which makes it easier to get a clear view and display only&nbsp;the required data. This is particularly helpful when the pivot table contains lots of data which can be summarized further. You can group the&nbsp;data by date,&nbsp;text and numbers&nbsp;as explained in the below section.</p>
+
+<h3>Group Date</h3>
+
+<p>You can group data by date based on&nbsp;seconds, minutes, hours, days, months, quarters or years and even set the starting and ending timelines.&nbsp;The <strong>dateGroups</strong> method can be used to achieve the same.</p>
+
+<p>The following image shows the data grouped quarterly for 2013 and 2014 years.</p>
+
+<p><img border="0" alt="Grouping dates in the pivot table" src="images/group-dates.png" /></p>
+
+<p>The following sample code show how to group date data&nbsp;by quarters.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// group by dates 
+</span>let groupInfo = { originFieldName: <span style="COLOR: #800000">"OrderDate"</span>, dateGroups: [{ by: GC.Pivot.DateGroupType.quarters }, { by: GC.Pivot.DateGroupType.years }] };
+myPivotTable.group(groupInfo);
+myPivotTable.add(<span style="COLOR: #800000">"OrderDate"</span>, <span style="COLOR: #800000">"Qtr"</span>, GC.Spread.Pivot.PivotTableFieldType.columnField);
+myPivotTable.add(<span style="COLOR: #800000">"Years"</span>, <span style="COLOR: #800000">"Years"</span>, GC.Spread.Pivot.PivotTableFieldType.columnField);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Group Text</h3>
+
+<p>In a pivot table, you can also group the Row label or Column Label items by using the <strong>textGroup</strong>&nbsp;method. It uses the&nbsp;<strong>add</strong> method to add a new group to the pivot table. When a text group is added, a new field is also created.</p>
+
+<p>The following image shows the new group created by row label items.</p>
+
+<p><img border="0" alt="Grouping text in the pivot table" src="images/group-text.png" /></p>
+
+<p>The following example code shows how to group text of row label items.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// group by items
+</span>myPivotTable.views.apply(<span style="COLOR: #800000">"empty_pt"</span>);
+myPivotTable.add(<span style="COLOR: #800000">"Region"</span>, <span style="COLOR: #800000">"Region"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+myPivotTable.add(<span style="COLOR: #800000">"Quantity"</span>, <span style="COLOR: #800000">"Sum of quantity"</span>, GC.Spread.Pivot.PivotTableFieldType.valueField, GC.Pivot.SubtotalType.sum);
+let groupInfo = {
+    originFieldName: <span style="COLOR: #800000">"Product"</span>, textGroup: {
+        fieldName: <span style="COLOR: #800000">"NewProduct"</span>,
+        groupItems: {
+            Drinks: [<span style="COLOR: #800000">'Coffee'</span>, <span style="COLOR: #800000">'Juice'</span>],
+            Chocolate: [<span style="COLOR: #800000">'Dark'</span>, <span style="COLOR: #800000">'White'</span>, <span style="COLOR: #800000">'Milk'</span>],
+            Others: [<span style="COLOR: #800000">'Breads'</span>, <span style="COLOR: #800000">'Cheese puffs'</span>, <span style="COLOR: #800000">'Cookie'</span>]
+        }
+    }
+};
+myPivotTable.group(groupInfo);
+myPivotTable.add(<span style="COLOR: #800000">"NewProduct"</span>, <span style="COLOR: #800000">"TestProduct"</span>, GC.Spread.Pivot.PivotTableFieldType.columnField);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Group Numbers</h3>
+
+<p>You can group the numerical values instead of listing them individually in a Row field&nbsp;while creating frequency distribution tables. This helps in&nbsp;analyzing numerical values by grouping&nbsp;them into ranges. You can use the&nbsp;<strong>numberGroup</strong>&nbsp;method to group&nbsp;numerical values. The following image shows the frequency distribution of quantity within the group.</p>
+
+<p><img border="0" alt="Grouping numbers in the pivot table" src="images/group-numbers.png" /></p>
+
+<p>The following example code shows how to group numbers.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// group by numbers
+</span>myPivotTable.views.apply(<span style="COLOR: #800000">"empty_pt"</span>);
+myPivotTable.add(<span style="COLOR: #800000">"Quantity"</span>, <span style="COLOR: #800000">"Quantity"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+myPivotTable.add(<span style="COLOR: #800000">"Region"</span>, <span style="COLOR: #800000">"Region"</span>, GC.Spread.Pivot.PivotTableFieldType.colField);
+myPivotTable.add(<span style="COLOR: #800000">"Product"</span>, <span style="COLOR: #800000">"Count of quantity"</span>, GC.Spread.Pivot.PivotTableFieldType.valueField, GC.Pivot.SubtotalType.count);
+let groupInfo = { originFieldName: <span style="COLOR: #800000">"Quantity"</span>, numberGroup: { by: 30 } };
+myPivotTable.group(groupInfo);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Collapse Groups</h3>
+
+<p>You can expand or&nbsp;collapse specific groups or entire pivot field in a pivot table by&nbsp;using <strong>collapse</strong> option. The following image shows&nbsp;the&nbsp;East region, Bakery and Chocolates category fields as collapsed.</p>
+
+<p><img border="0" alt="Collapse groups in the pivot table" src="images/collapse-group.png" /></p>
+
+<p>The following example code shows how to collapse and expand groups.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// collapse some groups
+</span>myPivotTable.collapse(<span style="COLOR: #800000">"Region"</span>, <span style="COLOR: #800000">"East"</span>, <span style="COLOR: #0000ff">true</span>);
+myPivotTable.collapse(<span style="COLOR: #800000">"Category"</span>, <span style="COLOR: #800000">"Bakery"</span>, <span style="COLOR: #0000ff">true</span>);
+myPivotTable.collapse(<span style="COLOR: #800000">"Category"</span>, <span style="COLOR: #800000">"Chocolates"</span>, <span style="COLOR: #0000ff">true</span>);
+<span style="COLOR: #008000">// expand region group
+</span>myPivotTable.collapse(<span style="COLOR: #800000">"Region"</span>, <span style="COLOR: #800000">"East"</span>, <span style="COLOR: #0000ff">false</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Hide Collapse button</h3>
+
+<p>You can show or hide the expand and collapse buttons (+&nbsp;or - sign buttons&nbsp;on the left of pivot item heading)&nbsp;in a pivot table using the <strong>showDrill</strong> option.<img border="0" alt="Hide collapse button" src="images/hide-collapse-button.png" /></p>
+
+<p>The following sample code shows how to hide expand and collapse buttons in the pivot table.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+myPivotTable.options.showDrill = <span style="COLOR: #0000ff">false</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

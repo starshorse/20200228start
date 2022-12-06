@@ -1,0 +1,654 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Math and Trigonometric Functions | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3811","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="f8f4ad58-e1ef-4156-9858-ff979f1bc8c0"/>
+    <meta name="Microsoft.Help.TocParent" content="f00c213a-31d9-4eac-87f4-d899b4be3a44"/>
+    <meta name="Microsoft.Help.TocOrder" content="10"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / Math and Trigonometric Functions</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Math and Trigonometric Functions</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Spread provides the following math and trigonometric functions, listed alphabetically.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Function</th>
+
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><a href="ABS.html" data-auto-update-caption="true">ABS</a></td>
+
+            <td>This function calculates the absolute value of the specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ACOS.html" data-auto-update-caption="true">ACOS</a></td>
+
+            <td>This function calculates the arccosine, that is, the angle whose cosine is the specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ACOSH.html" data-auto-update-caption="true">ACOSH</a></td>
+
+            <td>This function calculates the inverse hyperbolic cosine of the specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ACOT.html" data-auto-update-caption="true">ACOT</a></td>
+
+            <td>This function calculates the inverse arccotangent of a number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ACOTH.html" data-auto-update-caption="true">ACOTH</a></td>
+
+            <td>This function calculates the inverse hyperbolic arccotangent of a number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="agrregate.html" data-auto-update-caption="true">AGGREGATE</a></td>
+
+            <td>This function aggregate a list of numbers using a specified built-in function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ARABIC.html" data-auto-update-caption="true">ARABIC</a></td>
+
+            <td>This function converts a Roman numeral text to an Arabic numeral equivalent.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ASIN.html" data-auto-update-caption="true">ASIN</a></td>
+
+            <td>This function calculates the arcsine, that is, the angle whose sine is the specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ASINH.html" data-auto-update-caption="true">ASINH</a></td>
+
+            <td>This function calculates the inverse hyperbolic sine of a number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ATAN.html" data-auto-update-caption="true">ATAN</a></td>
+
+            <td>This function calculates the arctangent, that is, the angle whose tangent is the specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ATAN2.html" data-auto-update-caption="true">ATAN2</a></td>
+
+            <td>This function calculates the arctangent of the specified x- and y-coordinates.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ATANH.html" data-auto-update-caption="true">ATANH</a></td>
+
+            <td>This function calculates the inverse hyperbolic tangent of a number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BASE.html" data-auto-update-caption="true">BASE</a></td>
+
+            <td>This function converts a number into a text representation with the given radix (base).</td>
+        </tr>
+
+        <tr>
+            <td><a href="CEILING.html" data-auto-update-caption="true">CEILING</a></td>
+
+            <td>This function rounds a number up to the nearest multiple of a specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CEILING.MATH.html" data-auto-update-caption="true">CEILING.MATH</a></td>
+
+            <td>This function round&nbsp; a number up to the nearest integer or to the nearest multiple of significance.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CEILING.PRECISE.html" data-auto-update-caption="true">CEILING.PRECISE</a></td>
+
+            <td>This function rounds a number up to the nearest integer or to the nearest multiple of a specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COMBIN.html" data-auto-update-caption="true">COMBIN</a></td>
+
+            <td>This function calculates the number of possible combinations for a specified number of items.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COMBINA.html" data-auto-update-caption="true">COMBINA</a></td>
+
+            <td>This function calculates the number of possible combinations with repetitions for a specified number of items.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COS.html" data-auto-update-caption="true">COS</a></td>
+
+            <td>This function returns the cosine of the specified angle.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COSH.html" data-auto-update-caption="true">COSH</a></td>
+
+            <td>This function returns the hyperbolic cosine of the specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COT.html" data-auto-update-caption="true">COT</a></td>
+
+            <td>This function returns the cotangent of the specified angle.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COTH.html" data-auto-update-caption="true">COTH</a></td>
+
+            <td>This function returns the hyperbolic cotangent of the specified number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CSC.html" data-auto-update-caption="true">CSC</a></td>
+
+            <td>This function returns the cosecant of the specified angle.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CSCH.html" data-auto-update-caption="true">CSCH</a></td>
+
+            <td>This function returns the hyperbolic cosecant of the specified number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DECIMAL.html" data-auto-update-caption="true">DECIMAL</a></td>
+
+            <td>This function converts a text representation of a number in a given base into a decimal number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DEGREES.html" data-auto-update-caption="true">DEGREES</a></td>
+
+            <td>This function converts the specified value from radians to degrees.</td>
+        </tr>
+
+        <tr>
+            <td><a href="EVEN.html" data-auto-update-caption="true">EVEN</a></td>
+
+            <td>This function rounds the specified value up to the nearest even integer.</td>
+        </tr>
+
+        <tr>
+            <td><a href="EXACT.html" data-auto-update-caption="true">EXACT</a></td>
+
+            <td>This function returns true if two strings are the same; otherwise, false.</td>
+        </tr>
+
+        <tr>
+            <td><a href="EXP.html" data-auto-update-caption="true">EXP</a></td>
+
+            <td>This function returns e raised to the power of the specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FACT.html" data-auto-update-caption="true">FACT</a></td>
+
+            <td>This function calculates the factorial of the specified number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FACTDOUBLE.html" data-auto-update-caption="true">FACTDOUBLE</a></td>
+
+            <td>This function calculates the double factorial of the specified number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FLOOR.MATH.html" data-auto-update-caption="true">FLOOR.MATH</a></td>
+
+            <td>This function round a number down to the nearest integer or to the nearest multiple of significance.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FLOOR.PRECISE.html" data-auto-update-caption="true">FLOOR.PRECISE</a></td>
+
+            <td>This function rounds a number down to the nearest integer or to the nearest multiple of a specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="GCD.html" data-auto-update-caption="true">GCD</a></td>
+
+            <td>This function returns the greatest common divisor of two numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="INT.html" data-auto-update-caption="true">INT</a></td>
+
+            <td>This function rounds a specified number down to the nearest integer.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISO.CEILING.html" data-auto-update-caption="true">ISO.CEILING</a></td>
+
+            <td>This function returns a number up to the nearest integer or to the nearest multiple of significance, regardless of sign of significance.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LCM.html" data-auto-update-caption="true">LCM</a></td>
+
+            <td>This function returns the least common multiple of two numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LET.html" data-auto-update-caption="true">LET</a></td>
+
+            <td>This function assigns calculation results to names. Useful for storing intermediate calculations and values by defining names inside a formula. These names only apply within the scope of the LET function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LN.html" data-auto-update-caption="true">LN</a></td>
+
+            <td>This function returns the natural logarithm of the specified number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LOG.html" data-auto-update-caption="true">LOG</a></td>
+
+            <td>This function returns the logarithm base Y of a number X.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LOG10.html" data-auto-update-caption="true">LOG10</a></td>
+
+            <td>This function returns the logarithm base 10 of the number given.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MDETERM.html" data-auto-update-caption="true">MDETERM</a></td>
+
+            <td>This function returns the matrix determinant of an array.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MINVERSE.html" data-auto-update-caption="true">MINVERSE</a></td>
+
+            <td>This function returns the inverse matrix for the matrix stored in an array.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MMULT.html" data-auto-update-caption="true">MMULT</a></td>
+
+            <td>This function returns the matrix product for two arrays.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MOD.html" data-auto-update-caption="true">MOD</a></td>
+
+            <td>This function returns the remainder of a division operation.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MROUND.html" data-auto-update-caption="true">MROUND</a></td>
+
+            <td>This function returns a number rounded to the desired multiple.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MULTINOMIAL.html" data-auto-update-caption="true">MULTINOMIAL</a></td>
+
+            <td>This function calculates the ratio of the factorial of a sum of values to the product of factorials.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MUNIT.html" data-auto-update-caption="true">MUNIT</a></td>
+
+            <td>This function returns the unit matrix for the specified dimension.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ODD.html" data-auto-update-caption="true">ODD</a></td>
+
+            <td>This function rounds the specified value up to the nearest odd integer.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PI.html" data-auto-update-caption="true">PI</a></td>
+
+            <td>This function returns PI as 3.1415926536.</td>
+        </tr>
+
+        <tr>
+            <td><a href="POWER.html" data-auto-update-caption="true">POWER</a></td>
+
+            <td>This function raises the specified number to the specified power.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PRODUCT.html" data-auto-update-caption="true">PRODUCT</a></td>
+
+            <td>This function multiplies all the arguments and returns the product.</td>
+        </tr>
+
+        <tr>
+            <td><a href="QUOTIENT.html" data-auto-update-caption="true">QUOTIENT</a></td>
+
+            <td>This function returns the integer portion of a division. Use this to ignore the remainder of a division.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RADIANS.html" data-auto-update-caption="true">RADIANS</a></td>
+
+            <td>This function converts the specified number from degrees to radians.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RAND.html" data-auto-update-caption="true">RAND</a></td>
+
+            <td>This function returns an evenly distributed random number between 0 and 1.</td>
+        </tr>
+
+        <tr>
+            <td><a href="randarray.html" data-auto-update-caption="true">RANDARRAY</a></td>
+
+            <td>This function returns an array of random numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RANDBETWEEN.html" data-auto-update-caption="true">RANDBETWEEN</a></td>
+
+            <td>This function returns a random number between the numbers you specify.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ROMAN.html" data-auto-update-caption="true">ROMAN</a></td>
+
+            <td>This function converts an Arabic numeral to a Roman numeral text equivalent.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ROUND.html" data-auto-update-caption="true">ROUND</a></td>
+
+            <td>This function rounds the specified value to the nearest number, using the specified number of decimal places.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ROUNDDOWN.html" data-auto-update-caption="true">ROUNDDOWN</a></td>
+
+            <td>This function rounds the specified number down to the nearest number, using the specified number of decimal places.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ROUNDUP.html" data-auto-update-caption="true">ROUNDUP</a></td>
+
+            <td>This function rounds the specified number up to the nearest number, using the specified number of decimal places.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SEC.html" data-auto-update-caption="true">SEC</a></td>
+
+            <td>This function returns the secant of the specified angle.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SECH.html" data-auto-update-caption="true">SECH</a></td>
+
+            <td>This function returns the hyperbolic secant of the specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SERIESSUM.html" data-auto-update-caption="true">SERIESSUM</a></td>
+
+            <td>This function returns the sum of a power series.</td>
+        </tr>
+
+        <tr>
+            <td><a href="sequence.html" data-auto-update-caption="true">SEQUENCE</a></td>
+
+            <td>This function returns a sequence of numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SIGN.html" data-auto-update-caption="true">SIGN</a></td>
+
+            <td>This function returns the sign of a number or expression.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SIN.html" data-auto-update-caption="true">SIN</a></td>
+
+            <td>This function returns the sine of the specified angle.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SINH.html" data-auto-update-caption="true">SINH</a></td>
+
+            <td>This function returns the hyperbolic sine of the specified number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SQRT.html" data-auto-update-caption="true">SQRT</a></td>
+
+            <td>This function returns the positive square root of the specified number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SQRTPI.html" data-auto-update-caption="true">SQRTPI</a></td>
+
+            <td>This function returns the positive square root of a multiple of pi (p).</td>
+        </tr>
+
+        <tr>
+            <td><a href="SUBTOTAL.html" data-auto-update-caption="true">SUBTOTAL</a></td>
+
+            <td>This function calculates a subtotal of a list of numbers using a specified built-in function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SUM.html" data-auto-update-caption="true">SUM</a></td>
+
+            <td>This function returns the sum of cells or range of cells.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SUMIF.html" data-auto-update-caption="true">SUMIF</a></td>
+
+            <td>This function adds the cells using a given criteria.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SUMIFS.html" data-auto-update-caption="true">SUMIFS</a></td>
+
+            <td>This function adds the cells in a range using multiple criteria.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SUMPRODUCT.html" data-auto-update-caption="true">SUMPRODUCT</a></td>
+
+            <td>This function returns the sum of products of cells. Multiplies corresponding components in the given arrays, and returns the sum of those products.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SUMSQ.html" data-auto-update-caption="true">SUMSQ</a></td>
+
+            <td>This function returns the sum of the squares of the arguments.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SUMX2MY2.html" data-auto-update-caption="true">SUMX2MY2</a></td>
+
+            <td>This function returns the sum of the difference of the squares of corresponding values in two arrays.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SUMX2PY2.html" data-auto-update-caption="true">SUMX2PY2</a></td>
+
+            <td>This function returns the sum of the sum of squares of corresponding values in two arrays.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SUMXMY2.html" data-auto-update-caption="true">SUMXMY2</a></td>
+
+            <td>This function returns the sum of the square of the differences of corresponding values in two arrays.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TAN.html" data-auto-update-caption="true">TAN</a></td>
+
+            <td>This function returns the tangent of the specified angle.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TANH.html" data-auto-update-caption="true">TANH</a></td>
+
+            <td>This function returns the hyperbolic tangent of the specified number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TRUNC.html" data-auto-update-caption="true">TRUNC</a></td>
+
+            <td>This function removes the specified fractional part of the specified number.</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Excel IO Element | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n115","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="e809ffe8-c60c-44c1-aa44-4c67dd13ecde"/>
+    <meta name="Microsoft.Help.TocParent" content="8fbb3c83-b525-4ddc-9942-e0b6de922083"/>
+    <meta name="Microsoft.Help.TocOrder" content="5"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="javascript_frameworks.html">JavaScript Frameworks</a>
+ / <a href="angular.html">SpreadJS with Angular</a>
+ / Excel IO Element</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Excel IO Element</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Using the Excel IO element in SpreadJS with Angular, you can quickly render and display the Excel sheets on the webpages while also executing the import and export operations without any hassle.</p>
+
+<ol>
+    <li>
+        <strong>Install the Angular CLI globally</strong>
+
+        <p>Open the Command Prompt window and type the following command:</p>
+
+        <div class="i-filtered-content-" data-title="" data-itemid="">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Command Prompt</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+npm install -g @angular/cli
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>
+        <strong>Create a new project using Angular CLI</strong>
+
+        <p>Create a new project using the following command and navigate to the project directory:</p>
+
+        <div class="i-filtered-content-" data-title="" data-itemid="">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Command Prompt</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+ng <span style="COLOR: #0000ff">new</span> spread-sheets-angular-cli
+cd spread-sheets-angular-cli
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>
+        <strong>Install SpreadJS Npm package</strong>
+
+        <p>Install the SpreadJS Npm package using the following commands:</p>
+
+        <div class="i-filtered-content-" data-title="" data-itemid="">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Command Prompt</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+npm install @grapecity/spread-sheets
+npm install @grapecity/spread-sheets-angular
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>
+        <strong>Install Excel IO Angular Module and FileSaver Angular Module in the Project</strong>
+
+        <p>Install the Excel I/O and file-saver modules in your project using the following commands:</p>
+
+        <div class="i-filtered-content-" data-title="" data-itemid="">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Command Prompt</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+npm install @grapecity/spread-excelio
+npm install file-saver --save
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>
+        <strong>Configure SpreadJS CSS in angular.json</strong>
+
+        <p>Configure the SpreadJS CSS in angular.json as shown below:</p>
+
+        <div class="i-filtered-content-JSON" data-title="JSON" data-itemid="JSON">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>angular.json</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+{
+  ...
+  <span style="COLOR: #800000">"projects"</span>:{
+    <span style="COLOR: #800000">"spread-sheets-angular-cli"</span>:{
+      ...
+      <span style="COLOR: #800000">"architect"</span>:{
+        ...
+        <span style="COLOR: #800000">"build"</span>:{
+          ...
+          options:{
+            ...
+            <span style="COLOR: #800000">"styles"</span>: [
+              <span style="COLOR: #800000">"node_modules/@grapecity/spread-sheets/styles/gc.spread.sheets.excel2016darkGray.css"</span>
+            ],
+            ...
+          }
+          ...
+        }
+        ...
+      }
+      ...
+    }
+  }
+  ...
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>
+        <strong>Use Excel IO in an Angular application</strong>
+
+        <p>Modify the app.module.ts for importing the SpreadJS module&nbsp;as shown below:</p>
+
+        <div class="i-filtered-content-TypeScript" data-title="TypeScript" data-itemid="TypeScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>app.module.ts</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+import { BrowserModule } from <span style="COLOR: #800000">'@angular/platform-browser'</span>;
+import { NgModule } from <span style="COLOR: #800000">'@angular/core'</span>;
+import { AppComponent } from <span style="COLOR: #800000">'./app.component'</span>;
+import { SpreadSheetsModule } from <span style="COLOR: #800000">"@grapecity/spread-sheets-angular"</span>;
+@NgModule({
+declarations: [AppComponent],
+imports: [BrowserModule,SpreadSheetsModule],
+providers: [],
+bootstrap: [AppComponent]
+})
+export class AppModule { }
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Modify the app.component.html for viewing the SpreadJS component as shown below:</p>
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>app.component.html</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+&lt;div class=<span style="COLOR: #800000">'maincontainer'</span>&gt;
+  &lt;gc-spread-sheets [hostStyle]=<span style="COLOR: #800000">"hostStyle"</span> (workbookInitialized)=<span style="COLOR: #800000">"workbookInit($event)"</span>&gt;
+  &lt;<span style="COLOR: #800000">/gc-spread-sheets&gt;
+</span>  &lt;div class=<span style="COLOR: #800000">'loadExcelInput'</span>&gt;
+    &lt;p&gt;Open Excel File&lt;<span style="COLOR: #800000">/p&gt;
+</span>    &lt;input type=<span style="COLOR: #800000">"file"</span> name=<span style="COLOR: #800000">"files[]"</span> multiple id=<span style="COLOR: #800000">"jsonFile"</span> accept=<span style="COLOR: #800000">".xlsx"</span> (change)=<span style="COLOR: #800000">"onFileChange($event)"</span> <span style="COLOR: #800000">/&gt;
+</span>  &lt;<span style="COLOR: #800000">/div&gt;
+</span>  &lt;div class=<span style="COLOR: #800000">'exportExcel'</span>&gt;
+    &lt;p&gt;Save Excel File&lt;<span style="COLOR: #800000">/p&gt;
+</span>    &lt;button (click)=<span style="COLOR: #800000">"onClickMe($event)"</span>&gt;Save Excel!&lt;<span style="COLOR: #800000">/button&gt;
+</span>  &lt;<span style="COLOR: #800000">/div&gt;
+</span>&lt;<span style="COLOR: #800000">/div&gt;</span>
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Modify the app.component.ts for&nbsp;using Excel IO element and preparing data for SpreadJS component&nbsp;as shown below:</p>
+
+        <div class="i-filtered-content-TypeScript" data-title="TypeScript" data-itemid="TypeScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>app.component.ts</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+import { Component, ViewChild } from <span style="COLOR: #800000">'@angular/core'</span>;
+import * as GC from <span style="COLOR: #800000">'@grapecity/spread-sheets'</span>;
+import * as Excel from <span style="COLOR: #800000">'@grapecity/spread-excelio'</span>;
+import { saveAs } from <span style="COLOR: #800000">'file-saver'</span>;
+<span style="COLOR: #008000">// LICENSE INFORMATION
+</span><span style="COLOR: #0000ff">var</span> SpreadJSKey = <span style="COLOR: #800000">"xxxx"</span>;
+GC.Spread.Sheets.LicenseKey = SpreadJSKey;
+<span style="COLOR: #008000">// NEED TO SET SpreadJS Key to EXCELIO also
+</span>(&lt;any&gt;Excel).LicenseKey = SpreadJSKey;
+@Component({
+  selector: <span style="COLOR: #800000">'app-root'</span>,
+  templateUrl: <span style="COLOR: #800000">'./app.component.html'</span>,
+  styleUrls: [<span style="COLOR: #800000">'./app.component.css'</span>]
+})
+export class AppComponent {
+  spreadBackColor = <span style="COLOR: #800000">'aliceblue'</span>;
+  hostStyle = {
+    width: <span style="COLOR: #800000">'95vw'</span>,
+    height: <span style="COLOR: #800000">'80vh'</span>
+  };
+  private spread!: GC.Spread.Sheets.Workbook;;
+  private excelIO;
+  constructor() {
+    <span style="COLOR: #0000ff">this</span>.excelIO = <span style="COLOR: #0000ff">new</span> Excel.IO();
+  }
+  workbookInit(args: { spread: GC.Spread.Sheets.Workbook; }) {
+    const self = <span style="COLOR: #0000ff">this</span>;
+    self.spread = args.spread;
+    const sheet = self.spread.getActiveSheet();
+    sheet.getCell(0, 0).text(<span style="COLOR: #800000">'Test ExcelIO'</span>).foreColor(<span style="COLOR: #800000">'blue'</span>);
+  }
+  onFileChange(args: any) {
+    const self = <span style="COLOR: #0000ff">this</span>, file = args.srcElement &amp;&amp; args.srcElement.files &amp;&amp; args.srcElement.files[0];
+    <span style="COLOR: #0000ff">if</span> (self.spread &amp;&amp; file) {
+      self.excelIO.open(file, (json: Object) =&gt; {
+        self.spread.fromJSON(json, {});
+        setTimeout(() =&gt; {
+          alert(<span style="COLOR: #800000">'Excel loaded successfully'</span>);
+        }, 0);
+      }, (error: any) =&gt; {
+        alert(<span style="COLOR: #800000">'load fail'</span>);
+      });
+    }
+  }
+  onClickMe(args: any) {
+    const self = <span style="COLOR: #0000ff">this</span>;
+    const filename = <span style="COLOR: #800000">'ExportedExcel.xlsx'</span>;
+    const json = JSON.stringify(self.spread.toJSON());
+    self.excelIO.save(json, <span style="COLOR: #0000ff">function</span> (blob: any) {
+      saveAs(blob, filename);
+    }, <span style="COLOR: #0000ff">function</span> (e: any) {
+      console.log(e);
+    });
+  }
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>
+        <strong>Build and run the project using Angular CLI</strong>
+
+        <p>Build and run the new project using the following command:</p>
+
+        <div class="i-filtered-content-" data-title="" data-itemid="">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Command Prompt</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+ng serve
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

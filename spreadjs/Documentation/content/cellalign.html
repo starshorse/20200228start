@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to align or indent text in a cell and add text decoration to it. Learn more in SpreadJS docs." />
+    
+    <title>Cell Alignment and Indentation | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n313","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to align or indent text in a cell and add text decoration to it. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="12c8b301-2f43-47c5-8e68-33f712a32a22"/>
+    <meta name="Microsoft.Help.TocParent" content="e9628ea1-c098-40b6-a16a-ca0248291974"/>
+    <meta name="Microsoft.Help.TocOrder" content="18"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / Cell Alignment and Indentation</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Cell Alignment and Indentation</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can align or indent text in a cell. You can&nbsp;also add a text decoration. You can specify the vertical and horizontal alignment using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~hAlign.html">hAlign</a> and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~vAlign.html">vAlign</a> methods. You can specify the indent using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~textIndent.html">textIndent</a> method.</p>
+
+<p>&nbsp;</p>
+
+<p><img border="0" alt="Cell alignment and indentation" src="images/cellalign.png" /></p>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~vAlign.html">vAlign</a>&nbsp;method also&nbsp;supports the text vertical alignment in cell editing mode as shown in the below picture.</p>
+
+<p>&nbsp;</p>
+
+<p><img border="0" alt="Vertical text alignment" src="images/edit_mode_cell.png" /></p>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong>&nbsp;In cell editing mode, the vertical alignment of the text is only supported for the "editable div" and is not supported for the "textarea" element. While working on desktop devices with cells of text cell type, you need to replace the textarea element with editable div in order to implement vertical alignment of&nbsp;text in cell editing mode.</p>
+
+    <p>Also, the Ime-mode does not work in two browsers : Google Chrome and Mozilla Firefox.</p>
+</div>
+
+<h4>Using Code</h4>
+
+<p>This example sets the vertical and horizontal alignment for cell B2 and specifies a text indent for cell B3.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+window.onload = <span style="COLOR: #0000ff">function</span>()
+{
+   <span style="COLOR: #0000ff">var</span> spread =
+   <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+   <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+  
+   <span style="COLOR: #008000">// Set the horizontal and vertical alignment of string to “center”
+</span>   <span style="COLOR: #0000ff">var</span> cell = activeSheet.getCell(1, 1, GC.Spread.Sheets.SheetArea.viewport);
+   cell.hAlign(GC.Spread.Sheets.HorizontalAlign.center);
+   cell.vAlign(GC.Spread.Sheets.VerticalAlign.center);
+   cell.value(<span style="COLOR: #800000">"Alignment"</span>);
+   <span style="COLOR: #008000">// Set the indent of strings.
+</span>   cell = activeSheet.getCell(2, 1, GC.Spread.Sheets.SheetArea.viewport);
+   cell.textIndent(2);
+   cell.value(<span style="COLOR: #800000">"Indent"</span>);
+   activeSheet.getRange(1, -1,  2, -1, GC.Spread.Sheets.SheetArea.viewport).height(40);
+   activeSheet.getRange(-1, 1, -1, 1, GC.Spread.Sheets.SheetArea.viewport).width(120);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Center Across Selection</h3>
+
+<p>SpreadJS provides the "Center Across Selection" horizontal alignment which helps to center the contents of selected cells across columns without merging the cells. This type of&nbsp;horizontal alignment can be set using the <strong>HorizontalAlign.centerContinuous</strong> enumeration option.</p>
+
+<p><img border="0" alt="" src="images/centerAcrossSelection.gif" /></p>
+
+<p>The following table shows the different behavior observed when using the "Center Across Selection" horizontal alignment:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Behavior</th>
+
+            <th>Example</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>When a range is set to the alignment, each cell will keep looking to the right for successive empty value cells, and finally place its contents in the center of all cells.</td>
+
+            <td><img border="0" alt="" src="images/center-selection-1.gif" /></td>
+        </tr>
+
+        <tr>
+            <td>If a value is entered into the selected range later, the selection and centering are updated to exclude that cell onward.</td>
+
+            <td><img border="0" alt="" src="images/center-selection-2.gif" /></td>
+        </tr>
+
+        <tr>
+            <td>The selection always starts from the formatted cell.&nbsp; So if selection extends from the left of the cell, those cells are not included.</td>
+
+            <td><img border="0" alt="" src="images/center-selection-3.gif" /></td>
+        </tr>
+
+        <tr>
+            <td>The centering is adjusted as columns are resized.</td>
+
+            <td><img border="0" alt="" src="images/center-selection-4.gif" /></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following code example implements the "Center Across Selection" horizontal alignment in a worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.getCell(1,1).value(<span style="COLOR: #800000">"Center Across Selection"</span>);
+activeSheet.getRange(1, 1, 1, 5, GC.Spread.Sheets.SheetArea.viewport).hAlign(GC.Spread.Sheets.HorizontalAlign.centerContinuous);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The "Center Across Selection" horizontal alignment interacts with other features of SpreadJS in the following ways:</p>
+
+<ul>
+    <li><strong>Overflow</strong> - If the content in the "Center Across Selection" alignment exceeds the width of the selected range, an overflow to both sides will be triggered.</li>
+
+    <li><strong>Wrap text</strong> - The row height property will force cells to wrap text within the boundaries of "Center Across Selection" regions.</li>
+
+    <li><strong>Shrink to fit</strong> - If the option is selected, then the width property will be used to calculate the actual font size and fit the content in the selected range.</li>
+
+    <li><strong>Accounting number format</strong> - "Center Across Selection" does not directly center the text, but stretches the symbols and values to the sides.</li>
+
+    <li><strong>Text indent</strong> - "Center Across Selection" will lock indent to 0.</li>
+
+    <li><strong>Orientation</strong> - "Center Across Selection" will lock orientation to 0.</li>
+
+    <li><strong>Merged cells</strong> - A merged cell can't use the center across selection style. "Center Across Selection" will be replaced with "Center" if the cell is merged.</li>
+</ul>
+
+<h4>Using SpreadJS Designer</h4>
+
+<p>You can use alignment and indentation features by accessing the Alignment tab in the Format Cells window.&nbsp;Click the "HOME" tab &gt; "Alignment" group &gt; bottom right arrow button to open&nbsp;the "Format Cells" window.</p>
+
+<p><img border="0" alt="" src="images/alignment-tab-designer.gif" /></p>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="styles.html">Styles</a></div>
+<div class="i-see-also-link">
+<a href="textdeco.html">Text Decoration</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.CellRange~wordWrap.html">wordWrap Method</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

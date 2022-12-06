@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="This topic lists the chart types supported in SpreadJS. Learn more in SpreadJS docs." />
+    
+    <title>Chart Types | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n571","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="This topic lists the chart types supported in SpreadJS. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="1124f6de-499a-4032-8d2a-c338ec23d096"/>
+    <meta name="Microsoft.Help.TocParent" content="bdba97c4-037f-4cd7-ae56-830374286ef0"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / Chart Types</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Chart Types</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports several chart types as listed in the table shared below. Each of these chart types has additional views.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Chart Group</th>
+
+            <th>Chart Types</th>
+        </tr>
+
+        <tr>
+            <td><a href="CreateColumnChart.html">Column</a></td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Clustered Column</td>
+                        </tr>
+
+                        <tr>
+                            <td>Stacked Column</td>
+                        </tr>
+
+                        <tr>
+                            <td>100% Stacked Column</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="CreatingLineChart.html">Line</a></td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Line</td>
+                        </tr>
+
+                        <tr>
+                            <td>Stacked Line</td>
+                        </tr>
+
+                        <tr>
+                            <td>100% Stacked Line</td>
+                        </tr>
+
+                        <tr>
+                            <td>Line with Markers</td>
+                        </tr>
+
+                        <tr>
+                            <td>Stacked Line with Markers</td>
+                        </tr>
+
+                        <tr>
+                            <td>100% Stacked Line with Markers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="CreatingPieChart.html">Pie</a></td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Pie</td>
+                        </tr>
+
+                        <tr>
+                            <td>Doughnut</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="creating_bar_chart.html">Bar</a></td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Clustered Bar</td>
+                        </tr>
+
+                        <tr>
+                            <td>Stacked Bar</td>
+                        </tr>
+
+                        <tr>
+                            <td>100% Stacked Bar</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="CreatingAreaChart.html">Area</a></td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Area</td>
+                        </tr>
+
+                        <tr>
+                            <td>Stacked Area</td>
+                        </tr>
+
+                        <tr>
+                            <td>100% Stacked Area</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="CreatingScatterChart.html">XY (Scatter)</a></td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Scatter</td>
+                        </tr>
+
+                        <tr>
+                            <td>Scatter with Smooth Lines and Markers</td>
+                        </tr>
+
+                        <tr>
+                            <td>Scatter with Smooth Lines</td>
+                        </tr>
+
+                        <tr>
+                            <td>Scatter with Straight Lines and Markers</td>
+                        </tr>
+
+                        <tr>
+                            <td>Scatter with Straight Lines</td>
+                        </tr>
+
+                        <tr>
+                            <td>Bubble</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="CreatingStockChart.html">Stock</a></td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Open-High-Low-Close</td>
+                        </tr>
+
+                        <tr>
+                            <td>High-Low-Close</td>
+                        </tr>
+
+                        <tr>
+                            <td>Column-High-Low-Close Stock</td>
+                        </tr>
+
+                        <tr>
+                            <td>Column-Open-High-Low-Close Stock</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="CreatingComboChart.html">Combo</a></td>
+
+            <td>Combo chart</td>
+        </tr>
+
+        <tr>
+            <td><a href="CreatingRadarChart.html">Radar</a></td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Basic Radar chart</td>
+                        </tr>
+
+                        <tr>
+                            <td>Filled Radar chart</td>
+                        </tr>
+
+                        <tr>
+                            <td>Radar chart with markers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="CreatingSunburstChart.html">Sunburst</a></td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Sunburst chart</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="CreatingTreemapChart.html">Treemap</a></td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Treemap chart</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="funnel-chart.html">Funnel Chart</a></td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Funnel&nbsp;chart</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="CreateColumnChart.html">Column Chart</a></div>
+<div class="i-see-also-link">
+<a href="CreatingLineChart.html">Line Chart</a></div>
+<div class="i-see-also-link">
+<a href="CreatingPieChart.html">Pie Chart</a></div>
+<div class="i-see-also-link">
+<a href="creating_bar_chart.html">Bar Chart</a></div>
+<div class="i-see-also-link">
+<a href="CreatingAreaChart.html">Area Chart</a></div>
+<div class="i-see-also-link">
+<a href="CreatingScatterChart.html">Scatter Chart</a></div>
+<div class="i-see-also-link">
+<a href="CreatingStockChart.html">Stock Chart</a></div>
+<div class="i-see-also-link">
+<a href="CreatingComboChart.html">Combo Chart</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

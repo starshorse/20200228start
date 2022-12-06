@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Add sunburst charts to your worksheet using SpreadJS to display hierarchical datasets in graphical form with data plotted in rows and columns." />
+    
+    <title>Sunburst Chart | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n590","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Add sunburst charts to your worksheet using SpreadJS to display hierarchical datasets in graphical form with data plotted in rows and columns." />
+    
+    <meta name="Microsoft.Help.Id" content="807aa260-2a6d-4c41-83cd-d3efefca5f80"/>
+    <meta name="Microsoft.Help.TocParent" content="1124f6de-499a-4032-8d2a-c338ec23d096"/>
+    <meta name="Microsoft.Help.TocOrder" content="10"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / <a href="ChartTypes.html">Chart Types</a>
+ / Sunburst Chart</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Sunburst Chart</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>A sunburst chart displays hierarchical datasets in graphical form with data plotted in rows and columns for multiple categories or levels.</p>
+
+<p>SpreadJS supports sunburst charts in order to enable users to analyse homogenous and heterogenous data&nbsp; while working with tables&nbsp;and relational database in&nbsp;the worksheets. Moreover, this type of chart helps&nbsp;users in&nbsp;breaking down data&nbsp;into different entities for identifying and visualizing multilevel parent child relationships in different business scenarios&nbsp;quickly and efficiently.</p>
+
+<h4>Working of Sunburst Chart</h4>
+
+<p>Typically, a sunburst chart is created with multiple levels&nbsp;or categories. Each category or level&nbsp;is represented by a&nbsp;ring or a circle with the innermost circle depicting the top level, thus displaying how the outer rings (child categories or sublevels)&nbsp;relate to the inner rings (parent categories or top levels).</p>
+
+<p>In SpreadJS, the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Points.html" data-auto-update-caption="true">Points</a>&nbsp;class represents all the dataPoints in a chart series.&nbsp;Datapoints can be used to represent each highest&nbsp;level and their sub data points&nbsp;in the hierarchical data.</p>
+
+<p>If a sunburst chart is created with only one category or&nbsp;level, its appearance resembles to a doughnut chart. The sunburst chart is useful especially when users want to show how one category or level (ring) is broken into its contributing pieces.</p>
+
+<h4>Example</h4>
+
+<p>For instance, let's take an example of world population as shown in the below table&nbsp;with four major regions representing datapoints (top levels)- Asia, Africa, Europe and Others. These regions are further divided into subregions, which are further divided into countries with each country having unique population statistics.</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" alt="World population data" src="images/data-sunburst-chart.png" />
+
+<p>When a sunburst chart is created for the above data, it becomes much&nbsp;easier and faster&nbsp;to manipulate, understand and visualize&nbsp;information in an effective way for comprehensive data analysis.</p>
+
+<p>An image&nbsp;of the sunburst chart&nbsp;depicting world population&nbsp;for the above plotted data for different regions, subregions and countries&nbsp;is shown in the below screenshot.</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" alt="Sunburst chart" src="images/sunburst-chart.png" />
+
+<p>Clearly, the innermost circle depicts all the four&nbsp;top levels (Asia,&nbsp;Africa, Europe and Others)&nbsp;amongst which Asia&nbsp;is the region with highest population in the world and Europe is the region with lowest population in the world. Also, the most populous country accroding to the above chart is China in the Eastern subregion.</p>
+
+<h4>Using Code</h4>
+
+<p>This example code&nbsp;shows how to create sunburst chart in a spreadsheet to analyse world population.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Creating Sunburst chart
+</span>window.onload = <span style="COLOR: #0000ff">function</span> ()
+{
+  <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+  <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+  sheet.setColumnWidth(2, 100);
+  sheet.setColumnWidth(4, 100);
+  <span style="COLOR: #0000ff">var</span> dataArray = [
+  [<span style="COLOR: #800000">'Region'</span>, <span style="COLOR: #800000">'Subregion'</span>, <span style="COLOR: #800000">'Country'</span>, <span style="COLOR: #800000">'Population'</span>],
+  [<span style="COLOR: #800000">'Asia'</span>, <span style="COLOR: #800000">'Southern'</span>, <span style="COLOR: #800000">'India'</span>, 954051854],
+  [, , <span style="COLOR: #800000">'Pakistan'</span>, 200813818],
+  [, , <span style="COLOR: #800000">'Thailand'</span>, 466368149],
+  [, , <span style="COLOR: #800000">'Others'</span>, 170220300],
+  [, <span style="COLOR: #800000">'Eastern'</span>, <span style="COLOR: #800000">'China'</span>, 1215045928],
+  [, , <span style="COLOR: #800000">'Japan'</span>, 527185332],
+  [, , <span style="COLOR: #800000">'Others'</span>, 191652273],
+  [, <span style="COLOR: #800000">'South-Eastern'</span>, , 955036576],
+  [, <span style="COLOR: #800000">'Western'</span>, , 272298399],
+  [, <span style="COLOR: #800000">'Central'</span>, , 71860465],
+  [<span style="COLOR: #800000">'Africa'</span>, <span style="COLOR: #800000">'Eastern'</span>, , 433043132],
+  [, <span style="COLOR: #800000">'Western'</span>, , 381980688],
+  [, <span style="COLOR: #800000">'Northern'</span>, , 237784677],
+  [, <span style="COLOR: #800000">'Others'</span>, , 234512021],
+  [<span style="COLOR: #800000">'Europe'</span>, , , 742648010],
+  [<span style="COLOR: #800000">'Others'</span>, , , 1057117703]
+  ];
+  
+  sheet.setArray(1, 1, dataArray);
+  <span style="COLOR: #0000ff">var</span> chart = sheet.charts.add(<span style="COLOR: #800000">'chart1'</span>,   
+  GC.Spread.Sheets.Charts.ChartType.sunburst,450, 0, 500, 500, <span style="COLOR: #800000">"B2:E18"</span>);
+  <span style="COLOR: #0000ff">var</span> title = chart.title()
+  title.fontSize = <span style="COLOR: #800000">"24.00"</span>;
+  title.color = <span style="COLOR: #800000">"rgb(228,65,54)"</span>;
+  title.text = <span style="COLOR: #800000">'WORLD POPULATION'</span>;
+  chart.title(title);
+  <span style="COLOR: #0000ff">var</span> dataPoints = chart.series().dataPoints();
+  <span style="COLOR: #0000ff">var</span> fillColors = [<span style="COLOR: #800000">'#4472c4'</span>, <span style="COLOR: #800000">'#a5a5a5'</span>, <span style="COLOR: #800000">'#ffc000'</span>, <span style="COLOR: #800000">'#ed7d31'</span>];
+  fillColors.forEach(<span style="COLOR: #0000ff">function</span> (color, index)
+{
+  <span style="COLOR: #0000ff">var</span> dataPoint = dataPoints.get(index);
+  dataPoint.fillColor = color;
+  dataPoint.transparency = 0; <span style="COLOR: #008000">// 0~1
+</span>  dataPoints.set(index, dataPoint);
+  })
+};
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> The sunburst chart supports only one series. Also, the data labels in a sunburst chart can be configured to display category names only.
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

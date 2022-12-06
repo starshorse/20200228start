@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>onOpenMenu Method | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n9874","initialNodeContainer":"c422","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.ContextMenu.ContextMenu~onOpenMenu"/>
+    <meta name="Description" content="open context menu" />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets.ContextMenu.ContextMenu_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets.ContextMenu_namespace.html">GC.Spread.Sheets.ContextMenu Namespace</a>
+ / <a href="SpreadJS~GC.Spread.Sheets.ContextMenu.ContextMenu.html">ContextMenu type</a>
+ / onOpenMenu Method</div></div>
+
+    
+<div id="menuDataPopupContent" class="i-popup-content">
+
+</div>
+<div id="menuData.namePopupContent" class="i-popup-content">
+Represent context menu item's identify.
+</div>
+<div id="menuData.textPopupContent" class="i-popup-content">
+Represent the text to be shown,if this context menu item is a group,text will be shown as DOM element's title.
+</div>
+<div id="menuData.commandPopupContent" class="i-popup-content">
+Represent a command name,commandManager will use this as index to find this command,if this command exist,then execute it.
+</div>
+<div id="menuData.disablePopupContent" class="i-popup-content">
+Represent this context menu item is disabled under current condition, default value is false.
+</div>
+<div id="menuData.iconClassPopupContent" class="i-popup-content">
+Represent this context menu item's icon,it is a class name.
+</div>
+<div id="menuData.groupPopupContent" class="i-popup-content">
+Represent this context menu item is a group menu item and this param's value should be it's group header's name.
+</div>
+<div id="menuData.subMenuPopupContent" class="i-popup-content">
+Represent this context menu item has sub menu.
+</div>
+<div id="menuData.typePopupContent" class="i-popup-content">
+Represent a context menu's type.
+</div>
+<div id="menuData.workAreaPopupContent" class="i-popup-content">
+Represent this context menu item's should be shown on what area,value can be a collection of conditions,separate by whitespace. include: "sheetTab", "outline", "viewport", "rowHeader", "colHeader", "comment", "slicer", "corner".
+</div>
+<div id="itemsDataForShownPopupContent" class="i-popup-content">
+
+</div>
+<div id="itemsDataForShown.namePopupContent" class="i-popup-content">
+Represent context menu item's identify.
+</div>
+<div id="itemsDataForShown.textPopupContent" class="i-popup-content">
+Represent the text to be shown,if this context menu item is a group,text will be shown as DOM element's title.
+</div>
+<div id="itemsDataForShown.commandPopupContent" class="i-popup-content">
+Represent a command name,commandManager will use this as index to find this command,if this command exist,then execute it.
+</div>
+<div id="itemsDataForShown.disablePopupContent" class="i-popup-content">
+Represent this context menu item is disabled under current condition, default value is false.
+</div>
+<div id="itemsDataForShown.iconClassPopupContent" class="i-popup-content">
+Represent this context menu item's icon,it is a class name.
+</div>
+<div id="itemsDataForShown.groupPopupContent" class="i-popup-content">
+Represent this context menu item is a group menu item and this param's value should be it's group header's name.
+</div>
+<div id="itemsDataForShown.subMenuPopupContent" class="i-popup-content">
+Represent this context menu item has sub menu.
+</div>
+<div id="itemsDataForShown.typePopupContent" class="i-popup-content">
+Represent a context menu's type.
+</div>
+<div id="itemsDataForShown.workAreaPopupContent" class="i-popup-content">
+Represent this context menu item's should be shown on what area,value can be a collection of conditions,separate by whitespace. include: "sheetTab", "outline", "viewport", "rowHeader", "colHeader", "comment", "slicer", "corner".
+</div>
+<div id="hitInfoPopupContent" class="i-popup-content">
+
+</div>
+<div id="spreadPopupContent" class="i-popup-content">
+
+</div>
+
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">onOpenMenu Method</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">open context menu</div>
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new <a href="SpreadJS~GC.Spread.Sheets.ContextMenu.ContextMenu.html">GC.Spread.Sheets.ContextMenu.ContextMenu</a>();
+var value; // Type: boolean
+value = instance.onOpenMenu(menuData,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menuData.name,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menuData.text,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menuData.command,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menuData.disable,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menuData.iconClass,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menuData.group,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menuData.subMenu,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menuData.type,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menuData.workArea,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemsDataForShown,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemsDataForShown.name,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemsDataForShown.text,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemsDataForShown.command,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemsDataForShown.disable,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemsDataForShown.iconClass,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemsDataForShown.group,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemsDataForShown.subMenu,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemsDataForShown.type,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemsDataForShown.workArea,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hitInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spread);</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function onOpenMenu( 
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="menuDataPopupLink" data-popup-contentsource="#menuDataPopupContent" data-popup-showevent="click mouseenter">menuData</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="menuData.namePopupLink" data-popup-contentsource="#menuData.namePopupContent" data-popup-showevent="click mouseenter">menuData.name</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="menuData.textPopupLink" data-popup-contentsource="#menuData.textPopupContent" data-popup-showevent="click mouseenter">menuData.text</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="menuData.commandPopupLink" data-popup-contentsource="#menuData.commandPopupContent" data-popup-showevent="click mouseenter">menuData.command</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="menuData.disablePopupLink" data-popup-contentsource="#menuData.disablePopupContent" data-popup-showevent="click mouseenter">menuData.disable</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="menuData.iconClassPopupLink" data-popup-contentsource="#menuData.iconClassPopupContent" data-popup-showevent="click mouseenter">menuData.iconClass</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="menuData.groupPopupLink" data-popup-contentsource="#menuData.groupPopupContent" data-popup-showevent="click mouseenter">menuData.group</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="menuData.subMenuPopupLink" data-popup-contentsource="#menuData.subMenuPopupContent" data-popup-showevent="click mouseenter">menuData.subMenu</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="menuData.typePopupLink" data-popup-contentsource="#menuData.typePopupContent" data-popup-showevent="click mouseenter">menuData.type</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="menuData.workAreaPopupLink" data-popup-contentsource="#menuData.workAreaPopupContent" data-popup-showevent="click mouseenter">menuData.workArea</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="itemsDataForShownPopupLink" data-popup-contentsource="#itemsDataForShownPopupContent" data-popup-showevent="click mouseenter">itemsDataForShown</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="itemsDataForShown.namePopupLink" data-popup-contentsource="#itemsDataForShown.namePopupContent" data-popup-showevent="click mouseenter">itemsDataForShown.name</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="itemsDataForShown.textPopupLink" data-popup-contentsource="#itemsDataForShown.textPopupContent" data-popup-showevent="click mouseenter">itemsDataForShown.text</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="itemsDataForShown.commandPopupLink" data-popup-contentsource="#itemsDataForShown.commandPopupContent" data-popup-showevent="click mouseenter">itemsDataForShown.command</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="itemsDataForShown.disablePopupLink" data-popup-contentsource="#itemsDataForShown.disablePopupContent" data-popup-showevent="click mouseenter">itemsDataForShown.disable</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="itemsDataForShown.iconClassPopupLink" data-popup-contentsource="#itemsDataForShown.iconClassPopupContent" data-popup-showevent="click mouseenter">itemsDataForShown.iconClass</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="itemsDataForShown.groupPopupLink" data-popup-contentsource="#itemsDataForShown.groupPopupContent" data-popup-showevent="click mouseenter">itemsDataForShown.group</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="itemsDataForShown.subMenuPopupLink" data-popup-contentsource="#itemsDataForShown.subMenuPopupContent" data-popup-showevent="click mouseenter">itemsDataForShown.subMenu</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="itemsDataForShown.typePopupLink" data-popup-contentsource="#itemsDataForShown.typePopupContent" data-popup-showevent="click mouseenter">itemsDataForShown.type</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="itemsDataForShown.workAreaPopupLink" data-popup-contentsource="#itemsDataForShown.workAreaPopupContent" data-popup-showevent="click mouseenter">itemsDataForShown.workArea</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="hitInfoPopupLink" data-popup-contentsource="#hitInfoPopupContent" data-popup-showevent="click mouseenter">hitInfo</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="spreadPopupLink" data-popup-contentsource="#spreadPopupContent" data-popup-showevent="click mouseenter">spread</a></i> : Object
+) : boolean;</pre>
+      </div>
+    
+
+      </div>
+    
+            <h4 class=dxh4>Parameters</h4><dl><dt><I>menuData</I></dt>
+<dd></dd><dt><I>menuData.name</I></dt>
+<dd>Represent context menu item's identify.</dd><dt><I>menuData.text</I></dt>
+<dd>Represent the text to be shown,if this context menu item is a group,text will be shown as DOM element's title.</dd><dt><I>menuData.command</I></dt>
+<dd>Represent a command name,commandManager will use this as index to find this command,if this command exist,then execute it.</dd><dt><I>menuData.disable</I></dt>
+<dd>Represent this context menu item is disabled under current condition, default value is false.</dd><dt><I>menuData.iconClass</I></dt>
+<dd>Represent this context menu item's icon,it is a class name.</dd><dt><I>menuData.group</I></dt>
+<dd>Represent this context menu item is a group menu item and this param's value should be it's group header's name.</dd><dt><I>menuData.subMenu</I></dt>
+<dd>Represent this context menu item has sub menu.</dd><dt><I>menuData.type</I></dt>
+<dd>Represent a context menu's type.</dd><dt><I>menuData.workArea</I></dt>
+<dd>Represent this context menu item's should be shown on what area,value can be a collection of conditions,separate by whitespace. include: "sheetTab", "outline", "viewport", "rowHeader", "colHeader", "comment", "slicer", "corner".</dd><dt><I>itemsDataForShown</I></dt>
+<dd></dd><dt><I>itemsDataForShown.name</I></dt>
+<dd>Represent context menu item's identify.</dd><dt><I>itemsDataForShown.text</I></dt>
+<dd>Represent the text to be shown,if this context menu item is a group,text will be shown as DOM element's title.</dd><dt><I>itemsDataForShown.command</I></dt>
+<dd>Represent a command name,commandManager will use this as index to find this command,if this command exist,then execute it.</dd><dt><I>itemsDataForShown.disable</I></dt>
+<dd>Represent this context menu item is disabled under current condition, default value is false.</dd><dt><I>itemsDataForShown.iconClass</I></dt>
+<dd>Represent this context menu item's icon,it is a class name.</dd><dt><I>itemsDataForShown.group</I></dt>
+<dd>Represent this context menu item is a group menu item and this param's value should be it's group header's name.</dd><dt><I>itemsDataForShown.subMenu</I></dt>
+<dd>Represent this context menu item has sub menu.</dd><dt><I>itemsDataForShown.type</I></dt>
+<dd>Represent a context menu's type.</dd><dt><I>itemsDataForShown.workArea</I></dt>
+<dd>Represent this context menu item's should be shown on what area,value can be a collection of conditions,separate by whitespace. include: "sheetTab", "outline", "viewport", "rowHeader", "colHeader", "comment", "slicer", "corner".</dd><dt><I>hitInfo</I></dt>
+<dd></dd><dt><I>spread</I></dt>
+<dd></dd></dl>
+
+            </div>
+            
+
+            <a name="exampleBookmark"></a>
+            
+            
+            <div class="i-section-heading" id="i-example-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Example</span></div><div id="i-example-section-content" class="i-section-content"><div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-0025ebf6-f464-4801-9e76-470c439ffd7c">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-0025ebf6-f464-4801-9e76-470c439ffd7c" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> spread = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="color: #800000; ">&quot;ss&quot;</span>));
+   <span style="color: #0000FF; ">function</span> ContextMenu(){}
+   ContextMenu.prototype = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ContextMenu.ContextMenu(spread);
+   ContextMenu.prototype.onOpenMenu = <span style="color: #0000FF; ">function</span> (menuData, itemsDataForShown, hitInfo, spread) {
+          console.log(menuData);
+          console.log(itemsDataForShown);
+          console.log(hitInfo);
+          console.log(spread);
+          <span style="color: #008000; ">//you can change itemsDataForShown to change filter result
+</span>          <span style="color: #008000; ">//if you only want to change filter result,return false or don't return anything
+</span>          <span style="color: #008000; ">//you also can open your own context menu,if you want to do this,return true
+</span>          <span style="color: #008000; ">//return true;
+</span>   };
+   <span style="color: #0000FF; ">var</span> contextMenu = <span style="color: #0000FF; ">new</span> ContextMenu();
+   spread.contextMenu = contextMenu;</pre></div>
+	</div>
+</div>
+</div>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets.ContextMenu.ContextMenu.html">ContextMenu type</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

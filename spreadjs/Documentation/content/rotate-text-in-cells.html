@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Rotate Text In Cells | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n331","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="579b15d4-b408-4364-b2ea-c648a8606a05"/>
+    <meta name="Microsoft.Help.TocParent" content="e9628ea1-c098-40b6-a16a-ca0248291974"/>
+    <meta name="Microsoft.Help.TocOrder" content="27"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / Rotate Text In Cells</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Rotate Text In Cells</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to rotate the text in a cell. This feature helps users to change the way data appears in a cell.</p>
+
+<p>Users can rotate the font angle from -90 to +90 degrees (including 45⁰ , 90⁰, -45⁰ , -90⁰ etc.), or change the data alignment as per their specific preferences while working with spreadsheets. The text can be rotated in upwards direction, downwards direction, clockwise direction or counterclockwise direction, as shown in the screenshot shared below:</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Text rotation" src="images/spreadjsv13images/rotate1.png" />&nbsp;</p>
+
+<h3 id="a">Usage Scenario</h3>
+
+<p>Text Rotation is helpful especially when:</p>
+
+<ul>
+    <li>Users are working in a large spreadsheet with hundreds of columns and the text in column headers is longer than the text in the cells. In this scenario, it is beneficial to rotate the text in your headings so the columns become narrower and you can see maximum number of column headings in the viewport while analyzing data.</li>
+
+    <li>Users want to fit more columns of data in a smaller area to manage bulk data easily and quickly.</li>
+</ul>
+
+<h3>Rotating&nbsp;Text in&nbsp;a Cell</h3>
+
+<p>When the text to be rotated is a normal text or the text is in accounting format, then the number of characters filled will be related to the cell height.&nbsp;If users adjust the cell height, the text will change dynamically.</p>
+
+<p>The following image depicts annual sales revenues of different companies in a spreadsheet with text rotation feature applied to the cells along with border styling and custom background color.</p>
+
+<p><img border="0" alt="Rotation feature applied to the cells" src="images/spreadjsv13images/rotate5.png" />&nbsp;</p>
+
+<p>When the text in the cells is rotated, the following worksheet features will be affected:</p>
+
+<ol>
+    <li>Text Alignment - The rotation angle will affect the order of the text. When the rotation angle is negative, the text is displayed from right to left. When the rotation angle is positive, then the text is displayed from left to right.</li>
+
+    <li>Word Wrap - Only the height of the current cell will affect the wordwrap feature.</li>
+
+    <li>Cell Overflow -&nbsp;This is related to the horizontal alignment. When "hAlign=left", the text will be over to the right and when "hAlign=right", then the text will be over to the left.&nbsp;</li>
+
+    <li>&nbsp;Text Indentation - If the text in the cell is indented, then the text rotation feature will not work.</li>
+
+    <li>Shrink to Fit - For accounting format text, the repeat characters will be eliminiated and hence, the text will shrink to fit in the cell.</li>
+
+    <li>Text Decoration - When the text is rotated, the placeholders will also have text decoration just like in Excel.</li>
+
+    <li>Text Hidden and AutoFit - When the height after the rotation exceeds the height of the current cell, then the text will hide the extra text above the viewport and the rowHeightAutoFit will be calculated according to the vertical length after rotation. For accounting format text, the repeat characters will be eliminiated and hence, the text will automatically fit inside the cell.</li>
+</ol>
+
+<h3>Rotating Cell Border with Background</h3>
+
+<p>When users apply text rotation in the cells (containing data values)&nbsp;of a spreadsheet, then the border and the background color will also rotate to the corresponding angle.&nbsp;The position of the text will automatically adjust itself according to the position of the cell after the rotation, as shown in the screenshot shared below:</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Rotating cell border with background" src="images/spreadjsv13images/rotate-2.png" /></p>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> When users set the background color, the rotation on the background color will take effect only if the cell contains a value and has an arbitrary border so that the background can fill the rotated border area.
+</div>
+
+<h3 id="e">Using Code</h3>
+
+<p>Refer to the following example code to rotate text in the cells while working with spreadsheets.&nbsp;</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+<span style="COLOR: #008000">// Prepare data
+</span>activeSheet.setValue(1, 1, <span style="COLOR: #800000">"Company Sales Data"</span>);
+activeSheet.setValue(1, 3, <span style="COLOR: #800000">"Year-2015"</span>);
+activeSheet.setValue(1, 4, <span style="COLOR: #800000">"Year-2016"</span>);
+activeSheet.setValue(1, 5, <span style="COLOR: #800000">"Year-2017"</span>);
+activeSheet.setValue(1, 6, <span style="COLOR: #800000">"Year-2018"</span>);
+activeSheet.setValue(1, 7, <span style="COLOR: #800000">"Year-2019"</span>);
+activeSheet.setValue(2, 2, <span style="COLOR: #800000">"Gradlco"</span>);
+activeSheet.setValue(3, 2, <span style="COLOR: #800000">"Saagiate"</span>);
+activeSheet.setValue(4, 2, <span style="COLOR: #800000">"Inferno"</span>);
+activeSheet.setColumnWidth(1, 120);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> r = 2; r &lt;= 4; r++) {
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> c = 3; c &lt; 8; c++) {
+activeSheet.setValue(r, c, parseInt(Math.random() * 5000));
+}
+}
+<span style="COLOR: #008000">// Create a Style with TextOrientation and apply it on a range of cells
+</span><span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style.textOrientation = 60;
+style.backColor = <span style="COLOR: #800000">"pink"</span>;
+style.foreColor = <span style="COLOR: #800000">"red"</span>;
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 3; i &lt; 8; i++)
+activeSheet.setStyle(1, i, style, GC.Spread.Sheets.SheetArea.viewport);
+<span style="COLOR: #008000">// Set Row Height
+</span>activeSheet.setRowHeight(1, 60, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.addSpan(1, 1, 4, 1, GC.Spread.Sheets.SheetArea.viewport);
+
+<span style="COLOR: #008000">// Set textOrientation for Cell(1,1), this cell is without borders.
+</span>activeSheet.getCell(1, 1).textOrientation(60);
+activeSheet.getCell(1, 1).hAlign(GC.Spread.Sheets.HorizontalAlign.center);
+activeSheet.getCell(1, 1).hAlign(GC.Spread.Sheets.VerticalAlign.center);
+activeSheet.getCell(1, 1).backColor(<span style="COLOR: #800000">"LightBlue"</span>);
+<span style="COLOR: #008000">// Set border for cells
+</span>activeSheet.getRange(1, 3, 4, 5, GC.Spread.Sheets.SheetArea.viewport).setBorder(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"Blue"</span>, GC.Spread.Sheets.LineStyle.medium), { all: <span style="COLOR: #0000ff">true</span> }, 3);
+
+<span style="COLOR: #008000">// Set cell's backColor
+</span><span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 2; i &lt; 5; i++)
+activeSheet.getCell(i, 2).backColor(<span style="COLOR: #800000">"lightGray"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

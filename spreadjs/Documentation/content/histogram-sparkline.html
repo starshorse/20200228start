@@ -1,0 +1,520 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn about the histogram sparkline in SpreadJS. Learn the various options available for the histogram sparkline formula along with their descriptions. " />
+    
+    <title>Histogram Sparkline | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n661","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn about the histogram sparkline in SpreadJS. Learn the various options available for the histogram sparkline formula along with their descriptions. " />
+    
+    <meta name="Microsoft.Help.Id" content="5fe63f19-74f9-4c57-aeba-f0996310c76b"/>
+    <meta name="Microsoft.Help.TocParent" content="fd9cab4f-16bf-437c-a370-bbba7f456cf3"/>
+    <meta name="Microsoft.Help.TocOrder" content="22"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sparkmain.html">Sparklines</a>
+ / Histogram Sparkline</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Histogram Sparkline</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Histograms are used to represent the frequency distribution of a data set. SpreadJS allows you to&nbsp;create histogram sparklines by using the histogram sparkline function.</p>
+
+<p><img border="0" alt="histogram sparkline element label" src="images/histogram-label.png" /></p>
+
+<p>The above image shows a histogram sparkline and its elements:</p>
+
+<ul>
+    <li><strong>Bin:</strong> The data container which contains data&nbsp;of the specified range of values.</li>
+
+    <li>
+        <strong>Bar:</strong> The paint block responsible for UI. The bar height is determined by the following expression if the paintLabel option is true:
+        <pre>
+(cellRowHeight - labelFontSize - 6px)
+</pre>Otherwise it is determined by:
+        <pre>
+(cellRowHeight - 6px)
+</pre>
+    </li>
+
+    <li><strong>Edge:</strong> The border of bar.</li>
+
+    <li>
+        <strong>Data Label:</strong> The data range displayed in the sparkline. The data label font size is determined by the expression:
+        <pre>
+Math.floor(cellRowHeight/3)
+</pre>
+
+        <ul>
+            <li>If the font size is more than the expression, then the largest integer less than or equal to the expression is taken as the font size.</li>
+
+            <li>If the height of the cell is less than cell row height, the font size is 12px.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>Types of Histogram Sparklines</h3>
+
+<p>The Histogram sparklines can be displayed in a discrete or continuous manner as shown below:</p>
+
+<table style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+    <tbody>
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="discrete histogram sparkline type" src="images/discrete-histogram.png" /></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="continuous histogram sparkline type" src="images/continuous-histogram.png" /></td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Discrete Histogram</strong> represents the data in a discrete manner (without continuous intervals) by taking existing values. For example: 20, 34, 38. The values are painted in ascending order.</p>
+
+<p><strong>Continuous Histogram</strong> represents the data by taking a range of continuous values. The intervals for the first bin are left-closed and right-closed, whereas intervals for rest of the bins are left-open and right-closed.</p>
+
+<ul>
+    <li>The lower bound is calculated using:
+        <pre>
+Math.floor(minValue/scale)*scale
+</pre>Whereas the upper bound is calculated using:
+        <pre>
+Math.ceil(maxValue/scale)*scale
+</pre>
+    </li>
+
+    <li>The width of bin is 1, by default</li>
+
+    <li>If the scale is lower than 0, the sparkline is set to 1</li>
+</ul>
+
+<p>The type of histogram can be specified by using the <strong>continuous</strong> option in the HistogramSparkline formula. The histogram sparkline formula has the following options where only 'dataRange' is the required argument:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Option</th>
+
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>
+                <p><strong>dataRange</strong></p>
+            </td>
+
+            <td>
+                Specifies the range of data sources. It supports a range.
+
+                <p>It supports calc array and calc reference.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p><strong>continuous</strong></p>
+            </td>
+
+            <td>
+                If set to true, the sparkline is a continuous histogram.
+
+                <p>If set to false, the sparkline is a discrete histogram.</p>
+
+                <p>The default value is true.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p><strong>paintLabel</strong></p>
+            </td>
+
+            <td>
+                If set to true, the sparkline paints the data label.
+
+                <p>The default value is false.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p><strong>scale</strong></p>
+            </td>
+
+            <td>
+                Specifies the bin width. This value is useful when histogram type is continuous.
+
+                <p>The default value is false.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p><strong>barWidth</strong></p>
+            </td>
+
+            <td>
+                Specifies the bar width. Default value is 1.
+
+                <p>Bar width = auto calc width * barWidth</p>
+
+                <p>Value range is 0 &lt; value ≤ 1.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p><strong>barColor</strong></p>
+            </td>
+
+            <td>
+                Specifies the color of the bar.
+
+                <p>Default value is '5B9BD5'.</p>
+
+                <p>Supports CSS color property.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p><strong>labelFontStyle</strong></p>
+            </td>
+
+            <td>
+                Specifies the font style of the data label font.
+
+                <p>The default value is 9pt Calibri.</p>
+
+                <p>Supports CSS font property. It supports font-style, font-weight, font-size, font-family.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td><strong>labelColor</strong></td>
+
+            <td>
+                Specifies the font color of data label font.
+
+                <p>Default is black (#00000).</p>
+
+                <p>Supports CSS color string.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td><strong>edgeColor</strong></td>
+
+            <td>
+                Specifies the color of the edge.
+
+                <p>Default value is silver (#C0C0C0).</p>
+
+                <p>Supports CSS color property.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The histogram sparkline formula has the following syntax:</p>
+
+<p><code>=HISTOGRAMSPARKLINE(dataRange,continuous?,paintLabel?,scale?,barWidth?,barColor?,labelFontStyle?,labelColor,edgeColor?)</code></p>
+
+<p><strong>Notes</strong></p>
+
+<ul>
+    <li>The default padding of sparkline is 3px.</li>
+
+    <li>The paintLabel option does not paint the data label when the custom font size is more than one-third of cell row height.</li>
+
+    <li>The data label does not paint when any of the data label's width is bigger than the bar's average width. The average width is determined by the expression (cell width/bar count).<br />
+    For example, for 100px cell width, there are 5 bars in the sparkline. The bar average width is 20px. In this sparkline, if any data label is wider than 20px, the data label does not paint.</li>
+
+    <li>In the data range, any non-number type value is ignored.</li>
+</ul>
+
+<h3>Usage Scenario</h3>
+
+<p>Consider a scenario where an organization has conducted a survey of social media consumption by users on a weekly basis. The histogram sparkline can depict these statistics and analyze the trends about how much time users spent on different social media platforms.<br /></p>
+
+<div title="Click to Enlarge" class="i-thumbnail-container">
+    <a title="Histogram Sparkline Usage Scenario" class="i-thumbnail" rel="lightbox" data-href="images/histogram-usage.png"><img alt="Histogram Sparkline Usage Scenario" src="images/histogram-usage_thumb.png" /></a>
+
+    <p>Histogram Sparkline Usage Scenario</p>
+</div>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+spread.suspendPaint();
+<span style="COLOR: #008000">// get the sheets
+</span><span style="COLOR: #0000ff">var</span> sheet1 = spread.sheets[0];
+<span style="COLOR: #008000">// set sheetAreaOffset option
+</span>sheet1.options.sheetAreaOffset = { left: 1, top: 1 };
+<span style="COLOR: #008000">// Hide gridlines
+</span>sheet1.options.gridline = { showVerticalGridline: <span style="COLOR: #0000ff">false</span>, showHorizontalGridline: <span style="COLOR: #0000ff">false</span> };
+<span style="COLOR: #008000">// Hide row/ col headers
+</span>sheet1.options.colHeaderVisible = <span style="COLOR: #0000ff">false</span>;
+sheet1.options.rowHeaderVisible = <span style="COLOR: #0000ff">false</span>;
+<span style="COLOR: #008000">// set column width
+</span><span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 1; i &lt; 5; i++)
+    sheet1.setColumnWidth(i, 265);
+sheet1.setColumnWidth(0, 140);
+<span style="COLOR: #008000">// set row height
+</span>sheet1.setRowHeight(0, 35, GC.Spread.Sheets.SheetArea.dataArea)
+sheet1.setRowHeight(1, 35, GC.Spread.Sheets.SheetArea.dataArea)
+sheet1.setRowHeight(2, 200, GC.Spread.Sheets.SheetArea.dataArea)
+<span style="COLOR: #0000ff">var</span> dataArray =
+    [
+        [<span style="COLOR: #800000">"Name"</span>, <span style="COLOR: #800000">"Facebook"</span>, <span style="COLOR: #800000">"Instagram"</span>, <span style="COLOR: #800000">"LinkedIn"</span>, <span style="COLOR: #800000">"Twitter"</span>]
+    ];
+<span style="COLOR: #0000ff">var</span> dataArray1 =
+    [
+        [<span style="COLOR: #800000">"John Mathew"</span>, 71, 74, 97, 85],
+        [<span style="COLOR: #800000">"Jim Parker"</span>, 76, 58, 88, 84],
+        [<span style="COLOR: #800000">"Sophia Ran"</span>, 97, 80, 74, 80],
+        [<span style="COLOR: #800000">"Wendi Blake"</span>, 55, 97, 84, 60],
+        [<span style="COLOR: #800000">"Stephan Lai"</span>, 81, 83, 94, 90],
+        [<span style="COLOR: #800000">"Fay Van Damme"</span>, 71, 78, 72, 82],
+        [<span style="COLOR: #800000">"Brevin Dice"</span>, 84, 80, 83, 93],
+        [<span style="COLOR: #800000">"Regina Oleveria"</span>, 86, 76, 56, 92],
+        [<span style="COLOR: #800000">"Georgi Facello"</span>, 78, 61, 91, 68],
+        [<span style="COLOR: #800000">"Bezalel Simmel"</span>, 85, 58, 92, 68],
+        [<span style="COLOR: #800000">"Sachin Tsukuda"</span>, 76, 70, 55, 81],
+        [<span style="COLOR: #800000">"Patricia Breugel"</span>, 64, 77, 83, 85],
+        [<span style="COLOR: #800000">"Zito Baaz"</span>, 82, 97, 66, 90],
+        [<span style="COLOR: #800000">"Navin Argence"</span>, 59, 87, 83, 85],
+        [<span style="COLOR: #800000">"Siamak Salverda"</span>, 77, 85, 97, 65],
+        [<span style="COLOR: #800000">"Khaled Kohling"</span>, 87, 67, 77, 97],
+        [<span style="COLOR: #800000">"Bangqing Kleiser"</span>, 49, 97, 78, 75],
+        [<span style="COLOR: #800000">"Rimli Dusink"</span>, 25, 61, 91, 91],
+        [<span style="COLOR: #800000">"Nathan Ranta"</span>, 65, 60, 96, 92],
+        [<span style="COLOR: #800000">"Gila Lukaszewicz"</span>, 27, 91, 62, 93],
+        [<span style="COLOR: #800000">"Kaijung Rodham"</span>, 31, 81, 67, 87],
+        [<span style="COLOR: #800000">"Mohammed Pleszkun"</span>, 20, 98, 67, 82],
+        [<span style="COLOR: #800000">"Shuichi Piazza"</span>, 67, 56, 81, 82],
+        [<span style="COLOR: #800000">"Katsuo Leuchs"</span>, 83, 74, 51, 42],
+        [<span style="COLOR: #800000">"Masanao Ducloy"</span>, 67, 64, 58, 73],
+        [<span style="COLOR: #800000">"Mihalis Crabtree"</span>, 80, 91, 57, 84],
+        [<span style="COLOR: #800000">"Danny Lenart"</span>, 92, 38, 99, 86],
+        [<span style="COLOR: #800000">"Yongqiao Dalton"</span>, 85, 61, 73, 81],
+        [<span style="COLOR: #800000">"Gaetan Veldwijk"</span>, 64, 52, 76, 72],
+        [<span style="COLOR: #800000">"Leszek Pulkowski"</span>, 95, 75, 64, 99],
+        [<span style="COLOR: #800000">"Weidon Gente"</span>, 77, 88, 77, 96],
+        [<span style="COLOR: #800000">"Krister Stranks"</span>, 72, 38, 89, 55],
+        [<span style="COLOR: #800000">"Ziyad Baaz"</span>, 89, 81, 83, 48],
+        [<span style="COLOR: #800000">"Ymte Perelgut"</span>, 67, 70, 97, 94],
+        [<span style="COLOR: #800000">"Tonia Butner"</span>, 99, 71, 87, 76],
+        [<span style="COLOR: #800000">"Shigeaki Narlikar"</span>, 78, 80, 80, 97],
+        [<span style="COLOR: #800000">"Ayakannu Beerel"</span>, 86, 61, 85, 81],
+        [<span style="COLOR: #800000">"Moni Bale"</span>, 60, 72, 71, 86],
+        [<span style="COLOR: #800000">"Manohar Heemskerk"</span>, 97, 60, 75, 78],
+        [<span style="COLOR: #800000">"Angus Swan"</span>, 33, 97, 99, 99],
+        [<span style="COLOR: #800000">"Christ Murtagh"</span>, 91, 76, 73, 80],
+        [<span style="COLOR: #800000">"Hilary Rodiger"</span>, 75, 64, 84, 54],
+        [<span style="COLOR: #800000">"Maren Baez"</span>, 45, 77, 86, 88],
+        [<span style="COLOR: #800000">"Greger Jahnichen"</span>, 98, 89, 81, 63],
+        [<span style="COLOR: #800000">"Ymte Duclos"</span>, 95, 83, 72, 72],
+        [<span style="COLOR: #800000">"Chenyi Hainaut"</span>, 81, 97, 99, 87],
+        [<span style="COLOR: #800000">"Kasidit Picel"</span>, 87, 80, 88, 80],
+        [<span style="COLOR: #800000">"Elrique Walstra"</span>, 96, 54, 38, 54],
+        [<span style="COLOR: #800000">"Adel Reghbati"</span>, 56, 88, 81, 88]
+    ];
+
+<span style="COLOR: #008000">// set data
+</span>sheet1.setArray(1, 0, dataArray);
+sheet1.setArray(3, 0, dataArray1);
+sheet1.setValue(0, 0, <span style="COLOR: #800000">"Social media usage of users (in minutes)"</span>, GC.Spread.Sheets.SheetArea.dataArea);
+<span style="COLOR: #008000">// set alignment
+</span>sheet1.getRange(-1, 0, -1, 10).hAlign(GC.Spread.Sheets.HorizontalAlign.center);
+sheet1.addSpan(0, 0, 1, 5, GC.Spread.Sheets.SheetArea.dataArea);
+            
+<span style="COLOR: #008000">// Set HistogramSparkline formulas
+</span>sheet1.setFormula(2, 1, <span style="COLOR: #800000">'HISTOGRAMSPARKLINE(Sheet1!B4: B52, true, true, 20, 1, "#DC4463", "bold normal 10pt Calibri", "black")'</span>);
+sheet1.setFormula(2, 2, <span style="COLOR: #800000">'HISTOGRAMSPARKLINE(Sheet1!C4: C52, true, true, 20, 1, "#FFAE49", "bold normal 10pt Calibri", "black")'</span>);
+sheet1.setFormula(2, 3, <span style="COLOR: #800000">'HISTOGRAMSPARKLINE(Sheet1!D4: D52, true, true, 20, 1, "#5AB4BD", "bold normal 10pt Calibri", "black")'</span>);
+sheet1.setFormula(2, 4, <span style="COLOR: #800000">'HISTOGRAMSPARKLINE(Sheet1!E4: E52, true, true, 20, 1, "#C2EDB2", "bold normal 10pt Calibri", "black")'</span>);
+            
+<span style="COLOR: #008000">// set style for Row 0
+</span><span style="COLOR: #0000ff">var</span> style1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style1.font = <span style="COLOR: #800000">"bold 24px Calibri"</span>;
+style1.foreColor = <span style="COLOR: #800000">"black"</span>;
+style1.backColor = <span style="COLOR: #800000">"#9FD5B7"</span>;
+style1.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+style1.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+sheet1.setStyle(0, 0, style1, GC.Spread.Sheets.SheetArea.dataArea);
+
+<span style="COLOR: #008000">// set style for Row 1
+</span><span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style.font = <span style="COLOR: #800000">"bold italic 20px Calibri"</span>;
+style.foreColor = <span style="COLOR: #800000">"black"</span>;
+style.backColor = <span style="COLOR: #800000">"#D3F0E0"</span>;
+style.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+style.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 5; i++) {
+    sheet1.setStyle(1, i, style, GC.Spread.Sheets.SheetArea.dataArea);
+}
+<span style="COLOR: #008000">// set style for Row 2
+</span><span style="COLOR: #0000ff">var</span> style2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style2.backColor = <span style="COLOR: #800000">"#EDFDF4"</span>;
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 5; i++)
+    sheet1.setStyle(2, i, style2, GC.Spread.Sheets.SheetArea.dataArea);
+
+<span style="COLOR: #008000">// set border for dataArea cells
+</span>sheet1.getRange(<span style="COLOR: #800000">"A4:E52"</span>).setBorder(
+    <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"black"</span>, GC.Spread.Sheets.LineStyle.thick),
+    { top: <span style="COLOR: #0000ff">true</span>, bottom: <span style="COLOR: #0000ff">true</span>, left: <span style="COLOR: #0000ff">true</span>, right: <span style="COLOR: #0000ff">true</span> }, GC.Spread.Sheets.SheetArea.dataArea);
+
+spread.resumePaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

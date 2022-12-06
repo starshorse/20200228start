@@ -1,0 +1,546 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn the child elements available for sheets element in SpreadJS. Also, learn the various attributes available for sheet element." />
+    
+    <title>Sheet and Sheets Elements | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n95","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn the child elements available for sheets element in SpreadJS. Also, learn the various attributes available for sheet element." />
+    
+    <meta name="Microsoft.Help.Id" content="3af2319e-f5a6-4568-a85a-0c1cc2209632"/>
+    <meta name="Microsoft.Help.TocParent" content="60698b19-303c-4a25-b2e2-85704ba25af0"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="javascript_frameworks.html">JavaScript Frameworks</a>
+ / <a href="angularjs.html">SpreadJS with AngularJS</a>
+ / Sheet and Sheets Elements</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Sheet and Sheets Elements</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>The following table lists the child elements of the sheets element. The sheets element has no attributes.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Child Element</strong></td>
+
+            <td><strong>API Reference</strong></td>
+
+            <td><strong>Type</strong></td>
+        </tr>
+
+        <tr>
+            <td>worksheet</td>
+
+            <td>any</td>
+
+            <td>Worksheet</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following table lists the attributes of the sheet element.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Attribute</strong></td>
+
+            <td><strong>API Reference</strong></td>
+
+            <td><strong>Type</strong></td>
+
+            <td><strong>Comment</strong></td>
+        </tr>
+
+        <tr>
+            <td>allowCellOverflow</td>
+
+            <td>Worksheet.options.allowCellOverflow = value</td>
+
+            <td>boolean</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>clipBoardOptions</td>
+
+            <td>Worksheet.options.clipBoardoptions(value)</td>
+
+            <td>GC.Spread.Sheets.ClipboardPasteOptions</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>colHeaderAutoText</td>
+
+            <td>Worksheet.options.colHeaderAutoText = value</td>
+
+            <td>GC.Spread.Sheets.HeaderAutoText</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>colHeaderAutoTextIndex</td>
+
+            <td>Worksheet.options.colHeaderAutoTextIndex = value</td>
+
+            <td>number</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>colHeaderVisible</td>
+
+            <td>Worksheet.options.colHeaderVisible = value</td>
+
+            <td>boolean</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>currentTheme</td>
+
+            <td>Worksheet.currentTheme(value)</td>
+
+            <td>string</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>dataSource</td>
+
+            <td>Worksheet.setDataSource(value)</td>
+
+            <td>any</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>dataSourceDeepWatch</td>
+
+            <td></td>
+
+            <td>boolean</td>
+
+            <td>This attribute is used for SpreadJS to automatically refresh when the array type data source is changed. When set to true, AngularJS notifies the source of the change and updates SpreadJS; otherwise, does not refresh. The default value is true.</td>
+        </tr>
+
+        <tr>
+            <td>frozenColumnCount</td>
+
+            <td>Worksheet.frozenColumnCount(value)</td>
+
+            <td>number</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>frozenlineColor</td>
+
+            <td>Worksheet.options.frozenlineColor = value</td>
+
+            <td>string</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>frozenRowCount</td>
+
+            <td>Worksheet.frozenRowCount(value)</td>
+
+            <td>number</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>frozenTrailingColumnCount</td>
+
+            <td>Worksheet.frozenTrailingColumnCount(value)</td>
+
+            <td>number</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>frozenTrailingRowCount</td>
+
+            <td>Worksheet.frozenTrailingRowCount(value)</td>
+
+            <td>number</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>isProtected</td>
+
+            <td>Worksheet.options.isProtected = value</td>
+
+            <td>boolean</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>name</td>
+
+            <td>Worksheet.name(value)</td>
+
+            <td>string</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>rowCount</td>
+
+            <td>Worksheet.setRowCount(value)</td>
+
+            <td>number</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>rowHeaderAutoText</td>
+
+            <td>Worksheet.options.rowHeaderAutoText = value</td>
+
+            <td>GC.Spread.Sheets.HeaderAutoText</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>rowHeaderAutoTextIndex</td>
+
+            <td>Worksheet.options.rowHeaderAutoTextIndex = value</td>
+
+            <td>number</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>rowHeaderVisible</td>
+
+            <td>Worksheet.options.setRowHeaderVisible = value</td>
+
+            <td>boolean</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>selectionBackColor</td>
+
+            <td>Worksheet.options.selectionBackColor = value</td>
+
+            <td>string</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>selectionBorderColor</td>
+
+            <td>Worksheet.options.selectionBorderColor = value</td>
+
+            <td>string</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>selectionPolicy</td>
+
+            <td>Worksheet.selectionPolicy(value)</td>
+
+            <td>GC.Spread.Sheets.SelectionPolicy</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>selectionUnit</td>
+
+            <td>Worksheet.selectionUnit(value)</td>
+
+            <td>GC.Spread.Sheets.SelectionUnit</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>sheetTabColor</td>
+
+            <td>Worksheet.options.sheetTabColor = value</td>
+
+            <td>string</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>showColumnOutline</td>
+
+            <td>Worksheet.showColumnOutline(value)</td>
+
+            <td>boolean</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>showRowOutline</td>
+
+            <td>Worksheet.showRowOutline(value)</td>
+
+            <td>boolean</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>zoom</td>
+
+            <td>Worksheet.zoom(value)</td>
+
+            <td>number</td>
+
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following table lists the child elements of the sheet.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Child Element</strong></td>
+
+            <td><strong>API Reference</strong></td>
+
+            <td><strong>Count</strong></td>
+
+            <td><strong>Type</strong></td>
+
+            <td><strong>Comment</strong></td>
+        </tr>
+
+        <tr>
+            <td>columns</td>
+
+            <td>sheet.columns</td>
+
+            <td>1</td>
+
+            <td>columns</td>
+
+            <td>The columns element can only be added on the sheet element.</td>
+        </tr>
+
+        <tr>
+            <td>columnOutlines</td>
+
+            <td>Worksheet.columnOutlines</td>
+
+            <td>1</td>
+
+            <td>GC.Spread.Sheets.Outlines.Outline</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>columnHeaderDefaultStyle</td>
+
+            <td>Worksheet.setDefaultStyle(value, SheetArea.colHeader)</td>
+
+            <td>1</td>
+
+            <td>style</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>defaultStyle</td>
+
+            <td>Worksheet.setDefaultStyle(value, SheetArea.viewport)</td>
+
+            <td>1</td>
+
+            <td>style</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>rowHeaderDefaultStyle</td>
+
+            <td>Worksheet.setDefaultStyle(value, SheetArea.rowHeader)</td>
+
+            <td>1</td>
+
+            <td>style</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>rowOutlines</td>
+
+            <td>Worksheet.rowOutlines</td>
+
+            <td>1</td>
+
+            <td>GC.Spread.Sheets.Outlines.Outline</td>
+
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Auto Merge Cells | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n291","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="95ca2512-9403-41a3-94e4-f388b2a9d5d0"/>
+    <meta name="Microsoft.Help.TocParent" content="e9628ea1-c098-40b6-a16a-ca0248291974"/>
+    <meta name="Microsoft.Help.TocOrder" content="11"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / Auto Merge Cells</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Auto Merge Cells</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports the auto merge feature allowing users to automatically merge the neighboring cells containing duplicate text. During the auto merge operation, no data is lost in the process.</p>
+
+<h3 id="a">Benefits of Using Auto Merge</h3>
+
+<p>The auto-merge feature helps users to:</p>
+
+<ul>
+    <li>Create clear visualization of groups within large data sets.</li>
+
+    <li>Merge identical cells without losing any data.</li>
+
+    <li>Eliminate redundancy (repetition of text) to remove unnecessary clutter&nbsp;in the worksheet.</li>
+
+    <li>Save considerable amount of time&nbsp;and efforts without manually scanning the duplicate cells to merge them one by one.</li>
+</ul>
+
+<h3 id="c">How Auto Merge Works?</h3>
+
+<p>The auto merge feature automatically merges the contiguous cells with identical text and adjusts the text position of the merged cells.</p>
+
+<p>This feature works upon the condition that the cells you want to merge shouldn't belong to any span range. While working with SpreadJS, users can use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~autoMerge.html" data-auto-update-caption="true">autoMerge()</a> method&nbsp;to apply the auto merge feature to specified ranges, including range, row, column and the entire worksheet. The directions supported by the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.AutoMerge.AutoMergeDirection.html" data-auto-update-caption="true">AutoMergeDirection</a> enumeration include:&nbsp;row direction, column direction and both row and column direction.</p>
+
+<p>SpreadJS provides support for the following two modes available in the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.AutoMerge.AutoMergeMode.html" data-auto-update-caption="true">AutoMergeMode</a> enumeration:</p>
+
+<ul>
+    <li>Free Mode- In this mode, cells with identical values are automatically merged with the neighboring cells.</li>
+
+    <li>Restricted Mode - In this mode, cells with identical values are merged with the neighboring cells only if the corresponding cells in the previous row or column are merged in a similar way.</li>
+</ul>
+
+<p>To support auto-merge with the selection feature of <strong>addSpan</strong> in SpreadJS, use the parameter <strong>SelectionMode</strong> for the <strong>autoMerge</strong> method in <strong>Worksheet</strong> class.</p>
+
+<p>You can set the <strong>SelectionMode</strong> parameter to either <strong>source</strong> or <strong>merged</strong>. These two options are described below:</p>
+
+<ul>
+    <li><strong>source</strong>: In this mode option, you can select individual cells in the automatically merged area.</li>
+
+    <li><strong>merged</strong>: In this mode option, you can select the entire merged cell in the automatically merged area.</li>
+</ul>
+
+<h3 id="b">Usage Scenario</h3>
+
+<p>While executing data analysis on a worksheet, users may want to combine several cells&nbsp;containing identical text&nbsp;for enhanced data presentation&nbsp;and better structure.&nbsp;</p>
+
+<p>Consider a scenario where we are analyzing the sales of products in various cities and states across different countries in the world using the worksheet. Users can merge the cells based on the values by using auto-merge feature and by using the new <strong>SelectionMode</strong> they can get the same selection effect as spans.</p>
+
+<p>The following example shows variety of products sold in different cities and states across countries. The cells are merged in case of same values using the SelectionMode property, where SelectionMode property for "Country" column is set to <strong>Merged</strong>, and "State" column is set to <strong>Source</strong>.<br /></p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Auto merge operation in worksheet" src="images/automerge.gif" /></p>
+
+<h3 id="d">Auto Merge Cells vs Spanning and Merging Cells</h3>
+
+<p>The basic differences between executing the "Auto Merge Cells" operation and "Spanning and Merging Cells" in a worksheet are:</p>
+
+<ul>
+    <li>While using the Auto Merge feature in SpreadJS, the cells remain navigable and editable even after the merge operation has been executed. On the contrary, while carrying out the spanning and merging of cells, the spanned and merged cells&nbsp;are automatically adjusted when a cell value is changed.</li>
+
+    <li>When a user scrolls through the worksheet, the text remains visible(sticky) in the merged span. Unlike regular merge spans, the auto-merged cells have the same value.</li>
+</ul>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> The following limitations must be kept in mind while using the auto-merge feature:</p>
+
+    <ul>
+        <li>The auto merge range is affected when a user executes the following operations in the spreadsheet
+
+            <ul>
+                <li>While adding a row or column</li>
+
+                <li>While removing a row or column</li>
+
+                <li>While setting row count or column count</li>
+            </ul>
+        </li>
+
+        <li>While printing or saving to a PDF file (using the savePDF() method), all the merged cells will automatically be treated as normal span ranges.</li>
+
+        <li>The copy or move operation will not affect the auto merge range, and will not treat the automatically merged cells as normal span ranges.</li>
+    </ul>
+</div>
+
+<h3 id="e">Using Code</h3>
+
+<p>The following code snippet merges the cells containing identical country names, states and cities using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~autoMerge.html" data-auto-update-caption="true">autoMerge()</a> method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+    <span style="COLOR: #0000ff">var</span> data = [
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Canada"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Ontario"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Ottawa"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Kraft Grated Parmesan Cheese"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Canada"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Ontario"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Belleville"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"KIND Bars Almond &amp; Coconut Gluten Free"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Canada"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Ontario"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Alliston"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Kraft Grated Parmesan Cheese"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Canada"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Saskatchewan"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Prince Albert"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Smartfood Popcorn"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Canada"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Alberta"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Red Deer"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Smartfood Popcorn"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Canada"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Alberta"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Calgary"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Planters Deluxe Whole Cashew"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Canada"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Alberta"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Calgary"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Kraft Grated Parmesan Cheese"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Canada"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Alberta"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Okotoks"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Smartfood Popcorn"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"India"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Andhra Pradesh"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Hyderabad"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Teddy Grahams Crackers"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"South Africa"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Gauteng"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Roodepoort"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Jaybee's Gourmet Nuts Gift Pack (3 Lb)"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Finland"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Ita-Suomen Laani"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Kuopio"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Planters Deluxe Whole Cashew"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Switzerland"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Geneve"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Vesenaz"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"KIND Bars Almond &amp; Coconut Gluten Free"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Switzerland"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Vaud"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Lausanne"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Smartfood Popcorn"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Switzerland"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Vaud"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Morges"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Kraft Real Mayo"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Denmark"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Frederiksborg"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Helsingor"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Planters Deluxe Whole Cashew"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Denmark"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Kobenhavn"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Kobenhavn"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Kraft Grated Parmesan Cheese"</span>
+        },
+        {
+            <span style="COLOR: #800000">"Country"</span>: <span style="COLOR: #800000">"Denmark"</span>,
+            <span style="COLOR: #800000">"State"</span>: <span style="COLOR: #800000">"Storstrom"</span>,
+            <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Nakskov"</span>,
+            <span style="COLOR: #800000">"Product"</span>: <span style="COLOR: #800000">"Kraft Grated Parmesan Cheese"</span>
+        }
+    ]
+&lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;script&gt;
+    $(document).ready(<span style="COLOR: #0000ff">function</span> () {
+        <span style="COLOR: #008000">// Initializing Spread
+</span>        <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+
+        <span style="COLOR: #008000">// Get the activesheet
+</span>        <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+
+        <span style="COLOR: #008000">// Bind data source
+</span>        activeSheet.setRowHeight(0, 30, 1);
+        activeSheet.autoGenerateColumns = <span style="COLOR: #0000ff">true</span>;
+        activeSheet.setDataSource(data);
+
+        <span style="COLOR: #008000">// Merging complete sheet cells when AutoMergeDirection is set to Column &amp; AutoMergeMode is set to restricted mode
+</span>        <span style="COLOR: #0000ff">var</span> range = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(-1, -1, -1, -1);
+
+        <span style="COLOR: #008000">// Auto merge SelectionMode is merged
+</span>        activeSheet.autoMerge(range, GC.Spread.Sheets.AutoMerge.AutoMergeDirection.column, GC.Spread.Sheets.AutoMerge.AutoMergeMode.restricted, GC.Spread.Sheets.SheetArea.viewport, GC.Spread.Sheets.AutoMerge.SelectionMode.merged);
+
+        <span style="COLOR: #008000">// Set the column width
+</span>        <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> c = 0; c &lt; activeSheet.getColumnCount(); c++)
+            activeSheet.setColumnWidth(c, 130.0, GC.Spread.Sheets.SheetArea.viewport);
+    });
+&lt;<span style="COLOR: #800000">/script&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

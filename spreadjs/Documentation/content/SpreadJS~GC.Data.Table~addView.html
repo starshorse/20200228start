@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>addView Method | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4712","initialNodeContainer":"c75","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Data.Table~addView"/>
+    <meta name="Description" content="Adds a view, which host table is current table." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Data.Table_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Data_namespace.html">GC.Data Namespace</a>
+ / <a href="SpreadJS~GC.Data.Table.html">Table type</a>
+ / addView Method</div></div>
+
+    
+<div id="namePopupContent" class="i-popup-content">
+The view name.
+</div>
+<div id="columnInfosPopupContent" class="i-popup-content">
+The column information, each column includes the following properties.
+</div>
+<div id="includeDefaultColumnsPopupContent" class="i-popup-content">
+Whether to include current table's default columns when column information are empty. Its default value is true.
+</div>
+<div id="optionsPopupContent" class="i-popup-content">
+The view options.
+</div>
+
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">addView Method</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">Adds a view, which host table is current table.</div>
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new <a href="SpreadJS~GC.Data.Table.html">GC.Data.Table</a>(name, dataSourceOption);
+var value; // Type: <a href="SpreadJS~GC.Data.View.html">View</a>
+value = instance.addView(name, columnInfos, includeDefaultColumns, options);</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function addView( 
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="namePopupLink" data-popup-contentsource="#namePopupContent" data-popup-showevent="click mouseenter">name</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="columnInfosPopupLink" data-popup-contentsource="#columnInfosPopupContent" data-popup-showevent="click mouseenter">columnInfos</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="includeDefaultColumnsPopupLink" data-popup-contentsource="#includeDefaultColumnsPopupContent" data-popup-showevent="click mouseenter">includeDefaultColumns</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="optionsPopupLink" data-popup-contentsource="#optionsPopupContent" data-popup-showevent="click mouseenter">options</a></i> : <a href="SpreadJS~GC.Data.ViewOptions.html">ViewOptions</a>
+) : <a href="SpreadJS~GC.Data.View.html">View</a>;</pre>
+      </div>
+    
+
+      </div>
+    
+            <h4 class=dxh4>Parameters</h4><dl><dt><I>name</I></dt>
+<dd>The view name.</dd><dt><I>columnInfos</I></dt>
+<dd>The column information, each column includes the following properties.</dd><dt><I>includeDefaultColumns</I></dt>
+<dd>Whether to include current table's default columns when column information are empty. Its default value is true.</dd><dt><I>options</I></dt>
+<dd>The view options.</dd></dl>
+
+            <h4 class=dxh4>Return Value</h4><div class="i-returns-content">Returns the view.</div></div>
+            
+
+            <a name="exampleBookmark"></a>
+            
+            
+            <div class="i-section-heading" id="i-example-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Example</span></div><div id="i-example-section-content" class="i-section-content"><div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-fcc6d1c7-5ec4-4225-80bf-a03bd7d3b0a3">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-fcc6d1c7-5ec4-4225-80bf-a03bd7d3b0a3" class="i-filtered-content-Javascript i-code"><pre><span style="color: #008000; ">// Add a view by string array columns
+</span>productTable.addView(<span style="color: #800000; ">&quot;productView&quot;</span>, [
+    <span style="color: #800000; ">&quot;id&quot;</span>, <span style="color: #800000; ">&quot;name&quot;</span>, <span style="color: #800000; ">&quot;reorderLevel&quot;</span>, <span style="color: #800000; ">&quot;unitPrice&quot;</span>, <span style="color: #800000; ">&quot;unitsInStock&quot;</span>, <span style="color: #800000; ">&quot;unitsOnOrder&quot;</span>
+]);
+
+<span style="color: #008000; ">// Add a view by customized columns
+</span>productTable.addView(<span style="color: #800000; ">&quot;productView&quot;</span>, [{
+    value: <span style="color: #800000; ">&quot;id&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;ID&quot;</span>,
+    isPrimaryKey: <span style="color: #0000FF; ">true</span>
+}, {
+    value: <span style="color: #800000; ">&quot;name&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;NAME&quot;</span>,
+    required: <span style="color: #0000FF; ">true</span>
+}, {
+    value: <span style="color: #800000; ">&quot;quantityPerUnit&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;QUANTITY PER UNIT&quot;</span>
+}, {
+    value: <span style="color: #800000; ">&quot;unitPrice&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;UNIT PRICE&quot;</span>
+}, {
+    value: <span style="color: #800000; ">&quot;unitsInStock&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;UNITS IN STOCK&quot;</span>,
+    readonly: <span style="color: #0000FF; ">true</span>
+}, {
+    value: <span style="color: #800000; ">&quot;unitsOnOrder&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;UNITS ON ORDER&quot;</span>
+}, {
+    value: <span style="color: #800000; ">&quot;reorderLevel&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;REORDER LEVEL&quot;</span>
+}, {
+    value: <span style="color: #800000; ">&quot;discontinued&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;DISCONTINUED&quot;</span>,
+    defaultValue: <span style="color: #0000FF; ">false</span>
+});
+
+<span style="color: #008000; ">// Add a view with relationship columns
+</span><span style="color: #0000FF; ">var</span> supplierRelationship = dataManager.addRelationship(productTable, <span style="color: #800000; ">&quot;supplierId&quot;</span>, <span style="color: #800000; ">&quot;supplier&quot;</span>, supplierTable, <span style="color: #800000; ">&quot;id&quot;</span>, <span style="color: #800000; ">&quot;products&quot;</span>);
+productTable.addView(<span style="color: #800000; ">&quot;productWithSupplierView&quot;</span>, [{
+    value: <span style="color: #800000; ">&quot;id&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;ID&quot;</span>
+}, {
+    value: <span style="color: #800000; ">&quot;name&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;NAME&quot;</span>
+}, {
+    value: <span style="color: #800000; ">&quot;supplier.companyName&quot;</span>, <span style="color: #008000; ">// relationship
+</span>    caption: <span style="color: #800000; ">&quot;SUPPLIER NAME&quot;</span>
+}, {
+    value: <span style="color: #800000; ">&quot;supplier.contactName&quot;</span>, <span style="color: #008000; ">// relationship
+</span>    caption: <span style="color: #800000; ">&quot;SUPPLIER CONTACT NAME&quot;</span>
+}, {
+    value: <span style="color: #800000; ">&quot;supplier.contactTitle&quot;</span>, <span style="color: #008000; ">// relationship
+</span>    caption: <span style="color: #800000; ">&quot;SUPPLIER CONTACT TITLE&quot;</span>
+});
+
+<span style="color: #008000; ">// Add a view with calc field columns
+</span><span style="color: #0000FF; ">var</span> supplierRelationship = dataManager.addRelationship(productTable, <span style="color: #800000; ">&quot;supplierId&quot;</span>, <span style="color: #800000; ">&quot;supplier&quot;</span>, supplierTable, <span style="color: #800000; ">&quot;id&quot;</span>, <span style="color: #800000; ">&quot;products&quot;</span>);
+productTable.addView(<span style="color: #800000; ">&quot;productWithSupplierView&quot;</span>, [{
+    value: <span style="color: #800000; ">&quot;id&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;ID&quot;</span>
+}, {
+    value: <span style="color: #800000; ">&quot;name&quot;</span>,
+    caption: <span style="color: #800000; ">&quot;NAME&quot;</span>
+}, {
+    caption: <span style="color: #800000; ">&quot;TOTAL PRICE&quot;</span>,
+    value: <span style="color: #800000; ">&quot;=(unitsInStock + unitsOnOrder) * unitPrice&quot;</span>
+}, {
+    caption: <span style="color: #800000; ">&quot;SUPPLIER'S INFO&quot;</span>,
+    value: <span style="color: #800000; ">&quot;=CONCAT(supplierTable.companyName, ', ', supplierTable.contactName)&quot;</span>
+});</pre></div>
+	</div>
+</div>
+</div>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Data.Table.html">Table type</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

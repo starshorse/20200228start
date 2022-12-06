@@ -1,0 +1,524 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>TableSheet Interactive Behavior | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n393","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="b3a54916-0792-42a7-9179-05b6fdd4b1f8"/>
+    <meta name="Microsoft.Help.TocParent" content="66b1614e-0f0a-4370-8f16-1c0bf0f02f14"/>
+    <meta name="Microsoft.Help.TocOrder" content="11"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="tablesheet.html">TableSheet</a>
+ / TableSheet Interactive Behavior</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">TableSheet Interactive Behavior</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>TableSheet has rich interaction behaviors which help to make the tablesheet accessible and usable by as many people as possible.</p>
+
+<h3>Zoom In and Out</h3>
+
+<p>TableSheet supports zoom in and zoom out by mouse wheel with Ctrl key.</p>
+
+<p>Zoom in using Ctrl + Mouse wheel up and zoom out using Ctrl + Mouse wheel down.</p>
+
+<p><img border="0" alt="" src="images/ts-zoom.gif" /></p>
+
+<h3>Resize Columns</h3>
+
+<p>TableSheet supports resizing the column by dragging the right edge of the column header cell.</p>
+
+<p><img border="0" alt="" src="images/ts-resizecol.gif" /></p>
+
+<p>You can automatically fit a column width by double-clicking the right edge of a column header cell. The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.AutoFitType.html">AutoFitType</a>&nbsp;enumeration option “cellWithHeader” can be set as well.</p>
+
+<p><img border="0" alt="" src="images/ts-resizecol-autofit.gif" /></p>
+
+<p>If you want to retroactively change the neighboring column’s width along with resizing the selected column, the <strong>columnResizeMode</strong> can be set to “split” to change the default behavior.</p>
+
+<p><img border="0" alt="" src="images/ts-resizecol-splitmode.gif" /></p>
+
+<p>The following code sample shows how to set the column resizing to automatic fit mode as well as change the resize mode to split.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// set autoFitType to cellWithHeader
+</span>spread.options.autoFitType = GC.Spread.Sheets.AutoFitType.cellWithHeader;
+<span style="COLOR: #008000">// set the ResizeMode to Split
+</span>spread.options.columnResizeMode = GC.Spread.Sheets.ResizeMode.split;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can also set a default column width for the TableSheet view using the&nbsp;<a href="SpreadJS~GC.Data.ViewOptions.html">ViewOptions</a>&nbsp;class property <strong>defaultColumnWidth</strong>. By default, the column width is 60.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> view = customerTable.addView(<span style="COLOR: #800000">"myView"</span>, [
+    { value: <span style="COLOR: #800000">"customerKey"</span>, caption: <span style="COLOR: #800000">"Customer Key"</span> },
+    { value: <span style="COLOR: #800000">"customer"</span>, caption: <span style="COLOR: #800000">"Customer"</span> },
+    { value: <span style="COLOR: #800000">"billToCustomer"</span>, width: 200, caption: <span style="COLOR: #800000">"Bill To Customer"</span> },
+    { value: <span style="COLOR: #800000">"category"</span>, width: 120, caption: <span style="COLOR: #800000">"Category"</span> },
+    { value: <span style="COLOR: #800000">"buyingGroup"</span>, width: 180, caption: <span style="COLOR: #800000">"Buying Group"</span> },
+    { value: <span style="COLOR: #800000">"primaryContact"</span>, width: 170, caption: <span style="COLOR: #800000">"Primary Contact"</span> },
+    { value: <span style="COLOR: #800000">"validFrom"</span>, width: 150, caption: <span style="COLOR: #800000">"Valid From"</span> },
+], <span style="COLOR: #0000ff">false</span>, {
+    <span style="COLOR: #008000">// Set default column width
+</span>    defaultColumnWidth: 100
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Cut, Copy, and Paste</h3>
+
+<p>TableSheet supports cutting, copying, and pasting cells, rows, or columns using shortcut keys or through the context menu.</p>
+
+<p><img border="0" alt="" src="images/ts-cutcopypaste-shortcutkeys.gif" /></p>
+
+<p>The following shortcut keys are supported for the clipboard operations:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Operation</th>
+
+            <th>Windows</th>
+
+            <th>Mac</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Cut</td>
+
+            <td>Ctrl + X</td>
+
+            <td>Command + X</td>
+        </tr>
+
+        <tr>
+            <td>Copy</td>
+
+            <td>Ctrl + C</td>
+
+            <td>Command + C</td>
+        </tr>
+
+        <tr>
+            <td>Paste</td>
+
+            <td>Ctrl + V</td>
+
+            <td>Command + V</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Right-clicking on a cell, row, or column selection will display the context menu consisting of the clipboard operations.</p>
+
+<p><img border="0" alt="" src="images/ts-cutcopypaste-contextmenu.gif" /></p>
+
+<p>If you want to paste multiple rows in a new row, the <strong>allowExtendPasteRange</strong> option should be set to true.</p>
+
+<p><img border="0" alt="" src="images/ts-cutcopypaste-extendpasterange.gif" /></p>
+
+<p>The following code sample shows how to enable the allowExtendPasteRange option in SpreadJS.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// enable allowExtendPasteRange option to enable pasting multiple rows in new row
+</span>spread.options.allowExtendPasteRange = <span style="COLOR: #0000ff">true</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Drag Operations</h3>
+
+<p>TableSheet supports various drag operations like drag fill, drag-drop, and drag copy.</p>
+
+<ul>
+    <li>
+        <strong>Drag fill</strong> is done by clicking on the bottom right corner of a selected area and moving the mouse down or up.
+
+        <p><img border="0" alt="" src="images/ts-dragfill.gif" /></p>
+
+        <p>The series is copied when dragging directly, or the series is filled when dragging with the Ctrl key pressed.</p>
+
+        <p>The drag fill result can be changed to either "Copy Series" or "Fill Series" by the pop-up menu.</p>
+
+        <p><img border="0" alt="" src="images/ts-dragfill-contextmenu.png" /></p>
+    </li>
+
+    <li>
+        <strong>Drag-drop</strong> is done by dragging the selection border of a selected area and dropping it into the destination cell.
+
+        <p><img border="0" alt="" src="images/ts-dragdrop.gif" /></p>
+    </li>
+
+    <li>
+        <strong>Drag copy</strong> is done by dragging the selection border f the selected area while holding the Ctrl key and dropping it into the destination cell.
+
+        <p><img border="0" alt="" src="images/ts-dragcopy.gif" /></p>
+    </li>
+</ul>
+
+<h3>Shortcut Keys</h3>
+
+<p>TableSheet supports various shortcut keys including tablesheet-specific operations such as "Save all inserted and updated rows".</p>
+
+<p>The following table lists all the supported shortcut keys by TableSheet.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Operation</th>
+
+            <th>Shortcut Key</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td colspan="2"><strong>General</strong></td>
+        </tr>
+
+        <tr>
+            <td>Copy</td>
+
+            <td>Ctrl+C</td>
+        </tr>
+
+        <tr>
+            <td>Cut</td>
+
+            <td>Ctrl+X</td>
+        </tr>
+
+        <tr>
+            <td>Paste</td>
+
+            <td>Ctrl+V</td>
+        </tr>
+
+        <tr>
+            <td>Enter Edit</td>
+
+            <td>F2</td>
+        </tr>
+
+        <tr>
+            <td>Direct Input</td>
+
+            <td>Char</td>
+        </tr>
+
+        <tr>
+            <td>Exit Edit</td>
+
+            <td>Esc</td>
+        </tr>
+
+        <tr>
+            <td>Delete</td>
+
+            <td>Del</td>
+        </tr>
+
+        <tr>
+            <td>Delete and Enter Edit</td>
+
+            <td>BackSpace</td>
+        </tr>
+
+        <tr>
+            <td>Input submit, Move Down</td>
+
+            <td>Enter</td>
+        </tr>
+
+        <tr>
+            <td>Input submit, Move Up</td>
+
+            <td>Shift + Enter</td>
+        </tr>
+
+        <tr>
+            <td>Next line input</td>
+
+            <td>Alt+Enter, Ctrl+Enter</td>
+        </tr>
+
+        <tr>
+            <td>Save all inserted and updated rows</td>
+
+            <td>Ctrl + Shift + S</td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><strong>Navigation</strong></td>
+        </tr>
+
+        <tr>
+            <td>Move up</td>
+
+            <td>Up key</td>
+        </tr>
+
+        <tr>
+            <td>Move down</td>
+
+            <td>Down key</td>
+        </tr>
+
+        <tr>
+            <td>Move left</td>
+
+            <td>Left key</td>
+        </tr>
+
+        <tr>
+            <td>Move right</td>
+
+            <td>Right key</td>
+        </tr>
+
+        <tr>
+            <td>Move down</td>
+
+            <td>Enter</td>
+        </tr>
+
+        <tr>
+            <td>Move right</td>
+
+            <td>Tab</td>
+        </tr>
+
+        <tr>
+            <td>Move left</td>
+
+            <td>Shift + Tab</td>
+        </tr>
+
+        <tr>
+            <td>Move to Top/Bottom/Left/Right<br />
+            first cell&nbsp;</td>
+
+            <td>Ctrl + Arrow</td>
+        </tr>
+
+        <tr>
+            <td>Move to next page</td>
+
+            <td>PageDown</td>
+        </tr>
+
+        <tr>
+            <td>Move to previous page</td>
+
+            <td>PageUp</td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><strong>Selection</strong></td>
+        </tr>
+
+        <tr>
+            <td>Expand to mouse click selection</td>
+
+            <td>Shift + Mouse click</td>
+        </tr>
+
+        <tr>
+            <td>Expand cell selection</td>
+
+            <td>Shift + Arrow</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

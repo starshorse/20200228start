@@ -1,0 +1,592 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Filter | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n685","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="eee6e5be-7f7f-4703-a621-aea0f3f997ad"/>
+    <meta name="Microsoft.Help.TocParent" content="f1825637-2866-4514-bd4c-8b65379a3900"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="pivot-table.html">Pivot Table</a>
+ / Filter</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Filter</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can apply certain filters to a&nbsp;pivot table&nbsp;in order&nbsp;to view only the required information while hiding the rest of the data.</p>
+
+<h3><a id="a" name="a"></a>Row and Column Fields Filter</h3>
+
+<p>You can apply Row&nbsp;and Column Fields filter when the data of rows or columns needs to be filtered. The following image shows the filter applied&nbsp;on a&nbsp;pivot table to show the quantity for&nbsp;only East region.</p>
+
+<p><img border="0" alt="Filter the row and column fields" src="images/rowfilter.png" /></p>
+
+<p>The following example code shows how to filter the Region column to show only East region's data.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// add filter field
+</span>myPivotTable.add(<span style="COLOR: #800000">"OrderDate"</span>, <span style="COLOR: #800000">"OrderDate"</span>, GC.Spread.Pivot.PivotTableFieldType.filterField);
+let itemList = [<span style="COLOR: #800000">"East"</span>];
+myPivotTable.labelFilter(<span style="COLOR: #800000">"Region"</span>, { textItem: { list: itemList, isAll: <span style="COLOR: #0000ff">false</span> } });
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3><a id="b" name="b"></a>Value Filter</h3>
+
+<p>The value filter can be&nbsp;used to filter the value based fields&nbsp;in a pivot table based on summary values (like sum, count, max, min, average etc.).&nbsp;The following image&nbsp;shows the value filter applied&nbsp;on a pivot table to show&nbsp;the 'Sum of quantity' of Category column with values greater than 2000.</p>
+
+<p><img border="0" alt="Apply value filter to data" src="images/valuefilter.png" /></p>
+
+<p>The following example code shows&nbsp;how&nbsp;to apply value filter to display 'sum of quantity' greater than 2000.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// add filter field
+</span>myPivotTable.add(<span style="COLOR: #800000">"OrderDate"</span>, <span style="COLOR: #800000">"OrderDate"</span>, GC.Spread.Pivot.PivotTableFieldType.filterField);
+<span style="COLOR: #008000">// apply Value Filter for "Sum of quantity" greater than 2000 using FilterInfo
+</span>let valueFilter = { condition: { conType: GC.Pivot.PivotConditionType.value, val: [2000], operator: 2 }, conditionByName: <span style="COLOR: #800000">"Sum of quantity"</span> };
+myPivotTable.valueFilter(<span style="COLOR: #800000">"Category"</span>, valueFilter);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3><a id="c" name="c"></a>Label Filter</h3>
+
+<p>The label filter can be used to filter row label items.&nbsp;It&nbsp;provides different options based&nbsp;on&nbsp;the data type of the field to be filtered. For example, for string or number&nbsp;data type, the options provided are equals, does not equals, begin with, contains, greater than etc. whereas for date data type, the options provided are before, after,&nbsp;tomorrow,&nbsp;next week&nbsp;etc.&nbsp;The following example demonstrates how to apply a label filter to "Region" column field to display city which starts with “S”.</p>
+
+<p><img border="0" alt="Apply label filter to data" src="images/labelfilter.png" /></p>
+
+<p>The following sample code shows&nbsp;how to apply a&nbsp;label filter for city which starts with "S".</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// add filter field
+</span>myPivotTable.add(<span style="COLOR: #800000">"OrderDate"</span>, <span style="COLOR: #800000">"OrderDate"</span>, GC.Spread.Pivot.PivotTableFieldType.filterField);
+<span style="COLOR: #008000">// apply Label Filter for 'City' names starting with 'S'using FilterInfo
+</span>let labelFilter = { condition: { conType: GC.Pivot.PivotConditionType.caption, val: <span style="COLOR: #800000">'S'</span>, operator: 2 } };
+myPivotTable.labelFilter(<span style="COLOR: #800000">"City"</span>, labelFilter);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can also use the&nbsp;manual filter in place of defining conditions for label filter.&nbsp;The following image shows manual filter applied to display the data for 'Jersey' and 'Seattle' cities.</p>
+
+<p><img border="0" alt="Apply manual filter" src="images/manual-filter.png" /></p>
+
+<p>The following code example shows how to apply manual filter.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// add manual filter
+</span>let parent = { textItem: { list: [<span style="COLOR: #800000">"Jersey"</span>, <span style="COLOR: #800000">"Seattle"</span>], isAll: <span style="COLOR: #0000ff">false</span> } };
+myPivotTable.labelFilter(<span style="COLOR: #800000">"City"</span>, parent);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can also choose to apply manual and condition based label filters together by&nbsp;setting the <b>allowMultipleFiltersPerField</b> option to true. The following example demonstrates how to apply multiple filters in a pivot table.</p>
+
+<p><img border="0" alt="Apply multiple filter" src="images/multiple-filter.png" /></p>
+
+<p>The following example shows how to apply multiple filters in a pivot table.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+myPivotTable.options.allowMultipleFiltersPerField = <span style="COLOR: #0000ff">true</span>;
+<span style="COLOR: #008000">// When allowMultipleFiltersPerField is set, the two filters i.e. both take effect
+</span><span style="COLOR: #0000ff">var</span> labelFilter = {
+    textItem: { list: [<span style="COLOR: #800000">"Jersey"</span>, <span style="COLOR: #800000">"San Francisco"</span>], isAll: <span style="COLOR: #0000ff">false</span> },
+    condition: { conType: GC.Pivot.PivotConditionType.caption, operator: GC.Pivot.PivotCaptionFilterOperator.beginsWith, val: <span style="COLOR: #800000">'S'</span> }
+};
+myPivotTable.labelFilter(<span style="COLOR: #800000">"City"</span>, labelFilter);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Date Type Filter</h3>
+
+<p>A date type filter can be used to&nbsp;specify a criteria that is applied to date type items of the pivot table. The following image shows&nbsp;the date type&nbsp;filter applied on a pivot table&nbsp;to show quarterly data.</p>
+
+<p><img border="0" alt="Apply date type filter to data" src="images/datetypefilter.png" /></p>
+
+<p>The following example code shows how to apply a&nbsp;date type&nbsp;filter.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+let groupInfo = {
+     originFieldName: <span style="COLOR: #800000">"OrderDate"</span>,
+     dateGroups: [
+         { by: GC.Pivot.DateGroupType.quarters },
+         { by: GC.Pivot.DateGroupType.years }]
+ };
+ myPivotTable.group(groupInfo);
+ myPivotTable.add(<span style="COLOR: #800000">"OrderDate"</span>, <span style="COLOR: #800000">"Qtr"</span>, GC.Spread.Pivot.PivotTableFieldType.columnField);
+<span style="COLOR: #008000">// apply label Filter using FilterInfo
+</span> let labelFilter = { condition: { conType: GC.Pivot.PivotConditionType.date, val: [], operator: GC.Pivot.PivotDateFilterOperator.Q1 } };
+ myPivotTable.labelFilter(<span style="COLOR: #800000">"Qtr"</span>, labelFilter);       
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can also use the below built-in date to date filters:</p>
+
+<ul>
+    <li>Quarter-to-Date (QTD): Period starting at the beginning of the current quarter and ending&nbsp;on the current date.</li>
+
+    <li>Month-to-Date (MTD):&nbsp;Period starting at the beginning of the current calendar month and ending&nbsp;on the current date.</li>
+
+    <li>Year-to-Date (YTD): Period starting at the beginning of the current year and ending&nbsp;on the current date.</li>
+</ul>
+
+<p>Along with the above options, you can use parallel date filters by setting the&nbsp;<strong>isParallel</strong> property to true. The parallel date filter allows you to get the same period in the previous or the upcoming dates (depending on the data in the pivot table) corresponding to the actual period. For example, suppose today is Nov 23, 2021, and&nbsp;the pivot table contains the data&nbsp;from Sep 1, 2021, to Dec 31, 2021.</p>
+
+<p>Month to Date filter:</p>
+
+<ul>
+    <li>Nov 1, 2021 - Nov 23,2021</li>
+</ul>
+
+<p>Parallel month to date filter:</p>
+
+<ul>
+    <li>Sep 1, 2021 - Sep 23, 2021</li>
+
+    <li>Oct 1, 2021 - Oct 23, 2021</li>
+
+    <li>Nov 1, 2021 - Nov 23, 2021</li>
+
+    <li>Dec 1, 2021 - Dec 23, 2021</li>
+</ul>
+
+<p>The following example code shows how to apply a date-to-date filter.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> DateToDateFilter() {
+    <span style="COLOR: #0000ff">var</span> condition = {
+        conType: GC.Pivot.PivotConditionType.month,
+        operator: GC.Pivot.PivotDateFilterOperator.dateToDate,
+        val: [<span style="COLOR: #0000ff">new</span> Date(2021, 7, 15), <span style="COLOR: #0000ff">new</span> Date(2022, 6, 20)],
+        isParallel: <span style="COLOR: #0000ff">false</span>,
+        isDynamicEndDate: <span style="COLOR: #0000ff">true</span>,
+        by: GC.Pivot.PivotAdvancedDateFilterBy.month
+    };
+    <span style="COLOR: #0000ff">var</span> filterInfo = {
+        condition
+    };
+    myPivotTable.labelFilter(<span style="COLOR: #800000">"OrderDate"</span>, filterInfo);
+
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+
+<h3>Create FilterInfo</h3>
+
+<p>The above filters are applied by creating the filter info. The following table describes the conditions which can be used to create filter info:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Condtions</strong></td>
+
+            <td><strong>conType</strong></td>
+
+            <td><strong>operator</strong></td>
+
+            <td><strong>val</strong></td>
+
+            <td><strong>conditionByname</strong></td>
+
+            <td><strong>type</strong></td>
+
+            <td><strong>isWholeDay</strong></td>
+        </tr>
+
+        <tr>
+            <td>GC.Pivot.IPivotCaptionConditionFilterInfo</td>
+
+            <td>GC.Pivot.PivotConditionType.caption</td>
+
+            <td>GC.Pivot.PivotCaptionFilterOperator</td>
+
+            <td>Array.&lt;string&gt;</td>
+
+            <td>
+                <p align="center">/</p>
+            </td>
+
+            <td>
+                <p align="center">/</p>
+            </td>
+
+            <td>
+                <p align="center">/</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>GC.Pivot.IPivotDateConditionFilterInfo</td>
+
+            <td>GC.Pivot.PivotConditionType.date</td>
+
+            <td>GC.Pivot.PivotDateFilterOperator</td>
+
+            <td>Array.&lt;Date&gt;</td>
+
+            <td>
+                <p align="center">/</p>
+            </td>
+
+            <td>
+                <p align="center">/</p>
+            </td>
+
+            <td>boolean</td>
+        </tr>
+
+        <tr>
+            <td>GC.Pivot.IPivotTop10ConditionFilterInfo</td>
+
+            <td>GC.Pivot.PivotConditionType.top10</td>
+
+            <td>GC.Pivot.PivotTop10FilterOperator</td>
+
+            <td>number</td>
+
+            <td>
+                <p align="center">/</p>
+            </td>
+
+            <td>GC.Pivot.PivotTop10FilterType</td>
+
+            <td>
+                <p align="center">/</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>GC.Pivot.IPivotValueConditionInfo</td>
+
+            <td>GC.Pivot.PivotConditionType.value</td>
+
+            <td>GC.Pivot.PivotValueFilterOperator</td>
+
+            <td>Array.&lt;number&gt;</td>
+
+            <td>string</td>
+
+            <td>
+                <p align="center">/</p>
+            </td>
+
+            <td>
+                <p align="center">/</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3><a id="e" name="e"></a>Hide Filter Button</h3>
+
+<p>You can hide the filter buttons from the pivot table using <strong>showFilter</strong> option.</p>
+
+<p><img border="0" alt="Apply date type filter to data" src="images/hide-filter-button.png" /></p>
+
+<p>The following example code shows&nbsp;how to hide filter buttons.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Set showFilter to false
+</span>myPivotTable.options.showFilter = <span style="COLOR: #0000ff">false</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Filter Dialog</h3>
+
+<p>You can use the Filter dialog by clicking on any row or column header in a pivot table. It provides various sorting and filtering options. You can also select the required items from the filter dialog's list box. The below image shows&nbsp;the filter dialog box.</p>
+
+<p><img style="HEIGHT: 533px; WIDTH: 599px" border="0" alt="Filter the row and column fields" src="images/filter_dialog.png" width="643" height="560" /></p>
+
+<p>The filter dialog also provides&nbsp;a search box that allows you to apply filtering settings&nbsp;conveniently.&nbsp;</p>
+
+<p>You can input&nbsp;case-insensitive search terms and&nbsp;also use the 'Add current selection to filter' option to merge the selected item with the previous filter information. If unchecked, the current selection overwrites the previous filter information.</p>
+
+<p>It also allows you to search using&nbsp;regex characters like: '?', '*' and&nbsp;'~'&nbsp;as shown in the image below.</p>
+
+<p><img border="0" alt="Filter the row and column fields" src="images/filter_dialog_search_box.png" /></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

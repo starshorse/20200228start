@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to modify the culture string and create a custom culture. Learn more in SpreadJS docs." />
+    
+    <title>Create Custom Culture | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n753","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to modify the culture string and create a custom culture. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="12044ac0-a1cb-4d7d-b0d0-d69c69463e3f"/>
+    <meta name="Microsoft.Help.TocParent" content="e289408f-7362-485c-9d03-9b69e4e6bcf5"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="culture.html">Culture</a>
+ / Create Custom Culture</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Create Custom Culture</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can modify the culture string and create a custom culture using the&nbsp;<strong>CultureInfo</strong> class.</p>
+
+<p>The following table lists the class variables, default values, and basic descriptions.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Variable Name</strong></td>
+
+            <td><strong>Default Value</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>currencySymbol</td>
+
+            <td>"\u00A4"</td>
+
+            <td>Dollar is "$"</td>
+        </tr>
+
+        <tr>
+            <td>numberDecimalSeparator</td>
+
+            <td>"."</td>
+
+            <td>Decimal point</td>
+        </tr>
+
+        <tr>
+            <td>numberGroupSeparator</td>
+
+            <td>","</td>
+
+            <td>Thousand separator</td>
+        </tr>
+
+        <tr>
+            <td>arrayGroupSeparator</td>
+
+            <td>";"</td>
+
+            <td>Separator for array constant in formula</td>
+        </tr>
+
+        <tr>
+            <td>listSeparator</td>
+
+            <td>","</td>
+
+            <td>Separator for function arguments in formula</td>
+        </tr>
+
+        <tr>
+            <td>aMDesignator</td>
+
+            <td>"AM"</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>pMDesignator</td>
+
+            <td>"PM"</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>abbreviatedMonthNames</td>
+
+            <td>["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""]</td>
+
+            <td>Formatter is "MMM"</td>
+        </tr>
+
+        <tr>
+            <td>abbreviatedDayNames</td>
+
+            <td>["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]</td>
+
+            <td>Formatter is "ddd"</td>
+        </tr>
+
+        <tr>
+            <td>abbreviatedMonthGenitiveNames</td>
+
+            <td>["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""]</td>
+
+            <td>Formatter is "MMM"</td>
+        </tr>
+
+        <tr>
+            <td>dayNames</td>
+
+            <td>["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]</td>
+
+            <td>Formatter is "dddd"</td>
+        </tr>
+
+        <tr>
+            <td>fullDateTimePattern</td>
+
+            <td>"dddd, dd MMMM yyyy HH:mm:ss"</td>
+
+            <td>Standard date formatter "F"</td>
+        </tr>
+
+        <tr>
+            <td>longDatePattern</td>
+
+            <td>"dddd, dd MMMM yyyy"</td>
+
+            <td>Standard date formatter "D"</td>
+        </tr>
+
+        <tr>
+            <td>longTimePattern</td>
+
+            <td>"HH:mm:ss"</td>
+
+            <td>Standard date formatter "T" and "U"</td>
+        </tr>
+
+        <tr>
+            <td>monthDayPattern</td>
+
+            <td>"MMMM dd"</td>
+
+            <td>Standard date formatter "M" and "m"</td>
+        </tr>
+
+        <tr>
+            <td>monthNames</td>
+
+            <td>["January", "February", "March", "April", "May", "June", "July",<br />
+            "August", "September", "October", "November", "December", ""]</td>
+
+            <td>Formatter is "M" or "MM"</td>
+        </tr>
+
+        <tr>
+            <td>monthGenitiveNames</td>
+
+            <td>["January", "February", "March", "April", "May", "June", "July",<br />
+            "August", "September", "October", "November", "December", ""]</td>
+
+            <td>Formatter is "MMMM"</td>
+        </tr>
+
+        <tr>
+            <td>rFC1123Pattern</td>
+
+            <td>"ddd, dd MMM yyyy HH\':\'mm\':\'ss \'GMT\'"</td>
+
+            <td>Standard date formatter "R" and "r"</td>
+        </tr>
+
+        <tr>
+            <td>shortDatePattern</td>
+
+            <td>"MM/dd/yyyy"</td>
+
+            <td>Standard date formatter "d"</td>
+        </tr>
+
+        <tr>
+            <td>shortTimePattern</td>
+
+            <td>"HH:mm"</td>
+
+            <td>Standard date formatter "t"</td>
+        </tr>
+
+        <tr>
+            <td>sortableDateTimePattern</td>
+
+            <td>"yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"</td>
+
+            <td>Standard date formatter "s"</td>
+        </tr>
+
+        <tr>
+            <td>universalSortableDateTimePattern</td>
+
+            <td>"yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'"</td>
+
+            <td>Standard date formatter "u"</td>
+        </tr>
+
+        <tr>
+            <td>yearMonthPattern</td>
+
+            <td>"yyyy MMMM"</td>
+
+            <td>Standard date formatter "y" and "Y"</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>You can display the custom culture by setting the cell format using the&nbsp;<a href="SpreadJS~GC.Spread.Formatter.GeneralFormatter.html">GeneralFormatter</a> class.</p>
+
+<h4>Using Code</h4>
+
+<p>The following code creates a custom culture and sets a date time formatter for&nbsp;cell (1,0) and (3,0) and a number formatter for cell (0,0).</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> myCulture = <span style="COLOR: #0000ff">new</span> GC.Spread.Common.CultureInfo();
+myCulture.NumberFormat.currencySymbol = <span style="COLOR: #800000">"€"</span>
+myCulture.NumberFormat.numberDecimalSeparator = <span style="COLOR: #800000">","</span>;
+myCulture.NumberFormat.numberGroupSeparator = <span style="COLOR: #800000">"."</span>;
+myCulture.NumberFormat.arrayGroupSeparator = <span style="COLOR: #800000">";"</span>;
+myCulture.NumberFormat.arrayListSeparator = <span style="COLOR: #800000">"\\"</span>;
+myCulture.NumberFormat.listSeparator = <span style="COLOR: #800000">";"</span>;
+myCulture.DateTimeFormat.amDesignator = <span style="COLOR: #800000">""</span>;
+myCulture.DateTimeFormat.pmDesignator = <span style="COLOR: #800000">""</span>;
+myCulture.DateTimeFormat.abbreviatedMonthNames = [<span style="COLOR: #800000">"Jan"</span>, <span style="COLOR: #800000">"Feb"</span>, <span style="COLOR: #800000">"Mrz"</span>, <span style="COLOR: #800000">"Apr"</span>, <span style="COLOR: #800000">"Mai"</span>, <span style="COLOR: #800000">"Jun"</span>, <span style="COLOR: #800000">"Jul"</span>, <span style="COLOR: #800000">"Aug"</span>, <span style="COLOR: #800000">"Sep"</span>, <span style="COLOR: #800000">"Okt"</span>, <span style="COLOR: #800000">"Nov"</span>, <span style="COLOR: #800000">"Dez"</span>, <span style="COLOR: #800000">""</span>];
+myCulture.DateTimeFormat.abbreviatedDayNames = [<span style="COLOR: #800000">"So"</span>, <span style="COLOR: #800000">"Mo"</span>, <span style="COLOR: #800000">"Di"</span>, <span style="COLOR: #800000">"Mi"</span>, <span style="COLOR: #800000">"Do"</span>, <span style="COLOR: #800000">"Fr"</span>, <span style="COLOR: #800000">"Sa"</span>];
+myCulture.DateTimeFormat.abbreviatedMonthGenitiveNames = [<span style="COLOR: #800000">"Jan"</span>, <span style="COLOR: #800000">"Feb"</span>, <span style="COLOR: #800000">"Mrz"</span>, <span style="COLOR: #800000">"Apr"</span>, <span style="COLOR: #800000">"Mai"</span>, <span style="COLOR: #800000">"Jun"</span>, <span style="COLOR: #800000">"Jul"</span>, <span style="COLOR: #800000">"Aug"</span>, <span style="COLOR: #800000">"Sep"</span>, <span style="COLOR: #800000">"Okt"</span>, <span style="COLOR: #800000">"Nov"</span>, <span style="COLOR: #800000">"Dez"</span>, <span style="COLOR: #800000">""</span>];
+myCulture.DateTimeFormat.dayNames = [<span style="COLOR: #800000">"Sonntag"</span>, <span style="COLOR: #800000">"Montag"</span>, <span style="COLOR: #800000">"Dienstag"</span>, <span style="COLOR: #800000">"Mittwoch"</span>, <span style="COLOR: #800000">"Donnerstag"</span>, <span style="COLOR: #800000">"Freitag"</span>, <span style="COLOR: #800000">"Samstag"</span>];
+myCulture.DateTimeFormat.fullDateTimePattern = <span style="COLOR: #800000">"dddd, d. MMMM yyyy HH:mm:ss"</span>;
+myCulture.DateTimeFormat.longDatePattern = <span style="COLOR: #800000">"dddd, d. MMMM yyyy"</span>;
+myCulture.DateTimeFormat.longTimePattern = <span style="COLOR: #800000">"HH:mm:ss"</span>;
+myCulture.DateTimeFormat.monthDayPattern = <span style="COLOR: #800000">"dd MMMM"</span>;
+myCulture.DateTimeFormat.monthNames = [<span style="COLOR: #800000">"Januar"</span>, <span style="COLOR: #800000">"Februar"</span>, <span style="COLOR: #800000">"März"</span>, <span style="COLOR: #800000">"April"</span>, <span style="COLOR: #800000">"Mai"</span>, <span style="COLOR: #800000">"Juni"</span>, <span style="COLOR: #800000">"Juli"</span>, <span style="COLOR: #800000">"August"</span>, <span style="COLOR: #800000">"September"</span>, <span style="COLOR: #800000">"Oktober"</span>, <span style="COLOR: #800000">"November"</span>, <span style="COLOR: #800000">"Dezember"</span>, <span style="COLOR: #800000">""</span>];
+myCulture.DateTimeFormat.monthGenitiveNames = [<span style="COLOR: #800000">"Januar"</span>, <span style="COLOR: #800000">"Februar"</span>, <span style="COLOR: #800000">"März"</span>, <span style="COLOR: #800000">"April"</span>, <span style="COLOR: #800000">"Mai"</span>, <span style="COLOR: #800000">"Juni"</span>, <span style="COLOR: #800000">"Juli"</span>, <span style="COLOR: #800000">"August"</span>, <span style="COLOR: #800000">"September"</span>, <span style="COLOR: #800000">"Oktober"</span>, <span style="COLOR: #800000">"November"</span>, <span style="COLOR: #800000">"Dezember"</span>, <span style="COLOR: #800000">""</span>];
+myCulture.DateTimeFormat.shortDatePattern = <span style="COLOR: #800000">"dd.MM.yyyy"</span>;
+myCulture.DateTimeFormat.shortTimePattern = <span style="COLOR: #800000">"HH:mm"</span>;
+myCulture.DateTimeFormat.yearMonthPattern = <span style="COLOR: #800000">"MMMM yyyy"</span>;
+<span style="COLOR: #008000">//add one culture
+</span>GC.Spread.Common.CultureManager.addCultureInfo(<span style="COLOR: #800000">"de-DE"</span>, myCulture);
+<span style="COLOR: #008000">//switch to "de-DE" culture
+</span>GC.Spread.Common.CultureManager.culture(<span style="COLOR: #800000">"de-DE"</span>);
+<span style="COLOR: #0000ff">var</span> d = <span style="COLOR: #0000ff">new</span> Date();
+<span style="COLOR: #008000">//With culture
+</span>activeSheet.setValue(1, 0, <span style="COLOR: #0000ff">new</span> Date(d.setDate(d.getDate() + 1)));
+activeSheet.getCell(1, 0).formatter(<span style="COLOR: #800000">"mmm"</span>);
+<span style="COLOR: #0000ff">var</span> dvalue = 12345.6789;
+activeSheet.setColumnWidth(0, 200);
+activeSheet.setColumnWidth(1, 200);
+activeSheet.setColumnWidth(2, 200);
+activeSheet.setValue(0, 0, dvalue);
+activeSheet.getCell(0, 0).formatter(<span style="COLOR: #800000">"###,###.00"</span>);
+activeSheet.setValue(2, 0, <span style="COLOR: #0000ff">new</span> Date(d.setDate(d.getDate() + 1)));
+<span style="COLOR: #008000">//With culture
+</span>activeSheet.getCell(3, 0).formatter(<span style="COLOR: #800000">"yyyy/mmm/dddd"</span>);
+activeSheet.setValue(3, 0, <span style="COLOR: #0000ff">new</span> Date());
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="cultureoption.html">Set Culture</a></div>
+<div class="i-see-also-link">
+<a href="eraformat.html">Set Era Format</a></div>
+<div class="i-see-also-link">
+<a href="cellformat.html">Cell Format</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

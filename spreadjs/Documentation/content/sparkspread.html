@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn about the Spread sparkline in SpreadJS. Learn the various options available for the Spread sparkline formula along with their descriptions. " />
+    
+    <title>Spread Sparkline | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n635","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn about the Spread sparkline in SpreadJS. Learn the various options available for the Spread sparkline formula along with their descriptions. " />
+    
+    <meta name="Microsoft.Help.Id" content="c8c56e0e-adeb-496d-9b89-bc17965c7a62"/>
+    <meta name="Microsoft.Help.TocParent" content="fd9cab4f-16bf-437c-a370-bbba7f456cf3"/>
+    <meta name="Microsoft.Help.TocOrder" content="9"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sparkmain.html">Sparklines</a>
+ / Spread Sparkline</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Spread Sparkline</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can create a Spread sparkline using the <strong>SpreadSparkline</strong> formula and cell values.</p>
+
+<p><img border="0" alt="Spread sparkline" src="images/sparkspread.png" /></p>
+
+<p>The Spread sparkline formula has the following options:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Option</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>Points</td>
+
+            <td>A reference that represents&nbsp;a range of cells that contains the values, such as "A1:A10".</td>
+        </tr>
+
+        <tr>
+            <td>ShowAverage</td>
+
+            <td>A boolean that represents whether to show the average. This setting is optional. The default value is false.</td>
+        </tr>
+
+        <tr>
+            <td>ScaleStart</td>
+
+            <td>A number that represents the minimum boundary of the sparkline. This setting is optional. The default value is the minimum of all values.</td>
+        </tr>
+
+        <tr>
+            <td>ScaleEnd</td>
+
+            <td>A number that represents the maximum boundary of the sparkline. This setting is optional. The default value is the maximum of all values.</td>
+        </tr>
+
+        <tr>
+            <td>Style</td>
+
+            <td>A number that references the style of the Spread sparkline. This setting is optional. The default value is 4 (poles).</td>
+        </tr>
+
+        <tr>
+            <td>ColorScheme</td>
+
+            <td>A string that represents the color of the sparkline. This setting is optional. The default value is "#646464".</td>
+        </tr>
+
+        <tr>
+            <td>Vertical</td>
+
+            <td>A boolean that represents whether to display the sparkline vertically. This setting is optional. The default value is false.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>When the sparkline is horizontal, the horizontal axis&nbsp;represents each point. The length of lines or the number of dots in the vertical axis represents the frequency of occurrence.</p>
+
+<p>Six styles are supported:</p>
+
+<ul>
+    <li>Stacked = 1 - line from center to two sides</li>
+
+    <li>Spread = 2 - dot from center to two sides</li>
+
+    <li>Jitter = 3 - dot with a random location</li>
+
+    <li>Poles = 4 - line from one side to another</li>
+
+    <li>StackedDots = 5 - dot from one side to another</li>
+
+    <li>Stripe = 6 - line with an equal length</li>
+</ul>
+
+<p>The Spread sparkline formula has the following format:</p>
+
+<p><code>=SPREADSPARKLINE(points, showAverage?, scaleStart?, scaleEnd?, style?, colorScheme?, vertical?)</code></p>
+
+<h4>Using Code</h4>
+
+<p>The following code creates a Spread sparkline.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.addSpan(0, 0, 1, 3);
+activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).value(<span style="COLOR: #800000">"Employee Age Statistics"</span>).font(<span style="COLOR: #800000">"20px Arial"</span>).hAlign(GC.Spread.Sheets.HorizontalAlign.center).vAlign(GC.Spread.Sheets.VerticalAlign.center);
+<span style="COLOR: #0000ff">var</span> table1 = activeSheet.tables.add(<span style="COLOR: #800000">"table1"</span>, 1, 0, 49, 3, GC.Spread.Sheets.Tables.TableThemes.light12);
+table1.filterButtonVisible(<span style="COLOR: #0000ff">false</span>);
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">"Name"</span>);
+activeSheet.setValue(1, 1, <span style="COLOR: #800000">"Age"</span>);
+activeSheet.setValue(1, 2, <span style="COLOR: #800000">"Diagram"</span>);
+  <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> i = 2;i &lt; 20; i++) {
+  activeSheet.setValue(i, 0, <span style="COLOR: #800000">"Employee "</span> + (i - 1));
+  }
+activeSheet.setValue(2, 1, 18);
+activeSheet.setValue(3, 1, 20);
+activeSheet.setValue(4, 1, 21);
+activeSheet.setValue(5, 1, 22);
+activeSheet.setValue(6, 1, 23);
+activeSheet.setValue(7, 1, 22);
+activeSheet.setValue(8, 1, 24);
+activeSheet.setValue(9, 1, 24);
+activeSheet.setValue(10, 1, 30);
+activeSheet.setValue(11, 1, 33);
+activeSheet.setValue(12, 1, 33);
+activeSheet.setValue(13, 1, 40);
+activeSheet.setValue(14, 1, 44);
+activeSheet.setValue(15, 1, 45);
+activeSheet.setValue(16, 1, 45);
+activeSheet.setValue(17, 1, 46);
+activeSheet.setValue(18, 1, 50);
+activeSheet.setValue(19, 1, 55);
+activeSheet.addSpan(2, 2, 10, 1);
+activeSheet.setFormula(2, 2, <span style="COLOR: #800000">'=SPREADSPARKLINE(B3:B20,TRUE,,,4,"green")'</span>);
+activeSheet.setRowHeight(0, 30);
+activeSheet.setColumnWidth(0, 100);
+activeSheet.setColumnWidth(1, 100);
+activeSheet.setColumnWidth(2, 400);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Worksheet~setFormula.html">setFormula Method</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

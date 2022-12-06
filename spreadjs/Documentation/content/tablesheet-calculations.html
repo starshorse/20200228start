@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>TableSheet Calculations | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n391","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="117db564-e8ee-4e13-99f2-2660540c7032"/>
+    <meta name="Microsoft.Help.TocParent" content="66b1614e-0f0a-4370-8f16-1c0bf0f02f14"/>
+    <meta name="Microsoft.Help.TocOrder" content="10"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="tablesheet.html">TableSheet</a>
+ / TableSheet Calculations</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">TableSheet Calculations</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>TableSheet uses an enhanced calculation engine to help users to create and analyze data in the current view as well as a normal spreadsheet.</p>
+
+<h3>Calculated Columns</h3>
+
+<p>You can add calculated columns by using simple column references or advanced summary and logical functions. These calculated columns can be created using structured references like "=[@column1]" and they also support CalcEngine functions.</p>
+
+<p><img border="0" alt="" src="images/ts-calccols.png" /></p>
+
+<p>The reference consists of at least one row or column reference. You can find all the available row and column references in the following table.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Reference</th>
+
+            <th>Description and Example</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td colspan="2"><strong>Row References</strong></td>
+        </tr>
+
+        <tr>
+            <td>Current Row</td>
+
+            <td>
+                <p>Reference the current row.</p>
+
+                <p>[@column1] - The data in the current row of field column1.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Relative Row</p>
+            </td>
+
+            <td>
+                <p>Reference the relative row.</p>
+
+                <p>[@+1column1] - Returns column1 value in the next row.</p>
+
+                <p>[@-1column1] - Returns column1 value in the previous row.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Absolute Row</p>
+            </td>
+
+            <td>
+                <p>Reference the row of absolute position by row number or "last"/"odd"/"even".</p>
+
+                <p>[#1[column1]] - Returns column1 values in first row.<br />
+                [#last[column1]] - Returns column1 value in the last rows</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Absolute Row by ID</p>
+            </td>
+
+            <td>
+                <p>Reference the row by the primary key.</p>
+
+                <p>[$1234[column1]] - Returns column1 values of data with primary key "1234"</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Row Range</p>
+            </td>
+
+            <td>
+                <p>Reference the range of rows by from and to.</p>
+
+                <p>[@:#last[column1]] - Returns column1 values of rows from current row to the last row</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Several Rows</p>
+            </td>
+
+            <td>
+                <p>Reference several rows by comma.</p>
+
+                <p>[#1,@-1:@+1,#last[column1]] - Returns column1 values in first row, previous row to the next row, and the last row.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><strong>Column References</strong></td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Regular Field</p>
+            </td>
+
+            <td>
+                <p>Reference the current field.</p>
+
+                <p>[@column1] - The data in the current field column1.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Attribute of object field</p>
+            </td>
+
+            <td>
+                <p>Reference the attribute of the current field.</p>
+
+                <p>[@column1.abc] - Returns the attribute value of "abc" in the current row of field column1.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Item of array field</p>
+            </td>
+
+            <td>
+                <p>Reference the index item of the current field.</p>
+
+                <p>[@column1.1] - Returns the first value in the current row of field column1.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Special Field</p>
+            </td>
+
+            <td>
+                <p>Reference the attribute of the current field with spaces.</p>
+
+                <p>[@[column 1].[a aa]] - Returns a certain field using the square brackets.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Whole Column</p>
+            </td>
+
+            <td>
+                <p>Reference the whole field.</p>
+
+                <p>[column1] - Returns all the data in the column1.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following code sample shows how to create a calculated column where the "Total Price" column is defined by the formula "=([@unitPrice] * [@taxRate])/100 + [@unitPrice]".</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//bind a view to the table sheet
+</span>myTable.fetch().then(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">var</span> view = myTable.addView(<span style="COLOR: #800000">"myView"</span>, [
+
+        { value: <span style="COLOR: #800000">"stockItem"</span>, width: 300, caption: <span style="COLOR: #800000">"Stock Item"</span> },
+        { value: <span style="COLOR: #800000">"unitPrice"</span>, width: 120, caption: <span style="COLOR: #800000">"Unit Price"</span> },
+        { value: <span style="COLOR: #800000">"taxRate"</span>, width: 120, caption: <span style="COLOR: #800000">"Tax Rate"</span> },
+        { value: <span style="COLOR: #800000">"=([@unitPrice] * [@taxRate])/100 + [@unitPrice]"</span>, caption: <span style="COLOR: #800000">"Total Price"</span>, width: 150 } <span style="COLOR: #008000">// calculated column
+</span>    ]);
+    sheet.setDataView(view);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Reference TableSheet in a Worksheet</h3>
+
+<p>You can use structured references to reference the tablesheet in a worksheet just like a table. This helps to cross-reference and summarize data in the tablesheet to create advanced report views.</p>
+
+<p>Like a table reference, you can set the tablesheet name and the column caption in a formula. It also supports the A1/R1C1 reference style, although it is not as easy to read.</p>
+
+<p>For example, the following GIF illustrates the use of functions such as SUM, COUNT, and UNIQUE where the tablesheet reference is “SUM(Tablesheet1[Total Price])" and so on.</p>
+
+<p><img border="0" alt="" src="images/ts-referencews.gif" /></p>
+
+<p>The reference style can also be used in cell formulas, charts, and conditional formats.</p>
+
+<p>The following code sample shows how to set a tablesheet reference in a worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Create a new sheet and add it at 2nd position.
+</span><span style="COLOR: #0000ff">var</span> sheet1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Worksheet();
+sheet1.name(<span style="COLOR: #800000">"TS Reference in Formula"</span>);
+spread.addSheet(1, sheet1);
+sheet1.setColumnWidth(0, 250);
+sheet1.setColumnWidth(1, 150);
+
+<span style="COLOR: #008000">// TS Reference in WorkSheet Formulas
+</span>sheet1.setValue(0, 0, <span style="COLOR: #800000">"Stock Items Count"</span>)
+sheet1.setFormula(0, 1, <span style="COLOR: #800000">"=COUNTA(TableSheet1[Stock Item Key])"</span>);
+sheet1.setValue(1, 0, <span style="COLOR: #800000">'Sum of Total Price'</span>)
+sheet1.setFormula(1, 1, <span style="COLOR: #800000">'=SUM(TableSheet1[Total Price])'</span>);
+<span style="COLOR: #008000">// unique tax rates
+</span>sheet1.setValue(3, 0, <span style="COLOR: #800000">'Different Tax Rates are:-'</span>)
+sheet1.setFormula(3, 1, <span style="COLOR: #800000">'=UNIQUE(TableSheet1[Tax Rate])'</span>); <span style="COLOR: #008000">// it returns a dynamic array and we have already set allowDynamicArray to true initially</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can use the QUERY function to fetch data from Data Manager tables. To know more, refer to&nbsp;<a href="query-function.html">QUERY function</a>&nbsp;in Formula Reference.</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

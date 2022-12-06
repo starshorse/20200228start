@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="You can add pie charts to your worksheet using SpreadJS. Learn the various pie chart types supported by SpreadJS along with their sample code." />
+    
+    <title>Pie Chart | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n576","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="You can add pie charts to your worksheet using SpreadJS. Learn the various pie chart types supported by SpreadJS along with their sample code." />
+    
+    <meta name="Microsoft.Help.Id" content="17d590e7-3025-44c8-b990-90a10968ca09"/>
+    <meta name="Microsoft.Help.TocParent" content="1124f6de-499a-4032-8d2a-c338ec23d096"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / <a href="ChartTypes.html">Chart Types</a>
+ / Pie Chart</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Pie Chart</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>A pie chart is extensively used to display the size of each item in a single data series in proportion to a total quantity.Data points are shown as a percentage of the whole pie. This chart is ideal when you want to visualize data in terms of percentage or share.</p>
+
+<p>The data arranged in columns or rows of a worksheet can be plotted in a pie chart. Typically, a pie chart is similar to a circle divided in small sectors representing fractions of the contribution of each category to the whole. These charts generally display only one group of data.</p>
+
+<p>SpreadJS supports the following types of pie chart. In the examples shown below, the browser market share (in percentage)for different browsers is depicted in different types of pie charts.</p>
+
+<h3>Pie Chart</h3>
+
+<p>This chart displays a single data series in a circle-type structure, with each sector representing a different category.</p>
+
+<p>An image of the pie chart is shown below:<br />
+<br />
+<img border="0" alt="Pie chart" src="images/PieChart.png" /></p>
+
+<p><strong>Using Code</strong></p>
+
+<p>This code shows how to add a pie chart in the spreadsheet along with customization of some of the chart elements.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 3 });
+<span style="COLOR: #008000">// get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+<span style="COLOR: #008000">//prepare data for chart
+</span><span style="COLOR: #0000ff">var</span> dataArray = [
+[<span style="COLOR: #800000">""</span>, <span style="COLOR: #800000">'Chrome'</span>, <span style="COLOR: #800000">'Firefox'</span>, <span style="COLOR: #800000">'IE'</span>, <span style="COLOR: #800000">'Safari'</span>, <span style="COLOR: #800000">'Edge'</span>, <span style="COLOR: #800000">'Opera'</span>, <span style="COLOR: #800000">'Other'</span>],
+[<span style="COLOR: #800000">"2014"</span>, 0.4966, 0.1801, 0.2455, 0.0470, 0.0, 0.0150, 0.0158],
+[<span style="COLOR: #800000">"2015"</span>, 0.5689, 0.1560, 0.1652, 0.0529, 0.0158, 0.0220, 0.0192],
+[<span style="COLOR: #800000">"2016"</span>, 0.6230, 0.1531, 0.1073, 0.0464, 0.0311, 0.0166, 0.0225],
+[<span style="COLOR: #800000">"2017"</span>, 0.6360, 0.1304, 0.0834, 0.0589, 0.0443, 0.0223, 0.0246]
+];
+activeSheet.setArray(0, 0, dataArray);
+<span style="COLOR: #008000">// Add Pie Chart
+</span><span style="COLOR: #0000ff">var</span> chart = activeSheet.charts.add(<span style="COLOR: #800000">'PieChart'</span>, GC.Spread.Sheets.Charts.ChartType.pie, 0, 50, 600, 400, <span style="COLOR: #800000">"A1:H2"</span>);
+<span style="COLOR: #0000ff">var</span> dataLabels = chart.dataLabels();
+dataLabels.showValue = <span style="COLOR: #0000ff">true</span>;
+dataLabels.showSeriesName = <span style="COLOR: #0000ff">false</span>;
+dataLabels.showCategoryName = <span style="COLOR: #0000ff">true</span>;
+dataLabels.format = <span style="COLOR: #800000">"0.00%"</span>;
+<span style="COLOR: #0000ff">var</span> dataLabelPosition = GC.Spread.Sheets.Charts.DataLabelPosition;
+dataLabels.position = dataLabelPosition.bestFit;
+chart.dataLabels(dataLabels);
+<span style="COLOR: #0000ff">var</span> title = chart.title();
+title.text = <span style="COLOR: #800000">"Browser Market Share"</span>;
+title.fontSize = 18;
+chart.title(title);
+chart.legend({ position: GC.Spread.Sheets.Charts.LegendPosition.right });
+<span style="COLOR: #0000ff">var</span> seriesItem = chart.series().<span style="COLOR: #0000ff">get</span>(0);
+seriesItem.backColor = <span style="COLOR: #800000">'rgb(91, 155, 213),rgb(237, 125, 49),rgb(165, 165, 165),rgb(255, 192, 0),rgb(68, 114, 196),rgb(112, 173, 71),rgb(255,20,128)'</span>;
+seriesItem.border.width = 3;
+chart.series().<span style="COLOR: #0000ff">set</span>(0, seriesItem);
+<span style="COLOR: #008000">// Add Doughnut Chart
+</span><span style="COLOR: #0000ff">var</span> chart = activeSheet.charts.add(<span style="COLOR: #800000">'DoughnutChart'</span>, GC.Spread.Sheets.Charts.ChartType.doughnut, 0, 100, 600, 320, <span style="COLOR: #800000">"A1:H5"</span>);
+<span style="COLOR: #0000ff">var</span> series = chart.series().<span style="COLOR: #0000ff">get</span>();
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; series.length; i++) {
+<span style="COLOR: #0000ff">var</span> seriesItem = series[i];
+seriesItem.backColor = <span style="COLOR: #800000">'rgb(91, 155, 213),rgb(237, 125, 49),rgb(165, 165, 165),rgb(255, 192, 0),rgb(68, 114, 196),rgb(112, 173, 71),rgb(255,20,128)'</span>;
+chart.series().<span style="COLOR: #0000ff">set</span>(i, seriesItem);
+}
+chart.legend({ position: GC.Spread.Sheets.Charts.LegendPosition.right });
+<span style="COLOR: #0000ff">var</span> title = chart.title();
+title.text = <span style="COLOR: #800000">"Browser Market Share"</span>;
+title.fontSize = 18;
+chart.title(title);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Doughnut Chart</h3>
+
+<p>This chart can display multiple data series concurrently, with each ring depicting a single data series.</p>
+
+<p>When you insert a doughnut chart in the spreadsheet, its hole size is in default size. You can change the hole size by setting the value for the <strong>doughnutHoleSize</strong> property ranging between 0 and 0.9. With&nbsp;this property, users can display wider slices in doughnut chart&nbsp;to accommodate data labels that could be category names, values, percentages etc.</p>
+
+<p>An image of the doughnut chart is shown below:<br />
+<br />
+<img border="0" alt="Doughnut chart" src="images/doughnut-holesize.png" /></p>
+
+<p><strong>Using Code</strong></p>
+
+<p>This code shows how to add a doughnut chart in the spreadsheet along with customization of some of the chart elements.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+$(document).ready(<span style="COLOR: #0000ff">function</span> () {
+<span style="COLOR: #008000">// initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 3 });
+<span style="COLOR: #008000">// get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+<span style="COLOR: #008000">//prepare data for chart
+</span><span style="COLOR: #0000ff">var</span> dataArray = [
+[<span style="COLOR: #800000">""</span>, <span style="COLOR: #800000">'Samsung'</span>, <span style="COLOR: #800000">'Apple'</span>, <span style="COLOR: #800000">'Huawei'</span>, <span style="COLOR: #800000">'OPPO'</span>, <span style="COLOR: #800000">'Vivo'</span>, <span style="COLOR: #800000">'Others'</span>],
+[<span style="COLOR: #800000">"Sales"</span>, 321, 215, 160, 112, 100, 638]
+];
+<span style="COLOR: #008000">// set data for chart
+</span>activeSheet.setArray(0, 0, dataArray);
+<span style="COLOR: #008000">// Add Doughnut Chart
+</span><span style="COLOR: #0000ff">var</span> chart = activeSheet.charts.add(<span style="COLOR: #800000">'DoughnutChart'</span>, GC.Spread.Sheets.Charts.ChartType.doughnut, 10, 80, 600, 320, <span style="COLOR: #800000">"A1:G2"</span>);
+<span style="COLOR: #0000ff">var</span> series = chart.series().get();
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; series.length; i++) {
+<span style="COLOR: #0000ff">var</span> seriesItem = series[i];
+seriesItem.backColor = <span style="COLOR: #800000">'rgb(91, 155, 213),rgb(237, 125, 49),rgb(165, 165, 165),rgb(255, 192, 0),rgb(68, 114, 196),rgb(112, 173, 71),rgb(255,20,128)'</span>;
+chart.series().set(i, seriesItem);
+}
+<span style="COLOR: #008000">// set the doughnut HoleSize
+</span>series.doughnutHoleSize = 0.4;
+chart.series().set(0, series);
+<span style="COLOR: #008000">// show datalabels
+</span><span style="COLOR: #0000ff">var</span> dataLabels = chart.dataLabels();
+dataLabels.showValue = <span style="COLOR: #0000ff">false</span>;
+dataLabels.showSeriesName = <span style="COLOR: #0000ff">false</span>;
+dataLabels.showCategoryName = <span style="COLOR: #0000ff">true</span>;
+dataLabels.showPercentage = <span style="COLOR: #0000ff">true</span>;
+<span style="COLOR: #0000ff">var</span> dataLabelPosition = GC.Spread.Sheets.Charts.DataLabelPosition;
+dataLabels.position = dataLabelPosition.Center;
+chart.dataLabels(dataLabels);
+<span style="COLOR: #008000">// set series backcolor
+</span><span style="COLOR: #0000ff">var</span> s = chart.series().get(0);
+<span style="COLOR: #008000">//s.backColor = "accent 1 0,accent 2 0,accent 3 0,accent 4 0, accent 5 0, accent 6 0";
+</span>s.backColor = <span style="COLOR: #800000">"#43B7C2, #FFAD48, #50E3C2, #B5D63D, #EF879B, #C600CC"</span>;
+chart.series().set(0, s)
+<span style="COLOR: #008000">// show legends
+</span>chart.legend({ position: GC.Spread.Sheets.Charts.LegendPosition.right });
+<span style="COLOR: #0000ff">var</span> title = chart.title();
+title.text = <span style="COLOR: #800000">"Best-selling Mobile Phone Brands of 2019"</span>;
+title.fontSize = 18;
+chart.title(title);
+});
+&lt;<span style="COLOR: #800000">/script&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

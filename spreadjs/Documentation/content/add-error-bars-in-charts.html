@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Add Error Bars In Charts | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n599","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="27875652-1e01-4d89-b9b4-a2d7ef0f2bbe"/>
+    <meta name="Microsoft.Help.TocParent" content="bdba97c4-037f-4cd7-ae56-830374286ef0"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / Add Error Bars In Charts</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Add Error Bars In Charts</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to add, modify, and remove error bars in a chart. Error Bars can be added on top of a regular data series while working with charts. Users can show error bars on all data points or data markers in a data series as a standard error amount, a percentage, or a standard deviation.&nbsp;</p>
+
+<h3 id="a">Usage Scenario</h3>
+
+<p>Error bars act as an extremely useful tool for scientists, statisticians, and research analysts to showcase data variability and measurement accuracy.</p>
+
+<p>Incorporating error bars in charts is beneficial especially when users need to:</p>
+
+<ul>
+    <li>Identify and analyse margins of error and standard deviations at a glance.</li>
+
+    <li>Indicate errors or quantify uncertainty about single or multiple data points in a data series.</li>
+
+    <li>Work on applications that require utmost precision. In this scenario, error bars ensure accuracy without risking the data analysis and research outcomes even by slight percentages.</li>
+</ul>
+
+<p><strong>Example</strong>: Let's say you want to show a 15% positive and negative error amount in the results of a scientific experiment or an accounting application, you can configure error bars in your chart to depict such data.</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Error bars in a chart" src="images/spreadjsv13images/error-bar.png" />&nbsp;</p>
+
+<p>Besides calculating and displaying confidence intervals, margins of error, and standard deviations; error bars also provide an effective way to enhance the overall data visualization of the chart.</p>
+
+<h3 id="b">Supported Chart Types</h3>
+
+<p>The following chart types are supported while adding error bars in charts:</p>
+
+<ul>
+    <li>Column Charts</li>
+
+    <li>Bar Charts</li>
+
+    <li>Line Charts</li>
+
+    <li>xyScatter Charts</li>
+
+    <li>Area Charts</li>
+
+    <li>Bubble Charts</li>
+</ul>
+
+<h3 id="c">Direction and Order Rules</h3>
+
+<p>The direction of the error bar is automatically determined by the chart type that you're using and this property cannot be set and modified by the users.</p>
+
+<ul>
+    <li>For column, line or area charts, the error bars will be displayed in vertical direction.</li>
+
+    <li>For bar charts, the error bars will be displayed in horizontal direction.</li>
+
+    <li>For xyScatter or bubble charts, the error bars can be displayed in horizontal direction, vertical direction and both the horizontal and vertical directions simultaneously.</li>
+</ul>
+
+<p>The order in which the error bars and other chart elements are drawn depends upon the chart type selected by the user.</p>
+
+<ul>
+    <li>When your chart type is area, column and bar; then the error bars are drawn in the front.</li>
+
+    <li>When your chart type is line, scatter and bubble; then the error bars are drawn in the back.</li>
+</ul>
+
+<h3 id="d">Error Bar Types</h3>
+
+<p>Users can add three different types of error bars in the charts. This includes "Plus", "Minus", and "Both".</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Type</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>Plus</td>
+
+            <td>This type of error bar depicts only the positive values.</td>
+        </tr>
+
+        <tr>
+            <td>Minus</td>
+
+            <td>This value represents the error as a percentage of the data value in the same direction axis.</td>
+        </tr>
+
+        <tr>
+            <td>Both</td>
+
+            <td>This value represents the error as a number of standard deviations (along with a calculating value which dependents on the set deviations and chart data values)</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="e">Error Bar End Styles</h3>
+
+<p>Users can tweak the default appearance of the error bars by toggling the visibility of end-caps on the lines. The available options are "No Cap" and "Cap".</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Type</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>No Cap</td>
+
+            <td>This option is used to hide end caps on the error bar lines.</td>
+        </tr>
+
+        <tr>
+            <td>Cap&nbsp;</td>
+
+            <td>This option is used to show end caps on the error bar lines.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="f">Error Bar Amounts</h3>
+
+<p>Users can set their own values to display the exact error amounts that they want. The available options are "Fixed Value", "Percentage", "Standard Deviation", "Standard Error", and Custom.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Type</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>Fixed Value</td>
+
+            <td>This value represents the error as an absolute value.</td>
+        </tr>
+
+        <tr>
+            <td>Percentage</td>
+
+            <td>This value represents the error as a percentage of the data value in the same direction axis.</td>
+        </tr>
+
+        <tr>
+            <td>Standard Deviation</td>
+
+            <td>This value represents the error as a number of standard deviations (along with a calculating value which dependents on the set deviations and chart data values)</td>
+        </tr>
+
+        <tr>
+            <td>Standard Error</td>
+
+            <td>This refers to the standard error of the mean (value property is not used).</td>
+        </tr>
+
+        <tr>
+            <td>Custom</td>
+
+            <td>Custom error amounts refer to the error values that are bound through the binding property or set to an object with 'positive' and 'negative' values respectively by formulas or fixed values.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="g">Using Code</h3>
+
+<p>The following example code depicts how to use different error bars in the chart.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+activeSheet.suspendPaint();
+<span style="COLOR: #008000">//prepare data for chart
+</span>activeSheet.setValue(0, 1, <span style="COLOR: #800000">"Y-2016"</span>);
+activeSheet.setValue(0, 2, <span style="COLOR: #800000">"Y-2017"</span>);
+activeSheet.setValue(0, 3, <span style="COLOR: #800000">"Y-2018"</span>);
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">"Mobile Phones"</span>);
+activeSheet.setValue(2, 0, <span style="COLOR: #800000">"Laptops"</span>);
+activeSheet.setValue(3, 0, <span style="COLOR: #800000">"Tablets"</span>);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> r = 1; r &lt;= 3; r++) {
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> c = 1; c &lt;= 3; c++) {
+activeSheet.setValue(r, c, parseInt(Math.random() * 5000));
+}
+}
+<span style="COLOR: #008000">// Add columnClustered chart
+</span>chart_columnClustered = activeSheet.charts.add(<span style="COLOR: #800000">'chart_columnClustered'</span>, GC.Spread.Sheets.Charts.ChartType.columnClustered, 50, 100, 600, 400, <span style="COLOR: #800000">"A1:D4"</span>);
+<span style="COLOR: #008000">// Adding ErrorBars on series[0] i.e. Mobile Phones
+</span><span style="COLOR: #0000ff">var</span> series1 = chart_columnClustered.series().get(0);
+series1.errorBars = {
+vertical: {
+type: 1, <span style="COLOR: #008000">// minus
+</span>valueType: 2, <span style="COLOR: #008000">// percentage
+</span>value: 70, <span style="COLOR: #008000">// 70%
+</span>noEndCap: <span style="COLOR: #0000ff">false</span>, <span style="COLOR: #008000">// no end cap
+</span>style: {
+  color: <span style="COLOR: #800000">'red'</span>, <span style="COLOR: #008000">// line color
+</span>  width: 1.5 <span style="COLOR: #008000">// width of line
+</span>}
+}
+};
+<span style="COLOR: #008000">// Adding ErrorBars on series[1] i.e. Laptops
+</span><span style="COLOR: #0000ff">var</span> series2 = chart_columnClustered.series().get(1);
+series2.errorBars = {
+vertical: {
+type: 1, <span style="COLOR: #008000">// minus
+</span>valueType: 2, <span style="COLOR: #008000">// percentage
+</span>value: 70, <span style="COLOR: #008000">// 70%
+</span>noEndCap: <span style="COLOR: #0000ff">false</span>, <span style="COLOR: #008000">// no end cap
+</span>style: {
+  color: <span style="COLOR: #800000">'blue'</span>, <span style="COLOR: #008000">// line color
+</span>  width: 1.5 <span style="COLOR: #008000">// width of line
+</span>}
+}
+};
+<span style="COLOR: #008000">// Adding ErrorBars on series[2] i.e. Tablets
+</span><span style="COLOR: #0000ff">var</span> series3 = chart_columnClustered.series().get(2);
+series3.errorBars = {
+vertical: {
+type: 1, <span style="COLOR: #008000">// minus
+</span>valueType: 2, <span style="COLOR: #008000">// percentage
+</span>value: 70, <span style="COLOR: #008000">// 70%
+</span>noEndCap: <span style="COLOR: #0000ff">false</span>, <span style="COLOR: #008000">// no end cap
+</span>style: {
+  color: <span style="COLOR: #800000">'green'</span>,<span style="COLOR: #008000">// line color
+</span>  width: 1.5 <span style="COLOR: #008000">// width of line
+</span>}
+}
+};
+chart_columnClustered.series().set(0, series1);
+chart_columnClustered.series().set(1, series2);
+chart_columnClustered.series().set(2, series3);
+<span style="COLOR: #008000">// Configure Chart Title
+</span><span style="COLOR: #0000ff">var</span> title = chart_columnClustered.title();
+title.text = <span style="COLOR: #800000">"Error Bars for Annual Sales Record"</span>;
+title.fontFamily = <span style="COLOR: #800000">"Cambria"</span>;
+title.fontSize = 28;
+title.color = <span style="COLOR: #800000">"Red"</span>;
+chart_columnClustered.title(title);
+activeSheet.resumePaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

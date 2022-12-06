@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn about the stacked sparkline in SpreadJS. Learn the various options available for the stacked sparkline formula along with their descriptions. " />
+    
+    <title>Stacked Sparkline | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n637","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn about the stacked sparkline in SpreadJS. Learn the various options available for the stacked sparkline formula along with their descriptions. " />
+    
+    <meta name="Microsoft.Help.Id" content="f8d3e5f8-c58b-4c0c-960e-c3bed1c91852"/>
+    <meta name="Microsoft.Help.TocParent" content="fd9cab4f-16bf-437c-a370-bbba7f456cf3"/>
+    <meta name="Microsoft.Help.TocOrder" content="10"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sparkmain.html">Sparklines</a>
+ / Stacked Sparkline</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Stacked Sparkline</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can create a stacked sparkline using the <strong>StackedSparkline</strong> formula and cell values.</p>
+
+<p><img border="0" alt="Stacked sparkline" src="images/sparkstacked.png" /></p>
+
+<p>The stacked sparkline formula has the following options:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Option</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>Points</td>
+
+            <td>A reference that represents a range of cells that contains the values, such as "A1:A4".</td>
+        </tr>
+
+        <tr>
+            <td>ColorRange</td>
+
+            <td>A reference that represents a range of cells that contains all colors, such as "B1:B4". This setting is optional. The default value is generated by color.</td>
+        </tr>
+
+        <tr>
+            <td>LabelRange</td>
+
+            <td>A reference that represents a cell range that contains all labels, such as "C1:C4". This setting is optional. The default value is empty.</td>
+        </tr>
+
+        <tr>
+            <td>Maximum</td>
+
+            <td>A number that represents the maximum value of the sparkline. This setting is optional. The default value is the summary of all positive values.</td>
+        </tr>
+
+        <tr>
+            <td>TargetRed</td>
+
+            <td>A number that represents the location of the red line. This setting is optional. The default value is empty.</td>
+        </tr>
+
+        <tr>
+            <td>TargetGreen</td>
+
+            <td>A number that represents the location of the green line. This setting is optional. The default value is empty.</td>
+        </tr>
+
+        <tr>
+            <td>TargetBlue</td>
+
+            <td>A number that represents the location of the blue line. This setting is optional. The default value is empty.</td>
+        </tr>
+
+        <tr>
+            <td>TargetYellow</td>
+
+            <td>A number that represents the location of the yellow line. This setting is optional. The default value is empty</td>
+        </tr>
+
+        <tr>
+            <td>Color</td>
+
+            <td>A string that represents the color if colorRange is omitted. This setting is optional. The default value is "#646464".</td>
+        </tr>
+
+        <tr>
+            <td>HighlightPosition</td>
+
+            <td>A number that represents the index of the highlight area. This setting is optional. The default value is empty.</td>
+        </tr>
+
+        <tr>
+            <td>Vertical</td>
+
+            <td>A boolean that represents whether to display the sparkline vertically. This setting is optional. The default value is false.</td>
+        </tr>
+
+        <tr>
+            <td>TextOrientation</td>
+
+            <td>A number that represents the label text orientation. This setting is optional. The default value is 0 (horizontal). The vertical setting is 1.</td>
+        </tr>
+
+        <tr>
+            <td>TextSize</td>
+
+            <td>A number that represents the size of the label text. This setting is optional. The default value is 10. The unit is px.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The stacked sparkline formula uses the following format:</p>
+
+<p><code>=STACKEDSPARKLINE(points, colorRange?, labelRange?, maximum?, targetRed?, targetGreen?, targetBlue?, tragetYellow?, color?, highlightPosition?, vertical?, textOrientation?, textSize?)</code></p>
+
+<h4>Using Code</h4>
+
+<p>The following code creates a stacked sparkline.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.addSpan(0, 0, 1, 5);
+activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).value(<span style="COLOR: #800000">"Sales by State"</span>).font(<span style="COLOR: #800000">"20px Arial"</span>).hAlign(GC.Spread.Sheets.HorizontalAlign.center).vAlign(GC.Spread.Sheets.VerticalAlign.center);
+<span style="COLOR: #0000ff">var</span> table1 = activeSheet.tables.add(<span style="COLOR: #800000">"table1"</span>, 1, 0, 6, 5, GC.Spread.Sheets.Tables.TableThemes.light12);
+table1.filterButtonVisible(<span style="COLOR: #0000ff">false</span>);
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">"State"</span>);
+activeSheet.setValue(1, 1, <span style="COLOR: #800000">"Product 1"</span>);
+activeSheet.setValue(1, 2, <span style="COLOR: #800000">"Product 2"</span>);
+activeSheet.setValue(1, 3, <span style="COLOR: #800000">"Product 3"</span>);
+activeSheet.setValue(1, 4, <span style="COLOR: #800000">"Diagram"</span>);
+activeSheet.setValue(2, 0, <span style="COLOR: #800000">"Idaho"</span>);
+activeSheet.setValue(2, 1, 10000);
+activeSheet.setValue(2, 2, 12000);
+activeSheet.setValue(2, 3, 15000);
+activeSheet.setValue(3, 0, <span style="COLOR: #800000">"Montana"</span>);
+activeSheet.setValue(3, 1, 11000);
+activeSheet.setValue(3, 2, 10000);
+activeSheet.setValue(3, 3, 15000);
+activeSheet.setValue(4, 0, <span style="COLOR: #800000">"Oregon"</span>);
+activeSheet.setValue(4, 1, 10000);
+activeSheet.setValue(4, 2, 17000);
+activeSheet.setValue(4, 3, 12000);
+activeSheet.setValue(5, 0, <span style="COLOR: #800000">"Washington"</span>);
+activeSheet.setValue(5, 1, 15000);
+activeSheet.setValue(5, 2, 10000);
+activeSheet.setValue(5, 3, 15000);
+activeSheet.setValue(6, 0, <span style="COLOR: #800000">"Utah"</span>);
+activeSheet.setValue(6, 1, 10000);
+activeSheet.setValue(6, 2, 15000);
+activeSheet.setValue(6, 3, 12000);
+activeSheet.setValue(7, 1, <span style="COLOR: #800000">"orange"</span>);
+activeSheet.setValue(7, 2, <span style="COLOR: #800000">"purple"</span>);
+activeSheet.setValue(7, 3, <span style="COLOR: #800000">"yellowgreen"</span>);
+activeSheet.getRange(-1, 1, -1, 1).formatter(<span style="COLOR: #800000">"$#,##0"</span>);
+activeSheet.getRange(-1, 2, -1, 1).formatter(<span style="COLOR: #800000">"$#,##0"</span>);
+activeSheet.getRange(-1, 3, -1, 1).formatter(<span style="COLOR: #800000">"$#,##0"</span>);
+activeSheet.setFormula(2, 4, <span style="COLOR: #800000">'=STACKEDSPARKLINE(B3:D3,B8:D8,B2:D2,40000)'</span>);
+activeSheet.setFormula(3, 4, <span style="COLOR: #800000">'=STACKEDSPARKLINE(B4:D4,B8:D8,B2:D2,40000)'</span>);
+activeSheet.setFormula(4, 4, <span style="COLOR: #800000">'=STACKEDSPARKLINE(B5:D5,B8:D8,B2:D2,40000)'</span>);
+activeSheet.setFormula(5, 4, <span style="COLOR: #800000">'=STACKEDSPARKLINE(B6:D6,B8:D8,B2:D2,40000)'</span>);
+activeSheet.setFormula(6, 4, <span style="COLOR: #800000">'=STACKEDSPARKLINE(B7:D7,B8:D8,B2:D2,40000)'</span>);
+activeSheet.setRowHeight(0, 50);
+activeSheet.setRowHeight(1, 25);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 2; i &lt; 7; i++) {
+   activeSheet.setRowHeight(i, 45);
+}
+activeSheet.setRowHeight(7, 0);
+activeSheet.setColumnWidth(0, 100);
+activeSheet.setColumnWidth(1, 120);
+activeSheet.setColumnWidth(2, 120);
+activeSheet.setColumnWidth(3, 120);
+activeSheet.setColumnWidth(4, 200);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

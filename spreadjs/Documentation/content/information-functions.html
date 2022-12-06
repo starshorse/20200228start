@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Information Functions | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3693","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="e0520877-d324-415a-ae93-d62466d440cc"/>
+    <meta name="Microsoft.Help.TocParent" content="f00c213a-31d9-4eac-87f4-d899b4be3a44"/>
+    <meta name="Microsoft.Help.TocOrder" content="7"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / Information Functions</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Information Functions</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Spread provides the following&nbsp;information functions, listed alphabetically.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Function</th>
+
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><a href="ERRORTYPE.html" data-auto-update-caption="true">ERROR.TYPE</a></td>
+
+            <td>This function returns a number corresponding to one of the error values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISBLANK.html" data-auto-update-caption="true">ISBLANK</a></td>
+
+            <td>This function tests whether a value, an expression, or contents of a referenced cell is empty.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISERR.html" data-auto-update-caption="true">ISERR</a></td>
+
+            <td>This function, Is Error Other Than Not Available, tests whether a value, an expression, or contents of a referenced cell has an error other than not available (#N/A).</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISERROR.html" data-auto-update-caption="true">ISERROR</a></td>
+
+            <td>This function, Is Error of Any Kind, tests whether a value, an expression, or contents of a referenced cell has an error of any kind.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISEVEN.html" data-auto-update-caption="true">ISEVEN</a></td>
+
+            <td>This function, Is Number Even, tests whether a value, an expression, or contents of a referenced cell is even.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISFORMULA.html" data-auto-update-caption="true">ISFORMULA</a></td>
+
+            <td>This function tests whether contains a formula of a referenced cell.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISLOGICAL.html" data-auto-update-caption="true">ISLOGICAL</a></td>
+
+            <td>This function tests whether a value, an expression, or contents of a referenced cell is a logical (Boolean) value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISNA.html" data-auto-update-caption="true">ISNA</a></td>
+
+            <td>This function, Is Not Available, tests whether a value, an expression, or contents of a referenced cell has the not available (#N/A) error value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISNONTEXT.html" data-auto-update-caption="true">ISNONTEXT</a></td>
+
+            <td>This function tests whether a value, an expression, or contents of a referenced cell has any data type other than text.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISNUMBER.html" data-auto-update-caption="true">ISNUMBER</a></td>
+
+            <td>This function tests whether a value, an expression, or contents of a referenced cell has numeric data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISODD.html" data-auto-update-caption="true">ISODD</a></td>
+
+            <td>This function, Is Number Odd, tests whether a value, an expression, or contents of a referenced cell has numeric data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISREF.html" data-auto-update-caption="true">ISREF</a></td>
+
+            <td>This function, Is Reference, tests whether a value, an expression, or contents of a referenced cell is a reference to another cell.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISTEXT.html" data-auto-update-caption="true">ISTEXT</a></td>
+
+            <td>This function tests whether a value, an expression, or contents of a referenced cell has text data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="N.html" data-auto-update-caption="true">N</a></td>
+
+            <td>This function returns a value converted to a number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NA.html" data-auto-update-caption="true">NA</a></td>
+
+            <td>This function returns the error value #N/A that means not available.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SHEET.html" data-auto-update-caption="true">SHEET</a></td>
+
+            <td>This function returns the sheet number of reference sheet.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SHEETS.html" data-auto-update-caption="true">SHEETS</a></td>
+
+            <td>This function returns the number of sheets in a reference.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TYPE.html" data-auto-update-caption="true">TYPE</a></td>
+
+            <td>This function returns the type of value.</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

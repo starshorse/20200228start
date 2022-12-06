@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>RangeSorting Event | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n7130","initialNodeContainer":"c258","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.Events~RangeSorting_EV"/>
+    <meta name="Description" content="Occurs when a column is about to be automatically sorted." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets.Events_events"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+ / <a href="SpreadJS~GC.Spread.Sheets.Events.html">Events type</a>
+ / RangeSorting Event</div></div>
+
+    
+<div id="sheetPopupContent" class="i-popup-content">
+The sheet that triggered the event.
+</div>
+<div id="sheetNamePopupContent" class="i-popup-content">
+The sheet's name.
+</div>
+<div id="colPopupContent" class="i-popup-content">
+The index of the column to be automatically sorted.
+</div>
+<div id="ascendingPopupContent" class="i-popup-content">
+Whether the automatic sort is ascending.
+</div>
+<div id="cancelPopupContent" class="i-popup-content">
+Whether the operation should be canceled.
+</div>
+<div id="rangePopupContent" class="i-popup-content">
+The range of automatic sort.
+</div>
+<div id="groupSortPopupContent" class="i-popup-content">
+The groupSort level to use when sorting, default will use group level if contains group and use flat level if not contains group.
+</div>
+<div id="ignoreHiddenPopupContent" class="i-popup-content">
+Whether to ignore the hidden values and only sort visible values.
+</div>
+<div id="compareFunctionPopupContent" class="i-popup-content">
+The customize function to use when sorting, used when value sort. function (value1, value2) {return 0;}<br />
+</div>
+
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">RangeSorting Event</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">Occurs when a column is about to be automatically sorted.</div>
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance; // Type: <a href="SpreadJS~GC.Spread.Sheets.Events.html">Events</a>
+instance.RangeSorting = function(sheet,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sheetName,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;col,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ascending,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancel,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;range,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupSort,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ignoreHidden,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compareFunction) { };</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>RangeSorting = function ( 
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="sheetPopupLink" data-popup-contentsource="#sheetPopupContent" data-popup-showevent="click mouseenter">sheet</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Worksheet.html">Worksheet</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="sheetNamePopupLink" data-popup-contentsource="#sheetNamePopupContent" data-popup-showevent="click mouseenter">sheetName</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="colPopupLink" data-popup-contentsource="#colPopupContent" data-popup-showevent="click mouseenter">col</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="ascendingPopupLink" data-popup-contentsource="#ascendingPopupContent" data-popup-showevent="click mouseenter">ascending</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="cancelPopupLink" data-popup-contentsource="#cancelPopupContent" data-popup-showevent="click mouseenter">cancel</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="rangePopupLink" data-popup-contentsource="#rangePopupContent" data-popup-showevent="click mouseenter">range</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Range.html">Range</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="groupSortPopupLink" data-popup-contentsource="#groupSortPopupContent" data-popup-showevent="click mouseenter">groupSort</a></i> : <a class="i-popup-link" id="groupSortPopupLink" data-popup-contentsource="#groupSortPopupContent" data-popup-showevent="click mouseenter">groupSort</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="ignoreHiddenPopupLink" data-popup-contentsource="#ignoreHiddenPopupContent" data-popup-showevent="click mouseenter">ignoreHidden</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="compareFunctionPopupLink" data-popup-contentsource="#compareFunctionPopupContent" data-popup-showevent="click mouseenter">compareFunction</a></i> : Function
+) { };</pre>
+      </div>
+    
+
+      </div>
+    
+            <h4 class=dxh4>Parameters</h4><dl><dt><I>sheet</I></dt>
+<dd>The sheet that triggered the event.</dd><dt><I>sheetName</I></dt>
+<dd>The sheet's name.</dd><dt><I>col</I></dt>
+<dd>The index of the column to be automatically sorted.</dd><dt><I>ascending</I></dt>
+<dd>Whether the automatic sort is ascending.</dd><dt><I>cancel</I></dt>
+<dd>Whether the operation should be canceled.</dd><dt><I>range</I></dt>
+<dd>The range of automatic sort.</dd><dt><I>groupSort</I></dt>
+<dd>The groupSort level to use when sorting, default will use group level if contains group and use flat level if not contains group.</dd><dt><I>ignoreHidden</I></dt>
+<dd>Whether to ignore the hidden values and only sort visible values.</dd><dt><I>compareFunction</I></dt>
+<dd>The customize function to use when sorting, used when value sort. function (value1, value2) {return 0;}<br /></dd></dl></div>
+
+            <a name="exampleBookmark"></a>
+            <div class="i-section-heading" id="i-example-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Example</span></div><div id="i-example-section-content" class="i-section-content">This example uses the RangeSorting event.
+            
+             <div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-1d80d5c6-e16b-4497-b8fb-ad20a9728e48">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-1d80d5c6-e16b-4497-b8fb-ad20a9728e48" class="i-filtered-content-Javascript i-code"><pre>activeSheet.setValue(0, 0, 10);
+activeSheet.setValue(1, 0, 100);
+activeSheet.setValue(2, 0, 50);
+activeSheet.setValue(3, 0, 40);
+activeSheet.setValue(4, 0, 80);
+activeSheet.setValue(5, 0, 1);
+activeSheet.setValue(6, 0, 65);
+activeSheet.setValue(7, 0, 20);
+activeSheet.setValue(8, 0, 30);
+activeSheet.setValue(9, 0, 35);
+<span style="color: #0000FF; ">var</span> cellrange =<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Range(0, 0, 5, 1);
+<span style="color: #0000FF; ">var</span> hideRowFilter =<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Filter.HideRowFilter(cellrange);
+activeSheet.rowFilter(hideRowFilter);
+
+activeSheet.bind(GC.Spread.Sheets.Events.RangeSorting, <span style="color: #0000FF; ">function</span> (e, info) {    
+        alert(<span style="color: #800000; ">&quot;Col (&quot;</span> + info.col + <span style="color: #800000; ">&quot;, &quot;</span> + info.ascending +<span style="color: #800000; ">&quot;)&quot;</span>);
+});</pre></div>
+	</div>
+</div>
+</div>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets.Events.html">Events type</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

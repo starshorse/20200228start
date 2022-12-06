@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to use keyboard shortcuts to undo and redo an action in the widget. Learn more in SpreadJS docs." />
+    
+    <title>Undo and Redo | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n199","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to use keyboard shortcuts to undo and redo an action in the widget. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="4aa64c71-505b-41df-b5b0-511ba05e87a2"/>
+    <meta name="Microsoft.Help.TocParent" content="bce304a2-3ad1-40e2-a047-d6e21bdbf9c8"/>
+    <meta name="Microsoft.Help.TocOrder" content="5"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="worksheet.html">Worksheet</a>
+ / Undo and Redo</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Undo and Redo</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can use Ctrl + Z to undo an action in the widget. You can then use Ctrl + Y to redo the action you canceled.</p>
+
+<p>You can undo the following types of actions:</p>
+
+<ul>
+    <li>Editing text</li>
+
+    <li>Autofit when double-clicking</li>
+
+    <li>Resizing headers</li>
+
+    <li>Dragging columns or rows with the mouse</li>
+
+    <li>Expanding or collapsing groups with the group button</li>
+
+    <li>Editing the sheet tab name by double-clicking on the tab strip</li>
+
+    <li>Using Ctrl + V to paste</li>
+
+    <li>Using the <a href="SpreadJS~GC.Spread.Sheets.Commands.html" data-auto-update-caption="true">Commands</a> class to execute an action</li>
+
+    <li>Context menu operations executed in the viewport area.</li>
+</ul>
+
+<p>The following actions do not respond to Ctrl + Z:</p>
+
+<ul>
+    <li>Sorting or filtering with the drop-down button</li>
+
+    <li>Selecting a range</li>
+
+    <li>Navigating to a specific cell</li>
+
+    <li>Scrolling</li>
+
+    <li>Resizing the tab strip resize box</li>
+
+    <li>Clicking the new tab option on the tab strip</li>
+
+    <li>Context menu operations executed in the sheet tab area.</li>
+
+    <li>Invoking the <a href="SpreadJS~GC.Spread.Sheets.Workbook~fromJSON.html">fromJSON()</a> method of the Workbook or <a href="SpreadJS~GC.Spread.Sheets.Worksheet~fromJSON.html">fromJSON()</a> method of the Worksheet in the <a href="SpreadJS~GC.Spread.Commands.CommandManager~execute.html">execute()</a> method of the <a href="SpreadJS~GC.Spread.Commands.CommandManager.html" data-auto-update-caption="true">CommandManager</a> class.</li>
+
+    <li>Invoking the <a href="SpreadJS~GC.Spread.Commands.UndoManager~undo.html">Undo</a> method and the <a href="SpreadJS~GC.Spread.Commands.UndoManager~redo.html">Redo</a> method of the <a href="SpreadJS~GC.Spread.Commands.UndoManager.html">UndoManager</a> class in the <a href="SpreadJS~GC.Spread.Commands.CommandManager~execute.html">execute()</a> method of the <a href="SpreadJS~GC.Spread.Commands.CommandManager.html" data-auto-update-caption="true">CommandManager</a> class.</li>
+</ul>
+
+<p>You can prevent or allow the undo action in code with the <strong>options.allowUndo</strong> property.</p>
+
+<p>After setting the allowUndo property to true, you can undo or redo an action by using the <a href="SpreadJS~GC.Spread.Sheets.Commands~startTransaction.html" data-auto-update-caption="true">startTransaction()</a> method, <a href="SpreadJS~GC.Spread.Sheets.Commands~undoTransaction.html" data-auto-update-caption="true">undoTransaction() <font color="black">method</font></a> and the <a href="SpreadJS~GC.Spread.Sheets.Commands~endTransaction.html" data-auto-update-caption="true">endTransaction() <font color="black">method</font></a>.</p>
+
+<h4>Using Code</h4>
+
+<p>This example sets the <strong>options.allowUndo</strong> property and specifies an action.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+spread.options.allowUndo = <span style="COLOR: #0000ff">true</span>;
+spread.commandManager().execute({cmd: <span style="COLOR: #800000">"outlineRow"</span>, sheetName: activeSheet.name(), index: 3, count: 5});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>This example changes the background color of a cell using the <a href="SpreadJS~GC.Spread.Sheets.Commands~startTransaction.html" data-auto-update-caption="true">startTransaction()</a> method, <a href="SpreadJS~GC.Spread.Sheets.Commands~undoTransaction.html" data-auto-update-caption="true">undoTransaction() <font color="black">method</font></a> and the <a href="SpreadJS~GC.Spread.Sheets.Commands~endTransaction.html" data-auto-update-caption="true">endTransaction() <font color="black">method</font></a>.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> command = { canUndo: <span style="COLOR: #0000ff">true</span>, execute: <span style="COLOR: #0000ff">function</span> (context, options, isUndo)
+  {
+    <span style="COLOR: #0000ff">var</span> Commands = GC.Spread.Sheets.Commands;
+    <span style="COLOR: #0000ff">if</span> (isUndo)
+    {
+       Commands.undoTransaction(context, options);
+       <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">true</span>;
+    }
+    <span style="COLOR: #0000ff">else</span>
+    {
+      Commands.startTransaction(context, options);
+      <span style="COLOR: #0000ff">var</span> sheet = context.getSheetFromName(options.sheetName);
+      <span style="COLOR: #0000ff">var</span> cell = sheet.getCell(options.row, options.col);
+      cell.backColor(options.backColor);
+      Commands.endTransaction(context, options);
+      <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">true</span>;
+    }
+  }
+};
+<span style="COLOR: #0000ff">var</span> spread = GC.Spread.Sheets.findControl(document.getElementById(<span style="COLOR: #800000">"sampleDiv"</span>));
+<span style="COLOR: #0000ff">var</span> commandManager = spread.commandManager();
+commandManager.register(<span style="COLOR: #800000">"changeBackColor"</span>, command);
+commandManager.execute({ cmd: <span style="COLOR: #800000">"changeBackColor"</span>, sheetName: spread.getSheet(0).name(), row: 1, col: 2, backColor: <span style="COLOR: #800000">"red"</span> });
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Limit the Number of Undo and Redo Operations</h3>
+
+<p>You can set a limit on the number of undo and redo operations by controlling the undo and redo stack size. The <strong>maxSize</strong> method in undoManager class can be used to do the same. This helps in increasing the application performance by reducing the memory consumption.</p>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> If an invalid value is passed to the maxSize method, undoManager is returned.
+</div><br />
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = GC.Spread.Sheets.findControl(document.getElementById(<span style="COLOR: #800000">'ss'</span>));
+let undoManager = spread.undoManager();
+undoManager.maxSize(20);        <span style="COLOR: #008000">// set max size.
+</span>let maxSize = undoManager.maxSize();    <span style="COLOR: #008000">// get max size.</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Get Undo and Redo Stack</h3>
+
+<p>You can use <strong>getUndoStack</strong> and <strong>getRedoStack</strong> functions to retrieve the undo and redo stacks. These functions return the stacks as objects including the string values for sheet name and commands.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> getUndoStackFunction() {
+    console.log(spread.undoManager().getUndoStack());
+}
+
+<span style="COLOR: #0000ff">function</span> getRedoStackFunction() {
+    console.log(spread.undoManager().getRedoStack());
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can also use these functions to create custom menus and display the list of undo and redo operations in the spreadsheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;body&gt;
+    &lt;input type=<span style="COLOR: #800000">"button"</span> value=<span style="COLOR: #800000">"Get Undo Stack"</span> onclick=<span style="COLOR: #800000">"getUndoStackFunction()"</span>&gt;
+    &lt;input type=<span style="COLOR: #800000">"button"</span> value=<span style="COLOR: #800000">"Get Redo Stack"</span> onclick=<span style="COLOR: #800000">"getRedoStackFunction()"</span>&gt;
+&lt;<span style="COLOR: #800000">/body&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The SpreadJS Designer displays the undo and redo stacks as the list of operations in a dropdown list. You can select any operation to navigate the spreadsheet at that specific point.<br />
+<img border="0" alt="undo redo stack in SpreadJS Designer" src="images/undoRedoStack.gif" /></p>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Commands.CommandManager.html">CommandManager class</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Commands.Key.html">Key Enumeration</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Commands.UndoManager.html">UndoManager class</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

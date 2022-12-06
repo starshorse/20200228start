@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>XLOOKUP | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3806","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="09c72b5b-9720-4d71-a3a7-2ce93f779270"/>
+    <meta name="Microsoft.Help.TocParent" content="589d39b2-c1bb-4ebb-9344-7214183a4d8d"/>
+    <meta name="Microsoft.Help.TocOrder" content="26"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / <a href="lookup-reference-functions.html">Lookup and Reference Functions</a>
+ / XLOOKUP</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">XLOOKUP</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>XLOOKUP performs lookups in vertical and horizontal cell ranges and provides support for approximate matching, partial matching (using wildcard characters like * , ? etc.)&nbsp;and exact matching. By default, the XLOOKUP function returns the exact matched results.</p>
+
+<p>The XLOOKUP function is comparatively more flexible and powerful&nbsp;than the rest of the lookup functions (like VLOOKUP, HLOOKUP and LOOKUP etc.). Some more benefits of using XLOOKUP function instead of other lookup functions&nbsp;are listed below:</p>
+
+<ul>
+    <li>Users can use the XLOOKUP function to lookup data to the right or left of the lookup values.</li>
+
+    <li>Users can use the XLOOKUP function to retrieve data from a table.</li>
+
+    <li>Users can return results from more than one column by using the XLOOKUP function.</li>
+
+    <li>The XLOOKUP function can work with both vertical and horizontal data.</li>
+
+    <li>The XLOOKUP function can also be used for searching data starting from the first value or the last value (reverse lookup).</li>
+
+    <li>The XLOOKUP function returns a range instead of just a value and can&nbsp;work with generic arrays as well.</li>
+</ul>
+
+<p><span class="Example">For instance - By using the XLOOKUP function, users can determine the price of a product by its product ID,&nbsp;find a matching tax rate in a column, search an employee name based on their employee ID and perform many other search operations&nbsp;while working with spreadsheets.</span></p>
+
+<h4>Syntax</h4>
+
+<p>XLOOKUP<em>(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])</em></p>
+
+<h4>Arguments</h4>
+
+<p>This function has the following arguments:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Argument</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td><i>lookup_value</i></td>
+
+            <td>Refers to the lookup value.</td>
+        </tr>
+
+        <tr>
+            <td><i>lookup_array</i></td>
+
+            <td>Refers to the lookup array or cell range that you want to search.</td>
+        </tr>
+
+        <tr>
+            <td><i>return_array</i></td>
+
+            <td>Refers to the array or cell range that you want&nbsp;to return.</td>
+        </tr>
+
+        <tr>
+            <td><i>[if_not_found]</i></td>
+
+            <td>
+                <p>[Optional] Refers to the value to be returned when no match is found.</p>
+
+                <p>If users don't specify this argument, and no matches are found, then the function returns #N/A error. When users specify invalid&nbsp;search mode (For e.g. - 0 in Excel), then #VALUE error will be returned.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td><i>[match_mode]</i></td>
+
+            <td>
+                <p>[Optional] Specifies the type of the match as per the following values:</p>
+
+                <p>0 -&nbsp; Refers to exact match. If no matches are&nbsp;found, then #N/A error is returned. This is the default match mode.</p>
+
+                <p>-1 - Refers to exact match. If no matches are&nbsp;found, then the next smaller item is returned.</p>
+
+                <p>1 -&nbsp; Refers to exact match. If no matches are&nbsp;found, then the next larger item is returned.</p>
+
+                <p>2 -&nbsp;&nbsp;Refers to a wildcard match where *, ? and ~ characters possess special meanings to indicate partial match.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td><i>[search_mode]</i></td>
+
+            <td>
+                <p>[Optional] Specifies the mode of the search as per the following values:</p>
+
+                <p>0 -&nbsp; Refers to the "search all" mode where all the matched values will be returned. [This mode is not available in Excel.]</p>
+
+                <p>1&nbsp;-&nbsp; Refers to a search that starts at the first item. This is the default search mode.</p>
+
+                <p>-1 - Refers to a reverse search that starts at the last item.</p>
+
+                <p>2 &nbsp;-&nbsp; Refers to a binary search that depends upon the lookup_array argument being sorted in the ascending order.</p>
+
+                <p>-2 -&nbsp;&nbsp;Refers to a binary search that depends upon the lookup_array argument being sorted in the descending order.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td><i>not_found</i></td>
+
+            <td>[Optional] This argument can be used to override the #N/A error. Typical values for not_found might be "Not found", "No match", "No result", etc.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Remarks</h4>
+
+<p>The following points must be kept in mind while working with the XLOOKUP function in the spreadsheets:</p>
+
+<ul>
+    <li>The XLOOKUP function&nbsp;returns #N/A error if the lookup value is not found.</li>
+
+    <li>The dimensions of the lookup_array argument must be compatible with the return_array argument for a valid result, else the XLOOKUP function will return the #VALUE! error.</li>
+</ul>
+
+<h4>Data Types</h4>
+
+<p>Accepts numeric data. Looks up values in a range or table. Returns an array with multiple items.</p>
+
+<h4>Examples</h4>
+
+<p>The following gif shows the basic usage of XLOOKUP function.</p><img border="0" alt="Basic usage of XLOOKUP" src="images/xlookup1.gif" />
+
+<p>The following code snippet depicts the basic usage of XLOOKUP function. In this example, XLOOKUP is used to retrieve Rank based on an exact match on Movie.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #008000">// Initializing Spread
+</span>    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+    <span style="COLOR: #008000">// Enable dynamic array support
+</span>    spread.options.allowDynamicArray = <span style="COLOR: #0000ff">true</span>;
+    <span style="COLOR: #008000">// Create style
+</span>    <span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+    style.font = <span style="COLOR: #800000">"bold 12px Arial"</span>;
+    style.foreColor = <span style="COLOR: #800000">"black"</span>;
+    style.backColor = <span style="COLOR: #800000">"#EDFDF4"</span>;
+    style.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+    style.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+
+    <span style="COLOR: #008000">// Create style
+</span>    <span style="COLOR: #0000ff">var</span> formulaStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+    formulaStyle.font = <span style="COLOR: #800000">"bold 12px Arial"</span>;
+    formulaStyle.foreColor = <span style="COLOR: #800000">"black"</span>;
+    formulaStyle.backColor = <span style="COLOR: #800000">"#D3F0E0"</span>;
+    formulaStyle.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+
+
+    <span style="COLOR: #008000">// Get the sheet1
+</span>    <span style="COLOR: #0000ff">var</span> sheet1 = spread.getSheet(0);
+    <span style="COLOR: #008000">// Set column width
+</span>    sheet1.setColumnWidth(6, 180);
+    <span style="COLOR: #008000">// Create formula
+</span>    <span style="COLOR: #0000ff">var</span> formula_Exact = <span style="COLOR: #800000">'=XLOOKUP(G4,A5:A9,C5:C9)'</span>;
+    <span style="COLOR: #008000">// Set value
+</span>    sheet1.setValue(0, 6, <span style="COLOR: #800000">'Basic exact match'</span>);
+    sheet1.setValue(1, 6, formula_Exact);
+    <span style="COLOR: #008000">// Create data
+</span>    <span style="COLOR: #0000ff">var</span> data = [
+        [<span style="COLOR: #800000">"Movie"</span>, <span style="COLOR: #800000">"Year"</span>, <span style="COLOR: #800000">"Rank"</span>, <span style="COLOR: #800000">"Sales"</span>],
+        [<span style="COLOR: #800000">"Fargo"</span>, 1996, 5, 61],
+        [<span style="COLOR: #800000">"L.A. Confidential"</span>, 1997, 4, 126],
+        [<span style="COLOR: #800000">"The Sixth Sense"</span>, 1999, 1, 673],
+        [<span style="COLOR: #800000">"Toy Story"</span>, 1995, 2, 362],
+        [<span style="COLOR: #800000">"Unforgiven"</span>, 1992, 3, 159]
+    ];
+    <span style="COLOR: #008000">// Set data
+</span>    sheet1.setArray(3, 0, data);
+    <span style="COLOR: #008000">// Set value
+</span>    sheet1.setValue(3, 5, <span style="COLOR: #800000">'Movie'</span>);
+    sheet1.setValue(4, 5, <span style="COLOR: #800000">'Sales'</span>);
+    sheet1.setValue(3, 6, <span style="COLOR: #800000">'Toy Story'</span>);
+    <span style="COLOR: #008000">// Set formula
+</span>    sheet1.setFormula(4, 6, formula_Exact);
+
+    <span style="COLOR: #008000">// Set style
+</span>    <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 4; i++) {
+        sheet1.setStyle(3, i, style, GC.Spread.Sheets.SheetArea.viewport);
+    }
+    sheet1.setStyle(3, 5, style, GC.Spread.Sheets.SheetArea.viewport);
+    sheet1.setStyle(4, 5, style, GC.Spread.Sheets.SheetArea.viewport);
+    sheet1.setStyle(0, 6, formulaStyle, GC.Spread.Sheets.SheetArea.viewport);
+    sheet1.setStyle(1, 6, formulaStyle, GC.Spread.Sheets.SheetArea.viewport);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The following gif shows the SUM and XLOOKUP function works together to sum all the values between two ranges.</p><img border="0" alt="Return Reference" src="images/xlookup2.gif" />
+
+<p>The following code snippet depicts the usage of SUM and XLOOKUP function together.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #008000">// Initializing Spread
+</span>    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+    <span style="COLOR: #008000">// Enable dynamic array support
+</span>    spread.options.allowDynamicArray = <span style="COLOR: #0000ff">true</span>;
+
+    <span style="COLOR: #008000">// Get the sheet7
+</span>    <span style="COLOR: #0000ff">var</span> sheet7 = spread.getSheet(0);
+
+    <span style="COLOR: #008000">// Set text
+</span>    sheet1.setValue(1, 1, <span style="COLOR: #800000">'XLOOKUP return reference'</span>);
+    sheet1.setValue(2, 1, <span style="COLOR: #800000">'=SUM(XLOOKUP(B6,B9:B13,E9:E13):XLOOKUP(C6,B9:B13,E9:E13))'</span>);
+    sheet1.addSpan(1, 1, 1, 3, GC.Spread.Sheets.SheetArea.viewport);
+    sheet1.addSpan(2, 1, 1, 7, GC.Spread.Sheets.SheetArea.viewport);
+
+    sheet1.setValue(4, 1, <span style="COLOR: #800000">'Start'</span>);
+    sheet1.setValue(4, 2, <span style="COLOR: #800000">'End'</span>);
+    sheet1.setValue(4, 3, <span style="COLOR: #800000">'Total'</span>);
+    sheet1.setValue(5, 1, <span style="COLOR: #800000">'Grape'</span>);
+    sheet1.setValue(5, 2, <span style="COLOR: #800000">'Banana'</span>);
+
+    <span style="COLOR: #008000">// Create data
+</span>    <span style="COLOR: #0000ff">var</span> data = [
+        [<span style="COLOR: #800000">"Product"</span>, <span style="COLOR: #800000">"Quantiy"</span>, <span style="COLOR: #800000">"Price"</span>, <span style="COLOR: #800000">"Total"</span>],
+        [<span style="COLOR: #800000">"Apple"</span>, 23, 0.52, 11.9],
+        [<span style="COLOR: #800000">"Grape"</span>, 98, 0.77, 75.28],
+        [<span style="COLOR: #800000">"Pear"</span>, 75, 0.24, 18.16],
+        [<span style="COLOR: #800000">"Banana"</span>, 95, 0.18, 17.25],
+        [<span style="COLOR: #800000">"Cherry"</span>, 42, 0.16, 6.8]
+    ];
+    <span style="COLOR: #008000">// set data
+</span>    sheet7.setArray(7, 1, data);
+    <span style="COLOR: #008000">// set formula
+</span>    sheet7.setFormula(5, 3, <span style="COLOR: #800000">"=SUM(XLOOKUP(B6,B9:B13,E9:E13):XLOOKUP(C6,B9:B13,E9:E13))"</span>);
+
+    <span style="COLOR: #008000">// set style
+</span>    <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 1; i &lt; 5; i++) {
+        sheet7.setStyle(7, i, style, GC.Spread.Sheets.SheetArea.viewport);
+    }
+    <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 1; i &lt; 4; i++) {
+        sheet7.setStyle(4, i, style, GC.Spread.Sheets.SheetArea.viewport);
+    }
+    sheet7.setStyle(1, 1, formulaStyle, GC.Spread.Sheets.SheetArea.viewport);
+    sheet7.setStyle(2, 1, formulaStyle, GC.Spread.Sheets.SheetArea.viewport);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>See Also</h4>
+
+<p><a href="HLOOKUP.html">HLOOKUP</a> | <a href="LOOKUP.html">LOOKUP</a></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

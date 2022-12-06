@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Incremental loading in SpreadJS sometimes helps in loading large files easily." />
+    
+    <title>Incremental Loading | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n160","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Incremental loading in SpreadJS sometimes helps in loading large files easily." />
+    
+    <meta name="Microsoft.Help.Id" content="e8d1c5d3-76b3-49d4-9b7d-867c62a9e5c0"/>
+    <meta name="Microsoft.Help.TocParent" content="734ca86c-e630-4369-85bf-6d8075a578a0"/>
+    <meta name="Microsoft.Help.TocOrder" content="7"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="BestPractices.html">Best Practices</a>
+ / Incremental Loading</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Incremental Loading</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Depending on the data, loading extremely large files could take some time and/or reach the limits of the browser's capability. So, whenever you try to load a large file with lots of data or formulas embedded in it, it is recommended to use the incremental loading feature to shorten the data processing time and optimize the load process.</p>
+
+<p>The incremental loading feature loads the active sheet with some data initially and loads the remaining data piece by piece in the background such as formulas, cell values, and custom names. When you use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~fromJSON.html">fromJSON</a> function to load the data, you can set the <strong>incrementalLoading</strong> to true in the options.</p>
+
+<p>You can also use the callback function in incrementalLoading to get the loading status and use the&nbsp;argument&nbsp;parameter to access worksheet-related information&nbsp;such as sheet names, current themes. Similarly, you can also&nbsp;set the next action to be performed when the loading gets finished.</p>
+
+<p>You can also specify whether to recalculate the cell values after loading data by setting <strong>doNotRecalculateAfterLoad</strong> to false.</p>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> Whenever any UI event is performed during the data loading process, SpreadJS first handles the event and then loads the rest of the data in the worksheet.
+</div>
+
+<p>The following example incrementally loads a JSON file in the worksheet and displays the sheet names in the console log as they are loading.</p><img border="0" alt="Incremental Loading Example" src="images/incrementalload.gif" />
+
+<h4>Using Code</h4>
+
+<p>This code shows how to load JSON files using incremental loading.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> loadingStatus = <span style="COLOR: #0000ff">new</span> LoadingStatus(<span style="COLOR: #800000">'LoadingStatus'</span>, { tipText: <span style="COLOR: #800000">'LoadingStatus'</span> });
+statusBar.add(loadingStatus);
+
+<span style="COLOR: #0000ff">var</span> incrementalEle = document.getElementById(<span style="COLOR: #800000">"incremental"</span>);
+<span style="COLOR: #0000ff">function</span> fromJSON(json) {
+    <span style="COLOR: #0000ff">if</span> (incrementalEle.checked) {
+        spread.fromJSON(json, {
+            doNotRecalculateAfterLoad: <span style="COLOR: #0000ff">true</span>,
+            incrementalLoading: {
+                loading: <span style="COLOR: #0000ff">function</span> (progress, args) {
+                    progress = progress * 100;
+                    document.getElementById(<span style="COLOR: #800000">"statusBar"</span>).innerText = <span style="COLOR: #800000">"Loading: "</span> + progress.toFixed(2) + <span style="COLOR: #800000">"%"</span>;
+                    loadingStatus.updateProgress(progress);
+                    console.log(progress, args.sheet.name());
+                },
+                loaded: <span style="COLOR: #0000ff">function</span> () {
+                    document.getElementById(<span style="COLOR: #800000">"statusBar"</span>).innerText = <span style="COLOR: #800000">"Finish"</span>;
+                }
+            }
+        });
+    } <span style="COLOR: #0000ff">else</span> {
+        spread.fromJSON(json);
+        loadingStatus.updateText(<span style="COLOR: #800000">"Ready"</span>);
+    }
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

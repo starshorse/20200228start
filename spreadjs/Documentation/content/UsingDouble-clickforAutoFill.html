@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows users to automatically fill data (formulas and values) in the columns of the worksheet using double-click." />
+    
+    <title>Double-click for Auto Fill | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n304","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows users to automatically fill data (formulas and values) in the columns of the worksheet using double-click." />
+    
+    <meta name="Microsoft.Help.Id" content="141581c5-b1c7-4b2f-9266-7668e2011fa0"/>
+    <meta name="Microsoft.Help.TocParent" content="872c2eed-6d0d-460f-8912-5754e3257533"/>
+    <meta name="Microsoft.Help.TocOrder" content="5"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / <a href="AutoFillData.html">Auto Fill Data</a>
+ / Double-click for Auto Fill</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Double-click for Auto Fill</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows&nbsp;users to automatically fill&nbsp;data (formulas and values)&nbsp;in the columns&nbsp;of the worksheet. Users can simply double-click the fill handle of a selected cell to fill the contents in the cell down an entire column. The fill handle allows users to fill data using four different type of options - <strong>Copy Cells</strong>, <strong>Fill Series</strong>, <strong>Fill Formatting</strong> <strong>Only</strong> and <strong>Fill Without Formatting</strong>.<br /></p>
+
+<p>While working with business applications, users often need to deal with worksheets having hundreds or thousands of rows of data that contain formulas. Using the double-click for auto fill allows the users to quickly and conveniently autofill the column formulas without having to use the mouse to manually drag and fill, saving the end user time and reducing possible errors.</p>
+
+<h3>Using Double-Click for Auto Fill Operations</h3>
+
+<p>Upon double-clicking the fill handle, the empty cells down the column (called fillRange)&nbsp;will be&nbsp;filled depending upon the contents of the startRange (the cell range that already contains data).&nbsp;</p>
+
+<p>Shared below are the various auto fill operations that can be executed using double-click.</p>
+
+<ul>
+    <li><strong>Auto Fill&nbsp;Numbers</strong> - If the startRange&nbsp;contains a&nbsp;numeric value, then the fill handle will automatically complete a list of numbers down the entire column as depicted below. The numeric series will be filled based on the corresponding pattern and the selected option of the fill handle.<br />
+    <br />
+    <img alt="Autofill numbers" src="images/number-gif.gif" /></li>
+
+    <li><strong>Auto Fill Dates -</strong> &nbsp;If the startRange contains a date value, then the fill handle will autocomplete a list of dates down the entire column as depicted below. By default, when you double-click to automatically fill dates,&nbsp;the fill handle&nbsp;will execute the "Copy Cells" action. To fill consecutive&nbsp;dates, you can open the drag fill smart tag and choose the&nbsp;"Fill Series" option.<br />
+    <br />
+    <img alt="Autofill dates" src="images/date-gif.gif" /></li>
+
+    <li><strong>Auto Fill Formulas</strong> - If the startRange contains a formula, then the fill handle will&nbsp;copy the formula&nbsp;down the entire column as depicted below.<br />
+    <br />
+    <img alt="Autofill formulas" src="images/formula-gif.gif" /></li>
+</ul>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong>&nbsp;The following points should be kept in mind while working with double-click for auto fill operations.</p>
+
+    <p>1) This type of auto fill works only when there are non-empty cells in the column adjacent to the fill handle.</p>
+
+    <p>2) When you double-click the fill handle in order to fill data in the columns, it will only extend down to the last non-empty cell in the current region.</p>
+
+    <p>3) Also, in case your adjacent column&nbsp;contains some&nbsp;empty cells, double-clicking the fill handle will fill the column upto the last non-empty cell in the adjacent column.&nbsp;&nbsp;</p>
+
+    <p></p>
+</div>
+
+<h3>Using Code</h3>
+
+<p>Refer to the following code snippet in order&nbsp;to auto fill values and formulas using double-click&nbsp;in the spreadsheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Auto fill Numeric Values and Formulas
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 4 });
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+<span style="COLOR: #008000">// Set values in the default worksheet
+</span>sheet.setValue(0, 0, <span style="COLOR: #800000">'Name'</span>); sheet.setValue(1, 0, <span style="COLOR: #800000">'Jack'</span>);
+sheet.setValue(2, 0, <span style="COLOR: #800000">'Lily'</span>); sheet.setValue(3, 0, <span style="COLOR: #800000">'Linda'</span>);
+sheet.setValue(4, 0, <span style="COLOR: #800000">'John'</span>); sheet.setValue(5, 0, <span style="COLOR: #800000">'Bob'</span>);
+sheet.setValue(6, 0, <span style="COLOR: #800000">'Ming'</span>); sheet.setValue(7, 0, <span style="COLOR: #800000">'Gorge'</span>);
+sheet.setValue(8, 0, <span style="COLOR: #800000">'Kobe'</span>); sheet.setValue(9, 0, <span style="COLOR: #800000">'James'</span>);
+sheet.setValue(10, 0, <span style="COLOR: #800000">'Faker'</span>); sheet.setValue(11, 0, <span style="COLOR: #800000">'Tai'</span>);
+sheet.setValue(12, 0, <span style="COLOR: #800000">'Peter'</span>); sheet.setValue(0, 1, <span style="COLOR: #800000">'Index'</span>);
+sheet.setValue(1, 1, 1); sheet.setValue(2, 1, 2);
+<span style="COLOR: #0000ff">var</span> sheet1 = spread.getSheet(1);
+<span style="COLOR: #008000">// Set values in the "sheet1" worksheet
+</span>sheet1.setValue(0, 0, <span style="COLOR: #800000">'Product'</span>); sheet1.setValue(1, 0, <span style="COLOR: #800000">'P1'</span>);
+sheet1.setValue(2, 0, <span style="COLOR: #800000">'P2'</span>); sheet1.setValue(3, 0, <span style="COLOR: #800000">'P3'</span>);
+sheet1.setValue(4, 0, <span style="COLOR: #800000">'P4'</span>); sheet1.setValue(5, 0, <span style="COLOR: #800000">'P5'</span>);
+sheet1.setValue(6, 0, <span style="COLOR: #800000">'P6'</span>); sheet1.setValue(7, 0, <span style="COLOR: #800000">'P7'</span>);
+sheet1.setValue(8, 0, <span style="COLOR: #800000">'P8'</span>); sheet1.setValue(9, 0, <span style="COLOR: #800000">'P9'</span>);
+sheet1.setValue(10, 0, <span style="COLOR: #800000">'P10'</span>); sheet1.setValue(11, 0, <span style="COLOR: #800000">'P11'</span>);
+sheet1.setValue(12, 0, <span style="COLOR: #800000">'P12'</span>);
+sheet1.setValue(0, 1, <span style="COLOR: #800000">'Price'</span>);
+sheet1.setValue(1, 1, 1.1); sheet1.setValue(2, 1, 1.5);
+sheet1.setValue(3, 1, 1.6); sheet1.setValue(4, 1, 1.2);
+sheet1.setValue(5, 1, 1.5); sheet1.setValue(6, 1, 0.8);
+sheet1.setValue(7, 1, 0.8); sheet1.setValue(8, 1, 1.0);
+sheet1.setValue(9, 1, 2.2); sheet1.setValue(10, 1, 2.0);
+sheet1.setValue(11, 1, 0.7); sheet1.setValue(12, 1, 1.5);
+sheet1.setValue(0, 2, <span style="COLOR: #800000">'Units'</span>); sheet1.setValue(1, 2, 11);
+sheet1.setValue(2, 2, 13); sheet1.setValue(3, 2, 10);
+sheet1.setValue(4, 2, 9); sheet1.setValue(5, 2, 8);
+sheet1.setValue(6, 2, 5); sheet1.setValue(7, 2, 10);
+sheet1.setValue(8, 2, 16); sheet1.setValue(9, 2, 9);
+sheet1.setValue(10, 2, 7); sheet1.setValue(11, 2, 10);
+sheet1.setValue(12, 2, 14); sheet1.setValue(0, 3, <span style="COLOR: #800000">'Comment'</span>);
+sheet1.setValue(0, 4, <span style="COLOR: #800000">'Revenue'</span>);
+sheet1.setFormula(1, 4, <span style="COLOR: #800000">'=B2*C2'</span>);
+<span style="COLOR: #0000ff">var</span> sheet2 = spread.getSheet(2);
+<span style="COLOR: #008000">// Set values in the "sheet2" worksheet
+</span>sheet2.setValue(0, 0, <span style="COLOR: #800000">'Product'</span>); sheet2.setValue(1, 0, <span style="COLOR: #800000">'P1'</span>);
+sheet2.setValue(2, 0, <span style="COLOR: #800000">'P2'</span>); sheet2.setValue(3, 0, <span style="COLOR: #800000">'P3'</span>);
+sheet2.setValue(4, 0, <span style="COLOR: #800000">'P4'</span>); sheet2.setValue(5, 0, <span style="COLOR: #800000">'P5'</span>);
+sheet2.setValue(6, 0, <span style="COLOR: #800000">'P6'</span>); sheet2.setValue(7, 0, <span style="COLOR: #800000">'P7'</span>);
+sheet2.setValue(8, 0, <span style="COLOR: #800000">'P8'</span>); sheet2.setValue(9, 0, <span style="COLOR: #800000">'P9'</span>);
+sheet2.setValue(10, 0, <span style="COLOR: #800000">'P10'</span>); sheet2.setValue(11, 0, <span style="COLOR: #800000">'P11'</span>);
+sheet2.setValue(12, 0, <span style="COLOR: #800000">'P12'</span>); sheet2.setValue(0, 1, <span style="COLOR: #800000">'Price'</span>);
+sheet2.setValue(1, 1, 1.1); sheet2.setValue(2, 1, 1.5);
+sheet2.setValue(3, 1, 1.6); sheet2.setValue(4, 1, 1.2);
+sheet2.setValue(5, 1, 1.5); sheet2.setValue(6, 1, 0.8);
+sheet2.setValue(7, 1, 0.8); sheet2.setValue(8, 1, 1.0);
+sheet2.setValue(9, 1, 2.2); sheet2.setValue(10, 1, 2.0);
+sheet2.setValue(11, 1, 0.7); sheet2.setValue(12, 1, 1.5);
+sheet2.setValue(0, 2, <span style="COLOR: #800000">'Units'</span>); sheet2.setValue(1, 2, 11);
+sheet2.setValue(2, 2, 13); sheet2.setValue(3, 2, 10);
+sheet2.setValue(4, 2, 9); sheet2.setValue(5, 2, 8);
+sheet2.setValue(6, 2, 5); sheet2.setValue(7, 2, 10);
+sheet2.setValue(8, 2, 16); sheet2.setValue(9, 2, 9);
+sheet2.setValue(10, 2, 7); sheet2.setValue(11, 2, 10);
+sheet2.setValue(12, 2, 14); sheet2.setValue(0, 3, <span style="COLOR: #800000">'Comment'</span>);
+sheet2.setValue(0, 4, <span style="COLOR: #800000">'Revenue'</span>); sheet2.setValue(7, 4, <span style="COLOR: #800000">'STOP'</span>);
+sheet2.setFormula(1, 4, <span style="COLOR: #800000">'=B2*C2'</span>);
+<span style="COLOR: #0000ff">var</span> sheet3 = spread.getSheet(3);
+<span style="COLOR: #008000">// Set values in the "sheet3" worksheet
+</span>sheet3.setValue(0, 4, <span style="COLOR: #800000">'Product'</span>); sheet3.setValue(1, 4, <span style="COLOR: #800000">'P1'</span>);
+sheet3.setValue(2, 4, <span style="COLOR: #800000">'P2'</span>); sheet3.setValue(3, 4, <span style="COLOR: #800000">'P3'</span>);
+sheet3.setValue(4, 4, <span style="COLOR: #800000">'P4'</span>); sheet3.setValue(5, 4, <span style="COLOR: #800000">'P5'</span>);
+sheet3.setValue(6, 4, <span style="COLOR: #800000">'P6'</span>); sheet3.setValue(7, 4, <span style="COLOR: #800000">'P7'</span>);
+sheet3.setValue(8, 4, <span style="COLOR: #800000">'P8'</span>); sheet3.setValue(9, 4, <span style="COLOR: #800000">'P9'</span>);
+sheet3.setValue(10, 4, <span style="COLOR: #800000">'P10'</span>); sheet3.setValue(11, 4, <span style="COLOR: #800000">'P11'</span>);
+sheet3.setValue(12, 4, <span style="COLOR: #800000">'P12'</span>); sheet3.setValue(0, 3, <span style="COLOR: #800000">'Price'</span>);
+sheet3.setValue(1, 3, 1.1); sheet3.setValue(2, 3, 1.5);
+sheet3.setValue(3, 3, 1.6); sheet3.setValue(4, 3, 1.2);
+sheet3.setValue(5, 3, 1.5); sheet3.setValue(6, 3, 0.8);
+sheet3.setValue(7, 3, 0.8); sheet3.setValue(8, 3, 1.0);
+sheet3.setValue(9, 3, 2.2); sheet3.setValue(10, 3, 2.0);
+sheet3.setValue(11, 3, 0.7); sheet3.setValue(12, 3, 1.5);
+sheet3.setValue(0, 2, <span style="COLOR: #800000">'Units'</span>); sheet3.setValue(1, 2, 11);
+sheet3.setValue(2, 2, 13); sheet3.setValue(3, 2, 10);
+sheet3.setValue(4, 2, 9); sheet3.setValue(5, 2, 8);
+sheet3.setValue(6, 2, 5); sheet3.setValue(7, 2, 10);
+sheet3.setValue(8, 2, 16); sheet3.setValue(9, 2, 9);
+sheet3.setValue(10, 2, 7); sheet3.setValue(11, 2, 10);
+sheet3.setValue(12, 2, 14); sheet3.setValue(0, 1, <span style="COLOR: #800000">'Comment'</span>);
+sheet3.setValue(0, 0, <span style="COLOR: #800000">'Revenue'</span>);
+sheet3.setFormula(1, 0, <span style="COLOR: #800000">'=C2*D2'</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,693 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>Workbook type | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n7894","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.Workbook"/>
+    <meta name="Description" content="Represents a spreadsheet with the specified hosted DOM element or DOM id and options setting." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets_namespace"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+ / Workbook type</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Workbook type</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">Represents a spreadsheet with the specified hosted DOM element or DOM id and options setting.</div>
+               
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new GC.Spread.Sheets.<a href="SpreadJS~GC.Spread.Sheets.Workbook.html">Workbook</a>(host,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.sheetCount,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.font,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowUserDragMerge,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowUserDragDrop,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowUserDragFill,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowUserZoom,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowUserResize,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowUndo,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowSheetReorder,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowContextMenu,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowUserDeselect,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.defaultDragFillType,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showDragFillSmartTag,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showHorizontalScrollbar,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showVerticalScrollbar,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.scrollbarShowMax,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.scrollbarMaxAlign,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.tabStripVisible,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.tabStripRatio,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.tabEditable,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.newTabVisible,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allSheetsListVisible,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.tabNavigationVisible,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.cutCopyIndicatorVisible,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.cutCopyIndicatorBorderColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.backColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.backgroundImage,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.backgroundImageLayout,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.grayAreaBackColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showResizeTip,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showDragDropTip,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showDragFillTip,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showScrollTip,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.scrollIgnoreHidden,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.highlightInvalidData,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.useTouchLayout,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.hideSelection,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.resizeZeroIndicator,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowUserEditFormula,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.enableFormulaTextbox,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.autoFitType,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.referenceStyle,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.calcOnDemand,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowCopyPasteExcelStyle,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowExtendPasteRange,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.copyPasteHeaderOptions,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.scrollByPixel,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.scrollPixel,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.enableAccessibility,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowAutoCreateHyperlink,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.columnResizeMode,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.rowResizeMode,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.customList,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.scrollbarAppearance,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.pasteSkipInvisibleRange,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.allowAutoExtendFilterRange);</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function Workbook;</pre>
+      </div>
+    
+
+      </div>
+    </div>
+
+            <a name="exampleBookmark"></a>
+            
+            
+            <div class="i-section-heading" id="i-example-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Example</span></div><div id="i-example-section-content" class="i-section-content"><div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-cbe0b7a3-3106-494e-9c00-33c896eaaf18">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-cbe0b7a3-3106-494e-9c00-33c896eaaf18" class="i-filtered-content-Javascript i-code"><pre><span style="color: #0000FF; ">var</span> workbook = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="color: #800000; ">&quot;ss&quot;</span>), {sheetCount:3, font:<span style="color: #800000; ">&quot;12pt Arial&quot;</span>});
+<span style="color: #0000FF; ">var</span> workbook = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="color: #800000; ">&quot;ss&quot;</span>), {sheetCount:3, newTabVisible:<span style="color: #0000FF; ">false</span>});
+<span style="color: #0000FF; ">var</span> workbook = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="color: #800000; ">&quot;ss&quot;</span>), { sheetCount: 3, tabEditable: <span style="color: #0000FF; ">false</span> });
+<span style="color: #0000FF; ">var</span> workbook = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="color: #800000; ">&quot;ss&quot;</span>), {sheetCount:3, tabStripVisible:<span style="color: #0000FF; ">false</span>});
+<span style="color: #0000FF; ">var</span> workbook = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="color: #800000; ">&quot;ss&quot;</span>), {sheetCount:3, allowUserResize:<span style="color: #0000FF; ">false</span>});
+<span style="color: #0000FF; ">var</span> workbook = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="color: #800000; ">&quot;ss&quot;</span>), { sheetCount: 3, allowUserZoom: <span style="color: #0000FF; ">false</span>});</pre></div>
+	</div>
+</div>
+</div>
+            
+            <div class="i-section-heading" id="i-remarks-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Remarks</span></div><div id="i-remarks-section-content" class="i-section-content"><p>This table lists the Workbook options.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Name</strong></td>
+
+            <td><strong>Type</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td>allowUserDragMerge</td>
+
+            <td>boolean</td>
+
+            <td>Whether to allow the user to drag merge cells, optional.</td>
+        </tr>
+
+        <tr>
+            <td>allowUserDragDrop</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to allow the user to drag and drop range data, optional.</td>
+        </tr>
+
+        <tr>
+            <td>allowUserDragFill</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to allow the user to drag fill a range, optional.</td>
+        </tr>
+
+        <tr>
+            <td>allowUserZoom</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to zoom the display by scrolling the mouse wheel while pressing the Ctrl key, optional.</td>
+        </tr>
+
+        <tr>
+            <td>allowUserResize</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to allow the user to resize columns and rows, optional.</td>
+        </tr>
+
+        <tr>
+            <td>allowUndo</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to allow the user to undo edits, optional.</td>
+        </tr>
+
+        <tr>
+            <td>allowSheetReorder</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether the user can reorder the sheets in the Spread component, optional.</td>
+        </tr>
+
+        <tr>
+            <td>allowContextMenu</td>
+
+            <td>boolean</td>
+
+            <td>Whether to allow the user to open the built-in context menu, optional.</td>
+        </tr>
+
+        <tr>
+            <td>allowCopyPasteExcelStyle</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether the user can copy styles from SpreadJS and then paste to Excel, or copy styles from Excel and then paste to SpreadJS, optional.</td>
+        </tr>
+
+        <tr>
+            <td>allowExtendPasteRange</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to extend the paste range if the paste range is not enough for pasting, optional.</td>
+        </tr>
+
+        <tr>
+            <td>copyPasteHeaderOptions</td>
+
+            <td>GC.Spread.Sheets.CopyPasteHeaderOptions</td>
+
+            <td>Specifies which headers are included when data is copied to or pasted, optional.</td>
+        </tr>
+
+        <tr>
+            <td>defaultDragFillType</td>
+
+            <td>GC.Spread.Sheets.Fill.AutoFillType</td>
+
+            <td>The default fill type, optional.</td>
+        </tr>
+
+        <tr>
+            <td>showDragFillSmartTag</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to display the drag fill dialog, optional.</td>
+        </tr>
+
+        <tr>
+            <td>showHorizontalScrollbar</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to display the horizontal scroll bar, optional.</td>
+        </tr>
+
+        <tr>
+            <td>showVerticalScrollbar</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to display the vertical scroll bar, optional.</td>
+        </tr>
+
+        <tr>
+            <td>scrollbarShowMax</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether the displayed scroll bars are based on the entire number of columns and rows in the sheet, optional.</td>
+        </tr>
+
+        <tr>
+            <td>scrollbarMaxAlign</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether the scroll bar aligns with the last row and column of the active sheet, optional.</td>
+        </tr>
+
+        <tr>
+            <td>tabStripVisible</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to display the sheet tab strip, optional.</td>
+        </tr>
+
+        <tr>
+            <td>tabStripRatio</td>
+
+            <td>number</td>
+
+            <td>The width of the tab strip expressed as a percentage of the overall horizontal scroll bar width, optional.</td>
+        </tr>
+
+        <tr>
+            <td>tabEditable</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to allow the user to edit the sheet tab strip, optional.</td>
+        </tr>
+
+        <tr>
+            <td>newTabVisible</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether the spreadsheet displays the special tab to let users insert new sheets, optional.</td>
+        </tr>
+
+        <tr>
+            <td>tabNavigationVisible</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to display the sheet tab navigation, optional.</td>
+        </tr>
+
+        <tr>
+            <td>cutCopyIndicatorVisible</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to display an indicator when copying or cutting the selected item, optional.</td>
+        </tr>
+
+        <tr>
+            <td>cutCopyIndicatorBorderColor</td>
+
+            <td>string</td>
+
+            <td>The border color for the indicator displayed when the user cuts or copies the selection, optional.</td>
+        </tr>
+
+        <tr>
+            <td>backColor</td>
+
+            <td>string</td>
+
+            <td>A color string used to represent the background color of the Spread component, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on, optional.</td>
+        </tr>
+
+        <tr>
+            <td>backgroundImage</td>
+
+            <td>string</td>
+
+            <td>The background image of the Spread component, optional.</td>
+        </tr>
+
+        <tr>
+            <td>backgroundImageLayout</td>
+
+            <td>GC.Spread.Sheets.ImageLayout</td>
+
+            <td>The background image layout for the Spread component, optional.</td>
+        </tr>
+
+        <tr>
+            <td>grayAreaBackColor</td>
+
+            <td>string</td>
+
+            <td>A color string used to represent the background color of the gray area , such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on, optional.</td>
+        </tr>
+
+        <tr>
+            <td>showResizeTip</td>
+
+            <td>GC.Spread.Sheets.ShowResizeTip</td>
+
+            <td>Specifies how to display the resize tip, optional.</td>
+        </tr>
+
+        <tr>
+            <td>showDragDropTip</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to display the drag-drop tip, optional.</td>
+        </tr>
+
+        <tr>
+            <td>showDragFillTip</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to display the drag-fill tip, optional.</td>
+        </tr>
+
+        <tr>
+            <td>showScrollTip</td>
+
+            <td>GC.Spread.Sheets.ShowScrollTip</td>
+
+            <td>Specifies how to display the scroll tip, optional.</td>
+        </tr>
+
+        <tr>
+            <td>scrollIgnoreHidden</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether the scroll bar ignores hidden rows or columns, optional.</td>
+        </tr>
+
+        <tr>
+            <td>highlightInvalidData</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to highlight invalid data, optional.</td>
+        </tr>
+
+        <tr>
+            <td>useTouchLayout</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to use touch layout to present the Spread component, optional.</td>
+        </tr>
+
+        <tr>
+            <td>hideSelection</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to display the selection highlighting when the Spread component does not have focus, optional.</td>
+        </tr>
+
+        <tr>
+            <td>resizeZeroIndicator</td>
+
+            <td>GC.Spread.Sheets.ResizeZeroIndicator</td>
+
+            <td>The drawing policy when the row or column is resized to zero, optional.</td>
+        </tr>
+
+        <tr>
+            <td>allowUserEditFormula</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether the user can edit formulas in a cell in the spreadsheet, optional.</td>
+        </tr>
+
+        <tr>
+            <td>enableFormulaTextbox</td>
+
+            <td>boolean</td>
+
+            <td>Specifies whether to enable the formula text box in the spreadsheet, optional.</td>
+        </tr>
+
+        <tr>
+            <td>autoFitType</td>
+
+            <td>GC.Spread.Sheets.AutoFitType</td>
+
+            <td>Specifies whether content will be formatted to fit in cells or in cells and headers, optional.</td>
+        </tr>
+
+        <tr>
+            <td>referenceStyle</td>
+
+            <td>GC.Spread.Sheets.ReferenceStyle</td>
+
+            <td>The style for cell and range references in cell formulas on this sheet, optional.</td>
+        </tr>
+    </tbody>
+</table></div>
+            <div class="i-section-heading" id="i-inheritance-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Inheritance Hierarchy</span></div><div id="i-inheritance-section-content" class="i-section-content"><P>Object<BR />&nbsp;&nbsp;&nbsp;<STRONG>GC.Spread.Sheets.Workbook</STRONG><BR /></P></div>
+            
+
+            <a name="ConstructorsBookmark"></a>
+            <div class="i-section-heading" id="i-publicConstructors-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Constructors</span></div><div id="i-publicConstructors-section-content" class="i-section-content"><table class="i-filtered-item-list"><tr><th>&nbsp;</th><th>Name</th><th>Description</th></tr>
+<tr><td class="i-image"><img alt="public Constructor" src="template/packages/core-ajax/images/publicConstructor.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~_ctor.html">Workbook Constructor</a></td><td class="i-member-description">Represents a spreadsheet with the specified hosted DOM element or DOM id and options setting. &nbsp;</td></tr>
+</table><a href="#top">Top</a></div>
+            
+            
+
+            <a name="FieldsBookmark"></a>
+            <div class="i-section-heading" id="i-publicFields-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Fields</span></div><div id="i-publicFields-section-content" class="i-section-content"><table class="i-filtered-item-list"><tr><th>&nbsp;</th><th>Name</th><th>Description</th></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~contextMenu.html">contextMenu</a></td><td class="i-member-description">ContextMenu for the spread. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~name.html">name</a></td><td class="i-member-description">Represents the name of the Spread control. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~options.html">options</a></td><td class="i-member-description">Represents the options of the Spread control. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~sheets.html">sheets</a></td><td class="i-member-description">Represents the sheet collection. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~touchToolStrip.html">touchToolStrip</a></td><td class="i-member-description">Represents the touch toolstrip. &nbsp;</td></tr>
+</table><a href="#top">Top</a></div>
+            
+            
+
+            <a name="PropertiesBookmark"></a>
+            
+            
+            
+
+            <a name="MethodsBookmark"></a>
+            <div class="i-section-heading" id="i-publicMethods-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Methods</span></div><div id="i-publicMethods-section-content" class="i-section-content"><table class="i-filtered-item-list"><tr><th>&nbsp;</th><th>Name</th><th>Description</th></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~addCustomFunction.html">addCustomFunction</a></td><td class="i-member-description">Adds a custom function. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~addCustomName.html">addCustomName</a></td><td class="i-member-description">Adds a custom name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~addNamedStyle.html">addNamedStyle</a></td><td class="i-member-description">Adds a style to the Workbook named styles collection. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~addSheet.html">addSheet</a></td><td class="i-member-description">Inserts a sheet at the specific index. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~addSheetTab.html">addSheetTab</a></td><td class="i-member-description">Inserts a sheet tab at the specific index. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~addSparklineEx.html">addSparklineEx</a></td><td class="i-member-description">Adds a SparklineEx to the SparklineEx collection. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~bind.html">bind</a></td><td class="i-member-description">Binds an event to the Workbook. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~changeSheetIndex.html">changeSheetIndex</a></td><td class="i-member-description">Change sheet index and reorder sheets. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~clearCustomFunctions.html">clearCustomFunctions</a></td><td class="i-member-description">Clears all custom functions. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~clearCustomNames.html">clearCustomNames</a></td><td class="i-member-description">Clears custom names. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~clearSheets.html">clearSheets</a></td><td class="i-member-description">Clears all sheets in the control. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~clearSheetTabs.html">clearSheetTabs</a></td><td class="i-member-description">Clears all sheet tabs in the control. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~commandManager.html">commandManager</a></td><td class="i-member-description">Gets the command manager. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~dataManager.html">dataManager</a></td><td class="i-member-description">Gets the data manager. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~destroy.html">destroy</a></td><td class="i-member-description">Destroys the workbook and all sheets it contains. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~focus.html">focus</a></td><td class="i-member-description">Makes the Workbook component get focus or lose focus. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~fromJSON.html">fromJSON</a></td><td class="i-member-description">Loads the object state from the specified JSON string. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getActiveSheet.html">getActiveSheet</a></td><td class="i-member-description">Gets the active sheet. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getActiveSheetIndex.html">getActiveSheetIndex</a></td><td class="i-member-description">Gets the active sheet index of the control. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getActiveSheetTab.html">getActiveSheetTab</a></td><td class="i-member-description">Gets the active sheet tab. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getActiveSheetTabIndex.html">getActiveSheetTabIndex</a></td><td class="i-member-description">Gets the active sheet tab index of the control. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getCircularReference.html">getCircularReference</a></td><td class="i-member-description">Gets the all the Circular Reference cell information in the workbook. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getCustomFunction.html">getCustomFunction</a></td><td class="i-member-description">Gets a custom function. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getCustomName.html">getCustomName</a></td><td class="i-member-description">Gets the specified custom name information. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getCustomNames.html">getCustomNames</a></td><td class="i-member-description">Gets all custom name information. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getExternalReferences.html">getExternalReferences</a></td><td class="i-member-description">Get the cross workbook reference list of current workbook. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getHost.html">getHost</a></td><td class="i-member-description">Gets the host element of the current Workbook instance. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getNamedStyle.html">getNamedStyle</a></td><td class="i-member-description">Gets a style from the Workbook named styles collection which has the specified name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getNamedStyles.html">getNamedStyles</a></td><td class="i-member-description">Gets named styles from the Workbook. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getSheet.html">getSheet</a></td><td class="i-member-description">Gets the specified sheet. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getSheetCount.html">getSheetCount</a></td><td class="i-member-description">Gets the number of sheets. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getSheetFromName.html">getSheetFromName</a></td><td class="i-member-description">Gets the sheet with the specified name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getSheetIndex.html">getSheetIndex</a></td><td class="i-member-description">Gets the sheet index with the specified name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getSheetTab.html">getSheetTab</a></td><td class="i-member-description">Gets the specified sheet tab by index or name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getSheetTabCount.html">getSheetTabCount</a></td><td class="i-member-description">Gets the number of sheet tabs. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~getSheetTabIndex.html">getSheetTabIndex</a></td><td class="i-member-description">Gets the sheet tab index with the specified name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~hitTest.html">hitTest</a></td><td class="i-member-description">Performs a hit test. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~invalidateLayout.html">invalidateLayout</a></td><td class="i-member-description">Updates the control layout information. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~isPaintSuspended.html">isPaintSuspended</a></td><td class="i-member-description">Get if spread paint is suspended. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~nextControl.html">nextControl</a></td><td class="i-member-description">Gets or sets the next control used by GC.Spread.Sheets.Actions.selectNextControl and GC.Spread.Sheets.Actions.moveToNextCellThenControl. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~pageInfo.html">pageInfo</a></td><td class="i-member-description"> &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~previousControl.html">previousControl</a></td><td class="i-member-description">Gets or sets the previous control used by GC.Spread.Sheets.Actions.selectPreviousControl and GC.Spread.Sheets.Actions.moveToPreviousCellThenControl. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~print.html">print</a></td><td class="i-member-description">Prints the specified sheet. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~refresh.html">refresh</a></td><td class="i-member-description">Manually refreshes the layout and rendering of the Workbook object. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~removeCustomFunction.html">removeCustomFunction</a></td><td class="i-member-description">Removes a custom function. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~removeCustomName.html">removeCustomName</a></td><td class="i-member-description">Removes the specified custom name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~removeNamedStyle.html">removeNamedStyle</a></td><td class="i-member-description">Removes a style from the Workbook named styles collection which has the specified name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~removeSheet.html">removeSheet</a></td><td class="i-member-description">Removes the specified sheet. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~removeSheetTab.html">removeSheetTab</a></td><td class="i-member-description">Removes the specified sheet tab by index or name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~removeSparklineEx.html">removeSparklineEx</a></td><td class="i-member-description">Removes a SparklineEx from the SparklineEx collection. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~repaint.html">repaint</a></td><td class="i-member-description">Repaints the Workbook control. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~resumeCalcService.html">resumeCalcService</a></td><td class="i-member-description">Resumes the calculation service. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~resumeEvent.html">resumeEvent</a></td><td class="i-member-description">Resumes the event. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~resumePaint.html">resumePaint</a></td><td class="i-member-description">Resumes the paint of active sheet and tab strip. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~savePDF.html">savePDF</a></td><td class="i-member-description">Exports the specified sheet to PDF. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~search.html">search</a></td><td class="i-member-description">Searches the text in the cells in the specified sheet for the specified string with the specified criteria. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~setActiveSheet.html">setActiveSheet</a></td><td class="i-member-description">Sets the active sheet by name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~setActiveSheetIndex.html">setActiveSheetIndex</a></td><td class="i-member-description">Sets the active sheet index for the control. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~setActiveSheetTab.html">setActiveSheetTab</a></td><td class="i-member-description">Sets the active sheet tab by index or name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~setSheetCount.html">setSheetCount</a></td><td class="i-member-description">Sets the number of sheets. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~startSheetIndex.html">startSheetIndex</a></td><td class="i-member-description">Gets or sets the index of the first sheet to display in the spreadsheet. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~suspendCalcService.html">suspendCalcService</a></td><td class="i-member-description">Suspends the calculation service. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~suspendEvent.html">suspendEvent</a></td><td class="i-member-description">Suspends the event. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~suspendPaint.html">suspendPaint</a></td><td class="i-member-description">Suspends the paint of active sheet and tab strip. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~toJSON.html">toJSON</a></td><td class="i-member-description">Saves the object state to a JSON string. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~unbind.html">unbind</a></td><td class="i-member-description">Removes the binding of an event to Workbook. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~unbindAll.html">unbindAll</a></td><td class="i-member-description"><br /> &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~undoManager.html">undoManager</a></td><td class="i-member-description">Gets the undo manager. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Workbook~updateExternalReference.html">updateExternalReference</a></td><td class="i-member-description">Sets or update the data of external source with the workbook json. &nbsp;</td></tr>
+</table><a href="#top">Top</a></div>
+            
+            
+
+            <a name="EventsBookmark"></a>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

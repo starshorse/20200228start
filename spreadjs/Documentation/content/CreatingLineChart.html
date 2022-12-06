@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="You can add line charts to your worksheet using SpreadJS. Learn the various line chart types supported by SpreadJS along with their sample code." />
+    
+    <title>Line Chart | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n574","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="You can add line charts to your worksheet using SpreadJS. Learn the various line chart types supported by SpreadJS along with their sample code." />
+    
+    <meta name="Microsoft.Help.Id" content="413294a6-c4db-44f5-b121-4da4f2c71453"/>
+    <meta name="Microsoft.Help.TocParent" content="1124f6de-499a-4032-8d2a-c338ec23d096"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / <a href="ChartTypes.html">Chart Types</a>
+ / Line Chart</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Line Chart</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>A line chart is extensively used to visualize continous data over time&nbsp;on an evenly scaled axis.&nbsp;These charts are ideal for analysing trends in data at equal time&nbsp;intervals, like months, quarters, or fiscal years.</p>
+
+<p>The data arranged in columns or rows&nbsp;of&nbsp;a worksheet can be plotted in a line chart. In a line chart, category data is distributed evenly along the horizontal axis, and all the&nbsp;value data is distributed along the vertical axis.</p>
+
+<p>SpreadJS supports the following types of line charts&nbsp;where the trend of annual sales record for Quarter 1, Quarter 2 and Quarter 3 for different categories of gadgets: Mobile Phones, Laptops and Tablets is depicted in different types of line charts.</p>
+
+<h3>Line Chart</h3>
+
+<p>This chart depicts the data values&nbsp;plotted over time to display the trends.</p>
+
+<p>An image of the&nbsp;line chart is shown below:</p>
+
+<p><img border="0" alt="Line chart" src="images/Line.png" /></p>
+
+<h3>Stacked Line Chart</h3>
+
+<p>This chart displays stacked line to depict&nbsp;the trend of the contribution of each data value or ordered&nbsp;category over different time intervals.</p>
+
+<p>An image of&nbsp;the stacked&nbsp;line chart is shown below:</p>
+
+<p><img border="0" alt="Stacked line chart" src="images/Stacked_Line.png" /></p>
+
+<h3>100% Stacked Line Chart</h3>
+
+<p>This chart displays the&nbsp;trend in terms of the percentage that each data value&nbsp;or ordered category has contributed (to the whole)&nbsp;over different time intervals.</p>
+
+<p>An image of the 100% stacked&nbsp;line chart is shown below:</p>
+
+<p><img border="0" alt="100% stacked line chart" src="images/100_Stacked_Line.png" /></p>
+
+<h3>Line with Markers</h3>
+
+<p>This chart displays data values shown with markers.&nbsp;It is ideal to use this chart when there are many categories or the values are approximate.</p>
+
+<p>An image of the&nbsp;line chart with markers&nbsp;is shown below:</p>
+
+<p><img border="0" alt="Line chart with markers" src="images/Line_with_Markers.png" /></p>
+
+<h3>Stacked Line with Markers</h3>
+
+<p>This chart displays data values with markers, typically&nbsp;showing the trend of the contribution of each value over time or evenly spaced categories.<br /></p>
+
+<p>An image of the stacked&nbsp;line chart with markers&nbsp;is shown below:</p>
+
+<p><img border="0" alt="Stacked line chart with markers" src="images/Stacked_Line_with_Markers.png" /></p>
+
+<h3>100% Stacked Line with Markers</h3>
+
+<p>This chart displays individual data values with markers, typically showing the trend of the percentage each value that has been contributed over time or evenly spaced categories. It is ideal to use this chart when there are many categories or the values are approximate.</p>
+
+<p>An image of the&nbsp;100% stacked line chart with markers is shown below:</p>
+
+<p><img border="0" alt="100% stacked line chart with markers" src="images/100_Stacked_Line_with_Markers.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>This code shows how to add different types of line charts in a spreadsheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> chart_line, chart_lineStacked, chart_lineStacked100, sheet;
+window.onload = <span style="COLOR: #0000ff">function</span> ()
+{
+ <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+ sheet = spread.getActiveSheet();
+ sheet.suspendPaint();
+ <span style="COLOR: #008000">// Prepare data for chart
+</span> sheet.setValue(0, 1, <span style="COLOR: #800000">"Q1"</span>);
+ sheet.setValue(0, 2, <span style="COLOR: #800000">"Q2"</span>);
+ sheet.setValue(0, 3, <span style="COLOR: #800000">"Q3"</span>);
+ sheet.setValue(1, 0, <span style="COLOR: #800000">"Mobile Phones"</span>);
+ sheet.setValue(2, 0, <span style="COLOR: #800000">"Laptops"</span>);
+ sheet.setValue(3, 0, <span style="COLOR: #800000">"Tablets"</span>);
+ <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> r = 1; r &lt;= 3; r++)
+  {
+      <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> c = 1; c &lt;= 3; c++)
+      {
+       sheet.setValue(r, c, parseInt(Math.random() * 100));
+      }
+  }
+<span style="COLOR: #008000">// Add line chart
+</span>chart_line = sheet.charts.add(<span style="COLOR: #800000">'chart_line'</span>, GC.Spread.Sheets.Charts.ChartType.line, 250, 20, 600, 400, <span style="COLOR: #800000">"A1:D4"</span>);
+<span style="COLOR: #008000">// Add lineStacked chart
+</span>chart_lineStacked = sheet.charts.add(<span style="COLOR: #800000">'chart_lineStacked'</span>, GC.Spread.Sheets.Charts.ChartType.lineStacked, 250, 480, 600, 400, <span style="COLOR: #800000">"A1:D4"</span>);
+<span style="COLOR: #008000">// Add lineStacked100 chart
+</span>chart_lineStacked100 = sheet.charts.add(<span style="COLOR: #800000">'chart_lineStacked100'</span>, GC.Spread.Sheets.Charts.ChartType.lineStacked100, 250, 900, 600, 400, <span style="COLOR: #800000">"A1:D4"</span>);
+sheet.resumePaint();
+};
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

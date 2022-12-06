@@ -1,0 +1,861 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to set the values and formulas in a cell at the same time. Learn more in SpreadJS docs." />
+    
+    <title>Format String | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n270","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to set the values and formulas in a cell at the same time. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="5a4b9bb6-e4b6-4ae2-a1a9-fceab62533c9"/>
+    <meta name="Microsoft.Help.TocParent" content="edc33bc6-5882-415f-89f2-158ee31d8259"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / <a href="cellformat.html">Cell Format</a>
+ / Format String</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Format String</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>In&nbsp;SpreadJS, users can set&nbsp;the values and formulas in a cell at the same time.&nbsp;You can also format the displayed text based on the formula in the cell. The format string in the formatter of Style is extended with a formula or text value template which customizes the display value in a cell.&nbsp;The cell value acts as the parameter to the formatter which renders it in the cell, as an image or updated text.</p>
+
+<p>The formatter is divided into three cases as below:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th><strong>Types of Formatter</strong></th>
+
+            <th><strong>Syntax Format</strong></th>
+
+            <th><strong>Examples</strong></th>
+        </tr>
+
+        <tr>
+            <td>Normal cell formatter</td>
+
+            <td>Standard formatter</td>
+
+            <td>
+                <p>"#,##0_);(#,##0)"</p>
+
+                <p>"h:mm AM/PM"</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td height="10">Format string - Formula</td>
+
+            <td height="10">Standard formula</td>
+
+            <td height="10">
+                <p>"=SUM(@, C1)"</p>
+
+                <p>"=AVERAGE(C4:C7)"</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Format string - Text value Template</td>
+
+            <td>Text string where formula is contained&nbsp;in "{{" "}}"</td>
+
+            <td>
+                <p>"After {{=@}} approval, Total Sales Were: {{=SUM(Sales4)}}"</p>
+
+                <p>“Hello, @”</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>'@'</strong> symbol represents the current cell reference and can be used directly in the formula or text value template.</p>
+
+<h3>Format String - Formulas</h3>
+
+<p>A&nbsp;formula can be set to the formatter of Style, apart from setting the cell value. The current cell can be referenced in the formula by using '@'&nbsp;symbol.</p>
+
+<p>For example, a cell value can be set as a sum&nbsp;of range A1:A2:</p>
+<pre>
+style.formatter = '=SUM(@, A1:A2)';
+</pre>
+
+<h3>Format String - Text Value Template</h3>
+
+<p>Text value templates are very useful for creating dashboards and summarizing data.&nbsp;With text value templates, text values and formulas can be combined in a single cell and can be used inside "{{" and "}}" to wrap the formula in a string.</p>
+
+<p>For&nbsp;example, a cell value&nbsp;can be combined with a day value, sum formula&nbsp;and static&nbsp;text:</p>
+<pre>
+style.formatter = "On {{=TEXT(TODAY(),"DDDD")}}, Total Sales Were: ${{=SUM(A1:A5)}}.";
+</pre>
+
+<p>&nbsp;</p>
+
+<p>The format string&nbsp;is&nbsp;very&nbsp;useful and can be used commonly in scenarios like:</p>
+
+<ul>
+    <li>Formatting a long display string instead of using concatenation formula</li>
+
+    <li>Displaying values in a different currency or unit without changing the underlying value</li>
+
+    <li>Displaying graphic representation of a value or range using barcode and sparkline functions</li>
+
+    <li>Displaying numeric values as words using 'Number to Words' function</li>
+
+    <li>Displaying a KPI Range Template of a value in a dashboard or report</li>
+</ul>
+
+<h3>Usage Scenarios</h3>
+
+<p><strong>Use Case 1</strong></p>
+
+<p>Numerals can be changed to words&nbsp;and their value&nbsp;is automatically updated whenever the cell's value is changed.</p><img border="0" alt="Format string to display numeric values as words" src="images/FormatString1.gif" />
+
+<h3>Using Code</h3>
+
+<p>This example code implements a customized&nbsp;function to display numerals in words based on the cell&nbsp;value.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+<span style="COLOR: #008000">// Number to Words
+</span><span style="COLOR: #0000ff">var</span> sheet1 = spread.getSheet(0);
+sheet1.name(<span style="COLOR: #800000">'Number to Words'</span>);
+spread.addCustomName(<span style="COLOR: #800000">'n_1'</span>, <span style="COLOR: #800000">'{"";" One";" Two";" Three";" Four";" Five";" Six";" Seven";" Eight";" Nine";" Ten";" Eleven";" Twelve";" Thirteen";" Fourteen";" Fifteen";" Sixteen";" Seventeen";" Eighteen";" Nineteen"}'</span>);
+spread.addCustomName(<span style="COLOR: #800000">'n_2'</span>, <span style="COLOR: #800000">'{"";0;" Twenty";" Thirty";" Forty";" Fifty";" Sixty";" Seventy";" Eighty";" Ninety"}'</span>);
+spread.addCustomName(<span style="COLOR: #800000">'n_3'</span>, <span style="COLOR: #800000">'{"";"-One";"-Two";"-Three";"-Four";"-Five";"-Six";"-Seven";"-Eight";"-Nine"}'</span>);
+<span style="COLOR: #0000ff">var</span> numberToWordsStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+numberToWordsStyle.formatter = <span style="COLOR: #800000">'=TRIM(REPT(INDEX(n_1,1+INT(@/10^8))&amp;" hundred",10^8&lt;@)&amp;IF(@-TRUNC(@,-8)&lt;2*10^7,INDEX(n_1,1+MID(TEXT(@,"000000000"),2,2)),INDEX(n_2,1+MID(TEXT(@,"000000000"),2,2)/10)&amp;INDEX(n_3,1+RIGHT(INT(@/10^6))))&amp;REPT(" million",10^6&lt;@)&amp;IF(--RIGHT(INT(@/10^5)),INDEX(n_1,1+RIGHT(INT(@/10^5)))&amp;" hundred","")&amp;IF(@-TRUNC(@,-5)&lt;2*10^4,INDEX(n_1,1+MID(TEXT(@,"000000000"),5,2)),INDEX(n_2,1+MID(TEXT(@,"000000000"),5,2)/10)&amp;INDEX(n_3,1+RIGHT(INT(@/10^3))))&amp;IF(--MID(TEXT(@,"000000000"),4,3)," thousand","")&amp;IF(--RIGHT(INT(@/100)),INDEX(n_1,1+RIGHT(INT(@/100)))&amp;" hundred","")&amp;IF(MOD(@,100)&lt;20,INDEX(n_1,1+RIGHT(@,2)),INDEX(n_2,1+RIGHT(@,2)/10)&amp;INDEX(n_3,1+RIGHT(@))))'</span>;
+numberToWordsStyle.name = <span style="COLOR: #800000">'NumberToWords'</span>;
+numberToWordsStyle.backColor = <span style="COLOR: #800000">"lightblue"</span>;
+spread.addNamedStyle(numberToWordsStyle);
+sheet1.setColumnWidth(1, 700);
+sheet1.setStyleName(1, 1, <span style="COLOR: #800000">'NumberToWords'</span>);
+sheet1.getCell(1, 1).value(765348921).hAlign(GC.Spread.Sheets.HorizontalAlign.center);
+sheet1.setColumnWidth(1, 700);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+
+<p><strong>Use Case 2</strong></p>
+
+<p>Consider another case where the monthly sales revenue&nbsp;can be&nbsp;represented in USD, CNY, JPY and EURO currencies by selecting the same from the dropdown. Based on the currency exchange rate, the revenue numbers are updated for each month. Also, whenever the currency exchange rate is updated, the revenue numbers are dynamically updated.</p>
+
+<p><img border="0" alt="Format string to display values in a different currency" src="images/FormatString2.gif" /></p>
+
+<h3>Using Code</h3>
+
+<p>This example code implements the format string to update the sales revenue based on the exchange rate of&nbsp;different currencies.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), {
+        sheetCount: 1
+    });
+    initSpread(spread);
+};
+
+<span style="COLOR: #0000ff">function</span> initSpread(spread) {
+    <span style="COLOR: #0000ff">var</span> gcns = GC.Spread.Sheets;
+    spread.suspendPaint();
+    <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+    <span style="COLOR: #0000ff">var</span> data = [
+        [, <span style="COLOR: #800000">"FY 2019"</span>],
+        [, <span style="COLOR: #800000">"Sales"</span>],
+        [, <span style="COLOR: #800000">"Monthly"</span>, <span style="COLOR: #800000">"Cumulative"</span>],
+        [<span style="COLOR: #800000">"Apr"</span>, 188897, 188897],
+        [<span style="COLOR: #800000">"May"</span>, 208146, 397043],
+        [<span style="COLOR: #800000">"Jun"</span>, 226196, 623239],
+        [<span style="COLOR: #800000">"Jul"</span>, 277318, 900557],
+        [<span style="COLOR: #800000">"Aug"</span>, 263273, 1163830],
+        [<span style="COLOR: #800000">"Sep"</span>, 259845, 1423675],
+        [<span style="COLOR: #800000">"Oct"</span>, 241047, 1664722],
+        [<span style="COLOR: #800000">"Nov"</span>, 256306, 1921028],
+        [<span style="COLOR: #800000">"Dec"</span>, 195845, 2116873],
+        [<span style="COLOR: #800000">"Jan"</span>, 204934, 2321808],
+        [<span style="COLOR: #800000">"Feb"</span>, 257852, 2579660],
+        [<span style="COLOR: #800000">"Mar"</span>, 227779, 2807439]
+    ];
+    sheet.setArray(3, 1, data);
+    sheet.setColumnWidth(2, 110);
+    sheet.setColumnWidth(3, 110);
+    sheet.setRowCount(20);
+    sheet.setColumnCount(9);
+    sheet.options.gridline.showHorizontalGridline = <span style="COLOR: #0000ff">false</span>;
+    sheet.options.gridline.showVerticalGridline = <span style="COLOR: #0000ff">false</span>;
+    sheet.getRange(3, 1, 15, 3).setBorder(
+        <span style="COLOR: #0000ff">new</span> gcns.LineBorder(<span style="COLOR: #800000">"black"</span>, gcns.LineStyle.medium),
+        { all: <span style="COLOR: #0000ff">true</span> });
+    sheet.addSpan(3, 2, 1, 2);
+    sheet.addSpan(4, 2, 1, 2);
+    sheet.getRange(3, 2, 3, 2).backColor(<span style="COLOR: #800000">'#CFE1F3'</span>).hAlign(gcns.HorizontalAlign.center);
+    sheet.getRange(6, 1, 12, 1).backColor(<span style="COLOR: #800000">'#CCC1DA'</span>);
+
+    <span style="COLOR: #0000ff">var</span> cMapSource = [
+        { <span style="COLOR: #800000">"Currency"</span>: <span style="COLOR: #800000">"USD"</span>, <span style="COLOR: #800000">"Value"</span>: 1, <span style="COLOR: #800000">"Symbol"</span>: <span style="COLOR: #800000">"$"</span> },
+        { <span style="COLOR: #800000">"Currency"</span>: <span style="COLOR: #800000">"CNY"</span>, <span style="COLOR: #800000">"Value"</span>: 7.02, <span style="COLOR: #800000">"Symbol"</span>: <span style="COLOR: #800000">"¥"</span> },
+        { <span style="COLOR: #800000">"Currency"</span>: <span style="COLOR: #800000">"JPY"</span>, <span style="COLOR: #800000">"Value"</span>: 108.8, <span style="COLOR: #800000">"Symbol"</span>: <span style="COLOR: #800000">"¥"</span> },
+        { <span style="COLOR: #800000">"Currency"</span>: <span style="COLOR: #800000">"EURO"</span>, <span style="COLOR: #800000">"Value"</span>: 0.91, <span style="COLOR: #800000">"Symbol"</span>: <span style="COLOR: #800000">"€"</span> },
+    ];
+    sheet.tables.addFromDataSource(<span style="COLOR: #800000">'cT'</span>, 3, 5, cMapSource);
+    [5, 6, 7].forEach((col) =&gt; { sheet.setColumnWidth(col, 80); });
+
+    sheet.getCell(1, 2).value(<span style="COLOR: #800000">"Unit:"</span>).hAlign(gcns.HorizontalAlign.right);
+    sheet.getRange(1, 3, 1, 1).backColor(<span style="COLOR: #800000">"yellow"</span>).setBorder(
+        <span style="COLOR: #0000ff">new</span> gcns.LineBorder(<span style="COLOR: #800000">"blue"</span>, gcns.LineStyle.medium),
+        { all: <span style="COLOR: #0000ff">true</span> });
+
+    <span style="COLOR: #0000ff">var</span> dv1 = gcns.DataValidation.createFormulaListValidator(<span style="COLOR: #800000">'=cT[[#Data], [Currency]]'</span>);
+    sheet.setDataValidator(1, 3, dv1);
+    sheet.getCell(1, 3).hAlign(gcns.HorizontalAlign.center).value(<span style="COLOR: #800000">"USD"</span>);
+
+    sheet.getRange(6, 2, 12, 2)
+        .hAlign(gcns.HorizontalAlign.center)
+        .formatter(<span style="COLOR: #800000">'=VLOOKUP($D$2,cT[#Data],3,FALSE)&amp;"  "&amp;TEXT(@*VLOOKUP($D$2,cT[#Data],2,FALSE),"###,###")'</span>);
+    spread.resumePaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+
+<p><strong>Use Case 3</strong></p>
+
+<p>Consider a case where gauges are displayed to indicate the current KPI status. A customized function represents a gauge KPI sparkline which is set to the formatter of style.&nbsp;Different parameters like radiusRatio, targetValue and label marginBottom can be changed&nbsp;to see dynamic changes in gauge KPI sparkline.</p>
+
+<p><img border="0" alt="Format string to indicate the current KPI status" src="images/FormatString3.gif" /></p>
+
+<h3>Using Code</h3>
+
+<p>This example code implements the format string to update KPI gauge values based on the cell values.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+    <span style="COLOR: #0000ff">var</span> GuageKPIType = {
+        circle: 0,
+        verticalBar: 1,
+        horizontalBar: 2
+    };
+
+    <span style="COLOR: #0000ff">function</span> getFontHeight(font) {
+        <span style="COLOR: #0000ff">var</span> htmlSpan = document.createElement(<span style="COLOR: #800000">'span'</span>);
+        htmlSpan.style.font = font;
+        htmlSpan.innerHTML = <span style="COLOR: #800000">'H'</span>;
+        <span style="COLOR: #0000ff">var</span> fontHeight = htmlSpan.offsetHeight;
+        <span style="COLOR: #0000ff">return</span> fontHeight;
+    }
+
+    <span style="COLOR: #0000ff">function</span> GaugeKPISparkline() {
+        GC.Spread.Sheets.Sparklines.SparklineEx.call(<span style="COLOR: #0000ff">this</span>);
+        <span style="COLOR: #0000ff">this</span>.CIRCLE_CENTER_RADIUS = 6;
+        <span style="COLOR: #0000ff">this</span>.TARGET_VALUE_INCREMENT = 3;
+        <span style="COLOR: #0000ff">this</span>.CURRENT_VALUE_INCREMENT = 5;
+        <span style="COLOR: #0000ff">this</span>.CURRENT_VALUE_LINE_WIDTH = 4;
+        <span style="COLOR: #0000ff">this</span>.DASH_LINE_SOLID_LENGTH = 2;
+        <span style="COLOR: #0000ff">this</span>.DASH_LINE_EMPTY_LENGTH = 4;
+        <span style="COLOR: #0000ff">this</span>.TEXT_MARGIN = 10;
+        <span style="COLOR: #0000ff">this</span>.PAINT_PADDING = 6;
+    }
+    GaugeKPISparkline.prototype = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Sparklines.SparklineEx();
+    GaugeKPISparkline.prototype.createFunction = <span style="COLOR: #0000ff">function</span> () {
+        <span style="COLOR: #0000ff">var</span> functionDescription = {
+            description: <span style="COLOR: #800000">'This function returns a data set used for representing a gauge KPI sparkline'</span>,
+            parameters: [
+                {
+                    name: <span style="COLOR: #800000">'gaugeType'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'targetValue'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'targetValueFont'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'currentValue'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'currentValueFont'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'minValue'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'minValueFont'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'maxValue'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'maxValueFont'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'minAngle'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'maxAngle'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'radiusRatio'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'marginBottom'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'colorRange'</span>
+                },
+                {
+                    name: <span style="COLOR: #800000">'...'</span>
+                }
+            ]
+        };
+        <span style="COLOR: #0000ff">var</span> func = <span style="COLOR: #0000ff">new</span> GC.Spread.CalcEngine.Functions.Function(<span style="COLOR: #800000">"GAUGEKPISPARKLINE"</span>, 5, 15, functionDescription);
+        func.evaluate = <span style="COLOR: #0000ff">function</span> (args) {
+            <span style="COLOR: #0000ff">var</span> retValue = {
+                gaugeType: args[0],
+                targetValue: args[1],
+                targetValueFont: args[2],
+                currentValue: args[3],
+                currentValueFont: args[4],
+                minValue: args[5],
+                minValueFont: args[6],
+                maxValue: args[7],
+                maxValueFont: args[8],
+                minAngle: args[9],
+                maxAngle: args[10],
+                radiusRatio: args[11],
+                marginBottom: args[12]
+            };
+            <span style="COLOR: #0000ff">var</span> ranges = [], argsLength = args.length, tempArray;
+            <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> index = 13; index &lt; argsLength; index++) {
+                <span style="COLOR: #0000ff">var</span> rangeValue = args[index];
+                <span style="COLOR: #0000ff">if</span> (rangeValue <span style="COLOR: #0000ff">instanceof</span> GC.Spread.CalcEngine.CalcArray) {
+                    tempArray = rangeValue.array[0];
+                    ranges.push({
+                        start: tempArray[0],
+                        end: tempArray[1],
+                        color: tempArray[2]
+                    });
+                }
+            }
+            retValue.ranges = ranges;
+            <span style="COLOR: #0000ff">return</span> retValue;
+        };
+        func.acceptsArray = <span style="COLOR: #0000ff">function</span> (argIndex) {
+            <span style="COLOR: #0000ff">return</span> argIndex &gt;= 9 || argIndex &gt;= 1 &amp;&amp; argIndex &lt;= 4;
+        };
+        <span style="COLOR: #0000ff">return</span> func;
+    };
+    GaugeKPISparkline.prototype.paint = <span style="COLOR: #0000ff">function</span> (ctx, value, x, y, width, height, options) {
+        <span style="COLOR: #0000ff">if</span> (!value) {
+            <span style="COLOR: #0000ff">return</span>;
+        }
+        <span style="COLOR: #0000ff">if</span> (value.gaugeType === GuageKPIType.circle) {
+            ctx.save();
+            ctx.rect(x, y, width, height);
+            ctx.clip();
+            <span style="COLOR: #0000ff">this</span>.paintCircle(ctx, value, x, y, width, height, options);
+            ctx.restore();
+        }
+    };
+    GaugeKPISparkline.prototype.getCircleData = <span style="COLOR: #0000ff">function</span> (ctx, value, x, y, width, height, options) {
+        <span style="COLOR: #0000ff">var</span> zoomFactor = options.zoomFactor;
+        <span style="COLOR: #0000ff">var</span> currentValueHeight = getFontHeight(value.currentValueFont) * zoomFactor,
+            targetValueHeight = getFontHeight(value.targetValueFont) * zoomFactor;
+        <span style="COLOR: #0000ff">var</span> PAINT_PADDING = <span style="COLOR: #0000ff">this</span>.PAINT_PADDING, TEXT_MARGIN = <span style="COLOR: #0000ff">this</span>.TEXT_MARGIN;
+        <span style="COLOR: #0000ff">var</span> minAngle = value.minAngle, maxAngle = value.maxAngle;
+        <span style="COLOR: #0000ff">var</span> minValueWidth = Math.ceil(ctx.measureText(value.minValue).width),
+            maxValueWidth = Math.ceil(ctx.measureText(value.maxValue).width);
+        <span style="COLOR: #0000ff">var</span> textWidth = Math.max(minValueWidth, maxValueWidth);
+        <span style="COLOR: #0000ff">var</span> xOuterRadius = Math.floor(width / 2 - PAINT_PADDING - TEXT_MARGIN - textWidth);
+        <span style="COLOR: #0000ff">var</span> graphHeight = Math.floor(height - PAINT_PADDING * 2 - TEXT_MARGIN * 2 - currentValueHeight - targetValueHeight),
+            moreThanSemiCircle = Math.abs(minAngle) &gt; 90 || Math.abs(maxAngle) &gt; 90;
+        <span style="COLOR: #0000ff">var</span> yOuterRadius = moreThanSemiCircle ? graphHeight / 2 : graphHeight;
+        <span style="COLOR: #0000ff">var</span> outerRadius = Math.min(xOuterRadius, yOuterRadius);
+        <span style="COLOR: #0000ff">var</span> retValue = {
+            x: x + PAINT_PADDING + textWidth + TEXT_MARGIN + outerRadius,
+            y: y + PAINT_PADDING + targetValueHeight + TEXT_MARGIN + outerRadius,
+            outerRadius: outerRadius,
+            innerRadius: outerRadius * value.radiusRatio
+        };
+        retValue.currentValuePoint = {
+            x: retValue.x,
+            y: moreThanSemiCircle ? (retValue.y + outerRadius + TEXT_MARGIN + currentValueHeight) : (retValue.y + TEXT_MARGIN + currentValueHeight)
+        };
+        <span style="COLOR: #0000ff">return</span> retValue;
+    };
+    GaugeKPISparkline.prototype.getPaintData = <span style="COLOR: #0000ff">function</span> (value) {
+        <span style="COLOR: #0000ff">var</span> minRadian = (value.minAngle - 90) * Math.PI / 180, maxRadian = (value.maxAngle - 90) * Math.PI / 180;
+        <span style="COLOR: #0000ff">var</span> minValue = value.minValue, maxValue = value.maxValue;
+        <span style="COLOR: #0000ff">var</span> colorRanges = value.ranges, fillColor = <span style="COLOR: #800000">'lightgrey'</span>;
+        <span style="COLOR: #0000ff">var</span> valuePerRadian = (maxRadian - minRadian) / (maxValue - minValue);
+        <span style="COLOR: #0000ff">var</span> paintRanges = [];
+        <span style="COLOR: #0000ff">if</span> (colorRanges.length &gt; 0) {
+            colorRanges.forEach(<span style="COLOR: #0000ff">function</span> (colorRange) {
+                paintRanges.push({
+                    start: valuePerRadian * (colorRange.start - minValue) + minRadian,
+                    end: valuePerRadian * (colorRange.end - minValue) + minRadian,
+                    color: colorRange.color
+                });
+            });
+            paintRanges.unshift({ start: minRadian, end: paintRanges[0].start, color: fillColor });
+            paintRanges.push({ start: paintRanges[paintRanges.length - 1].end, end: maxRadian, color: fillColor });
+        } <span style="COLOR: #0000ff">else</span> {
+            paintRanges.push({ start: minRadian, end: maxRadian, color: fillColor });
+        }
+        <span style="COLOR: #0000ff">return</span> {
+            paintRanges: paintRanges,
+            fillColor: fillColor,
+            targetValueRadian: valuePerRadian * (value.targetValue - minValue) + minRadian,
+            currentValueRadian: valuePerRadian * (value.currentValue - minValue) + minRadian,
+            minValueRadian: minRadian,
+            maxValueRadian: maxRadian
+        };
+    };
+    GaugeKPISparkline.prototype.getPointOnCircle = <span style="COLOR: #0000ff">function</span> (x, y, radian, radius) {
+        <span style="COLOR: #0000ff">return</span> {
+            x: x + Math.cos(radian) * radius,
+            y: y + Math.sin(radian) * radius
+        };
+    };
+    GaugeKPISparkline.prototype.getCircleValuePaintInfo = <span style="COLOR: #0000ff">function</span> (circleCenterPoint, targetValuePoint, targetValueWidth) {
+        <span style="COLOR: #0000ff">var</span> TEXT_MARGIN = <span style="COLOR: #0000ff">this</span>.TEXT_MARGIN;
+        <span style="COLOR: #008000">// TODO: consider text height
+</span>        <span style="COLOR: #0000ff">if</span> (targetValuePoint.x &gt; circleCenterPoint.x) {
+            <span style="COLOR: #0000ff">return</span> { x: targetValuePoint.x + TEXT_MARGIN, y: targetValuePoint.y, textAlign: <span style="COLOR: #800000">'left'</span> };
+        }
+        <span style="COLOR: #0000ff">if</span> (targetValuePoint.x &lt; circleCenterPoint.x) {
+            <span style="COLOR: #0000ff">return</span> { x: targetValuePoint.x - TEXT_MARGIN, y: targetValuePoint.y, textAlign: <span style="COLOR: #800000">'right'</span> };
+        }
+        <span style="COLOR: #0000ff">if</span> (targetValuePoint.x === circleCenterPoint.x) {
+            <span style="COLOR: #0000ff">if</span> (targetValuePoint.y &gt; circleCenterPoint.y) {
+                <span style="COLOR: #0000ff">return</span> { x: targetValuePoint.x, y: targetValuePoint.y + TEXT_MARGIN, textAlign: <span style="COLOR: #800000">'center'</span> };
+            }
+            <span style="COLOR: #0000ff">return</span> { x: targetValuePoint.x, y: targetValuePoint.y - TEXT_MARGIN, textAlign: <span style="COLOR: #800000">'center'</span> };
+        }
+        <span style="COLOR: #0000ff">return</span> { x: targetValuePoint.x, y: targetValuePoint.y, textAlign: <span style="COLOR: #800000">'left'</span> };
+    };
+    GaugeKPISparkline.prototype.paintCircle = <span style="COLOR: #0000ff">function</span> (ctx, value, x, y, width, height, options) {
+        <span style="COLOR: #0000ff">var</span> zoomFactor = options.zoomFactor;
+        <span style="COLOR: #0000ff">var</span> circleData = <span style="COLOR: #0000ff">this</span>.getCircleData(ctx, value, x, y, width, height, options);
+        <span style="COLOR: #0000ff">var</span> innerRadius = circleData.innerRadius, outerRadius = circleData.outerRadius;
+        <span style="COLOR: #0000ff">if</span> (outerRadius &lt;= 0) {
+            <span style="COLOR: #0000ff">return</span>;
+        }
+        <span style="COLOR: #0000ff">var</span> currentValuePoint = circleData.currentValuePoint;
+        <span style="COLOR: #0000ff">var</span> circleCenter = { x: circleData.x, y: circleData.y };
+        <span style="COLOR: #0000ff">var</span> paintData = <span style="COLOR: #0000ff">this</span>.getPaintData(value),
+            paintRanges = paintData.paintRanges, fillColor = paintData.fillColor;
+
+        ctx.save();
+
+        <span style="COLOR: #008000">// &lt;editor-folder desc="paint circles"&gt;
+</span>        paintRanges.forEach(<span style="COLOR: #0000ff">function</span> (paintRange) {
+            <span style="COLOR: #008000">// paint outer circle
+</span>            ctx.beginPath();
+            ctx.moveTo(circleCenter.x, circleCenter.y);
+            ctx.fillStyle = paintRange.color || fillColor;
+            ctx.strokeStyle = <span style="COLOR: #800000">'white'</span>;
+            ctx.arc(circleCenter.x, circleCenter.y, outerRadius, paintRange.start, paintRange.end, <span style="COLOR: #0000ff">false</span>);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            <span style="COLOR: #008000">// paint inner circle
+</span>            ctx.beginPath();
+            ctx.moveTo(circleCenter.x, circleCenter.y);
+            ctx.fillStyle = <span style="COLOR: #800000">'white'</span>;
+            ctx.strokeStyle = <span style="COLOR: #800000">'white'</span>;
+            ctx.arc(circleCenter.x, circleCenter.y, innerRadius, paintRange.start, paintRange.end, <span style="COLOR: #0000ff">false</span>);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+        });
+        <span style="COLOR: #008000">// &lt;/editor-folder&gt;
+</span>
+        <span style="COLOR: #008000">// &lt;editor-folder desc="paint circle center"&gt;
+</span>        ctx.beginPath();
+        ctx.moveTo(circleCenter.x, circleCenter.y);
+        ctx.fillStyle = <span style="COLOR: #800000">'black'</span>;
+        ctx.arc(circleCenter.x, circleCenter.y, <span style="COLOR: #0000ff">this</span>.CIRCLE_CENTER_RADIUS, 0, 2 * Math.PI, <span style="COLOR: #0000ff">false</span>);
+        ctx.fill();
+        <span style="COLOR: #008000">// &lt;/editor-folder&gt;
+</span>
+        <span style="COLOR: #008000">// &lt;editor-folder desc="paint line"&gt;
+</span>        <span style="COLOR: #008000">// &lt;editor-folder desc="paint target value line"&gt;
+</span>        <span style="COLOR: #0000ff">var</span> targetValueInnerPointOnCircle = <span style="COLOR: #0000ff">this</span>.getPointOnCircle(circleCenter.x, circleCenter.y, paintData.targetValueRadian, innerRadius);
+        <span style="COLOR: #0000ff">var</span> targetValueOuterPointOnCircle = <span style="COLOR: #0000ff">this</span>.getPointOnCircle(circleCenter.x, circleCenter.y, paintData.targetValueRadian, outerRadius + <span style="COLOR: #0000ff">this</span>.TARGET_VALUE_INCREMENT);
+        ctx.save();
+        ctx.beginPath();
+        ctx.setLineDash([<span style="COLOR: #0000ff">this</span>.DASH_LINE_SOLID_LENGTH, <span style="COLOR: #0000ff">this</span>.DASH_LINE_EMPTY_LENGTH]);
+        ctx.moveTo(targetValueInnerPointOnCircle.x, targetValueInnerPointOnCircle.y);
+        ctx.strokeStyle = <span style="COLOR: #800000">'grey'</span>;
+        ctx.lineTo(targetValueOuterPointOnCircle.x, targetValueOuterPointOnCircle.y);
+        ctx.stroke();
+        ctx.restore();
+        <span style="COLOR: #008000">// &lt;/editor-folder&gt;
+</span>
+        <span style="COLOR: #008000">// &lt;editor-folder desc="paint current value line"&gt;
+</span>        <span style="COLOR: #0000ff">var</span> currentValuePointOnCircle = <span style="COLOR: #0000ff">this</span>.getPointOnCircle(circleCenter.x, circleCenter.y, paintData.currentValueRadian, outerRadius + <span style="COLOR: #0000ff">this</span>.CURRENT_VALUE_INCREMENT);
+        ctx.beginPath();
+        ctx.strokeStyle = <span style="COLOR: #800000">'black'</span>;
+        ctx.lineWidth = <span style="COLOR: #0000ff">this</span>.CURRENT_VALUE_LINE_WIDTH;
+        ctx.moveTo(circleCenter.x, circleCenter.y);
+        ctx.lineTo(currentValuePointOnCircle.x, currentValuePointOnCircle.y);
+        ctx.stroke();
+        <span style="COLOR: #008000">// &lt;/editor-folder&gt;
+</span>        <span style="COLOR: #008000">// &lt;/editor-folder&gt;
+</span>
+        <span style="COLOR: #008000">// &lt;editor-folder desc="paint value"&gt;
+</span>        ctx.save();
+        ctx.beginPath();
+        ctx.textAlign = <span style="COLOR: #800000">"start"</span>;
+        ctx.fillStyle = <span style="COLOR: #800000">'grey'</span>;
+        <span style="COLOR: #0000ff">var</span> minValueHeight = getFontHeight(value.minValueFont) * zoomFactor,
+            maxValueHeight = getFontHeight(value.maxValueFont) * zoomFactor;
+        <span style="COLOR: #0000ff">var</span> minMaxValueHeight = Math.floor(Math.max(minValueHeight, maxValueHeight));
+        <span style="COLOR: #008000">// &lt;editor-folder desc="paint min value"&gt;
+</span>        <span style="COLOR: #0000ff">var</span> minValueFont = value.minValueFont || <span style="COLOR: #800000">'10px Calibri'</span>;
+        ctx.font = minValueFont;
+        <span style="COLOR: #0000ff">var</span> minValue = value.minValue + <span style="COLOR: #800000">''</span>;
+        <span style="COLOR: #0000ff">var</span> minValueWidth = ctx.measureText(minValue).width;
+        <span style="COLOR: #0000ff">var</span> minValuePointOnCircle = <span style="COLOR: #0000ff">this</span>.getPointOnCircle(circleCenter.x, circleCenter.y, paintData.minValueRadian, outerRadius);
+        <span style="COLOR: #0000ff">var</span> minValueInfo = <span style="COLOR: #0000ff">this</span>.getCircleValuePaintInfo(circleCenter, minValuePointOnCircle, minValueWidth);
+        ctx.textAlign = minValueInfo.textAlign;
+        ctx.fillText(minValue, minValueInfo.x, minValueInfo.y + minMaxValueHeight / 2);
+        <span style="COLOR: #008000">// &lt;/editor-folder&gt;
+</span>
+        <span style="COLOR: #008000">// &lt;editor-folder desc="paint max value"&gt;
+</span>        <span style="COLOR: #0000ff">var</span> maxValueFont = value.maxValueFont || <span style="COLOR: #800000">'30px Calibri'</span>;
+        ctx.font = maxValueFont;
+        <span style="COLOR: #0000ff">var</span> maxValue = value.maxValue + <span style="COLOR: #800000">''</span>;
+        <span style="COLOR: #0000ff">var</span> maxValueWidth = ctx.measureText(maxValue).width;
+        <span style="COLOR: #0000ff">var</span> maxValuePointOnCircle = <span style="COLOR: #0000ff">this</span>.getPointOnCircle(circleCenter.x, circleCenter.y, paintData.maxValueRadian, outerRadius);
+        <span style="COLOR: #0000ff">var</span> maxValueInfo = <span style="COLOR: #0000ff">this</span>.getCircleValuePaintInfo(circleCenter, maxValuePointOnCircle, maxValueWidth);
+        ctx.textAlign = maxValueInfo.textAlign;
+        ctx.fillText(maxValue, maxValueInfo.x, maxValueInfo.y + minMaxValueHeight / 2);
+        <span style="COLOR: #008000">// &lt;/editor-folder&gt;
+</span>
+        <span style="COLOR: #008000">// &lt;editor-folder desc="paint target value"&gt;
+</span>        <span style="COLOR: #0000ff">var</span> targetValueFont = value.targetValueFont || <span style="COLOR: #800000">'16.667px Calibri'</span>;
+        ctx.font = targetValueFont;
+        <span style="COLOR: #0000ff">var</span> targetValue = value.targetValue + <span style="COLOR: #800000">''</span>;
+        <span style="COLOR: #0000ff">var</span> targetValueWidth = ctx.measureText(targetValue).width;
+        <span style="COLOR: #0000ff">var</span> targetValueInfo = <span style="COLOR: #0000ff">this</span>.getCircleValuePaintInfo(circleCenter, targetValueOuterPointOnCircle, targetValueWidth);
+        ctx.textAlign = targetValueInfo.textAlign;
+        ctx.fillText(targetValue, targetValueInfo.x, targetValueInfo.y);
+        ctx.restore();
+        <span style="COLOR: #008000">// &lt;/editor-folder&gt;
+</span>
+        <span style="COLOR: #008000">// &lt;editor-folder desc="paint current value"&gt;
+</span>        ctx.save();
+        ctx.beginPath();
+        <span style="COLOR: #0000ff">var</span> currentValueFont = value.currentValueFont || <span style="COLOR: #800000">"25px Calibri"</span>;
+        ctx.font = currentValueFont;
+        <span style="COLOR: #0000ff">var</span> currentValue = value.currentValue + <span style="COLOR: #800000">''</span>;
+        ctx.textAlign = <span style="COLOR: #800000">"center"</span>;
+        ctx.fillText(currentValue, currentValuePoint.x, currentValuePoint.y - value.marginBottom);
+        ctx.restore();
+        <span style="COLOR: #008000">// &lt;/editor-folder&gt;
+</span>        <span style="COLOR: #008000">// &lt;/editor-folder&gt;
+</span>
+        ctx.restore();
+    };
+    GaugeKPISparkline.prototype.paintHorizontalBar = <span style="COLOR: #0000ff">function</span> (ctx, value, x, y, width, height) {
+        <span style="COLOR: #008000">// ...
+</span>    };
+    GaugeKPISparkline.prototype.paintVerticalBar = <span style="COLOR: #0000ff">function</span> (ctx, value, x, y, width, height) {
+        <span style="COLOR: #008000">// ...
+</span>    };
+&lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;script&gt;
+    $(document).ready(<span style="COLOR: #0000ff">function</span> () {
+        <span style="COLOR: #008000">// initializing Spread
+</span>        <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+        <span style="COLOR: #008000">// KPI Gauge
+</span>        <span style="COLOR: #0000ff">var</span> sheet1 = spread.getSheet(0);
+        sheet1.name(<span style="COLOR: #800000">'KPI Gauge'</span>);
+        spread.addSparklineEx(<span style="COLOR: #0000ff">new</span> GaugeKPISparkline());
+        sheet1.suspendPaint();
+        sheet1.setRowHeight(0, 300);
+        sheet1.setColumnWidth(0, 300);
+        sheet1.setColumnWidth(1, 300);
+        sheet1.setColumnWidth(2, 300);
+        sheet1.setRowCount(4);
+        sheet1.setRowHeight(3, 300);
+        sheet1.setColumnCount(3);
+        sheet1.getCell(1, 0).text(<span style="COLOR: #800000">"radiusRatio"</span>).hAlign(2);
+        sheet1.getCell(1, 1).text(<span style="COLOR: #800000">"targetValue"</span>).hAlign(2);
+        sheet1.getCell(1, 2).text(<span style="COLOR: #800000">"label marginBottom"</span>).hAlign(2);
+        <span style="COLOR: #0000ff">var</span> radiusRatioSliderStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+        radiusRatioSliderStyle.cellButtons = [{
+            imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+            command: <span style="COLOR: #800000">"openSlider"</span>,
+            useButtonStyle: <span style="COLOR: #0000ff">true</span>,
+        }];
+        radiusRatioSliderStyle.dropDowns = [{
+            type: GC.Spread.Sheets.DropDownType.slider,
+            option: {
+                marks: [0, 50, 100],
+                step: 1,
+                width: 190,
+                direction: GC.Spread.Sheets.LayoutDirection.horizontal,
+            }
+        }];
+        <span style="COLOR: #0000ff">var</span> targetValueSliderStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+        targetValueSliderStyle.cellButtons = [{
+            imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+            command: <span style="COLOR: #800000">"openSlider"</span>,
+            useButtonStyle: <span style="COLOR: #0000ff">true</span>,
+        }];
+        targetValueSliderStyle.dropDowns = [{
+            type: GC.Spread.Sheets.DropDownType.slider,
+            option: {
+                max: 40,
+                marks: [0, 20, 40],
+                step: 1,
+                width: 190,
+                direction: GC.Spread.Sheets.LayoutDirection.horizontal,
+            }
+        }];
+        <span style="COLOR: #0000ff">var</span> marginBottomSliderStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+        marginBottomSliderStyle.cellButtons = [{
+            imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+            command: <span style="COLOR: #800000">"openSlider"</span>,
+            useButtonStyle: <span style="COLOR: #0000ff">true</span>,
+        }];
+        marginBottomSliderStyle.dropDowns = [{
+            type: GC.Spread.Sheets.DropDownType.slider,
+            option: {
+                max: 50,
+                marks: [0, 25, 50],
+                step: 1,
+                width: 190,
+                direction: GC.Spread.Sheets.LayoutDirection.horizontal,
+            }
+        }];
+        sheet1.setStyle(2, 0, radiusRatioSliderStyle);
+        sheet1.setValue(2, 0, 50);
+        sheet1.setStyle(2, 1, targetValueSliderStyle);
+        sheet1.setValue(2, 1, 20);
+        sheet1.setStyle(2, 2, marginBottomSliderStyle);
+        sheet1.setValue(2, 2, 50);
+        <span style="COLOR: #0000ff">var</span> style1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+        style1.formatter =
+            <span style="COLOR: #800000">'=GAUGEKPISPARKLINE(0, 125000, "bold 18px Calibri", @, "bold 35px Calibri", 0, "12px Calibri", 150000, "12px Calibri", -90, 90, =A3/100, 0, {0, 39848, "#e14d57"})'</span>;
+        sheet1.setStyle(0, 0, style1);
+        sheet1.setValue(0, 0, 39848);
+        sheet1.getCell(3, 0).value(style1.formatter.substr(1, style1.formatter.length - 1)).wordWrap(<span style="COLOR: #0000ff">true</span>);
+        <span style="COLOR: #0000ff">var</span> style2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+        style2.formatter =
+            <span style="COLOR: #800000">'=GAUGEKPISPARKLINE(0, B3, "bold 18px Calibri", @, "bold 35px Calibri", 0, "12px Calibri", 40, "12px Calibri", -75, 75, 0.3, 10, {0, 32.2, "#71b37c"})'</span>;
+        sheet1.setStyle(0, 1, style2);
+        sheet1.setValue(0, 1, 32.2);
+        sheet1.getCell(3, 1).value(style2.formatter.substr(1, style2.formatter.length - 1)).wordWrap(<span style="COLOR: #0000ff">true</span>);
+        <span style="COLOR: #0000ff">var</span> style3 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+        style3.formatter =
+            <span style="COLOR: #800000">'=GAUGEKPISPARKLINE(0, 0, "bold 18px Calibri", @, "bold 35px Calibri", -50, "12px Calibri", 50, "12px Calibri", -135, 135, 0.3, C3, {-21, 0, "#5290e9"})'</span>;
+        sheet1.setStyle(0, 2, style3);
+        sheet1.setValue(0, 2, -21);
+        sheet1.getCell(3, 2).value(style3.formatter.substr(1, style3.formatter.length - 1)).wordWrap(<span style="COLOR: #0000ff">true</span>);
+        sheet1.resumePaint();
+    });
+&lt;<span style="COLOR: #800000">/script&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+
+<p><strong>Limitations</strong></p>
+
+<ul>
+    <li>Excel doesn't support&nbsp;format&nbsp;string. Hence, excel I/O is unsupported.</li>
+
+    <li>Format string does not support cell state.</li>
+</ul>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

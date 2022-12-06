@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Set Formulas | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n449","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="fe5973d4-2a19-43f8-a4bc-bfd222db3f5e"/>
+    <meta name="Microsoft.Help.TocParent" content="20ec19b6-d22d-41ba-a05b-c2910bd90ae6"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="formulas.html">Formulas</a>
+ / Set Formulas</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Set Formulas</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>In SpreadJS, you can set formula in cells&nbsp;by using&nbsp;<strong>setFormula</strong> method of Worksheet class. The below image displays resultant values in column B after different formulas&nbsp;are being applied on it.&nbsp;</p>
+
+<p><img border="0" alt="Cell formulas" src="images/codeformula.png" /></p>
+
+<h4>Set Formula in Cells</h4>
+
+<p>This example sets formulas in cells.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+window.onload = <span style="COLOR: #0000ff">function</span>()
+{
+   <span style="COLOR: #0000ff">var</span> spread =
+   <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),
+   {sheetCount:3});
+   <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+   activeSheet.setRowCount(5);
+   activeSheet.setColumnCount(2);
+   activeSheet.getRange(-1, 1, -1, 1)
+   .backColor(<span style="COLOR: #800000">"lightYellow"</span>)
+   .width(120);
+   activeSheet.setValue(0, 0, 10);
+   activeSheet.setValue(1, 0, 20);
+   activeSheet.setValue(2, 0, 30);
+   activeSheet.setValue(3, 0, 40);
+   activeSheet.setValue(4, 0, 50);
+
+   <span style="COLOR: #008000">// Set SUM function (Sum of all parameter values).
+</span>   activeSheet.setFormula(0, 1, <span style="COLOR: #800000">"SUM(A1:A5)"</span>);
+ 
+   <span style="COLOR: #008000">// Set PRODUCT function (Product of all parameter values).
+</span>   activeSheet.setFormula(1, 1, <span style="COLOR: #800000">"PRODUCT(A1:A5)"</span>);
+
+   <span style="COLOR: #008000">// Set AVERAGE function (Average of all parameter values).
+</span>   activeSheet.setFormula(2, 1, <span style="COLOR: #800000">"AVERAGE(A1:A5)"</span>);
+
+  <span style="COLOR: #008000">// Set the sum of cell(0,0) and cell(4,0).
+</span>  activeSheet.setFormula(3, 1, <span style="COLOR: #800000">"A1 + A5"</span>);
+
+  <span style="COLOR: #008000">/* Multiply cell(0,0) by 2 if the value in this cell is greater than 10,
+    otherwise multiply it by 3. */</span>
+   activeSheet.setFormula(4, 1, <span style="COLOR: #800000">"IF(A1&gt;10, A1*2, A1*3)"</span>);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Set Formula with Cross Sheet References</h3>
+
+<p>You can reference other sheets in a formula. Taking an example, the following image displays the first sheet.</p>
+
+<p><img border="0" alt="Cross references - first sheet" src="images/codesh1.png" /></p>
+
+<p>The following image displays the second sheet.</p>
+
+<p><img border="0" alt="Cross references - second sheet" src="images/codesh2.png" /></p>
+
+<p>This example uses cross-sheet references.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+window.onload = <span style="COLOR: #0000ff">function</span>()
+{
+   <span style="COLOR: #0000ff">var</span> spread =
+   <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+   <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+   <span style="COLOR: #0000ff">var</span> sheet1 = spread.getSheet(0),
+   sheet2 = spread.getSheet(1);
+   sheet1.name(<span style="COLOR: #800000">"Sheet1"</span>);
+   sheet2.name(<span style="COLOR: #800000">"Sheet2"</span>);
+       
+   sheet1.setValue(0, 0, 1000);
+   sheet1.setValue(1, 0, 2000);
+   sheet1.setValue(2, 0, 3000);
+   sheet1.setValue(3, 0, 4000);
+   sheet1.getRange(0, 0, 4, 1).backColor(<span style="COLOR: #800000">"lightPink"</span>);
+   sheet2.setValue(0, 0, 5000);
+   sheet2.getRange(0, 0, 1, 1).backColor(<span style="COLOR: #800000">"lightCyan"</span>);
+
+   <span style="COLOR: #008000">// Set a sum formula of "Sheet1: total of cell(0,0) to cell(3,0)" and "Sheet2: cell(0,0)".
+</span>   sheet2.setFormula(1, 1, <span style="COLOR: #800000">"SUM(Sheet1!A1:A4) + Sheet2!A1"</span>);
+   sheet2.getRange(1, 1, 1, 1).backColor(<span style="COLOR: #800000">"lemonChiffon"</span>);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Set Subtotal Formula</h3>
+
+<p>You can set SUBTOTAL formula as displayed in the below image.</p>
+
+<p><img border="0" alt="Subtotals" src="images/codesub.png" /></p>
+
+<p>This example uses a subtotal formula.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+    <span style="COLOR: #0000ff">var</span> spread =
+    <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),
+    {sheetCount:3});
+   
+    <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+    activeSheet.setColumnCount(2);
+    activeSheet.options.colHeaderAutoText = GC.Spread.Sheets.HeaderAutoText.blank;
+    activeSheet.setText(0, 1, <span style="COLOR: #800000">"Value"</span>, GC.Spread.Sheets.SheetArea.colHeader);
+    activeSheet.options.gridline = {showHorizontalGridline: <span style="COLOR: #0000ff">false</span>};
+    activeSheet.setText(3, 0, <span style="COLOR: #800000">"Sub-Total1"</span>);
+    activeSheet.setText(7, 0, <span style="COLOR: #800000">"Sub-Total2"</span>);
+    activeSheet.setText(8, 0, <span style="COLOR: #800000">"Aggregate"</span>);
+    activeSheet.getRange(3, -1, 1, -1).backColor(<span style="COLOR: #800000">"lemonChiffon"</span>);
+    activeSheet.getRange(7, -1, 1, -1).backColor(<span style="COLOR: #800000">"lemonChiffon"</span>);
+    activeSheet.getRange(8, -1, 1, -1).backColor(<span style="COLOR: #800000">"lightPink"</span>);
+    activeSheet.setValue(0, 1, 100);
+    activeSheet.setValue(1, 1, 200);
+    activeSheet.setValue(2, 1, 300);
+    activeSheet.setValue(4, 1, 400);
+    activeSheet.setValue(5, 1, 500);
+    activeSheet.setValue(6, 1, 600);
+  
+   <span style="COLOR: #008000">// Set the sub-total and the aggregate by using SUBTOTAL function.
+</span>   activeSheet.setFormula(3, 1, <span style="COLOR: #800000">"SUBTOTAL(9,B1:B3)"</span>);
+   activeSheet.setFormula(7, 1, <span style="COLOR: #800000">"SUBTOTAL(9,B5:B7)"</span>);
+   activeSheet.setFormula(8, 1, <span style="COLOR: #800000">"SUBTOTAL(9,B1:B7)"</span>);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

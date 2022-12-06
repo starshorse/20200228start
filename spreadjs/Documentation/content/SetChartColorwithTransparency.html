@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can set colors with transparency for different chart elements using SpreadJS." />
+    
+    <title>Chart Color with Transparency | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n605","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can set colors with transparency for different chart elements using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="3ab8d7bc-2362-4fb9-bef2-46024322320f"/>
+    <meta name="Microsoft.Help.TocParent" content="bdba97c4-037f-4cd7-ae56-830374286ef0"/>
+    <meta name="Microsoft.Help.TocOrder" content="7"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / Chart Color with Transparency</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Chart Color with Transparency</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides support for transparency while configuring different chart elements in order to allow users to customize the chart area background color, the chart data labels, chart axes and series etc.</p>
+
+<p>The following image shows a chart depicting the&nbsp;Sales data for four different countries&nbsp;wherein different chart elements&nbsp;have been customized in order to set transparency.</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" alt="Chart color with transparency" src="images/chart_transparency.png" /><br />
+
+<h4><br />
+Using Code</h4>
+
+<p>The following example code&nbsp;shows how to set chart color with transparency.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+window.onload = <span style="COLOR: #0000ff">function</span> ()
+{
+  <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+  sheet = spread.getActiveSheet();
+  sheet.suspendPaint();
+  <span style="COLOR: #0000ff">var</span> dataArray = 
+    [
+      [<span style="COLOR: #800000">""</span>, <span style="COLOR: #800000">'Jan'</span>, <span style="COLOR: #800000">'Feb'</span>, <span style="COLOR: #800000">'Mar'</span>, <span style="COLOR: #800000">'Apr'</span>, <span style="COLOR: #800000">'May'</span>, <span style="COLOR: #800000">'Jun'</span>, <span style="COLOR: #800000">'Jul'</span>, <span style="COLOR: #800000">'Aug'</span>, <span style="COLOR: #800000">'Sep'</span>,
+        <span style="COLOR: #800000">'Oct'</span>, <span style="COLOR: #800000">'Nov'</span>, <span style="COLOR: #800000">'Dec'</span>],
+
+      [<span style="COLOR: #800000">"Tokyo"</span>, 49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5,
+         216.4, 194.1, 95.6, 54.4],
+
+      [<span style="COLOR: #800000">"New York"</span>, 83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3,
+        91.2, 83.5, 106.6, 92.3],
+       
+      [<span style="COLOR: #800000">"London"</span>, 48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6,
+         52.4, 65.2, 59.3, 51.2],
+      
+      [<span style="COLOR: #800000">"Berlin"</span>, 42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4,
+        47.6, 39.1, 46.8, 51.1]
+      ];
+       
+ sheet.setArray(0, 0, dataArray);
+ <span style="COLOR: #008000">// Add a column chart of type - columnClustered 
+</span> chart_columnClustered = sheet.charts.add
+ (<span style="COLOR: #800000">'chart_columnClustered'</span>,GC.Spread.Sheets.Charts.ChartType.columnClustered,
+    300, 180, 600, 400, <span style="COLOR: #800000">"A1:M5"</span>);
+ <span style="COLOR: #008000">// Set transparency for chart title
+</span> chart_columnClustered.title
+ ({
+    text: <span style="COLOR: #800000">"Sales Data"</span>,
+    color: <span style="COLOR: #800000">"blue"</span>,
+    transparency: 0.5
+  });
+  
+<span style="COLOR: #008000">// Set transparency for chart legend back color and border.
+</span>chart_columnClustered.legend
+   ({
+       backColor: <span style="COLOR: #800000">"red"</span>,
+       backColorTransparency: 0.5,
+       borderStyle: 
+       {
+         color: <span style="COLOR: #800000">"green"</span>,
+         width: 5,
+         transparency: 0.7
+       }
+    });
+   
+<span style="COLOR: #008000">// Set transparency for chart area back color.
+</span>chart_columnClustered.chartArea
+     ({
+                backColor: <span style="COLOR: #800000">"red"</span>,
+                backColorTransparency: 0.9,
+                color: <span style="COLOR: #800000">"black"</span>,
+                transparency: 0.6
+     });       
+
+<span style="COLOR: #008000">// Set transparency for chart data labels.
+</span>chart_columnClustered.dataLabels
+     ({
+                showValue: <span style="COLOR: #0000ff">true</span>,
+                color: <span style="COLOR: #800000">"red"</span>,
+                transparency: 0.6
+      });
+<span style="COLOR: #008000">// Set transparency for chart axes.            
+</span>chart_columnClustered.axes
+      ({
+                primaryCategory:
+          {
+                    lineStyle:
+             {
+                        color: <span style="COLOR: #800000">"blue"</span>,
+                        width: 5,
+                        transparency: 0.8
+              },
+                    style:
+              {
+                        color: <span style="COLOR: #800000">"black"</span>,
+                        transparency: 0.7
+               },
+                    title:
+               {
+                        color: <span style="COLOR: #800000">"dark"</span>,
+                        transparency: 0.4
+                }
+             }
+        });
+<span style="COLOR: #008000">// Set transparency for chart series.
+</span><span style="COLOR: #0000ff">var</span> series1 = chart_columnClustered.series().get(0);
+series1.backColor = <span style="COLOR: #800000">"red"</span>;
+series1.backColorTransparency = 0.5;
+series1.border = 
+      {
+            color: <span style="COLOR: #800000">"blue"</span>,
+            width: 4,
+            transparency: 0.6
+       }
+            chart_columnClustered.series().set(0, series1);
+            sheet.resumePaint();
+};   
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

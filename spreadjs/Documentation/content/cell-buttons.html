@@ -1,0 +1,531 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Cell Buttons | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n283","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="6a477c95-8900-4794-8472-ba8df4395727"/>
+    <meta name="Microsoft.Help.TocParent" content="e9628ea1-c098-40b6-a16a-ca0248291974"/>
+    <meta name="Microsoft.Help.TocOrder" content="7"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / Cell Buttons</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Cell Buttons</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Cell buttons are a set of predefined buttons that can be added to worksheet cells to configure additional functionalities. They allow you to configure specific behavior for operations like when a user clicks on a cell button, edits a cell, or hovers over a cell. The <a href="SpreadJS~GC.Spread.Sheets.Style~cellButtons.html">cellbuttons</a> type belongs to the <a href="SpreadJS~GC.Spread.Sheets.Style.html">Style</a> class, hence it allows you to create named styles that would apply selectively and easily on any cell.</p>
+
+<p>For example, you can create a button with a color picker drop-down by defining a custom color-picker named style for the cell. This style can be reused and applied to any other cell.</p>
+
+<p>The following GIFs display the usage of some cell buttons commands and properties to achieve the desired customizations.</p>
+
+<ul>
+    <li>Cell button with 'Insert' caption<br />
+    <img border="0" alt="basic cell button" src="images/basic-cellbutton.gif" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+
+    <li>Cell button with 'enabled' property set to true and false
+
+        <p><img border="0" alt="Cell button with enable or disable property" src="images/enable-disable-cellbutton.gif" /></p>
+    </li>
+
+    <li>
+        <p>Cell button set to be visible on selecting cell.</p>
+
+        <p><img border="0" alt="Visibility in cell buttons" src="images/cellbutton-visible.gif" /></p>
+    </li>
+
+    <li>
+        <p>Cell Buttons with built-in and custom images</p>
+
+        <p><img border="0" alt="Image in cell button" src="images/image-cellbutton.gif" /></p>
+    </li>
+
+    <li>
+        <p>Cell Button with command function set to perform zoom-in and zoom-out operation in a worksheet</p>
+
+        <p><img border="0" alt="Cell button with command function" src="images/cmd-func-cellbutton.gif" /></p>
+    </li>
+
+    <li>
+        <p>Cell Button with command function set to trigger an alert message</p>
+
+        <p><img border="0" alt="" src="images/cellbutton-alert.gif" /></p>
+    </li>
+
+    <li>
+        <p>Cell button set to dropdown ButtonImageType enum value and opencolorpicker command</p>
+
+        <p><img border="0" alt="Cell button with command action" src="images/cmd-action-dropdown-cellbutton.gif" /></p>
+    </li>
+</ul>
+
+<h3 id="c">Configure Cell Buttons</h3>
+
+<p>You can configure cell buttons by using different properties as described in the table below:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Property</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>ButtonPosition</td>
+
+            <td>This property is of type ButtonPosition enumeration that specifies the position of the cell button. You can set the position of the cell button to left or right and create a custom style for displaying these buttons.</td>
+        </tr>
+
+        <tr>
+            <td>CaptionAlignment</td>
+
+            <td>This property is of type CaptionAlignment enumeration that specifies the position of the caption in the cell button. You can configure the position of the caption to left or right.</td>
+        </tr>
+
+        <tr>
+            <td>ButtonImageType</td>
+
+            <td>This property is of type ButtonImageType enumeration that specifies the image type of the cell button. You can configure the button image type as per the specific preferences such as dropdown, search, undo, redo. Refer to <a href="SpreadJS~GC.Spread.Sheets.ButtonImageType.html">ButtonImageType Enumeration</a> for the complete list.</td>
+        </tr>
+
+        <tr>
+            <td>ButtonVisibility</td>
+
+            <td>
+                This property is of type ButtonVisibility enumeration that specifies the visibility of the cell button. You can choose whether to show or hide the cell buttons on different cell states using the following values:
+
+                <ul>
+                    <li>always =0; indicates the cell button is always visible.</li>
+
+                    <li>onSelected =1; indicates that the cell button is visible only when the cell is in active state.</li>
+
+                    <li>onEditing =2; indicates that the cell button is visible only when the cell enters in the edit mode.</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td>caption</td>
+
+            <td>This property specifies the text of the button that will be displayed in the caption.</td>
+        </tr>
+
+        <tr>
+            <td>position</td>
+
+            <td>This property specifies the position of the button in the cell.</td>
+        </tr>
+
+        <tr>
+            <td>enabled</td>
+
+            <td>This property specifies whether the cell button will respond to the user actions. The default value is set to true.</td>
+        </tr>
+
+        <tr>
+            <td>useButtonStyle</td>
+
+            <td>This property specifies whether the cell button is a button style. The default value is false.</td>
+        </tr>
+
+        <tr>
+            <td>width</td>
+
+            <td>This property specifies the width of the button. If you set this property to "null" or "undefined" then the button fit will automatically adjust itself based on the caption and the size of the image.</td>
+        </tr>
+
+        <tr>
+            <td>visibility</td>
+
+            <td>This property specifies the visibility of the button. Three options are available ("always", "onselect" and "edit").</td>
+        </tr>
+
+        <tr>
+            <td>imageType</td>
+
+            <td>This property specifies the type of the image that you want to display in the button. The default value for this property is "custom".</td>
+        </tr>
+
+        <tr>
+            <td>command</td>
+
+            <td>This property allows you to execute a spread command or a callback when the cell button is clicked.</td>
+        </tr>
+
+        <tr>
+            <td>imageSrc</td>
+
+            <td>This property allows you to upload an image by providing the source of the image when the imageType is set to custom.</td>
+        </tr>
+
+        <tr>
+            <td>captionAlign</td>
+
+            <td>This property specifies the position of the image and the caption. The available options are "left" and "right".</td>
+        </tr>
+
+        <tr>
+            <td>imageSize</td>
+
+            <td>This property specifies the image size. The default value is 16px.</td>
+        </tr>
+
+        <tr>
+            <td>hoverBackColor</td>
+
+            <td>This property specifies the hover back color of cell button when the button is visible and enabled.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="d">Define Button Commands</h3>
+
+<p>After creating the cell button, you can specify different command actions to associate different functionalities to the buttons as per the options mentioned in the following table.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th width="192">Command Option</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td width="192">openColorPicker</td>
+
+            <td>This option can be used when you want to open a color picker on button click event.</td>
+        </tr>
+
+        <tr>
+            <td width="192">openDateTimePicker</td>
+
+            <td>This option can be used when you want to open a date time picker on button click event.</td>
+        </tr>
+
+        <tr>
+            <td width="192">openTimePicker</td>
+
+            <td>This option can be used when you want to open a time picker on button click event.</td>
+        </tr>
+
+        <tr>
+            <td width="192">openMonthPicker</td>
+
+            <td>This option can be used when you want to open a month picker on button click event.</td>
+        </tr>
+
+        <tr>
+            <td width="192">openSlider</td>
+
+            <td>This option can be used when you want to open a slider control on button click event.</td>
+        </tr>
+
+        <tr>
+            <td width="192">openWorkflowList</td>
+
+            <td>This option can be used when you want to open a workflow list on button click event.</td>
+        </tr>
+
+        <tr>
+            <td width="192">openCalculator</td>
+
+            <td>This option can be used when you want to open a calculator on button click event.</td>
+        </tr>
+
+        <tr>
+            <td width="192">openList</td>
+
+            <td>This option can be used when you want to open a list on button click event.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> You can use and customize the above commands in the dropdown setting of a cell button as well, refer to&nbsp;<a href="cell-dropdowns.html" data-auto-update-caption="true">Cell Dropdowns</a> for more details.
+</div>
+
+<p>Refer to the following example code for adding different types of cell buttons in a worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Configure Workbook and Worksheet
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+            
+activeSheet.setColumnWidth(3, 300);
+activeSheet.setColumnWidth(4, 200);
+
+<span style="COLOR: #008000">// Add a basic button with caption
+</span><span style="COLOR: #0000ff">var</span> basicButttonStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+basicButttonStyle.cellButtons = 
+[
+    {
+        caption: <span style="COLOR: #800000">"Insert"</span>
+    }
+];
+
+
+activeSheet.setText(2, 3, <span style="COLOR: #800000">"Basic button with caption"</span>);
+activeSheet.setStyle(2, 4, basicButttonStyle);
+
+
+<span style="COLOR: #008000">/* Add button with different configuration settings such as
+
+position, style, enabled/disabled */</span>
+<span style="COLOR: #0000ff">var</span> customButtonStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+customButtonStyle.cellButtons = 
+[
+    {
+        caption: <span style="COLOR: #800000">"enable"</span>,
+        useButtonStyle: <span style="COLOR: #0000ff">true</span>,
+        <span style="COLOR: #008000">// enabled: true,
+</span>        hoverBackColor: <span style="COLOR: #800000">"#3390FF"</span>,          
+        position: GC.Spread.Sheets.ButtonPosition.left
+    },
+    {
+        caption: <span style="COLOR: #800000">"disabled"</span>,
+        useButtonStyle: <span style="COLOR: #0000ff">false</span>,
+        enabled: <span style="COLOR: #0000ff">false</span>,
+        position: GC.Spread.Sheets.ButtonPosition.right
+    }
+];
+activeSheet.setText(4, 3, <span style="COLOR: #800000">"enabled/disabled buttons"</span>);
+activeSheet.setStyle(4, 4, customButtonStyle);
+
+
+<span style="COLOR: #008000">// Add button with built-in and custom image
+</span><span style="COLOR: #0000ff">var</span> ImageStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+ImageStyle.cellButtons =
+[
+    {
+        useButtonStyle: <span style="COLOR: #0000ff">true</span>,
+        imageSize: {
+                height: 8,
+                width: 8
+        },
+        imageType: GC.Spread.Sheets.ButtonImageType.ellipsis
+    },
+    {
+        useButtonStyle: <span style="COLOR: #0000ff">true</span>,
+        imageType: GC.Spread.Sheets.ButtonImageType.custom,
+        imageSrc:<span style="COLOR: #800000">"data:image/bmp;base64, Qk1eAAAAAAAAAD4AAAAoAAAACAAAAAgAAAABAAEAAAAAACAAAADEDgAAxA4AAAAAAAAAAAAAAAAAAP///wB+AAAApQAAANsAAAClAAAApQAAANsAAAClAAAAfgAAAA=="</span>
+    }
+];
+activeSheet.setText(6, 3, <span style="COLOR: #800000">"Image Buttons"</span>);
+activeSheet.setStyle(6, 4, ImageStyle);
+
+
+<span style="COLOR: #008000">// Add Dropdown button with command action
+</span><span style="COLOR: #0000ff">var</span> dropdownStylecommand = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+dropdownStylecommand.cellButtons =
+[
+    {
+        imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+        useButtonStyle: <span style="COLOR: #0000ff">true</span>,
+        command: <span style="COLOR: #800000">"openColorPicker"</span>
+    }
+];
+activeSheet.setText(8, 3, <span style="COLOR: #800000">"Dropdown button with command"</span>);
+activeSheet.setStyle(8, 4, dropdownStylecommand);
+
+
+<span style="COLOR: #008000">// Add button with command function
+</span><span style="COLOR: #0000ff">var</span> buttonCommandfunction = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+buttonCommandfunction.cellButtons =
+[
+    {
+        imageType: GC.Spread.Sheets.ButtonImageType.search,
+        command: (sheet, row, col, option) =&gt;
+        {
+            <span style="COLOR: #0000ff">if</span> (sheet.zoom() === 1) {
+                sheet.zoom(1.5);
+            } <span style="COLOR: #0000ff">else</span> {
+                sheet.zoom(1);
+            }
+        }
+    }
+];
+
+activeSheet.setText(10, 3, <span style="COLOR: #800000">"Button with command function"</span>);
+activeSheet.setStyle(10, 4, buttonCommandfunction);
+            
+<span style="COLOR: #008000">// Add button with Alert command action
+</span><span style="COLOR: #0000ff">var</span> visibleStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+visibleStyle.cellButtons = 
+[
+    {
+        caption:<span style="COLOR: #800000">"Alert"</span>,
+        buttonBackColor: <span style="COLOR: #800000">"#00C2D6"</span>,
+        command: (sheet, row, col, option) =&gt; {
+            alert(<span style="COLOR: #800000">"This is an alert."</span>);
+        }
+    }
+];
+activeSheet.setStyle(7, 10, visibleStyle);
+
+<span style="COLOR: #008000">// Add button visibility property
+</span><span style="COLOR: #0000ff">var</span> onScreenstyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+onScreenstyle.cellButtons = [
+     {
+        caption: <span style="COLOR: #800000">"On Select"</span>,
+        buttonBackColor:<span style="COLOR: #800000">"#ffdc9d"</span>,
+        visibility: GC.Spread.Sheets.ButtonVisibility.onSelected
+   }
+];
+activeSheet.setStyle(10, 10, onScreenstyle);
+activeSheet.getCell(10,10).value(<span style="COLOR: #800000">"Select cell.."</span>).vAlign(GC.Spread.Sheets.VerticalAlign.bottom);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

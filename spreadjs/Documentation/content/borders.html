@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Use SpreadJS to work with borders, gridlines, and diagonal lines. Learn how to set their color or line style in SpreadJS docs." />
+    
+    <title>Borders, Gridlines and Diagonal Lines | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n325","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Use SpreadJS to work with borders, gridlines, and diagonal lines. Learn how to set their color or line style in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="57c15e80-76a9-41b5-9bc9-8c5780f739cb"/>
+    <meta name="Microsoft.Help.TocParent" content="e9628ea1-c098-40b6-a16a-ca0248291974"/>
+    <meta name="Microsoft.Help.TocOrder" content="24"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / Borders, Gridlines and Diagonal Lines</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Borders, Gridlines and Diagonal Lines</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports borders around cells, columns, or rows. The widget also displays gridlines by default.&nbsp;You can set the color or line style of the border around the cells, columns, or rows.&nbsp;You can specify the color and whether to show gridlines. You can also set diagonal lines in a cell and a cell range.</p>
+
+<p>Use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~setBorder.html">setBorder</a> method to set a border. You can also use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~borderBottom.html">borderBottom</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~borderTop.html">borderTop</a>,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~borderRight.html">borderRight</a>, and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~borderLeft.html">borderLeft</a>&nbsp;methods to set a cell border.</p>
+
+<p><img border="0" alt="Cell border" src="images/cborder.png" /></p>
+
+<p>The&nbsp;<strong>options.gridline</strong>&nbsp;property can be used to set the gridline color and specify the horizontal or vertical gridline in the widget. By default, the sheet displays both the vertical and horizontal grid lines. The default grid line color is #d0d7e5.</p>
+
+<p>You can organize complex data headers by setting&nbsp;diagonal line borders in the cell. In order to set diagonal lines in a cell or a&nbsp;cell range, you can use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~diagonalUp.html">diagonalUp</a> method and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~diagonalDown.html">diagonalDown</a> method. The diagonalUp method represents the top-right point line in a cell to the bottom-left point line in a cell (refer to the yellow line in the diagram shown below). The diagonalDown method represents the top-left point line in a cell to the bottom-right point in a cell (refer to the green line in the diagram shown below).</p>
+
+<p><img border="0" alt="Diagonal line borders" src="images/digonal_basic.png" /></p>
+
+<p>The Diagonal border line feature&nbsp;in Spread JS&nbsp;supports all types of line styles (dashDot, dashDotDot, dashed, dotted, double, empty, hair, medium, mediumDashDot, mediumDashDotDot, mediumDashed, SlantedDashDot, thick, thin) as shown in the below image.</p>
+
+<p class="InnovaContentWidget" contenteditable="false" style="BORDER-TOP: white 2px solid; MARGIN-TOP: 2px; BORDER-BOTTOM: white 1px solid" data-widget-layout="block" data-source-widget-type="Dynamic Image" data-widget-type="Dynamic Image"></p>
+
+<div class="WidgetHeader">
+    <table class="WidgetHeaderTable">
+        <tbody>
+            <tr>
+                <td class="WidgetCaption" valign="middle">Dynamic Image</td>
+
+                <td class="WidgetCommands" valign="middle"><span id="deletewidget" title="Delete this Widget" designcommand="deletewidget"><img id="deletewidget" border="0" src="file:///C:/Program Files (x86)/Innovasys/DocumentX2017/configuration/widgets/resources/icons/delete.gif" name="deletewidget" /></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="WidgetContent">
+    <table class="hs-thumbnail-container">
+        <tbody>
+            <tr>
+                <td>
+                    <span style="DISPLAY: none">images/diagonal_all_thumb.png</span> <a onclick="javascript:$.slimbox('images/diagonal_all.png','Line Styles supported in Diagonal Border Lines');" title="Line Styles supported in Diagonal Border Lines" class="hs-thumbnail" href="#" rel="lightbox"><img title="Click to Enlarge" alt="Line Styles supported in Diagonal Border Lines" src="images/diagonal_all_thumb.png" /></a>
+
+                    <p><span id="ImageTitle" class="WidgetProperty" contenteditable="true" style="BORDER-TOP: rgb(224,224,224) 1px dotted; BORDER-RIGHT: rgb(224,224,224) 1px dotted; VERTICAL-ALIGN: top; BORDER-BOTTOM: rgb(224,224,224) 1px dotted; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; PADDING-LEFT: 5px; BORDER-LEFT: rgb(224,224,224) 1px dotted; PADDING-RIGHT: 4px; BACKGROUND-COLOR: white">Line Styles supported in Diagonal Border Lines</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="ThumbnailUrl" class="WidgetProperty" contenteditable="false" style="DISPLAY: none; VISIBILITY: hidden">
+        images/diagonal_all_thumb.png
+    </div>
+</div>
+
+<p></p>
+
+<p>Apart from the above line styles, diagonal border lines also support JSON serialization/deserialization, Excel I/O and PDF export (for printing).</p>
+
+<h4>Using Code</h4>
+
+<p>This example specifies whether to show the gridlines and sets the gridline color.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+worksheet.options.gridline = {color:<span style="COLOR: #800000">"#FF2235"</span>, showVerticalGridline: <span style="COLOR: #0000ff">true</span>, showHorizontalGridline: <span style="COLOR: #0000ff">false</span>};
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+
+<h4>Using Code</h4>
+
+<p><img border="0" alt="Cell borders" src="images/codecellbord.png" /></p>
+
+<p>The following example sets a border for a cell.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+window.onload = <span style="COLOR: #0000ff">function</span>()
+{
+   <span style="COLOR: #0000ff">var</span> spread =
+   <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+   <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+  
+   <span style="COLOR: #008000">// Set border lines to cell(1,1).
+</span>   <span style="COLOR: #0000ff">var</span> cell = activeSheet.getCell(1, 1, GC.Spread.Sheets.SheetArea.viewport);
+   cell.borderLeft(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"Red"</span>, GC.Spread.Sheets.LineStyle.thick));
+   cell.borderTop(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"Blue"</span>, GC.Spread.Sheets.LineStyle.double));
+   cell.borderRight(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder
+   (<span style="COLOR: #800000">"Green"</span>, GC.Spread.Sheets.LineStyle.dashDot));
+   cell.borderBottom(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder
+   (<span style="COLOR: #800000">"Yellow"</span>, GC.Spread.Sheets.LineStyle.mediumDashed));
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>This example sets the border color.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.getRange(2, 2, 2, 2, GC.Spread.Sheets.SheetArea.viewport).setBorder(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"#8A2BE2"</span>, GC.Spread.Sheets.LineStyle.medium), {all:<span style="COLOR: #0000ff">true</span>});
+activeSheet.getRange(-1,5, -1, 1).borderTop(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"#F0FFFF"</span>,GC.Spread.Sheets.LineStyle.medium));
+activeSheet.getRange(-1, 5, -1, 1).borderLeft(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"#F5F5DC"</span>,GC.Spread.Sheets.LineStyle.medium));
+activeSheet.getRange(-1, 5, -1, 1).borderRight(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"#FF02FF"</span>, GC.Spread.Sheets.LineStyle.dashDot));
+activeSheet.getRange(-1, 5, -1, 1).borderBottom(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"#FFE4C4"</span>,GC.Spread.Sheets.LineStyle.thin));
+activeSheet.getRange(5, -1, 1, -1).borderTop(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"#A52A2A"</span>,GC.Spread.Sheets.LineStyle.mediumDashed));
+activeSheet.getRange(5, -1, 1, -1).borderLeft(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"#FF02FF"</span>,GC.Spread.Sheets.LineStyle.medium));
+activeSheet.getRange(5, -1, 1, -1).borderRight(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"#5F9EA0"</span>, GC.Spread.Sheets.LineStyle.dashDot));
+activeSheet.getRange(5, -1, 1, -1).borderBottom(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"#6495ED"</span>,GC.Spread.Sheets.LineStyle.dotted));
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>This example code sets the diagonal lines in a cell.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+<span style="COLOR: #0000ff">var</span> cell = sheet.getCell(1, 1);
+cell.diagonalDown(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"blue"</span>,GC.Spread.Sheets.LineStyle.thick));
+cell = sheet.getCell(1, 3);
+cell.diagonalDown(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"green"</span> ,GC.Spread.Sheets.LineStyle.double));
+cell.diagonalUp(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"yellow"</span>,GC.Spread.Sheets.LineStyle.double));
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

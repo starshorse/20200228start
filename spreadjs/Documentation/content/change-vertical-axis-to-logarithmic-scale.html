@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Change Vertical Axis To Logarithmic Scale | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n561","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="9588a5fc-f0da-4096-b501-7f220908e9ef"/>
+    <meta name="Microsoft.Help.TocParent" content="946d2240-80ec-4d13-9430-adf0a079d961"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / <a href="ConfigureChartElements.html">Chart Elements</a>
+ / <a href="ConfiguringAxes.html">Axes</a>
+ / Change Vertical Axis To Logarithmic Scale</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Change Vertical Axis To Logarithmic Scale</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Plotting data with large differences in values&nbsp;often leads to incorrect data analysis and may even fail to showcase a completely readable chart.&nbsp;SpreadJS allows users to customize the minimum and the maximum scale values of the vertical axis (also called value axis). Using this feature, users can change the value axis to logarithmic scale&nbsp;in order to&nbsp;meet their specific analytical requirements while formatting charts.</p>
+
+<h3 id="a">Usage Scenario</h3>
+
+<p>This feature is useful in the following scenarios:</p>
+
+<ul>
+    <li>When the values plotted in a chart cover a huge data range, it's a good idea to change value axis to logarithmic scale.</li>
+
+    <li>When business analysts need to carry out an in-depth comparison of sales revenues between different companies.</li>
+
+    <li>When users are trying to visualize comprehensive data sets (like economic, demographic or marketing data sets).</li>
+
+    <li>When users want to compare the relative change (not the absolute change) in data series values.</li>
+
+    <li>When users want to quickly analyse the variances between significantly different sets of data.</li>
+</ul>
+
+<p><strong>Example</strong> - Let's say you want to compare sales revenues of different product-based companies A and B, where A refers to a large company that is growing substantially but slowly and B refers to a small company that is growing quickly.</p>
+
+<p>Now, if the sales revenues of both the companies are depicted in the same line chart, it will just compare the absolute data values and the readability of the chart will decrease to a great extent. Further, it will be difficult to rule out that the smaller firm (B) is growing comparatively faster than the larger one (A). In such a sceanrio, using log scales helps&nbsp;business analysts to constantly track the sales of competitors in an easy and effective way.</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Changing vertical aixs to logarithmic scale" src="images/spreadjsv13images/log-axes.png" /></p>
+
+<h3 id="b">LogBase and Scaling Rules</h3>
+
+<p>The&nbsp;<strong>scaling</strong> property of the <strong>IAxis</strong> interface allows users to get or set the axes of the chart. The LogBase can be configured to various options - "Null", "10" and "2". While changing the vertical axis to logarithmic axes, the following rules must be kept in mind:</p>
+
+<ul>
+    <li>Users can set the log scale for only the vertical axis (value axis).</li>
+
+    <li>The axes labels number grows according to the given base power. For example- if log base is 3, the numbers are 1, 3, 9, 27, 81...</li>
+
+    <li>Minimum base is 2</li>
+
+    <li>LogBase value must lie between 2-1000.</li>
+
+    <li>If minimum bound is set to auto, the minimum value is 1.</li>
+</ul>
+
+<p>The following table lists the different log base options that can be used while changing the vertical axis to log scale.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td width="56"><strong>LogBase</strong></td>
+
+            <td width="356"><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td width="56">Null</td>
+
+            <td width="356">This option is used to disable the log scale.</td>
+        </tr>
+
+        <tr>
+            <td width="56">10</td>
+
+            <td width="356">This option is used to customize the log scale with 10 base.</td>
+        </tr>
+
+        <tr>
+            <td width="56">2</td>
+
+            <td width="356">This option is used to customize the log scale with 2 base.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="c">Supported Chart Types</h3>
+
+<p>All chart types containing at least one value axis support logarithmic scaling except Histogram charts, Box &amp; Whisker charts, and Waterfall charts.</p>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> <span style="COLOR: rgb(0,0,0)">The following limitation must be kept in mind while working with log scales in charts:</span></p>
+
+    <ul>
+        <li><span style="COLOR: rgb(0,0,0)">If a user enables the log scaled x axis in a scatter or bubble chart, and then changes the chart type to any other chart type containing a category axis (x-axis); then the chart will display a strange view and the "Add Chart Element Axes" state may not work as expected.</span></li>
+    </ul>
+</div>
+
+<h3 id="d">Using Code</h3>
+
+<p>This example code depicts a relative comparison of sales revenues of two different companies using logarithmic scaling in the chart.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+activeSheet.suspendPaint();
+<span style="COLOR: #008000">// Prepare data for chart
+</span>activeSheet.setValue(0, 1, <span style="COLOR: #800000">"Y-2015"</span>);
+activeSheet.setValue(0, 2, <span style="COLOR: #800000">"Y-2016"</span>);
+activeSheet.setValue(0, 3, <span style="COLOR: #800000">"Y-2017"</span>);
+activeSheet.setValue(0, 4, <span style="COLOR: #800000">"Y-2018"</span>);
+activeSheet.setValue(0, 5, <span style="COLOR: #800000">"Y-2019"</span>);
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">"Gradlco Corp. Ltd"</span>);
+activeSheet.setValue(2, 0, <span style="COLOR: #800000">"Saagiate Corp. Ltd."</span>);
+activeSheet.setColumnWidth(0, 120);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> r = 1; r &lt;= 2; r++)
+{
+   <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> c = 1; c &lt;= 5; c++) {
+   activeSheet.setValue(r, c, parseInt(Math.random() * 5000));
+}
+}
+<span style="COLOR: #008000">// Add columnClustered chart
+</span>chart_columnClustered = activeSheet.charts.add(<span style="COLOR: #800000">'chart_columnClustered'</span>, GC.Spread.Sheets.Charts.ChartType.columnClustered, 50, 100, 600, 400);
+<span style="COLOR: #0000ff">var</span> series = chart_columnClustered.series();
+series.add({
+chartType: GC.Spread.Sheets.Charts.ChartType.columnClustered,
+axisGroup: GC.Spread.Sheets.Charts.AxisGroup.primary,
+name: <span style="COLOR: #800000">"Sheet1!$A$2"</span>,
+xValues: <span style="COLOR: #800000">"Sheet1!$B$1:$F$1"</span>,
+yValues: <span style="COLOR: #800000">"Sheet1!$B$2:$D$2"</span>
+});
+series.add({
+chartType: GC.Spread.Sheets.Charts.ChartType.lineMarkers,
+axisGroup: GC.Spread.Sheets.Charts.AxisGroup.secondary,
+name: <span style="COLOR: #800000">"Sheet1!$A$3"</span>,
+xValues: <span style="COLOR: #800000">"Sheet1!$B$1:$F$1"</span>,
+yValues: <span style="COLOR: #800000">"Sheet1!$B$3:$D$3"</span>
+});
+<span style="COLOR: #0000ff">var</span> axes = chart_columnClustered.axes();
+axes.primaryCategory.style.color = <span style="COLOR: #800000">'green'</span>;
+axes.primaryCategory.title.color = <span style="COLOR: #800000">'green'</span>;
+axes.primaryCategory.title.text = <span style="COLOR: #800000">'Primary Category Axes'</span>;
+axes.primaryValue.style.color = <span style="COLOR: #800000">'red'</span>;
+axes.primaryValue.title.color = <span style="COLOR: #800000">'red'</span>;
+axes.primaryValue.title.text = <span style="COLOR: #800000">'Primary Value Axes with Logarithmic Scaling'</span>;
+axes.primaryValue.title.fontSize = 16;
+axes.primaryValue.scaling = {
+logBase: 20
+};
+           
+axes.secondaryCategory.visible = <span style="COLOR: #0000ff">true</span>;
+axes.secondaryCategory.style.color = <span style="COLOR: #800000">'green'</span>;
+axes.secondaryCategory.title.color = <span style="COLOR: #800000">'green'</span>;
+axes.secondaryCategory.title.text = <span style="COLOR: #800000">'Secondary Category Axes'</span>;
+axes.secondaryCategory.title.fontSize = 16;
+axes.secondaryValue.style.color = <span style="COLOR: #800000">'blue'</span>;
+axes.secondaryValue.title.color = <span style="COLOR: #800000">'blue'</span>;
+axes.secondaryValue.format = <span style="COLOR: #800000">'General'</span>;
+axes.secondaryValue.title.text = <span style="COLOR: #800000">'Secondary Value Axes'</span>;
+chart_columnClustered.axes(axes);
+<span style="COLOR: #008000">// Configure Chart Title
+</span><span style="COLOR: #0000ff">var</span> title = chart_columnClustered.title();
+title.text = <span style="COLOR: #800000">"Annual Sales Record"</span>;
+title.fontFamily = <span style="COLOR: #800000">"Cambria"</span>;
+title.fontSize = 28;
+title.color = <span style="COLOR: #800000">"Red"</span>;
+chart_columnClustered.title(title);
+activeSheet.resumePaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

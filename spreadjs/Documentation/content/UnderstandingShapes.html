@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Add built-in and custom shapes in the worksheets to improve dynamic interaction with the information lying in rows and columns using SpreadJS." />
+    
+    <title>Shapes | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n486","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Add built-in and custom shapes in the worksheets to improve dynamic interaction with the information lying in rows and columns using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="2f0db448-2a74-490e-81e2-1556b7c288e3"/>
+    <meta name="Microsoft.Help.TocParent" content="da6e2ac1-8472-406f-a292-f03731ed2cd7"/>
+    <meta name="Microsoft.Help.TocOrder" content="18"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / Shapes</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Shapes</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports adding built-in shapes, custom shapes, connector shapes, and camera shapes in worksheets. These shapes can be used to enhance data visualization and interact with the information in the cells.</p>
+
+<p>You can add text and hyperlinks in the shapes, format shape layout, and apply different shape styles like fill color, font size, horizontal and vertical alignment, border color and line width, etc. You can customize the shape attributes like rotating or resizing the shapes; defining and adding the connection points for connector shapes, and customizing the border of shapes.</p>
+
+<p>The following types of shapes can be applied to the SpreadJS worksheets. Click on the images to visit the corresponding topics:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th width="193">
+                <h3>Shape Type</h3>
+            </th>
+
+            <th width="365">
+                <h3>Image</h3>
+            </th>
+
+            <th>
+                <h3>Description</h3>
+            </th>
+        </tr>
+
+        <tr>
+            <td width="193"><a href="AddingBuiltInShapes.html">Built-in Shape</a></td>
+
+            <td width="300">
+                <p><a href="AddingBuiltInShapes.html"><img style="HEIGHT: 176px; WIDTH: 214px" border="0" alt="Built-In Shapes" src="images/basic-shape.png" width="170" height="188" /></a></p>
+            </td>
+
+            <td width="300">Choose from different types of built-in shapes and geometric figures such as squares and circles available in the worksheet.</td>
+        </tr>
+
+        <tr>
+            <td width="193"><a href="AddingtheConnectorShapes.html">Connector Shape</a></td>
+
+            <td width="300">
+                <p><a href="AddingtheConnectorShapes.html"><img style="HEIGHT: 177px; WIDTH: 247px" border="0" alt="Connector Shapes" src="images/connector-shape.png" width="247" height="177" /></a></p>
+            </td>
+
+            <td width="300">Connect two or more shapes using distinct lines, arrows and connection points in the worksheet to create unique shapes and models such as flowcharts.</td>
+        </tr>
+
+        <tr>
+            <td width="193"><a href="AddingCustomShapes.html">Custom Shape</a></td>
+
+            <td width="300">
+                <p><a href="AddingCustomShapes.html"><img border="0" alt="Custom Shapes" src="images/custom_shapes.png" /></a></p>
+            </td>
+
+            <td width="300">Add custom shapes in worksheets based on specific requirements and customize the shape model to draw and visualize diagrams.</td>
+        </tr>
+
+        <tr>
+            <td width="193"><a href="camerashape.html">Camera Shape</a></td>
+
+            <td width="300">
+                <p><a href="camerashape.html"><img border="0" alt="Camera Shapes" src="images/camera-shape-basic.gif" /></a></p>
+            </td>
+
+            <td width="300">Add a dynamic image that reflects any changes in the referenced region to help create useful and interactive dashboards in the worksheet.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>SpreadJS supports various operations on shapes to provide an aesthetic appeal to your worksheets while also making them look extremely professional.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><a href="https://www.grapecity.com/spreadjs/docs/latest/online/AddingGroupShapes.html">Group Shapes</a></td>
+
+            <td>Group and ungroup&nbsp;shapes in the worksheets.</td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.grapecity.com/spreadjs/docs/latest/online/AddingShapeswithFormulas.html">Shape Property Formulas</a></td>
+
+            <td>Add built-in shapes and custom shapes with formulas in the worksheets.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ShapePropertyLinks.html" data-auto-update-caption="true">Shape Property Links</a></td>
+
+            <td>Bind a shape's properties to a worksheet cell by reference in a formula.</td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.grapecity.com/spreadjs/docs/latest/online/formattingshapes.html">Formatting Shapes</a></td>
+
+            <td>Add different types of compound lines in shapes.</td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.grapecity.com/spreadjs/docs/latest/online/fill-effects.html">Fill Effects</a></td>
+
+            <td>Add fill effects in shapes to enhance their appearance.</td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.grapecity.com/spreadjs/docs/latest/online/text-on-shapes.html">Text on Shapes</a></td>
+
+            <td>Add and edit text in shapes.</td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.grapecity.com/spreadjs/docs/latest/online/hyperlinks-on-shapes.html">Hyperlinks on Shapes</a></td>
+
+            <td>Add hyperlinks on shapes.</td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.grapecity.com/spreadjs/docs/latest/online/arrange-shapes.html">Arrange Shapes</a></td>
+
+            <td>Adjust shape positions using shape alignment options, distribution options or snapping them to other shapes or grids while using multiple shapes.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> To integrate shapes in the worksheet, gc.spread.sheets.shapes.*.*.*.js script file needs to be&nbsp;referenced.</p>
+</div>
+
+<h3>Set Visibility of Shape Handles</h3>
+
+<p>When a shape is clicked, the shape handles become visible by default. They allow you to resize, rotate or adjust shapes. However, you can choose to hide the shape handles by setting&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Shapes.ShapeBase~showHandle.html">showHandle</a> method to false (true by default).</p>
+
+<p>This option&nbsp;provides a cleaner view when resizing the shapes and hides all the handles. You can still select and move the shape by clicking and dragging it.</p>
+
+<p><strong>With Handles&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Without Handles</strong></p>
+
+<p><img border="0" alt="" src="images/shape-handle.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #008000">// initializing Spread
+</span>    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+    <span style="COLOR: #008000">// get the activesheet
+</span>    <span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+    <span style="COLOR: #008000">// Add heart shape to activeSheet
+</span>    heart = activeSheet.shapes.add(<span style="COLOR: #800000">"Shape1"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.heart, 100, 60, 200, 160);
+    <span style="COLOR: #008000">// disable showHandle for the shape
+</span>    heart.showHandle(<span style="COLOR: #0000ff">false</span>);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>Similarly, you can also disable the rotation handle of a shape by setting&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Shapes.ShapeBase~allowRotate.html">allowRotate</a> method to false (true by default). To disable rotation for connector shapes,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Shapes.ShapeBase~allowResize.html">allowResize</a> can be set to false.</p>
+
+<p><img border="0" alt="" src="images/shapeHandleRotate.png" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> oval;
+$(document).ready(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #008000">// initializing Spread
+</span>    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+    <span style="COLOR: #008000">// get the activesheet
+</span>    <span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+    <span style="COLOR: #008000">// Add heart shape to activeSheet
+</span>    oval= activeSheet.shapes.add(<span style="COLOR: #800000">"Shape1"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.oval, 100, 60, 200, 160);
+    <span style="COLOR: #008000">// set allowRotate to false
+</span>    oval.allowRotate(<span style="COLOR: #0000ff">false</span>);
+});
+
+
+<span style="COLOR: #008000">// function to change angle of shape using code
+</span><span style="COLOR: #0000ff">function</span> myFunction() {
+    <span style="COLOR: #0000ff">var</span> x = document.getElementById(<span style="COLOR: #800000">"input"</span>).value;
+    <span style="COLOR: #008000">// x is the angle by which shape is rotated
+</span>    oval.rotate(x);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

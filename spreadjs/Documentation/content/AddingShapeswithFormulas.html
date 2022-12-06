@@ -1,0 +1,700 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to add built-in shapes and custom shapes with formulas in the worksheets. Learn more in SpreadJS docs." />
+    
+    <title>Shape Property Formulas | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n497","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to add built-in shapes and custom shapes with formulas in the worksheets. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="bc953bab-8c53-452f-a11d-55e87b523618"/>
+    <meta name="Microsoft.Help.TocParent" content="2f0db448-2a74-490e-81e2-1556b7c288e3"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="UnderstandingShapes.html">Shapes</a>
+ / Shape Property Formulas</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Shape Property Formulas</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to add built-in shapes and custom shapes with formulas in the worksheets in order to enable modifications in the shape model.</p>
+
+<h3>Benefits of using Data Driven Shapes</h3>
+
+<p>This feature allows users to create dynamic shapes whose properties are evaluated through the expressions in a spreadsheet, another shape or a data source. It enables shape data binding with these expressions.</p>
+
+<p>Let's take a look at a few scenarios where this feature&nbsp;is particularly&nbsp;helpful:</p>
+
+<ul>
+    <li>When users want to create a&nbsp;flowchart which can be dynamically updated based on the formulas in a spreadsheet</li>
+
+    <li>When users want to maintain a&nbsp;hierarchical chart of their company's&nbsp;employees&nbsp;with same shape background for employees at same designation</li>
+
+    <li>When users want to update the sales revenue in a shape every time its value is updated in the spreadsheet</li>
+</ul>
+
+<p>In order to add shapes with formula equations, refer to the following tasks:</p>
+
+<ul>
+    <li><a href="#a">Adding Built-in Shapes with Formulas</a></li>
+
+    <li><a href="#b">Adding Custom Shapes with Formulas</a></li>
+</ul>
+
+<h3>Adding Built-in Shapes with Formulas</h3>
+
+<p>Users can add built-in shapes with formulas in the worksheets. An example of a shape&nbsp;created using built-in&nbsp;formula is shown below.</p>
+
+<p><img border="0" alt="Built-in shape with formula" src="images/formulabuiltshape.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>This example shows how to add a shape with the built-in formula added&nbsp;to the worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+ <span style="COLOR: #008000">// Add built-in shape with formula
+</span> window.onload = <span style="COLOR: #0000ff">function</span> ()
+{
+  <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+  <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+  sheet.name(<span style="COLOR: #800000">"BuiltInShape"</span>);
+  sheet.setArray(0, 0, [
+  [<span style="COLOR: #800000">"x"</span>, 430], [<span style="COLOR: #800000">"y"</span>, 25],
+  [<span style="COLOR: #800000">"width"</span>, 280], [<span style="COLOR: #800000">"height"</span>, 160],
+  [<span style="COLOR: #800000">"angle"</span>, 0], [<span style="COLOR: #800000">"background color and tranparency"</span>, <span style="COLOR: #800000">"green"</span>, 0.5],
+  [<span style="COLOR: #800000">"border color and width"</span>, <span style="COLOR: #800000">"blue"</span>, 0],
+  [<span style="COLOR: #800000">"shape text"</span>, <span style="COLOR: #800000">"The demo text for built-in shape"</span>],
+  [<span style="COLOR: #800000">"text font"</span>, <span style="COLOR: #800000">"18px Georgia"</span>],
+  [<span style="COLOR: #800000">"text color"</span>, <span style="COLOR: #800000">"white"</span>],
+  ]);
+  sheet.setColumnWidth(0, 220);
+  sheet.setColumnWidth(1, 100);
+  sheet.setColumnWidth(2, 70);
+  sheet.setColumnWidth(3, 70);
+  sheet.setColumnWidth(4, 70);
+  sheet.setColumnWidth(5, 70);;
+  <span style="COLOR: #0000ff">var</span> shape1 = sheet.shapes.add(<span style="COLOR: #800000">"shape1"</span>,
+  GC.Spread.Sheets.Shapes.AutoShapeType.oval, 100, 50, 100, 150);
+  shape1.x(<span style="COLOR: #800000">"=BuiltInShape!B1"</span>);
+  shape1.y(<span style="COLOR: #800000">"=BuiltInShape!B2"</span>);
+  shape1.width(<span style="COLOR: #800000">"=BuiltInShape!B3"</span>);
+  shape1.height(<span style="COLOR: #800000">"=BuiltInShape!B4"</span>);
+  shape1.rotate(<span style="COLOR: #800000">"=BuiltInShape!B5"</span>);
+  shape1.text(<span style="COLOR: #800000">"=BuiltInShape!B8"</span>);
+  <span style="COLOR: #0000ff">var</span> shape1Style = shape1.style();
+  shape1Style.fill.color = <span style="COLOR: #800000">"=BuiltInShape!B6"</span>;
+  shape1Style.fill.transparency = <span style="COLOR: #800000">"=BuiltInShape!C6"</span>;
+  shape1Style.line.color = <span style="COLOR: #800000">"=BuiltInShape!B7"</span>;
+  shape1Style.line.transparency = <span style="COLOR: #800000">"=BuiltInShape!C7"</span>;
+  shape1Style.textEffect.font = <span style="COLOR: #800000">"=BuiltInShape!B9"</span>;
+  shape1Style.textEffect.color = <span style="COLOR: #800000">"=BuiltInShape!B10"</span>;
+  shape1.style(shape1Style);
+ };
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p id="b">Users can also&nbsp;get the formula defined for any attribute of&nbsp;the shape as well as the value referenced by the formula for that particular attribute.&nbsp;For example, in the&nbsp;above built-in shape, the formula for the&nbsp;height of shape is defined as <em>"=BuiltInShape!B4"</em> whereas the value of height is defined as 160 in cell B4.</p>
+
+<h4>Using Code</h4>
+
+<p>This example shows how to get the formula using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~getFormula.html">getFormula</a> method and value&nbsp;for an attribute of&nbsp;built-in shape.</p>
+
+<p></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+activeSheet.setArray(0, 0, [
+    [<span style="COLOR: #800000">"x"</span>, 10],
+    [<span style="COLOR: #800000">"y"</span>, 200],
+    [<span style="COLOR: #800000">"width"</span>, 300],
+    [<span style="COLOR: #800000">"height"</span>, 140],
+    [<span style="COLOR: #800000">"angle"</span>, 0],
+    [<span style="COLOR: #800000">"background color and tranparency"</span>, <span style="COLOR: #800000">"red"</span>, 0.5],
+    [<span style="COLOR: #800000">"border color and width"</span>, <span style="COLOR: #800000">"blue"</span>, 5],
+    [<span style="COLOR: #800000">"shape text"</span>, <span style="COLOR: #800000">"The demo text for cloud shape"</span>],
+    [<span style="COLOR: #800000">"text font"</span>, <span style="COLOR: #800000">"15px Georgia"</span>],
+    [<span style="COLOR: #800000">"text color"</span>, <span style="COLOR: #800000">"Yellow"</span>],
+]);
+
+<span style="COLOR: #0000ff">var</span> shape1 = activeSheet.shapes.add(<span style="COLOR: #800000">"shape1"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.cloud, 50, 200, 100, 150);
+<span style="COLOR: #0000ff">var</span> shapeStyle = shape1.style();
+shapeStyle.fill.color = <span style="COLOR: #800000">'=Sheet1!B6'</span>;
+shape1.style(shapeStyle);
+
+<span style="COLOR: #008000">// Set width and height of shape using setFormula() method
+</span>shape1.setFormula(<span style="COLOR: #800000">"x"</span>, <span style="COLOR: #800000">"=Sheet1!B1"</span>);
+shape1.setFormula(<span style="COLOR: #800000">"y"</span>, <span style="COLOR: #800000">"=Sheet1!B2"</span>);
+shape1.setFormula(<span style="COLOR: #800000">"width"</span>, <span style="COLOR: #800000">"=Sheet1!B3"</span>);
+shape1.setFormula(<span style="COLOR: #800000">"height"</span>, <span style="COLOR: #800000">"=Sheet1!B4"</span>);
+shape1.setFormula(<span style="COLOR: #800000">"rotate"</span>, <span style="COLOR: #800000">"=Sheet1!B5"</span>);
+shape1.setFormula(<span style="COLOR: #800000">"text"</span>, <span style="COLOR: #800000">"=Sheet1!B8"</span>);
+shape1.setFormula(<span style="COLOR: #800000">"style.fill.color"</span>, <span style="COLOR: #800000">"=Sheet1!B6"</span>);
+shape1.setFormula(<span style="COLOR: #800000">"style.fill.transparency"</span>, <span style="COLOR: #800000">"=Sheet1!C6"</span>);
+shape1.setFormula(<span style="COLOR: #800000">"style.line.color"</span>, <span style="COLOR: #800000">"=Sheet1!B7"</span>);
+shape1.setFormula(<span style="COLOR: #800000">"style.line.width"</span>, <span style="COLOR: #800000">"=Sheet1!C7"</span>);
+shape1.setFormula(<span style="COLOR: #800000">"style.textEffect.font"</span>, <span style="COLOR: #800000">"=Sheet1!B9"</span>);
+shape1.setFormula(<span style="COLOR: #800000">"style.textEffect.color"</span>, <span style="COLOR: #800000">"=Sheet1!B10"</span>);
+
+<span style="COLOR: #008000">//Use getFormula() method to return the formula used to set width &amp; height of shape
+</span>console.log(<span style="COLOR: #800000">"Formula for Width : "</span> + shape1.getFormula(<span style="COLOR: #800000">"width"</span>));
+console.log(<span style="COLOR: #800000">"Formula for Height : "</span> + shape1.getFormula(<span style="COLOR: #800000">"height"</span>));
+
+<span style="COLOR: #008000">//Use the attributes of shape to return the value of width and height of shape
+</span>console.log(<span style="COLOR: #800000">"Value of Width: "</span>, shape1.width());
+console.log(<span style="COLOR: #800000">"Value of Height: "</span>, shape1.height());
+
+activeSheet.setColumnWidth(0, 280);
+activeSheet.setColumnWidth(1, 100);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 2; i &lt; 8; i++)
+    activeSheet.setColumnWidth(i, 70);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>&nbsp;</h3>
+
+<h3>Adding Custom Shapes with Formulas</h3>
+
+<p>Users can add custom shapes with formulas in the worksheets. An example of a shape&nbsp;created using the custom formula equation is shown below</p>
+
+<p><img border="0" alt="Custom shape with formula" src="images/shape_customformula.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>This example shows how to add a shape with custom formula added&nbsp;to the worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+ <span style="COLOR: #008000">// Add custom shape with formula
+</span> window.onload = <span style="COLOR: #0000ff">function</span> ()
+{
+   <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+   <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+   sheet.name(<span style="COLOR: #800000">"CustomShape"</span>);
+   sheet.setArray(0, 0, [
+   [<span style="COLOR: #800000">"left"</span>, 480], [<span style="COLOR: #800000">"top"</span>, 60], [<span style="COLOR: #800000">"width"</span>, 400], [<span style="COLOR: #800000">"height"</span>, 240],[<span style="COLOR: #800000">"angle"</span>],
+   [<span style="COLOR: #800000">"background color and tranparency"</span>, <span style="COLOR: #800000">"green"</span>, 0.5],
+   [<span style="COLOR: #800000">"border color and width"</span>, <span style="COLOR: #800000">"blue"</span>, 0],
+   [<span style="COLOR: #800000">"shape text"</span>, <span style="COLOR: #800000">"The demo text for custom shape"</span>],
+   [<span style="COLOR: #800000">"text font"</span>, <span style="COLOR: #800000">"15px Georgia"</span>],
+   [<span style="COLOR: #800000">"text color"</span>, <span style="COLOR: #800000">"red"</span>],
+   [<span style="COLOR: #800000">"margins"</span>, 1, 2, 3, 4],
+   [<span style="COLOR: #800000">"horizontalAlignment"</span>, 1],
+   [<span style="COLOR: #800000">"verticalAlignment"</span>, 1],
+   [<span style="COLOR: #800000">"textDirection"</span>, <span style="COLOR: #800000">"horizontal"</span>],
+   [<span style="COLOR: #800000">"allowTextToOverflowShape"</span>, <span style="COLOR: #0000ff">false</span>],
+   [<span style="COLOR: #800000">"wrapTextInShape"</span>, <span style="COLOR: #0000ff">true</span>],
+   [<span style="COLOR: #800000">"line width"</span>, 3],
+   [<span style="COLOR: #800000">"line style"</span>, 5, <span style="COLOR: #800000">"capType"</span>, 2, <span style="COLOR: #800000">"joinType"</span>, 1],
+   [<span style="COLOR: #800000">"endPoints"</span>, 1, 1, 1, 5, 2, 2],
+   ]);
+   sheet.setColumnWidth(0, 280);
+   sheet.setColumnWidth(1, 100);
+   sheet.setColumnWidth(2, 70);
+   sheet.setColumnWidth(3, 70);
+   sheet.setColumnWidth(4, 70);
+   sheet.setColumnWidth(5, 70);
+   sheet.setCellType(11, 1,
+   createComboCellType(GC.Spread.Sheets.HorizontalAlign, 2));
+   sheet.setCellType(12, 1, createComboCellType(GC.Spread.Sheets.VerticalAlign));
+   sheet.setCellType(17, 1,
+   createComboCellType(GC.Spread.Sheets.Shapes.PresetLineDashStyle));
+   sheet.setCellType(17, 3, createComboCellType(GC.Spread.Sheets.Shapes.LineCapStyle));
+   sheet.setCellType(17, 5,
+   createComboCellType(GC.Spread.Sheets.Shapes.LineJoinStyle));
+   sheet.setCellType(18, 1,
+   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadStyle));
+   sheet.setCellType(18, 4,
+   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadStyle));
+   sheet.setCellType(18, 2,
+   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadLength));
+   sheet.setCellType(18, 5,
+   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadLength));
+   sheet.setCellType(18, 3,
+   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadWidth));
+   sheet.setCellType(18, 6,
+   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadWidth));
+   sheet.setFormula(4, 1, <span style="COLOR: #800000">"=ROW(CustomShape!B10)"</span>);
+   <span style="COLOR: #0000ff">var</span> model =
+  {
+                left: <span style="COLOR: #800000">"=CustomShape!B1"</span>,
+                top: <span style="COLOR: #800000">"=CustomShape!B2"</span>,
+                width: <span style="COLOR: #800000">"=CustomShape!B3"</span>,
+                height: <span style="COLOR: #800000">"=CustomShape!B4"</span>,
+                angle: <span style="COLOR: #800000">"=CustomShape!B5"</span>,
+                options: {
+                    endPoints: {
+                        beginArrow:
+                   {
+                            type: <span style="COLOR: #800000">"=CustomShape!B19"</span>, widthType:
+                            <span style="COLOR: #800000">"=CustomShape!C19"</span>, lengthType: <span style="COLOR: #800000">"=CustomShape!D19"</span>
+   },
+                        endArrow: { type: <span style="COLOR: #800000">"=CustomShape!E19"</span>, widthType:
+                        <span style="COLOR: #800000">"=CustomShape!F19"</span>, lengthType: <span style="COLOR: #800000">"=CustomShape!G19"</span> }
+                    },
+                    fill:
+                   {
+                        type: 1, <span style="COLOR: #008000">// solid fill (now only support solid fill)
+</span>                        color: <span style="COLOR: #800000">"=CustomShape!B6"</span>,
+                        transparency: <span style="COLOR: #800000">"=CustomShape!C6"</span>
+                    },
+                    stroke:
+                    {
+                        type: 1, <span style="COLOR: #008000">// solid fill (now only support solid fill)
+</span>                        color: <span style="COLOR: #800000">"=CustomShape!B7"</span>,
+                        transparency: <span style="COLOR: #800000">"=CustomShape!C7"</span>,
+                        width: <span style="COLOR: #800000">"=CustomShape!B17"</span>,
+                        lineStyle: <span style="COLOR: #800000">"=CustomShape!B18"</span>,
+                        capType: <span style="COLOR: #800000">"=CustomShape!D18"</span>,
+                        joinType: <span style="COLOR: #800000">"=CustomShape!F18"</span>
+                    },
+                    textFormatOptions:
+                    {
+                        text: <span style="COLOR: #800000">"=CustomShape!B8"</span>, <span style="COLOR: #008000">// "Shape Text",
+</span>                        font: <span style="COLOR: #800000">"=CustomShape!B9"</span>, <span style="COLOR: #008000">// "bold 15px Georgia
+</span>                        fill:
+                      {
+                            type: 1, <span style="COLOR: #008000">// solid fill (now only support solid fill)
+</span>                            color: <span style="COLOR: #800000">"=CustomShape!B10"</span>
+                        },
+                        margins:
+                       {
+                            left: <span style="COLOR: #800000">"=CustomShape!B11"</span>,
+                            top: <span style="COLOR: #800000">"=CustomShape!C11"</span>,
+                            right: <span style="COLOR: #800000">"=CustomShape!D11"</span>,
+                            bottom: <span style="COLOR: #800000">"=CustomShape!E11"</span>
+                        },
+                        verticalAlignment:
+                        <span style="COLOR: #800000">"=CustomShape!B13"</span>,  <span style="COLOR: #008000">// (0: top, 1: center, 2: bottom)
+</span>                        horizontalAlignment:
+                        <span style="COLOR: #800000">"=CustomShape!B12"</span>, <span style="COLOR: #008000">// (0: left, 1: center, 2: right)
+</span>                        textDirection:
+                        <span style="COLOR: #800000">"=CustomShape!B14"</span>, <span style="COLOR: #008000">//f "vertical", "rotate90", "rotate270"
+</span>                        allowTextToOverflowShape: <span style="COLOR: #800000">"=CustomShape!B15"</span>,
+                        wrapTextInShape: <span style="COLOR: #800000">"=CustomShape!B16"</span>
+                    }
+                },
+                variables: {
+                    xOffset: 40,
+                    yOffset: 10
+                },
+                path: [[
+                    [<span style="COLOR: #800000">"M"</span>, <span style="COLOR: #800000">"=controls.0.x"</span>, 0],          <span style="COLOR: #008000">// M: move to (x, y)
+</span>                    [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=width - controls.0.x"</span>, 0],  <span style="COLOR: #008000">// L: line to (x, y)
+</span>                    [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=width - 2 * variables.xOffset"</span>, <span style="COLOR: #800000">"=height"</span>], [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=variables.xOffset"</span>, <span style="COLOR: #800000">"=height"</span>],
+                    [<span style="COLOR: #800000">"Z"</span>]],  <span style="COLOR: #008000">// Z: close path
+</span>                [
+                    [<span style="COLOR: #800000">"M"</span>, <span style="COLOR: #800000">"=width - variables.xOffset"</span>, <span style="COLOR: #800000">"=variables.yOffset"</span>],
+                    [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=width"</span>, <span style="COLOR: #800000">"=variables.yOffset"</span>],
+                    [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=width"</span>, <span style="COLOR: #800000">"=height - 4 * variables.yOffset"</span>],
+                    [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=width - variables.xOffset"</span>, <span style="COLOR: #800000">"=height"</span>]
+                ]
+                ],
+                controls: [
+                    {
+                        x: <span style="COLOR: #800000">"=BOUND(0.3*width, 0, false, 0, 0.5*width)"</span>, <span style="COLOR: #008000">// formula used to provide position and range limitation (here default at position (0, 0.2 * width), and the y range from 0 to 0.5*width)
+</span>                        y: 0,
+                        xBehavior: 0,  <span style="COLOR: #008000">// 0 if adjust in x (horizontal), otherwise 1
+</span>                        yBehavior: 1   <span style="COLOR: #008000">// 0 if adjust in y (vertical), otherwise 1
+</span>                    }
+                ],
+                connectionPoints: [
+                    {
+                        x: <span style="COLOR: #800000">"=0.5*width"</span>,
+                        y: 0
+                    },
+                    {
+                        x: <span style="COLOR: #800000">"=0.5*controls.0.x"</span>,
+                        y: <span style="COLOR: #800000">"=0.5*height"</span>
+                    },
+                    {
+                        x: <span style="COLOR: #800000">"=0.5*width"</span>,
+                        y: <span style="COLOR: #800000">"=1*height"</span>
+                    },
+                    {
+                        x: <span style="COLOR: #800000">"=width-0.5*controls.0.x"</span>,
+                        y: <span style="COLOR: #800000">"=0.5*height"</span>
+                    }
+                ],
+                textRect:
+               { left: <span style="COLOR: #800000">"=controls.0.x"</span>, top: 20, bottom: <span style="COLOR: #800000">"=height - 20"</span>,
+                right: <span style="COLOR: #800000">"=width - variables.xOffset"</span> }};
+                sheet.shapes.add(<span style="COLOR: #800000">'shape2'</span>, model);
+         };
+ <span style="COLOR: #0000ff">function</span> createComboCellType(enumType, max)
+          {
+            <span style="COLOR: #0000ff">var</span> combo = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.ComboBox();
+            <span style="COLOR: #0000ff">var</span> items = [];
+            <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> name <span style="COLOR: #0000ff">in</span> enumType)
+            {
+                <span style="COLOR: #0000ff">var</span> value = enumType[name];
+                <span style="COLOR: #0000ff">if</span> (!max || value &lt;= max)
+                   {
+                    items.push
+                    ({
+                        text: name,
+                        value: value
+                    });
+                }
+            }
+            combo.items(items);
+            combo.editorValueType(GC.Spread.Sheets.CellTypes.EditorValueType.value);
+            <span style="COLOR: #0000ff">return</span> combo;
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> The Shape API set will accept formula or values just like the custom option, but will always return the corresponding value. The range reference is required in sheetName!A10 for A1 style and the context dependence formula is supported (e.g ROW(Sheet1!B30).</p>
+</div>
+
+<p id="b">Users can also&nbsp;get the formula defined for any attribute of&nbsp;the shape as well as the value referenced by the formula for that particular attribute.&nbsp;For example, in the&nbsp;above&nbsp;custom shape, the formula for the&nbsp;height of shape is defined as <em>"=CustomShape!B4"</em> whereas the value of height is defined as 240 in cell B4.</p>
+
+<h4>Using Code</h4>
+
+<p>This example shows how to get the formula using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~getFormula.html">getFormula</a> method and value&nbsp;for an attribute of&nbsp;custom shape.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+activeSheet.name(<span style="COLOR: #800000">"CustomShape"</span>);
+<span style="COLOR: #008000">// Set Data
+</span>activeSheet.setArray(0, 0, [
+    [<span style="COLOR: #800000">"left"</span>, 480],
+    [<span style="COLOR: #800000">"top"</span>, 60],
+    [<span style="COLOR: #800000">"width"</span>, 300],
+    [<span style="COLOR: #800000">"height"</span>, 240],
+    [<span style="COLOR: #800000">"angle"</span>],
+    [<span style="COLOR: #800000">"background color and tranparency"</span>, <span style="COLOR: #800000">"green"</span>, 0.5],
+    [<span style="COLOR: #800000">"border color and width"</span>, <span style="COLOR: #800000">"blue"</span>, 0],
+    [<span style="COLOR: #800000">"shape text"</span>, <span style="COLOR: #800000">"The demo text for custom shape"</span>],
+    [<span style="COLOR: #800000">"text font"</span>, <span style="COLOR: #800000">"15px Georgia"</span>],
+    [<span style="COLOR: #800000">"text color"</span>, <span style="COLOR: #800000">"red"</span>],
+    [<span style="COLOR: #800000">"margins"</span>, 1, 2, 3, 4],
+    [<span style="COLOR: #800000">"horizontalAlignment"</span>, 1],
+    [<span style="COLOR: #800000">"verticalAlignment"</span>, 1],
+    [<span style="COLOR: #800000">"textDirection"</span>, <span style="COLOR: #800000">"horizontal"</span>],
+    [<span style="COLOR: #800000">"allowTextToOverflowShape"</span>, <span style="COLOR: #0000ff">false</span>],
+    [<span style="COLOR: #800000">"wrapTextInShape"</span>, <span style="COLOR: #0000ff">true</span>],
+    [<span style="COLOR: #800000">"line width"</span>, 3],
+    [<span style="COLOR: #800000">"line style"</span>, 5, <span style="COLOR: #800000">"capType"</span>, 2, <span style="COLOR: #800000">"joinType"</span>, 1],
+    [<span style="COLOR: #800000">"endPoints"</span>, 1, 1, 1, 5, 2, 2],
+]);
+activeSheet.setFormula(4, 1, <span style="COLOR: #800000">"=ROW(CustomShape!B10)"</span>);
+<span style="COLOR: #0000ff">var</span> model = {
+    left: <span style="COLOR: #800000">"=CustomShape!B1"</span>,
+    top: <span style="COLOR: #800000">"=CustomShape!B2"</span>,
+    width: <span style="COLOR: #800000">"=CustomShape!B3"</span>,
+    height: <span style="COLOR: #800000">"=CustomShape!B4"</span>,
+    angle: <span style="COLOR: #800000">"=CustomShape!B5"</span>,
+    options: {
+        endPoints: {
+            beginArrow: {
+                type: <span style="COLOR: #800000">"=CustomShape!B19"</span>, widthType: <span style="COLOR: #800000">"=CustomShape!C19"</span>, lengthType: <span style="COLOR: #800000">"=CustomShape!D19"</span>
+            },
+            endArrow: { type: <span style="COLOR: #800000">"=CustomShape!E19"</span>, widthType: <span style="COLOR: #800000">"=CustomShape!F19"</span>, lengthType: <span style="COLOR: #800000">"=CustomShape!G19"</span> }
+        },
+        fill: {
+            type: 1, <span style="COLOR: #008000">// solid fill (now only support solid fill)
+</span>            color: <span style="COLOR: #800000">"=CustomShape!B6"</span>,
+            transparency: <span style="COLOR: #800000">"=CustomShape!C6"</span>
+        },
+        stroke: {
+            type: 1, <span style="COLOR: #008000">// solid fill (now only support solid fill)
+</span>            color: <span style="COLOR: #800000">"=CustomShape!B7"</span>,
+            transparency: <span style="COLOR: #800000">"=CustomShape!C7"</span>,
+            width: <span style="COLOR: #800000">"=CustomShape!B17"</span>,
+            lineStyle: <span style="COLOR: #800000">"=CustomShape!B18"</span>,
+            capType: <span style="COLOR: #800000">"=CustomShape!D18"</span>,
+            joinType: <span style="COLOR: #800000">"=CustomShape!F18"</span>
+        },
+        textFormatOptions: {
+            text: <span style="COLOR: #800000">"=CustomShape!B8"</span>, <span style="COLOR: #008000">// "Shape Text",
+</span>            font: <span style="COLOR: #800000">"=CustomShape!B9"</span>, <span style="COLOR: #008000">// "bold 15px Georgia",  // css font, zoom related code should be update to support it
+</span>            fill: {
+                type: 1, <span style="COLOR: #008000">// solid fill (now only support solid fill)
+</span>                color: <span style="COLOR: #800000">"=CustomShape!B10"</span>
+            },
+            margins: {
+                left: <span style="COLOR: #800000">"=CustomShape!B11"</span>,
+                top: <span style="COLOR: #800000">"=CustomShape!C11"</span>,
+                right: <span style="COLOR: #800000">"=CustomShape!D11"</span>,
+                bottom: <span style="COLOR: #800000">"=CustomShape!E11"</span>
+            },
+            verticalAlignment: <span style="COLOR: #800000">"=CustomShape!B13"</span>,  <span style="COLOR: #008000">// (0: top, 1: center, 2: bottom)
+</span>            horizontalAlignment: <span style="COLOR: #800000">"=CustomShape!B12"</span>, <span style="COLOR: #008000">// (0: left, 1: center, 2: right)
+</span>            textDirection: <span style="COLOR: #800000">"=CustomShape!B14"</span>, <span style="COLOR: #008000">//f "vertical", "rotate90", "rotate270"
+</span>            allowTextToOverflowShape: <span style="COLOR: #800000">"=CustomShape!B15"</span>,
+            wrapTextInShape: <span style="COLOR: #800000">"=CustomShape!B16"</span>
+        }
+    },
+    variables: {
+        xOffset: 40,
+        yOffset: 10
+    },
+    path: [[
+        [<span style="COLOR: #800000">"M"</span>, <span style="COLOR: #800000">"=controls.0.x"</span>, 0],          <span style="COLOR: #008000">// M: move to (x, y)
+</span>        [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=width - controls.0.x"</span>, 0],  <span style="COLOR: #008000">// L: line to (x, y)
+</span>        [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=width - 2 * variables.xOffset"</span>, <span style="COLOR: #800000">"=height"</span>], [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=variables.xOffset"</span>, <span style="COLOR: #800000">"=height"</span>],
+        [<span style="COLOR: #800000">"Z"</span>]],  <span style="COLOR: #008000">// Z: close path
+</span>    [
+        [<span style="COLOR: #800000">"M"</span>, <span style="COLOR: #800000">"=width - variables.xOffset"</span>, <span style="COLOR: #800000">"=variables.yOffset"</span>],
+        [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=width"</span>, <span style="COLOR: #800000">"=variables.yOffset"</span>],
+        [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=width"</span>, <span style="COLOR: #800000">"=height - 4 * variables.yOffset"</span>],
+        [<span style="COLOR: #800000">"L"</span>, <span style="COLOR: #800000">"=width - variables.xOffset"</span>, <span style="COLOR: #800000">"=height"</span>]
+    ]
+    ],
+    controls: [
+        {
+            <span style="COLOR: #008000">// formula used to provide position and range limitation (here default at position (0, 0.2 * width),
+</span>            <span style="COLOR: #008000">//and the y range from 0 to 0.5* width)
+</span>            x: <span style="COLOR: #800000">"=BOUND(0.3*width, 0, false, 0, 0.5*width)"</span>,
+            y: 0,
+            xBehavior: 0,  <span style="COLOR: #008000">// 0 if adjust in x (horizontal), otherwise 1
+</span>            yBehavior: 1   <span style="COLOR: #008000">// 0 if adjust in y (vertical), otherwise 1
+</span>        }
+    ],
+    connectionPoints: [
+        {
+            x: <span style="COLOR: #800000">"=0.5*width"</span>,
+            y: 0
+        },
+        {
+            x: <span style="COLOR: #800000">"=0.5*controls.0.x"</span>,
+            y: <span style="COLOR: #800000">"=0.5*height"</span>
+        },
+        {
+            x: <span style="COLOR: #800000">"=0.5*width"</span>,
+            y: <span style="COLOR: #800000">"=1*height"</span>
+        },
+        {
+            x: <span style="COLOR: #800000">"=width-0.5*controls.0.x"</span>,
+            y: <span style="COLOR: #800000">"=0.5*height"</span>
+        }
+    ],
+    textRect: { left: <span style="COLOR: #800000">"=controls.0.x"</span>, top: 20, bottom: <span style="COLOR: #800000">"=height - 20"</span>, right: <span style="COLOR: #800000">"=width - variables.xOffset"</span> }
+};
+<span style="COLOR: #0000ff">var</span> shape2 = activeSheet.shapes.add(<span style="COLOR: #800000">'shape2'</span>, model);
+
+<span style="COLOR: #008000">//Use getFormula() method to return the formula used to set width and height of custom shape
+</span>console.log(<span style="COLOR: #800000">"Width's Formula is: "</span> + shape2.getFormula(<span style="COLOR: #800000">"width"</span>));
+console.log(<span style="COLOR: #800000">"Height's Formula is: "</span> + shape2.getFormula(<span style="COLOR: #800000">"height"</span>));
+
+<span style="COLOR: #008000">//Use the attributes of custom shape to return the value of width and height of shape
+</span>console.log(<span style="COLOR: #800000">"Width value "</span>, shape2.width());
+console.log(<span style="COLOR: #800000">"Height value "</span>, shape2.height());
+
+
+<span style="COLOR: #008000">// set column widths
+</span>activeSheet.setColumnWidth(0, 210);
+activeSheet.setColumnWidth(1, 60);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 2; i &lt; 6; i++) {
+    activeSheet.setColumnWidth(i, 50);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

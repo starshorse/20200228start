@@ -1,0 +1,795 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="This topic lists all the available features in SpreadJS such as autofit, auto merge cells, row filtering, wrap text, zoom, cell overflow, and many more." />
+    
+    <title>Features | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n165","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="This topic lists all the available features in SpreadJS such as autofit, auto merge cells, row filtering, wrap text, zoom, cell overflow, and many more." />
+    
+    <meta name="Microsoft.Help.Id" content="da6e2ac1-8472-406f-a292-f03731ed2cd7"/>
+    <meta name="Microsoft.Help.TocParent" content="-1"/>
+    <meta name="Microsoft.Help.TocOrder" content="5"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Features</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides support for almost all the major features available in Excel.&nbsp;Refer to the following&nbsp;list of&nbsp;topics&nbsp;while working with SpreadJS.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th><strong>Topic</strong></th>
+
+            <th><strong>Content</strong></th>
+        </tr>
+
+        <tr>
+            <td><a href="workbook.html" data-auto-update-caption="true">Workbook</a></td>
+
+            <td>
+                <p>Describes the basic operations of a workbook.</p>
+
+                <ul>
+                    <li><a href="select_multiple_worksheets.html" data-auto-update-caption="true">Select Multiple Worksheets</a></li>
+
+                    <li><a href="searching.html" data-auto-update-caption="true">Search Data</a></li>
+
+                    <li><a href="clipboard.html" data-auto-update-caption="true">Clipboard Operations</a></li>
+
+                    <li><a href="scborder.html" data-auto-update-caption="true">Set Widget Border</a></li>
+
+                    <li><a href="scrollbar.html" data-auto-update-caption="true">Scrollbar</a></li>
+
+                    <li><a href="UsingtheStatusBar.html" data-auto-update-caption="true">Status Bar</a></li>
+
+                    <li><a href="tabstrip.html" data-auto-update-caption="true">Tab Strip</a></li>
+
+                    <li><a href="UsingHitTesting.html" data-auto-update-caption="true">Hit Test</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="worksheet.html" data-auto-update-caption="true">Worksheet</a></td>
+
+            <td>
+                <p>Describes the basic operations of a worksheet.</p>
+
+                <ul>
+                    <li><a href="work-with-worksheets.html">Work with Worksheets</a></li>
+
+                    <li><a href="celllock.html" data-auto-update-caption="true">Protect Worksheet and Lock Cells</a></li>
+
+                    <li><a href="SettingSheetAreaOffset.html" data-auto-update-caption="true">Sheet Area Offset</a></li>
+
+                    <li><a href="backimage.html" data-auto-update-caption="true">Background Image</a></li>
+
+                    <li><a href="undo.html" data-auto-update-caption="true">Undo and Redo</a></li>
+
+                    <li><a href="UsingtheContextMenu.html" data-auto-update-caption="true">Context Menu</a></li>
+
+                    <li><a href="editor-status.html" data-auto-update-caption="true">Editor Status</a></li>
+
+                    <li><a href="tooltips.html" data-auto-update-caption="true">Tooltips</a></li>
+
+                    <li><a href="zoom.html" data-auto-update-caption="true">Zoom</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="rows-columns.html" data-auto-update-caption="true">Rows and Columns</a></td>
+
+            <td>
+                <p>Describes the basic operations on rows and columns.</p>
+
+                <ul>
+                    <li><a href="work-with-rows-columns.html">Work with Rows and Columns</a></li>
+
+                    <li><a href="resizing.html" data-auto-update-caption="true">Resize Columns and Rows</a></li>
+
+                    <li><a href="frozen.html" data-auto-update-caption="true">Freeze Columns and Rows</a></li>
+
+                    <li><a href="mheaders.html" data-auto-update-caption="true">Create Multiple Headers</a></li>
+
+                    <li><a href="split-resize-columns-and-rows.html" data-auto-update-caption="true">Split Resize Columns and Rows</a></li>
+
+                    <li><a href="dynamic-column-size.html" data-auto-update-caption="true">Dynamic Column Size</a></li>
+
+                    <li><a href="filter.html" data-auto-update-caption="true">Filter Rows</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="headers.html">Headers</a></td>
+
+            <td>
+                <p>Describes the basic operations on headers.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="cells.html" data-auto-update-caption="true">Cells</a></td>
+
+            <td>
+                <p>Describes the basic operations on cells.</p>
+
+                <ul>
+                    <li><a href="work-with-cells.html">Work with Cells</a></li>
+
+                    <li><a href="celltypes.html" data-auto-update-caption="true">Cell Types</a></li>
+
+                    <li><a href="cellformat.html" data-auto-update-caption="true">Cell Format</a></li>
+
+                    <li><a href="cell-states.html" data-auto-update-caption="true">Cell States</a></li>
+
+                    <li><a href="cell-range.html" data-auto-update-caption="true">Cell Range</a></li>
+
+                    <li><a href="dirty.html" data-auto-update-caption="true">Get Dirty Status</a></li>
+
+                    <li><a href="cell-buttons.html" data-auto-update-caption="true">Cell Buttons</a></li>
+
+                    <li><a href="cell-dropdowns.html" data-auto-update-caption="true">Cell Dropdowns</a></li>
+
+                    <li><a href="comments.html" data-auto-update-caption="true">Cell Comments</a></li>
+
+                    <li><a href="hyperlink_cells.html" data-auto-update-caption="true">Hyperlink</a></li>
+
+                    <li><a href="auto-merge-cells.html" data-auto-update-caption="true">Auto Merge Cells</a></li>
+
+                    <li><a href="autofit.html" data-auto-update-caption="true">AutoFit</a></li>
+
+                    <li><a href="AutoFillData.html" data-auto-update-caption="true">Auto Fill Data</a></li>
+
+                    <li><a href="shrink.html" data-auto-update-caption="true">Shrink to Fit</a></li>
+
+                    <li><a href="celloverflow.html" data-auto-update-caption="true">Cell Overflow</a></li>
+
+                    <li><a href="ellipsis_tips_cell_overflow.html" data-auto-update-caption="true">Ellipsis or Tips for Cell Overflow</a></li>
+
+                    <li><a href="cellalign.html" data-auto-update-caption="true">Cell Alignment and Indentation</a></li>
+
+                    <li><a href="cellpadding.html" data-auto-update-caption="true">Cell Padding and Label Styles</a></li>
+
+                    <li><a href="cellspan.html" data-auto-update-caption="true">Cell Span</a></li>
+
+                    <li><a href="tag.html" data-auto-update-caption="true">Cell Tags</a></li>
+
+                    <li><a href="styles.html" data-auto-update-caption="true">Styles</a></li>
+
+                    <li><a href="colors.html" data-auto-update-caption="true">Cell Colors</a></li>
+
+                    <li><a href="borders.html" data-auto-update-caption="true">Borders, Gridlines and Diagonal Lines</a></li>
+
+                    <li><a href="quoteprefix.html" data-auto-update-caption="true">Quote Prefix</a></li>
+
+                    <li><a href="insert-cut-or-copied-cells.html" data-auto-update-caption="true">Insert Cut or Copied Cells</a></li>
+
+                    <li><a href="rotate-text-in-cells.html" data-auto-update-caption="true">Rotate Text In Cells</a></li>
+
+                    <li><a href="SetVerticalTextDirectioninaCell.html" data-auto-update-caption="true">Vertical Text Direction</a></li>
+
+                    <li><a href="textdeco.html" data-auto-update-caption="true">Text Decoration</a></li>
+
+                    <li><a href="SettingRichTextCell.html" data-auto-update-caption="true">Rich Text</a></li>
+
+                    <li><a href="WrapTextInCell.html" data-auto-update-caption="true">Wrap Text</a></li>
+
+                    <li><a href="dragdrop.html" data-auto-update-caption="true">Drag and Drop</a></li>
+
+                    <li><a href="AllowMergingCellsviaMouseDrag.html" data-auto-update-caption="true">Drag and Merge</a></li>
+
+                    <li><a href="editmode.html" data-auto-update-caption="true">Edit Mode Always</a></li>
+
+                    <li><a href="watermark.html" data-auto-update-caption="true">Watermark</a></li>
+
+                    <li><a href="imemode.html" data-auto-update-caption="true">IME Mode</a></li>
+
+                    <li><a href="pattern-gradient-fill.html" data-auto-update-caption="true">Pattern Fill and Gradient Fill</a></li>
+
+                    <li><a href="pasteoptions.html" data-auto-update-caption="true">Paste Options</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="data-binding.html">Data Binding</a></td>
+
+            <td>
+                <p>Describes how to bind data in SpreadJS.</p>
+
+                <ul>
+                    <li><a href="bindcells.html" data-auto-update-caption="true">Bind Cells</a></li>
+
+                    <li><a href="designertemplate.html" data-auto-update-caption="true">SpreadJS Designer Template with Cell Binding</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="tablesheet.html" data-auto-update-caption="true">TableSheet</a></td>
+
+            <td>
+                <p>Describes how to use tablesheets.</p>
+
+                <ul>
+                    <li><a href="data-manager.html" data-auto-update-caption="true">Data Manager</a></li>
+
+                    <li><a href="tablesheet-components.html" data-auto-update-caption="true">TableSheet Components</a></li>
+
+                    <li><a href="create-tablesheet.html" data-auto-update-caption="true">Create TableSheet</a></li>
+
+                    <li><a href="tablesheet-views.html" data-auto-update-caption="true">TableSheet Views</a></li>
+
+                    <li><a href="data-operations.html" data-auto-update-caption="true">Data Operations</a></li>
+
+                    <li><a href="tablesheet-relationships.html" data-auto-update-caption="true">TableSheet Relationships</a></li>
+
+                    <li><a href="tablesheet-operations.html" data-auto-update-caption="true">TableSheet Operations</a></li>
+
+                    <li><a href="tablesheet-rules.html">Rules</a></li>
+
+                    <li><a href="tablesheet-appearance.html">Appearance</a></li>
+
+                    <li><a href="tablesheet-calculations.html">Calculations</a></li>
+
+                    <li><a href="tablesheet-interactive-behavior.html">Interactive Behavior</a></li>
+
+                    <li><a href="tablesheet-io.html" data-auto-update-caption="true">TableSheet IO</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="jsonschema.html">JSON Schema with SpreadJS</a></td>
+
+            <td>
+                <p>Describes how to use JSON schema with SpreadJS.</p>
+
+                <ul>
+                    <li><a href="fullschema.html" data-auto-update-caption="true">SpreadJS Spread Schema</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="datavalidate.html" data-auto-update-caption="true">Data Validation</a></td>
+
+            <td>Describes how to validate or restrict invalid input of data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="condformat.html" data-auto-update-caption="true">Conditional Formatting</a></td>
+
+            <td>
+                <p>Describes how to apply various types of conditional formatting rules.</p>
+
+                <ul>
+                    <li><a href="averagerule.html" data-auto-update-caption="true">Average Rule</a></li>
+
+                    <li><a href="cellvaluerule.html" data-auto-update-caption="true">Cell Value Rule</a></li>
+
+                    <li><a href="databarrule.html" data-auto-update-caption="true">Data Bar Rule</a></li>
+
+                    <li><a href="dateoccrule.html" data-auto-update-caption="true">Date Occurring Rule</a></li>
+
+                    <li><a href="duplicaterule.html" data-auto-update-caption="true">Duplicate Rule</a></li>
+
+                    <li><a href="formularule.html" data-auto-update-caption="true">Formula Rule</a></li>
+
+                    <li><a href="iconrule.html" data-auto-update-caption="true">Icon Set Rule</a></li>
+
+                    <li><a href="scalerule.html" data-auto-update-caption="true">Scale Rule</a></li>
+
+                    <li><a href="spectextrule.html" data-auto-update-caption="true">Specific Text Rule</a></li>
+
+                    <li><a href="top10rule.html" data-auto-update-caption="true">Top 10 Rule</a></li>
+
+                    <li><a href="uniquerule.html" data-auto-update-caption="true">Unique Rule</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="sort-data.html" data-auto-update-caption="true">Sort</a></td>
+
+            <td>
+                <p>Describes various sorting operations.</p>
+
+                <ul>
+                    <li><a href="sorting.html" data-auto-update-caption="true">Sort Data</a></li>
+
+                    <li><a href="custom-sorting.html" data-auto-update-caption="true">Custom Sorting</a></li>
+
+                    <li><a href="sort-with-grouped-data.html" data-auto-update-caption="true">Sort with Grouped Data</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="group.html" data-auto-update-caption="true">Group</a></td>
+
+            <td>
+                <p>Describes various grouping operations.</p>
+
+                <ul>
+                    <li><a href="grouping.html" data-auto-update-caption="true">Range Groups</a></li>
+
+                    <li><a href="CustomizingtheRangeGroups.html" data-auto-update-caption="true">Customize Range Groups</a></li>
+
+                    <li><a href="outlinecolumn.html" data-auto-update-caption="true">Outline Columns</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="formulas.html" data-auto-update-caption="true">Formulas</a></td>
+
+            <td>
+                <p>Describes various types of formulas in SpreadJS.</p>
+
+                <ul>
+                    <li><a href="formulasbuilt.html" data-auto-update-caption="true">Built-In Formulas</a></li>
+
+                    <li><a href="formulauser.html" data-auto-update-caption="true">Allow Users to Enter Formulas</a></li>
+
+                    <li><a href="set-formulas.html" data-auto-update-caption="true">Set Formulas</a></li>
+
+                    <li><a href="show_cell_formulas.html" data-auto-update-caption="true">Show Cell Formulas</a></li>
+
+                    <li><a href="formulaname.html" data-auto-update-caption="true">Create Custom Names</a></li>
+
+                    <li><a href="formulascustom.html" data-auto-update-caption="true">Create Custom Formulas</a></li>
+
+                    <li><a href="formulabox.html" data-auto-update-caption="true">Formula Text Box</a></li>
+
+                    <li><a href="formulacontrol.html" data-auto-update-caption="true">Use Formula Text Box as a Control</a></li>
+
+                    <li><a href="formula-auditing.html" data-auto-update-caption="true">Formula Auditing</a></li>
+
+                    <li><a href="formulaarray.html" data-auto-update-caption="true">Array Formulas</a></li>
+
+                    <li><a href="dynamic-array-formulas.html" data-auto-update-caption="true">Dynamic Array Formulas</a></li>
+
+                    <li><a href="asyncformula.html" data-auto-update-caption="true">Asynchronous Functions</a></li>
+
+                    <li><a href="UsingLanguagePackage.html" data-auto-update-caption="true">Language Package</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="serialization.html" data-auto-update-caption="true">Serialization</a></td>
+
+            <td>
+                <p>Describes how to implement serialization.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="keyboard-actions.html" data-auto-update-caption="true">Keyboard Actions</a></td>
+
+            <td>
+                <p>Describes different types of keyboard actions.</p>
+
+                <ul>
+                    <li><a href="mapping.html" data-auto-update-caption="true">Input Mapping</a></li>
+
+                    <li><a href="keyboard.html" data-auto-update-caption="true">Keyboard Navigation Shortcuts</a></li>
+
+                    <li><a href="select.html" data-auto-update-caption="true">Precision Selection</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="UnderstandingShapes.html" data-auto-update-caption="true">Shapes</a></td>
+
+            <td>
+                <p>Describes different types of shapes.</p>
+
+                <ul>
+                    <li><a href="AddingBuiltInShapes.html" data-auto-update-caption="true">Built-In Shapes</a></li>
+
+                    <li><a href="AddingtheConnectorShapes.html" data-auto-update-caption="true">Connector Shapes</a></li>
+
+                    <li><a href="AddingGroupShapes.html" data-auto-update-caption="true">Group Shapes</a></li>
+
+                    <li><a href="AddingShapeswithFormulas.html" data-auto-update-caption="true">Shape Property Formulas</a></li>
+
+                    <li><a href="AddingCustomShapes.html" data-auto-update-caption="true">Custom Shapes</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="floating-objects.html" data-auto-update-caption="true">Floating Objects</a></td>
+
+            <td>
+                <p>Describes floating objects and their customization.</p>
+
+                <ul>
+                    <li><a href="floating.html" data-auto-update-caption="true">Custom Floating Objects</a></li>
+
+                    <li><a href="floatpic.html" data-auto-update-caption="true">Floating Pictures</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="WorkingwithBarcodes.html" data-auto-update-caption="true">Barcodes</a></td>
+
+            <td>
+                <p>Describes different types of barcodes.</p>
+
+                <ul>
+                    <li><a href="SettingQRCode.html" data-auto-update-caption="true">QRCode</a></li>
+
+                    <li><a href="SettingEAN-13.html" data-auto-update-caption="true">EAN-13</a></li>
+
+                    <li><a href="SettingEAN-8.html" data-auto-update-caption="true">EAN-8</a></li>
+
+                    <li><a href="SettingCodabar.html" data-auto-update-caption="true">Codabar</a></li>
+
+                    <li><a href="SettingCode39.html" data-auto-update-caption="true">Code39</a></li>
+
+                    <li><a href="SettingCode93.html" data-auto-update-caption="true">Code93</a></li>
+
+                    <li><a href="SettingCode128.html" data-auto-update-caption="true">Code128</a></li>
+
+                    <li><a href="SettingGS1_128.html" data-auto-update-caption="true">GS1_128</a></li>
+
+                    <li><a href="SettingCode49.html" data-auto-update-caption="true">Code49</a></li>
+
+                    <li><a href="SettingPDF417.html" data-auto-update-caption="true">PDF417</a></li>
+
+                    <li><a href="SettingDataMatrix.html" data-auto-update-caption="true">DataMatrix</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="Charts.html" data-auto-update-caption="true">Charts</a></td>
+
+            <td>
+                <p>Describes different types of charts and their elements.</p>
+
+                <ul>
+                    <li><a href="ConfigureChartElements.html" data-auto-update-caption="true">Chart Elements</a></li>
+
+                    <li><a href="ChartTypes.html" data-auto-update-caption="true">Chart Types</a></li>
+
+                    <li><a href="add-trendlines-to-charts.html" data-auto-update-caption="true">Add Trendlines To Charts</a></li>
+
+                    <li><a href="add-error-bars-in-charts.html" data-auto-update-caption="true">Add Error Bars In Charts</a></li>
+
+                    <li><a href="UsingAnimationInCharts.html" data-auto-update-caption="true">Animation in Charts</a></li>
+
+                    <li><a href="add-hover-animation-and-style.html" data-auto-update-caption="true">Add Hover Animation and Style</a></li>
+
+                    <li><a href="SetChartColorwithTransparency.html" data-auto-update-caption="true">Chart Color with Transparency</a></li>
+
+                    <li><a href="display-empty-cells-in-chart.html" data-auto-update-caption="true">Display Empty Cells in Chart</a></li>
+
+                    <li><a href="display_na_cells_chart.html" data-auto-update-caption="true">Display #N/A Cells in Chart</a></li>
+
+                    <li><a href="hidden_rows_columns_chart.html" data-auto-update-caption="true">Hidden Rows or Columns in Chart</a></li>
+
+                    <li><a href="preserve-unsupported-charts.html" data-auto-update-caption="true">Preserve Unsupported Charts</a></li>
+
+                    <li><a href="pattern-fill-in-charts.html" data-auto-update-caption="true">Pattern Fill in Charts</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="sparkmain.html" data-auto-update-caption="true">Sparklines</a></td>
+
+            <td>
+                <p>Describes different types of sparklines.</p>
+
+                <ul>
+                    <li><a href="createspark.html" data-auto-update-caption="true">Column, Line, and Winloss Sparklines with Methods</a></li>
+
+                    <li><a href="sparkmarkers.html" data-auto-update-caption="true">Markers and Points</a></li>
+
+                    <li><a href="sparkaxis.html" data-auto-update-caption="true">Horizontal and Vertical Axes</a></li>
+
+                    <li><a href="sparkcomp.html" data-auto-update-caption="true">Column, Line, and Winloss Sparklines with Formulas</a></li>
+
+                    <li><a href="sparkarea.html" data-auto-update-caption="true">Area Sparkline</a></li>
+
+                    <li><a href="sparkpie.html" data-auto-update-caption="true">Pie Sparkline</a></li>
+
+                    <li><a href="sparkscatter.html" data-auto-update-caption="true">Scatter Sparkline</a></li>
+
+                    <li><a href="sparkbullet.html" data-auto-update-caption="true">Bullet Sparkline</a></li>
+
+                    <li><a href="sparkspread.html" data-auto-update-caption="true">Spread Sparkline</a></li>
+
+                    <li><a href="sparkstacked.html" data-auto-update-caption="true">Stacked Sparkline</a></li>
+
+                    <li><a href="sparkhbar.html" data-auto-update-caption="true">Hbar Sparkline</a></li>
+
+                    <li><a href="sparkvbar.html" data-auto-update-caption="true">Vbar Sparkline</a></li>
+
+                    <li><a href="sparkboxplot.html" data-auto-update-caption="true">Box Plot Sparkline</a></li>
+
+                    <li><a href="sparkvari.html" data-auto-update-caption="true">Vari Sparkline</a></li>
+
+                    <li><a href="sparkcascade.html" data-auto-update-caption="true">Cascade Sparkline</a></li>
+
+                    <li><a href="sparkpareto.html" data-auto-update-caption="true">Pareto Sparkline</a></li>
+
+                    <li><a href="sparkmonth.html" data-auto-update-caption="true">Month Sparkline</a></li>
+
+                    <li><a href="sparkyear.html" data-auto-update-caption="true">Year Sparkline</a></li>
+
+                    <li><a href="sparkcustom.html" data-auto-update-caption="true">Custom Sparkline</a></li>
+
+                    <li><a href="rangeblock-sparkline.html" data-auto-update-caption="true">Rangeblock Sparkline</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="tablegen.html" data-auto-update-caption="true">Tables</a></td>
+
+            <td>
+                <p>Describes how to use tables.</p>
+
+                <ul>
+                    <li><a href="tables.html" data-auto-update-caption="true">Create Tables</a></li>
+
+                    <li><a href="tablestyle.html" data-auto-update-caption="true">Set Table Styles</a></li>
+
+                    <li><a href="tablebind.html" data-auto-update-caption="true">Bind Tables</a></li>
+
+                    <li><a href="resize-tables.html" data-auto-update-caption="true">Resize Tables</a></li>
+
+                    <li><a href="auto_expand_tables.html" data-auto-update-caption="true">Auto Expand Tables</a></li>
+
+                    <li><a href="structref.html" data-auto-update-caption="true">Structured Reference Formulas</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="pivot-table.html" data-auto-update-caption="true">Pivot Table</a></td>
+
+            <td>
+                <p>Describes how to use pivot tables.</p>
+
+                <ul>
+                    <li><a href="pivot-table-components.html" data-auto-update-caption="true">Pivot Table Components</a></li>
+
+                    <li><a href="create-pivot-table.html" data-auto-update-caption="true">Create Pivot Table</a></li>
+
+                    <li><a href="filter-pt.html" data-auto-update-caption="true">Filter</a></li>
+
+                    <li><a href="sort-pt.html" data-auto-update-caption="true">Sort</a></li>
+
+                    <li><a href="group-and-collapse.html" data-auto-update-caption="true">Group and Collapse</a></li>
+
+                    <li><a href="refresh-data-source.html" data-auto-update-caption="true">Refresh Data Source</a></li>
+
+                    <li><a href="pivot-table-layout.html" data-auto-update-caption="true">Pivot Table Layout</a></li>
+
+                    <li><a href="themes-and-style.html" data-auto-update-caption="true">Themes and Style</a></li>
+
+                    <li><a href="context-menu.html" data-auto-update-caption="true">Context Menu</a></li>
+
+                    <li><a href="pivot-table-settings.html" data-auto-update-caption="true">Pivot Table Settings</a></li>
+
+                    <li><a href="pivot-view-manager.html" data-auto-update-caption="true">Pivot View Manager</a></li>
+
+                    <li><a href="pivot-table-print.html" data-auto-update-caption="true">Pivot Table Print</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="sliceruse.html">Slicer</a></td>
+
+            <td>
+                <p>Describes how to use slicers.</p>
+
+                <ul>
+                    <li><a href="slicercustom.html" data-auto-update-caption="true">Custom Slicer</a></li>
+
+                    <li><a href="itemslicer.html" data-auto-update-caption="true">Item Slicer</a></li>
+
+                    <li><a href="slicer.html" data-auto-update-caption="true">Table Slicer</a></li>
+
+                    <li><a href="slicerstyle.html" data-auto-update-caption="true">Table Slicer Styles</a></li>
+
+                    <li><a href="slicerdesign.html" data-auto-update-caption="true">Table Slicer with the SpreadJS Designer</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="printing.html">Print</a></td>
+
+            <td>
+                <p>Describes how to to print a single worksheet or print multiple worksheets with headers, borders, gridlines etc.</p>
+
+                <ul>
+                    <li><a href="printsheet.html" data-auto-update-caption="true">Print Sheets</a></li>
+
+                    <li><a href="printpagebreak.html" data-auto-update-caption="true">Configure Page Breaks</a></li>
+
+                    <li><a href="DisplayPreviewLineforPrint.html" data-auto-update-caption="true">Display Preview Lines</a></li>
+
+                    <li><a href="GetPageInformation.html" data-auto-update-caption="true">Get Page Information</a></li>
+
+                    <li><a href="PrintBackgroundImageAsWatermark.html" data-auto-update-caption="true">Print Background Image As Watermark</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="styletheme.html">Theme</a></td>
+
+            <td>
+                <p>Describes different themes in SpreadJS.</p>
+
+                <ul>
+                    <li><a href="themes.html" data-auto-update-caption="true">Configure Themes</a></li>
+
+                    <li><a href="themeroller.html" data-auto-update-caption="true">Custom Themes from ThemeRoller</a></li>
+
+                    <li><a href="spreadjstheme.html" data-auto-update-caption="true">Default SpreadJS Theme</a></li>
+
+                    <li><a href="exceltheme.html" data-auto-update-caption="true">Excel Theme</a></li>
+
+                    <li><a href="bootstraptheme.html" data-auto-update-caption="true">Bootstrap Theme</a></li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td height="19"><a href="culture.html">Culture</a></td>
+
+            <td height="19">
+                <p>Describes different cultures in SpreadJS.</p>
+
+                <ul>
+                    <li><a href="culturecustom.html" data-auto-update-caption="true">Create Custom Culture</a></li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

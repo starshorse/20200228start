@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Financial Functions | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3581","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="129177d0-6579-4efd-9a89-ed427cb54697"/>
+    <meta name="Microsoft.Help.TocParent" content="f00c213a-31d9-4eac-87f4-d899b4be3a44"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / Financial Functions</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Financial Functions</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Spread provides the following financial functions, listed alphabetically.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Function</th>
+
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><a href="ACCRINT.html" data-auto-update-caption="true">ACCRINT</a></td>
+
+            <td>This function calculates the accrued interest for a security that pays periodic interest.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ACCRINTM.html" data-auto-update-caption="true">ACCRINTM</a></td>
+
+            <td>This function calculates the accrued interest at maturity for a security that pays periodic interest.</td>
+        </tr>
+
+        <tr>
+            <td><a href="AMORDEGRC.html" data-auto-update-caption="true">AMORDEGRC</a></td>
+
+            <td>This function returns the depreciation for an accounting period, taking into consideration prorated depreciation, and applies a depreciation coefficient in the calculation based on the life of the assets.</td>
+        </tr>
+
+        <tr>
+            <td><a href="AMORLINC.html" data-auto-update-caption="true">AMORLINC</a></td>
+
+            <td>This function calculates the depreciation for an accounting period, taking into account prorated depreciation.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COUPDAYBS.html" data-auto-update-caption="true">COUPDAYBS</a></td>
+
+            <td>This function calculates the number of days from the beginning of the coupon period to the settlement date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COUPDAYS.html" data-auto-update-caption="true">COUPDAYS</a></td>
+
+            <td>This function returns the number of days in the coupon period that contains the settlement date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COUPDAYSNC.html" data-auto-update-caption="true">COUPDAYSNC</a></td>
+
+            <td>This function calculates the number of days from the settlement date to the next coupon date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COUPNCD.html" data-auto-update-caption="true">COUPNCD</a></td>
+
+            <td>This function returns a date number of the next coupon date after the settlement date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COUPNUM.html" data-auto-update-caption="true">COUPNUM</a></td>
+
+            <td>This function returns the number of coupons due between the settlement date and maturity date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COUPPCD.html" data-auto-update-caption="true">COUPPCD</a></td>
+
+            <td>This function returns a date number of the previous coupon date before the settlement date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CUMIPMT.html" data-auto-update-caption="true">CUMIPMT</a></td>
+
+            <td>This function returns the cumulative interest paid on a loan between the starting and ending periods.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CUMPRINC.html" data-auto-update-caption="true">CUMPRINC</a></td>
+
+            <td>This function returns the cumulative principal paid on a loan between the start and end periods.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DB.html" data-auto-update-caption="true">DB</a></td>
+
+            <td>This function calculates the depreciation of an asset for a specified period using the fixed‑declining balance method.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DDB.html" data-auto-update-caption="true">DDB</a></td>
+
+            <td>This function calculates the depreciation of an asset for a specified period using the double-declining balance method or another method you specify.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DISC.html" data-auto-update-caption="true">DISC</a></td>
+
+            <td>This function calculates the discount rate for a security.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DOLLARDE.html" data-auto-update-caption="true">DOLLARDE</a></td>
+
+            <td>This function converts a fraction dollar price to a decimal dollar price.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DOLLARFR.html" data-auto-update-caption="true">DOLLARFR</a></td>
+
+            <td>This function converts a decimal number dollar price to a fraction dollar price.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DURATION.html" data-auto-update-caption="true">DURATION</a></td>
+
+            <td>This function returns the Macaulay duration for an assumed par value of $100.</td>
+        </tr>
+
+        <tr>
+            <td><a href="EFFECT.html" data-auto-update-caption="true">EFFECT</a></td>
+
+            <td>This function calculates the effective annual interest rate for a given nominal annual interest rate and the number of compounding periods per year.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FV.html" data-auto-update-caption="true">FV</a></td>
+
+            <td>This function returns the future value of an investment based on a present value, periodic payments, and a specified interest rate.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FVSCHEDULE.html" data-auto-update-caption="true">FVSCHEDULE</a></td>
+
+            <td>This function returns the future value of an initial principal after applying a series of compound interest rates. Calculate future value of an investment with a variable or adjustable rate.</td>
+        </tr>
+
+        <tr>
+            <td><a href="INTRATE.html" data-auto-update-caption="true">INTRATE</a></td>
+
+            <td>This function calculates the interest rate for a fully invested security.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IPMT.html" data-auto-update-caption="true">IPMT</a></td>
+
+            <td>This function calculates the payment of interest on a loan.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IRR.html" data-auto-update-caption="true">IRR</a></td>
+
+            <td>This function returns the internal rate of return for a series of cash flows represented by the numbers in an array.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISPMT.html" data-auto-update-caption="true">ISPMT</a></td>
+
+            <td>This function calculates the interest paid during a specific period of an investment.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MDURATION.html" data-auto-update-caption="true">MDURATION</a></td>
+
+            <td>This function calculates the modified Macaulay duration of a security with an assumed par value of $100.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MIRR.html" data-auto-update-caption="true">MIRR</a></td>
+
+            <td>This function returns the modified internal rate of return for a series of periodic cash flows.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NOMINAL.html" data-auto-update-caption="true">NOMINAL</a></td>
+
+            <td>This function returns the nominal annual interest rate for a given effective rate and number of compounding periods per year.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NPER.html" data-auto-update-caption="true">NPER</a></td>
+
+            <td>This function returns the number of periods for an investment based on a present value, future value, periodic payments, and a specified interest rate.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NPV.html" data-auto-update-caption="true">NPV</a></td>
+
+            <td>This function calculates the net present value of an investment by using a discount rate and a series of future payments and income.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ODDFPRICE.html" data-auto-update-caption="true">ODDFPRICE</a></td>
+
+            <td>This function calculates the price per $100 face value of a security with an odd first period.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ODDFYIELD.html" data-auto-update-caption="true">ODDFYIELD</a></td>
+
+            <td>This function calculates the yield of a security with an odd first period.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ODDLPRICE.html" data-auto-update-caption="true">ODDLPRICE</a></td>
+
+            <td>This function calculates the price per $100 face value of a security with an odd last coupon period.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ODDLYIELD.html" data-auto-update-caption="true">ODDLYIELD</a></td>
+
+            <td>This function calculates the yield of a security with an odd last period.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PDURATION.html" data-auto-update-caption="true">PDURATION</a></td>
+
+            <td>This function returns the number of periods required by an investment to reach a specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PMT.html" data-auto-update-caption="true">PMT</a></td>
+
+            <td>This function returns the payment amount for a loan given the present value, specified interest rate, and number of terms.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PPMT.html" data-auto-update-caption="true">PPMT</a></td>
+
+            <td>This function returns the amount of payment of principal for a loan given the present value, specified interest rate, and number of terms.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PRICE.html" data-auto-update-caption="true">PRICE</a></td>
+
+            <td>This function calculates the price per $100 face value of a periodic interest security.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PRICEDISC.html" data-auto-update-caption="true">PRICEDISC</a></td>
+
+            <td>This function returns the price per $100 face value of a discounted security.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PRICEMAT.html" data-auto-update-caption="true">PRICEMAT</a></td>
+
+            <td>This function returns the price at maturity per $100 face value of a security that pays interest.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PV.html" data-auto-update-caption="true">PV</a></td>
+
+            <td>This function returns the present value of an investment based on the interest rate, number and amount of periodic payments, and future value. The present value is the total amount that a series of future payments is worth now.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RATE.html" data-auto-update-caption="true">RATE</a></td>
+
+            <td>This function returns the interest rate per period of an annuity.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RECEIVED.html" data-auto-update-caption="true">RECEIVED</a></td>
+
+            <td>This function returns the amount received at maturity for a fully invested security.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RRI.html" data-auto-update-caption="true">RRI</a></td>
+
+            <td>This function returns an equivalent interest rate for the growth of an investment.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SLN.html" data-auto-update-caption="true">SLN</a></td>
+
+            <td>This function returns the straight-line depreciation of an asset for one period.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SYD.html" data-auto-update-caption="true">SYD</a></td>
+
+            <td>This function returns the sum-of-years' digits depreciation of an asset for a specified period.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TBILLEQ.html" data-auto-update-caption="true">TBILLEQ</a></td>
+
+            <td>This function returns the equivalent yield for a Treasury bill (or T-bill).</td>
+        </tr>
+
+        <tr>
+            <td><a href="TBILLPRICE.html" data-auto-update-caption="true">TBILLPRICE</a></td>
+
+            <td>This function returns the price per $100 face value for a Treasury bill (or T-bill).</td>
+        </tr>
+
+        <tr>
+            <td><a href="TBILLYIELD.html" data-auto-update-caption="true">TBILLYIELD</a></td>
+
+            <td>This function returns the yield for a Treasury bill (or T-bill).</td>
+        </tr>
+
+        <tr>
+            <td><a href="VDB.html" data-auto-update-caption="true">VDB</a></td>
+
+            <td>This function returns the depreciation of an asset for any period you specify using the variable declining balance method.</td>
+        </tr>
+
+        <tr>
+            <td><a href="XIRR.html" data-auto-update-caption="true">XIRR</a></td>
+
+            <td>This function calculates the internal rate of return for a schedule of cash flows that may not be periodic.</td>
+        </tr>
+
+        <tr>
+            <td><a href="XNPV.html" data-auto-update-caption="true">XNPV</a></td>
+
+            <td>This function calculates the net present value for a schedule of cash flows that may not be periodic.</td>
+        </tr>
+
+        <tr>
+            <td><a href="YIELD.html" data-auto-update-caption="true">YIELD</a></td>
+
+            <td>This function calculates the yield on a security that pays periodic interest.</td>
+        </tr>
+
+        <tr>
+            <td><a href="YIELDDISC.html" data-auto-update-caption="true">YIELDDISC</a></td>
+
+            <td>This function calculates the annual yield for a discounted security.</td>
+        </tr>
+
+        <tr>
+            <td><a href="YIELDMAT.html" data-auto-update-caption="true">YIELDMAT</a></td>
+
+            <td>This function calculates the annual yield of a security that pays interest at maturity.</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

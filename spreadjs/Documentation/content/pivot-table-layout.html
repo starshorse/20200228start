@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Pivot Table Layout | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n695","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="e69e6626-28ed-45a2-9ce6-a59145b9ab70"/>
+    <meta name="Microsoft.Help.TocParent" content="f1825637-2866-4514-bd4c-8b65379a3900"/>
+    <meta name="Microsoft.Help.TocOrder" content="8"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="pivot-table.html">Pivot Table</a>
+ / Pivot Table Layout</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Pivot Table Layout</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows you to choose a pivot table layout and apply it using the <strong>PivotTableLayoutType</strong> enumeration.</p>
+
+<ul>
+    <li>Compact Form</li>
+
+    <li>Outline Form</li>
+
+    <li>Tabular Form</li>
+</ul>
+
+<h2>Compact Form</h2>
+
+<p>The compact form is the default report layout of a pivot table which displays each Row label in a separate row, but in same column.&nbsp;This layout, as the name suggests, presents data in a compact form&nbsp;by reducing the pivot table width. The following image depicts the compact form layout of a pivot table.</p>
+
+<p><img border="0" alt="Compact Form layout of the Pivot table" src="images/compact.png" /></p>
+
+<p>The following table explains the behavior and positioning of&nbsp;Row Labels, Row Fields and Subtotals while using compact form&nbsp;layout:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Row Labels</strong></td>
+
+            <td><strong>Row Fields</strong></td>
+
+            <td><strong>Subtotals</strong></td>
+        </tr>
+
+        <tr>
+            <td>Row Field Label is always above the inner fields labels.</td>
+
+            <td>All the Row Fields are in a single column.</td>
+
+            <td>Subtotals can be shown at the Top or Bottom of each group.</td>
+        </tr>
+
+        <tr>
+            <td>To understand the fields easily, each Row Label is slightly indented, from the above field.</td>
+
+            <td></td>
+
+            <td>
+                <p>When you set Subtotals,&nbsp;the row fields are altered as explained below:</p>
+
+                <ul>
+                    <li>Top: Subtotals are added to the existing row against row label item</li>
+
+                    <li>Bottom: Subtotals are added to a new row at the bottom</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Row Labels cannot be repeated.</td>
+
+            <td></td>
+
+            <td>For Column Fields, Subtotals are always shown at the Bottom.</td>
+        </tr>
+
+        <tr>
+            <td>You can change the indentation of the fields in this report layout only.</td>
+
+            <td></td>
+
+            <td>The Row Label remains at the top, even if Subtotals are at the bottom.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following example code sets the compact form layout for the pivot table.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+myPivotTable.layoutType(GC.Spread.Pivot.PivotTableLayoutType.compact);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can customize the indentation level of row fields&nbsp;using <strong>rowLabelIndent</strong> option in compact form layout.</p>
+
+<p><img border="0" alt="Compact Form layout of the Pivot table" src="images/custom_compact.png" /></p>
+
+<p>The following example code sets the indentation in compact form of a&nbsp;pivot table.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+myPivotTable.options.rowLabelIndent = 12;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Outline Form</h2>
+
+<p>The outline form layout shows each Row Field in a separate column. This layout is useful when you want to show all the field names as heading labels and are not concerned about the width of&nbsp;the pivot table. The following image depicts the outline form layout of a pivot table.</p>
+
+<p><img border="0" alt="Outline Form layout of the Pivot table" src="images/outline.png" /></p>
+
+<p>The following table explains the behavior and positioning of&nbsp;Row Labels, Row Fields and Subtotals while using the outline form&nbsp;layout:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Row Labels</strong></td>
+
+            <td><strong>Row Fields</strong></td>
+
+            <td><strong>Subtotals</strong></td>
+        </tr>
+
+        <tr>
+            <td>Each Row Label is defined in a separate row.</td>
+
+            <td>All the Row Fields are in a separate column.</td>
+
+            <td>Subtotals can be shown at the Top or Bottom of each group.</td>
+        </tr>
+
+        <tr>
+            <td>Row Field Label is always above the inner fields labels.</td>
+
+            <td>Each Row Field shows its name in the column heading.</td>
+
+            <td>
+                <p>When you set Subtotals,&nbsp;the row fields are altered as explained below:</p>
+
+                <ul>
+                    <li>Top: Subtotals are added to the existing row against row label item</li>
+
+                    <li>Bottom: Subtotals are added to a new row at the bottom</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Row Labels can be repeated.</td>
+
+            <td></td>
+
+            <td>For Column Fields, Subtotals are always shown at the Bottom.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following example code sets the outline form layout for a pivot table.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+myPivotTable.layoutType(GC.Spread.Pivot.PivotTableLayoutType.outline);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Tabular Form</h2>
+
+<p>The tabular form layout is similar to the outline form layout&nbsp;except the difference that row label for the outer field is&nbsp;on the same row as the first label for the related inner field.&nbsp;Hence, it reduces the number of rows in the pivot table. The following image depicts the tabular form layout of the pivot table.</p>
+
+<p><img border="0" alt="Tabular Form layout of the Pivot table" src="images/tabular.png" /></p>
+
+<p></p>
+
+<p>The following table explains the behavior and positioning of&nbsp;Row Labels, Row Fields and Subtotals while using tabular form&nbsp;layout:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Row Labels</strong></td>
+
+            <td><strong>Row Fields</strong></td>
+
+            <td><strong>Subtotals</strong></td>
+        </tr>
+
+        <tr>
+            <td>Row Labels for the outer fields are on the same row as the first label for the related inner fields.</td>
+
+            <td>All the Row Fields are in a separate column.</td>
+
+            <td>Subtotals can only be shown at the Bottom of each group.</td>
+        </tr>
+
+        <tr>
+            <td>Row Labels can be repeated.</td>
+
+            <td>Each Row Field shows its name in the column heading.</td>
+
+            <td>
+                <p>When you set Subtotals at bottom, a new row is added at the bottom.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+
+            <td></td>
+
+            <td>For Column Fields, Subtotals are always shown at the Bottom.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following example code sets the tabular form layout for the pivot table.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+myPivotTable.layoutType(GC.Spread.Pivot.PivotTableLayoutType.tabular);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Additional Settings</h2>
+
+<h3>Set Subtotals and GrandTotals</h3>
+
+<p>You can set the position of subtotals and grandtotals using the <strong>subtotalsPosition</strong> and <strong>grandTotalPosition</strong> options respectively. The subtotalsPosition can be set to none,&nbsp;top or bottom&nbsp;values (as applicable to the layouts mentioned&nbsp;above) whereas the&nbsp;grandTotalPosition can be set to all values (such as none, both, col or row) for all layouts.&nbsp;By default, the subtotalsPosition option is set to “bottom” and the grandTotalPosition option is set to “both”.</p>
+
+<p>The following example code sets the position of subtotals and grandtotals in the pivot table.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Set SubtotalsPosition to none
+</span>myPivotTable.options.subtotalsPosition = GC.Spread.Pivot.SubtotalsPosition.none;
+        
+<span style="COLOR: #008000">// Set grandTotalPosition to col
+</span>myPivotTable.options.grandTotalPosition = GC.Spread.Pivot.GrandTotalPosition.col;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Set Repeat Label Items</h3>
+
+<p>For outline and tabular form layouts, you can enable repeating item labels in the outer row fields&nbsp;using the&nbsp;<strong>fillDownLabels</strong> option.</p>
+
+<p>The following sample code sets the repeat label items to true in the tabular form layout.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Set repeat label items
+</span>myPivotTable.options.fillDownLabels = <span style="COLOR: #0000ff">true</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> This option cannot be&nbsp;applied to Compact form.
+</div>
+
+<h3>Set Blank Rows</h3>
+
+<p>You can add a blank row after each item using the&nbsp;<strong>insertBlankLineAfterEachItem</strong> option that helps to understand the data easily.</p>
+
+<p>The following sample code sets the blank rows after each item in the pivot table.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Set blank rows with layout
+</span>myPivotTable.options.insertBlankLineAfterEachItem = <span style="COLOR: #0000ff">true</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The following image shows the tabular form layout&nbsp;of the pivot table with all the additional settings as explained above.</p>
+
+<p><img border="0" alt="Pivot Table layout" src="images/final_output.png" /></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

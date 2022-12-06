@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>add Method (TableManager) | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n11576","initialNodeContainer":"c524","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.Tables.TableManager~add"/>
+    <meta name="Description" content="Adds a range table with a specified size to the sheet." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets.Tables.TableManager_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets.Tables_namespace.html">GC.Spread.Sheets.Tables Namespace</a>
+ / <a href="SpreadJS~GC.Spread.Sheets.Tables.TableManager.html">TableManager type</a>
+ / add Method</div></div>
+
+    
+<div id="namePopupContent" class="i-popup-content">
+The table name.
+</div>
+<div id="rowPopupContent" class="i-popup-content">
+The row index.
+</div>
+<div id="columnPopupContent" class="i-popup-content">
+The column index.
+</div>
+<div id="rowCountPopupContent" class="i-popup-content">
+The row count of the table.
+</div>
+<div id="columnCountPopupContent" class="i-popup-content">
+The column count of the table.
+</div>
+<div id="stylePopupContent" class="i-popup-content">
+The style of the table.
+</div>
+<div id="optionsPopupContent" class="i-popup-content">
+The initialization options of the table.
+</div>
+<div id="options.showHeaderPopupContent" class="i-popup-content">
+Whether to display a header.
+</div>
+<div id="options.showFooterPopupContent" class="i-popup-content">
+Whether to display a footer.
+</div>
+
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">add Method</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">Adds a range table with a specified size to the sheet.</div>
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new <a href="SpreadJS~GC.Spread.Sheets.Tables.TableManager.html">GC.Spread.Sheets.Tables.TableManager</a>(sheet);
+var value; // Type: <a href="SpreadJS~GC.Spread.Sheets.Tables.Table.html">Table</a>
+value = instance.add(name,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rowCount,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columnCount,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showHeader,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options.showFooter);</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function add( 
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="namePopupLink" data-popup-contentsource="#namePopupContent" data-popup-showevent="click mouseenter">name</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="rowPopupLink" data-popup-contentsource="#rowPopupContent" data-popup-showevent="click mouseenter">row</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="columnPopupLink" data-popup-contentsource="#columnPopupContent" data-popup-showevent="click mouseenter">column</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="rowCountPopupLink" data-popup-contentsource="#rowCountPopupContent" data-popup-showevent="click mouseenter">rowCount</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="columnCountPopupLink" data-popup-contentsource="#columnCountPopupContent" data-popup-showevent="click mouseenter">columnCount</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="stylePopupLink" data-popup-contentsource="#stylePopupContent" data-popup-showevent="click mouseenter">style</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Tables.TableTheme.html">TableTheme</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="optionsPopupLink" data-popup-contentsource="#optionsPopupContent" data-popup-showevent="click mouseenter">options</a></i> : Object,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.showHeaderPopupLink" data-popup-contentsource="#options.showHeaderPopupContent" data-popup-showevent="click mouseenter">options.showHeader</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="options.showFooterPopupLink" data-popup-contentsource="#options.showFooterPopupContent" data-popup-showevent="click mouseenter">options.showFooter</a></i> : boolean
+) : <a href="SpreadJS~GC.Spread.Sheets.Tables.Table.html">Table</a>;</pre>
+      </div>
+    
+
+      </div>
+    
+            <h4 class=dxh4>Parameters</h4><dl><dt><I>name</I></dt>
+<dd>The table name.</dd><dt><I>row</I></dt>
+<dd>The row index.</dd><dt><I>column</I></dt>
+<dd>The column index.</dd><dt><I>rowCount</I></dt>
+<dd>The row count of the table.</dd><dt><I>columnCount</I></dt>
+<dd>The column count of the table.</dd><dt><I>style</I></dt>
+<dd>The style of the table.</dd><dt><I>options</I></dt>
+<dd>The initialization options of the table.</dd><dt><I>options.showHeader</I></dt>
+<dd>Whether to display a header.</dd><dt><I>options.showFooter</I></dt>
+<dd>Whether to display a footer.</dd></dl>
+
+            <h4 class=dxh4>Return Value</h4><div class="i-returns-content">The new table instance.</div></div>
+            
+
+            <a name="exampleBookmark"></a>
+            <div class="i-section-heading" id="i-example-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Example</span></div><div id="i-example-section-content" class="i-section-content">This example adds a table.
+            
+             <div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-941b5e94-6617-45e8-825d-dd5cf973f22d">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-941b5e94-6617-45e8-825d-dd5cf973f22d" class="i-filtered-content-Javascript i-code"><pre>activeSheet.tables.add(<span style="color: #800000; ">&quot;Table1&quot;</span>, 0, 0, 3, 3, GC.Spread.Sheets.Tables.TableThemes.dark1);
+activeSheet.getCell(0,0).text(<span style="color: #800000; ">&quot;Name&quot;</span>);
+activeSheet.getCell(0,1).text(<span style="color: #800000; ">&quot;Value&quot;</span>);
+activeSheet.getCell(0,2).text(<span style="color: #800000; ">&quot;T/F&quot;</span>);
+activeSheet.getCell(1,0).text(<span style="color: #800000; ">&quot;AW&quot;</span>);
+activeSheet.getCell(1,1).text(<span style="color: #800000; ">&quot;5&quot;</span>);
+activeSheet.getCell(1,2).text(<span style="color: #800000; ">&quot;T&quot;</span>);</pre></div>
+	</div>
+</div>
+</div>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets.Tables.TableManager.html">TableManager type</a>
+<br/><a href="tables.html">Create Tables</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

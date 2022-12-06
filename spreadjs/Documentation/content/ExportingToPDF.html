@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can export a workbook (excel files with .xlsx extension) to PDF format (files with .pdf extension) using SpreadJS." />
+    
+    <title>Export to PDF | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4386","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can export a workbook (excel files with .xlsx extension) to PDF format (files with .pdf extension) using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="8b2e70b5-d17e-46a5-9082-e3875390926f"/>
+    <meta name="Microsoft.Help.TocParent" content="1e75489c-59d6-4b0a-9a1b-127166ecb911"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="excelimpexp.html">Import and Export Reference</a>
+ / Export to PDF</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Export to PDF</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports PDF file export i.e. exporting a workbook (excel files with .xlsx extension) to PDF format (files with .pdf extension) via the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~savePDF.html" data-auto-update-caption="true">savePDF</a>&nbsp;method of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook.html" data-auto-update-caption="true">Workbook class</a>.</p>
+
+<p>The&nbsp;following table lists the parameters of the <a href="SpreadJS~GC.Spread.Sheets.Workbook~savePDF.html" data-auto-update-caption="true">savePDF</a>&nbsp;method:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Parameter</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>successCallback</td>
+
+            <td>Call this function&nbsp;after export to pdf operation is successful.</td>
+        </tr>
+
+        <tr>
+            <td>errorCallback</td>
+
+            <td>Call this function&nbsp;when an error occurs.</td>
+        </tr>
+
+        <tr>
+            <td>options</td>
+
+            <td>
+                <p>You can choose from&nbsp;the following options while exporting to a&nbsp;PDF file:</p>
+
+                <ol>
+                    <li>options.creator - You can specify the name of the application (for example : Adobe Framemaker) that created the original document from which it was converted.</li>
+
+                    <li>options.title - You can specify the title of the document</li>
+
+                    <li>options.author - You can specify the name of the person who created that document</li>
+
+                    <li>options.keywords - You can specify the keywords associated with the document</li>
+
+                    <li>options.subject - You can specify the subject of the document.</li>
+                </ol>
+            </td>
+        </tr>
+
+        <tr>
+            <td>sheetIndex</td>
+
+            <td>You can export&nbsp;specific sheets in a workbook to PDF by specifying the sheet index of the sheet you want to export. If this argument is not given, all visible sheets will be exported by default.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The Export to PDF operation uses <strong>printInfo</strong> object for page setting and provides support for all the printing features that are available in SpreadJS.</p>
+
+<p>For more information on custom export of PDF files, see&nbsp;<a href="CustomPDFExport.html" data-auto-update-caption="true">Custom PDF Export</a>.</p>
+
+<p>While exporting to a PDF file, you can specify the font you want to embed in your PDF document. Users can&nbsp;embed both standard fonts (listed below)&nbsp;and the custom fonts (via registering a new font) for PDF export.</p>
+
+<p>For more information on how to embed custom fonts while performing the Export to PDF operation, see&nbsp;<a href="UseCustomFontforPDFExport.html" data-auto-update-caption="true">Use Custom Font for PDF Export</a>.</p>
+
+<p>The following table lists the fourteen standard fonts that are supported in a PDF document:</p>
+
+<p>&nbsp;</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>Courier</td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Courier</td>
+                        </tr>
+
+                        <tr>
+                            <td>Courier-Bold</td>
+                        </tr>
+
+                        <tr>
+                            <td>Courier-Oblique</td>
+                        </tr>
+
+                        <tr>
+                            <td>Courier-BoldOblique</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Times</td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Times-Roman</td>
+                        </tr>
+
+                        <tr>
+                            <td>Times-Bold</td>
+                        </tr>
+
+                        <tr>
+                            <td>Times-Italic</td>
+                        </tr>
+
+                        <tr>
+                            <td>Times-BoldItalic</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Helvetica</p>
+            </td>
+
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Helvetica</td>
+                        </tr>
+
+                        <tr>
+                            <td>Helvetica-Bold</td>
+                        </tr>
+
+                        <tr>
+                            <td>Helvetica-Oblique</td>
+                        </tr>
+
+                        <tr>
+                            <td>Helvetica-BoldOblique</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Symbol</td>
+
+            <td>Symbol</td>
+        </tr>
+
+        <tr>
+            <td>ZapfDingbats</td>
+
+            <td>ZapfDingbats</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<h4>Using Code</h4>
+
+<p>This example shows how to use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~savePDF.html" data-auto-update-caption="true">savePDF</a>&nbsp;method to export Excel files to PDF files. The exported files&nbsp;are&nbsp;saved with a .pdf extension.</p>
+
+<p>The first section of code lists the dependencies for executing the Export to&nbsp;PDF operation.</p>
+
+<p>The second section of code illustrates how <a href="SpreadJS~GC.Spread.Sheets.Workbook~savePDF.html" data-auto-update-caption="true">savePDF</a>&nbsp;method can be used for exporting to PDF format.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script src=<span style="COLOR: #800000">'.../spreadjs/gc.spread.sheets.all.x.xx.xxxxx.x.min.js'</span> type=<span style="COLOR: #800000">'text/javascript'</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;script src=<span style="COLOR: #800000">'.../spreadjs/plugins/gc.spread.sheets.print.x.xx.xxxxx.x.min.js'</span> type=<span style="COLOR: #800000">'text/javascript'</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;script src=<span style="COLOR: #800000">'.../spreadjs/plugins/gc.spread.sheets.pdf.x.xx.xxxxx.x.min.js'</span> type=<span style="COLOR: #800000">'text/javascript'</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>       
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+spread.savePDF(<span style="COLOR: #0000ff">function</span> (blob) {
+    <span style="COLOR: #0000ff">var</span> fileName = $(<span style="COLOR: #800000">'#fileName'</span>).val() || <span style="COLOR: #800000">'download'</span>;
+    saveAs(blob, fileName + <span style="COLOR: #800000">'.pdf'</span>);
+}, <span style="COLOR: #0000ff">function</span> (error) {
+    console.log(error);
+}, {
+    title: <span style="COLOR: #800000">'Test Title'</span>,
+    author: <span style="COLOR: #800000">'Test Author'</span>,
+    subject: <span style="COLOR: #800000">'Test Subject'</span>,
+    keywords: <span style="COLOR: #800000">'Test Keywords'</span>,
+    creator: <span style="COLOR: #800000">'test Creator'</span>
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> The following points should be kept in mind while exporting to PDF:</p>
+
+    <p>1) In order to export to an excel file, users need to reference the<br />
+    &nbsp;&nbsp;&nbsp; file: gc.spread.sheets.pdf.*.*.*.min.js</p>
+
+    <p>2) Images are not base64 encoded. Hence,&nbsp;they may not be exported when a user makes use of file&nbsp;protocol schemes. It is necessary that users should use http or https protocol schemes while performing the export&nbsp;operation.</p>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

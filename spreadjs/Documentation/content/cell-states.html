@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Cell States | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n275","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="c8216b24-cb71-4a40-b0be-a84e848e3d93"/>
+    <meta name="Microsoft.Help.TocParent" content="e9628ea1-c098-40b6-a16a-ca0248291974"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / Cell States</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Cell States</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to configure custom cell styles when the cell state is matched in a specific state like edit, hover, active, select&nbsp;etc. This feature is&nbsp;helpful in creating input form controls, advanced structured forms and other interactive forms within the spreadsheet where you want to specify cell styles according to the current state of the cell.</p>
+
+<p>Cell States represent how a cell will respond to different actions from the user. Typically, cell state&nbsp;is a part of style and users can create custom named styles to apply various cell features selectively and easily. By implementing cell states, users can create modern user interfaces for spreadsheet based forms and interactive dashboards. Also, users can highlight the active row and column for the selected/active cell and work with applications in real-time.&nbsp;</p>
+
+<p><strong>Example</strong> - The following screenshot depicts different cell styles when a user hovers over a cell, selects a cell or changes the state of a cell&nbsp;in a spreadsheet. In this example, the background color of the cell changes to pink and the foreground color of the cell changes to red&nbsp;when&nbsp;the cell is&nbsp;in hover state.&nbsp;The cell color changes to yellow when a cell is selected and&nbsp;back color changes to blue and fore color to red when the cell&nbsp;state&nbsp;is dirty.</p>
+
+<p>&nbsp;<img border="0" alt="Different cell states in the spreadsheet" src="images/cellstate.gif" /></p>
+
+<h3 id="a">Types of Cell States</h3>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellStatesType.html">CellStatesType</a> enumeration&nbsp;can be used to&nbsp;work with&nbsp;different cell states in the spreadsheet, as&nbsp;described in the table shared below:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th><strong>Enum Type and Value</strong></th>
+
+            <th><strong>Description</strong></th>
+        </tr>
+
+        <tr>
+            <td>hover = 0x01</td>
+
+            <td>Executes the specified action when mouse is hovered on a cell.</td>
+        </tr>
+
+        <tr>
+            <td>invalid = 0x02</td>
+
+            <td>Sets the cell state to invalid if the conditional evaluation fails during data validation.</td>
+        </tr>
+
+        <tr>
+            <td>readonly = 0x04</td>
+
+            <td>Locks the cell in a protected worksheet.</td>
+        </tr>
+
+        <tr>
+            <td>edit = 0x08</td>
+
+            <td>Executes the specified action when the cell is being edited.</td>
+        </tr>
+
+        <tr>
+            <td>active = 0x10</td>
+
+            <td>Executes the specified action when the cell is in focus.</td>
+        </tr>
+
+        <tr>
+            <td>selected = 0x20</td>
+
+            <td>Executes the specified action when the cell is lying in the selection range of the worksheet.</td>
+        </tr>
+
+        <tr>
+            <td>dirty&nbsp;= 0x40</td>
+
+            <td>Sets&nbsp;a cell state to dirty&nbsp;on changing&nbsp;the cell&nbsp;value or the reference cell value,&nbsp;to easily track any change in the sheet data.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="b">Priority Ordering</h3>
+
+<p>While configuring different cell styles for various cell states in the worksheet, the priority is followed&nbsp;in the below order :</p>
+
+<p>edit &gt; hover &gt; active &gt; selected &gt; dirty &gt;&nbsp;invalid &gt; readonly &gt; normal</p>
+
+<p>where the cell in normal state will have least priority and the cell in edit mode will have the highest priority.</p>
+
+<p>If&nbsp;cell state styles for two different cell ranges intersect with each other, then the style which was last set by the user will possess more priority.</p>
+
+<h3 id="c">Using Code</h3>
+
+<p>Refer to the following example code to apply different styles when users hover over a cell or select a cell in the spreadsheet.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+<span style="COLOR: #008000">// get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+<span style="COLOR: #008000">// Adding Data to the spreadsheet
+</span>activeSheet.setValue(0, 1, <span style="COLOR: #800000">"Y-2015"</span>);
+activeSheet.setValue(0, 2, <span style="COLOR: #800000">"Y-2016"</span>);
+activeSheet.setValue(0, 3, <span style="COLOR: #800000">"Y-2017"</span>);
+activeSheet.setValue(0, 4, <span style="COLOR: #800000">"Y-2018"</span>);
+activeSheet.setValue(0, 5, <span style="COLOR: #800000">"Y-2019"</span>);
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">"Gradlco"</span>);
+activeSheet.setValue(2, 0, <span style="COLOR: #800000">"Saagiate"</span>);
+activeSheet.setValue(3, 0, <span style="COLOR: #800000">"Inferno"</span>);
+activeSheet.setColumnWidth(0, 120);
+
+<span style="COLOR: #008000">// Creating a HoverStyle
+</span><span style="COLOR: #0000ff">var</span> hoverStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+hoverStyle.backColor = <span style="COLOR: #800000">"pink"</span>;
+hoverStyle.foreColor = <span style="COLOR: #800000">"red"</span>;
+
+<span style="COLOR: #008000">// Creating a SelectStyle
+</span><span style="COLOR: #0000ff">var</span> selectStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+selectStyle.backColor = <span style="COLOR: #800000">"yellow"</span>;
+selectStyle.foreColor = <span style="COLOR: #800000">"red"</span>;
+
+<span style="COLOR: #008000">// Creating a DirtyStyle
+</span><span style="COLOR: #0000ff">var</span> dirtyStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+dirtyStyle.backColor = <span style="COLOR: #800000">'lightblue'</span>;
+dirtyStyle.foreColor = <span style="COLOR: #800000">'red'</span>;
+
+<span style="COLOR: #008000">// Accessing cell range A1:J10
+</span><span style="COLOR: #0000ff">var</span> range = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(0, 0, 10, 10);
+
+<span style="COLOR: #008000">// Applying styles on different CellStatesType
+</span>activeSheet.cellStates.add(range, GC.Spread.Sheets.CellStatesType.dirty, dirtyStyle);
+activeSheet.cellStates.add(range, GC.Spread.Sheets.CellStatesType.selected, selectStyle);
+activeSheet.cellStates.add(range, GC.Spread.Sheets.CellStatesType.hover, hoverStyle);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

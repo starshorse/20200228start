@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you set the culture to "ja-jp", "zh-cn", or "en-us" in SpreadJS." />
+    
+    <title>Set Culture | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n749","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you set the culture to "ja-jp", "zh-cn", or "en-us" in SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="c61dd20b-274d-472f-9752-fce888f5c24d"/>
+    <meta name="Microsoft.Help.TocParent" content="e289408f-7362-485c-9d03-9b69e4e6bcf5"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="culture.html">Culture</a>
+ / Set Culture</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Set Culture</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can set the culture to "ja-jp", "zh-cn", or "en-us". The default culture is English.</p>
+
+<p>You can specify the culture with a culture &lt;meta&gt;&nbsp;HTML tag, "<code>&lt;meta name="spreadjs culture" content="culture-string"/&gt;</code>" or with a globalization variable, "<code>GC.Spread.Common.CultureManager.culture("culture-string").</code>"</p>
+
+<p>The globalization&nbsp;<a href="SpreadJS~GC.Spread.Common.CultureManager~culture.html">culture</a> variable has precedence over the <strong>culture</strong> attribute in the&nbsp;HTML &lt;meta&gt; tag. If multiple &lt;meta&gt; tags are set and no <strong>culture</strong> attribute is set, then the last &lt;meta&gt; tag takes effect.</p>
+
+<p>The Japanese culture option also requires that you add the <code class="csharp string">gc.spread.sheets.resources.ja.x.xx.xxxxx.x.min.js</code> resource to the page. The Korean culture requires that you add <code class="csharp string">gc.spread.sheets.resources.ko.xxx.min.js</code> to the page.</p>
+
+<p>The Chinese locale ID is "$-804". You can set the locale ID to change the culture. The formatter supports the Chinese DBNum. Chinese DBNumber contains three forms, "[DBNum1]", "[DBNum2]" and "DBNum3". DBNumber must be set with the locale ID. For example, "[DBNum1][$-804]" +&nbsp;a format string. The locale ID has precedence over the culture name.</p>
+
+<p>The Korean locale ID is 0x0412, You can use the ID to change the culture (for example: "[$-412]dddd"). The formatter supports DBNum1, DBNum2, and DBNum3 (for example: [DBNum1][$-412]General).</p>
+
+<p>The culture settings might effect cell formatting and user interface elements such as the filter and fill dialogs and resize tooltips. Exception messages and events that contain messages might be affected by the culture setting.</p>
+
+<p>The following image displays the row filter dialog with the "ja-jp" culture setting.</p>
+
+<p><img border="0" alt="Row filter dialog with the 'ja-jp' culture setting" src="images/culturefilter.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>This example uses a globalization variable to change the culture.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+GC.Spread.Common.CultureManager.culture(<span style="COLOR: #800000">"ja-jp"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>This example uses a <strong>culture</strong> attribute&nbsp;in the HTML&nbsp;&lt;meta&gt; tag to change the culture.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;title&gt;SpreadJS Culture Sample&lt;<span style="COLOR: #800000">/title&gt;
+</span>&lt;meta name=<span style="COLOR: #800000">"spreadjs culture"</span> content=<span style="COLOR: #800000">"ja-jp"/&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>This example uses a <strong>culture</strong> attribute&nbsp;in the HTML&nbsp;&lt;meta&gt; tag to change the culture and creates a row filter.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;SpreadJS Culture Sample&lt;<span style="COLOR: #800000">/title&gt;
+</span>    &lt;!--change culture--&gt;
+    &lt;meta name=<span style="COLOR: #800000">"spreadjs culture"</span> content=<span style="COLOR: #800000">"ja-jp"</span> <span style="COLOR: #800000">/&gt;
+</span>    &lt;link type=<span style="COLOR: #800000">"text/css"</span> href=<span style="COLOR: #800000">"./css/gc.spread.sheets.x.x.x.css"</span> rel=<span style="COLOR: #800000">"stylesheet"</span> <span style="COLOR: #800000">/&gt;
+</span>    &lt;script type=<span style="COLOR: #800000">"text/javascript"</span> src=<span style="COLOR: #800000">"./scripts/gc.spread.sheets.all.x.x.x.min.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>    &lt;script type=<span style="COLOR: #800000">"text/javascript"</span> src=<span style="COLOR: #800000">"./scripts/resources/ja/gc.spread.sheets.resources.ja.x.x.x.min.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt; 
+</span>      &lt;script type=<span style="COLOR: #800000">"text/javascript"</span>&gt;
+         window.onload = <span style="COLOR: #0000ff">function</span> () {     
+<span style="COLOR: #008000">//init spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"sampleDiv"</span>));
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+<span style="COLOR: #0000ff">var</span> cellrange =<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(0, 2, 5, 1);
+<span style="COLOR: #0000ff">var</span> hideRowFilter =<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Filter.HideRowFilter(cellrange);
+activeSheet.rowFilter(hideRowFilter);
+        }
+    &lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;<span style="COLOR: #800000">/head&gt;
+</span>&lt;body&gt;
+&lt;div id=<span style="COLOR: #800000">"sampleDiv"</span> style=<span style="COLOR: #800000">"width: 600px; height: 400px; border: 1px solid gray"</span>&gt;
+ &lt;<span style="COLOR: #800000">/div&gt;
+</span>&lt;<span style="COLOR: #800000">/body&gt;
+</span>&lt;<span style="COLOR: #800000">/html&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>This example uses a globalization variable to change the culture for cell (0,0) and a local ID to change the formatting for cell (0,1) and cell (0,2).</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+GC.Spread.Common.CultureManager.culture(<span style="COLOR: #800000">"zh-cn"</span>);
+activeSheet.setValue(0,0, <span style="COLOR: #0000ff">new</span> Date(<span style="COLOR: #800000">"2012/5/8"</span>));
+activeSheet.getCell(0,0).formatter(<span style="COLOR: #800000">"dddd"</span>);
+activeSheet.setValue(0,1, <span style="COLOR: #0000ff">new</span> Date(<span style="COLOR: #800000">"2012/5/8"</span>));
+activeSheet.getCell(0,1).formatter(<span style="COLOR: #800000">"[$-804]dddd"</span>);
+activeSheet.getCell(0,1).formatter(<span style="COLOR: #0000ff">new</span> GC.Spread.Formatter.GeneralFormatter(<span style="COLOR: #800000">"dddd"</span>, <span style="COLOR: #800000">"zh-cn"</span>));
+activeSheet.setValue(0, 2, 123456789123456000);
+activeSheet.getCell(0,2).formatter(<span style="COLOR: #800000">"[DBNum1][$-804]General"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="cellformat.html">Cell Format</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

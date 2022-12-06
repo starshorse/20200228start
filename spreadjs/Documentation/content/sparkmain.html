@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how to add sparklines to the cells of a worksheet using SpreadJS to create a small graph in them. Learn more in SpreadJS docs." />
+    
+    <title>Sparklines | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n618","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how to add sparklines to the cells of a worksheet using SpreadJS to create a small graph in them. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="fd9cab4f-16bf-437c-a370-bbba7f456cf3"/>
+    <meta name="Microsoft.Help.TocParent" content="da6e2ac1-8472-406f-a292-f03731ed2cd7"/>
+    <meta name="Microsoft.Help.TocOrder" content="22"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / Sparklines</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Sparklines</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>A sparkline is a small&nbsp;chart which can be applied to quickly visualize data and transform it in a compact form in a cell. It uses data from a range of cells&nbsp;to&nbsp;help you easily analyze&nbsp;data at&nbsp;the cell level.</p>
+
+<p>You&nbsp;can&nbsp;set the sparkline type to column, line, or winloss&nbsp;by using <a href="SpreadJS~GC.Spread.Sheets.Worksheet~setSparkline.html">setSparkline</a> method or use type-specific formulas to create different sparklines available in SpreadJS.</p>
+
+<p>You can also implement your own logic to define a custom sparkline formula with&nbsp;provided&nbsp;dataset and settings;&nbsp;add that&nbsp;custom sparkline&nbsp;using <a href="SpreadJS~GC.Spread.Sheets.Workbook~addSparklineEx.html">addSparklineEx</a> method.</p>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> Sparklines created using formulas cannot be exported to an Excel file.
+</div>
+
+<p>The&nbsp;image below&nbsp;shows the&nbsp;<a href="sparkvbar.html">Vbar sparkline</a> in action. It shows the trends in the temperature levels across a year in different cities and helps to quickly understand the high and low data points.</p>
+
+<p><img border="0" alt="" src="images/sparklineexample.png" /><br /></p>
+
+<p>You can use the following sparkline types in your spreadsheet. Click on the images to visit the corresponding topics.</p>
+
+<table style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: black thin solid; FONT-WEIGHT: bold; TEXT-ALIGN: center; BORDER-LEFT: black thin solid">
+    <tbody>
+        <tr>
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; TEXT-ALIGN: center; BORDER-LEFT: black thin solid" height="46" width="302" colspan="4">
+                <h3>Types of Sparklines</h3>
+            </th>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25px; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" width="302">
+                <p><a href="sparkcomp.html"><img border="0" alt="Column Sparklines" src="images/columnsparkline.png" /></a></p>
+
+                <p>Column Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25px; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" width="357">
+                <p><a href="sparkcomp.html"><img style="HEIGHT: 82px; WIDTH: 274px" border="0" alt="Line Sparklines" src="images/linesparkline.png" width="274" height="82" /></a></p>
+
+                <p>Line Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25px; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" width="436">
+                <p><a href="sparkcomp.html"><img border="0" alt="Winloss Sparklines" src="images/winlosssparkline.png" /></a></p>
+
+                <p>Winloss Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25px; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+                <p><a href="sparkarea.html"><img style="HEIGHT: 86px; WIDTH: 201px" border="0" alt="Area Sparklines" src="images/sparkarea.png" width="201" height="95" /></a></p>
+
+                <p>Area Sparkline</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25%; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" width="302">
+                <p><a href="sparkpie.html"><img style="HEIGHT: 121px; WIDTH: 149px" border="0" alt="Pie Sparklines" src="images/sparkpie.png" width="145" height="109" /></a></p>
+
+                <p>Pie Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25%; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" width="357">
+                <p><a href="sparkscatter.html"><img style="HEIGHT: 121px; WIDTH: 204px" border="0" alt="Scatter Sparklines" src="images/sparkscatter.png" width="204" height="149" /></a></p>
+
+                <p>Scatter Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25%; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" height="26" width="436">
+                <p><a href="sparkbullet.html"><img style="HEIGHT: 124px; WIDTH: 199px" border="0" alt="Bullet Sparklines" src="images/bullet-sparkline.png" width="199" height="163" /></a></p>
+
+                <p>Bullet Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25%; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" height="26">
+                <p><a href="sparkspread.html"><img style="HEIGHT: 114px; WIDTH: 211px" border="0" alt="Spread Sparklines" src="images/sparkspread.png" width="211" height="80" /></a>&nbsp;</p>
+
+                <p>Spread Sparkline</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25%; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" width="302">
+                <p><a href="sparkstacked.html"><img style="HEIGHT: 99px; WIDTH: 199px" border="0" alt="Stacked Sparklines" src="images/sparkstacked.png" width="199" height="102" /></a></p>
+
+                <p>Stacked Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25%; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" width="357">
+                <p><a href="sparkhbar.html"><img style="HEIGHT: 96px; WIDTH: 295px" border="0" alt="Hbar Sparklines" src="images/hbar-sparkline.png" width="295" height="113" /></a></p>
+
+                <p>Hbar Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25%; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" width="436">
+                <p><a href="sparkvbar.html"><img style="HEIGHT: 93px; WIDTH: 199px" border="0" alt="Vbar Sparklines" src="images/vbar-sparkline.png" width="199" height="60" /></a></p>
+
+                <p>Vbar Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; HEIGHT: 25%; BORDER-RIGHT: black thin solid; WIDTH: 25%; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+                <p><a href="sparkboxplot.html"><img style="HEIGHT: 88px; WIDTH: 169px" border="0" alt="Box Plot Sparklines" src="images/sparkboxplot.png" width="169" height="67" /></a></p>
+
+                <p>Box Plot Sparkline</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; WIDTH: 25px; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" width="302">
+                <p><a href="sparkvari.html"><img style="HEIGHT: 114px; WIDTH: 199px" border="0" alt="Vari Sparklines" src="images/sparkvari.png" width="199" height="86" /></a></p>
+
+                <p>Vari Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; WIDTH: 25px; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" width="357">
+                <p><a href="sparkcascade.html"><img style="HEIGHT: 115px; WIDTH: 205px" border="0" alt="Cascade Sparklines" src="images/sparkcascade.png" width="205" height="82" /></a></p>
+
+                <p>Cascade Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; WIDTH: 25px; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" width="436">
+                <p><a href="sparkmonth.html"><img style="HEIGHT: 117px; WIDTH: 153px" border="0" alt="Month Sparklines" src="images/sparkmonth.png" width="153" height="100" /></a></p>
+
+                <p>Month Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; WIDTH: 25px; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+                <p><a href="sparkyear.html"><img style="HEIGHT: 118px; WIDTH: 195px" border="0" alt="Year Sparklines" src="images/sparkyear.png" width="195" height="132" /></a></p>
+
+                <p>Year Sparkline</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; WIDTH: 25%; VERTICAL-ALIGN: middle; BORDER-BOTTOM: black thin solid; TEXT-ALIGN: center; BORDER-LEFT: black thin solid">
+                <p><a href="sparkpareto.html"><img style="HEIGHT: 103px; WIDTH: 195px" border="0" alt="Pareto Sparklines" src="images/pareto-sparkline.png" width="195" height="75" /></a></p>
+
+                <p>Pareto Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; WIDTH: 25%; VERTICAL-ALIGN: middle; BORDER-BOTTOM: black thin solid; TEXT-ALIGN: center; BORDER-LEFT: black thin solid">
+                <p><a href="rangeblock-sparkline.html" data-auto-update-caption="true"><img style="HEIGHT: 100px; WIDTH: 285px" border="0" alt="Rangeblock Sparkline" src="images/rangeblock-spark.png" width="285" height="103" /></a></p>
+
+                <p>RangeBlock Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; WIDTH: 25%; VERTICAL-ALIGN: middle; BORDER-BOTTOM: black thin solid; TEXT-ALIGN: center; BORDER-LEFT: black thin solid">
+                <p><a href="histogram-sparkline.html" data-auto-update-caption="true"><img style="HEIGHT: 107px; WIDTH: 206px" border="0" alt="Histogram Sparkline" src="images/histogram-spark.png" width="206" height="152" /></a></p>
+
+                <p>Histogram Sparkline</p>
+            </td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; WIDTH: 25%; VERTICAL-ALIGN: middle; BORDER-BOTTOM: black thin solid; TEXT-ALIGN: center; BORDER-LEFT: black thin solid">
+                <p><a href="gauge-kpi-sparkline.html" data-auto-update-caption="true"><img style="HEIGHT: 100px; WIDTH: 165px" border="0" alt="Gauge KPI Sparkline" src="images/kpi-spark.png" width="165" height="112" /></a></p>
+
+                <p>Gauge KPI Sparkline</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; WIDTH: 25%; VERTICAL-ALIGN: middle; BORDER-BOTTOM: black thin solid; TEXT-ALIGN: center; BORDER-LEFT: black thin solid">
+                <p><a href="image-sparkline.html" data-auto-update-caption="true"><img border="0" alt="Image Sparkline" src="images/imagesparkline.png" /></a></p>
+
+                <p>Image Sparkline</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Grouping Sparklines</h3>
+
+<p>You can group and ungroup sparklines by using <a href="SpreadJS~GC.Spread.Sheets.Worksheet~groupSparkline.html">groupSparkline</a> and <a href="SpreadJS~GC.Spread.Sheets.Worksheet~ungroupSparkline.html">ungroupSparkline</a> methods.</p>
+
+<p>Grouping&nbsp;enables you to apply changes to several sparklines all at once and saves time in the process. Grouping also helps to easily compare sparklines by using the same type of sparkline and axis in a group.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = GC.Spread.Sheets.findControl(document.getElementById(<span style="COLOR: #800000">'ss'</span>));
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+
+<span style="COLOR: #0000ff">var</span> s1=  sheet.setSparkline(13, 0, data
+        , GC.Spread.Sheets.Sparklines.DataOrientation.vertical
+        , GC.Spread.Sheets.Sparklines.SparklineType.line
+        , setting
+        );
+<span style="COLOR: #0000ff">var</span> s2 =sheet.setSparkline(13, 3, data
+        , GC.Spread.Sheets.Sparklines.DataOrientation.vertical
+        , GC.Spread.Sheets.Sparklines.SparklineType.column
+        , setting
+        );
+<span style="COLOR: #0000ff">var</span> s3=  sheet.setSparkline(13, 6, data
+        , GC.Spread.Sheets.Sparklines.DataOrientation.vertical
+        , GC.Spread.Sheets.Sparklines.SparklineType.winloss
+        , setting
+        );
+
+<span style="COLOR: #008000">// group sparklines
+</span><span style="COLOR: #0000ff">var</span> group = sheet.groupSparkline([s1,s2,s3]);
+
+group.sparklineType = GC.Spread.Sheets.Sparklines.SparklineType.column;
+
+<span style="COLOR: #008000">// ungroup sparklines
+</span>sheet.ungroupSparkline(group);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>Style type | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n7630","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.Style"/>
+    <meta name="Description" content="Represents the style for a cell, row, and column." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets_namespace"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+ / Style class</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Style class</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">Represents the style for a cell, row, and column.</div>
+               
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new GC.Spread.Sheets.<a href="SpreadJS~GC.Spread.Sheets.Style.html">Style</a>(backColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hAlign,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vAlign,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;themeFont,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;formatter,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderLeft,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderTop,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderRight,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderBottom,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diagonalDown,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diagonalUp,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;locked,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textIndent,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wordWrap,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shrinkToFit,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backgroundImage,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cellType,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backgroundImageLayout,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tabStop,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textDecoration,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imeMode,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parentName,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;watermark,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cellPadding,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labelOptions,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labelOptions.alignment,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labelOptions.visibility,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labelOptions.font,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labelOptions.foreColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;labelOptions.margin,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isVerticalText,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;textOrientation,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;applyFont,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;applyFill,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;applyAlignment,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;applyBorder,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;applyProtection,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;applyNumberFormat);</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function Style;</pre>
+      </div>
+    
+
+      </div>
+    </div>
+
+            <a name="exampleBookmark"></a>
+            
+            
+            <div class="i-section-heading" id="i-example-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Example</span></div><div id="i-example-section-content" class="i-section-content"><div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-41717cb7-9411-43c0-9145-6b06389d912c">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-41717cb7-9411-43c0-9145-6b06389d912c" class="i-filtered-content-Javascript i-code"><pre><span style="color: #008000; ">//This example uses a style with rules.
+</span>activeSheet.setArray(0,0,[1,2,3,4,5,6,7,8,9,10]);
+<span style="color: #0000FF; ">var</span> style = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Style();
+style.backColor = <span style="color: #800000; ">&quot;red&quot;</span>;
+style.foreColor = <span style="color: #800000; ">&quot;black&quot;</span>;
+<span style="color: #0000FF; ">var</span> cell = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.NormalConditionRule();
+cell.ruleType(GC.Spread.Sheets.ConditionalFormatting.RuleType.cellValueRule);
+cell.operator(GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.greaterThan);
+cell.value1(5);
+cell.ranges([<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Range(0, 0, 10, 1)]);
+cell.style(style);
+activeSheet.conditionalFormats.addRule(cell);
+<span style="color: #0000FF; ">var</span> style1 = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Style();
+style1.foreColor = <span style="color: #800000; ">&quot;red&quot;</span>;
+<span style="color: #0000FF; ">var</span> top = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.ConditionalFormatting.NormalConditionRule();
+top.ruleType(GC.Spread.Sheets.ConditionalFormatting.RuleType.top10Rule);
+top.type(GC.Spread.Sheets.ConditionalFormatting.Top10ConditionType.top);
+top.rank(3);
+top.style(style1);
+top.ranges([<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Range(0, 0, 10, 1)]);
+top.stopIfTrue(<span style="color: #0000FF; ">true</span>);
+activeSheet.conditionalFormats.addRule(top);</pre></div>
+	</div>
+</div>
+<div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-a8bb01a8-0585-4656-aabd-d78eba46acfd">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-a8bb01a8-0585-4656-aabd-d78eba46acfd" class="i-filtered-content-Javascript i-code"><pre><span style="color: #008000; ">//This example creates and sets parameters for the style.
+</span>sheet.setValue(0,0, 1,3);
+sheet.setValue(1,0, 50,3);
+sheet.setValue(2,0, 100,3);
+sheet.setValue(3,0, 2,3);
+sheet.setValue(4,0, 60,3);
+sheet.setValue(5,0, 90,3);
+sheet.setValue(6,0, 3,3);
+sheet.setValue(7,0, 40,3);
+sheet.setValue(8,0, 70,3);
+sheet.setValue(9,0, 5,3);
+sheet.setValue(10,0, 35,3);
+<span style="color: #0000FF; ">var</span> style = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Style();
+style.backColor = <span style="color: #800000; ">&quot;red&quot;</span>;
+style.borderLeft =<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;blue&quot;</span>,GC.Spread.Sheets.LineStyle.medium);
+style.borderTop = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;blue&quot;</span>,GC.Spread.Sheets.LineStyle.medium);
+style.borderRight = <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;blue&quot;</span>,GC.Spread.Sheets.LineStyle.medium);
+style.borderBottom =  <span style="color: #0000FF; ">new</span> GC.Spread.Sheets.LineBorder(<span style="color: #800000; ">&quot;blue&quot;</span>,GC.Spread.Sheets.LineStyle.medium);
+sheet.conditionalFormats.addAverageRule(GC.Spread.Sheets.ConditionalFormatting.AverageConditionType.above, style, [<span style="color: #0000FF; ">new</span> GC.Spread.Sheets.Range(0, 0, 10, 3)]);</pre></div>
+	</div>
+</div>
+</div>
+            
+            
+            <div class="i-section-heading" id="i-inheritance-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Inheritance Hierarchy</span></div><div id="i-inheritance-section-content" class="i-section-content"><P>Object<BR />&nbsp;&nbsp;&nbsp;<STRONG>GC.Spread.Sheets.Style</STRONG><BR /></P></div>
+            
+
+            <a name="ConstructorsBookmark"></a>
+            <div class="i-section-heading" id="i-publicConstructors-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Constructors</span></div><div id="i-publicConstructors-section-content" class="i-section-content"><table class="i-filtered-item-list"><tr><th>&nbsp;</th><th>Name</th><th>Description</th></tr>
+<tr><td class="i-image"><img alt="public Constructor" src="template/packages/core-ajax/images/publicConstructor.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~_ctor.html">Style Constructor</a></td><td class="i-member-description">Represents the style for a cell, row, and column. &nbsp;</td></tr>
+</table><a href="#top">Top</a></div>
+            
+            
+
+            <a name="FieldsBookmark"></a>
+            <div class="i-section-heading" id="i-publicFields-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Fields</span></div><div id="i-publicFields-section-content" class="i-section-content"><table class="i-filtered-item-list"><tr><th>&nbsp;</th><th>Name</th><th>Description</th></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~applyAlignment.html">applyAlignment</a></td><td class="i-member-description">Only work for namedStyle, the boolean value indicates whether the alignment formatting applied. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~applyBorder.html">applyBorder</a></td><td class="i-member-description">Only work for namedStyle, the boolean value indicates whether the border formatting applied. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~applyFill.html">applyFill</a></td><td class="i-member-description">Only work for namedStyle, the boolean value indicates whether the fill formatting applied. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~applyFont.html">applyFont</a></td><td class="i-member-description">Only work for namedStyle, the boolean value indicates whether the font formatting applied. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~applyNumberFormat.html">applyNumberFormat</a></td><td class="i-member-description">Only work for namedStyle, the boolean value indicates whether the number formatting applied. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~applyProtection.html">applyProtection</a></td><td class="i-member-description">Only work for namedStyle, the boolean value indicates whether the protection formatting applied. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~backColor.html">backColor</a></td><td class="i-member-description">Indicates the background color. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~backgroundImage.html">backgroundImage</a></td><td class="i-member-description">Indicates the background image. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~backgroundImageLayout.html">backgroundImageLayout</a></td><td class="i-member-description">Indicates the background image layout. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~borderBottom.html">borderBottom</a></td><td class="i-member-description">Indicates the bottom border line. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~borderLeft.html">borderLeft</a></td><td class="i-member-description">Indicates the left border line. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~borderRight.html">borderRight</a></td><td class="i-member-description">Indicates the right border line. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~borderTop.html">borderTop</a></td><td class="i-member-description">Indicates the top border line. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~cellButtons.html">cellButtons</a></td><td class="i-member-description">Indicates the cellButtons of cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~cellPadding.html">cellPadding</a></td><td class="i-member-description">Indicates the cell padding. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~cellType.html">cellType</a></td><td class="i-member-description">Indicates the cell type. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~diagonalDown.html">diagonalDown</a></td><td class="i-member-description">Indicates the diagonalDown border line. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~diagonalUp.html">diagonalUp</a></td><td class="i-member-description">Indicates the diagonalUp border line. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~dropDowns.html">dropDowns</a></td><td class="i-member-description">Indicates the dropdown type of cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~font.html">font</a></td><td class="i-member-description">Indicates the font. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~foreColor.html">foreColor</a></td><td class="i-member-description">Indicates the foreground color. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~formatter.html">formatter</a></td><td class="i-member-description">Indicates the formatter. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~hAlign.html">hAlign</a></td><td class="i-member-description">Indicates the horizontal alignment. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~imeMode.html">imeMode</a></td><td class="i-member-description">Indicates the Input Method Editor (IME) mode. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~isVerticalText.html">isVerticalText</a></td><td class="i-member-description">Indicates whether to set the text vertical. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~labelOptions.html">labelOptions</a></td><td class="i-member-description">Indicates the cell label options. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~locked.html">locked</a></td><td class="i-member-description">Indicates whether a cell is marked as locked from editing. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~name.html">name</a></td><td class="i-member-description">Indicates the name. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~parentName.html">parentName</a></td><td class="i-member-description">Indicates the name of the parent style. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~showEllipsis.html">showEllipsis</a></td><td class="i-member-description">Controls whether the Text out of bounds shows ellipsis. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~shrinkToFit.html">shrinkToFit</a></td><td class="i-member-description">Indicates whether to shrink to fit. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~tabStop.html">tabStop</a></td><td class="i-member-description">Indicates whether the user can set focus to the cell using the Tab key. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~textDecoration.html">textDecoration</a></td><td class="i-member-description">Indicates the decoration added to text. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~textIndent.html">textIndent</a></td><td class="i-member-description">Indicates the number of units of indentation for text in a cell, an integer value, where an increment of 1 represents 8 pixels. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~textOrientation.html">textOrientation</a></td><td class="i-member-description">Indicates the text rotation angle of cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~themeFont.html">themeFont</a></td><td class="i-member-description">Indicates the font theme. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~vAlign.html">vAlign</a></td><td class="i-member-description">Indicates the vertical alignment. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~watermark.html">watermark</a></td><td class="i-member-description">Indicates the watermark content. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~wordWrap.html">wordWrap</a></td><td class="i-member-description">Indicates whether to wrap text. &nbsp;</td></tr>
+</table><a href="#top">Top</a></div>
+            
+            
+
+            <a name="PropertiesBookmark"></a>
+            
+            
+            
+
+            <a name="MethodsBookmark"></a>
+            <div class="i-section-heading" id="i-publicMethods-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Methods</span></div><div id="i-publicMethods-section-content" class="i-section-content"><table class="i-filtered-item-list"><tr><th>&nbsp;</th><th>Name</th><th>Description</th></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.Style~clone.html">clone</a></td><td class="i-member-description">Clones the current style. &nbsp;</td></tr>
+</table><a href="#top">Top</a></div>
+            
+            
+
+            <a name="EventsBookmark"></a>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can bind a table to a data source using SpreadJS." />
+    
+    <title>Bind Tables | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n671","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can bind a table to a data source using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="571551ff-00d1-4798-bf86-7b9a1d027850"/>
+    <meta name="Microsoft.Help.TocParent" content="9d25871c-c47e-4700-a8b5-50b17e2a631f"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="tablegen.html">Tables</a>
+ / Bind Tables</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Bind Tables</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to&nbsp;bind a table to a data source using cell level binding.</p>
+
+<p>Table binding can be done in two ways. Users can either use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table~bindColumns.html">bindColumns()</a>&nbsp;method or the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~bind.html">bind()</a> method to bind a tble to a data source while working with spreadsheets.&nbsp;</p>
+
+<p>The following rules must be kept in mind while carrying out the table binding operations in the worksheets:</p>
+
+<ul>
+    <li>Setting a value changes the data source.</li>
+
+    <li>Adding or deleting rows changes the data source.</li>
+
+    <li>Adding or deleting columns does not change the data source.</li>
+
+    <li>Removing, clearing, moving, or resizing the table does not change the data source.</li>
+
+    <li>Binding adjusts the table row count automatically (but column count stays the same).</li>
+
+    <li>Formulas are not saved to the data source.</li>
+</ul>
+
+<h3 id="a">Bind Table Columns&nbsp;</h3>
+
+<p>For binding all&nbsp;the&nbsp;table columns in a worksheet, simply bind the sheet to a data source and then&nbsp;set&nbsp;the <a href="SpreadJS~GC.Spread.Sheets.Tables.Table~bindColumns.html">bindColumns()</a>&nbsp;and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table~bindingPath.html">bindingPath()</a>&nbsp;methods in the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table.html">Table</a> class. Users can also&nbsp;specify information for the table column with&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableColumn~dataField.html">dataField</a>&nbsp;and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableColumn~name.html">name</a>&nbsp;methods in the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.TableColumn.html">TableColumn</a>&nbsp;class.</p>
+
+<h3 id="b">Using&nbsp;the bindColumns() method</h3>
+
+<p>The following code binds a data source to the table using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table~bindColumns.html">bindColumns()</a>&nbsp;method and the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table~bindingPath.html">bindingPath()</a>&nbsp;method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(<span style="COLOR: #0000ff">function</span> ()
+{
+<span style="COLOR: #008000">// Generate two data sources
+</span><span style="COLOR: #0000ff">function</span> Company(name, logo, slogan, address, city, phone, email) {
+<span style="COLOR: #0000ff">this</span>.name = name;
+<span style="COLOR: #0000ff">this</span>.logo = logo;
+<span style="COLOR: #0000ff">this</span>.slogan = slogan;
+<span style="COLOR: #0000ff">this</span>.address = address;
+<span style="COLOR: #0000ff">this</span>.city = city;
+<span style="COLOR: #0000ff">this</span>.phone = phone;
+<span style="COLOR: #0000ff">this</span>.email = email;
+}
+<span style="COLOR: #0000ff">function</span> Customer(id, name, company) {
+<span style="COLOR: #0000ff">this</span>.id = id;
+<span style="COLOR: #0000ff">this</span>.name = name;
+<span style="COLOR: #0000ff">this</span>.company = company;
+}
+<span style="COLOR: #0000ff">function</span> Record(description, quantity, amount) {
+<span style="COLOR: #0000ff">this</span>.description = description;
+<span style="COLOR: #0000ff">this</span>.quantity = quantity;
+<span style="COLOR: #0000ff">this</span>.amount = amount;
+}
+<span style="COLOR: #0000ff">function</span> Invoice(company, number, date, customer, receiverCustomer, records) {
+<span style="COLOR: #0000ff">this</span>.company = company;
+<span style="COLOR: #0000ff">this</span>.number = number;
+<span style="COLOR: #0000ff">this</span>.date = date;
+<span style="COLOR: #0000ff">this</span>.customer = customer;
+<span style="COLOR: #0000ff">this</span>.receiverCustomer = receiverCustomer;
+<span style="COLOR: #0000ff">this</span>.records = records;
+}
+<span style="COLOR: #0000ff">var</span> company1 = <span style="COLOR: #0000ff">new</span> Company(<span style="COLOR: #800000">"Baidu"</span>, <span style="COLOR: #0000ff">null</span>, <span style="COLOR: #800000">"We know everything!"</span>, <span style="COLOR: #800000">"Beijing 1st road"</span>, <span style="COLOR: #800000">"Beijing"</span>, <span style="COLOR: #800000">"010-12345678"</span>, <span style="COLOR: #800000">"baidu@baidu.com"</span>),
+company2 = <span style="COLOR: #0000ff">new</span> Company(<span style="COLOR: #800000">"Tecent"</span>, <span style="COLOR: #0000ff">null</span>, <span style="COLOR: #800000">"We have everything!"</span>, <span style="COLOR: #800000">"Shenzhen 2st road"</span>, <span style="COLOR: #800000">"Shenzhen"</span>, <span style="COLOR: #800000">"0755-12345678"</span>, <span style="COLOR: #800000">"tecent@qq.com"</span>),
+company3 = <span style="COLOR: #0000ff">new</span> Company(<span style="COLOR: #800000">"Alibaba"</span>, <span style="COLOR: #0000ff">null</span>, <span style="COLOR: #800000">"We sell everything!"</span>, <span style="COLOR: #800000">"Hangzhou 3rd road"</span>, <span style="COLOR: #800000">"Hangzhou"</span>, <span style="COLOR: #800000">"0571-12345678"</span>, <span style="COLOR: #800000">"alibaba@alibaba.com"</span>),
+customer1 = <span style="COLOR: #0000ff">new</span> Customer(<span style="COLOR: #800000">"A1"</span>, <span style="COLOR: #800000">"employee 1"</span>, company2),
+customer2 = <span style="COLOR: #0000ff">new</span> Customer(<span style="COLOR: #800000">"A2"</span>, <span style="COLOR: #800000">"employee 2"</span>, company3),
+records1 = [<span style="COLOR: #0000ff">new</span> Record(<span style="COLOR: #800000">"Finance charge on overdue balance at 1.5%"</span>, 1, 150), <span style="COLOR: #0000ff">new</span> Record(<span style="COLOR: #800000">"Invoice #100 for $1000 on 2014/1/1"</span>, 1, 150)],
+records2 = [<span style="COLOR: #0000ff">new</span> Record(<span style="COLOR: #800000">"Purchase server device"</span>, 2, 15000), <span style="COLOR: #0000ff">new</span> Record(<span style="COLOR: #800000">"Company travel"</span>, 100, 1500), <span style="COLOR: #0000ff">new</span> Record(<span style="COLOR: #800000">"Company Dinner"</span>, 100, 200)],
+invoice1 = <span style="COLOR: #0000ff">new</span> Invoice(company1, <span style="COLOR: #800000">"00001"</span>, <span style="COLOR: #0000ff">new</span> Date(2014, 0, 1), customer1, customer1, records1),
+invoice2 = <span style="COLOR: #0000ff">new</span> Invoice(company2, <span style="COLOR: #800000">"00002"</span>, <span style="COLOR: #0000ff">new</span> Date(2014, 6, 6), customer2, customer2, records2),
+dataSource1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Bindings.CellBindingSource(invoice1),
+dataSource2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Bindings.CellBindingSource(invoice2);
+<span style="COLOR: #0000ff">function</span> BindingPathCellType() {
+GC.Spread.Sheets.CellTypes.Text.call(<span style="COLOR: #0000ff">this</span>);
+}
+BindingPathCellType.prototype = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.Text();
+BindingPathCellType.prototype.paint = <span style="COLOR: #0000ff">function</span> (ctx, value, x, y, w, h, style, context) {
+<span style="COLOR: #0000ff">if</span> (value === <span style="COLOR: #0000ff">null</span> || value === undefined) {
+<span style="COLOR: #0000ff">var</span> sheet = context.sheet, row = context.row, col = context.col;
+<span style="COLOR: #0000ff">if</span> (sheet &amp;&amp; (row === 0 || !!row) &amp;&amp; (col === 0 || !!col)) {
+<span style="COLOR: #0000ff">var</span> bindingPath = sheet.getBindingPath(context.row, context.col);
+<span style="COLOR: #0000ff">if</span> (bindingPath) {
+value = <span style="COLOR: #800000">"["</span> + bindingPath + <span style="COLOR: #800000">"]"</span>;
+}
+}
+}
+GC.Spread.Sheets.CellTypes.Text.prototype.paint.apply(<span style="COLOR: #0000ff">this</span>, arguments);
+};
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>), {sheetCount: 1});
+activeSheet = spread.getActiveSheet();
+spread.suspendPaint();
+activeSheet.name(<span style="COLOR: #800000">"FINANCE CHARGE"</span>);
+<span style="COLOR: #0000ff">var</span> bindingPathCellType = <span style="COLOR: #0000ff">new</span> BindingPathCellType();
+activeSheet.getCell(1, 2).bindingPath(<span style="COLOR: #800000">"company.slogan"</span>).cellType(bindingPathCellType).vAlign(GC.Spread.Sheets.VerticalAlign.bottom);
+activeSheet.getCell(1, 4).value(<span style="COLOR: #800000">"INVOICE"</span>).foreColor(<span style="COLOR: #800000">"#58B6C0"</span>).font(<span style="COLOR: #800000">"33px Arial"</span>);
+activeSheet.getCell(3, 1).bindingPath(<span style="COLOR: #800000">"company.name"</span>).cellType(bindingPathCellType).foreColor(<span style="COLOR: #800000">"#58B6C0"</span>).font(<span style="COLOR: #800000">"bold 20px Arial"</span>);
+activeSheet.getCell(5, 1).bindingPath(<span style="COLOR: #800000">"company.address"</span>).cellType(bindingPathCellType);
+activeSheet.getCell(5, 3).value(<span style="COLOR: #800000">"INVOICE NO."</span>).font(<span style="COLOR: #800000">"bold 15px Arial"</span>);
+activeSheet.getCell(5, 4).bindingPath(<span style="COLOR: #800000">"number"</span>).cellType(bindingPathCellType);
+activeSheet.getCell(6, 1).bindingPath(<span style="COLOR: #800000">"company.city"</span>).cellType(bindingPathCellType);
+activeSheet.getCell(6, 3).value(<span style="COLOR: #800000">"DATE"</span>).font(<span style="COLOR: #800000">"bold 15px Arial"</span>);
+activeSheet.getCell(6, 4).bindingPath(<span style="COLOR: #800000">"date"</span>).cellType(bindingPathCellType).formatter(<span style="COLOR: #800000">"MM/dd/yyyy"</span>).hAlign(GC.Spread.Sheets.HorizontalAlign.left);
+activeSheet.getCell(7, 1).bindingPath(<span style="COLOR: #800000">"company.phone"</span>).cellType(bindingPathCellType);
+activeSheet.getCell(7, 3).value(<span style="COLOR: #800000">"CUSTOMER ID"</span>).font(<span style="COLOR: #800000">"bold 15px Arial"</span>);
+activeSheet.getCell(7, 4).bindingPath(<span style="COLOR: #800000">"customer.id"</span>).cellType(bindingPathCellType);
+activeSheet.getCell(8, 1).bindingPath(<span style="COLOR: #800000">"company.email"</span>).cellType(bindingPathCellType);
+activeSheet.getCell(10, 1).value(<span style="COLOR: #800000">"TO"</span>).font(<span style="COLOR: #800000">"bold 15px Arial"</span>);
+activeSheet.getCell(10, 3).value(<span style="COLOR: #800000">"SHIP TO"</span>).font(<span style="COLOR: #800000">"bold 15px Arial"</span>);
+activeSheet.getCell(11, 1).bindingPath(<span style="COLOR: #800000">"customer.name"</span>).cellType(bindingPathCellType).textIndent(10);
+activeSheet.getCell(12, 1).bindingPath(<span style="COLOR: #800000">"customer.company.name"</span>).cellType(bindingPathCellType).textIndent(10);
+activeSheet.getCell(13, 1).bindingPath(<span style="COLOR: #800000">"customer.company.address"</span>).cellType(bindingPathCellType).textIndent(10);
+activeSheet.getCell(14, 1).bindingPath(<span style="COLOR: #800000">"customer.company.city"</span>).cellType(bindingPathCellType).textIndent(10);
+activeSheet.getCell(15, 1).bindingPath(<span style="COLOR: #800000">"customer.company.phone"</span>).cellType(bindingPathCellType).textIndent(10);
+activeSheet.getCell(11, 4).bindingPath(<span style="COLOR: #800000">"receiverCustomer.name"</span>).cellType(bindingPathCellType);
+activeSheet.getCell(12, 4).bindingPath(<span style="COLOR: #800000">"receiverCustomer.company.name"</span>).cellType(bindingPathCellType);
+activeSheet.getCell(13, 4).bindingPath(<span style="COLOR: #800000">"receiverCustomer.company.address"</span>).cellType(bindingPathCellType);
+activeSheet.getCell(14, 4).bindingPath(<span style="COLOR: #800000">"receiverCustomer.company.city"</span>).cellType(bindingPathCellType);
+activeSheet.getCell(15, 4).bindingPath(<span style="COLOR: #800000">"receiverCustomer.company.phone"</span>).cellType(bindingPathCellType);
+activeSheet.addSpan(17, 1, 1, 2);
+activeSheet.getCell(17, 1).value(<span style="COLOR: #800000">"JOB"</span>).foreColor(<span style="COLOR: #800000">"#58B6C0"</span>).font(<span style="COLOR: #800000">"bold 12px Arial"</span>);
+activeSheet.addSpan(17, 3, 1, 2);
+activeSheet.getCell(17, 3).value(<span style="COLOR: #800000">"PAYMENT TERMS"</span>).foreColor(<span style="COLOR: #800000">"#58B6C0"</span>).font(<span style="COLOR: #800000">"bold 12px Arial"</span>);
+activeSheet.addSpan(18, 1, 1, 2);
+activeSheet.getCell(18, 1).backColor(<span style="COLOR: #800000">"#DDF0F2"</span>);
+activeSheet.addSpan(18, 3, 1, 2);
+activeSheet.getCell(18, 3).value(<span style="COLOR: #800000">"Due on receipt"</span>).backColor(<span style="COLOR: #800000">"#DDF0F2"</span>).foreColor(<span style="COLOR: #800000">"#58B6C0"</span>).font(<span style="COLOR: #800000">"12px Arial"</span>);
+activeSheet.getRange(17, 1, 2, 4, GC.Spread.Sheets.SheetArea.viewport).setBorder(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"#58B6C0"</span>, GC.Spread.Sheets.LineStyle.thin), {
+top: <span style="COLOR: #0000ff">true</span>,
+bottom: <span style="COLOR: #0000ff">true</span>,
+innerHorizontal: <span style="COLOR: #0000ff">true</span>
+});
+<span style="COLOR: #0000ff">var</span> table = activeSheet.tables.add(<span style="COLOR: #800000">"tableRecords"</span>, 20, 1, 4, 4, GC.Spread.Sheets.Tables.TableThemes.light6);
+table.autoGenerateColumns(<span style="COLOR: #0000ff">false</span>);
+<span style="COLOR: #0000ff">var</span> tableColumn1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn();
+tableColumn1.name(<span style="COLOR: #800000">"DESCRIPTION"</span>);
+tableColumn1.dataField(<span style="COLOR: #800000">"description"</span>);
+<span style="COLOR: #0000ff">var</span> tableColumn2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn();
+tableColumn2.name(<span style="COLOR: #800000">"QUANTITY"</span>);
+tableColumn2.dataField(<span style="COLOR: #800000">"quantity"</span>);
+<span style="COLOR: #0000ff">var</span> tableColumn3 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn();
+tableColumn3.name(<span style="COLOR: #800000">"AMOUNT"</span>);
+tableColumn3.dataField(<span style="COLOR: #800000">"amount"</span>);
+table.bindColumns([tableColumn1, tableColumn2, tableColumn3]);
+table.bindingPath(<span style="COLOR: #800000">"records"</span>);
+table.showFooter(<span style="COLOR: #0000ff">true</span>);
+table.setColumnName(3, <span style="COLOR: #800000">"TOTAL"</span>);
+table.setColumnValue(2, <span style="COLOR: #800000">"TOTAL DUE"</span>);
+table.setColumnDataFormula(3, <span style="COLOR: #800000">"=[@QUANTITY]*[@AMOUNT]"</span>);
+table.setColumnFormula(3, <span style="COLOR: #800000">"=SUBTOTAL(109,[TOTAL])"</span>);
+activeSheet.getCell(26, 1).formula(<span style="COLOR: #800000">'="Make all checks payable to "&amp;B4&amp;". THANK YOU FOR YOUR BUSINESS!"'</span>).foreColor(<span style="COLOR: #800000">"gray"</span>).font(<span style="COLOR: #800000">"italic 14px Arial"</span>);
+activeSheet.options.allowCellOverflow = <span style="COLOR: #0000ff">true</span>;
+<span style="COLOR: #008000">//Adjust row height and column width
+</span>activeSheet.setColumnWidth(0, 5);
+activeSheet.setColumnWidth(1, 300);
+activeSheet.setColumnWidth(2, 115);
+activeSheet.setColumnWidth(3, 125);
+activeSheet.setColumnWidth(4, 155);
+activeSheet.setRowHeight(0, 5);
+activeSheet.setRowHeight(1, 40);
+activeSheet.setRowHeight(2, 10);
+activeSheet.setRowHeight(17, 0);
+activeSheet.setRowHeight(18, 0);
+activeSheet.setRowHeight(19, 0);
+activeSheet.setRowHeight(25, 10);
+activeSheet.options.gridline = {showVerticalGridline: <span style="COLOR: #0000ff">false</span>, showHorizontalGridline: <span style="COLOR: #0000ff">false</span>};
+<span style="COLOR: #008000">//Set a data source
+//activeSheet.setDataSource(dataSource1);
+</span>activeSheet.setDataSource(dataSource2);
+spread.resumePaint();
+})
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3 id="c">Bind Formatter and Cell Types To Table Columns</h3>
+
+<p>With the advanced column binding feature&nbsp;provided by&nbsp;SpreadJS, users can also bind formatter and various cell types with table columns along with the data fields and names. Further, users can also convert formula functions inside a table column.</p>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table~bind.html">bind()</a> method can be used to bind the table to a field containing multiple&nbsp;records and the table columns to the data fields of their corresponding records. When users set a different data source for populating the table data, then the table will automatically bind to their corresponding records.</p>
+
+<h3 id="d">Using&nbsp;the bind() method</h3>
+
+<p>The following code shows how to use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table~bind.html">bind()</a> method for binding data in table columns.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+       
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+       
+<span style="COLOR: #008000">// Data
+</span><span style="COLOR: #0000ff">var</span> data = {
+name: <span style="COLOR: #800000">'Jones'</span>, region: <span style="COLOR: #800000">'East'</span>,
+sales: [
+{ orderDate: <span style="COLOR: #800000">'1/6/2013'</span>, item: <span style="COLOR: #800000">'Pencil'</span>, units: 95, cost: 1.99, isMakeMoney: <span style="COLOR: #0000ff">true</span> },
+{ orderDate: <span style="COLOR: #800000">'4/1/2013'</span>, item: <span style="COLOR: #800000">'Binder'</span>, units: 60, cost: 4.99, isMakeMoney: <span style="COLOR: #0000ff">false</span> },
+{ orderDate: <span style="COLOR: #800000">'6/8/2013'</span>, item: <span style="COLOR: #800000">'Pen Set'</span>, units: 16, cost: 15.99, isMakeMoney: <span style="COLOR: #0000ff">false</span> }
+]
+};
+
+<span style="COLOR: #0000ff">var</span> convert = <span style="COLOR: #0000ff">function</span> (item) {
+<span style="COLOR: #0000ff">return</span> item[<span style="COLOR: #800000">'cost'</span>] + <span style="COLOR: #800000">'$'</span>;
+}
+       
+<span style="COLOR: #008000">// Add table
+</span><span style="COLOR: #0000ff">var</span> table = activeSheet.tables.add(<span style="COLOR: #800000">'tableSales'</span>, 0, 0, 5, 5);
+<span style="COLOR: #0000ff">var</span> tableColumn1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn(1, <span style="COLOR: #800000">"orderDate"</span>, <span style="COLOR: #800000">"Order Date"</span>, <span style="COLOR: #800000">"d/M/yy"</span>);
+<span style="COLOR: #0000ff">var</span> tableColumn2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn(2, <span style="COLOR: #800000">"item"</span>, <span style="COLOR: #800000">"Item"</span>);
+<span style="COLOR: #0000ff">var</span> tableColumn3 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn(3, <span style="COLOR: #800000">"units"</span>, <span style="COLOR: #800000">"Units"</span>);
+<span style="COLOR: #0000ff">var</span> tableColumn4 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn(4, <span style="COLOR: #800000">"cost"</span>, <span style="COLOR: #800000">"Cost"</span>, <span style="COLOR: #0000ff">null</span>, <span style="COLOR: #0000ff">null</span>, convert);
+<span style="COLOR: #0000ff">var</span> tableColumn5 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn(5, <span style="COLOR: #800000">"isMakeMoney"</span>, <span style="COLOR: #800000">"IsMakeMoney"</span>, <span style="COLOR: #0000ff">null</span>, <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.CheckBox());
+  
+table.autoGenerateColumns(<span style="COLOR: #0000ff">false</span>);
+        
+<span style="COLOR: #008000">// Bind table using the bind() method
+</span>table.bind([tableColumn1, tableColumn2, tableColumn3, tableColumn4, tableColumn5], <span style="COLOR: #800000">'sales'</span>, data);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 5; i++)
+activeSheet.setColumnWidth(i, 110.0, GC.Spread.Sheets.SheetArea.viewport);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3 id="e">Expand Bound Table Rows</h3>
+
+<p>SpreadJS provides support to expand rows in&nbsp;a bound table. For this, you can directly expand the sheet or insert/delete the row in the bound table by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table~expandBoundRows.html">expandBoundRows</a>&nbsp;method of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table.html">Table</a> type.</p>
+
+<p><img border="0" alt="Expand rows in the bound table" src="images/expand_rows.png" /></p>
+
+<p>The following code shows how to use the <strong>expandBoundRows</strong>&nbsp;method for expanding the rows in the bound table.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 3 });
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> sheet = spread.getSheet(0);
+<span style="COLOR: #008000">// Create data
+</span><span style="COLOR: #0000ff">var</span> data = {
+    name: <span style="COLOR: #800000">'Jones'</span>, region: <span style="COLOR: #800000">'East'</span>,
+    sales: [
+        { orderDate: <span style="COLOR: #800000">'1/6/2013'</span>, item: <span style="COLOR: #800000">'Pencil'</span>, units: 95, cost: 1.99 },
+        { orderDate: <span style="COLOR: #800000">'4/1/2013'</span>, item: <span style="COLOR: #800000">'Binder'</span>, units: 60, cost: 4.99 },
+        { orderDate: <span style="COLOR: #800000">'6/8/2013'</span>, item: <span style="COLOR: #800000">'Pen Set'</span>, units: 16, cost: 15.99 },
+        { orderDate: <span style="COLOR: #800000">'8/1/2013'</span>, item: <span style="COLOR: #800000">'Pencil'</span>, units: 20, cost: 24.99 },
+        { orderDate: <span style="COLOR: #800000">'10/8/2013'</span>, item: <span style="COLOR: #800000">'Binder'</span>, units: 31, cost: 16.99 }
+    ]
+};
+<span style="COLOR: #008000">// Add table named as "table1"
+</span><span style="COLOR: #0000ff">var</span> table1 = sheet.tables.add(<span style="COLOR: #800000">'tableRecords'</span>, 0, 0, 4, 4);
+table1.autoGenerateColumns(<span style="COLOR: #0000ff">true</span>);
+<span style="COLOR: #008000">// Add another table named as "table2"
+</span><span style="COLOR: #0000ff">var</span> table2 = sheet.tables.add(<span style="COLOR: #800000">'tableBelow'</span>, 4, 0, 4, 7);
+<span style="COLOR: #008000">// Bind table1
+</span>table1.expandBoundRows(<span style="COLOR: #0000ff">true</span>);
+table1.bindingPath(<span style="COLOR: #800000">'sales'</span>);
+<span style="COLOR: #008000">// Set datasource
+</span><span style="COLOR: #0000ff">var</span> dataSource = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Bindings.CellBindingSource(data);
+sheet.setDataSource(dataSource);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,804 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Statistical Functions | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3977","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="10ec1fe5-b8c3-4601-a236-f33600d8a7cf"/>
+    <meta name="Microsoft.Help.TocParent" content="f00c213a-31d9-4eac-87f4-d899b4be3a44"/>
+    <meta name="Microsoft.Help.TocOrder" content="11"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / Statistical Functions</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Statistical Functions</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Spread provides the following statistical functions, listed alphabetically.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Function</th>
+
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><a href="AVEDEV.html" data-auto-update-caption="true">AVEDEV</a></td>
+
+            <td>This function calculates the average of the absolute deviations of the specified values from their mean.</td>
+        </tr>
+
+        <tr>
+            <td><a href="AVERAGE.html" data-auto-update-caption="true">AVERAGE</a></td>
+
+            <td>This function calculates the average of the specified numeric values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="AVERAGEA.html" data-auto-update-caption="true">AVERAGEA</a></td>
+
+            <td>This function calculates the average of the specified values, including text or logical values as well as numeric values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="AVERAGEIF.html" data-auto-update-caption="true">AVERAGEIF</a></td>
+
+            <td>This function calculates the average of the specified numeric values provided that they meet the specified criteria.</td>
+        </tr>
+
+        <tr>
+            <td><a href="AVERAGEIFS.html" data-auto-update-caption="true">AVERAGEIFS</a></td>
+
+            <td>This function calculates the average of all cells that meet multiple specified criteria.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BETA.DIST.html" data-auto-update-caption="true">BETA.DIST</a></td>
+
+            <td>This function returns the beta distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BETA.INV.html" data-auto-update-caption="true">BETA.INV</a></td>
+
+            <td>This function calculates the inverse of the cumulative beta distribution function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BINOM.DIST.html" data-auto-update-caption="true">BINOM.DIST</a></td>
+
+            <td>This function calculates the individual term binomial distribution probability.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BINOM.DIST.RANGE.html" data-auto-update-caption="true">BINOM.DIST.RANGE</a></td>
+
+            <td>This function calculates the probability of a trial result using a binomial distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BINOM.INV.html" data-auto-update-caption="true">BINOM.INV</a></td>
+
+            <td>This function returns the criterion binomial, the smallest value for which the cumulative binomial distribution is greater than or equal to a criterion value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CHISQ.DIST.html" data-auto-update-caption="true">CHISQ.DIST</a></td>
+
+            <td>This function returns the chi-squared distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CHISQ.DIST.RT.html" data-auto-update-caption="true">CHISQ.DIST.RT</a></td>
+
+            <td>This function calculates the one-tailed probability of the chi-squared distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CHISQ.INV.html" data-auto-update-caption="true">CHISQ.INV</a></td>
+
+            <td>This function returns the inverse of left-tailed probability of the chi-squared distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CHISQ.INV.RT.html" data-auto-update-caption="true">CHISQ.INV.RT</a></td>
+
+            <td>This function calculates the inverse of the one-tailed probability of the chi-squared distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CHISQ.TEST.html" data-auto-update-caption="true">CHISQ.TEST</a></td>
+
+            <td>This function calculates the test for independence from the chi-squared distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CONFIDENCE.NORM.html" data-auto-update-caption="true">CONFIDENCE.NORM</a></td>
+
+            <td>This function returns confidence interval for a population mean.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CONFIDENCE.T.html" data-auto-update-caption="true">CONFIDENCE.T</a></td>
+
+            <td>This function returns the confidence interval for a Student's t distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CORREL.html" data-auto-update-caption="true">CORREL</a></td>
+
+            <td>This function returns the correlation coefficient of the two sets of data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COUNT.html" data-auto-update-caption="true">COUNT</a></td>
+
+            <td>This function returns the number of cells that contain numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COUNTA.html" data-auto-update-caption="true">COUNTA</a></td>
+
+            <td>This function returns the number of number of cells that contain numbers, text, or logical values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COUNTBLANK.html" data-auto-update-caption="true">COUNTBLANK</a></td>
+
+            <td>This function returns the number of empty (or blank) cells in a range of cells on a sheet.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COUNTIF.html" data-auto-update-caption="true">COUNTIF</a></td>
+
+            <td>This function returns the number of cells that meet a certain condition.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COUNTIFS.html" data-auto-update-caption="true">COUNTIFS</a></td>
+
+            <td>This function returns the number of cells that meet multiple conditions.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COVARIANCE.P.html" data-auto-update-caption="true">COVARIANCE.P</a></td>
+
+            <td>This function returns the covariance, which is the average of the products of deviations for each data point pair in two sets of numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COVARIANCE.S.html" data-auto-update-caption="true">COVARIANCE.S</a></td>
+
+            <td>This function returns the sample covariance, which is the average of the products of deviations for each data point pair in two sets of numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DEVSQ.html" data-auto-update-caption="true">DEVSQ</a></td>
+
+            <td>This function calculates the sum of the squares of deviations of data points (or of an array of data points) from their sample mean.</td>
+        </tr>
+
+        <tr>
+            <td><a href="EXPON.DIST.html" data-auto-update-caption="true">EXPON.DIST</a></td>
+
+            <td>This function returns the exponential distribution or the probability density.</td>
+        </tr>
+
+        <tr>
+            <td><a href="F.DIST.html" data-auto-update-caption="true">F.DIST</a></td>
+
+            <td>This function returns the F probability distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="F.DIST.RT.html" data-auto-update-caption="true">F.DIST.RT</a></td>
+
+            <td>This function calculates the F probability distribution, to see degrees of diversity between two sets of data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="F.INV.html" data-auto-update-caption="true">F.INV</a></td>
+
+            <td>This function returns the inverse of the F probability distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="F.INV.RT.html" data-auto-update-caption="true">F.INV.RT</a></td>
+
+            <td>This function returns the inverse of the F probability distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="F.TEST.html" data-auto-update-caption="true">F.TEST</a></td>
+
+            <td>This function returns the result of an F-test, which returns the one-tailed probability that the variances in two arrays are not significantly different.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FINV.html" data-auto-update-caption="true">FINV</a></td>
+
+            <td>This function returns the inverse of the F probability distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FISHER.html" data-auto-update-caption="true">FISHER</a></td>
+
+            <td>This function returns the Fisher transformation for a specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FISHERINV.html" data-auto-update-caption="true">FISHERINV</a></td>
+
+            <td>This function returns the inverse of the Fisher transformation for a specified value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FORECAST.html" data-auto-update-caption="true">FORECAST</a></td>
+
+            <td>This function calculates a future value using existing values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="FREQUENCY.html" data-auto-update-caption="true">FREQUENCY</a></td>
+
+            <td>This function calculates how often values occur within a range of values. This function returns a vertical array of numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="GAMMA.html" data-auto-update-caption="true">GAMMA</a></td>
+
+            <td>This function returns the gamma function value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="GAMMA.DIST.html" data-auto-update-caption="true">GAMMA.DIST</a></td>
+
+            <td>This function returns the gamma distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="GAMMA.INV.html" data-auto-update-caption="true">GAMMA.INV</a></td>
+
+            <td>This function returns the inverse of the gamma cumulative distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="GAMMALN.html" data-auto-update-caption="true">GAMMALN</a></td>
+
+            <td>This function returns the natural logarithm of the Gamma function, G(x).</td>
+        </tr>
+
+        <tr>
+            <td><a href="GAMMALN.PRECISE.html" data-auto-update-caption="true">GAMMALN.PRECISE</a></td>
+
+            <td>This function returns the natural logarithm of the gamma function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="GAUSS.html" data-auto-update-caption="true">GAUSS</a></td>
+
+            <td>This function calculates the probability that a member of a standard normal population will fall between the mean and z standard deviations from the mean.</td>
+        </tr>
+
+        <tr>
+            <td><a href="GEOMEAN.html" data-auto-update-caption="true">GEOMEAN</a></td>
+
+            <td>This function returns the geometric mean of a set of positive data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="GROWTH.html" data-auto-update-caption="true">GROWTH</a></td>
+
+            <td>This function calculates predicted exponential growth. This function returns the y values for a series of new x values that are specified by using existing x and y values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="HARMEAN.html" data-auto-update-caption="true">HARMEAN</a></td>
+
+            <td>This function returns the harmonic mean of a data set.</td>
+        </tr>
+
+        <tr>
+            <td><a href="HYPGEOM.DIST.html" data-auto-update-caption="true">HYPGEOM.DIST</a></td>
+
+            <td>This function returns the hypergeometric distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="INTERCEPT.html" data-auto-update-caption="true">INTERCEPT</a></td>
+
+            <td>This function returns the coordinates of a point at which a line intersects the y-axis, by using existing x values and y values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="KURT.html" data-auto-update-caption="true">KURT</a></td>
+
+            <td>This function returns the kurtosis of a data set.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LARGE.html" data-auto-update-caption="true">LARGE</a></td>
+
+            <td>This function returns the nth largest value in a data set, where n is specified.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LINEST.html" data-auto-update-caption="true">LINEST</a></td>
+
+            <td>This function calculates the statistics for a line.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LOGEST.html" data-auto-update-caption="true">LOGEST</a></td>
+
+            <td>This function calculates an exponential curve that fits the data and returns an array of values that describes the curve.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LOGNORM.DIST.html" data-auto-update-caption="true">LOGNORM.DIST</a></td>
+
+            <td>This function returns the log normal distribution of x.</td>
+        </tr>
+
+        <tr>
+            <td><a href="LOGNORM.INV.html" data-auto-update-caption="true">LOGNORM.INV</a></td>
+
+            <td>This function returns the inverse of the lognormal cumulative distribution function of x, where LN(x) is normally distributed with the specified mean and standard deviation.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MAX.html" data-auto-update-caption="true">MAX</a></td>
+
+            <td>This function returns the maximum value, the greatest value, of all the values in the arguments.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MAXA.html" data-auto-update-caption="true">MAXA</a></td>
+
+            <td>This function returns the largest value in a list of arguments, including text and logical values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MAXIFS.html" data-auto-update-caption="true">MAXIFS</a></td>
+
+            <td>This function returns the maximum value among cells specified by a given set of conditions or criteria.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MEDIAN.html" data-auto-update-caption="true">MEDIAN</a></td>
+
+            <td>This function returns the median, the number in the middle of the provided set of numbers; that is, half the numbers have values that are greater than the median, and half have values that are less than the median.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MIN.html" data-auto-update-caption="true">MIN</a></td>
+
+            <td>This function returns the minimum value, the least value, of all the values in the arguments.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MINA.html" data-auto-update-caption="true">MINA</a></td>
+
+            <td>This function returns the minimum value in a list of arguments, including text and logical values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MINIFS.html" data-auto-update-caption="true">MINIFS</a></td>
+
+            <td>This function returns the minimum value among cells specified by a given set of conditions or criteria.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MODE.MULT.html" data-auto-update-caption="true">MODE.MULT</a></td>
+
+            <td>This function returns the most frequently occurring vertical array or the most frequently occurring value in a set of data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MODE.SNGL.html" data-auto-update-caption="true">MODE.SNGL</a></td>
+
+            <td>This function returns the most frequently occurring value in a set of data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NEGBINOM.DIST.html" data-auto-update-caption="true">NEGBINOM.DIST</a></td>
+
+            <td>This function returns the negative binomial distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NORM.DIST.html" data-auto-update-caption="true">NORM.DIST</a></td>
+
+            <td>This function returns the normal cumulative distribution for the specified mean and standard deviation.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NORM.S.DIST.html" data-auto-update-caption="true">NORM.S.DIST</a></td>
+
+            <td>This function returns the standard normal distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NORM.S.INV.html" data-auto-update-caption="true">NORM.S.INV</a></td>
+
+            <td>This function returns the inverse of the standard normal cumulative distribution. The distribution has a mean of zero and a standard deviation of one.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NORMINV.html" data-auto-update-caption="true">NORMINV</a></td>
+
+            <td>This function returns the inverse of the normal cumulative distribution for the given mean and standard deviation.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PEARSON.html" data-auto-update-caption="true">PEARSON</a></td>
+
+            <td>This function returns the Pearson product moment correlation coefficient, a dimensionless index between -1.0 to 1.0 inclusive indicative of the linear relationship of two data sets.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PERCENTILE.EXC.html" data-auto-update-caption="true">PERCENTILE.EXC</a></td>
+
+            <td>This function returns the nth percentile of values in a range.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PERCENTILE.INC.html" data-auto-update-caption="true">PERCENTILE.INC</a></td>
+
+            <td>This function returns the nth percentile of values in a range.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PERCENTRANK.EXC.html" data-auto-update-caption="true">PERCENTRANK.EXC</a></td>
+
+            <td>This function returns the percentage rank(0..1, exclusive) of a value in a data set.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PERCENTRANK.INC.html" data-auto-update-caption="true">PERCENTRANK.INC</a></td>
+
+            <td>This function returns the rank of a value in a data set as a percentage of the data set.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PERMUT.html" data-auto-update-caption="true">PERMUT</a></td>
+
+            <td>This function returns the number of possible permutations for a specified number of items.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PERMUTATIONA.html" data-auto-update-caption="true">PERMUTATIONA</a></td>
+
+            <td>This function returns the number of permutations for a given number of object that can be selected from the total objects.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PHI.html" data-auto-update-caption="true">PHI</a></td>
+
+            <td>This function returns the value of the density function for a standard normal distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="POISSON.DIST.html" data-auto-update-caption="true">POISSON.DIST</a></td>
+
+            <td>This function returns the Poisson distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="PROB.html" data-auto-update-caption="true">PROB</a></td>
+
+            <td>This function returns the probability that values in a range are between two limits.</td>
+        </tr>
+
+        <tr>
+            <td><a href="QUARTILE.EXC.html" data-auto-update-caption="true">QUARTILE.EXC</a></td>
+
+            <td>This function returns which quartile (which quarter or 25 percent) of a data set a value is.</td>
+        </tr>
+
+        <tr>
+            <td><a href="QUARTILE.INC.html" data-auto-update-caption="true">QUARTILE.INC</a></td>
+
+            <td>This function returns which quartile (which quarter or 25 percent) of a data set a value is.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RANK.AVG.html" data-auto-update-caption="true">RANK.AVG</a></td>
+
+            <td>This function returns the rank of a number in a set of numbers. If some values have the same rank, it will return the average rank.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RANK.EQ.html" data-auto-update-caption="true">RANK.EQ</a></td>
+
+            <td>This function returns the rank of a number in a set of numbers. If you were to sort the set, the rank of the number would be its position in the list.</td>
+        </tr>
+
+        <tr>
+            <td><a href="RSQ.html" data-auto-update-caption="true">RSQ</a></td>
+
+            <td>This function returns the square of the Pearson product moment correlation coefficient (R-squared) through data points in known y's and known x's.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SKEW.html" data-auto-update-caption="true">SKEW</a></td>
+
+            <td>This function returns the skewness of a distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SKEW.P.html" data-auto-update-caption="true">SKEW.P</a></td>
+
+            <td>This function returns the skewness of a distribution base on a poopulation: a characterization of the degree of asymmetry of a distribution around its mean.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SLOPE.html" data-auto-update-caption="true">SLOPE</a></td>
+
+            <td>This function calculates the slope of a linear regression.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SMALL.html" data-auto-update-caption="true">SMALL</a></td>
+
+            <td>This function returns the nth smallest value in a data set, where n is specified.</td>
+        </tr>
+
+        <tr>
+            <td><a href="STANDARDIZE.html" data-auto-update-caption="true">STANDARDIZE</a></td>
+
+            <td>This function returns a normalized value from a distribution characterized by mean and standard deviation.</td>
+        </tr>
+
+        <tr>
+            <td><a href="STDEV.P.html" data-auto-update-caption="true">STDEV.P</a></td>
+
+            <td>This function returns the standard deviation for an entire specified population (of numeric values).</td>
+        </tr>
+
+        <tr>
+            <td><a href="STDEV.S.html" data-auto-update-caption="true">STDEV.S</a></td>
+
+            <td>This function returns standard deviation is estimated based on a sample.</td>
+        </tr>
+
+        <tr>
+            <td><a href="STDEVA.html" data-auto-update-caption="true">STDEVA</a></td>
+
+            <td>This function returns the standard deviation for a set of numbers, text, or logical values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="STDEVPA.html" data-auto-update-caption="true">STDEVPA</a></td>
+
+            <td>This function returns the standard deviation for an entire specified population, including text or logical values as well as numeric values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="STEYX.html" data-auto-update-caption="true">STEYX</a></td>
+
+            <td>This function returns the standard error of the predicted y value for each x. The standard error is a measure of the amount of error in the prediction of y for a value of x.</td>
+        </tr>
+
+        <tr>
+            <td><a href="T.DIST.html" data-auto-update-caption="true">T.DIST</a></td>
+
+            <td>This function returns the t-distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="T.DIST.2T.html" data-auto-update-caption="true">T.DIST.2T</a></td>
+
+            <td>This function returns the two-tailed t-distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="T.DIST.RT.html" data-auto-update-caption="true">T.DIST.RT</a></td>
+
+            <td>This function returns the right-tailed t-distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="T.INV.html" data-auto-update-caption="true">T.INV</a></td>
+
+            <td>This function returns the left-tailed inverse of the t-distribution.</td>
+        </tr>
+
+        <tr>
+            <td><a href="T.INV.2T.html" data-auto-update-caption="true">T.INV.2T</a></td>
+
+            <td>This function returns the t-value of the student's t-distribution as a function of the probability and the degrees of freedom.</td>
+        </tr>
+
+        <tr>
+            <td><a href="T.TEST.html" data-auto-update-caption="true">T.TEST</a></td>
+
+            <td>This function returns the probability associated with a t-test.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TREND.html" data-auto-update-caption="true">TREND</a></td>
+
+            <td>This function returns values along a linear trend. This function fits a straight line to the arrays known x and y values. Trend returns the y values along that line for the array of specified new x values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TRIMMEAN.html" data-auto-update-caption="true">TRIMMEAN</a></td>
+
+            <td>This function returns the mean of a subset of data excluding the top and bottom data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="VAR.P.html" data-auto-update-caption="true">VAR.P</a></td>
+
+            <td>This function returns variance based on the entire population, which uses only numeric values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="VAR.S.html" data-auto-update-caption="true">VAR.S</a></td>
+
+            <td>This function returns the variance based on a sample of a population, which uses only numeric values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="VARA.html" data-auto-update-caption="true">VARA</a></td>
+
+            <td>This function returns the variance based on a sample of a population, which includes numeric, logical, or text values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="VARPA.html" data-auto-update-caption="true">VARPA</a></td>
+
+            <td>This function returns variance based on the entire population, which includes numeric, logical, or text values.</td>
+        </tr>
+
+        <tr>
+            <td><a href="WEIBULL.DIST.html" data-auto-update-caption="true">WEIBULL.DIST</a></td>
+
+            <td>This function returns the two-parameter Weibull distribution, often used in reliability analysis.</td>
+        </tr>
+
+        <tr>
+            <td><a href="Z.TEST.html" data-auto-update-caption="true">Z.TEST</a></td>
+
+            <td>This function returns the significance value of a z-test. The z-test generates a standard score for x with respect to the set of data and returns the two-tailed probability for the normal distribution.</td>
+        </tr>
+    </tbody>
+</table>&nbsp;
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

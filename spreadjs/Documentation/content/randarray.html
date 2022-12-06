@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>RANDARRAY | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3922","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="22547e5b-d931-45c3-aecb-e79d41a3b87a"/>
+    <meta name="Microsoft.Help.TocParent" content="f8f4ad58-e1ef-4156-9858-ff979f1bc8c0"/>
+    <meta name="Microsoft.Help.TocOrder" content="56"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / <a href="math-trig-functions.html">Math and Trigonometric Functions</a>
+ / RANDARRAY</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">RANDARRAY</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>This function returns an array of random numeric values. Users can specify the number of rows and columns, minimum and maximum values and indicate whether to return integers or decimal values.</p>
+
+<h4>Syntax</h4>
+
+<p>RANDARRAY([rows],[columns],[min],[max],[integer])</p>
+
+<h4>Arguments</h4>
+
+<p>RANDARRAY function has the following arguments:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Argument</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>rows</td>
+
+            <td>Specifies the number of rows of random numbers to generate (if nothing is specified, the default value 1 is used).</td>
+        </tr>
+
+        <tr>
+            <td>columns</td>
+
+            <td>Specifies the number of columns of random numbers to generate (if nothing is specified, the default value 1 is used).</td>
+        </tr>
+
+        <tr>
+            <td>min</td>
+
+            <td>Specifies the minimum of values to generate (if nothing is specified, the default value 0 is used).</td>
+        </tr>
+
+        <tr>
+            <td>max</td>
+
+            <td>Specifies the maximum of values to generate (if nothing is specified, the default value 1 is used).</td>
+        </tr>
+
+        <tr>
+            <td>integer</td>
+
+            <td>Returns an integer only if the specified value is Boolean TRUE. If this value is FALSE, this function returns a decimal value (if nothing is specified, the default value FALSE is used).</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Data Types</h4>
+
+<p>Accepts the number of rows and columns. Returns an array of random numbers.</p>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> RANDARRAY is a volatile function. This means that each time the worksheet calculates, the RANDARRAY function recalculates the new values.
+</div>
+
+<h4>Remarks</h4>
+
+<p>By default, if users don't specify the row or column argument, the RANDARRAY function will return a single value between 0 and 1. Also, if minimum and maximum arguments are not specified, then the RANDARRAY function returns a random set of values between 0 and 1. The minimum number argument should always contain a value which is less than the maximum number, else this function will return a #VALUE! error. Further, if the whole-number argument is empty, then this function will choose FALSE as the default value and the decimal value will be returned.</p>
+
+<h4>Examples</h4>
+
+<p>For instance - The cell A8 in the following image contains the formula "=RANDARRAY(5,3)" and returns a random set of values between 0 and 1.</p><img style="MAX-WIDTH: 100%; HEIGHT: auto" alt="RANDARRAY function" src="images/spreadjsv13images/dynamic5.png" />
+
+<p>RANDARRAY(5,3,1,100) returns a series of random decimal values between 1 and 100.</p>
+
+<p>RANDARRAY(5,3,1,100,TRUE) returns a series of random whole numbers between 1 and 100.</p>
+
+<h4>Version Available</h4>
+
+<p>This function is available in SpreadJS 13 or later.</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

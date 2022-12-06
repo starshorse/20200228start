@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Create Pivot Table | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n683","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="755a3c8d-5e58-41d8-bbb7-ad5d906bca26"/>
+    <meta name="Microsoft.Help.TocParent" content="f1825637-2866-4514-bd4c-8b65379a3900"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="pivot-table.html">Pivot Table</a>
+ / Create Pivot Table</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Create Pivot Table</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>A pivot table&nbsp;is&nbsp;managed using the&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable.html">PivotTable</a> and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.PivotTableManager.html">PivotTableManager</a> classes. In order to create a&nbsp;pivot table, follow the below steps:</p>
+
+<ol>
+    <li>Add data source to the project.&nbsp;</li>
+
+    <li>Create&nbsp;a pivot table using&nbsp;<a href="SpreadJS~GC.Spread.Sheets.PivotTableManager~add.html">add</a> method.</li>
+
+    <li>Use&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTableFieldType.html">PivotTableFieldType</a> enumeration to&nbsp;display data into various fields.</li>
+</ol>
+
+<p>You can choose to create a pivot table using a normal data source&nbsp;or by using an existing tablesheet as a source.</p>
+
+<h3>Using JSON as a Data Source</h3>
+
+<p>You can create a pivot table by using JSON as a data source. For example, a food sales company sells food and beverage&nbsp;products across different countries and maintains sales data&nbsp;of products&nbsp;on a&nbsp;daily basis. By using the JSON data source,&nbsp;a pivot table can be created which&nbsp;can present meaningful insights, like:</p>
+
+<ul>
+    <li>Total quantity of each product sold&nbsp;across different countries</li>
+
+    <li>Total quantity of products sold&nbsp;for each city</li>
+</ul>
+
+<p>A pivot table can easily categorize the sales data and&nbsp;calculate the subtotals and grand totals automatically as shown in the image below.</p>
+
+<p><img border="0" alt="Usage of GETPIVOTDATA" src="images/pivottable_quickstart.png" /></p>
+
+<p>The following example code creates the pivot table and adds&nbsp;fields to the&nbsp;field area.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>C#</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(function () {
+    <span style="COLOR: #008000">// initializing Spread
+</span>    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 2 });
+    spread.suspendPaint();
+    <span style="COLOR: #008000">// get sheets
+</span>    <span style="COLOR: #0000ff">var</span> pivotLayoutSheet = spread.getSheet(0);
+    <span style="COLOR: #0000ff">var</span> dataSourceSheet = spread.getSheet(1);
+    <span style="COLOR: #008000">// set sheet name
+</span>    pivotLayoutSheet.name(<span style="COLOR: #800000">"PivotLayout"</span>);
+    dataSourceSheet.name(<span style="COLOR: #800000">"DataSource"</span>);
+    <span style="COLOR: #008000">// set row count
+</span>    dataSourceSheet.setRowCount(245);
+    <span style="COLOR: #008000">// set datasource
+</span>    dataSourceSheet.setArray(0, 0, pivotDB_UseCase);
+    <span style="COLOR: #008000">// add table to dataSourceSheet
+</span>    dataSourceSheet.tables.add(<span style="COLOR: #800000">'tableSales'</span>, 0, 0, 245, 8);
+    spread.resumePaint();
+    <span style="COLOR: #008000">// initialize pivottable
+</span>    initPivotTable(pivotLayoutSheet);
+    <span style="COLOR: #008000">// auto fit columns in both the sheets
+</span>    autoFit(pivotLayoutSheet);
+    autoFit(dataSourceSheet);
+     });
+function initPivotTable(sheet) {
+     <span style="COLOR: #008000">// add pivottable
+</span>     <span style="COLOR: #0000ff">var</span> myPivotTable = sheet.pivotTables.add(<span style="COLOR: #800000">"myPivotTable"</span>, <span style="COLOR: #800000">"tableSales"</span>, 0, 0, GC.Spread.Pivot.PivotTableLayoutType.tabular, GC.Spread.Pivot.PivotTableThemes.dark3);
+     myPivotTable.suspendLayout();
+     <span style="COLOR: #008000">// show rowHeader and columnHeader for PivotTable
+</span>     myPivotTable.options.showRowHeader = <span style="COLOR: #0000ff">true</span>;
+     myPivotTable.options.showColumnHeader = <span style="COLOR: #0000ff">true</span>;
+     <span style="COLOR: #008000">// add column fields
+</span>     myPivotTable.add(<span style="COLOR: #800000">"Category"</span>, <span style="COLOR: #800000">"Category"</span>, GC.Spread.Pivot.PivotTableFieldType.columnField);
+     myPivotTable.add(<span style="COLOR: #800000">"Product"</span>, <span style="COLOR: #800000">"Product"</span>, GC.Spread.Pivot.PivotTableFieldType.columnField);
+     <span style="COLOR: #008000">// add row fields
+</span>     myPivotTable.add(<span style="COLOR: #800000">"Region"</span>, <span style="COLOR: #800000">"Region"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+     myPivotTable.add(<span style="COLOR: #800000">"City"</span>, <span style="COLOR: #800000">"City"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+     <span style="COLOR: #008000">// add value field with SubtotalType Sum
+</span>     myPivotTable.add(<span style="COLOR: #800000">"Quantity"</span>, <span style="COLOR: #800000">"Sum of quantity"</span>, GC.Spread.Pivot.PivotTableFieldType.valueField, GC.Pivot.SubtotalType.sum);
+     <span style="COLOR: #008000">// add filter field
+</span>     myPivotTable.add(<span style="COLOR: #800000">"OrderDate"</span>, <span style="COLOR: #800000">"OrderDate"</span>, GC.Spread.Pivot.PivotTableFieldType.filterField);
+     myPivotTable.resumeLayout();
+     <span style="COLOR: #0000ff">return</span> myPivotTable;
+        }
+function autoFit(sheet) {
+     <span style="COLOR: #008000">// auto fit columns
+</span>     <span style="COLOR: #0000ff">let</span> columnCount = sheet.getColumnCount();
+     <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">let</span> i = 0; i &amp;lt; columnCount; i++) {
+         sheet.autoFitColumn(i);
+     }
+   }
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Using TableSheet as a Data Source</h3>
+
+<p>You can create a pivot table using the tablesheet as a&nbsp;data source&nbsp;reference. It helps to easily access the data to compare and display the information in both the pivot table and tablesheet.&nbsp;It also allows you to add calculated fields in the pivot table from the tablesheet for better analysis of data.</p>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.PivotTableManager~add.html">PivotTableManager.add</a> method accepts the tablesheet name as a <em>sourceData</em> parameter value.</p>
+
+<p>For example, the following image shows a pivot table that summarizes the stock information such as the minimum and maximum tax rates on buying packages using data from a tablesheet.</p>
+
+<p><img border="0" alt="" src="images/pt-ts-reference.png" /></p>
+
+<p>The following code sample shows how to create a pivot table using the data from an existing tablesheet in SpreadJS.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//init a table sheet
+</span><span style="COLOR: #0000ff">var</span> sheet = spread.addSheetTab(0, <span style="COLOR: #800000">"TableSheet1"</span>, GC.Spread.Sheets.SheetType.tableSheet);
+<span style="COLOR: #0000ff">var</span> tableSheetName = <span style="COLOR: #800000">"TableSheet1"</span>;
+
+<span style="COLOR: #008000">//bind a view to the table sheet
+</span>myTable.fetch().then(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">var</span> view = myTable.addView(<span style="COLOR: #800000">"myView"</span>, [
+
+        { value: <span style="COLOR: #800000">"stockItemKey"</span>, width: 150, caption: <span style="COLOR: #800000">"Stock Item Key"</span> },
+        { value: <span style="COLOR: #800000">"stockItem"</span>, width: 120, caption: <span style="COLOR: #800000">"Stock Item"</span> },
+        { value: <span style="COLOR: #800000">"buyingPackage"</span>, width: 120, caption: <span style="COLOR: #800000">"Buying Package"</span> },
+        { value: <span style="COLOR: #800000">"sellingPackage"</span>, width: 120, caption: <span style="COLOR: #800000">"Selling Package"</span> },
+        { value: <span style="COLOR: #800000">"unitPrice"</span>, width: 150, caption: <span style="COLOR: #800000">"Unit Price"</span> },
+        { value: <span style="COLOR: #800000">"taxRate"</span>, width: 120, caption: <span style="COLOR: #800000">"Tax Rate"</span> },
+        { value: <span style="COLOR: #800000">"validFrom"</span>, width: 200, caption: <span style="COLOR: #800000">"Valid From"</span> }
+    ]);
+    sheet.setDataView(view);
+}).then(() =&gt; {
+    <span style="COLOR: #0000ff">var</span> ptSheet = spread.getSheet(0);
+    <span style="COLOR: #0000ff">var</span> myPivotTable = ptSheet.pivotTables.add(<span style="COLOR: #800000">"pivot1"</span>, <span style="COLOR: #800000">"TableSheet1"</span>, 1, 1, GC.Spread.Pivot.PivotTableLayoutType.outline, GC.Spread.Pivot.PivotTableThemes.dark3);
+
+    <span style="COLOR: #008000">// add row fields
+</span>    myPivotTable.add(<span style="COLOR: #800000">"buyingPackage"</span>, <span style="COLOR: #800000">"Buying Package"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+
+    <span style="COLOR: #008000">// add value field with SubtotalType Minimum and maximum
+</span>    myPivotTable.add(<span style="COLOR: #800000">"taxRate"</span>, <span style="COLOR: #800000">"Minimum Tax Rate"</span>, GC.Spread.Pivot.PivotTableFieldType.valueField, GC.Pivot.SubtotalType.min);
+    myPivotTable.add(<span style="COLOR: #800000">"taxRate"</span>, <span style="COLOR: #800000">"Maximum Tax Rate"</span>, GC.Spread.Pivot.PivotTableFieldType.valueField, GC.Pivot.SubtotalType.max);
+
+    <span style="COLOR: #008000">// autoFit columns
+</span>    <span style="COLOR: #0000ff">for</span> (let i = 1; i &lt; 4; i++) {
+        ptSheet.autoFitColumn(i);
+    }
+
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The pivot table uses the data that is currently accessible in the tablesheet, except in the following instances:</p>
+
+<ul>
+    <li>The pivot table cannot contain any newly added groups from the tablesheet after a grouping operation.</li>
+
+    <li>The pivot table displays the data of a field even if it is set to hide in the tablesheet.</li>
+
+    <li>The column in a pivot table uses the column name of a tablesheet and not its set caption. Thus, the calculated columns will have a very long name in the pivot table.</li>
+</ul>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Date and Time Functions | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3417","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="4c109252-02bc-4b7a-9231-9e86c7a907cd"/>
+    <meta name="Microsoft.Help.TocParent" content="f00c213a-31d9-4eac-87f4-d899b4be3a44"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / Date and Time Functions</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Date and Time Functions</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Spread provides the following&nbsp;date and time&nbsp;functions, listed alphabetically.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Function</th>
+
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><a href="DATE.html" data-auto-update-caption="true">DATE</a></td>
+
+            <td>This function returns the DateTime object for a particular date, specified by the year, month, and day.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DATEDIF.html" data-auto-update-caption="true">DATEDIF</a></td>
+
+            <td>This function returns the number of days, months, or years between two dates.</td>
+        </tr>
+
+        <tr>
+            <td><a href="datepart-function.html" data-auto-update-caption="true">DATEPART</a></td>
+
+            <td>This function returns the Date object for a particular date, specified by the year, month and day.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DATEVALUE.html" data-auto-update-caption="true">DATEVALUE</a></td>
+
+            <td>This function returns a DateTime object of the specified date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DAY.html" data-auto-update-caption="true">DAY</a></td>
+
+            <td>This function returns the day number of the month (integer 1 to 31) that corresponds to the specified date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DAYS.html" data-auto-update-caption="true">DAYS</a></td>
+
+            <td>This function returns the number of days between two dates.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DAYS360.html" data-auto-update-caption="true">DAYS360</a></td>
+
+            <td>This function returns the number of days between two dates based on a 360-day year.</td>
+        </tr>
+
+        <tr>
+            <td><a href="EDATE.html" data-auto-update-caption="true">EDATE</a></td>
+
+            <td>This function calculates the date that is the indicated number of months before or after a specified date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="EOMONTH.html" data-auto-update-caption="true">EOMONTH</a></td>
+
+            <td>This function calculates the date for the last day of the month (end of month) that is the indicated number of months before or after the starting date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="HOUR.html" data-auto-update-caption="true">HOUR</a></td>
+
+            <td>This function returns the hour that corresponds to a specified time.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ISOWEEKNUM.html" data-auto-update-caption="true">ISOWEEKNUM</a></td>
+
+            <td>This function returns the number of the ISO week number of the year for a given date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MINUTE.html" data-auto-update-caption="true">MINUTE</a></td>
+
+            <td>This function returns the minute corresponding to a specified time.</td>
+        </tr>
+
+        <tr>
+            <td><a href="MONTH.html" data-auto-update-caption="true">MONTH</a></td>
+
+            <td>This function returns the month corresponding to the specified date value.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NETWORKDAYS.html" data-auto-update-caption="true">NETWORKDAYS</a></td>
+
+            <td>This function returns the total number of complete working days between the start and end dates.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NETWORKDAYS.INTL.html" data-auto-update-caption="true">NETWORKDAYS.INTL</a></td>
+
+            <td>This function returns the number of workdays between two dates using arguments to indicate holidays and weekend days.</td>
+        </tr>
+
+        <tr>
+            <td><a href="NOW.html" data-auto-update-caption="true">NOW</a></td>
+
+            <td>This function returns the current date and time.</td>
+        </tr>
+
+        <tr>
+            <td><a href="SECOND.html" data-auto-update-caption="true">SECOND</a></td>
+
+            <td>This function returns the seconds (0 to 59) value for a specified time.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TIME.html" data-auto-update-caption="true">TIME</a></td>
+
+            <td>This function returns the TimeSpan object for a specified time.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TIMEVALUE.html" data-auto-update-caption="true">TIMEVALUE</a></td>
+
+            <td>This function returns the TimeSpan object of the time represented by a text string.</td>
+        </tr>
+
+        <tr>
+            <td><a href="TODAY.html" data-auto-update-caption="true">TODAY</a></td>
+
+            <td>This function returns the date and time of the current date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="WEEKDAY.html" data-auto-update-caption="true">WEEKDAY</a></td>
+
+            <td>This function returns the number corresponding to the day of the week for a specified date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="WEEKNUM.html" data-auto-update-caption="true">WEEKNUM</a></td>
+
+            <td>This function returns a number that indicates the week of the year numerically.</td>
+        </tr>
+
+        <tr>
+            <td><a href="WORKDAY.html" data-auto-update-caption="true">WORKDAY</a></td>
+
+            <td>This function returns the number of working days before or after the starting date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="WORKDAY.INTL.html" data-auto-update-caption="true">WORKDAY.INTL</a></td>
+
+            <td>This function returns the serial number of the date before or after a number of workdays with custom weekend parameters. These parameters indicate weekend days and holidays.</td>
+        </tr>
+
+        <tr>
+            <td><a href="YEAR.html" data-auto-update-caption="true">YEAR</a></td>
+
+            <td>This function returns the year as an integer for a specified date.</td>
+        </tr>
+
+        <tr>
+            <td><a href="YEARFRAC.html" data-auto-update-caption="true">YEARFRAC</a></td>
+
+            <td>This function returns the fraction of the year represented by the number of whole days between the start and end dates.</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

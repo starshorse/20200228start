@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how to select multiple worksheets and perform delete or hide operations on them using SpreadJS." />
+    
+    <title>Select Multiple Worksheets | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n167","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how to select multiple worksheets and perform delete or hide operations on them using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="5acd66e8-bc51-49e1-ac59-e2db73fceebc"/>
+    <meta name="Microsoft.Help.TocParent" content="1e96aff2-c1e7-4a22-a4f9-4395d3e8cd8c"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="workbook.html">Workbook</a>
+ / Select Multiple Worksheets</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Select Multiple Worksheets</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to select multiple worksheets and perform delete or hide operations on them. The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~isSelected.html">isSelected</a> property can be used to select or deselect multiple&nbsp;worksheets.&nbsp;When multiple sheets are selected, hide or delete operations can be applied on them&nbsp;by using context menu options.</p>
+
+<p>The below image depicts multiple selected worksheets of a workbook.</p>
+
+<p><img border="0" alt="Selecting multiple worksheets in a workbook" src="images/Multi_select.PNG" /></p>
+
+<p>&nbsp;</p>
+
+<p>The selected state of an&nbsp;active sheet&nbsp;can also be changed by using&nbsp;<strong>isSelected</strong> property or&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Events~SheetChanging_EV.html">SheetChanging</a> event. When the active sheet is deselected, its view changes to <strong>activeNotSelected.</strong> The selected state of&nbsp;a sheet is reserved even&nbsp;after using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~reset.html">reset</a> method.</p>
+
+<h3>Supported User Interaction</h3>
+
+<p>SpreadJS provides support to change the selected state of a worksheet by using&nbsp;keyboard and mouse click behavior. However, the active sheet is always selected and cannot be deselected by UI behavior.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th><strong>UI Operation</strong></th>
+
+            <th><strong>Selected Sheet Tab</strong></th>
+
+            <th><strong>Unselected Sheet Tab</strong></th>
+        </tr>
+
+        <tr>
+            <td>Click</td>
+
+            <td>Sets the clicked sheet as active sheet.</td>
+
+            <td>
+                <p>Sets the clicked sheet as active sheet and deselects all the selected sheets.</p>
+
+                <p>If all the sheets are selected and non active sheet is clicked, the clicked sheet becomes the active sheet and all other sheets&nbsp;are deselected.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td height="97">Ctrl or Cmd + Click</td>
+
+            <td height="97">Deselects the selected&nbsp;sheet (not in case of active sheet).</td>
+
+            <td height="97">The clicked sheet is added as one of the selected sheets.</td>
+        </tr>
+
+        <tr>
+            <td>Shift + Click</td>
+
+            <td colspan="2">
+                <p>In the cases of a selected or unselected sheet, this operation:</p>
+
+                <ul>
+                    <li>Selects all the sheets between the active sheet and clicked sheet.</li>
+
+                    <li>Deselects all the worksheets that are&nbsp;beyond the&nbsp;above range.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Limitations</strong></p>
+
+<ul>
+    <li>Touch operation&nbsp;doesn't support selection of multiple sheets.</li>
+
+    <li>Undo or redo operations are not supported.</li>
+
+    <li>Hidden sheets cannot be selected.</li>
+</ul>
+
+<h3>Using Code</h3>
+
+<p>This example code sets the selected state of multiple worksheets in a workbook.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+
+<span style="COLOR: #008000">// Set the selected state of a particular sheet
+</span>spread.getSheet(1).isSelected(<span style="COLOR: #0000ff">true</span>);
+spread.getSheet(2).isSelected(<span style="COLOR: #0000ff">false</span>);
+spread.getSheet(3).isSelected(<span style="COLOR: #0000ff">true</span>);
+spread.getSheet(4).isSelected(<span style="COLOR: #0000ff">true</span>);
+
+<span style="COLOR: #008000">// get the selected state of a particular sheet
+</span><span style="COLOR: #0000ff">var</span> selectedState = spread.getSheet(3).isSelected();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,676 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="With SpreadJS, you can sort data in the widget and specify a column or row index to sort on as well as the sort criteria. You can also specify multiple sort keys." />
+    
+    <title>Sort Data | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n429","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="With SpreadJS, you can sort data in the widget and specify a column or row index to sort on as well as the sort criteria. You can also specify multiple sort keys." />
+    
+    <meta name="Microsoft.Help.Id" content="878d3cfa-3c3e-4366-b796-6f9fa8941067"/>
+    <meta name="Microsoft.Help.TocParent" content="60161ae6-c9af-4e12-a9c9-87f5058e29ce"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sort-data.html">Sort</a>
+ / Sort Data</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Sort Data</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can sort data in a spreadsheet and specify&nbsp;the column or row index to sort on as well as the sort criteria. You can also specify multiple sort keys (sort by a specified column or row first, then another column or row,&nbsp;and so on).</p>
+
+<h3>Sort Range in Ascending or Descending Order</h3>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~sortRange.html">sortRange</a> method is used to sort data.&nbsp;The <strong>sortInfo</strong> object in the <strong>sortRange</strong> method&nbsp;specifies sort keys and ascending or descending order.</p>
+
+<p>The following GIF illustrates a column sorting in ascending and descending order.</p>
+
+<p><img border="0" alt="Column sorting" src="images/codesort.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+activeSheet.setValue(0, 0, 10);
+activeSheet.setValue(1, 0, 100);
+activeSheet.setValue(2, 0, 50);
+activeSheet.setValue(3, 0, 40);
+activeSheet.setValue(4, 0, 80);
+activeSheet.setValue(5, 0, 1);
+activeSheet.setValue(6, 0, 65);
+activeSheet.setValue(7, 0, 20);
+activeSheet.setValue(8, 0, 30);
+activeSheet.setValue(9, 0, 35);
+
+$(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span>(){
+     <span style="COLOR: #008000">//Sort Column1 by ascending at every button click.
+</span>    activeSheet.sortRange(-1, 0, -1, 1, <span style="COLOR: #0000ff">true</span>, [{index:0, ascending:<span style="COLOR: #0000ff">true</span>}]);
+   });
+ $(<span style="COLOR: #800000">"#button2"</span>).click(<span style="COLOR: #0000ff">function</span>(){
+    <span style="COLOR: #008000">//Sort Column1 by descending at every button click.
+</span>     activeSheet.sortRange(-1, 0, -1, 1, <span style="COLOR: #0000ff">true</span>, [
+       {index:0, ascending:<span style="COLOR: #0000ff">false</span>}
+     ]);
+ });
+<span style="COLOR: #008000">//Add button controls to page
+</span>&lt;input type=<span style="COLOR: #800000">"button"</span> id=<span style="COLOR: #800000">"button1"</span> value=<span style="COLOR: #800000">"button1"/&gt;
+</span>&lt;input type=<span style="COLOR: #800000">"button"</span> id=<span style="COLOR: #800000">"button2"</span> value=<span style="COLOR: #800000">"button2"/&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Sort Multiple Ranges</h3>
+
+<p>You can sort multiple ranges&nbsp;by specifying multiple sort keys in the&nbsp;<strong>sortInfo</strong> object.</p>
+
+<p><img border="0" alt="" src="images/sort-multiple-keys.gif" />&nbsp;</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+ $(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+    <span style="COLOR: #0000ff">var</span> spread =
+    <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>), {sheetCount:3});
+    <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+    activeSheet.setRowCount(6);
+    activeSheet.setValue(0, 0, 10);
+    activeSheet.setValue(1, 0, 100);
+    activeSheet.setValue(2, 0, 100);
+    activeSheet.setValue(3, 0, 10);
+    activeSheet.setValue(4, 0, 5);
+    activeSheet.setValue(5, 0, 10);
+    activeSheet.setValue(0, 1, 10);
+    activeSheet.setValue(1, 1, 40);
+    activeSheet.setValue(2, 1, 10);
+    activeSheet.setValue(3, 1, 20);
+    activeSheet.setValue(4, 1, 10);
+    activeSheet.setValue(5, 1, 40);
+    $(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span>()
+    {
+        <span style="COLOR: #008000">// Create a SortInfo object where 1st Key:Column1 / 2nd Key:Column2.
+</span>        <span style="COLOR: #0000ff">var</span> sortInfo =
+        [
+            {index:0, ascending:<span style="COLOR: #0000ff">true</span>},
+            {index:1, ascending:<span style="COLOR: #0000ff">false</span>}
+        ];
+        <span style="COLOR: #008000">// Execute sorting which targets all rows based on the sorting conditions.
+</span>        spread.getActiveSheet().sortRange(0, 0, 6, 2, <span style="COLOR: #0000ff">true</span>, sortInfo);
+    });
+});
+
+<span style="COLOR: #008000">//Add button control to page
+</span>&lt;input type=<span style="COLOR: #800000">"button"</span> id=<span style="COLOR: #800000">"button1"</span> value=<span style="COLOR: #800000">"Sort"/&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Sort by Cell Background Color</h3>
+
+<p>You can sort the cells&nbsp;by background color using the <strong>sortInfo.backColor</strong> option. The cells are grouped&nbsp;by position&nbsp;at the top or bottom of the selected range using the <strong>sortInfo.order</strong> option.</p>
+
+<p>The following GIF illustrates the green-colored cells being&nbsp;sorted at the bottom.</p>
+
+<p><img border="0" alt="" src="images/sort-backcolor.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+sheet.setArray(0, 0, [
+    [<span style="COLOR: #800000">"Order No."</span>,<span style="COLOR: #800000">"Order Date"</span>,<span style="COLOR: #800000">"Product Type"</span>,<span style="COLOR: #800000">"Qty"</span>,<span style="COLOR: #800000">"Customer ID"</span>,<span style="COLOR: #800000">"Delivery Status"</span>],
+    [<span style="COLOR: #800000">"1234"</span>, <span style="COLOR: #800000">"11-Jul"</span>, <span style="COLOR: #800000">"Electronic"</span>, <span style="COLOR: #800000">"1"</span>, <span style="COLOR: #800000">"861861"</span>, <span style="COLOR: #800000">"Delivered"</span>],
+    [<span style="COLOR: #800000">"1235"</span>, <span style="COLOR: #800000">"12-Jul"</span>, <span style="COLOR: #800000">"Clothing"</span>,   <span style="COLOR: #800000">"4"</span>, <span style="COLOR: #800000">"530317"</span>, <span style="COLOR: #800000">"Past Due"</span>],
+    [<span style="COLOR: #800000">"1236"</span>, <span style="COLOR: #800000">"13-Jul"</span>, <span style="COLOR: #800000">"Cleaning"</span>,   <span style="COLOR: #800000">"2"</span>, <span style="COLOR: #800000">"753904"</span>, <span style="COLOR: #800000">"Past Due"</span>],
+    [<span style="COLOR: #800000">"1237"</span>, <span style="COLOR: #800000">"14-Jul"</span>, <span style="COLOR: #800000">"Food Item"</span>,  <span style="COLOR: #800000">"6"</span>, <span style="COLOR: #800000">"623424"</span>, <span style="COLOR: #800000">"Delivered"</span>],
+    [<span style="COLOR: #800000">"1238"</span>, <span style="COLOR: #800000">"15-Jul"</span>, <span style="COLOR: #800000">"Electronic"</span>, <span style="COLOR: #800000">"3"</span>, <span style="COLOR: #800000">"214403"</span>, <span style="COLOR: #800000">"Past Due"</span>],
+    [<span style="COLOR: #800000">"1239"</span>, <span style="COLOR: #800000">"16-Jul"</span>, <span style="COLOR: #800000">"Clothing"</span>,   <span style="COLOR: #800000">"7"</span>, <span style="COLOR: #800000">"105146"</span>, <span style="COLOR: #800000">"Due in 4 Days"</span>],
+    [<span style="COLOR: #800000">"1240"</span>, <span style="COLOR: #800000">"17-Jul"</span>, <span style="COLOR: #800000">"Cleaning"</span>,   <span style="COLOR: #800000">"3"</span>, <span style="COLOR: #800000">"860876"</span>, <span style="COLOR: #800000">"Past Due"</span>],
+    [<span style="COLOR: #800000">"1241"</span>, <span style="COLOR: #800000">"18-Jul"</span>, <span style="COLOR: #800000">"Food Item"</span>,  <span style="COLOR: #800000">"8"</span>, <span style="COLOR: #800000">"126990"</span>, <span style="COLOR: #800000">"Delivered"</span>],
+    [<span style="COLOR: #800000">"1242"</span>, <span style="COLOR: #800000">"19-Jul"</span>, <span style="COLOR: #800000">"Electronic"</span>, <span style="COLOR: #800000">"2"</span>, <span style="COLOR: #800000">"505788"</span>, <span style="COLOR: #800000">"Delivered"</span>],
+    [<span style="COLOR: #800000">"1243"</span>, <span style="COLOR: #800000">"20-Jul"</span>, <span style="COLOR: #800000">"Clothing"</span>,   <span style="COLOR: #800000">"5"</span>, <span style="COLOR: #800000">"298332"</span>, <span style="COLOR: #800000">"Due in 4 Days"</span>]
+]);
+            
+spread.getSheet(0).getCell(1, 5).backColor(<span style="COLOR: #800000">"#E2EFDA"</span>);            
+spread.getSheet(0).getCell(2, 5).backColor(<span style="COLOR: #800000">"#FCE4D6"</span>);            
+spread.getSheet(0).getCell(3, 5).backColor(<span style="COLOR: #800000">"#FCE4D6"</span>);            
+spread.getSheet(0).getCell(4, 5).backColor(<span style="COLOR: #800000">"#E2EFDA"</span>);            
+spread.getSheet(0).getCell(5, 5).backColor(<span style="COLOR: #800000">"#FCE4D6"</span>);            
+spread.getSheet(0).getCell(6, 5).backColor(<span style="COLOR: #800000">"#FFF2CC"</span>);            
+spread.getSheet(0).getCell(7, 5).backColor(<span style="COLOR: #800000">"#FCE4D6"</span>);            
+spread.getSheet(0).getCell(8, 5).backColor(<span style="COLOR: #800000">"#E2EFDA"</span>);            
+spread.getSheet(0).getCell(9, 5).backColor(<span style="COLOR: #800000">"#E2EFDA"</span>);            
+spread.getSheet(0).getCell(10, 5).backColor(<span style="COLOR: #800000">"#FFF2CC"</span>);
+
+<span style="COLOR: #0000ff">var</span> ColorList = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.RadioButtonList();
+ColorList.items([
+    { text: <span style="COLOR: #800000">"Green"</span>, value: <span style="COLOR: #800000">"green"</span> },
+    { text: <span style="COLOR: #800000">"Red"</span>, value: <span style="COLOR: #800000">"red"</span> }, 
+    { text: <span style="COLOR: #800000">"Yellow"</span>, value: <span style="COLOR: #800000">"yellow"</span> }
+]);
+spread.getSheet(0).getCell(12, 2).cellType(ColorList);
+
+<span style="COLOR: #0000ff">var</span> OrderList = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.RadioButtonList();
+OrderList.items([
+    { text: <span style="COLOR: #800000">"Top"</span>, value: <span style="COLOR: #800000">"top"</span> },
+    { text: <span style="COLOR: #800000">"Bottom"</span>, value: <span style="COLOR: #800000">"bottom"</span> }
+]);
+spread.getSheet(0).getCell(12, 3).cellType(OrderList);
+  
+sortBackColor(spread.getSheet(0));
+    
+<span style="COLOR: #0000ff">function</span> sortBackColor (sheet){
+    const CELL_COLOR_MAPPING = {
+        green: <span style="COLOR: #800000">"#E2EFDA"</span>,
+        red: <span style="COLOR: #800000">"#FCE4D6"</span>,
+        yellow: <span style="COLOR: #800000">"#FFF2CC"</span>,
+    }
+    sheet.setColumnWidth(3,120);
+    <span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+    style.cellButtons = [{
+    caption: <span style="COLOR: #800000">"Sort By Cell Color"</span>,
+    useButtonStyle:<span style="COLOR: #0000ff">true</span>,
+    width: 120,
+    command: <span style="COLOR: #0000ff">function</span> (sheet) {
+        <span style="COLOR: #0000ff">var</span> value = sheet.getValue(12,2);
+        <span style="COLOR: #0000ff">var</span> order = sheet.getValue(12,3);
+        value = value ? value : <span style="COLOR: #800000">"green"</span>;
+        order = order ? order : <span style="COLOR: #800000">"top"</span>;
+        <span style="COLOR: #0000ff">var</span> color = CELL_COLOR_MAPPING[value];
+        sheet.sortRange(1,0,10,6,<span style="COLOR: #0000ff">true</span>,[{
+            index:5,
+            backColor:color,
+            order:order,
+        }])
+    }
+    }];
+    sheet.setStyle(13,3,style);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using SpreadJS Designer</h4>
+
+<p>You can sort by background color by choosing the "Cell Color" option in "SortOn" dropdown. The Sort dialog can be accessed from Home &gt; Editing &gt; Sort &amp; Filter &gt; "Custom Sort"&nbsp;option.</p>
+
+<p><img border="0" alt="" src="images/designer-sort-backcolor.png" /></p>
+
+<h3>Sort by Font Color</h3>
+
+<p>You can sort the cells by font color using the <strong>sortInfo.foreColor</strong> option. The cells are grouped&nbsp;by position&nbsp;at the top or bottom of the selected range using the <strong>sortInfo.order</strong> option.</p>
+
+<p>The following GIF illustrates red-colored cells being sorted at the top.</p>
+
+<p><img border="0" alt="" src="images/sort-forecolor.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+spread.getSheet(1).setArray(0, 0, [
+    [<span style="COLOR: #800000">"Order No."</span>,<span style="COLOR: #800000">"Order Date"</span>,<span style="COLOR: #800000">"Product Type"</span>,<span style="COLOR: #800000">"Qty"</span>,<span style="COLOR: #800000">"Customer ID"</span>,<span style="COLOR: #800000">"Delivery Status"</span>],
+    [<span style="COLOR: #800000">"1234"</span>, <span style="COLOR: #800000">"11-Jul"</span>, <span style="COLOR: #800000">"Electronic"</span>, <span style="COLOR: #800000">"1"</span>, <span style="COLOR: #800000">"861861"</span>, <span style="COLOR: #800000">"Delivered"</span>],
+    [<span style="COLOR: #800000">"1235"</span>, <span style="COLOR: #800000">"12-Jul"</span>, <span style="COLOR: #800000">"Clothing"</span>,   <span style="COLOR: #800000">"4"</span>, <span style="COLOR: #800000">"530317"</span>, <span style="COLOR: #800000">"Past Due"</span>],
+    [<span style="COLOR: #800000">"1236"</span>, <span style="COLOR: #800000">"13-Jul"</span>, <span style="COLOR: #800000">"Cleaning"</span>,   <span style="COLOR: #800000">"2"</span>, <span style="COLOR: #800000">"753904"</span>, <span style="COLOR: #800000">"Past Due"</span>],
+    [<span style="COLOR: #800000">"1237"</span>, <span style="COLOR: #800000">"14-Jul"</span>, <span style="COLOR: #800000">"Food Item"</span>,  <span style="COLOR: #800000">"6"</span>, <span style="COLOR: #800000">"623424"</span>, <span style="COLOR: #800000">"Delivered"</span>],
+    [<span style="COLOR: #800000">"1238"</span>, <span style="COLOR: #800000">"15-Jul"</span>, <span style="COLOR: #800000">"Electronic"</span>, <span style="COLOR: #800000">"3"</span>, <span style="COLOR: #800000">"214403"</span>, <span style="COLOR: #800000">"Past Due"</span>],
+    [<span style="COLOR: #800000">"1239"</span>, <span style="COLOR: #800000">"16-Jul"</span>, <span style="COLOR: #800000">"Clothing"</span>,   <span style="COLOR: #800000">"7"</span>, <span style="COLOR: #800000">"105146"</span>, <span style="COLOR: #800000">"Due in 4 Days"</span>],
+    [<span style="COLOR: #800000">"1240"</span>, <span style="COLOR: #800000">"17-Jul"</span>, <span style="COLOR: #800000">"Cleaning"</span>,   <span style="COLOR: #800000">"3"</span>, <span style="COLOR: #800000">"860876"</span>, <span style="COLOR: #800000">"Past Due"</span>],
+    [<span style="COLOR: #800000">"1241"</span>, <span style="COLOR: #800000">"18-Jul"</span>, <span style="COLOR: #800000">"Food Item"</span>,  <span style="COLOR: #800000">"8"</span>, <span style="COLOR: #800000">"126990"</span>, <span style="COLOR: #800000">"Delivered"</span>],
+    [<span style="COLOR: #800000">"1242"</span>, <span style="COLOR: #800000">"19-Jul"</span>, <span style="COLOR: #800000">"Electronic"</span>, <span style="COLOR: #800000">"2"</span>, <span style="COLOR: #800000">"505788"</span>, <span style="COLOR: #800000">"Delivered"</span>],
+    [<span style="COLOR: #800000">"1243"</span>, <span style="COLOR: #800000">"20-Jul"</span>, <span style="COLOR: #800000">"Clothing"</span>,   <span style="COLOR: #800000">"5"</span>, <span style="COLOR: #800000">"298332"</span>, <span style="COLOR: #800000">"Due in 4 Days"</span>]
+]);
+
+spread.getSheet(1).name(<span style="COLOR: #800000">"Sort by font color"</span>);
+spread.getSheet(1).getCell(1, 5).foreColor(<span style="COLOR: #800000">"#548235"</span>);            
+spread.getSheet(1).getCell(2, 5).foreColor(<span style="COLOR: #800000">"#C65911"</span>);            
+spread.getSheet(1).getCell(3, 5).foreColor(<span style="COLOR: #800000">"#C65911"</span>);            
+spread.getSheet(1).getCell(4, 5).foreColor(<span style="COLOR: #800000">"#548235"</span>);            
+spread.getSheet(1).getCell(5, 5).foreColor(<span style="COLOR: #800000">"#C65911"</span>);            
+spread.getSheet(1).getCell(6, 5).foreColor(<span style="COLOR: #800000">"#BF8F00"</span>);            
+spread.getSheet(1).getCell(7, 5).foreColor(<span style="COLOR: #800000">"#C65911"</span>);            
+spread.getSheet(1).getCell(8, 5).foreColor(<span style="COLOR: #800000">"#548235"</span>);            
+spread.getSheet(1).getCell(9, 5).foreColor(<span style="COLOR: #800000">"#548235"</span>);            
+spread.getSheet(1).getCell(10, 5).foreColor(<span style="COLOR: #800000">"#BF8F00"</span>);
+
+<span style="COLOR: #0000ff">var</span> FontColorList = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.RadioButtonList();
+FontColorList.items([
+    { text: <span style="COLOR: #800000">"Green"</span>, value: <span style="COLOR: #800000">"green"</span> },
+    { text: <span style="COLOR: #800000">"Red"</span>, value: <span style="COLOR: #800000">"red"</span> }, 
+    { text: <span style="COLOR: #800000">"Yellow"</span>, value: <span style="COLOR: #800000">"yellow"</span> }
+]);
+spread.getSheet(1).getCell(12, 2).cellType(FontColorList);
+
+<span style="COLOR: #0000ff">var</span> FontColorOrder = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.RadioButtonList();
+FontColorOrder.items([
+    { text: <span style="COLOR: #800000">"Top"</span>, value: <span style="COLOR: #800000">"top"</span> },
+    { text: <span style="COLOR: #800000">"Bottom"</span>, value: <span style="COLOR: #800000">"bottom"</span> }
+]);
+spread.getSheet(1).getCell(12, 3).cellType(FontColorOrder);
+  
+sortFontColor(spread.getSheet(1));
+
+<span style="COLOR: #0000ff">function</span> sortFontColor (sheet){
+    const FONT_COLOR_MAPPING = {
+        green:<span style="COLOR: #800000">"#548235"</span>,
+        red:<span style="COLOR: #800000">"#C65911"</span>,
+        yellow: <span style="COLOR: #800000">"#BF8F00"</span>
+    }
+    sheet.setColumnWidth(3,120);
+    <span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+    style.cellButtons = [{
+            caption:<span style="COLOR: #800000">"Sort By Font Color"</span>,
+            useButtonStyle:<span style="COLOR: #0000ff">true</span>,
+            width:120,
+            command:<span style="COLOR: #0000ff">function</span> (sheet){
+                <span style="COLOR: #0000ff">var</span> value = sheet.getValue(12,2);
+                <span style="COLOR: #0000ff">var</span> order = sheet.getValue(12,3);
+                value = value ? value : <span style="COLOR: #800000">"green"</span>;
+                order = order ? order : <span style="COLOR: #800000">"top"</span>;
+                <span style="COLOR: #0000ff">var</span> color = FONT_COLOR_MAPPING[value];
+                sheet.sortRange(1,0,10,6,<span style="COLOR: #0000ff">true</span>,[{
+                    index:5,
+                    fontColor:color,
+                    order:order
+                }])
+            }
+        }];
+    sheet.setStyle(13,3,style);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using SpreadJS Designer</h4>
+
+<p>You can sort by font color by choosing the "Font Color" option in "SortOn" dropdown. The Sort dialog can be accessed from Home &gt; Editing &gt; Sort &amp; Filter &gt; "Custom Sort"&nbsp;option. <img border="0" alt="" src="images/designer-sort-forecolor.png" /></p>
+
+<h3>Ignore Hidden Data while Sorting</h3>
+
+<p>You can also&nbsp;skip hidden data while sorting by using <strong>ignoreHidden</strong> option in API. A cell or a range is considered to be hidden when:</p>
+
+<ul>
+    <li>A row's height&nbsp;or column's&nbsp;width is 0</li>
+
+    <li>A row or column is hidden</li>
+
+    <li>A row or column is&nbsp;filtered out</li>
+
+    <li>Some rows or columns are grouped and unexpanded&nbsp;</li>
+</ul>
+
+<p>The below example contains hidden rows&nbsp;(cells A5:A6)&nbsp;and displays&nbsp;how the data is sorted with different values of <strong>ignoreHidden</strong>:</p>
+
+<table style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+    <tbody>
+        <tr>
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>Original Data</strong></th>
+
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>ignoreHidden is true</strong></th>
+
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>ignoreHidden is false</strong></th>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="" src="images/Orig_hidden_data.png" /></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="" src="images/hiddenTrue.png" /></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="" src="images/hiddenFalse.PNG" /></td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Using Code</h4>
+
+<p>This example code shows how to sort data by skipping hidden rows.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+<span style="COLOR: #008000">// Set data
+</span>activeSheet.setValue(0, 0, <span style="COLOR: #800000">"Name"</span>);
+activeSheet.setValue(0, 1, <span style="COLOR: #800000">"Age"</span>);
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">"Rick"</span>);
+activeSheet.setValue(1, 1, 52);
+activeSheet.setValue(2, 0, <span style="COLOR: #800000">"Tim"</span>);
+activeSheet.setValue(2, 1, 50);
+activeSheet.setValue(3, 0, <span style="COLOR: #800000">"Jerry"</span>);
+activeSheet.setValue(3, 1, 46);
+activeSheet.setValue(4, 0, <span style="COLOR: #800000">"Jack"</span>);
+activeSheet.setValue(4, 1, 98);
+activeSheet.setValue(5, 0, <span style="COLOR: #800000">"Sandy"</span>);
+activeSheet.setValue(5, 1, 99);
+activeSheet.setValue(6, 0, <span style="COLOR: #800000">"Smith"</span>);
+activeSheet.setValue(6, 1, 42);
+activeSheet.setValue(7, 0, <span style="COLOR: #800000">"Greg"</span>);
+activeSheet.setValue(7, 1, 41);
+activeSheet.setValue(8, 0, <span style="COLOR: #800000">"Sia"</span>);
+activeSheet.setValue(8, 1, 36);
+activeSheet.setValue(9, 0, <span style="COLOR: #800000">"Jennet"</span>);
+activeSheet.setValue(9, 1, 38);
+activeSheet.setValue(10, 0, <span style="COLOR: #800000">"Rachel"</span>);
+activeSheet.setValue(10, 1, 37);
+<span style="COLOR: #008000">// Hide Row
+</span>activeSheet.setRowHeight(4, 0.0, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setRowHeight(5, 0.0, GC.Spread.Sheets.SheetArea.viewport);
+
+<span style="COLOR: #008000">// Sort range i.e. "Age" column with ignoreHidden set to true
+</span>activeSheet.sortRange(1, 1, 10, 1, <span style="COLOR: #0000ff">true</span>, [{ index: 1, ascending: <span style="COLOR: #0000ff">true</span> }], { ignoreHidden: <span style="COLOR: #0000ff">true</span> });
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>SpreadJS also allows you to sort grouped data by using <strong>groupSort</strong> enumeration. The grouped and unexpanded data is considered as hidden rows or columns. To know more about sorting grouped data, refer&nbsp;<a href="sort-with-grouped-data.html">Sort with Grouped Data</a>.</p>
+
+<p>The behavior of data when&nbsp;<strong>groupSort</strong> and <strong>ignoreHidden</strong> are&nbsp;used together,&nbsp;is explained in the below table:</p>
+
+<table style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+    <tbody>
+        <tr>
+            <td style="BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid"></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>ignoreHidden=true</strong></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>ignoreHidden=false</strong></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>ignoreHidden undefined</strong></td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>groupSort (group, child or full)</strong></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid" colspan="3" align="center">Group sort works and hidden values are not ignored</td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>groupSort (flat)</strong></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Ignores hidden values</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Does not ignore hidden values</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Ignores hidden values</td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>groupSort&nbsp;undefined</strong></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Ignores hidden values</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Does not ignore hidden values</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+                <p>If sorting range contains a group, then group sort is applied</p>
+
+                <p>If sorting range does not contain a group,&nbsp;then hidden values are ignored</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>This example code shows how to use <strong>ignoreHidden</strong> and <strong>groupSort</strong> together.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// set data
+</span> activeSheet.setArray(3, 0, [
+     [6221], [5125], [<span style="COLOR: #800000">'Samsung'</span>], [4348], [3432], [<span style="COLOR: #800000">'LG'</span>], [1928], [2290], [<span style="COLOR: #800000">'Oppo'</span>], [8939], [7006], [<span style="COLOR: #800000">'Apple'</span>]
+ ]);
+ activeSheet.rowOutlines.group(3, 2);
+ activeSheet.rowOutlines.group(6, 2);
+ activeSheet.rowOutlines.group(9, 2);
+ activeSheet.rowOutlines.group(12, 2);
+ spread.resumePaint();
+
+ <span style="COLOR: #008000">// set rowFilter
+</span> activeSheet.rowFilter(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Filter.HideRowFilter(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(3, 0, 13, 1)));
+
+ <span style="COLOR: #008000">// hide rows
+</span> activeSheet.setRowHeight(4, 0.0, GC.Spread.Sheets.SheetArea.viewport);
+ activeSheet.setRowHeight(5, 0.0, GC.Spread.Sheets.SheetArea.viewport);
+
+ <span style="COLOR: #008000">//1) If you want to use filter dialog to sort the data with enhanced group feature and ignoreHidden, you should use RangeSorting event
+</span> spread.bind(GC.Spread.Sheets.Events.RangeSorting, <span style="COLOR: #0000ff">function</span> (e, info) {
+     <span style="COLOR: #008000">// set GroupSort to full
+</span>     info.groupSort = GC.Spread.Sheets.GroupSort.full;
+     <span style="COLOR: #008000">// set ignoreHidden to true
+</span>     info.ignoreHidden = <span style="COLOR: #0000ff">true</span>;
+ });
+
+ <span style="COLOR: #008000">//2) If you want to use api to sort the data with enhanced group feature and ignoreHidden, you should use this code
+</span> <span style="COLOR: #008000">// activeSheet.sortRange(3, 0, 13, 1, true, [{ index: 0, ascending: true }], { ignoreHidden: true, groupSort: GC.Spread.Sheets.GroupSort.full });</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

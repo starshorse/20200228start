@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Getting Started | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="881e1673-63c9-40dd-b583-5bb1d4d3ce08"/>
+    <meta name="Microsoft.Help.TocParent" content="-1"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Getting Started</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <h2>System Requirements</h2>
+
+<p>SpreadJS widget requires one of the following browsers:</p>
+
+<ul>
+    <li>Microsoft IE9+</li>
+
+    <li>Mozilla FireFox</li>
+
+    <li>Safari</li>
+
+    <li>Google Chrome</li>
+</ul>
+
+<p>The browser&nbsp;must&nbsp;support HTML5.</p>
+
+<p>The client-side Excel import and export requires IE10+.</p>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> SpreadJS also supports Windows 11 and Windows Server 2022.
+</div>
+
+<h2>Installation</h2>
+
+<h3>Install SpreadJS</h3>
+
+<ul>
+    <li>Save the downloaded ZIP file (SpreadJS.xxxx.zip) to a temporary directory on your system, and then unzip the files to a&nbsp;directory.</li>
+</ul>
+
+<p>The default SpreadJS folders&nbsp;(Windows only):</p>
+
+<table cellspacing="2" cellpadding="2" border="0">
+    <tbody>
+        <tr align="left" valign="top">
+            <th valign="top" width="30%"><strong>Install Directory</strong></th>
+
+            <th><strong>File</strong></th>
+
+            <th><strong>Description</strong></th>
+        </tr>
+
+        <tr valign="top">
+            <td>\SpreadJS.xxxx</td>
+
+            <td></td>
+
+            <td>Main directory for product</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\css</td>
+
+            <td></td>
+
+            <td>CSS files</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\definition</td>
+
+            <td>GC.spread.sheets.d.ts</td>
+
+            <td>TypeScript API definition file</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\samples</td>
+
+            <td></td>
+
+            <td>Sample pages for the widget</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\scripts</td>
+
+            <td>gc.spread.sheets.all.xxxx.min</td>
+
+            <td>Minimized js file for widget which includes all functions without plugins.</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\scripts\modules</td>
+
+            <td></td>
+
+            <td>modules js files</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\scripts\interop</td>
+
+            <td>gc.spread.excelio.xxxxx.min</td>
+
+            <td>Client-side Excel import and export support files</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\scripts\interop</td>
+
+            <td>gc.spread.sheets.migration.xxxxx.min</td>
+
+            <td>Migration file for backward compatibility</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\scripts\interop\angularjs</td>
+
+            <td>gc.spread.sheets.angularjs.xxxxx.min</td>
+
+            <td>AngularJS support files</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\scripts\interop\angular</td>
+
+            <td>gc.spread.sheets.angular.xxxxx.min</td>
+
+            <td>Angular support files</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\scripts\interop\react</td>
+
+            <td>gc.spread.sheets.react.xxxxx.min</td>
+
+            <td>React support file</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\scripts\interop\vuejs</td>
+
+            <td>gc.spread.sheets.vue.xxxxx.min</td>
+
+            <td>Vue support file</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\scripts\resources</td>
+
+            <td>ja\gc.spread.sheets.resources.ja.xxxxx.min<br />
+            zh\gc.spread.sheets.resources.zh.xxxx.min<br />
+            ko\gc.spread.sheets.resources.ko.xxxx.min</td>
+
+            <td>Japanese, Chinese, and Korean resource files</td>
+        </tr>
+
+        <tr>
+            <td>\SpreadJS.xxxx\scripts\plugins</td>
+
+            <td>gc.spread.pivot.pivottables.xxxxx.min.js<br />
+            gc.spread.sheets.barcode.xxxxx.min.js<br />
+            gc.spread.sheets.charts.xxxxx.min.js<br />
+            gc.spread.sheets.pdf.xxxxx.min.js<br />
+            gc.spread.sheets.print.xxxxx.min.js<br />
+            gc.spread.sheets.shapes.xxxxx.min.js<br />
+            gc.spread.sheets.tablesheet.xxxxx.min.js</td>
+
+            <td>The Barcode, Chart, Pivot Table, Print, Shapes, TableSheet, and Client-side PDF export plugins files.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Install SpreadJS Designer</h3>
+
+<ol>
+    <li>Save the downloaded ZIP file (SpreadJSDesigner.zip) to a temporary directory on your system, and then unzip the files to a directory.</li>
+
+    <li>Run the setup file for your environment.</li>
+
+    <li>Run the designer, select the lock icon, and enter your license key to unlock the SpreadJS Designer.</li>
+</ol>
+
+<table>
+    <tbody>
+        <tr>
+            <th><strong>Platform</strong></th>
+
+            <th><strong>Setup</strong></th>
+        </tr>
+
+        <tr>
+            <td>Windows</td>
+
+            <td>SpreadJS-Designer.x.x.x.exe</td>
+        </tr>
+
+        <tr>
+            <td>Mac</td>
+
+            <td>SpreadJS-Designer.x.x.x.dmg</td>
+        </tr>
+
+        <tr>
+            <td>Linux</td>
+
+            <td>SpreadJS-Designer.x.x.x.AppImage</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The default SpreadJS designer folder:</p>
+
+<table cellspacing="2" cellpadding="2" border="0">
+    <tbody>
+        <tr align="left" valign="top">
+            <th valign="top" width="30%"><strong>Install Directory</strong></th>
+
+            <th><strong>Description</strong></th>
+        </tr>
+
+        <tr valign="top">
+            <td>%Program Files (x86)%\GrapeCity\SpreadJS Designer\x.x.x</td>
+
+            <td>Designer directory for product</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Refer to <a href="trial_SpreadJS.html" data-auto-update-caption="true">Trial Version and Licensing Information</a> for licensing information.</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

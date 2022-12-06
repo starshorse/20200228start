@@ -1,0 +1,566 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>TableSheet Views | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n369","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="9eeff7e6-27e8-4312-88b1-7d5d36644515"/>
+    <meta name="Microsoft.Help.TocParent" content="66b1614e-0f0a-4370-8f16-1c0bf0f02f14"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="tablesheet.html">TableSheet</a>
+ / TableSheet Views</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">TableSheet Views</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>A tablesheet view is the centerpiece of a tablesheet and is formed by the fields of fetched data sources. It is used to enrich data columns and give them more capabilities.</p>
+
+<div title="Click to Enlarge" class="i-thumbnail-container">
+    <a title="Tablesheet view flowchart" class="i-thumbnail" rel="lightbox" data-href="images/ts-views-flowchart.png"><img alt="Tablesheet view flowchart" src="images/ts-views-flowchart_thumb.png" /></a>
+
+    <p>Tablesheet view flowchart</p>
+</div>
+
+<p>As displayed in the above&nbsp;flowchart image, a&nbsp;tablesheet view can be presented in the following ways:</p>
+
+<ul>
+    <li><strong>Table columns</strong>: Default columns that are generated from fields directly, which means they only have a field name property and are used to display the default view.</li>
+
+    <li><strong>View columns</strong>:&nbsp;Rich columns that you can customize with styles, formats, and more properties. They are rendered into TableSheet view by using many useful attributes such as caption, style, width, headerStyle.</li>
+</ul>
+
+<p>You can customize a tablesheet view by setting various <strong>IColumn</strong> attributes such as header style, header fit, conditional formatting, data validation, and column styles such as cell types and dropdowns.</p>
+
+<h3>Column Header Style</h3>
+
+<p>You can customize a column header's style by defining <strong>HeaderStyleOptions</strong> in view headerStyle attribute. The HeaderStyleOptions contain options such as background color, theme font, word wrap, and so on.</p>
+
+<p><img border="0" alt="" src="images/ts-columnheaderstyle.png" /></p>
+
+<p>The following code sample shows how to set column header style in a tablesheet view.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// define a style for column headers and assign it while adding the view using addView() method
+</span><span style="COLOR: #0000ff">var</span> headerStyle = {
+    font: <span style="COLOR: #800000">"italic bold 13pt Calibri"</span>,
+    borderTop: {
+        color: <span style="COLOR: #800000">"red"</span>,
+        style: <span style="COLOR: #800000">"thick"</span>
+    },
+    borderLeft: {
+        color: <span style="COLOR: #800000">"red"</span>,
+        style: <span style="COLOR: #800000">"thin"</span>
+    },
+    borderRight: {
+        color: <span style="COLOR: #800000">"red"</span>,
+        style: <span style="COLOR: #800000">"thin"</span>
+    },
+    borderBottom: {
+        color: <span style="COLOR: #800000">"red"</span>,
+        style: <span style="COLOR: #800000">"thin"</span>
+    }
+};
+
+
+<span style="COLOR: #008000">//bind a view to the table sheet
+</span>customerTable.fetch().then(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">var</span> view = customerTable.addView(<span style="COLOR: #800000">"myView"</span>, [
+        { value: <span style="COLOR: #800000">"customerKey"</span>, width: 130, headerStyle: headerStyle, caption: <span style="COLOR: #800000">"Customer Key"</span> },<span style="COLOR: #008000">// set the style of column header using headerStyle property
+</span>        { value: <span style="COLOR: #800000">"customer"</span>, width: 200, headerStyle: headerStyle, caption: <span style="COLOR: #800000">"Customer"</span> }, 
+        { value: <span style="COLOR: #800000">"billToCustomer"</span>, width: 200, headerStyle: headerStyle, caption: <span style="COLOR: #800000">"Bill To Customer"</span> },
+        { value: <span style="COLOR: #800000">"category"</span>, width: 120, headerStyle: headerStyle, caption: <span style="COLOR: #800000">"Category"</span> },
+        { value: <span style="COLOR: #800000">"buyingGroup"</span>, width: 180, headerStyle: headerStyle, caption: <span style="COLOR: #800000">"Buying Group"</span> },
+        { value: <span style="COLOR: #800000">"primaryContact"</span>, width: 170, headerStyle: headerStyle, caption: <span style="COLOR: #800000">"Primary Contact"</span> },
+        { value: <span style="COLOR: #800000">"postalCode"</span>, width: 120, headerStyle: headerStyle, caption: <span style="COLOR: #800000">"Postal Code"</span> },
+        { value: <span style="COLOR: #800000">"validFrom"</span>, width: 150, headerStyle: headerStyle, caption: <span style="COLOR: #800000">"Valid From"</span> },
+        { value: <span style="COLOR: #800000">"validTo"</span>, width: 180, headerStyle: headerStyle, caption: <span style="COLOR: #800000">"Valid To"</span> }
+
+    ]);
+    <span style="COLOR: #008000">//the View has all default columns of the Table
+</span>    sheet.setDataView(view);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Column Header Fit Mode</h3>
+
+<p>You can set the column header fit mode for the specified column in a tablesheet view to change the header layout in order to display header and viewport data suitably.</p>
+
+<p>It is useful when the content length of column data is short but the length of column header caption is too long, or when there are some columns that have relations.</p>
+
+<p>The view option attribute <strong>headerFit</strong>&nbsp;can be used to set&nbsp;the three types of header fit mode&nbsp;as described below.</p>
+
+<ul>
+    <li>Normal: The column header text direction is horizontal and from left to right. It is the default header fit mode.
+
+        <p><img border="0" alt="TableSheet Column Header Normal Fit Mode" src="images/ts-columnheaderfit-normal.png" /></p>
+    </li>
+
+    <li>Vertical: The column header text direction is vertical and from top to bottom.
+
+        <p><img border="0" alt="TableSheet Column Header Vertical Fit Mode" src="images/ts-columnheaderfit-vertical.png" /></p>
+    </li>
+
+    <li>Stack: The column headers are stacked on top of each other when the column is not wide enough for the column header text.
+
+        <p><img border="0" alt="TableSheet Column Header Stack Fit Mode" src="images/ts-columnheaderfit-stack.png" /></p>
+
+        <p>The stack header fit mode is displayed alongside the vertical mode in a cross-fit way when the columns are adjacent to each other.</p>
+
+        <p><img border="0" alt="TableSheet Column Header Stack and Vertical Fit Mode" src="images/ts-columnheaderfit-mixed.png" /></p>
+    </li>
+</ul>
+
+<p>You can also set the stack row height in a tablesheet view by using the <strong>defaultStackRowHeight</strong> option. It calculates the average row height by default when the value is null (default). If a valid number is given as a value, it calculates the height from top to bottom.</p>
+
+<p>The following code sample shows how to set the desired column header fit mode and adjust the row height in a tablesheet view.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//bind a view to the table sheet
+</span>myTable.fetch().then(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">var</span> view = myTable.addView(<span style="COLOR: #800000">"myView"</span>, [
+        { value: <span style="COLOR: #800000">"saleKey"</span>, caption: <span style="COLOR: #800000">"Sale Key"</span>, headerFit: <span style="COLOR: #800000">"stack"</span>, headerStyle: headerStyle },<span style="COLOR: #008000">// set headerFit to stack
+</span>        { value: <span style="COLOR: #800000">"cityKey"</span>, caption: <span style="COLOR: #800000">"City Key"</span>, headerFit: <span style="COLOR: #800000">"stack"</span>, headerStyle: headerStyle },
+        { value: <span style="COLOR: #800000">"stockItemKey"</span>, width: 50, caption: <span style="COLOR: #800000">"Stock Item Key"</span>, headerFit: <span style="COLOR: #800000">"stack"</span>, headerStyle: headerStyle },
+        { value: <span style="COLOR: #800000">"invoiceDateKey"</span>, width: 120, caption: <span style="COLOR: #800000">"Invoice Date Key"</span>, headerFit: <span style="COLOR: #800000">"vertical"</span>, headerStyle: headerStyle },
+        { value: <span style="COLOR: #800000">"deliveryDateKey"</span>, width: 120, caption: <span style="COLOR: #800000">"Delivery Date Key"</span>, headerFit: <span style="COLOR: #800000">"vertical"</span>, headerStyle: headerStyle },
+        { value: <span style="COLOR: #800000">"salesPerson"</span>, width: 150, caption: <span style="COLOR: #800000">"Sales Person"</span>, headerFit: <span style="COLOR: #800000">"vertical"</span>, headerStyle: headerStyle },
+        { value: <span style="COLOR: #800000">"address"</span>, caption: <span style="COLOR: #800000">"Address"</span>, width: 300, headerFit: <span style="COLOR: #800000">"normal"</span>, headerStyle: headerStyle }
+
+    ]);
+    sheet.setDataView(view);
+    sheet.options.defaultStackRowHeight = 30;
+    sheet.setDefaultRowHeight(220, 1);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> If the row height is unable to display the entire caption, the specific column row stack will be cut off. The <strong>setDefaultRowHeight</strong> method can be used to adjust this.</p>
+</div>
+
+<h3>Cell Types and Dropdowns</h3>
+
+<p>You can set different cell types and dropdowns in a tablesheet view to show how information is displayed and help in selecting the data easily and quickly.</p>
+
+<p><img border="0" alt="" src="images/ts-celltype-dropdown.gif" /></p>
+
+<p>The following cell types and dropdowns are supported in tablesheet:</p>
+
+<ul>
+    <li>Cell types - Checkbox, combobox, hyperlink, radio button list, checkbox list, range template</li>
+
+    <li>Dropdown - Color picker, date picker, time picker, month picker, list, slider, calculator, workflow list, multi column</li>
+</ul>
+
+<p>The following code sample shows how to add cell types and dropdowns in a tablesheet view.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Code for RadioButtonList
+</span><span style="COLOR: #0000ff">var</span> radioButtonListStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+<span style="COLOR: #0000ff">var</span> cellTypeRadioButtonList = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.RadioButtonList();
+cellTypeRadioButtonList.items([
+    { text: <span style="COLOR: #800000">"Tailspin Toys (Head Office)"</span>, value: <span style="COLOR: #800000">"Tailspin Toys (Head Office)"</span> },
+    { text: <span style="COLOR: #800000">"Wingtip Toys (Head Office)"</span>, value: <span style="COLOR: #800000">"Wingtip Toys (Head Office)"</span> },
+]);
+radioButtonListStyle.cellType = cellTypeRadioButtonList;
+
+<span style="COLOR: #008000">// Code for ButtonList
+</span><span style="COLOR: #0000ff">var</span> buttonListStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+<span style="COLOR: #0000ff">var</span> buttonListCellType = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.CellTypes.ButtonList();
+buttonListCellType.items([
+    { text: <span style="COLOR: #800000">"Tailspin Toys"</span>, value: <span style="COLOR: #800000">"Tailspin Toys"</span> },
+    { text: <span style="COLOR: #800000">"Wingtip Toys"</span>, value: <span style="COLOR: #800000">"Wingtip Toys"</span> },
+]);
+buttonListStyle.cellType = buttonListCellType;
+
+<span style="COLOR: #008000">// Code for Date DropDown
+</span><span style="COLOR: #0000ff">var</span> dateStyle = {};
+dateStyle.cellButtons = [
+    {
+        imageType: <span style="COLOR: #800000">"dropdown"</span>,
+        command: <span style="COLOR: #800000">"openDateTimePicker"</span>,
+        useButtonStyle: <span style="COLOR: #0000ff">true</span>,
+    }
+];
+dateStyle.dropDowns = [
+    {
+        type: <span style="COLOR: #800000">"dateTimePicker"</span>,
+        option: {
+            showTime: <span style="COLOR: #0000ff">true</span>
+        }
+    }
+];
+
+<span style="COLOR: #008000">//bind a view to the table sheet
+</span>customerTable.fetch().then(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">var</span> view = customerTable.addView(<span style="COLOR: #800000">"myView"</span>, [
+        { value: <span style="COLOR: #800000">"customerKey"</span>, width: 120, caption: <span style="COLOR: #800000">"Customer Key"</span> },
+        { value: <span style="COLOR: #800000">"billToCustomer"</span>, width: 400, caption: <span style="COLOR: #800000">"Bill To Customer"</span>, style: radioButtonListStyle },
+        { value: <span style="COLOR: #800000">"buyingGroup"</span>, width: 250, caption: <span style="COLOR: #800000">"Buying Group"</span>, style: buttonListStyle },
+        { value: <span style="COLOR: #800000">"primaryContact"</span>, width: 170, caption: <span style="COLOR: #800000">"Primary Contact"</span> },
+        { value: <span style="COLOR: #800000">"validFrom"</span>, width: 190, caption: <span style="COLOR: #800000">"Valid From"</span>, style: dateStyle }
+    ]);
+    <span style="COLOR: #008000">//the View has all default columns of the Table
+</span>    sheet.setDataView(view);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Column Caption Multiple Headers</h3>
+
+<p>You can set a column caption in a tablesheet view where multiple columns can be grouped under a common header. It helps you represent the available information in an organized way by grouping the columns into a common category.</p>
+
+<p>The TableSheet class parameter <em>addView.columnInfos</em> provides the caption property which accepts a string array to set multiple rows of a column header. The column header cells with the same values are merged automatically in the row direction and column direction.</p>
+
+<p>In the following example, customer information like Customer Key, Customer Name, Bill To Customer, and Primary Contact are presented under a common caption header “Customer Information” retaining the existing headers for each column. Similarly, product validity dates can be displayed under one column header caption.</p>
+
+<p><img border="0" alt="" src="images/ts-columnheader-multiplecol.png" /></p>
+
+<p>The following code sample shows how to set the same caption to the multiple columns in a TableSheet view.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//bind a view to the table sheet
+</span>myTable.fetch().then(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">var</span> view = myTable.addView(<span style="COLOR: #800000">"myView"</span>, [
+        { value: <span style="COLOR: #800000">"customerKey"</span>, width: 130, caption: [<span style="COLOR: #800000">"Customer Information"</span>, <span style="COLOR: #800000">"Customer Key"</span>] }, <span style="COLOR: #008000">// Set string array to caption
+</span>        { value: <span style="COLOR: #800000">"customer"</span>, width: 200, caption: [<span style="COLOR: #800000">"Customer Information"</span>, <span style="COLOR: #800000">"Customer"</span>] },
+        { value: <span style="COLOR: #800000">"billToCustomer"</span>, width: 200, caption: [<span style="COLOR: #800000">"Customer Information"</span>, <span style="COLOR: #800000">"Bill To Customer"</span>] },
+        { value: <span style="COLOR: #800000">"primaryContact"</span>, width: 170, caption: [<span style="COLOR: #800000">"Customer Information"</span>, <span style="COLOR: #800000">"Primary Contact"</span>] },
+        { value: <span style="COLOR: #800000">"validFrom"</span>, width: 150, caption: [<span style="COLOR: #800000">"Validity"</span>, <span style="COLOR: #800000">"Valid From"</span>], style: { formatter: <span style="COLOR: #800000">"MM/dd/yyyy"</span>} },
+        { value: <span style="COLOR: #800000">"validTo"</span>, width: 180, caption: [<span style="COLOR: #800000">"Validity"</span>, <span style="COLOR: #800000">"Valid To"</span>], style: { formatter: <span style="COLOR: #800000">"MM/dd/yyyy"</span>} }
+    ]);
+    sheet.setDataView(view);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>To know how to apply multiple header column captions using the SpreadJS Designer, refer&nbsp;to&nbsp;<a href="DesignMode.html" data-auto-update-caption="true">TableSheet Design Mode</a>.</p>
+
+<h3>Free Header Area</h3>
+
+<p>You can add a header area to a tablesheet view where you can describe the tablesheet and present aggregated data using formulas and sparklines. The free header area is assigned above the main tablesheet view and can consist of a single row or multiple rows as shown in the image below.</p>
+
+<p><img border="0" alt="" src="images/ts-freeheader.png" />&nbsp;</p>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.TableSheet.TableSheet~applyFreeHeaderArea.html">applyFreeHeaderArea</a> method is used to configure the free layout area for the column header. This method accepts a worksheet JSON which can be created using the <strong>toJSON</strong> method. Before generating the worksheet JSON, set the <strong>keepUnknownFormulas</strong> option to true if you want to keep formulas that contain sheet names.</p>
+
+<p>The following code sample shows how to create a template worksheet and apply the free header area in a tablesheet view.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//bind a view to the table sheet
+</span>myTable.fetch().then(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">var</span> view = myTable.addView(<span style="COLOR: #800000">"myView"</span>, [
+
+        { value: <span style="COLOR: #800000">"stockItem"</span>, width: 300, caption: <span style="COLOR: #800000">"Stock Item"</span>, headerStyle: headerStyle },
+        { value: <span style="COLOR: #800000">"unitPrice"</span>, width: 120, caption: <span style="COLOR: #800000">"Unit Price"</span>, headerStyle: headerStyle },
+        { value: <span style="COLOR: #800000">"taxRate"</span>, width: 120, caption: <span style="COLOR: #800000">"Tax Rate"</span>, headerStyle: headerStyle },
+        { value: <span style="COLOR: #800000">"recommendedRetailPrice"</span>, width: 190, caption: <span style="COLOR: #800000">"Recommended Retail Price"</span>, style: currencyFormatter, headerStyle: headerStyle, conditionalFormats: [dataBarRule1] },
+        { value: <span style="COLOR: #800000">"=([@unitPrice] * [@taxRate])/100 + [@unitPrice]"</span>, caption: <span style="COLOR: #800000">"Actual Retail Price"</span>, style: currencyFormatter, width: 190, headerStyle: headerStyle, conditionalFormats: [dataBarRule2] }, <span style="COLOR: #008000">// calculated column
+</span>
+    ]);
+
+    <span style="COLOR: #008000">// create template sheet for free header area json
+</span>    <span style="COLOR: #0000ff">var</span> templateSheet = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Worksheet();
+    templateSheet.options.keepUnknownFormulas = <span style="COLOR: #0000ff">true</span>;
+    <span style="COLOR: #0000ff">var</span> currencyFormatterStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+    currencyFormatterStyle.formatter = formatter;
+    currencyFormatterStyle.hAlign = GC.Spread.Sheets.HorizontalAlign.left;
+    templateSheet.setRowCount(6);
+    <span style="COLOR: #0000ff">var</span> freeHeaderAreaStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+    freeHeaderAreaStyle.backColor = Colors.white;
+
+    templateSheet.setValue(0, 0, <span style="COLOR: #800000">"Retail Price Analysis"</span>);
+    templateSheet.getCell(0, 0).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font(<span style="COLOR: #800000">"bold 30px \"Calibri\""</span>);
+    templateSheet.addSpan(0, 0, 1, 5);
+    <span style="COLOR: #0000ff">var</span> titleStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+    titleStyle.backColor = Colors.lightGreen;
+    titleStyle.foreColor = Colors.black;
+    templateSheet.setStyle(0, -1, titleStyle);
+    templateSheet.setRowHeight(0, 80);
+
+    templateSheet.getCell(1, 0)
+        .value(<span style="COLOR: #800000">"Whether a Stock Item's Actual Retail Price is either under or over Recommended Retail Price is automatically calculated."</span>)
+        .font(<span style="COLOR: #800000">"italic 12px \"Calibri\""</span>)
+        .foreColor(<span style="COLOR: #800000">"rgb(120,120,120)"</span>)
+        .textIndent(2);
+    templateSheet.setStyle(1, -1, titleStyle);
+    templateSheet.addSpan(1, 0, 1, 5);
+
+    <span style="COLOR: #0000ff">var</span> headerDescriptionStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+    headerDescriptionStyle.backColor = Colors.lightGreen;
+    headerDescriptionStyle.borderBottom = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(Colors.middleGreen, GC.Spread.Sheets.LineStyle.thick);
+    templateSheet.setStyle(2, -1, headerDescriptionStyle);
+    templateSheet.addSpan(2, 0, 1, 5);
+    templateSheet.setRowHeight(2, 16);
+
+    templateSheet.setValue(3, 0, <span style="COLOR: #800000">"Total Recommended Retail Price"</span>);
+    templateSheet.getCell(3, 0).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font(<span style="COLOR: #800000">"bold 14px \"Calibri\""</span>).foreColor(Colors.darkGreen);
+    templateSheet.addSpan(3, 0, 1, 2);
+    templateSheet.setFormula(3, 2, <span style="COLOR: #800000">'=SUM(TableSheet1[Recommended Retail Price])'</span>);
+    templateSheet.getCell(3, 2).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font(<span style="COLOR: #800000">"bold 14px \"Calibri\""</span>).foreColor(Colors.darkGreen).formatter(formatter);
+    templateSheet.setFormula(3, 3, <span style="COLOR: #800000">'=HBARSPARKLINE(ROUND(C4/MAX(C4,C5),2),"'</span> + Colors.darkGreen + <span style="COLOR: #800000">'",false)'</span>);
+    templateSheet.addSpan(3, 3, 1, 2);
+    templateSheet.setStyle(3, -1, freeHeaderAreaStyle);
+
+    templateSheet.setValue(4, 0, <span style="COLOR: #800000">"Total Actual Retail Price"</span>);
+    templateSheet.getCell(4, 0).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font(<span style="COLOR: #800000">"bold 14px \"Calibri\""</span>).foreColor(Colors.brown);
+    templateSheet.addSpan(4, 0, 1, 2);
+    templateSheet.setFormula(4, 2, <span style="COLOR: #800000">'=SUM(TableSheet1[Actual Retail Price])'</span>);
+    templateSheet.getCell(4, 2).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font(<span style="COLOR: #800000">"bold 14px \"Calibri\""</span>).foreColor(Colors.brown).formatter(formatter);
+    <span style="COLOR: #0000ff">var</span> contentBorderStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+    contentBorderStyle.backColor = Colors.white;
+    contentBorderStyle.borderBottom = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(Colors.brown, GC.Spread.Sheets.LineStyle.thick);
+    templateSheet.setStyle(4, -1, contentBorderStyle);
+    templateSheet.setFormula(4, 3, <span style="COLOR: #800000">'=HBARSPARKLINE(ROUND(C5/MAX(C4,C5),2),"'</span> + Colors.brown + <span style="COLOR: #800000">'",false)'</span>);
+    templateSheet.addSpan(4, 3, 1, 2);
+
+    templateSheet.setFormula(5, 0, <span style="COLOR: #800000">'=IF(C4&gt;C5,"Budget is under Total Recommended Retail Price by","Budget is over Total Recommended Retail Price")'</span>);
+    templateSheet.getCell(5, 0).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font(<span style="COLOR: #800000">"bold 14px \"Calibri\""</span>).foreColor(Colors.black);
+    templateSheet.addSpan(5, 0, 1, 2);
+    templateSheet.setFormula(5, 2, <span style="COLOR: #800000">'=C4-C5'</span>);
+    templateSheet.getCell(5, 2).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font(<span style="COLOR: #800000">"bold 14px \"Calibri\""</span>).formatter(formatter).foreColor(Colors.black);
+    templateSheet.setStyle(5, -1, freeHeaderAreaStyle);
+    templateSheet.addSpan(5, 2, 1, 3);
+
+    let template = templateSheet.toJSON();
+    sheet.applyFreeHeaderArea(template);
+    sheet.setDataView(view);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The free header supports the formula text box when editing or creating formulas in the cell. This enables you to perform selection operations on tablesheet columns, column ranges, multiple columns, and cross sheet columns.</p>
+
+<p><img border="0" alt="" src="images/ts-freeheader-formulabox.gif" />&nbsp;</p>
+
+<p>To know how to apply free header area using the SpreadJS Designer, refer&nbsp;to&nbsp;<a href="DesignMode.html" data-auto-update-caption="true">TableSheet Design Mode</a>.</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

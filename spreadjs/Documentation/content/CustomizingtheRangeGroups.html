@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Customize range groups to enhance the appearance of the worksheet. Learn about the attributes of range groups that can be customized in SpreadJS docs." />
+    
+    <title>Customize Range Groups | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n441","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Customize range groups to enhance the appearance of the worksheet. Learn about the attributes of range groups that can be customized in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="7a919987-86b8-48fd-ace3-725f90071a71"/>
+    <meta name="Microsoft.Help.TocParent" content="c1df05e0-71b4-44c1-8ef3-192464ac2c16"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="group.html">Group</a>
+ / Customize Range Groups</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Customize Range Groups</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports the customization of range groups in order to enhance the appearance of the worksheet while also making it easy for users to organize and manipulate data in an efficient way.</p>
+
+<p>You can set the custom&nbsp;background color, border color&nbsp;outline area, background color of the icon, font color of number and +/-, background image of the number and +/-, border color of the button, line color, line width and dot color as depicted in the below image:</p><img alt="Customizing range groups" src="images/custom-range-group.png" />
+
+<p>Shared below is a table that lists the attributes of range groups that&nbsp;can be customized along with the corresponding&nbsp;CSS class and&nbsp;the CSS attribute:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td width="238"><strong>Range Group Attribute</strong></td>
+
+            <td><strong>CSS class Name</strong></td>
+
+            <td><strong>CSS Attribute</strong></td>
+
+            <td><strong>Additional Comments</strong></td>
+        </tr>
+
+        <tr>
+            <td width="238">Backcolor of outline area</td>
+
+            <td rowspan="2">
+                <p>gc-group</p>
+            </td>
+
+            <td>background-color</td>
+
+            <td></td>
+        </tr>
+
+        <tr>
+            <td width="238">
+                <p>Border color of outline area</p>
+            </td>
+
+            <td>color</td>
+
+            <td></td>
+        </tr>
+
+        <tr>
+            <td width="238">Backcolor of icon</td>
+
+            <td rowspan="3">
+                <p>&nbsp;</p>
+
+                <p>gc-group-box</p>
+            </td>
+
+            <td>background-color</td>
+
+            <td></td>
+        </tr>
+
+        <tr>
+            <td width="238">Font color of number and +/-</td>
+
+            <td>color</td>
+
+            <td></td>
+        </tr>
+
+        <tr>
+            <td width="238">Border color of button</td>
+
+            <td>border-color</td>
+
+            <td>This attribute will use the border-top-color from the CSS and will ignore any other border color.</td>
+        </tr>
+
+        <tr>
+            <td width="238">BackgroundImage of number and +</td>
+
+            <td>gc-group-box-expand</td>
+
+            <td>background-image</td>
+
+            <td>
+                <p>The default border color and background color is transparent when the background-image is set by user.</p>
+
+                <p>If no background image is set, it will use the style defined in the gc-group-box, by default.</p>
+
+                <p>If the defined&nbsp;CSS includes more than one background image, only the first background image will take effect.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="238">BackgroundImage of number and -</td>
+
+            <td>gc-group-box-collapsed</td>
+
+            <td>background-image</td>
+
+            <td>
+                <p>The default border color and background color is transparent when the background-image is set by user.</p>
+
+                <p>If no background image is set, it will use the style defined in the gc-group-box, by default.</p>
+
+                <p>If the defined&nbsp;CSS includes more than one background image, only the first background image will take effect.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td height="24" width="238">Line color</td>
+
+            <td height="24" rowspan="2">
+                <p>&nbsp;</p>
+
+                <p>gc-group-line</p>
+            </td>
+
+            <td height="24">border-color</td>
+
+            <td height="24">This attribute will use the border-top-color from the CSS and will ignore any other border color.</td>
+        </tr>
+
+        <tr>
+            <td height="37" width="238">Line Width</td>
+
+            <td height="37">border-width</td>
+
+            <td height="37">This attribute will use the border-top-width from the CSS and will ignore any other border color.</td>
+        </tr>
+
+        <tr>
+            <td width="238">Dot Color</td>
+
+            <td>gc-group-dot</td>
+
+            <td>color</td>
+
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Using Code</h4>
+
+<p>Refer to the example shared below in order to customize the attributes of range groups while working with spreadsheets:</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;style&gt;
+    .gc-group {
+        background-color: rgb(180, 211, 230);
+        color: #999999;
+        border-width: 0px;
+        border-style:solid;
+    }
+    .gc-group-box {
+        background-color: #fff;
+        color: rgb(8, 154, 245);
+        border-color:rgb(32, 158, 241);
+    }
+    .gc-group-line{
+        border-width:2px;
+        border-style:solid;
+        border-color:rgb(137, 199, 243);
+    }
+    .gc-group-dot{
+        color:blue;
+    }
+&lt;<span style="COLOR: #800000">/style&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> Customization of more than one distinct CSS for different spreadsheet elements is not possible in the same page.
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

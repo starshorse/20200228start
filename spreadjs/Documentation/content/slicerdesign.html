@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn the various steps involved in creating a slicer for a table using the SpreadJS Designer." />
+    
+    <title>Table Slicer with the SpreadJS Designer | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n717","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn the various steps involved in creating a slicer for a table using the SpreadJS Designer." />
+    
+    <meta name="Microsoft.Help.Id" content="37942a64-9c7c-49bd-9426-08b7fc5d91a7"/>
+    <meta name="Microsoft.Help.TocParent" content="c1290b37-5dbb-4d1c-9c55-47e34ee0f71f"/>
+    <meta name="Microsoft.Help.TocOrder" content="5"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sliceruse.html">Slicer</a>
+ / Table Slicer with the SpreadJS Designer</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Table Slicer with the SpreadJS Designer</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can create a slicer for a table using the&nbsp;SpreadJS Designer.</p>
+
+<p>Use the following steps to add a slicer.</p>
+
+<ol>
+    <li>Add table data and insert a table using the <strong>Table</strong> option under the <strong>Insert</strong> tab.
+
+        <p><img border="0" alt="Table option under the Insert tab" src="images/designersliceraddtable.png" /></p>
+    </li>
+
+    <li>Select the <strong>Insert Slicer</strong> option under the <strong>Tools</strong> section.
+
+        <p><img border="0" alt="Insert Slicer option under the Tools section" src="images/designerslicertab.png" /></p>
+    </li>
+
+    <li>The <strong>Insert Slicer</strong> dialog is displayed. Select the column or columns to create a slicer for.
+
+        <p><img border="0" alt="nsert Slicer dialog" src="images/designerslicerinsert.png" /></p>
+    </li>
+
+    <li>Use the <strong>Options</strong> tab to set the caption, height, width, number of columns, and styles.
+
+        <p><img border="0" alt="Options tab" src="images/designersliceroptions.png" /></p>
+    </li>
+
+    <li>Use the <strong>Slicer Settings</strong> dialog in the <strong>Slicer</strong> section to set additional options for the slicer such as whether to display a header, and so on.
+
+        <p><img border="0" alt="Slicer Settings dialog" src="images/designerslicersettings.png" /></p>
+    </li>
+</ol>
+
+<p>You can also display a context menu for the slicer by right-clicking on the slicer.</p>
+
+<p><img border="0" alt="Context menu for slicer" src="images/designerslicercontext.png" /></p>
+
+<p>The <strong>Size and Properties</strong> option in the menu displays the following <strong>Format Slicer</strong> dialog. The dialog contains <strong>Position and Layout</strong>, <strong>Size</strong>, and <strong>Properties</strong> tabs.</p>
+
+<p>The <strong>Format Slicer</strong> dialog allows you to set the&nbsp;horizontal and vertical location of the slicer, number of columns, whether to disable resizing and moving the slicer,&nbsp;the scale width and height based on the original size, whether to move and size with cells, and so on.</p>
+
+<p><img border="0" alt="Position and Layout tab in Format Slicer dialog" src="images/designerslicerformatps.png" /></p>
+
+<p><img border="0" alt="Size tab in Format Slicer dialog" src="images/designerslicerformats.png" /></p>
+
+<p><img border="0" alt="Properties tab in Format Slicer dialog" src="images/designerslicerformatp.png" /></p>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="spdesigninserttab.html">Insert and Design Tab</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

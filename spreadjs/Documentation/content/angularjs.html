@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn the various steps involved in using SpreadJS with AngularJS. Learn more in SpreadJS docs." />
+    
+    <title>SpreadJS with AngularJS | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n92","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn the various steps involved in using SpreadJS with AngularJS. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="60698b19-303c-4a25-b2e2-85704ba25af0"/>
+    <meta name="Microsoft.Help.TocParent" content="634a0351-9d0d-4a01-be54-29ccda776eb9"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="javascript_frameworks.html">JavaScript Frameworks</a>
+ / SpreadJS with AngularJS</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">SpreadJS with AngularJS</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports AngularJS.</p>
+
+<p>AngularJS is a web application framework that uses JavaScript on the client side.</p>
+
+<p>Use the following steps to use&nbsp;SpreadJS with AngularJS.</p>
+
+<ol>
+    <li>
+        <div>
+            Add the SpreadJS AngularJS module js file, "/scripts/interop/angular.gc.spread.sheets.xxx.js".
+        </div>
+    </li>
+
+    <li>
+        <div>
+            Add the "gcspreadsheets" module to your application js file. For example, if your work scope is indicated by the "ng-app" attribute named "myApp", then add code like this to your app define js file:
+        </div>
+
+        <p><code>angular.module("myApp", ["gcspreadsheets", "module2","module3",...])</code></p>
+    </li>
+
+    <li>
+        <div>
+            Add the "gc-spread-sheets"&nbsp;tag to your HTML page. Then add sheets and columns in the sheet. You can set attributes to <strong>spread</strong>, <strong>sheet</strong>, or <strong>column</strong>. For example:
+        </div>
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+&lt;gc-spread-sheets id=<span style="COLOR: #800000">"ss"</span> style=<span style="COLOR: #800000">"width:100%;height:500px;border:1px solid gray"</span>&gt;
+    &lt;worksheets&gt;
+        &lt;worksheet frozen-column-count=<span style="COLOR: #800000">"1"</span>&gt;
+        &lt;<span style="COLOR: #800000">/worksheet &gt;
+</span>    &lt;<span style="COLOR: #800000">/worksheets&gt;
+</span>&lt;<span style="COLOR: #800000">/gc-spread-sheets&gt;</span>
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+
+<p>The Spread, Sheet, and Column are the basic elements with tag hierarchy. Other elements work by setting them. The main tag hierarchy is:</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;gc-spread-sheets style=<span style="COLOR: #800000">"width:100%;height:500px;border:1px solid gray"</span>&gt;
+    &lt;worksheets&gt;
+        &lt;worksheet&gt;
+            &lt;columns&gt;
+                &lt;column&gt;&lt;<span style="COLOR: #800000">/column&gt;
+</span>            &lt;<span style="COLOR: #800000">/columns&gt;
+</span>        &lt;<span style="COLOR: #800000">/worksheet&gt;
+</span>    &lt;<span style="COLOR: #800000">/worksheets&gt;
+</span>&lt;<span style="COLOR: #800000">/gc-spread-sheets&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>If the element's setting is a simple type or it can be set as a simple string, it will be set as the element's attribute. A simple type can be number, string, Boolean, enum, font, lineBorder, and so on, as shown in the following example:</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;gc-spread-sheets style=<span style="COLOR: #800000">"width:100%;height:500px;border:1px solid gray"</span>&gt;
+    &lt;worksheets&gt;
+        &lt;worksheet&gt;
+            &lt;<span style="COLOR: #0000ff">default</span>-style backcolor=<span style="COLOR: #800000">"#c6e0b4"</span> font=<span style="COLOR: #800000">"large Meiryo"</span> border=<span style="COLOR: #800000">"#8ea9db dashed"</span>&gt;&lt;<span style="COLOR: #800000">/default-style&gt;
+</span>        &lt;<span style="COLOR: #800000">/worksheet&gt;
+</span>    &lt;<span style="COLOR: #800000">/worksheets&gt;
+</span>&lt;<span style="COLOR: #800000">/gc-spread-sheets&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>If the element's setting is an object type and it cannot be set as a simple string, it will be set as a child element of the basic element. The child element may have another child element. For example:</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;gc-spread-sheets style=<span style="COLOR: #800000">"width:100%;height:500px;border:1px solid gray"</span>&gt;
+    &lt;worksheets&gt;
+        &lt;worksheet&gt;
+            &lt;columns&gt;
+                &lt;column width=<span style="COLOR: #800000">"100"</span>&gt;
+                   &lt;<span style="COLOR: #0000ff">default</span>-style formatter=<span style="COLOR: #800000">"#,##0.00"</span>&gt;
+                        &lt;number-validator comparisonoperator=<span style="COLOR: #800000">"GreaterThan"</span> value1=<span style="COLOR: #800000">"0"</span>&gt;&lt;<span style="COLOR: #800000">/number-validator&gt;
+</span>                   &lt;<span style="COLOR: #800000">/default-style&gt;                 
+</span>                &lt;<span style="COLOR: #800000">/column&gt;
+</span>            &lt;<span style="COLOR: #800000">/columns&gt;
+</span>        &lt;<span style="COLOR: #800000">/worksheet&gt;
+</span>    &lt;<span style="COLOR: #800000">/worksheets&gt;
+</span>&lt;<span style="COLOR: #800000">/gc-spread-sheets&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The following topics list element directives.</p>
+
+<ul>
+    <li>
+        <div>
+            <a href="wijSpreadelement.html" data-auto-update-caption="true">Gc-spread-sheets Element</a>
+        </div>
+    </li>
+
+    <li>
+        <div>
+            <a href="sheetelement.html" data-auto-update-caption="true">Sheet and Sheets Elements</a>
+        </div>
+    </li>
+
+    <li>
+        <div>
+            <a href="colgroupelement.html" data-auto-update-caption="true">Column, Columns, and Group Elements</a>
+        </div>
+    </li>
+
+    <li>
+        <div>
+            <a href="styleelement.html" data-auto-update-caption="true">Style Element</a>
+        </div>
+    </li>
+
+    <li>
+        <div>
+            <a href="cellelement.html" data-auto-update-caption="true">Cell Elements</a>
+        </div>
+    </li>
+
+    <li>
+        <div>
+            <a href="validelement.html" data-auto-update-caption="true">Validator Element</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </li>
+</ul>
+
+<p>The attribute name is case insensitive and supports using the '-' to split every word. For example, the following code result is the same:</p>
+
+<p><code>&lt;column dataField="country"&gt;&lt;/column&gt;<br />
+&lt;column datafield="country"&gt;&lt;/column&gt;<br />
+&lt;column DATAFIELD="country"&gt;&lt;/column&gt;<br />
+&lt;column data-field="country"&gt;&lt;/column&gt;<br />
+&lt;column Data-Field="country"&gt;&lt;/column&gt;</code></p>
+
+<p>The attribute value supports "{{binding}}" to bind the scope's data. For example, this is a column with the width bound to the columnWidth:</p>
+
+<p><code>&lt;column width={{columnWidth}} &gt;</code></p>
+
+<p>This is an HTML INPUT element that binds the columnWidth using ng-model.</p>
+
+<p>Column Width: <code>&lt;input ng-model="columnWidth"&nbsp; /&gt;</code></p>
+
+<p>The column width is resized automatically when you input a number in the input element.</p>
+
+<p>If you put a spread directive element or attribute to another element that does not follow the element directives, it will not take effect. You cannot reorder, insert, or remove columns defined on the html tag. Doing so might cause a binding value error.</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Importing files to SpreadJS | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n7","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="f77d08e0-2cfa-44ae-bf3b-f185819d4358"/>
+    <meta name="Microsoft.Help.TocParent" content="a5b5255c-6ee4-4c04-a6fd-540128544dc8"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="getstarted.html">Getting Started</a>
+ / <a href="quick-start.html">Quick Start</a>
+ / Importing files to SpreadJS</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Importing files to SpreadJS</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>The following section describes the steps to import Excel (.xlsx) and JSON files (json or ssjson) into SpreadJS.</p>
+
+<p>In additional to SpreadJS API, following methods are also used:</p>
+
+<ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsText">FileReader.readAsText()</a></li>
+
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse()</a></li>
+
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr">String.prototype.substr()</a></li>
+
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf">String.prototype.lastIndexOf()</a></li>
+</ul>
+
+<h3>Step 1: Add ExcelIO script reference in HTML</h3>
+
+<ol>
+    <li>Add a reference to the ExcelIO script file in the HTML HEAD tag to instantiate ExcelIO.
+
+        <div class="i-filtered-content-HTML" data-title="HTML" data-itemid="HTML">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>HTML</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #0000ff">&lt;!</span><span style="COLOR: #ff00ff">DOCTYPE html</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">html</span><span style="COLOR: #0000ff">&gt;</span> 
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">head</span><span style="COLOR: #0000ff">&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">meta</span> <span style="COLOR: #ff0000">charset</span> <span style="COLOR: #0000ff">= "utf-8"</span><span style="COLOR: #0000ff">/&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">meta</span>  <span style="COLOR: #ff0000">name</span> <span style="COLOR: #0000ff">= "viewport"</span>  <span style="COLOR: #ff0000">content</span> <span style="COLOR: #0000ff">= "width = device-width, initial-scale = 1.0"</span><span style="COLOR: #0000ff">/&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;!</span><span style="COLOR: #ff00ff">- a) Add SpreadJS scripts and CSS. -</span><span style="COLOR: #0000ff">&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;!</span><span style="COLOR: #ff00ff">-A1) Add the SpreadJS script file. -</span><span style="COLOR: #0000ff">&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">script</span>  <span style="COLOR: #ff0000">type</span> <span style="COLOR: #0000ff">= "text/javascript"</span> 
+            <span style="COLOR: #ff0000">src</span> <span style="COLOR: #0000ff">= "SpreadJS\gc.spread.sheets.all.xxxmin.js"</span> <span style="COLOR: #0000ff">&gt;</span> <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;!</span><span style="COLOR: #ff00ff">-A2) Add the CSS file. -</span><span style="COLOR: #0000ff">&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">script</span> <span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="text/css"</span>
+            <span style="COLOR: #ff0000">src</span> <span style="COLOR: #0000ff">= "SpreadJS\gc.spread.sheets.x.x.x.css"</span><span style="COLOR: #0000ff">&gt;</span> <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;!</span><span style="COLOR: #ff00ff">-D1) Add the ExcelIO script file. -</span><span style="COLOR: #0000ff">&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">script</span> <span style="COLOR: #ff0000">type</span> <span style="COLOR: #0000ff">= "text/javascript"</span> 
+            <span style="COLOR: #ff0000">src</span> <span style="COLOR: #0000ff">= "SpreadJS\gc.spread.excelio.xxxmin.js"</span><span style="COLOR: #0000ff">&gt;</span> <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">style</span><span style="COLOR: #0000ff">&gt;</span>
+        .spread-container {
+            height: 550px;
+        }
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">style</span><span style="COLOR: #0000ff">&gt;</span> 
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">head</span><span style="COLOR: #0000ff">&gt;</span> 
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">h1</span><span style="COLOR: #0000ff">&gt;</span> Import files into SpreadJS <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">h1</span><span style="COLOR: #0000ff">&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">div</span>  <span style="COLOR: #ff0000">class</span> <span style="COLOR: #0000ff">= "sample-container"</span> <span style="COLOR: #0000ff">&gt;</span> 
+        <span style="COLOR: #0000ff">&lt;!</span><span style="COLOR: #ff00ff">-B) Create a target DOM element for SpreadJS. -</span><span style="COLOR: #0000ff">&gt;</span> 
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">div</span>  <span style="COLOR: #ff0000">id</span> <span style="COLOR: #0000ff">= "ss"</span>  <span style="COLOR: #ff0000">class</span> <span style="COLOR: #0000ff">= "spread-container"</span><span style="COLOR: #0000ff">&gt;</span> <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">div</span><span style="COLOR: #0000ff">&gt;</span> 
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">div</span><span style="COLOR: #0000ff">&gt;</span> 
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;</span> 
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span>
+    // c) Initialize the spread container SpreadJS with the "ss" ID of the div.
+    window.onload = function ()
+    {
+        var spread = new GC.Spread.Sheets.Workbook (
+            document.getElementById ("ss"),
+            {sheetCount: 1}
+        );
+       
+        // d2) Create an instance of ExcelIO.
+        excelIO = new GC.Spread.Excel.IO ();
+    };
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span> 
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">html</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+
+<h3>Step 2: Load Spread Instance from JSON String</h3>
+
+<ol>
+    <li>Create <strong>importJSON</strong> function to load the Spread instance from a specified JSON string using <strong>fromJSON</strong> method.</li>
+
+    <li>Use <strong>focus</strong> method to focus the workbook component.
+
+        <div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Javascript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Create importJSON()
+</span><span style="COLOR: #0000ff">function</span> importJSON(spreadJson) {
+    <span style="COLOR: #0000ff">var</span> ss = GC.Spread.Sheets.findControl(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+    <span style="COLOR: #0000ff">if</span> (spreadJson.version &amp;&amp; spreadJson.sheets) {
+        <span style="COLOR: #008000">// Load the object from the JSON string spreadJSON
+</span>        ss.fromJSON(spreadJson);
+        <span style="COLOR: #008000">// Focus the workbook component
+</span>        ss.focus();
+    }
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+
+<h3>Step 3: Import an Excel File</h3>
+
+<ol>
+    <li>Create <strong>importSpreadFromExcel</strong> function and invoke <strong>excelIO.open</strong> method to import the Excel file by converting it into a JSON string.</li>
+
+    <li>Invoke <strong>importJSON</strong> function to load the SpreadJS instance from the JSON data string created from <strong>excelIO.open</strong> method.
+
+        <div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Javascript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Create importSpreadFromExcel()
+</span><span style="COLOR: #0000ff">function</span> importSpreadFromExcel(file, options) {
+    <span style="COLOR: #008000">// Load an Excel file to paint the SpreadJS instance
+</span>    excelIO.open(
+        file,
+        <span style="COLOR: #0000ff">function</span> (json) {
+            <span style="COLOR: #008000">// Invoke importJson() created in Step 1 to import an Excel file
+</span>            importJSON(json);
+        },
+        <span style="COLOR: #0000ff">function</span> (e) {
+            console.log(e);
+        },
+        options
+    );
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+
+<h3>Step 4: Import JSON Files to SpreadJS Instance</h3>
+
+<ol>
+    <li>Create <strong>importSpreadFromJSON</strong> function to import a JSON file.</li>
+
+    <li>Create a new <strong>FileReader</strong> and store it in 'reader' variable.</li>
+
+    <li>Use <strong>FileReader.readAsText</strong> function to read the contents of JSON file to a string. The onload event is triggered after FileReader is finished.</li>
+
+    <li>Invoke the <strong>importSuccessCallback</strong> method to parse the result to a JavaScript object using <strong>JSON.parse</strong> method.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Create importSpreadFromJSON()
+</span><span style="COLOR: #0000ff">function</span> importSpreadFromJSON(file) {
+    <span style="COLOR: #0000ff">function</span> importSuccessCallback(responseText) {
+        <span style="COLOR: #008000">// Parse the JSON string
+</span>        <span style="COLOR: #0000ff">var</span> spreadJson = JSON.parse(responseText);
+        <span style="COLOR: #008000">// Execute the importJSON method to load the SpreadJS instance from the parsed JSON string
+</span>        importJSON(spreadJson);
+    }
+    <span style="COLOR: #008000">// Create a file to read the JSON string too
+</span>    <span style="COLOR: #0000ff">var</span> reader = <span style="COLOR: #0000ff">new</span> FileReader();
+    <span style="COLOR: #008000">// When the below readAsText() is finished this event will trigger to return a successful call back
+</span>    reader.onload = <span style="COLOR: #0000ff">function</span> () {
+        importSuccessCallback(<span style="COLOR: #0000ff">this</span>.result);
+    };
+    <span style="COLOR: #008000">// Trigger the readAsText() method
+</span>    <span style="COLOR: #008000">// This will read the contents of the file and when done the load event is triggered
+</span>    reader.readAsText(file);
+    <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">true</span>;
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+
+<h3>Step 5: Determine the Format of Imported File</h3>
+
+<ol>
+    <li>Create <strong>importFile</strong> function which takes the file name of imported file as a parameter and determines the file type i.e. Excel or JSON by finding the index of the last "." in the file name.</li>
+
+    <li>Create an If/Else statement&nbsp;to determine whether to import the file using the <strong>importSpreadFromJSON</strong> or <strong>importSpreadFromExcel</strong> function.&nbsp;
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Create importFile() function to decide if a file is .xlsx or .JSON/.SSJSON
+</span><span style="COLOR: #0000ff">function</span> importFile(file) {
+    <span style="COLOR: #008000">// Get the name of the selected file
+</span>    <span style="COLOR: #0000ff">var</span> fileName = file.name;
+    <span style="COLOR: #008000">// Get the index position of last "." of the file name
+</span>    <span style="COLOR: #0000ff">var</span> index = fileName.lastIndexOf(<span style="COLOR: #800000">"."</span>);
+    <span style="COLOR: #008000">// Return the last portion of the file name after the index of the last "."
+</span>    <span style="COLOR: #0000ff">var</span> fileExt = fileName.substr(index + 1).toLowerCase();
+    <span style="COLOR: #008000">// Determine what import spread function to invoke determined by the file extension
+</span>    <span style="COLOR: #0000ff">if</span> (fileExt === <span style="COLOR: #800000">"json"</span> || fileExt === <span style="COLOR: #800000">"ssjson"</span>) {
+        importSpreadFromJSON(file);
+    } <span style="COLOR: #0000ff">else</span> <span style="COLOR: #0000ff">if</span> (fileExt === <span style="COLOR: #800000">"xlsx"</span>) {
+        importSpreadFromExcel(file);
+    }
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+
+<h3>Step 6: Add HTML Input Element</h3>
+
+<p>Create <strong>processFileSelected</strong> function to execute the <strong>importFile</strong> function when a file is selected using the HTML input with id <em>fileSelector</em>.</p>
+
+<div class="i-filtered-content-HTML" data-title="HTML" data-itemid="HTML">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>HTML</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">h1</span><span style="COLOR: #0000ff">&gt;</span>Section 3: Importing files to SpreadJS<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">h1</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">div</span><span style="COLOR: #0000ff">&gt;</span>
+        Select file to import:
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">input</span> <span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="file"</span> <span style="COLOR: #ff0000">onchange</span><span style="COLOR: #0000ff">="processFileSelected()"</span> <span style="COLOR: #ff0000">id</span><span style="COLOR: #0000ff">="fileSelector"</span> <span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">div</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">br</span> <span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">div</span> <span style="COLOR: #ff0000">id</span><span style="COLOR: #0000ff">="ss"</span> <span style="COLOR: #ff0000">style</span><span style="COLOR: #0000ff">="height:700px;width:900px"</span><span style="COLOR: #0000ff">&gt;&lt;/</span><span style="COLOR: #800000">div</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Create processFileSelected()
+</span><span style="COLOR: #0000ff">function</span> processFileSelected() {
+    <span style="COLOR: #008000">//Get the file selected from the HTML input with id fileSelector
+</span>    <span style="COLOR: #0000ff">var</span> fileSelector = document.getElementById(<span style="COLOR: #800000">"fileSelector"</span>);
+    <span style="COLOR: #0000ff">var</span> file = fileSelector.files[0];
+    <span style="COLOR: #0000ff">if</span> (!file) <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">false</span>;
+    fileSelector.innerHTML = <span style="COLOR: #800000">""</span>;
+    <span style="COLOR: #008000">// Execute the importFile() when a file has been selected
+</span>    <span style="COLOR: #0000ff">return</span> importFile(file);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The output of above code will look like below:</p>
+
+<p><strong>Excel File Import</strong><br />
+&nbsp;</p>
+
+<p><img border="0" alt="" src="images/excel_import.gif" /></p><br />
+
+<p><strong>JSON File Import</strong><br /></p>
+
+<p><img border="0" alt="" src="images/json_import.gif" /></p><br />
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

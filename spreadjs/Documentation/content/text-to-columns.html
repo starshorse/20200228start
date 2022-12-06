@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Text to Columns | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n787","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="b5e25802-4daf-4084-be5b-482567ddae8c"/>
+    <meta name="Microsoft.Help.TocParent" content="107fa408-448d-4997-abb2-1c64e7764a7f"/>
+    <meta name="Microsoft.Help.TocOrder" content="10"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="spdesigner.html">SpreadJS Designer</a>
+ / <a href="spdesignerwork.html">Work in the Designer</a>
+ / Text to Columns</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Text to Columns</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Text to Columns is used to convert simple text or sentences having multiple words into separate columns. It enables us to get tabular structure of data using suitable delimiter or column width option.</p>
+
+<p>SpreadJS Designer provides the <strong>"Text to Columns"</strong> ribbon button in "Data Tools" group of "Data" tab.&nbsp;</p>
+
+<h2>Steps to Convert Text to Columns</h2>
+
+<h3>Using Delimiters</h3>
+
+<p>This method splits the text using the present delimiter in a cell or range. You can define your own delimiter as well.&nbsp;Only one character is considered as delimiter.</p>
+
+<p>Follow the steps below to convert the sample text "a,b,c,d" using the comma delimiter.</p>
+
+<ol>
+    <li>Select a cell or rows of cell where you would to convert the text into columns.
+
+        <p><img border="0" alt="" src="images/text2col1.png" /></p>
+    </li>
+
+    <li>Click on "Data" tab to select <strong>"Text to Columns"</strong> ribbon button from "Data Tools" group.
+
+        <p><img style="HEIGHT: 113px; WIDTH: 717px" border="0" alt="" src="images/text2col.png" width="906" height="171" /></p>
+
+        <p>The "Convert Text to Columns Wizard" window opens up.</p>
+    </li>
+
+    <li>Select <strong>Delimited</strong> option from the "Original data type" section as shown in below image.
+
+        <p><img style="HEIGHT: 543px; WIDTH: 556px" border="0" alt="" src="images/text2col2.png" width="556" height="548" /></p>
+
+        <p>Click on Next to open the "Convert Text to Columns Wizard- Step 2 of 3" window.</p>
+    </li>
+
+    <li>Select the delimiter from the pre-defined list of delimiters or you can enter your own delimiter by specifying the desired&nbsp;character in the "Other" option.
+
+        <p><img border="0" alt="" src="images/text2col4.png" /></p>
+
+        <div class="i-box i-box-note">
+            <p><strong>Note:</strong> The delimiter in the <strong>""</strong> or <strong>''</strong> will be ignored.</p>
+
+            <p>Check <strong>"Treat consecutive delimiters as&nbsp;one"</strong> option to allow if multiple characters <strong>";;;;"</strong>&nbsp;are specified, they will be treated as one <strong>";"&nbsp;</strong>only.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </div>
+    </li>
+
+    <li>Click on Next&nbsp;to open "Convert Text to Columns wizard-Step 3 of 3" window.&nbsp; Now, set the Data format for each column.
+
+        <p>You can select the destination for the text.&nbsp;The default destination&nbsp;is of the original cell.</p>
+
+        <p><img border="0" alt="" src="images/text2col5.png" /></p>
+    </li>
+
+    <li>Click on Finish to convert the text of cell in columns.
+
+        <p><img border="0" alt="" src="images/text2col6.png" /></p>
+    </li>
+</ol>
+
+<h3>Using Fixed Widths</h3>
+
+<p>This method splits the text using a fixed width between the text. You can set column breaks to separate the text into columns.</p>
+
+<ol>
+    <li>Select a cell or rows of cell where you want to convert the text into columns.
+
+        <p><img border="0" alt="" src="images/text2colfixed.png" /></p>
+    </li>
+
+    <li>Click on "Data" tab to select <strong>"Text to Columns"</strong> ribbon button from "Data Tools" group.
+
+        <p><img style="HEIGHT: 113px; WIDTH: 717px" border="0" alt="" src="images/text2col.png" width="906" height="171" /></p>
+    </li>
+
+    <li>"Convert Text to Columns wizard- Step 1 of 3"&nbsp;window opens. Select&nbsp;<strong>Fixed width</strong>&nbsp;option from the "Original data type" section as shown in below image.
+
+        <p><img border="0" alt="" src="images/text2colfixed1.png" /></p>
+
+        <p>Click on Next to open the "Convert Text to Columns wizard- Step&nbsp;2 of 3" window.&nbsp;</p>
+    </li>
+
+    <li>Create fixed width column breaks using the instructions mentioned on the window.
+
+        <p><img border="0" alt="" src="images/text2colfixed2.png" /></p>
+
+        <p>Click on Next&nbsp;to open "Convert Text to Columns wizard-Step 3 of 3" window.&nbsp;</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+
+    <li>Set the Data format for each column.
+
+        <p>You can select the destination for the text. The default destination is of the original cell.</p>
+
+        <p><img border="0" alt="" src="images/text2colfixed3.png" /></p>
+    </li>
+
+    <li>Click on Finish to convert the text of cell in columns.
+
+        <p><img border="0" alt="" src="images/text2colfixed4.png" /></p>
+    </li>
+</ol>
+
+<h3>Invalid Selections</h3>
+
+<ol>
+    <li>If the selected cell or range of cells has no data, the&nbsp;following warning message appears.
+
+        <p><img border="0" alt="" src="images/texttocolwarning1.png" /></p>
+    </li>
+
+    <li>If multiple range of cells or columns are selected, the following warning message appears.
+
+        <p><img border="0" alt="" src="images/texttocolwarning2.png" /></p>
+    </li>
+
+    <li>If the destination column already includes&nbsp;data, the following warning message appears.
+
+        <p><img border="0" alt="" src="images/texttocolwarning3.png" /></p>
+    </li>
+</ol>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

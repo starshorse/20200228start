@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS support hit-testing through which you can get the cell index on mouse click events. Learn more in SpreadJS docs." />
+    
+    <title>Hit Test | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n187","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS support hit-testing through which you can get the cell index on mouse click events. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="687c41da-b638-40de-bd8a-62ca73990ad6"/>
+    <meta name="Microsoft.Help.TocParent" content="1e96aff2-c1e7-4a22-a4f9-4395d3e8cd8c"/>
+    <meta name="Microsoft.Help.TocOrder" content="8"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="workbook.html">Workbook</a>
+ / Hit Test</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Hit Test</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Hit test generates response to user actions on&nbsp;a Graphical User Interface.</p>
+
+<p>SpreadJS supports hit-testing by allowing users to get cell index on mouse click events. This feature is useful when you need to access any element in the worksheet and respond to user selections. Using hit testing, you can get&nbsp;the specified hit area from X and Y coordinates in the workbook and know which sections of the spreadsheet have been clicked by a user.</p>
+
+<p>The <a href="SpreadJS~GC.Spread.Sheets.Workbook~hitTest.html">hitTest</a> method in the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook.html" data-auto-update-caption="true">Workbook class</a> allows users to get a specific hit area from X and Y coordinates in a workbook. Using this method, you can quickly recognize which element is located at the specified screen coordinates in a workbook.</p>
+
+<p>Refer to the following table to know about different hit areas in a workbook along with their subareas (called&nbsp;click area elements) in different hit areas.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Workbook Area</th>
+
+            <th>Click Area Elements</th>
+        </tr>
+
+        <tr>
+            <td>Worksheet</td>
+
+            <td>corner, rowHeader, colHeader, viewport</td>
+        </tr>
+
+        <tr>
+            <td>Sheet Tab</td>
+
+            <td>prevArrow, nextArrow, sheetName, blank, resize</td>
+        </tr>
+
+        <tr>
+            <td>Horizontal Scroll Bar</td>
+
+            <td>leftButton, rightButton, thumbButton, trackButton</td>
+        </tr>
+
+        <tr>
+            <td>Vertical Scroll Bar</td>
+
+            <td>upButton, downButton, thumbButton, trackButton</td>
+        </tr>
+
+        <tr>
+            <td>Footer Corner</td>
+
+            <td>footerCorner</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The five different workbook areas are described below along with their click area elements.</p>
+
+<ul>
+    <li><strong>Worksheet</strong><br />
+    <br />
+    <img border="0" alt="hit_test_worksheet" src="images/Hit_Test1.png" /></li>
+
+    <li><strong>Sheet Tab</strong><br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" alt="hit_test_sheettab" src="images/Hit_Test2.png" /></li>
+
+    <li><strong>Horizontal Scroll Bar</strong><br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<img border="0" alt="hit_test_horizontalscrollbar" src="images/Hit_Test3.png" /></li>
+
+    <li><strong>Vertical Scroll Bar</strong><br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<img border="0" alt="hit_test_verticalscrollbar" src="images/Hit_Test4.png" /><br />
+    <br /></li>
+
+    <li><strong>Footer Corner</strong><br />
+    <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<img border="0" alt="hit_test_footercorner" src="images/Hit_Test5.png" /></li>
+</ul>
+
+<h4>Using Code</h4>
+
+<p>This example shows how to use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~hitTest.html">hitTest</a>&nbsp;method for hit detection. When a user clicks on an area in the workbook, the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~hitTest.html">hitTest</a>&nbsp;method is called and it returns the hit area from the&nbsp;X and Y coordinates in&nbsp;the workbook.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> hitArea = workbook.hitTest(0,0)
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

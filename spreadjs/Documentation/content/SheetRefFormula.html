@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you add references to cells on the same sheet or to cells on other sheets in a formula. Learn more in SpreadJS docs." />
+    
+    <title>Sheet References in a Formula | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3253","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you add references to cells on the same sheet or to cells on other sheets in a formula. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="8cff2735-316b-43f7-9f62-000b639f2221"/>
+    <meta name="Microsoft.Help.TocParent" content="85a8a863-302f-4eb0-9304-dc26ab5bcb2c"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="formulaoverview.html">Formula Overview</a>
+ / Sheet References in a Formula</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Sheet References in a Formula</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>A formula can have references to cells on the same sheet or to cells on other sheets, as well as ranges of cells on sheets.</p>
+
+<p>In the examples shown below, we use A1 (Letter-Number) notation for the cell reference, but the same would be valid for R1C1 (Number-Number) notation. Simply precede the cell reference, regardless of the style, with the sheet name as described here.</p>
+
+<p>When a reference to a cell includes a reference to a cell on another sheet, this is called cross-sheet referencing.</p>
+
+<p>An example of cross-sheet referencing in a formula that uses the addition operator would be:</p>
+
+<p>(FirstRoundData!A2 + SecondRoundData!A2)</p>
+
+<p>where the name of one sheet is "FirstRoundData" and the name of another sheet is "SecondRoundData". Sheet names precede the cell reference with the name of the sheet followed by an exclamation point (!). This formula could be on any sheet in the Spread since it explicitly names the sheets of each of the cells as operands. This example adds the values in the cell A2 on two different sheets. By making the sheet name explicit there is no confusion as to which cell A2 is meant. If you do not include the sheet name, the current sheet (in which the formula exists) is used. If the formula in the above example was on the SecondRoundData page, then the formula could be written as:</p>
+
+<p>(FirstRoundData!A2 + A2)</p>
+
+<p>It might be less confusing to put the cell on the current page first, as in:</p>
+
+<p>(A2 + FirstRoundData!A2)</p>
+
+<p>As long as the sheet name conforms to normal variable name rules (with the first character being a letter or an underscore and the remaining characters being letters, digits, or underscores) then the formula can use just the sheet name followed by the exclamation point. Otherwise, the sheet name needs to be enclosed in single quotes. If the sheet name itself contains a single quote, then use two single quotes in the formula. For example, if the name of the sheet includes a single quote (or apostrophe) as in these names for sales of a given month, then a reference to the sheet would look like this in a formula:</p>
+
+<p>('November''s Sales'!A2 + 'December''s Sales'!A2)</p>
+
+<p>with two single quotes (or apostrophes) before the s. If the sheet name has a space, use single quotes around the sheet name. In the following example the sheet name is East Coast Sales.</p>
+
+<p>('East Coast Sales'!A2 + 'West Coast Sales'!A1)</p>
+
+<p>If you have a quote in the name of the sheet, you need to add the delimiter that is required for that language. For instance, in C#, if the sheet name is "Zippy" Sales, where the quotes are part of the sheet name, a formula that includes a reference to this sheet might look like this:</p>
+
+<p>('/"Zippy/" Sales'!A2 + 'West Coast Sales'!A1)</p>
+
+<p>where a single quotes surrounds the entire sheet name and the backslash (/) delimiter precedes the quotes. For Visual Basic, you would use two double quote characters as in:</p>
+
+<p>('""Zippy"" Sales'!A2 + 'West Coast Sales'!A1)</p>
+
+<p>For cross-sheet referencing of a range of cells in another page, precede the range with the sheet name. For example:</p>
+
+<p>SUM(SecondRoundData!A2:A10)</p>
+
+<p>This adds the values in cells A2 to A10 of the sheet named SecondRoundData. There is no reason to include the sheet name in the second half of the range reference since the cells are on the same sheet. You cannot specify two different sheets in a range; a range of cells is only on a particular sheet, not between sheets.</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS provides support for built-in context menu in the worksheet. Learn how to add and remove custom menu items and customize the structure of context menu." />
+    
+    <title>Context Menu | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n201","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS provides support for built-in context menu in the worksheet. Learn how to add and remove custom menu items and customize the structure of context menu." />
+    
+    <meta name="Microsoft.Help.Id" content="d25ec1bf-d3a4-41a2-989f-93a4df14ddd9"/>
+    <meta name="Microsoft.Help.TocParent" content="bce304a2-3ad1-40e2-a047-d6e21bdbf9c8"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="worksheet.html">Worksheet</a>
+ / Context Menu</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Context Menu</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>A context menu is a single-level or a multi-level pop-up menu that offers a set of choices (called menu items) when a user interacts with the worksheet via right click mouse operation and offers a set of choices.</p>
+
+<p>SpreadJS supports a built-in context menu that&nbsp;appears when you trigger the right click mouse event on the spreadsheet. It provides you with the flexibility to quickly execute some of the important operations or repetitive actions in a spreadsheet. The menu items are displayed on the basis of the area clicked in the worksheet and&nbsp;you can add and remove custom menu items&nbsp;to customize the structure of the context menu.</p>
+
+<p>The image shared below shows the built-in context menu&nbsp;along with&nbsp;up and down indicators. These indicators appear if the&nbsp;menu is not fully displayed in the window. Hovering on these indicators scrolls the menu in their respective direction.&nbsp;You can also&nbsp;click on the&nbsp;indicators if&nbsp;you want to scroll to that respective direction immediately.&nbsp;&nbsp;&nbsp;</p>
+
+<p><img border="0" alt="" src="images/ContextMenu.png" /></p>
+
+<h3>Customization in build-in Context Menu</h3>
+
+<p>SpreadJS supports the customization of the&nbsp;built-in context menu using <strong>GC.Spread.Sheets.ContextMenu.MenuView</strong> class. You can rewrite the defined context menu style class to apply different styles. You can also add or remove custom menu options&nbsp;for both single-level&nbsp;and multi-level context menus&nbsp;as per your preferences.&nbsp; However, the generated response is based on the menu view and&nbsp;the contents of the menu depending on which area is clicked by the mouse.</p>
+
+<p>SpreadJS provides the similar theme for Context menu as that of Spread hence&nbsp;you can modify the menu view appearance and its structure. You can alter the filter&nbsp;context menu data result as well.</p>
+
+<h4>Show built-in context menu</h4>
+
+<p>The <strong><em>allowContextMenu</em></strong> property of <strong>GC.Spread.Sheets.Workbook</strong> class provides users with an option to control whether to show the built-in context menu or not. By default, this option is set to true and you will see a context menu every time you right click on the spreadsheet.</p>
+
+<p>You can also set the max height of the context menu as well as whether to display scrollable indicators by using their&nbsp;<a href="SpreadJS~GC.Spread.Sheets.ContextMenu.MenuView.html">MenuView</a> class methods&nbsp;respectively. The <strong>MenuView.maxHeight</strong> method accepts an integer value whereas the <strong>MenuView.scrollable</strong> method accepts a boolean value. By default, it is set to true to display scroll indicators.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// If you don't want to use the context menu, turn off the context menu option
+</span><span style="COLOR: #0000ff">var</span> spread = $(<span style="COLOR: #800000">'#ss'</span>).data(<span style="COLOR: #800000">'workbook'</span>);
+spread.options.allowContextMenu = <span style="COLOR: #0000ff">false</span>;
+<span style="COLOR: #008000">// Setting the context menu scroll property to true.
+</span>spread.contextMenu.menuView.scrollable(<span style="COLOR: #0000ff">true</span>);
+spread.contextMenu.menuView.maxHeight(400);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Customize the view and structure of the menu</h4>
+
+<p>This&nbsp;property allows&nbsp;you to customize the view and structure of the menu item using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.ContextMenu.MenuView~createMenuItemElement.html">MenuView.createMenuItemElement</a> method.&nbsp;&nbsp;</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>));
+<span style="COLOR: #0000ff">function</span> CustomMenuView() {}
+CustomMenuView.prototype = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.ContextMenu.MenuView();
+CustomMenuView.prototype.createMenuItemElement = <span style="COLOR: #0000ff">function</span> (menuItemData) {
+    <span style="COLOR: #008000">// create menu item view by your self
+</span>    <span style="COLOR: #008000">// you can call super's createMenuItemElement here and only customize a few of menu item
+</span>    <span style="COLOR: #008000">// should return menu item view back
+</span>};
+spread.contextMenu.menuView = <span style="COLOR: #0000ff">new</span> CustomMenuView();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Add/Remove custom menu options</h4>
+
+<p>This allows&nbsp;you to add or remove custom menu options in a context menu. Each of the options follow the defined menu data in the JSON schema.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//Define menu data
+</span><span style="COLOR: #0000ff">var</span> openDialog = {
+    text: <span style="COLOR: #800000">'Open Dialog'</span>,
+    name: <span style="COLOR: #800000">'openDialog'</span>,
+    command: showLoginDialog,
+    workArea: <span style="COLOR: #800000">'viewport'</span>
+};
+spread.contextMenu.menuData.push(openDialog);
+<span style="COLOR: #0000ff">function</span> showLoginDialog() {
+    <span style="COLOR: #008000">//to do something
+</span>}
+<span style="COLOR: #008000">// Add/Remove the custom menu options
+</span>$.each(spread.contextMenu.menuData, <span style="COLOR: #0000ff">function</span> (p, v) {
+    <span style="COLOR: #0000ff">if</span> (v.name === <span style="COLOR: #800000">'openDialog'</span>) { <span style="COLOR: #008000">//openDialog is a command's name
+</span>        spread.contextMenu.menuData.splice(p, 1)
+    }
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

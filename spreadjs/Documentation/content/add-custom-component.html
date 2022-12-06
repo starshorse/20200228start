@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Add a Custom Component | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n849","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="95ceb0be-adb5-4b86-a766-f2514d250e6f"/>
+    <meta name="Microsoft.Help.TocParent" content="8a161658-2d68-4074-8599-e3b103efd55b"/>
+    <meta name="Microsoft.Help.TocOrder" content="8"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="spreadjs_designer_component.html">SpreadJS Designer Component</a>
+ / <a href="customizations.html">Customizations</a>
+ / Add a Custom Component</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Add a Custom Component</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can add custom components to the Designer. For example, the following sample adds a 'Date Picker' component to the SpreadJS Designer Component.</p>
+
+<ol>
+    <li>Define a custom component class in your project.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Add Custom Component
+</span><span style="COLOR: #0000ff">var</span> DatePicker = defineCustomComponent();
+
+<span style="COLOR: #008000">//Build Component Class Structure
+</span><span style="COLOR: #0000ff">function</span> defineCustomComponent() {
+    <span style="COLOR: #0000ff">function</span> DatePicker() {
+        GC.Spread.Sheets.Designer.AtomicComponentBase.call(<span style="COLOR: #0000ff">this</span>, ...arguments)
+    };
+    DatePicker.prototype = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Designer.AtomicComponentBase();
+    <span style="COLOR: #008000">// This function is used to define innerHTML of component
+</span>    DatePicker.prototype.getTemplate = <span style="COLOR: #0000ff">function</span> () {
+        <span style="COLOR: #0000ff">return</span> `
+            &lt;div class=<span style="COLOR: #800000">"input-append date"</span> style=<span style="COLOR: #800000">"margin-top: 35px;"</span>&gt;
+              &lt;input size=<span style="COLOR: #800000">"20"</span> class =<span style="COLOR: #800000">'form_date'</span> type=<span style="COLOR: #800000">"text"</span>&gt;
+            &lt;<span style="COLOR: #800000">/div&gt;
+</span>            `;
+    }
+    <span style="COLOR: #008000">// Now the host element has been append to DOM, and you can add event listeners to it
+</span>    DatePicker.prototype.onMounted = <span style="COLOR: #0000ff">function</span> (host) {
+        $(<span style="COLOR: #800000">".form_date"</span>, host).datepicker();
+
+        <span style="COLOR: #008000">// When the datepicker changed, raise value changed event
+</span>        $(<span style="COLOR: #800000">".form_date"</span>, host).change((e) =&gt; {
+            <span style="COLOR: #0000ff">this</span>.raiseValueChanged()
+        })
+    }
+    DatePicker.prototype.onValueChanged = <span style="COLOR: #0000ff">function</span> (prevValue, nextValue, host) {
+        $(<span style="COLOR: #800000">".form_date"</span>, host).datepicker(<span style="COLOR: #800000">'setDate'</span>, (nextValue &amp;&amp; nextValue.toLocaleString) ? nextValue.toLocaleString(<span style="COLOR: #800000">'en-us'</span>, { year: <span style="COLOR: #800000">'numeric'</span>, month: <span style="COLOR: #800000">'numeric'</span>, day: <span style="COLOR: #800000">'numeric'</span> }) : <span style="COLOR: #800000">""</span>);
+    }
+    <span style="COLOR: #008000">// This function will be called after raiseValueChanged()
+</span>    DatePicker.prototype.updateValue = <span style="COLOR: #0000ff">function</span> (host) {
+        <span style="COLOR: #0000ff">var</span> value = $(<span style="COLOR: #800000">".form_date"</span>, host).datepicker(<span style="COLOR: #800000">'getDate'</span>)
+        <span style="COLOR: #0000ff">if</span> (value) {
+            <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">new</span> Date(value);
+        }
+        <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">null</span>;
+    }
+    <span style="COLOR: #008000">// Remove the BootStrap datepicker and unbind the change event
+</span>    DatePicker.prototype.onDestroy = <span style="COLOR: #0000ff">function</span> (host) {
+        $(<span style="COLOR: #800000">".form_date"</span>, host).datepicker(<span style="COLOR: #800000">"destroy"</span>);
+        $(<span style="COLOR: #800000">".form_date"</span>, host).unbind(<span style="COLOR: #800000">"change"</span>);
+    }
+
+    <span style="COLOR: #0000ff">return</span> DatePicker;
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Register the custom component to Designer using the&nbsp;<a href="SpreadJSDesigner~GC.Spread.Sheets.Designer.Designer~RegisterComponent.html">Designer.RegisterComponent</a> method.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Register Custom Component to Designer
+</span>GC.Spread.Sheets.Designer.Designer.RegisterComponent(<span style="COLOR: #800000">"DatePicker"</span>, DatePicker);
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Define the custom component command in the project.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Custom Component Command Usage - implement a command
+</span><span style="COLOR: #0000ff">var</span> date = initCommand();
+            
+<span style="COLOR: #008000">//Implement a Command
+</span><span style="COLOR: #0000ff">function</span> initCommand() {
+    <span style="COLOR: #0000ff">return</span> {
+        title: <span style="COLOR: #800000">"Set Date"</span>,
+        text: <span style="COLOR: #800000">"Set Date"</span>,
+        commandName: <span style="COLOR: #800000">"date"</span>,
+        type: <span style="COLOR: #800000">'DatePicker'</span>,
+        execute: (designer, propertyName, value) =&gt; {
+            let sheet = designer.getWorkbook().getActiveSheet();
+            <span style="COLOR: #0000ff">if</span> (sheet) {
+                <span style="COLOR: #0000ff">var</span> row = sheet.getActiveRowIndex();
+                <span style="COLOR: #0000ff">var</span> col = sheet.getActiveColumnIndex();
+                sheet.setValue(row, col, value);
+            }
+        },
+        getState: (designer) =&gt; {
+            <span style="COLOR: #0000ff">var</span> spread = designer.getWorkbook();
+            <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+            <span style="COLOR: #0000ff">var</span> row = sheet.getActiveRowIndex();
+            <span style="COLOR: #0000ff">var</span> col = sheet.getActiveColumnIndex();
+            <span style="COLOR: #0000ff">var</span> value = sheet.getValue(row, col);
+            <span style="COLOR: #0000ff">return</span> value;
+        }
+    };
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Set the above command in the commandMap and add the custom component in the designer config.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Custom Designer Config
+</span><span style="COLOR: #0000ff">var</span> config = initConfig(date);
+
+<span style="COLOR: #008000">//Customize Designer Config
+</span><span style="COLOR: #0000ff">function</span> initConfig(date) {
+    <span style="COLOR: #0000ff">var</span> config = GC.Spread.Sheets.Designer.DefaultConfig;
+    <span style="COLOR: #008000">// Set command in commandMap
+</span>    config.commandMap = {
+        cmdDatePicker: date
+    }
+    <span style="COLOR: #008000">// Add custom component button in config
+</span>    <span style="COLOR: #0000ff">var</span> command = {
+        text: <span style="COLOR: #800000">"DATE"</span>,
+        id: <span style="COLOR: #800000">"date"</span>,
+        buttonGroups: [
+            {
+                label: <span style="COLOR: #800000">"DATE"</span>,
+                commandGroup: {
+                    direction: <span style="COLOR: #800000">"horizontal"</span>,
+                    commands: [<span style="COLOR: #800000">"cmdDatePicker"</span>]
+                }
+            }
+        ]
+    };
+    config.ribbon.unshift(command);
+    <span style="COLOR: #0000ff">return</span> config;
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Initialize the designer instance by passing the relevant config parameter for customizable configuration.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Create Designer With Config
+</span>designer = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Designer.Designer(designer_host, config);
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>The below output will be generated:</p>
+
+        <p><img border="0" alt="" src="images/custom-component-datepicker.gif" /></p>
+    </li>
+</ol>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

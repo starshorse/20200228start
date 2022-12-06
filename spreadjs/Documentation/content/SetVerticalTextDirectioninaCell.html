@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to set the text direction in a cell as per your own preferences such as vertical or horizontal. Learn more in SpreadJS docs." />
+    
+    <title>Vertical Text Direction | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n333","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to set the text direction in a cell as per your own preferences such as vertical or horizontal. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="9973ad3c-9ca8-486e-bf73-2a3259c79471"/>
+    <meta name="Microsoft.Help.TocParent" content="e9628ea1-c098-40b6-a16a-ca0248291974"/>
+    <meta name="Microsoft.Help.TocOrder" content="28"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / Vertical Text Direction</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Vertical Text Direction</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to set the text direction in a cell as per their own preferences,&nbsp;like in Excel.</p>
+
+<p>By default, when you enter textual&nbsp;information in a cell,&nbsp;the&nbsp;alphabets are displayed in the horizontal direction. However,&nbsp;if you want your text to be displayed in vertical direction, you can style this text vertically, as shown in the image shared below.</p>
+
+<p><img border="0" alt="Vertical text direction" src="images/vertical-text_img1.png" /></p>
+
+<p>In order to switch the text orientation&nbsp;to vertical direction in a cell, you can use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~isVerticalText.html">isVerticalText()</a> method of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange.html">CellRange</a> class.&nbsp;This method accepts boolean parameters - true or false. While passing a&nbsp;boolean value true as a parameter in this method will indicate the text to be displayed vertically, providing a boolean value false will indicate the text to be displayed horizontally. (same as in the default case).</p>
+
+<p>The vertical&nbsp;text direction feature in Spread JS supports horizontal and vertical alignment. You can specify the alignment style by customizing the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~vAlign.html" data-auto-update-caption="true">vAlign()&nbsp;</a>method (for vertical alignment) and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~hAlign.html">hAlign()</a> <font color="black">method</font>&nbsp;(for horizontal alignment). An example is shown in the image shared below.</p>
+
+<div title="Click to Enlarge" class="i-thumbnail-container">
+    <a title="Use vAlign and hAlign&nbsp;with vertical text direction" class="i-thumbnail" rel="lightbox" data-href="images/vertical-text_img2.png"><img alt="Use vAlign and hAlign&nbsp;with vertical text direction" src="images/vertical-text_img2_thumb.png" /></a>
+
+    <p>Use vAlign and hAlign&nbsp;with vertical text direction</p>
+</div>
+
+<p>You can also control the text indentation while setting the vertical text direction in a cell by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~textIndent.html">textIndent</a> method. An example is shown in the image shared below.</p>
+
+<p><img border="0" alt="Text indentation for vertical text" src="images/vertical-text_img3.png" /></p>
+
+<p>Often, a word may seem to be too long to fit in a cell with vertical text. In such a scenario, you can use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~wordWrap.html">wordWrap()</a>&nbsp;method&nbsp;in order to make it fit in the same cell. An example is shown in the image shared below.</p>
+
+<p><img border="0" alt="Word wrap in vertical text" src="images/vertical-text_img4.png" /></p>
+
+<p>If you don't want to use word-wrap in a cell, you can allow Spread to automatically reduce the font size of the vertical text by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~shrinkToFit.html" data-auto-update-caption="true">shrinkToFit()</a> method. An example is shown in the image shared below.</p>
+
+<p><img border="0" alt="Shrink to fit in vertical text" src="images/vertical-text_img5.png" /></p>
+
+<p>If you don't want to use both word-wrap and shrink-to-fit features&nbsp;in a cell, you can&nbsp;allow Spread to automatically adjust the width and height of a cell in order to fit all the content in the same cell. This can be done by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.AutoFitType.html" data-auto-update-caption="true">AutoFitType Enumeration</a>. An example is shown in the image shared below.</p>
+
+<p><img border="0" alt="Automatically fitted vertical text" src="images/vertical-text_img6.png" background-color="(255,255,255)" /></p>
+
+<h4>Using Code</h4>
+
+<p>This example sets the vertical text direction in cell D4 by passing&nbsp;the boolean value "true" in the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~isVerticalText.html">isVerticalText()</a> method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+sheet.setRowHeight(3,150);
+sheet.getCell(3,3).value(<span style="COLOR: #800000">"SpreadJS"</span>).isVerticalText(<span style="COLOR: #0000ff">true</span>);
+sheet.getCell(3,4).value(<span style="COLOR: #800000">"SpreadJS"</span>).isVerticalText(<span style="COLOR: #0000ff">false</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how easily you can create a custom slicer using SpreadJS." />
+    
+    <title>Custom Slicer | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n709","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how easily you can create a custom slicer using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="47150687-ad4f-4b5c-817a-ec661f806a3d"/>
+    <meta name="Microsoft.Help.TocParent" content="c1290b37-5dbb-4d1c-9c55-47e34ee0f71f"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sliceruse.html">Slicer</a>
+ / Custom Slicer</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Custom Slicer</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can create a custom slicer with the&nbsp;<a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData.html">GeneralSlicerData</a>&nbsp;class or the <a href="SpreadJS~GC.Spread.Sheets.Slicers.TableSlicerData.html">TableSlicerData</a>&nbsp;class.</p>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData.html">GeneralSlicerData</a>&nbsp;class is used to process data for a two-dimensional array. The class provides properties and methods that you can use to filter the data and get the filtered result. You can attach multiple slicers to a custom slicer. Each slicer can filter one column of data. After the filter is complete, the other slicers are notified by the&nbsp;<a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData.html">GeneralSlicerData</a>&nbsp;class. The slicers then can get the filtered result from <strong>GeneralSlicerData</strong> and update their UI.</p>
+
+<p>The slicer works with the <a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData.html">GeneralSlicerData</a>&nbsp;class based on the following steps:</p>
+
+<ol>
+    <li>Create a new <strong>GeneralSlicerData</strong> with your data.</li>
+
+    <li>Create a new custom slicer and attach it to <strong>GeneralSlicerData</strong>.</li>
+
+    <li>Get the column data from <strong>GeneralSlicerData</strong> and build the slicer UI.</li>
+
+    <li>Respond to the UI events and invoke the GeneralSlicerData <a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData~doFilter.html">doFilter</a>&nbsp;method.</li>
+
+    <li>Get the filtered result from <strong>GeneralSlicerData</strong> and update the slicer UI.</li>
+</ol>
+
+<p>You can get all the data for a specific column with the <a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData~getData.html">getData</a>&nbsp;method. You can get exclusive (non-repeating data) with the <a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData~getExclusiveData.html">getExclusiveData</a>&nbsp;method. You can filter a column with the&nbsp;<a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData~doFilter.html">doFilter</a>&nbsp;method or clear the filter information with the&nbsp;<a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData~doUnfilter.html">doUnfilter</a>&nbsp;method. For a complete list of methods, refer to the&nbsp;<a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData.html">GeneralSlicerData</a>&nbsp;class.</p>
+
+<p>You can attach a listener to <strong>GeneralSlicerData</strong> with the&nbsp;<a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData~attachListener.html">attachListener</a>&nbsp;function and detach it with the&nbsp;<a href="SpreadJS~GC.Spread.Slicers.GeneralSlicerData~detachListener.html">detachListener</a>&nbsp;function.</p>
+
+<p>The following image displays a custom slicer.</p>
+
+<p><img border="0" alt="Custom slicer" src="images/customslicer.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>This example creates a custom slicer.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;!DOCTYPE html&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+     &lt;title&gt;SpreadJS Sample&lt;<span style="COLOR: #800000">/title&gt;
+</span>     &lt;link href=<span style="COLOR: #800000">"./css/gc.spread.sheets.excel2013white.x.x.x.css"</span> rel=<span style="COLOR: #800000">"stylesheet"</span> type=<span style="COLOR: #800000">"text/css"</span> <span style="COLOR: #800000">/&gt;
+</span>     &lt;script src=<span style="COLOR: #800000">"http://code.jquery.com/jquery-2.0.2.js"</span> type=<span style="COLOR: #800000">"text/javascript"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>     &lt;script src=<span style="COLOR: #800000">"./scripts/gc.spread.sheets.all.x.x.x.min.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>    &lt;script type=<span style="COLOR: #800000">"text/javascript"</span>&gt;
+         <span style="COLOR: #008000">//Define data source.
+</span>         columnNames = [<span style="COLOR: #800000">"Name"</span>, <span style="COLOR: #800000">"City"</span>, <span style="COLOR: #800000">"Birthday"</span>];
+         data = [
+             [<span style="COLOR: #800000">"Bob"</span>, <span style="COLOR: #800000">"NewYork"</span>, <span style="COLOR: #800000">"1968/6/8"</span>],
+             [<span style="COLOR: #800000">"Betty"</span>, <span style="COLOR: #800000">"Washington"</span>, <span style="COLOR: #800000">"1972/7/3"</span>],
+             [<span style="COLOR: #800000">"Alice"</span>, <span style="COLOR: #800000">"NewYork"</span>, <span style="COLOR: #800000">"1964/3/2"</span>]];
+        <span style="COLOR: #008000">//Define custom slicer.
+</span>         <span style="COLOR: #0000ff">function</span> MySlicer(container) {
+             <span style="COLOR: #0000ff">this</span>.container = container;
+             <span style="COLOR: #0000ff">this</span>.slicerData = <span style="COLOR: #0000ff">null</span>;
+             <span style="COLOR: #0000ff">this</span>.columnName = <span style="COLOR: #0000ff">null</span>;
+         }
+         MySlicer.prototype.setData = <span style="COLOR: #0000ff">function</span> (slicerData, columnName) {
+             <span style="COLOR: #0000ff">this</span>.slicerData = slicerData;
+             <span style="COLOR: #0000ff">this</span>.columnName = columnName;
+             <span style="COLOR: #0000ff">this</span>.slicerData.attachListener(<span style="COLOR: #0000ff">this</span>);
+             <span style="COLOR: #0000ff">this</span>.onDataLoaded();
+         }
+         MySlicer.prototype.onDataLoaded = <span style="COLOR: #0000ff">function</span> () {
+             <span style="COLOR: #008000">//create slicer dom tree.
+</span>             <span style="COLOR: #0000ff">var</span> columnName = <span style="COLOR: #0000ff">this</span>.columnName,
+             exclusiveData = <span style="COLOR: #0000ff">this</span>.slicerData.getExclusiveData(columnName);
+             $(<span style="COLOR: #0000ff">this</span>.container).append($(<span style="COLOR: #800000">'&lt;span&gt;'</span> + <span style="COLOR: #0000ff">this</span>.columnName + <span style="COLOR: #800000">':&lt;/span&gt;'</span> + <span style="COLOR: #800000">'&lt;br /&gt;'</span>));
+             <span style="COLOR: #0000ff">var</span> domString = <span style="COLOR: #800000">""</span>;
+             <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; exclusiveData.length; i++) {
+                 domString += <span style="COLOR: #800000">'&lt;input type="checkbox" name="'</span> + columnName + <span style="COLOR: #800000">'" value="'</span> + exclusiveData[i] + <span style="COLOR: #800000">'"&gt;'</span>;
+                 domString += <span style="COLOR: #800000">'&lt;span&gt;'</span> + exclusiveData[i] + <span style="COLOR: #800000">'&lt;/span&gt;'</span>;
+                 domString += <span style="COLOR: #800000">'&lt;br /&gt;'</span>;
+             }
+             $(<span style="COLOR: #0000ff">this</span>.container).append($(domString));
+             <span style="COLOR: #008000">//attach events to dom.
+</span>             <span style="COLOR: #0000ff">var</span> self = <span style="COLOR: #0000ff">this</span>;
+             $(<span style="COLOR: #800000">"[name='"</span> + self.columnName + <span style="COLOR: #800000">"']"</span>).change(<span style="COLOR: #0000ff">function</span> () {
+                 <span style="COLOR: #0000ff">var</span> slicer = self,
+                 exclusiveData = slicer.slicerData.getExclusiveData(slicer.columnName),
+                 parent = $(<span style="COLOR: #0000ff">this</span>).parent(),
+                 items = parent.children(),
+                 indexes = [];
+                 <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0, length = items.length; i &lt; length; i++) {
+                     <span style="COLOR: #0000ff">if</span> (items[i].checked) {
+                         <span style="COLOR: #0000ff">var</span> value = items[i].value;
+                         <span style="COLOR: #0000ff">if</span> (!isNaN(parseInt(value))) {
+                             value = parseInt(value);
+                         }
+                         indexes.push(exclusiveData.indexOf(value))
+                     }
+                 }
+                 <span style="COLOR: #0000ff">if</span> (indexes.length === 0) {
+                     slicer.slicerData.doUnfilter(slicer.columnName);
+                 } <span style="COLOR: #0000ff">else</span> {
+                     slicer.slicerData.doFilter(slicer.columnName, { exclusiveRowIndexes: indexes });
+                 }
+             });
+         };
+         MySlicer.prototype.onFiltered = <span style="COLOR: #0000ff">function</span> () {
+             <span style="COLOR: #008000">//The following is an example of showing the filtered result.
+</span>             <span style="COLOR: #0000ff">var</span> slicerdata = <span style="COLOR: #0000ff">this</span>.slicerData;
+             <span style="COLOR: #0000ff">var</span> filteredRowIndexs = slicerdata.getFilteredRowIndexes();
+             <span style="COLOR: #0000ff">var</span> trs = $listTable.find(<span style="COLOR: #800000">"tr"</span>);
+             <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; slicerdata.data.length; i++) {
+                 <span style="COLOR: #0000ff">if</span> (filteredRowIndexs.indexOf(i) !== -1) {
+                     $(trs[i + 1]).show();
+                 } <span style="COLOR: #0000ff">else</span> {
+                     $(trs[i + 1]).hide();
+                 }
+             }
+         }
+        <span style="COLOR: #008000">//Define the show filtered result method.
+</span>         <span style="COLOR: #0000ff">function</span> initFilteredResultList() {
+             <span style="COLOR: #0000ff">var</span> tableStr = <span style="COLOR: #800000">"&lt;table border='1' cellpadding='0' cellspacing='0'&gt;&lt;tr&gt;"</span>;
+             <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; columnNames.length; i++) {
+                 tableStr += <span style="COLOR: #800000">"&lt;th&gt;"</span> + columnNames[i] + <span style="COLOR: #800000">"&lt;/th&gt;"</span>;
+             }
+             tableStr += <span style="COLOR: #800000">"&lt;/tr&gt;"</span>;
+             <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; data.length; i++) {
+                 tableStr += <span style="COLOR: #800000">"&lt;tr&gt;"</span>;
+                 <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> j = 0; j &lt; data[i].length; j++) {
+                     tableStr += <span style="COLOR: #800000">"&lt;td&gt;"</span> + data[i][j] + <span style="COLOR: #800000">"&lt;/td&gt;"</span>;
+                 }
+                 tableStr += <span style="COLOR: #800000">"&lt;/tr&gt;"</span>;
+             }
+             tableStr += <span style="COLOR: #800000">"&lt;/table&gt;"</span>;
+             $listTable = $(tableStr);
+             $(<span style="COLOR: #800000">"#list"</span>).append($listTable);
+         }
+        $(document).ready(<span style="COLOR: #0000ff">function</span> () {
+             <span style="COLOR: #008000">//init filtered result list.
+</span>             initFilteredResultList();
+             <span style="COLOR: #008000">//create a custom slicer and add this slicer to the "slicerContainer" div.
+</span>             <span style="COLOR: #0000ff">var</span> slicer = <span style="COLOR: #0000ff">new</span> MySlicer($(<span style="COLOR: #800000">"#slicerContainer"</span>)[0]);
+             <span style="COLOR: #0000ff">var</span> slicerData = <span style="COLOR: #0000ff">new</span> GC.Spread.Slicers.GeneralSlicerData(data, columnNames);
+             slicer.setData(slicerData, <span style="COLOR: #800000">"Name"</span>);
+         });
+     &lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;<span style="COLOR: #800000">/head&gt;
+</span> &lt;body&gt;
+     &lt;div id=<span style="COLOR: #800000">"slicerContainer"</span> style=<span style="COLOR: #800000">"border:1px solid gray;width:190px"</span>&gt;&lt;<span style="COLOR: #800000">/div&gt;
+</span>     &lt;hr<span style="COLOR: #800000">/&gt;
+</span>     &lt;div id=<span style="COLOR: #800000">"list"</span> style=<span style="COLOR: #800000">"width:300px;float:left"</span>&gt;&lt;<span style="COLOR: #800000">/div&gt;
+</span> &lt;<span style="COLOR: #800000">/body&gt;
+</span> &lt;<span style="COLOR: #800000">/html&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>This example creates a custom slicer and uses the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Slicers.TableSlicerData.html">TableSlicerData</a>&nbsp;class for data.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;!DOCTYPE html&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+     &lt;title&gt;SpreadJS Development Sample&lt;<span style="COLOR: #800000">/title&gt;
+</span>     &lt;link href=<span style="COLOR: #800000">"./css/gc.spread.sheets.excel2013white.x.x.x.css"</span> rel=<span style="COLOR: #800000">"stylesheet"</span> type=<span style="COLOR: #800000">"text/css"</span> <span style="COLOR: #800000">/&gt;
+</span>    &lt;script src=<span style="COLOR: #800000">"http://code.jquery.com/jquery-2.0.2.js"</span> type=<span style="COLOR: #800000">"text/javascript"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>     &lt;script src=<span style="COLOR: #800000">"./scripts/gc.spread.sheets.all.x.x.x.min.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>     &lt;script type=<span style="COLOR: #800000">"text/javascript"</span>&gt;
+         <span style="COLOR: #008000">//Define data source.
+</span>         data = [
+             { <span style="COLOR: #800000">"Name"</span>: <span style="COLOR: #800000">"Bob"</span>, <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"NewYork"</span>, <span style="COLOR: #800000">"Birthday"</span>: <span style="COLOR: #800000">"1968/6/8"</span> },
+             { <span style="COLOR: #800000">"Name"</span>: <span style="COLOR: #800000">"Bob"</span>, <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"NewYork"</span>, <span style="COLOR: #800000">"Birthday"</span>: <span style="COLOR: #800000">"1968/6/8"</span> },
+             { <span style="COLOR: #800000">"Name"</span>: <span style="COLOR: #800000">"Bob"</span>, <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"NewYork"</span>, <span style="COLOR: #800000">"Birthday"</span>: <span style="COLOR: #800000">"1968/6/8"</span> },
+             { <span style="COLOR: #800000">"Name"</span>: <span style="COLOR: #800000">"Bob"</span>, <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"NewYork"</span>, <span style="COLOR: #800000">"Birthday"</span>: <span style="COLOR: #800000">"1968/6/8"</span> },
+             { <span style="COLOR: #800000">"Name"</span>: <span style="COLOR: #800000">"Betty"</span>, <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Washington"</span>, <span style="COLOR: #800000">"Birthday"</span>: <span style="COLOR: #800000">"1972/7/3"</span> },
+             { <span style="COLOR: #800000">"Name"</span>: <span style="COLOR: #800000">"Betty"</span>, <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Washington"</span>, <span style="COLOR: #800000">"Birthday"</span>: <span style="COLOR: #800000">"1972/7/3"</span> },
+             { <span style="COLOR: #800000">"Name"</span>: <span style="COLOR: #800000">"Betty"</span>, <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"Washington"</span>, <span style="COLOR: #800000">"Birthday"</span>: <span style="COLOR: #800000">"1972/7/3"</span> },
+             { <span style="COLOR: #800000">"Name"</span>: <span style="COLOR: #800000">"Alice"</span>, <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"NewYork"</span>, <span style="COLOR: #800000">"Birthday"</span>: <span style="COLOR: #800000">"1964/3/2"</span> },
+             { <span style="COLOR: #800000">"Name"</span>: <span style="COLOR: #800000">"Alice"</span>, <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"NewYork"</span>, <span style="COLOR: #800000">"Birthday"</span>: <span style="COLOR: #800000">"1964/3/2"</span> },
+             { <span style="COLOR: #800000">"Name"</span>: <span style="COLOR: #800000">"Alice"</span>, <span style="COLOR: #800000">"City"</span>: <span style="COLOR: #800000">"NewYork"</span>, <span style="COLOR: #800000">"Birthday"</span>: <span style="COLOR: #800000">"1964/3/2"</span> }];
+        <span style="COLOR: #008000">//Define custom slicer.
+</span>         <span style="COLOR: #0000ff">function</span> MySlicer(container) {
+             <span style="COLOR: #0000ff">this</span>.container = container;
+             <span style="COLOR: #0000ff">this</span>.slicerData = <span style="COLOR: #0000ff">null</span>;
+             <span style="COLOR: #0000ff">this</span>.columnName = <span style="COLOR: #0000ff">null</span>;
+         }
+         MySlicer.prototype.setData = <span style="COLOR: #0000ff">function</span> (slicerData, columnName) {
+             <span style="COLOR: #0000ff">this</span>.slicerData = slicerData;
+             <span style="COLOR: #0000ff">this</span>.columnName = columnName;
+             <span style="COLOR: #0000ff">this</span>.slicerData.attachListener(<span style="COLOR: #0000ff">this</span>);
+             <span style="COLOR: #0000ff">this</span>.onDataLoaded();
+         }
+         MySlicer.prototype.onDataLoaded = <span style="COLOR: #0000ff">function</span> () {
+             <span style="COLOR: #008000">//create slicer dom tree.
+</span>             <span style="COLOR: #0000ff">var</span> columnName = <span style="COLOR: #0000ff">this</span>.columnName,
+             exclusiveData = <span style="COLOR: #0000ff">this</span>.slicerData.getExclusiveData(columnName);
+             $(<span style="COLOR: #0000ff">this</span>.container).append($(<span style="COLOR: #800000">'&lt;span&gt;'</span> + <span style="COLOR: #0000ff">this</span>.columnName + <span style="COLOR: #800000">':&lt;/span&gt;'</span> + <span style="COLOR: #800000">'&lt;br /&gt;'</span>));
+             <span style="COLOR: #0000ff">var</span> domString = <span style="COLOR: #800000">""</span>;
+             <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; exclusiveData.length; i++) {
+                 domString += <span style="COLOR: #800000">'&lt;input type="checkbox" name="'</span> + columnName + <span style="COLOR: #800000">'" value="'</span> + exclusiveData[i] + <span style="COLOR: #800000">'"&gt;'</span>;
+                 domString += <span style="COLOR: #800000">'&lt;span&gt;'</span> + exclusiveData[i] + <span style="COLOR: #800000">'&lt;/span&gt;'</span>;
+                 domString += <span style="COLOR: #800000">'&lt;br /&gt;'</span>;
+             }
+             $(<span style="COLOR: #0000ff">this</span>.container).append($(domString));
+             <span style="COLOR: #008000">//attach events to dom.
+</span>             <span style="COLOR: #0000ff">var</span> self = <span style="COLOR: #0000ff">this</span>;
+             $(<span style="COLOR: #800000">"[name='"</span> + self.columnName + <span style="COLOR: #800000">"']"</span>).change(<span style="COLOR: #0000ff">function</span> () {
+                 <span style="COLOR: #0000ff">var</span> slicer = self,
+                 exclusiveData = slicer.slicerData.getExclusiveData(slicer.columnName),
+                 parent = $(<span style="COLOR: #0000ff">this</span>).parent(),
+                 items = parent.children(),
+                 indexes = [];
+                 <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0, length = items.length; i &lt; length; i++) {
+                     <span style="COLOR: #0000ff">if</span> (items[i].checked) {
+                         <span style="COLOR: #0000ff">var</span> value = items[i].value;
+                         <span style="COLOR: #0000ff">if</span> (!isNaN(parseInt(value))) {
+                             value = parseInt(value);
+                         }
+                         indexes.push(exclusiveData.indexOf(value))
+                     }
+                 }
+                 <span style="COLOR: #0000ff">if</span> (indexes.length === 0) {
+                     slicer.slicerData.doUnfilter(slicer.columnName);
+                 } <span style="COLOR: #0000ff">else</span> {
+                     slicer.slicerData.doFilter(slicer.columnName, { exclusiveRowIndexes: indexes });
+                 }
+             });
+         };
+         MySlicer.prototype.onFiltered = <span style="COLOR: #0000ff">function</span> () {
+             <span style="COLOR: #008000">//Sync the status if the data has been filtered by the SpreadJS table.
+</span>             <span style="COLOR: #0000ff">var</span> slicerdata = <span style="COLOR: #0000ff">this</span>.slicerData;
+             <span style="COLOR: #0000ff">var</span> exclusiveIndexes = slicerdata.getFilteredIndexes(<span style="COLOR: #0000ff">this</span>.columnName);
+             $.each($(<span style="COLOR: #800000">"#slicerContainer"</span>).children(<span style="COLOR: #800000">"input"</span>), <span style="COLOR: #0000ff">function</span> (i,input) {
+            });
+         }
+        $(document).ready(<span style="COLOR: #0000ff">function</span> () {            
+             <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:1});
+             <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+            <span style="COLOR: #008000">//create a custom slicer and add this slicer to the "slicerContainer" div.
+</span>             <span style="COLOR: #0000ff">var</span> slicer = <span style="COLOR: #0000ff">new</span> MySlicer($(<span style="COLOR: #800000">"#slicerContainer"</span>)[0]);
+             <span style="COLOR: #0000ff">var</span> table = sheet.tables.addFromDataSource(<span style="COLOR: #800000">"table1"</span>, 1, 1, data);
+             <span style="COLOR: #0000ff">var</span> slicerData = table.getSlicerData();
+             slicer.setData(slicerData, <span style="COLOR: #800000">"Name"</span>);
+        });
+     &lt;<span style="COLOR: #800000">/script&gt;
+</span>&lt;<span style="COLOR: #800000">/head&gt;
+</span> &lt;body&gt;
+     &lt;div id=<span style="COLOR: #800000">"slicerContainer"</span> style=<span style="COLOR: #800000">"border:1px solid gray;width:190px"</span>&gt;&lt;<span style="COLOR: #800000">/div&gt;
+</span>     &lt;hr <span style="COLOR: #800000">/&gt;
+</span>     &lt;div id=<span style="COLOR: #800000">"ss"</span> style=<span style="COLOR: #800000">"width:500px;height:500px;border:1px solid gray"</span>&gt;&lt;<span style="COLOR: #800000">/div&gt;
+</span> &lt;<span style="COLOR: #800000">/body&gt;
+</span> &lt;<span style="COLOR: #800000">/html&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

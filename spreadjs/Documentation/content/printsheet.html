@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can print a single sheet or all the sheets in SpreadJS. Also, learn the various options that can be used when creating a print header or footer." />
+    
+    <title>Print Sheets | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n721","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can print a single sheet or all the sheets in SpreadJS. Also, learn the various options that can be used when creating a print header or footer." />
+    
+    <meta name="Microsoft.Help.Id" content="c3af4ef8-d670-4ee9-bbb4-dd653f87a656"/>
+    <meta name="Microsoft.Help.TocParent" content="4938901c-996c-4cf4-b1ac-a40b6edf52a6"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="printing.html">Print</a>
+ / Print Sheets</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Print Sheets</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can print a single sheet or all the sheets in SpreadJS.</p>
+
+<p>The following content is printed when you print in SpreadJS:</p>
+
+<ul>
+    <li>Visible rows or columns in the corner, row header, column header, or viewport</li>
+
+    <li>Cell text</li>
+
+    <li>Cell Style</li>
+
+    <li>Spans</li>
+
+    <li>Overflow</li>
+</ul>
+
+<p>The following information is not printed:</p>
+
+<ul>
+    <li>Hidden rows or columns</li>
+
+    <li>Floating object</li>
+
+    <li>Comment</li>
+
+    <li>Tab strip</li>
+
+    <li>Scroll bar</li>
+
+    <li>Group</li>
+
+    <li>Filter button</li>
+
+    <li>Validation button or highlight circle</li>
+
+    <li>Active effect</li>
+
+    <li>Selection</li>
+
+    <li>Freeze line</li>
+</ul>
+
+<p>Use the <a href="SpreadJS~GC.Spread.Sheets.Workbook~print.html">print</a> method to print a sheet or sheets. Use an index to specify a specific sheet or no index for all visible sheets. You can specify many print options with the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo.html">PrintInfo</a>&nbsp;class such as whether to print headers, borders, grid lines, and so on.</p>
+
+<p>The following table displays the options that can be used when creating a print header or footer:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Control Character</strong></td>
+
+            <td><strong>Description</strong></td>
+
+            <td><strong>Example</strong></td>
+
+            <td><strong>Result</strong></td>
+        </tr>
+
+        <tr>
+            <td>&amp;</td>
+
+            <td>Escape character</td>
+
+            <td>&nbsp;</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>P</td>
+
+            <td>Current page</td>
+
+            <td><code>sheet.printInfo().headerLeft("This is page &amp;P of &amp;N pages.");</code></td>
+
+            <td>This is page 1 of 10 pages. (If there are 10 pages and this is first page.)</td>
+        </tr>
+
+        <tr>
+            <td>N</td>
+
+            <td>Page count</td>
+
+            <td><code>sheet.printInfo().headerLeft("This is page &amp;P of &amp;N pages.");</code></td>
+
+            <td>This is page 1 of 10 pages. (If there are 10 pages and this is first page.)</td>
+        </tr>
+
+        <tr>
+            <td>D</td>
+
+            <td>Current date</td>
+
+            <td><code>sheet.printInfo().headerLeft("It is &amp;D.");</code></td>
+
+            <td>It is 2015/6/19. (If&nbsp;today is June 19, 2015.)</td>
+        </tr>
+
+        <tr>
+            <td>T</td>
+
+            <td>Current time</td>
+
+            <td><code>sheet.printInfo().headerLeft(</code><code class="csharp string">"It is &amp;T."</code></td>
+
+            <td>It is 16:30:36. (If 16:30:36 is now.)</td>
+        </tr>
+
+        <tr>
+            <td>G</td>
+
+            <td>Image</td>
+
+            <td><code>var printInfo = new GC.Spread.Sheets.Print.PrintInfo();<br />
+            printInfo.headerLeft("&amp;G");<br />
+            printInfo.headerLeftImage("logo.jpg");</code></td>
+
+            <td>Displays an image.</td>
+        </tr>
+
+        <tr>
+            <td>S</td>
+
+            <td>Strikethrough</td>
+
+            <td><code>sheet.printInfo().headerLeft("&amp;SThis is text.");</code></td>
+
+            <td><strike>This is text.</strike></td>
+        </tr>
+
+        <tr>
+            <td>U</td>
+
+            <td>Underline</td>
+
+            <td><code>sheet.printInfo().headerLeft("&amp;UThis is text.");</code></td>
+
+            <td><u>This is text.</u></td>
+        </tr>
+
+        <tr>
+            <td>B</td>
+
+            <td>Bold</td>
+
+            <td><code>sheet.printInfo().headerLeft("&amp;BThis is text.");</code></td>
+
+            <td><strong>This is text.</strong></td>
+        </tr>
+
+        <tr>
+            <td>I</td>
+
+            <td>Italic</td>
+
+            <td><code>sheet.printInfo().headerLeft("&amp;IThis is text.");</code></td>
+
+            <td><em>This is text.</em></td>
+        </tr>
+
+        <tr>
+            <td></td>
+
+            <td>Font Size</td>
+
+            <td><code>sheet.printInfo().headerLeft("&amp;36This is text.");</code></td>
+
+            <td style="FONT-SIZE: 36px">This is text.</td>
+        </tr>
+
+        <tr>
+            <td>"</td>
+
+            <td>Font prefix</td>
+
+            <td><code>sheet.printInfo().headerLeft("&amp;\"Lucida Console\"This is text.");</code></td>
+
+            <td><font face="Lucida Console">This is text.</font></td>
+        </tr>
+
+        <tr>
+            <td>K</td>
+
+            <td>Color prefix</td>
+
+            <td><code>sheet.printInfo().headerLeft("&amp;KFF0000This is text.");</code></td>
+
+            <td><font color="red">This is text.</font></td>
+        </tr>
+
+        <tr>
+            <td>F</td>
+
+            <td>Spread name</td>
+
+            <td><code>sheet.printInfo().headerLeft("spead name: &amp;F");</code></td>
+
+            <td>spread name: testSpread (If printed spread's name is "testSpread".)</td>
+        </tr>
+
+        <tr>
+            <td>A</td>
+
+            <td>Sheet name</td>
+
+            <td><code>sheet.printInfo().headerLeft("sheet name: &amp;A");</code></td>
+
+            <td>sheet name: Sheet1 (If printed sheet's name is "Sheet1".)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The <a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~orientation.html">orientation</a> method is only supported when importing or exporting to Excel. The <a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~paperSize.html">paperSize</a> method only applies to the paging result, not the printer. Print preview is not supported. The printing result may be different between browsers.</p>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> Printing requires that you add the printing module to the page&nbsp;(gc.spread.sheets.print.*.*.*.min.js).</p>
+</div>
+
+<h4>Using Code</h4>
+
+<p>This example prints a sheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script src=<span style="COLOR: #800000">"./scripts/pluggable/gc.spread.sheets.print.x.x.x.min.js"</span> type=<span style="COLOR: #800000">"application/javascript"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span>...
+
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+activeSheet.suspendPaint();
+
+
+
+<span style="COLOR: #008000">// Set the value
+</span><span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> r = 0, rc = activeSheet.getRowCount() - 5; r &lt; rc; r++) {
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> c = 0, cc = activeSheet.getColumnCount() - 5; c &lt; cc; c++) {
+activeSheet.setValue(r, c, r + c);
+}
+}
+activeSheet.resumePaint();
+$(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span> () {
+spread.print(0);
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

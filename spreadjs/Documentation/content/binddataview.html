@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can use the Wijmo DataView source to implement paging, filtering, and sorting functions." />
+    
+    <title>SpreadJS with the Wijmo DataView | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n0","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can use the Wijmo DataView source to implement paging, filtering, and sorting functions." />
+    
+    <meta name="Microsoft.Help.Id" content="d3ab1a06-01e4-41c1-986e-382eaf51b893"/>
+    
+    
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">SpreadJS with the Wijmo DataView</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can use the Wijmo <strong>DataView</strong> source (which implements the <strong>IDataView</strong> interface) to implement paging, filtering, and sorting functions.</p>
+
+<p>Use the following steps to use the <strong>DataView</strong> source with&nbsp;SpreadJS.</p>
+
+<p>1. Add the js reference.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;!--JS Reference--&gt;
+ ....
+ &lt;script type=<span style="COLOR: #800000">"text/javascript"</span> src=<span style="COLOR: #800000">"../XXX/globalize.min.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span> &lt;script type=<span style="COLOR: #800000">"text/javascript"</span> src=<span style="COLOR: #800000">"../XXX/knockout-2.1.0.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span> &lt;script type=<span style="COLOR: #800000">"text/javascript"</span> src=<span style="COLOR: #800000">"../XXX/knockout-2.1.0.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span> &lt;script type=<span style="COLOR: #800000">"text/javascript"</span> src=<span style="COLOR: #800000">"../XXX/gc.spread.sheets.all.13.0.0.min.js"</span>&gt;&lt;<span style="COLOR: #800000">/script&gt;
+</span> ....
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>2. Define the view mode and implement the <strong>IDataView</strong> interface.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> viewModel;
+         <span style="COLOR: #0000ff">function</span> sourceData() {
+             <span style="COLOR: #0000ff">return</span> [
+                 { <span style="COLOR: #800000">"Product_ID"</span>: 1, <span style="COLOR: #800000">"Supplier_ID"</span>: 1, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Chai"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Dharamsala Tea"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"10 boxes x 20 bags"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 18.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 39, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 10, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 2, <span style="COLOR: #800000">"Supplier_ID"</span>: 1, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Chang"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Tibetan Barley Beer"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"24 - 12 oz bottles"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 19.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 17, <span style="COLOR: #800000">"Units_On_Order"</span>: 40, <span style="COLOR: #800000">"Reorder_Level"</span>: 25, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 24, <span style="COLOR: #800000">"Supplier_ID"</span>: 10, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Guaraná Fantástica"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Guaraná Fantástica Soft Drink"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"12 - 355 ml cans"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 4.5, <span style="COLOR: #800000">"Units_In_Stock"</span>: 20, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 0, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">true</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 34, <span style="COLOR: #800000">"Supplier_ID"</span>: 16, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Sasquatch Ale"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Sasquatch Ale"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"24 - 12 oz bottles"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 14.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 111, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 15, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 35, <span style="COLOR: #800000">"Supplier_ID"</span>: 16, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Steeleye Stout"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Steeleye Stout"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"24 - 12 oz bottles"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 18.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 20, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 15, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 38, <span style="COLOR: #800000">"Supplier_ID"</span>: 18, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Côte de Blaye"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Côte de Blaye (Red Bordeaux wine)"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"12 - 75 cl bottles"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 263.5, <span style="COLOR: #800000">"Units_In_Stock"</span>: 17, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 15, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 39, <span style="COLOR: #800000">"Supplier_ID"</span>: 18, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Chartreuse verte"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Green Chartreuse (Liqueur)"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"750 cc per bottle"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 18.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 69, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 5, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 43, <span style="COLOR: #800000">"Supplier_ID"</span>: 20, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Ipoh Coffee"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Malaysian Coffee"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"16 - 500 g tins"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 46.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 17, <span style="COLOR: #800000">"Units_On_Order"</span>: 10, <span style="COLOR: #800000">"Reorder_Level"</span>: 25, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 67, <span style="COLOR: #800000">"Supplier_ID"</span>: 16, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Laughing Lumberjack Lager"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Laughing Lumberjack Lager"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"24 - 12 oz bottles"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 14.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 52, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 10, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 70, <span style="COLOR: #800000">"Supplier_ID"</span>: 7, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Outback Lager"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Outback Lager"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"24 - 355 ml bottles"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 15.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 15, <span style="COLOR: #800000">"Units_On_Order"</span>: 10, <span style="COLOR: #800000">"Reorder_Level"</span>: 30, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 75, <span style="COLOR: #800000">"Supplier_ID"</span>: 12, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Rhönbräu Klosterbier"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Rhönbräu Beer"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"24 - 0.5 l bottles"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 7.75, <span style="COLOR: #800000">"Units_In_Stock"</span>: 125, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 25, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 76, <span style="COLOR: #800000">"Supplier_ID"</span>: 23, <span style="COLOR: #800000">"Category_ID"</span>: 1, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Lakkalikööri"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Cloudberry Liqueur"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"500 ml"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 18.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 57, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 20, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> },
+                 { <span style="COLOR: #800000">"Product_ID"</span>: 3, <span style="COLOR: #800000">"Supplier_ID"</span>: 1, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Aniseed Syrup"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Licorice Syrup"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"12 - 550 ml bottles"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 10.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 13, <span style="COLOR: #800000">"Units_On_Order"</span>: 70, <span style="COLOR: #800000">"Reorder_Level"</span>: 25, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 4, <span style="COLOR: #800000">"Supplier_ID"</span>: 2, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Chef Anton's Cajun Seasoning"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Chef Anton's Cajun Seasoning"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"48 - 6 oz jars"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 22.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 53, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 0, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 5, <span style="COLOR: #800000">"Supplier_ID"</span>: 2, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Chef Anton's Gumbo Mix"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Chef Anton's Gumbo Mix"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"36 boxes"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 21.35, <span style="COLOR: #800000">"Units_In_Stock"</span>: 0, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 0, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">true</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 6, <span style="COLOR: #800000">"Supplier_ID"</span>: 3, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Grandma's Boysenberry Spread"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Grandma's Boysenberry Spread"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"12 - 8 oz jars"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 25.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 120, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 25, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 8, <span style="COLOR: #800000">"Supplier_ID"</span>: 3, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Northwoods Cranberry Sauce"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Northwoods Cranberry Sauce"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"12 - 12 oz jars"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 40.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 6, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 0, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 15, <span style="COLOR: #800000">"Supplier_ID"</span>: 6, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Genen Shouyu"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Lite Sodium Soy Sauce"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"24 - 250 ml bottles"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 15.5, <span style="COLOR: #800000">"Units_In_Stock"</span>: 39, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 5, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 44, <span style="COLOR: #800000">"Supplier_ID"</span>: 20, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Gula Malacca"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Malacca Dark Brown Sugar"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"20 - 2 kg bags"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 19.45, <span style="COLOR: #800000">"Units_In_Stock"</span>: 27, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 15, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 61, <span style="COLOR: #800000">"Supplier_ID"</span>: 29, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Sirop d'érable"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Maple Syrup"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"24 - 500 ml bottles"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 28.5, <span style="COLOR: #800000">"Units_In_Stock"</span>: 113, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 25, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 63, <span style="COLOR: #800000">"Supplier_ID"</span>: 7, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Vegie-spread"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Vegetable Sandwich Spread"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"15 - 625 g jars"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 43.9, <span style="COLOR: #800000">"Units_In_Stock"</span>: 24, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 5, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 65, <span style="COLOR: #800000">"Supplier_ID"</span>: 2, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Louisiana Fiery Hot Pepper Sauce"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Louisiana Fiery Hot Pepper Sauce"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"32 - 8 oz bottles"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 21.05, <span style="COLOR: #800000">"Units_In_Stock"</span>: 76, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 0, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 66, <span style="COLOR: #800000">"Supplier_ID"</span>: 2, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Louisiana Hot Spiced Okra"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Louisiana Hot Spiced Okra"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"24 - 8 oz jars"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 17.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 4, <span style="COLOR: #800000">"Units_On_Order"</span>: 100, <span style="COLOR: #800000">"Reorder_Level"</span>: 20, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }, { <span style="COLOR: #800000">"Product_ID"</span>: 77, <span style="COLOR: #800000">"Supplier_ID"</span>: 12, <span style="COLOR: #800000">"Category_ID"</span>: 2, <span style="COLOR: #800000">"Product_Name"</span>: <span style="COLOR: #800000">"Original Frankfurter grüne Soße"</span>, <span style="COLOR: #800000">"English_Name"</span>: <span style="COLOR: #800000">"Original Frankfurter Green Sauce"</span>, <span style="COLOR: #800000">"Quantity_Per_Unit"</span>: <span style="COLOR: #800000">"12 boxes"</span>, <span style="COLOR: #800000">"Unit_Price"</span>: 13.0, <span style="COLOR: #800000">"Units_In_Stock"</span>: 32, <span style="COLOR: #800000">"Units_On_Order"</span>: 0, <span style="COLOR: #800000">"Reorder_Level"</span>: 15, <span style="COLOR: #800000">"Discontinued"</span>: <span style="COLOR: #0000ff">false</span> }
+             ];
+         }
+ 
+         <span style="COLOR: #0000ff">function</span> ViewModel(sessionId) {
+             <span style="COLOR: #0000ff">var</span> self = <span style="COLOR: #0000ff">this</span>;
+             <span style="COLOR: #0000ff">this</span>.currentPositionChangedhandler = <span style="COLOR: #0000ff">function</span>(context) {
+                 self.activeProduct(self.products.currentItem());
+             };
+             <span style="COLOR: #008000">//ArrayDataView is a js type which implement IDataView Interface.
+</span>             <span style="COLOR: #0000ff">var</span> productView = <span style="COLOR: #0000ff">new</span> wijmo.data.ArrayDataView(sourceData());<span style="COLOR: #008000">//, {pageSize: 10});
+</span> 
+             <span style="COLOR: #0000ff">this</span>.products = productView;
+ 
+             <span style="COLOR: #0000ff">this</span>.products.currentPosition(0);
+             <span style="COLOR: #0000ff">this</span>.products.currentPosition.subscribe(<span style="COLOR: #0000ff">this</span>.currentPositionChangedhandler, <span style="COLOR: #0000ff">null</span>, <span style="COLOR: #0000ff">null</span>);
+ 
+             <span style="COLOR: #0000ff">this</span>.activeProduct = ko.observable(<span style="COLOR: #0000ff">this</span>.products.currentItem());
+ 
+             <span style="COLOR: #008000">//IDataView Filter function.
+</span>             <span style="COLOR: #0000ff">this</span>.clearFilter = <span style="COLOR: #0000ff">function</span> () {
+                 productView.filter(<span style="COLOR: #0000ff">null</span>);
+             };
+             <span style="COLOR: #0000ff">this</span>.filterBeverages = <span style="COLOR: #0000ff">function</span> () {
+                 productView.filter({ Category_ID: 1 });
+            };
+             <span style="COLOR: #0000ff">this</span>.filterCondiments = <span style="COLOR: #0000ff">function</span> () {
+                 productView.filter({ Category_ID: 2 });
+             };
+ 
+             <span style="COLOR: #008000">//IDataView Sort function.
+</span>             <span style="COLOR: #0000ff">this</span>.sortId = <span style="COLOR: #0000ff">function</span> () {
+                 productView.sort(<span style="COLOR: #800000">"Product_ID"</span>);
+             };
+             <span style="COLOR: #0000ff">this</span>.sortPrice = <span style="COLOR: #0000ff">function</span> () {
+                 productView.sort(<span style="COLOR: #800000">"Unit_Price desc, Product_Name"</span>);
+             };
+ 
+             <span style="COLOR: #008000">//IDataView Paging function
+</span>             <span style="COLOR: #0000ff">this</span>.clearPaging = <span style="COLOR: #0000ff">function</span> () {
+                 productView.pageSize(0);
+             };
+             <span style="COLOR: #0000ff">this</span>.setPaging = <span style="COLOR: #0000ff">function</span> () {
+                 productView.pageSize(10);
+             };
+             <span style="COLOR: #0000ff">this</span>.prevPage = <span style="COLOR: #0000ff">function</span> () {
+                 productView.prevPage();
+             };
+             <span style="COLOR: #0000ff">this</span>.nextPage = <span style="COLOR: #0000ff">function</span> () {
+                 productView.nextPage();
+             };
+ 
+             <span style="COLOR: #008000">//IDataView Add function.
+</span>             <span style="COLOR: #0000ff">this</span>.add = <span style="COLOR: #0000ff">function</span> () {
+                 productView.add({
+                     Product_ID: 100,
+                     Product_Name: <span style="COLOR: #800000">"Tomato"</span>,
+                     Category_ID: 1,
+                     Unit_Price: 5
+                 });
+                 productView.commitEdit();
+             };
+            
+             <span style="COLOR: #008000">//IDataView Delete function.
+</span>             <span style="COLOR: #0000ff">this</span>.deleteCurrent = <span style="COLOR: #0000ff">function</span> () {
+                 productView.remove();
+             };
+            
+             <span style="COLOR: #008000">//IDataView Edit Value in source function.
+</span>             <span style="COLOR: #0000ff">this</span>.doublePrice = <span style="COLOR: #0000ff">function</span> () {
+                 productView.editItem();
+                 productView.currentEditItem().Unit_Price *= 2;
+                 productView.commitEdit();
+             };
+         }
+ 
+         $(document).ready(<span style="COLOR: #0000ff">function</span> () {
+             <span style="COLOR: #0000ff">if</span> (!viewModel) viewModel = <span style="COLOR: #0000ff">new</span> ViewModel();
+             ko.applyBindings(viewModel);
+         });
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>3. Bind to&nbsp;SpreadJS.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;div id=<span style="COLOR: #800000">"ss"</span> data-bind=<span style="COLOR: #800000">"gcspread-sheets: { sheetCount:1,
+</span>                 activeSheetIndex:0,
+                 tabEditable:<span style="COLOR: #0000ff">false</span>,
+                 newTabVisible:<span style="COLOR: #0000ff">false</span>,
+                 sheets:[
+                     {
+                         data: products, columns: [
+                             { displayName: <span style="COLOR: #800000">'ID'</span>, name: <span style="COLOR: #800000">'Product_ID'</span>, width:60 },
+                             { displayName: <span style="COLOR: #800000">'Product name'</span>, name: <span style="COLOR: #800000">'Product_Name'</span>, width:260 },
+                             { displayName: <span style="COLOR: #800000">'Category ID'</span>, name: <span style="COLOR: #800000">'Category_ID'</span>, width:100 },
+                             { displayName: <span style="COLOR: #800000">'Price'</span>, name: <span style="COLOR: #800000">'Unit_Price'</span>, width:60 }
+                         ]
+                     }
+                 ]
+             }<span style="COLOR: #800000">" style="</span>width:850px; height:300px; border: 1px solid black;<span style="COLOR: #800000">"&gt;&lt;/div&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>4. Invoke the <strong>IDataView</strong> API to refresh&nbsp;SpreadJS and display the result.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;button data-bind=<span style="COLOR: #800000">"click:clearPaging"</span>&gt;pageSize = 0&lt;<span style="COLOR: #800000">/button&gt;
+</span>&lt;button data-bind=<span style="COLOR: #800000">"click:setPaging"</span>&gt;pageSize = 10&lt;<span style="COLOR: #800000">/button&gt;
+</span>&lt;button data-bind=<span style="COLOR: #800000">"click:prevPage"</span>&gt;prev&lt;<span style="COLOR: #800000">/button&gt;
+</span>&lt;button data-bind=<span style="COLOR: #800000">"click:nextPage"</span>&gt;next&lt;<span style="COLOR: #800000">/button&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>For more information about binding with Wijmo, refer to&nbsp;<a href="https://help.grapecity.com/wijmo/3/webframe.html#Data.html" target="_blank">https://help.grapecity.com/wijmo/3/webframe.html#Data.html</a>.</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

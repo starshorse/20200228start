@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn about the image sparkline in SpreadJS. Learn the various options available for the image sparkline formula along with their descriptions. " />
+    
+    <title>Image Sparkline | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n659","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn about the image sparkline in SpreadJS. Learn the various options available for the image sparkline formula along with their descriptions. " />
+    
+    <meta name="Microsoft.Help.Id" content="73d114b0-8a18-4e8f-8cd3-43b8c38fbe8e"/>
+    <meta name="Microsoft.Help.TocParent" content="fd9cab4f-16bf-437c-a370-bbba7f456cf3"/>
+    <meta name="Microsoft.Help.TocOrder" content="21"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sparkmain.html">Sparklines</a>
+ / Image Sparkline</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Image Sparkline</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>The image sparkline can be used to place an image in&nbsp;a cell. The image can be displayed in different sizes by using&nbsp;display modes of image sparkline function:</p>
+
+<p><img border="0" alt="image sparklines mode example" src="images/image-sample.png" /></p>
+
+<p>The Image sparkline function&nbsp;has the following arguments where only 'URL' is the required argument:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th><strong>Option</strong></th>
+
+            <th><strong>Description</strong></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>URL</td>
+
+            <td>The location of the image on the web or base64 string.</td>
+        </tr>
+
+        <tr>
+            <td>[mode]</td>
+
+            <td>
+                Specifies how to size the image.
+
+                <p>1 - Keep the aspect ratio to fit the cell.</p>
+
+                <p>2 - Stretch the image to cover the entire cell.</p>
+
+                <p>3 - Keep original size even if cropped.</p>
+
+                <p>4 - custom</p>
+
+                <p>The default value is 1.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>[height]</td>
+
+            <td>
+                The height of image.
+
+                <p><strong>mode</strong> option must be 4.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>[width]</td>
+
+            <td>
+                The width of image.
+
+                <p><strong>mode</strong> option must be 4.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>[clipX]</td>
+
+            <td>
+                The x-axis coordinate of the top left corner of the source image sub-rectangle to draw into the destination context.
+
+                <p>The default value is 0.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>[clipY]</td>
+
+            <td>
+                The y-axis coordinate of the top left corner of the source image sub-rectangle to draw into the destination context.
+
+                <p>The default value is 0.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>[clipHeight]</td>
+
+            <td>
+                The height of the source image sub-rectangle to draw into the destination context.
+
+                <p>The default value is the height of image.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>[clipWidth]</td>
+
+            <td>
+                The width of the source image sub-rectangle to draw into the destination context.
+
+                <p>The default value is the width of image.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>[vAlign]</td>
+
+            <td>
+                Vertical alignment of the image.
+
+                <p>0 - Top<br />
+                1 - Center<br />
+                2 - Bottom</p>
+
+                <p>The default value is 1 (center).</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>[hAlign]</td>
+
+            <td>
+                Horizontal alignment of the image.
+
+                <p>0 - Left<br />
+                1 - Center<br />
+                2 - Right</p>
+
+                <p>The default value is 1 (center).</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The image sparkline formula has the following syntax:</p>
+
+<p><code>=IMAGE(url, [mode], [height], [width], [clipX], [clipY], [clipHeight], [clipWidth], [vAlign], [hAlign])</code></p>
+
+<h3>Behavior with Different Values of Parameters</h3>
+
+<p>The following behavior is observed with certain parameter values in Image sparklines:</p>
+
+<ol>
+    <li>The height and width of the image must be specified when the mode is set to 4, otherwise, a blank cell is returned.</li>
+
+    <li>If the clipWidth value is not specified while setting clipX, the clipWidth value is set as (Image Width - clipX). The same applies for clipHeight and clipY arguments.</li>
+
+    <li>If clipX is greater than the image width, then the clipWidth is set to 0. Similarly, for clipY and image height.</li>
+
+    <li>If the mode, vAlign, or hAlign is set to an illegal value, the runtime sets the mode to 1.</li>
+
+    <li>The following parameters are replaced with 0, if they are set to a value smaller than 0:<br />
+    Width, Height, ClipX, ClipY, ClipHeight, ClipWidth</li>
+</ol>
+
+<h3>Usage Scenario</h3>
+
+<p>In the following use case, a list of 10 countries with the largest population in the world, is displayed. The list also displays the images for country flags which are picked through a web URL by using IMAGE sparkline function.</p>
+
+<p><img border="0" alt="image sparkline usage" src="images/imageUsage.png" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// initializing Spread
+</span>spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+spread.suspendPaint();
+<span style="COLOR: #008000">// get sheet
+</span><span style="COLOR: #0000ff">var</span> sheet1 = spread.getSheet(0);
+<span style="COLOR: #008000">// set sheetAreaOffset option
+</span>sheet1.options.sheetAreaOffset = { left: 1, top: 1 };
+<span style="COLOR: #008000">// Hide gridlines
+</span>sheet1.options.gridline = { showVerticalGridline: <span style="COLOR: #0000ff">false</span>, showHorizontalGridline: <span style="COLOR: #0000ff">false</span> };
+<span style="COLOR: #008000">// Hide row/ col headers
+</span>sheet1.options.colHeaderVisible = <span style="COLOR: #0000ff">false</span>;
+sheet1.options.rowHeaderVisible = <span style="COLOR: #0000ff">false</span>;
+<span style="COLOR: #008000">// set data array
+</span>sheet1.setArray(1, 1, Top10_CountryPopulation);
+<span style="COLOR: #008000">// set value in cells
+</span>sheet1.setValue(1, 0, <span style="COLOR: #800000">"Flag"</span>, GC.Spread.Sheets.SheetArea.dataArea);
+sheet1.setValue(0, 0, <span style="COLOR: #800000">"Top 10 Populated Countries"</span>, GC.Spread.Sheets.SheetArea.dataArea);
+<span style="COLOR: #008000">// set alignment of header row
+</span>sheet1.getRange(-1, 0, -1, 10).hAlign(GC.Spread.Sheets.HorizontalAlign.center);
+sheet1.addSpan(0, 0, 1, 5, GC.Spread.Sheets.SheetArea.dataArea);
+<span style="COLOR: #008000">// add table to sheet1
+</span>sheet1.tables.add(<span style="COLOR: #800000">'tablePopulation'</span>, 1, 0, 11, 5);
+<span style="COLOR: #008000">// set column width
+</span>sheet1.setColumnWidth(0, 70);
+sheet1.setColumnWidth(1, 100);
+sheet1.setColumnWidth(2, 80);
+sheet1.setColumnWidth(3, 150);
+sheet1.setColumnWidth(4, 150);
+<span style="COLOR: #008000">// set row height
+</span>sheet1.setRowHeight(0, 40);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 2; i &lt; 12; i++)
+    sheet1.setRowHeight(i, 30);
+
+<span style="COLOR: #008000">// set Image function formula in cells
+</span>sheet1.setFormula(2, 0, <span style="COLOR: #800000">'= IMAGE("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/23px-Flag_of_the_People%27s_Republic_of_China.svg.png")'</span>);
+sheet1.setFormula(3, 0, <span style="COLOR: #800000">'= IMAGE("https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg")'</span>);
+sheet1.setFormula(4, 0, <span style="COLOR: #800000">'= IMAGE("https://previews.123rf.com/images/auttkhamkhauncham/auttkhamkhauncham1507/auttkhamkhauncham150700090/42304741-usa-flag.jpg")'</span>);
+sheet1.setFormula(5, 0, <span style="COLOR: #800000">'= IMAGE("https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg")'</span>);
+sheet1.setFormula(6, 0, <span style="COLOR: #800000">'= IMAGE("https://static.vecteezy.com/system/resources/previews/000/114/048/non_2x/free-vector-pakistan-flag.jpg")'</span>);
+sheet1.setFormula(7, 0, <span style="COLOR: #800000">'= IMAGE("https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg")'</span>);
+sheet1.setFormula(8, 0, <span style="COLOR: #800000">'= IMAGE("https://i.pinimg.com/originals/73/22/94/732294310c7e9fa3da611030168923fb.jpg")'</span>);
+sheet1.setFormula(9, 0, <span style="COLOR: #800000">'= IMAGE("https://images-na.ssl-images-amazon.com/images/I/31V23jzzMgL._AC_.jpg")'</span>);
+sheet1.setFormula(10, 0, <span style="COLOR: #800000">'= IMAGE("https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1200px-Flag_of_Russia.svg.png")'</span>);
+sheet1.setFormula(11, 0, <span style="COLOR: #800000">'= IMAGE("https://upload.wikimedia.org/wikipedia/en/2/20/Flag_of_Mexico_1917.png")'</span>);         
+
+<span style="COLOR: #008000">// set style for Row 0
+</span><span style="COLOR: #0000ff">var</span> style1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style1.font = <span style="COLOR: #800000">"bold 24px Calibri"</span>;
+style1.foreColor = <span style="COLOR: #800000">"black"</span>;
+style1.backColor = <span style="COLOR: #800000">"#9FD5B7"</span>;
+style1.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+style1.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+sheet1.setStyle(0, 0, style1, GC.Spread.Sheets.SheetArea.dataArea);
+
+<span style="COLOR: #008000">// set style for header row 1
+</span><span style="COLOR: #0000ff">var</span> style1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style1.font = <span style="COLOR: #800000">"bold 14px Calibri"</span>;
+style1.foreColor = <span style="COLOR: #800000">"black"</span>;
+style1.backColor = <span style="COLOR: #800000">"#9FD5B7"</span>;
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 5; i++)
+    sheet1.setStyle(1, i, style1, GC.Spread.Sheets.SheetArea.dataArea);
+
+<span style="COLOR: #008000">// set style for remaining rows
+</span><span style="COLOR: #0000ff">var</span> style2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style2.backColor = <span style="COLOR: #800000">"#EDFDF4"</span>;
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 5; i++)
+    <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> j = 2; j &lt; 12; j++)
+        sheet1.setStyle(j, i, style2, GC.Spread.Sheets.SheetArea.dataArea);
+
+sheet1.getCell(2, 3).formatter(<span style="COLOR: #800000">"##,##,##0"</span>);
+
+<span style="COLOR: #008000">// set border for dataArea cells
+</span>sheet1.getRange(<span style="COLOR: #800000">"A2:E12"</span>).setBorder(
+    <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"white"</span>, GC.Spread.Sheets.LineStyle.thin),
+    { top: <span style="COLOR: #0000ff">true</span>, bottom: <span style="COLOR: #0000ff">true</span>, left: <span style="COLOR: #0000ff">true</span>, right: <span style="COLOR: #0000ff">true</span> }, GC.Spread.Sheets.SheetArea.dataArea);
+spread.resumePaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Limitation</h3>
+
+<ul>
+    <li>If the image URL is a cross-domain URL, the cell is&nbsp;not printed&nbsp;on exporting a&nbsp;PDF file. It is only printed when the URL is a locate-domain URL or a base64 string.</li>
+</ul>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

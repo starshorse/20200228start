@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can set styles for the cell, row, column, and the sheet using SpreadJS. Learn more in SpreadJS docs." />
+    
+    <title>Styles | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n321","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can set styles for the cell, row, column, and the sheet using SpreadJS. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="5f5d1a8c-8527-4cbf-8c4a-fe622f40cc22"/>
+    <meta name="Microsoft.Help.TocParent" content="e9628ea1-c098-40b6-a16a-ca0248291974"/>
+    <meta name="Microsoft.Help.TocOrder" content="22"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / Styles</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Styles</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can create a style in SpreadJS that can be applied to a cell, cell range, rows, columns, or a sheet using the&nbsp;<strong>Style</strong>&nbsp;object. You can also create your own named style that uses a&nbsp;<strong>Style</strong>&nbsp;object. The style can contain settings such as borders, colors, and fonts.</p>
+
+<p>The cell style is a composite of settings that are applied based on priority. The style in the cell has the highest priority. The style of the row the cell is in is next, then the column the cell is in, and then the default style of the sheet.</p>
+
+<p>Style objects can be assigned using the&nbsp;<strong>setStyle</strong>&nbsp;and <strong>setStyleName</strong> methods for cells and cell ranges. You can also specify an entire row or entire column by using the -1 value.</p>
+
+<h3>Set Style for a Cell</h3>
+
+<p>You can create a style and apply it to a cell in a spreadsheet using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~setStyle.html">setStyle</a> method.</p>
+
+<p>The following image displays a style&nbsp;in&nbsp;cell B2:</p>
+
+<p><img border="0" alt="Cell styling" src="images/cstyle1.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>This example uses the <strong>setStyle</strong> method to assign a style to a cell.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style.backColor = <span style="COLOR: #800000">"red"</span>;
+style.borderLeft = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"blue"</span>,GC.Spread.Sheets.LineStyle.medium);
+style.borderTop = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"blue"</span>,GC.Spread.Sheets.LineStyle.medium);
+style.borderRight = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"blue"</span>,GC.Spread.Sheets.LineStyle.medium);
+style.borderBottom = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"blue"</span>,GC.Spread.Sheets.LineStyle.medium);
+activeSheet.setStyle(1,1,style,GC.Spread.Sheets.SheetArea.viewport);
+<span style="COLOR: #008000">//row
+//activeSheet.setStyle(1,-1,style,GC.Spread.Sheets.SheetArea.viewport);
+//column
+//activeSheet.setStyle(-1,2,style,GC.Spread.Sheets.SheetArea.viewport);</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Set Default Style</h3>
+
+<p>You can specify a default style for the cells in a spreadsheet by using the <strong>SetDefaultStyle</strong> method.</p>
+
+<p>The following image displays the default style for the cells.</p>
+
+<p><img border="0" alt="Default styling" src="images/defaultstyle1.png" />&nbsp;</p>
+
+<h4>Using Code</h4>
+
+<p>This example uses the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~setDefaultStyle.html">setDefaultStyle</a> method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//setDefaultStyle
+</span>activeSheet.setRowCount(5, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setColumnCount(5, GC.Spread.Sheets.SheetArea.viewport);
+<span style="COLOR: #008000">//Set the default styles.
+</span><span style="COLOR: #0000ff">var</span> defaultStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+defaultStyle.backColor = <span style="COLOR: #800000">"LemonChiffon"</span>;
+defaultStyle.foreColor = <span style="COLOR: #800000">"Red"</span>;
+defaultStyle.formatter = <span style="COLOR: #800000">"0.00"</span>;
+defaultStyle.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+defaultStyle.borderLeft = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"Green"</span>,GC.Spread.Sheets.LineStyle.medium);
+defaultStyle.borderTop = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"Green"</span>,GC.Spread.Sheets.LineStyle.medium);
+defaultStyle.borderRight = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"Green"</span>,GC.Spread.Sheets.LineStyle.medium);
+defaultStyle.borderBottom = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"Green"</span>,GC.Spread.Sheets.LineStyle.medium);
+activeSheet.setDefaultStyle(defaultStyle, GC.Spread.Sheets.SheetArea.viewport);
+<span style="COLOR: #0000ff">var</span> rowCount = activeSheet.getRowCount();
+<span style="COLOR: #0000ff">var</span> colCount = activeSheet.getColumnCount();
+<span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> i = 0; i &lt; rowCount; i++){
+    <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> j = 0; j &lt; colCount; j++){
+        activeSheet.setValue(i, j, i+j, GC.Spread.Sheets.SheetArea.viewport);
+    }
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Set Style for a Range</h3>
+
+<p>You can specify a style and apply it to a cell range&nbsp;using the CellRange's&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~setStyle.html">setStyle</a> method. For example, the following image shows two different styles set on the cell range.</p>
+
+<p><img border="0" alt="" src="images/styles-setStyles.png" /></p>
+
+<p>The following code sample shows how to set styles in a cell range.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// use setStyle method on cellRange
+</span>let style1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style1.formatter = <span style="COLOR: #800000">"#,##0.00"</span>;
+style1.backColor = <span style="COLOR: #800000">"rgb(124,200,208)"</span>;
+style1.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+style1.font = <span style="COLOR: #800000">"bold 12px sans-serif"</span>;
+style1.borderLeft = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"gray"</span>, GC.Spread.Sheets.LineStyle.double);
+style1.borderTop = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"gray"</span>, GC.Spread.Sheets.LineStyle.double);
+style1.borderRight = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"gray"</span>, GC.Spread.Sheets.LineStyle.double);
+style1.borderBottom = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"gray"</span>, GC.Spread.Sheets.LineStyle.double);
+activeSheet.getRange(<span style="COLOR: #800000">"I2:J2"</span>).setStyle(style1);
+
+let style2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style2.backColor = <span style="COLOR: #800000">"rgb(218, 241, 243)"</span>;
+style2.borderLeft = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"gray"</span>, GC.Spread.Sheets.LineStyle.double);
+style2.borderTop = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"gray"</span>, GC.Spread.Sheets.LineStyle.double);
+style2.borderRight = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"gray"</span>, GC.Spread.Sheets.LineStyle.double);
+style2.borderBottom = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"gray"</span>, GC.Spread.Sheets.LineStyle.double);
+activeSheet.getRange(<span style="COLOR: #800000">"I3:J7"</span>).setStyle(style2);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Set Named Style</h3>
+
+<p>You can create your own named style and add it to the sheet or the spread with the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~addNamedStyle.html">addNamedStyle</a> method. You can change the style settings or remove the named style. Use the&nbsp;<strong>setStyleName</strong> method from&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet.html">Worksheet</a> or&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange.html">CellRange</a> class to use the style on a cell or a cell range. Use -1 to specify an entire row or entire column.</p>
+
+<p><img border="0" alt="" src="images/styles-setStyleName.png" /></p>
+
+<p>Named styles are useful if a style is used many times or in many cells. Use a named style&nbsp;with a JSON data source or Excel&nbsp;import and export&nbsp;since less data is used.</p>
+
+<p>The following code sample&nbsp;uses named styles to set styles for the table header and the table data.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// use setStyleName method on cell
+</span>let styleCell = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+styleCell.name = <span style="COLOR: #800000">"header_style"</span>;
+styleCell.font = <span style="COLOR: #800000">"bold 14px sans-serif"</span>;
+styleCell.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+styleCell.backColor = <span style="COLOR: #800000">"rgb(255, 225, 0)"</span>;
+styleCell.borderLeft = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"purple"</span>, GC.Spread.Sheets.LineStyle.hair);
+styleCell.borderTop = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"purple"</span>, GC.Spread.Sheets.LineStyle.hair);
+styleCell.borderRight = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"purple"</span>, GC.Spread.Sheets.LineStyle.hair);
+styleCell.borderBottom = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"purple"</span>, GC.Spread.Sheets.LineStyle.hair);
+activeSheet.addNamedStyle(styleCell);
+activeSheet.setStyleName(1, 1, <span style="COLOR: #800000">"header_style"</span>);
+activeSheet.setStyleName(1, 2, <span style="COLOR: #800000">"header_style"</span>);
+
+<span style="COLOR: #008000">// use setStyleName method on cell range
+</span>let style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style.name = <span style="COLOR: #800000">"score_style"</span>;
+style.font = <span style="COLOR: #800000">"italic 12px sans-serif"</span>;
+style.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+style.backColor = <span style="COLOR: #800000">"rgb(255,149,126)"</span>;
+style.borderLeft = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"red"</span>, GC.Spread.Sheets.LineStyle.hair);
+style.borderTop = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"red"</span>, GC.Spread.Sheets.LineStyle.hair);
+style.borderRight = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"red"</span>, GC.Spread.Sheets.LineStyle.hair);
+style.borderBottom = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"red"</span>, GC.Spread.Sheets.LineStyle.hair);
+activeSheet.addNamedStyle(style);
+activeSheet.getRange(<span style="COLOR: #800000">"B3:C8"</span>).setStyleName(<span style="COLOR: #800000">"score_style"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can also set apply flags that help to handle the effect of different properties&nbsp;in the defined&nbsp;named styles.&nbsp;This gives the option to set more than one named style to a cell without affecting each other's formatting options.</p>
+
+<p>The following table shows all the&nbsp;available apply&nbsp;flags available in&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Style.html">GC.Spread.Sheets.Style</a> and the properties affected for namedStyle:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Apply Flag</th>
+
+            <th>Properties Affected</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>applyNumberFormat</td>
+
+            <td>formatter</td>
+        </tr>
+
+        <tr>
+            <td>applyFont</td>
+
+            <td>
+                <p>foreColor</p>
+
+                <p>font</p>
+
+                <p>themeFont</p>
+
+                <p>textDecoration</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>applyFill</td>
+
+            <td>backColor</td>
+        </tr>
+
+        <tr>
+            <td>applyBorder</td>
+
+            <td>
+                <p>borderLeft</p>
+
+                <p>boderRight</p>
+
+                <p>borderTop</p>
+
+                <p>borderBottom</p>
+
+                <p>diagonalDown</p>
+
+                <p>diagonalUp</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>applyAlignment</td>
+
+            <td>
+                <p>vAlign</p>
+
+                <p>hAlign</p>
+
+                <p>textIndent</p>
+
+                <p>wordWrap</p>
+
+                <p>isVerticalText</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>applyProtection</td>
+
+            <td>locked</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The default value of apply flags behave equally as being true. These properties will be saved in exported JSON if the value is defined for namedStyle.</p>
+
+<h4>Example</h4>
+
+<p>For example, you can add two different named styles to a cell where "Font style" controls the font properties whereas "Align style" controls the alignment properties.&nbsp;The following code sample shows how to achieve the same.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style.name = <span style="COLOR: #800000">"Font style"</span>;
+style.font = <span style="COLOR: #800000">"Verdana"</span>;
+style.backColor = <span style="COLOR: #800000">"red"</span>;
+style.formatter = <span style="COLOR: #800000">"yyyy/mm/dd"</span>;
+style.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+style.applyFill = <span style="COLOR: #0000ff">false</span>;
+style.applyAlignment = <span style="COLOR: #0000ff">false</span>;
+spread.addNamedStyle(style);
+
+<span style="COLOR: #0000ff">var</span> style2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style2.name = <span style="COLOR: #800000">"Align style"</span>;
+style2.font = <span style="COLOR: #800000">"Calibri"</span>;
+style2.backColor = <span style="COLOR: #800000">"yellow"</span>;
+style2.formatter = <span style="COLOR: #800000">"dd/mm/yy"</span>;
+style2.hAlign = GC.Spread.Sheets.HorizontalAlign.right;
+style2.wordWrap = <span style="COLOR: #0000ff">false</span>;
+style2.applyFont = <span style="COLOR: #0000ff">false</span>;
+style2.applyNumberFormat = <span style="COLOR: #0000ff">false</span>;
+spread.addNamedStyle(style2);
+
+<span style="COLOR: #008000">//do something
+</span>activeSheet.setStyleName(0, 1, <span style="COLOR: #800000">"Font style"</span>);
+activeSheet.setStyleName(0, 1, <span style="COLOR: #800000">"Align style"</span>);
+<span style="COLOR: #008000">//another usage
+</span>activeSheet.setStyle(0, 0, <span style="COLOR: #800000">"Font style"</span>);
+activeSheet.setStyle(0, 0, <span style="COLOR: #800000">"Align style"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="colors.html">Cell Colors</a></div>
+<div class="i-see-also-link">
+<a href="objectinh.html">Object Inheritance</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Style.html">Style class</a></div>
+<div class="i-see-also-link">
+<a href="spdesignhometab.html">Home Tab</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Worksheet~getNamedStyle.html">getNamedStyle Method</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Worksheet~removeNamedStyle.html">removeNamedStyle Method</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

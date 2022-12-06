@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can specify format settings for the era using SpreadJS. Learn more in SpreadJS docs." />
+    
+    <title>Set Era Format | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n751","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can specify format settings for the era using SpreadJS. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="d50a5b7d-49a0-406a-b905-c98b882f4594"/>
+    <meta name="Microsoft.Help.TocParent" content="e289408f-7362-485c-9d03-9b69e4e6bcf5"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="culture.html">Culture</a>
+ / Set Era Format</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Set Era Format</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can specify format settings for the era if the culture has been set to "ja-jp".</p>
+
+<p>The following table lists the format options and the Japanese and English culture equivalents.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Keyword</strong></td>
+
+            <td><strong>Japanese Culture</strong></td>
+
+            <td><strong>English Culture</strong></td>
+        </tr>
+
+        <tr>
+            <td>g</td>
+
+            <td>Display the era name in alphabet (M, T, S, H, R)</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>gg</td>
+
+            <td>Display the first character (DBCS) era (明, 大, 昭, 平, 令)</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>ggg</td>
+
+            <td>Display the full (DBCS) era (明治, 大正, 昭和, 平成, 令和)</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>gggg (plus any additional "g" characters)</td>
+
+            <td>Same as "ggg"</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>e</td>
+
+            <td>Display the nengo year as a single digit number when possible (1-??)</td>
+
+            <td>Same as "y"</td>
+        </tr>
+
+        <tr>
+            <td>ee</td>
+
+            <td>Display the nengo year as a&nbsp;two digit number when possible (01-??)</td>
+
+            <td>Same as "yy"</td>
+        </tr>
+
+        <tr>
+            <td>eee (plus any additional "e" characters)</td>
+
+            <td>Same as "ee"</td>
+
+            <td>Same as "yyyy"</td>
+        </tr>
+
+        <tr>
+            <td>y</td>
+
+            <td>Same as 'e' when after 'g'; otherwise, same as en culture</td>
+
+            <td>Display the year as a number without a leading zero (0 - 99)</td>
+        </tr>
+
+        <tr>
+            <td>yy</td>
+
+            <td>Same as 'ee' when after 'g'; otherwise, same as en culture</td>
+
+            <td>Display the year as a number with a leading zero (00 - 99)</td>
+        </tr>
+
+        <tr>
+            <td>yyy</td>
+
+            <td>Same as 'ee' when after 'g'; otherwise, same as en culture</td>
+
+            <td>Display the year as a number without a leading zero (1 - 9999)</td>
+        </tr>
+
+        <tr>
+            <td>yyyy</td>
+
+            <td>Same as 'ee' when after 'g'; otherwise, same as en culture</td>
+
+            <td>Same as "yyy"</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Using Code</h4>
+
+<p>The following example sets the era formatting.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+GC.Spread.Common.CultureInfo.eras = [
+    {name: <span style="COLOR: #800000">"明治"</span>, abbreviation: <span style="COLOR: #800000">"明"</span>, symbol: <span style="COLOR: #800000">"M"</span>, startDate: <span style="COLOR: #800000">"1868-09-08"</span>, shortcuts: <span style="COLOR: #800000">"1,M"</span>},
+    {name: <span style="COLOR: #800000">"大正"</span>, abbreviation: <span style="COLOR: #800000">"大"</span>, symbol: <span style="COLOR: #800000">"T"</span>, startDate: <span style="COLOR: #800000">"1912-07-30"</span>, shortcuts: <span style="COLOR: #800000">"2,T"</span>},
+    {name: <span style="COLOR: #800000">"昭和"</span>, abbreviation: <span style="COLOR: #800000">"昭"</span>, symbol: <span style="COLOR: #800000">"S"</span>, startDate: <span style="COLOR: #800000">"1926-12-25"</span>, shortcuts: <span style="COLOR: #800000">"3,S"</span>},
+    {name: <span style="COLOR: #800000">"平成"</span>, abbreviation: <span style="COLOR: #800000">"平"</span>, symbol: <span style="COLOR: #800000">"H"</span>, startDate: <span style="COLOR: #800000">"1989-01-08"</span>, shortcuts: <span style="COLOR: #800000">"4,H"</span>},
+    {name: <span style="COLOR: #800000">"令和"</span>, abbreviation: <span style="COLOR: #800000">"令"</span>, symbol: <span style="COLOR: #800000">"R"</span>, startDate: <span style="COLOR: #800000">"2019-05-01"</span>, shortcuts: <span style="COLOR: #800000">"5,R"</span>}
+];
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>SpreadJS supports "[$-ja-JP-x-gannen]" formatter to display the first year as "元" and "[$-411]ggg e" formatter to display the first year as&nbsp;"1". This can be explained using below example:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th height="17"><strong>Date</strong></th>
+
+            <th height="17"><strong>Formatter</strong></th>
+
+            <th height="17"><strong>Result</strong></th>
+        </tr>
+
+        <tr>
+            <td>2019/12/1</td>
+
+            <td>[$-ja-JP-x-gannen]ggg e"年"m"月"d"日"</td>
+
+            <td>令和 *元*年12月1日</td>
+        </tr>
+
+        <tr>
+            <td>2019/12/1</td>
+
+            <td>[$-411]ggg e"年"m"月"d"日"</td>
+
+            <td>令和 *1*年12月1日</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following example formats a date in a cell.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+<span style="COLOR: #008000">// get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+<span style="COLOR: #0000ff">var</span> date1 = <span style="COLOR: #0000ff">new</span> Date(1989, 1, 8, 2, 3, 7, 325);
+<span style="COLOR: #0000ff">var</span> date2 = <span style="COLOR: #0000ff">new</span> Date(2019, 8, 1, 6, 2, 8, 321);
+<span style="COLOR: #0000ff">var</span> date3 = <span style="COLOR: #0000ff">new</span> Date(2020, 7, 1, 2, 1, 5, 311);
+
+activeSheet.setValue(0, 0, <span style="COLOR: #800000">'[$-411]ggge"年"m"月"d"日" 午前/午後'</span>);
+activeSheet.setValue(0, 1, date1);
+<span style="COLOR: #008000">// set formatter for Cell[0,1]
+</span>activeSheet.setFormatter(0, 1, <span style="COLOR: #800000">'[$-411]ggge"年"m"月"d"日" 午前/午後'</span>);
+
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">'[$-ja-JP-x-gannen]ggg e"年"m"月"d"日"'</span>);
+activeSheet.setValue(1, 1, date2);
+<span style="COLOR: #008000">// set formatter for Cell[1,1]
+</span>activeSheet.setFormatter(1, 1, <span style="COLOR: #800000">'[$-ja-JP-x-gannen]ggg e"年"m"月"d"日"'</span>);
+
+activeSheet.setValue(2, 0, <span style="COLOR: #800000">'[$-411]ggg e"年"m"月"d"日"'</span>);
+activeSheet.setValue(2, 1, date2);
+<span style="COLOR: #008000">// set formatter for Cell[2,1]
+</span>activeSheet.setFormatter(2, 1, <span style="COLOR: #800000">'[$-411]ggg e"年"m"月"d"日"'</span>);
+
+activeSheet.setValue(3, 0, <span style="COLOR: #800000">'[$-ja-JP-x-gannen]ggg e"年"mm"月"dd"日"'</span>);
+activeSheet.setValue(3, 1, date3);
+<span style="COLOR: #008000">// set formatter for Cell[3,1]
+</span>activeSheet.setFormatter(3, 1, <span style="COLOR: #800000">'[$-ja-JP-x-gannen]ggg e"年"mm"月"dd"日"'</span>);
+
+<span style="COLOR: #008000">// set column width
+</span>activeSheet.setColumnWidth(0, 300.0, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setColumnWidth(1, 200.0, GC.Spread.Sheets.SheetArea.viewport);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="cultureoption.html">Set Culture</a></div>
+<div class="i-see-also-link">
+<a href="cellformat.html">Cell Format</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

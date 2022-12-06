@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>BULLETSPARKLINE | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4198","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="eacde66f-6aaf-4e9f-98c9-6c957bd6dcaf"/>
+    <meta name="Microsoft.Help.TocParent" content="327728ba-9663-4490-b8d1-b2ad2faa328d"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / <a href="sparkline-functions.html">Sparkline Functions</a>
+ / BULLETSPARKLINE</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">BULLETSPARKLINE</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>This function returns a data set used for representing a bullet sparkline.</p>
+
+<h4>Syntax</h4>
+
+<p>BULLETSPARKLINE (<em>measure, target, maxi, [good, bad, forecast, tickUnit, colorScheme, vertical, measureColor, targetColor, maxiColor, goodColor, badColor, forecastColor, allowMeasureOverMaxi, barSize]</em>)</p>
+
+<h4>Arguments</h4>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Argument</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td><em>measure</em></td>
+
+            <td>A number or reference that represents the length of the measure bar, such as 5 or "A1".</td>
+        </tr>
+
+        <tr>
+            <td><em>target&nbsp;</em></td>
+
+            <td>A number or reference that represents the location of the target line, such as 7 or "A2".</td>
+        </tr>
+
+        <tr>
+            <td><em>maxi</em></td>
+
+            <td>A number or reference that represents the maximum value of the sparkline, such as 10 or "A3".</td>
+        </tr>
+
+        <tr>
+            <td><em>good&nbsp;</em></td>
+
+            <td>(Optional) A number or reference that represents the length of the good bar, such as 3 or "A4".&nbsp;The default value is 0.</td>
+        </tr>
+
+        <tr>
+            <td><em>bad&nbsp;</em></td>
+
+            <td>(Optional) A number or reference that represents the length of the bad bar, such as 1 or "A5".&nbsp;The default value is 0.</td>
+        </tr>
+
+        <tr>
+            <td><em>forecast&nbsp;</em></td>
+
+            <td>(Optional) A number or reference that represents the length of the forecast line, such as 8 or "A6".&nbsp;The default value is 0.</td>
+        </tr>
+
+        <tr>
+            <td><em>tickunit&nbsp;</em></td>
+
+            <td>(Optional) A number or reference that represents the tick unit, such as 1 or "A7".&nbsp;The default value is 0.</td>
+        </tr>
+
+        <tr>
+            <td><em>colorScheme</em></td>
+
+            <td>(Optional) A string that represents a color scheme for displaying the sparkline.&nbsp;The default value is "#A0A0A0".</td>
+        </tr>
+
+        <tr>
+            <td><em>vertical</em></td>
+
+            <td>(Optional) A boolean value that indicates whether to display&nbsp;the sparkline vertically.&nbsp;The default value is false.</td>
+        </tr>
+
+        <tr>
+            <td><em>measureColor</em></td>
+
+            <td>(Optional) A color string that indicates the color of measure bar.</td>
+        </tr>
+
+        <tr>
+            <td><em>targetColor</em></td>
+
+            <td>(Optional) A color string that indicates the color of target line.</td>
+        </tr>
+
+        <tr>
+            <td><em>maxiColor</em></td>
+
+            <td>(Optional) A color string that indicates the color of the maxi area.</td>
+        </tr>
+
+        <tr>
+            <td><em>goodColor&nbsp;</em></td>
+
+            <td>(Optional) A color string that indicates the color of the good area.</td>
+        </tr>
+
+        <tr>
+            <td><em>badColor&nbsp;</em></td>
+
+            <td>(Optional) A color string that indicates the color of the bad area.</td>
+        </tr>
+
+        <tr>
+            <td><em>forecastColor&nbsp;</em></td>
+
+            <td>(Optional) A color string that indicates the color of the forecast line.</td>
+        </tr>
+
+        <tr>
+            <td><em>allowMeasureOverMaxi&nbsp;</em></td>
+
+            <td>(Optional) A Boolean value that indicates whether the measure can exceed maxi area. The default value of this parameter is false.</td>
+        </tr>
+
+        <tr>
+            <td><em>barSize &nbsp;</em></td>
+
+            <td>(Optional) A number value greater than 0 and equal to or less than 1, which indicates the percentage of bar width or height according to the cell width or height.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Data Types</h4>
+
+<p>Returns sparkline.</p>
+
+<h4>Examples</h4>
+
+<p>activeSheet.setFormula(index, 3, '=BULLETSPARKLINE($C' + (index + 1) + ',$B$10,$B$11,$B$12,$B$13,$B' + (index + 1) + ',1,$B$14,false,$B$15,$B$16,$B$17,$B$18,$B$19,$B$20,$B$21,$B$22)');</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

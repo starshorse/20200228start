@@ -1,0 +1,542 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to work with tab strip and lets you specify its properties such as the start sheet, reorder the sheet tabs, and set tab colors." />
+    
+    <title>Tab Strip | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n185","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to work with tab strip and lets you specify its properties such as the start sheet, reorder the sheet tabs, and set tab colors." />
+    
+    <meta name="Microsoft.Help.Id" content="392f72fd-c7d7-4485-8177-dcfdaf6ff3c0"/>
+    <meta name="Microsoft.Help.TocParent" content="1e96aff2-c1e7-4a22-a4f9-4395d3e8cd8c"/>
+    <meta name="Microsoft.Help.TocOrder" content="7"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="workbook.html">Workbook</a>
+ / Tab Strip</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Tab Strip</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides plenty of options to control the behavior of tab strip and its elements. You can perform various operations such as changing the sheet name, setting sheet color, arranging sheets, setting position and width of tab strip etc. by using the properties of <strong>Workbook.options</strong> field.</p>
+
+<p><img border="0" alt="tab strip element labels" src="images/tabstriplabel.png" /></p>
+
+<h3>Change Sheet Name</h3>
+
+<p>You can change the name of a sheet by double-clicking on it to edit. Click out of the tab or use the Esc or Enter key to confirm the changes.</p>
+
+<p><br />
+<img border="0" alt="edit sheet names in tab strip" src="images/edit-sheet-names.gif" /></p>
+
+<p>You can enable or disable the ability to edit sheet names by using <strong>options.tabEditable</strong> property. The default value of this property is true.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+spread.options.tabEditable = <span style="COLOR: #0000ff">false</span>; <span style="COLOR: #008000">// false: disable, true: enable</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Arrange Sheet Tabs</h3>
+
+<p>You can arrange sheet names in the tab strip by selecting the sheet tab and dragging it between any two sheets. An indicator is displayed while dragging the sheet, as shown in the below image. Release the mouse to move the sheet.</p>
+
+<p><br />
+<img border="0" alt="reorder sheets in tab strip" src="images/tab-reorder.png" /><br /></p>
+
+<p>You can enable the ability to re-order the sheet tabs by setting the <strong>options.allowSheetReorder</strong> property to true.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+spread.options.allowSheetReorder = <span style="COLOR: #0000ff">true</span>; <span style="COLOR: #008000">// true: enable, false: disable</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The <a href="SpreadJS~GC.Spread.Sheets.Events~SheetMoving_EV.html">SheetMoving</a> and <a href="SpreadJS~GC.Spread.Sheets.Events~SheetMoved_EV.html">SheetMoved</a> events occur before and after the sheet is dragged and moved respectively. In order to cancel the movement of sheet, you can set the <strong>cancel</strong> parameter of <a href="SpreadJS~GC.Spread.Sheets.Events~SheetMoving_EV.html">SheetMoving</a> class to true.</p>
+
+<h3>Set Sheet Tab Color</h3>
+
+<p>You can set the sheet tab color using <strong>options.sheetTabColor</strong> property. Also, you can choose to display any sheet as the start sheet using <a href="SpreadJS~GC.Spread.Sheets.Workbook~startSheetIndex.html">startSheetIndex</a> method.<br />
+<br />
+<img border="0" alt="set sheet tab color in tab strip" src="images/tabstripcolor.png" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+spread.setSheetCount(3);
+spread.startSheetIndex(0);
+spread.getSheet(0).options.sheetTabColor = <span style="COLOR: #800000">"red"</span>;
+spread.getSheet(1).options.sheetTabColor = <span style="COLOR: #800000">"#FFFF00"</span>;
+spread.getSheet(2).options.sheetTabColor = <span style="COLOR: #800000">"Accent 4"</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Display New Tab Button</h3>
+
+<p>You can choose to show or hide the New Tab button by using <strong>options.newTabVisible</strong> property. This button is visible by default.<br />
+<br /></p><img border="0" alt="show or hide new tab button" src="images/newtabvisible.png" />
+
+<p></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+spread.options.newTabVisible = <span style="COLOR: #0000ff">true</span>; <span style="COLOR: #008000">// false: hide, true: show</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Display Navigation Buttons</h3>
+
+<p>You can specify whether to show the navigation buttons in the workbook by using <strong>options.tabNavigationVisible</strong> property.<br />
+<br />
+<img border="0" alt="show or hide tab strip navigation buttons" src="images/tabnavigation.png" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+spread.options.tabNavigationVisible = <span style="COLOR: #0000ff">false</span>; <span style="COLOR: #008000">// false: hide, true: show</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Display Tab Strip</h3>
+
+<p>You can hide the entire tab strip by using <strong>options.tabStripVisible</strong> property.<br />
+<br />
+<img border="0" alt="show or hide tab strip" src="images/tabstripvisible.png" /><br /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+spread.options.tabStripVisible = <span style="COLOR: #0000ff">true</span>; <span style="COLOR: #008000">// true: show, false: hide
+</span>spread.options.tabStripRatio = 0.5;  <span style="COLOR: #008000">// percentage value that specifies the horizontal space allocated to the tab strip</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Set Position and Width</h3>
+
+<p>You can set the position of tab strip relative to the workbook using the <strong>tabstripPosition</strong> workbook option. These positions are supported on touch devices as well as in all SpreadJS themes. The tab strip gets separated from the scrollbar if the position is set to left, right, or top.</p>
+
+<table style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+    <thead>
+        <tr>
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Position</th>
+
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Image</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Bottom (default)</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="tab strip bottom position option" src="images/tabBottom.png" /></td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Left</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="tab strip left position option" src="images/tabLeft.png" /></td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Right</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="tab strip right position option" src="images/tabRight.png" /></td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Top</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="tab strip top position option" src="images/tabTop.png" /></td>
+        </tr>
+    </tbody>
+</table><br />
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> The resize horizontal bar button is visible only when the position of tab strip is set to bottom. The <strong>tabStripRatio</strong> property is also ignored when top, left or right poistion is set.
+</div>
+
+<p>If the sheet position is set to left or right and the sheet name is too long to be displayed, it is clipped and indicated by an ellipsis. However, you can change the width of tab strip to show the complete sheet name by using <strong>options.tabStripWidth</strong> property. The default and minimum value of this property is 80.</p>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> The <strong>options.tabStripWidth</strong> property is ignored if the tab strip position is not set to the left or right of the workbook.
+</div>
+
+<p><img border="0" alt="tab strip width option" src="images/tabstripWidth.png" /></p>
+
+<p>The following example code sets tab strip position and width.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Change tab strip position when creating workbook
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>), {tabStripPosition: GC.Spread.Sheets.TabStripPosition.top});
+<span style="COLOR: #008000">// Or change tab strip position by workbook options
+</span>spread.options.tabStripPosition = GC.Spread.Sheets.TabStripPosition.top;
+        
+<span style="COLOR: #008000">// Change tab strip width when creating workbook
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>), {tabStripWidth: 200});
+<span style="COLOR: #008000">// Or change tab strip width by workbook options
+</span>spread.options.tabStripWidth = 200;        
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>The “All Sheets” button</h3>
+
+<p>SpreadJS provides an “All Sheets” hamburger button in the tab strip that helps navigate to specific sheet(s) in a workbook more quickly. The button opens a drop-down list consisting of the available sheet(s).</p>
+
+<p>The “All Sheets” button automatically appears when all the sheets cannot be displayed completely in the tab strip. It can also be displayed by resizing the bar to hide sheets.</p>
+
+<p><img border="0" alt="" src="images/tabstrip-allsheetsbutton.gif" /></p>
+
+<p>You can choose whether to display the hamburger button by setting the <strong>allSheetsListVisible</strong>&nbsp;option using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.AllSheetsListVisibility.html">AllSheetsListVisibility</a> enumeration values such as “hide”, “show”, and “auto” (default).</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Automatically show or hide the "All Sheets" button - Default
+</span><span style="COLOR: #0000ff">function</span> AutoButton(spread) {
+    spread.options.allSheetsListVisible = GC.Spread.Sheets.AllSheetsListVisibility.auto;
+}
+
+<span style="COLOR: #008000">// Always show the "All Sheets" button
+</span><span style="COLOR: #0000ff">function</span> ShowButton(spread) {
+    spread.options.allSheetsListVisible = GC.Spread.Sheets.AllSheetsListVisibility.show;
+}
+
+<span style="COLOR: #008000">// Hide the "All Sheets" button
+</span><span style="COLOR: #0000ff">function</span> HideButton(spread) {
+    spread.options.allSheetsListVisible = GC.Spread.Sheets.AllSheetsListVisibility.hide;
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> The position of the “All Sheets” hamburger button is retained irrespective of the set value in the <strong>allSheetsListVisible</strong> option.</p>
+</div>
+
+<p>The below table depicts different scenarios associated with the “All Sheets” hamburger button.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Scenario</th>
+
+            <th>Example</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>The “All Sheets” dialog highlights the active sheet and the hovered sheet.</td>
+
+            <td><img border="0" alt="" src="images/tabstrip-allsheets-case1.png" /></td>
+        </tr>
+
+        <tr>
+            <td>The “All Sheets” button changes color on the hover.</td>
+
+            <td><img border="0" alt="" src="images/tabstrip-allsheets-case2.gif" /></td>
+        </tr>
+
+        <tr>
+            <td>The “All sheets” dialog highlights all the selected active sheets.</td>
+
+            <td><img border="0" alt="" src="images/tabstrip-allsheets-case3.png" /></td>
+        </tr>
+
+        <tr>
+            <td>The tab strip will display the selected sheet from the “All Sheets” dialog if it is not in the currently displayed area.&nbsp;</td>
+
+            <td><img border="0" alt="" src="images/tabstrip-allsheets-case4.gif" /></td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>The “All Sheets” dialog does not show hidden sheets.</p>
+
+                <p>For example, Sheet4, Sheet6, and Sheet7 are hidden sheets in the example image.</p>
+            </td>
+
+            <td><img border="0" alt="" src="images/tabstrip-allsheets-case5.png" /></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Using SpreadJS Designer</h3>
+
+<p>You can also set the tab strip options using SpreadJS Designer by accessing the TabStrip settings in SETTINGS tab of ribbon as shown below:</p>
+
+<p><img border="0" alt="tab strip settings dialog in SpreadJS Designer" src="images/tabstripDesign1.png" /></p>
+
+<p><img border="0" alt="tab strip settings dialog in SpreadJS Designer" src="images/tabstripDesign2.png" /></p>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Workbook~setSheetCount.html">setSheetCount Method</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

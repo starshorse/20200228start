@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>GETPIVOTDATA | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3772","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="d8ae27e6-eafa-47f6-b855-1220cf4efd65"/>
+    <meta name="Microsoft.Help.TocParent" content="589d39b2-c1bb-4ebb-9344-7214183a4d8d"/>
+    <meta name="Microsoft.Help.TocOrder" content="9"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / <a href="lookup-reference-functions.html">Lookup and Reference Functions</a>
+ / GETPIVOTDATA</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">GETPIVOTDATA</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>This function returns visible data&nbsp;from a&nbsp;Pivot Table. It queries the pivot table and gets the specific data based on the pivot table structure, instead of cell references. The main advantage of using this function is that it&nbsp;ensures that the correct data is returned, even if the pivot table layout is changed.</p>
+
+<h4>Syntax</h4>
+
+<p><em>=GETPIVOTDATA(data_field, pivot_table, [field1, item1, field2, item2], ...)</em></p>
+
+<h4>Arguments</h4>
+
+<p>This function has the following arguments:</p>
+
+<table style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+    <tbody>
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Arguments</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Descriptions</td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">data_field</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">The name of the PivotTable field that contains the data you want to retrieve. This needs to be in double&nbsp;quotes.</td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">pivot_table</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">A reference to any cell, range of cells, or named range of cells in a PivotTable. This information is used to determine which PivotTable contains the data that you want to retrieve.</td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">field1, item1, field2, item2..</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">[Optional] Up to 126 pairs of field names and item names that describe the data that you want to retrieve. The pairs can be in any order.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Usage</h4>
+
+<p>You can enter the GETPIVOTDATA function by using = (the equal sign) in the cell in which you want to return the value. You can also use this function with other functions.</p>
+
+<h4>Remarks</h4>
+
+<p>The following points hold true while working with GETPIVOTTABLE function:</p>
+
+<ul>
+    <li>#REF! error value occurs in the following cases:
+
+        <ul>
+            <li>If the given pivot_table reference is not related to the pivot table.</li>
+
+            <li>If an invalid field for the data_field, [field], or [item] arguments is provided.</li>
+
+            <li>If the arguments do not describe a visible field, or if they include a report filter in which the filtered data is not displayed.</li>
+        </ul>
+    </li>
+
+    <li>When there is a sigma value, the data_field will contain calc type, otherwise, it will use the field name only.</li>
+</ul>
+
+<h4>Return value</h4>
+
+<p>Returns visible data from a pivot table.</p>
+
+<h4>Examples</h4>
+
+<p>The following images show the usage of GETPIVOTDATA function.</p>
+
+<p><img border="0" alt="Usage of GETPIVOTDATA" src="images/getpivotdata.png" /></p>
+
+<p>The following sample code show the usage of GETPIVOTDATA function.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>C#</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(function () {
+     <span style="COLOR: #008000">// initializing Spread
+</span>     <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 2 });
+     spread.suspendPaint();
+     <span style="COLOR: #008000">// get sheets
+</span>     <span style="COLOR: #0000ff">var</span> pivotLayoutSheet = spread.getSheet(0);
+     <span style="COLOR: #0000ff">var</span> dataSourceSheet = spread.getSheet(1);
+     <span style="COLOR: #008000">// set sheet name
+</span>     pivotLayoutSheet.name(<span style="COLOR: #800000">"PivotLayout"</span>);
+     dataSourceSheet.name(<span style="COLOR: #800000">"DataSource"</span>);
+     <span style="COLOR: #008000">// set row count
+</span>     dataSourceSheet.setRowCount(245);
+     <span style="COLOR: #008000">// set datasource
+</span>     dataSourceSheet.setArray(0, 0, pivotDB_UseCase);
+     <span style="COLOR: #008000">// add table to dataSourceSheet
+</span>     dataSourceSheet.tables.add(<span style="COLOR: #800000">'tableSales'</span>, 0, 0, 245, 8);
+     spread.resumePaint();
+     <span style="COLOR: #008000">// initialize pivottable
+</span>     initPivotTable(pivotLayoutSheet);
+     <span style="COLOR: #008000">// auto fit columns in both the sheets
+</span>     autoFit(pivotLayoutSheet);
+     autoFit(dataSourceSheet);
+ });
+
+ function initPivotTable(sheet) {
+     <span style="COLOR: #008000">// add pivottable
+</span>     <span style="COLOR: #0000ff">var</span> myPivotTable = sheet.pivotTables.add(<span style="COLOR: #800000">"myPivotTable"</span>, <span style="COLOR: #800000">"tableSales"</span>, 0, 0, GC.Spread.Pivot.PivotTableLayoutType.tabular, GC.Spread.Pivot.PivotTableThemes.dark3);
+     myPivotTable.suspendLayout();
+     <span style="COLOR: #008000">// show rowHeader and columnHeader for PivotTable
+</span>     myPivotTable.options.showRowHeader = <span style="COLOR: #0000ff">true</span>;
+     myPivotTable.options.showColumnHeader = <span style="COLOR: #0000ff">true</span>;
+     <span style="COLOR: #008000">// add column fields
+</span>     myPivotTable.add(<span style="COLOR: #800000">"Category"</span>, <span style="COLOR: #800000">"Category"</span>, GC.Spread.Pivot.PivotTableFieldType.columnField);
+     <span style="COLOR: #008000">// add row fields
+</span>     myPivotTable.add(<span style="COLOR: #800000">"Region"</span>, <span style="COLOR: #800000">"Region"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+     myPivotTable.add(<span style="COLOR: #800000">"City"</span>, <span style="COLOR: #800000">"City"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+     <span style="COLOR: #008000">// add value field with SubtotalType Sum
+</span>     myPivotTable.add(<span style="COLOR: #800000">"Quantity"</span>, <span style="COLOR: #800000">"Sum of quantity"</span>, GC.Spread.Pivot.PivotTableFieldType.valueField, GC.Pivot.SubtotalType.sum);
+     <span style="COLOR: #008000">// add filter field
+</span>     myPivotTable.add(<span style="COLOR: #800000">"OrderDate"</span>, <span style="COLOR: #800000">"OrderDate"</span>, GC.Spread.Pivot.PivotTableFieldType.filterField);
+          
+     <span style="COLOR: #0000ff">var</span> formula1 = <span style="COLOR: #800000">'=GETPIVOTDATA("Quantity",$A$3)'</span>;
+     sheet.setValue(3, 10, <span style="COLOR: #800000">'Total Quantity'</span>);
+     sheet.setStyle(3, 10, <span style="COLOR: #800000">'introSec'</span>);
+     sheet.setFormula(3, 11, formula1);
+
+     <span style="COLOR: #0000ff">var</span> formula2 = <span style="COLOR: #800000">'=GETPIVOTDATA("Quantity",$A$3,"Category","Bakery")'</span>;
+     sheet.setValue(4, 10, <span style="COLOR: #800000">'Total Bakery Quantity'</span>);
+     sheet.setStyle(4, 10, <span style="COLOR: #800000">'introSec'</span>);
+     sheet.setFormula(4, 11, formula2);
+
+     <span style="COLOR: #0000ff">var</span> formula3 = <span style="COLOR: #800000">'=GETPIVOTDATA("Quantity",$A$3,"Region","West")'</span>;
+     sheet.setValue(5, 10, <span style="COLOR: #800000">'West Region'</span>);
+     sheet.setStyle(5, 10, <span style="COLOR: #800000">'introSec'</span>);
+     sheet.setFormula(5, 11, formula3);
+
+     <span style="COLOR: #0000ff">var</span> formula4 = <span style="COLOR: #800000">'=GETPIVOTDATA("Quantity",$A$3,"Region","East","City","Jersey")'</span>;
+     sheet.setValue(6, 10, <span style="COLOR: #800000">'Quantity in Jersey'</span>);
+     sheet.setStyle(6, 10, <span style="COLOR: #800000">'introSec'</span>);
+     sheet.setFormula(6, 11, formula4);
+     myPivotTable.resumeLayout();
+     <span style="COLOR: #0000ff">return</span> myPivotTable;
+ }
+
+ function autoFit(sheet) {
+     <span style="COLOR: #008000">// auto fit columns
+</span>     <span style="COLOR: #0000ff">let</span> columnCount = sheet.getColumnCount();
+     <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">let</span> i = 0; i &lt; columnCount; i++) {
+         sheet.autoFitColumn(i);
+            }
+        }
+        
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The&nbsp;GETPIVOTDATA function also supports spilling, which means, it can populate multiple cells with its results. However, the <strong>allowDynamicArray</strong> property should be set to true to observe the spilling results. The below image shows a pivot table which will be used to extract some meaningful results using GETPIVOTDATA function.</p>
+
+<p><img border="0" alt="Usage of GETPIVOTDATA" src="images/pivottable_spill.png" /></p>
+
+<p>The below image shows the output when GETPIVOTDATA function&nbsp;is used in the above pivot table and the&nbsp;result is spilled to multiple cells.</p>
+
+<p><img border="0" alt="Usage of GETPIVOTDATA" src="images/pivottable_spill_results.png" /></p>
+
+<p>&nbsp;The following sample code show the usage of GETPIVOTDATA function to get results which spill to multiple cells.&nbsp;</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> setGetPivotDataFunction(sheet) {
+    spread.options.allowDynamicArray = <span style="COLOR: #0000ff">true</span>;
+    <span style="COLOR: #0000ff">var</span> formula = <span style="COLOR: #800000">'=GETPIVOTDATA("Sum of quantity",$B$2,"City",{"Jersey";"San Francisco";"Seattle";"Washington, DC"},"Category",C11:C14,"Qt",E3:F3)'</span>;
+    sheet.setStyle(1, 9, <span style="COLOR: #800000">'introSec'</span>);
+    sheet.addSpan(1, 9, 2, 8, GC.Spread.Sheets.SheetArea.viewport);
+    sheet.setValue(1, 9, <span style="COLOR: #800000">'Returns the spill range of total Bakery, Beverages, Chocolates and Snacks quantity sold in Jersey, San Francisco, Seattle and Washington, DC respectively in the Qtr2 &amp; Qtr3'</span>);
+    sheet.getCell(1, 9).wordWrap(<span style="COLOR: #0000ff">true</span>);
+    sheet.setStyle(4, 9, <span style="COLOR: #800000">'formula'</span>);
+    sheet.addSpan(4, 9, 2, 8, GC.Spread.Sheets.SheetArea.viewport);
+    sheet.getCell(4, 9).wordWrap(<span style="COLOR: #0000ff">true</span>);
+    sheet.setValue(4, 9, formula);
+    sheet.setFormula(7, 9, formula);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn about the gauge KPI sparkline in SpreadJS. Learn the various options available for the gauge KPI sparkline formula along with their descriptions. " />
+    
+    <title>Gauge KPI Sparkline | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n663","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn about the gauge KPI sparkline in SpreadJS. Learn the various options available for the gauge KPI sparkline formula along with their descriptions. " />
+    
+    <meta name="Microsoft.Help.Id" content="98e39df6-c892-4f03-ba51-469c681c3315"/>
+    <meta name="Microsoft.Help.TocParent" content="fd9cab4f-16bf-437c-a370-bbba7f456cf3"/>
+    <meta name="Microsoft.Help.TocOrder" content="23"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sparkmain.html">Sparklines</a>
+ / Gauge KPI Sparkline</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Gauge KPI Sparkline</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides Gauge KPI sparkline which can be used to visualize the performance of metrics with respect to KPI values. It can be used to indicate the effectiveness of management work or present sales targets etc.<br /></p>
+
+<p><img border="0" alt="gauge KPI sparkline metric labels" src="images/gaugeKpiLabels.png" /></p>
+
+<p>Gauge KPI sparkline uses the following values to display metrics:</p>
+
+<ul>
+    <li>Target Value: Indicates the expected value and displays it at the bottom.</li>
+
+    <li>Current Value: Indicates the current value.</li>
+
+    <li>Minimum Value: Indicates the smallest expected value. It should be lower than the target value and current value.</li>
+
+    <li>Maximum Value: Indicates the biggest expected value. It should be higher than the target value and current value.</li>
+</ul>
+
+<h3>Types of Gauge KPI Sparklines</h3>
+
+<p>SpreadJS provides three types of Gauge KPI sparklines, namely, Circle, Vertical, and Horizontal which can be set by using the <strong>gaugeType</strong> option in the GaugeKPISparkline function.</p>
+
+<p><img border="0" alt="gauge KPI sparkline types" src="images/gaugeKpiTypes.png" /><br /></p>
+
+<p>Gauge KPI sparkline formula has the following options:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th width="138">Argument</th>
+
+            <th width="79">Type</th>
+
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td width="138">
+                <strong>targetValue</strong>
+
+                <p>Required</p>
+            </td>
+
+            <td width="79">Number</td>
+
+            <td>The target value of the gauge KPI sparkline. The target value is between minValue and maxValue.</td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>currentValue</strong>
+
+                <p>Required</p>
+            </td>
+
+            <td width="79">Number</td>
+
+            <td>The current value of the gauge KPI sparkline. The current value is between minValue and maxValue.</td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>minValue</strong>
+
+                <p>Required</p>
+            </td>
+
+            <td width="79">Number</td>
+
+            <td>The minimum value of the gauge KPI sparkline. The minValue is less than maxValue.</td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>maxValue</strong>
+
+                <p>Required</p>
+            </td>
+
+            <td width="79">Number</td>
+
+            <td>The maximum value of the gauge KPI sparkline. The maxValue is more than minValue.</td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>showLabel</strong>
+
+                <p>Optional</p>
+            </td>
+
+            <td width="79">Boolean</td>
+
+            <td>
+                Specifies whether to show the label of all the values provided in the sparkline.
+
+                <p>If false, it will not show labels.</p>
+
+                <p>If true, it will only show the labels which fit inside the cell width and height. The cell should have enough width and height to show both graph and labels.</p>
+
+                <p>The default value is true.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>targetValueLabel</strong>
+
+                <p>Optional</p>
+            </td>
+
+            <td width="79">String</td>
+
+            <td>
+                The string to display as target value label.
+
+                <p>The default value is targetValue.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>currentValueLabel</strong>
+
+                <p>Optional</p>
+            </td>
+
+            <td width="79">String</td>
+
+            <td>
+                The string to display as current value label.
+
+                <p>The default value is currentValue.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>mintValueLabel</strong>
+
+                <p>Optional</p>
+            </td>
+
+            <td width="79">String</td>
+
+            <td>
+                The string to display as minimum value label.
+
+                <p>The default value is minValue.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>maxValueLabel</strong>
+
+                <p>Optional</p>
+            </td>
+
+            <td width="79">String</td>
+
+            <td>
+                The string to display as maximum value label.
+
+                <p>The default value is maxValue.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>fontArray</strong>
+
+                <p>Optional</p>
+            </td>
+
+            <td width="79">CalcArray</td>
+
+            <td>
+                Array contains font format as string items for the four label types -
+
+                <ul>
+                    <li>Target value label: Default value "16px Calibri"</li>
+
+                    <li>Current value label: Default value "bold 22px Calibri"</li>
+
+                    <li>Minimum and Maximum value labels: Default value "12px Calibri"</li>
+                </ul>
+
+                <p><strong>showLabel</strong> option must be true.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>minAngle</strong>
+
+                <p>Optional</p>
+            </td>
+
+            <td width="79">Number</td>
+
+            <td>
+                The minimum angle value of circle type. The minAnigle should be less than maxAngle.
+
+                <p>The angle values correspond to the time in the clock. 0 is 12 o'clock, -90 is 9 o'clock, 90 is 3 o'clock, and -180/180 is 6 o'clock.</p>
+
+                <p>The default value is -90.</p>
+
+                <p><strong>gaugeType</strong> option must be 0 (circle type).</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>maxAngle</strong>
+
+                <p>Optional</p>
+            </td>
+
+            <td width="79">Number</td>
+
+            <td>
+                The maximum angle value of circle type. The maxAngle should be bigger than minAngle.
+
+                <p>The angle values correspond to the time in the clock. 0 is 12 o'clock, -90 is 9 o'clock, 90 is 3 o'clock, and -180/180 is 6 o'clock.</p>
+
+                <p>The default value is 90.</p>
+
+                <p><strong>gaugeType</strong> option must be 0 (circle type).</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>radiusRatio</strong>
+
+                <p>Optional</p>
+            </td>
+
+            <td width="79">Number</td>
+
+            <td>
+                The value is calculated as the ratio of inner circle radius and outer circle radius. The outer circle radius value is decided by the cell size.
+
+                <p>The value ranges between 0 and 1. Default is 0.</p>
+
+                <p><strong>gaugeType</strong> option must be 0 (circle type).</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>gaugeType</strong>
+
+                <p>Optional</p>
+            </td>
+
+            <td width="79">Number</td>
+
+            <td>
+                The KPI sparkline type.
+
+                <p>0 - Circle<br />
+                1 - Vertical Bar<br />
+                2 - Horizontal Bar</p>
+
+                <p>The default type is circle.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="138">
+                <strong>colorRange</strong>
+
+                <p>Optional</p>
+
+                <p>Repeatable</p>
+            </td>
+
+            <td width="79">CalcArray</td>
+
+            <td>
+                The color range between specified values.
+
+                <p><em>{startValue, endValue, color_string}</em></p>
+
+                <p>Where <em>startValue</em> is the starting value in a range, <em>endValue</em> is the ending value in a range, and the <em>color_string</em> is the color of the range between the two specified value.</p>
+
+                <p>The <em>startValue</em> must be less than the <em>endValue</em> and both the values should be between minValue and maxValue.</p>
+
+                <p>Default color range from minValue to maxValue is filled with light gray color.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The Gauge KPI sparkline formula has the following syntax:</p>
+
+<p><code>=GAUGEKPISPARKLINE (targetValue, currentValue, minValue, maxValue,showLabel?,targetValueLabel?,currentValueLabel?,minValueLabel?,maxValueLabel?, fontArray?, minAngle?, maxAngle?, radiusRatio?, gaugeType?, colorRange?)</code></p>
+
+<h3>Usage Scenario</h3>
+
+<p>Gauge KPI sparklines are used to monitor the annual sales performance of a company. The Revenue, Profit and Sales metrics are measured against their target and actual values which helps to visualize the data easily and make meaningful deductions.</p>
+
+<div title="Click to Enlarge" class="i-thumbnail-container">
+    <a title="Gauge KPI sparkline in sales performance monitoring" class="i-thumbnail" rel="lightbox" data-href="images/gaugeKpiUsage.png"><img alt="Gauge KPI sparkline in sales performance monitoring" src="images/gaugeKpiUsage_thumb.png" /></a>
+
+    <p>Gauge KPI sparkline in sales performance monitoring</p>
+</div><br />
+<br />
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 2 });
+<span style="COLOR: #008000">// get the sheets
+</span><span style="COLOR: #0000ff">var</span> sheet1 = spread.sheets[0];
+<span style="COLOR: #0000ff">var</span> sheet2 = spread.sheets[1];
+<span style="COLOR: #008000">// Hide gridlines
+</span>sheet1.options.gridline = { showVerticalGridline: <span style="COLOR: #0000ff">false</span>, showHorizontalGridline: <span style="COLOR: #0000ff">false</span> };
+<span style="COLOR: #008000">// Hide row/ col headers
+</span>sheet1.options.colHeaderVisible = <span style="COLOR: #0000ff">false</span>;
+sheet1.options.rowHeaderVisible = <span style="COLOR: #0000ff">false</span>;
+<span style="COLOR: #008000">// set column width
+</span><span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 3; i++)
+    sheet1.setColumnWidth(i, 340);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 4; i++)
+    sheet2.setColumnWidth(i, 70);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 5; i++)
+    sheet2.setColumnWidth(i, 170);
+<span style="COLOR: #008000">// set row height
+</span>sheet1.setRowHeight(0, 35, GC.Spread.Sheets.SheetArea.dataArea);
+sheet1.setRowHeight(1, 280, GC.Spread.Sheets.SheetArea.dataArea);
+          
+<span style="COLOR: #008000">// set data
+</span>sheet1.setValue(0, 0, <span style="COLOR: #800000">"Sales($'000) Dashboard FY 2019-20"</span>, GC.Spread.Sheets.SheetArea.dataArea);
+<span style="COLOR: #0000ff">var</span> dataArray1 =
+    [
+        [<span style="COLOR: #800000">"Parameters"</span>, <span style="COLOR: #800000">"Target"</span>, <span style="COLOR: #800000">"Current"</span>, <span style="COLOR: #800000">"Min"</span>, <span style="COLOR: #800000">"Max"</span>],
+        [<span style="COLOR: #800000">"Revenue"</span>, 900, 1200, 0, 2000],
+        [<span style="COLOR: #800000">"Profit"</span>, 1200, 1100, 0, 2000],
+        [<span style="COLOR: #800000">"Sales"</span>, 1600, 1800, 0, 2000]
+    ];
+sheet2.setArray(0, 0, dataArray1);
+
+<span style="COLOR: #008000">// set GaugeKPISparkline formula
+</span>sheet1.setFormula(1, 0, <span style="COLOR: #800000">'=GAUGEKPISPARKLINE(Sheet2!B2,Sheet2!C2,Sheet2!D2,Sheet2!E2,TRUE,TEXT(Sheet2!B3/1000,"$0.0K"),Sheet2!A2,TEXT(Sheet2!D2/1000,"$0.0K"),TEXT(Sheet2!E2/1000,"$0.0K"),{"normal normal 11pt Calibri","normal bold 16pt Calibri","normal normal 9pt Calibri","normal normal 9pt Calibri"},-90,90,0.4,0,{0,1200,"#FFB2BD"},{1200,1500,"#FFDFB0"},{1500,2000,"#BCEAB4"})'</span>);
+sheet1.setFormula(1, 1, <span style="COLOR: #800000">'=GAUGEKPISPARKLINE(Sheet2!B3,Sheet2!C3,Sheet2!D3,Sheet2!E3,TRUE,TEXT(Sheet2!B3/1000,"$0.0K"),Sheet2!A3,TEXT(Sheet2!D3/1000,"$0.0K"),TEXT(Sheet2!E3/1000,"$0.0K"),{"normal normal 11pt Calibri","normal bold 16pt Calibri","normal normal 9pt Calibri","normal normal 9pt Calibri"},-90,90,0.4,0,{0,1200,"#FFB2BD"},{1200,1500,"#FFDFB0"},{1500,2000,"#BCEAB4"})'</span>);
+sheet1.setFormula(1, 2, <span style="COLOR: #800000">'=GAUGEKPISPARKLINE(Sheet2!B4,Sheet2!C4,Sheet2!D4,Sheet2!E4,TRUE,TEXT(Sheet2!B4/1000,"$0.0K"),Sheet2!A4,TEXT(Sheet2!D4/1000,"$0.0K"),TEXT(Sheet2!E4/1000,"$0.0K"),{"normal normal 11pt Calibri","normal bold 16pt Calibri","normal normal 9pt Calibri","normal normal 9pt Calibri"},-90,90,0.6,0,{0,1200,"#FFB2BD"},{1200,1500,"#FFDFB0"},{1500,2000,"#BCEAB4"})'</span>);
+           
+sheet1.addSpan(0, 0, 1, 3, GC.Spread.Sheets.SheetArea.dataArea);
+
+<span style="COLOR: #008000">// set style for Row 0
+</span>style1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style1.font = <span style="COLOR: #800000">"bold 28px Calibri"</span>;
+style1.foreColor = <span style="COLOR: #800000">"white"</span>;
+style1.backColor = <span style="COLOR: #800000">"#14928F"</span>;
+style1.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+sheet1.setStyle(0, 0, style1, GC.Spread.Sheets.SheetArea.dataArea);
+
+<span style="COLOR: #008000">// set style for Row 1
+</span><span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style.backColor = <span style="COLOR: #800000">"#B4E7E2"</span>;
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 3; i++) {
+    sheet1.setStyle(1, i, style, GC.Spread.Sheets.SheetArea.dataArea);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

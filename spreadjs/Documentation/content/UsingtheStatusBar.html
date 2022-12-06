@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="This topic describes all the options available in the status bar along with their brief description. Learn more in SpreadJS docs." />
+    
+    <title>Status Bar | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n183","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="This topic describes all the options available in the status bar along with their brief description. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="ac9b98fa-6700-4d4e-9fcf-ee683ccb30be"/>
+    <meta name="Microsoft.Help.TocParent" content="1e96aff2-c1e7-4a22-a4f9-4395d3e8cd8c"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="workbook.html">Workbook</a>
+ / Status Bar</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Status Bar</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides users with a status bar that appears at the bottom of the worksheet and reveals information about the current cell mode, average, count, numerical count, minimum, maximum, sum of the selected cells, zoom slider and zoom percentage.</p>
+
+<p>The table shared below describes all the options available in the status bar along with their brief&nbsp;description.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td width="119"><strong>Options</strong></td>
+
+            <td><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td width="119">Cell Mode</td>
+
+            <td>This option displays the cell mode of the selected cell.</td>
+        </tr>
+
+        <tr>
+            <td width="119">Average</td>
+
+            <td>This option displays the average from the selected cells that contain numerical values.</td>
+        </tr>
+
+        <tr>
+            <td width="119">Count</td>
+
+            <td>This option displays the number of selected cells.</td>
+        </tr>
+
+        <tr>
+            <td width="119">Numerical Count</td>
+
+            <td>This option displays the number of selected cells that contain numerical values.</td>
+        </tr>
+
+        <tr>
+            <td width="119">Minimum</td>
+
+            <td>This option displays the minimum numerical value in the selected cells.</td>
+        </tr>
+
+        <tr>
+            <td width="119">Maximum</td>
+
+            <td>This option displays the maximum numerical value in the selected cells.</td>
+        </tr>
+
+        <tr>
+            <td width="119">Sum</td>
+
+            <td>This option displays the sum of the numerical values in the selected cells.</td>
+        </tr>
+
+        <tr>
+            <td width="119">Zoom Slider</td>
+
+            <td>This option displays a slider with plus and minus buttons for changing the zoom options.</td>
+        </tr>
+
+        <tr>
+            <td width="119">Zoom (100%)</td>
+
+            <td>This option displays the zoom level. Select the zoom percentage to display a dialog that allows you to set additional magnification options.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;The status bar provides support for the following six themes as well as SpreadJS Workbook themes.</p>
+
+<ol>
+    <li>Spread JS</li>
+
+    <li>Excel 2013 White</li>
+
+    <li>Excel 2013 Light Gray</li>
+
+    <li>Excel 2013 Dark Gray</li>
+
+    <li>Excel 2016 Colorful</li>
+
+    <li>Excel 2016 Dark Gray</li>
+</ol>
+
+<h4>Using Code</h4>
+
+<p>Refer to the following code in order to show the status bar in the worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Create status bar, add it to the host and bind it in context.
+</span><span style="COLOR: #0000ff">var</span> statusBar = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.StatusBar.StatusBar(document.getElementById(<span style="COLOR: #800000">'statusBar'</span>));
+statusBar.bind(spread);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can also customize the status bar by adding your own custom option&nbsp;(for example - Span test)&nbsp;as shown in the below image.</p><img alt="Status bar" src="images/status-3.png" />
+
+<p>Upon right clicking on the status bar, the status bar&nbsp;context menu appears. In the context menu, you can see that the custom option (Current span - Span test)&nbsp;is added to the list of available options as shown in the below image.&nbsp;</p><img alt="Status bar context menu" src="images/status-4.png" />
+
+<h4>Using Code</h4>
+
+<p>Refer to the following code in order to customize the status bar in the worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Customize the status item through GC.Spread.Sheets.StatusBar.StatusItem
+</span><span style="COLOR: #0000ff">var</span> spanItem = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.StatusBar.StatusItem(<span style="COLOR: #800000">'spanItem'</span>, { menuContent: <span style="COLOR: #800000">'Current span'</span>, value: <span style="COLOR: #800000">'Span test'</span> });
+<span style="COLOR: #0000ff">var</span> statusBar = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.StatusBar.StatusBar(
+document.getElementById(<span style="COLOR: #800000">'statusBar'</span>),
+{ items: [spanItem] }
+);
+statusBar.bind(spread);
+
+<span style="COLOR: #008000">// Customize the status item by extending gc.spread.sheets.statusbar.statusitem
+</span><span style="COLOR: #0000ff">var</span> statusbar = <span style="COLOR: #0000ff">new</span> gc.spread.sheets.statusbar.statusbar(document.getelementbyid(<span style="COLOR: #800000">'statusbar'</span>));
+statusbar.bind(spread);
+<span style="COLOR: #0000ff">var</span> statusitem = gc.spread.sheets.statusbar.statusitem;
+<span style="COLOR: #0000ff">function</span> labelitem(name, options)
+{
+statusitem.call(<span style="COLOR: #0000ff">this</span>, name, options);
+}
+labelitem.prototype = <span style="COLOR: #0000ff">new</span> statusitem();
+labelitem.prototype.oncreateitemview = <span style="COLOR: #0000ff">function</span> (container) {
+<span style="COLOR: #0000ff">var</span> item = document.createelement(<span style="COLOR: #800000">'div'</span>);
+item.innertext = <span style="COLOR: #0000ff">this</span>.value;
+item.style.background = <span style="COLOR: #800000">'blue'</span>;
+container.addeventlistener(<span style="COLOR: #800000">'click'</span>, <span style="COLOR: #0000ff">function</span> (e)
+{
+<span style="COLOR: #008000">// do click
+</span>});
+container.appendchild(item);
+};
+labelitem.prototype.onupdate = <span style="COLOR: #0000ff">function</span> ()
+{
+ <span style="COLOR: #008000">// do something when context menu item check changed
+</span>};
+statusbar.add(<span style="COLOR: #0000ff">new</span> labelitem(<span style="COLOR: #800000">'labelitem'</span>, { menucontent: <span style="COLOR: #800000">'test label'</span>, value: <span style="COLOR: #800000">'test option'</span> }));
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>Refer to the following code in order to&nbsp;remove the status bar from the worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Removing the status bar
+</span>statusBar.dispose();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="UnderstandingSpread.SheetsDesignerStatusBar.html">Status Bar</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Dynamic Column Size | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n221","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="5ddac8d0-5a4e-4cc4-b56c-4ed31af3c606"/>
+    <meta name="Microsoft.Help.TocParent" content="f108ca5b-c48b-491f-a225-98f6849aa6a3"/>
+    <meta name="Microsoft.Help.TocOrder" content="7"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="rows-columns.html">Rows and Columns</a>
+ / Dynamic Column Size</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Dynamic Column Size</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides support for&nbsp;dynamic column sizing (also called as star sizing and proportional sizing).</p>
+
+<h3 id="a">What is Dynamic Column Sizing?</h3>
+
+<p>Dynamic Column Sizing is used to configure the width of the columns and the height of the rows in such a way that the viewport is filled exactly as per the weighted proportion (represented by the&nbsp;* symbol) specified by the user.</p>
+
+<p>This type of sizing can be used in conjunction with numbers to define a weighted proportion, where: &nbsp;</p>
+
+<ul>
+    <li>The weighting factor is expressed by using the * (star character) or n* character (n can be any integer value (like 2*, 3* etc.) or a non-integer value (like 0.5* or 1.5* etc.)).</li>
+
+    <li>Available Size = Viewport Size - Visible Fixed Size.</li>
+
+    <li>The available size is distributed to the visible row or column&nbsp;as per&nbsp;the weighted factor defined by the user.</li>
+
+    <li>Total column width = Viewport width.</li>
+</ul>
+
+<h3 id="b">Usage Scenario</h3>
+
+<p>Dynamic Column sizing is beneficial especially when users need to widen multiple columns proportionally in order to analyze reports or manipulate large spreadsheets.</p>
+
+<p>For example -&nbsp;The following image depicts a&nbsp;spreadsheet&nbsp;with&nbsp;dynamic column&nbsp;sizing applied on column A, B and&nbsp;D and E&nbsp;in the proportion of 1.5*, 1.5*, *&nbsp;and&nbsp;* respectively.&nbsp;</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Dynamic column sizing" src="images/spreadjsv13images/dynamic-column-sizing-gif.gif" /></p>
+
+<p>In the above example, columns A and B&nbsp;with a star size "1.5*" are filling 1.5 times that of a standard "*" sized column in the viewport.</p>
+
+<h3>Supported User Actions</h3>
+
+<p>Dynamic column sizing (or proportional sizing) ensures the columns and rows in a worksheet fill the viewport exactly whenever the viewport size is changed or the user adds, deletes or resizes any row or column.</p>
+
+<p>Users can configure dynamic column size&nbsp;in the worksheet&nbsp;by&nbsp;using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~setColumnWidth.html" data-auto-update-caption="true">setColumnWidth()</a> and the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~setRowHeight.html" data-auto-update-caption="true">setRowHeight()</a> methods. After applying the dynamic column size, the&nbsp;columns and rows (on which the star sizing is applied) will automatically resize to fill up the viewport when users perform the following actions on the worskheet:</p>
+
+<ul>
+    <li>Users change the size of the viewport.</li>
+
+    <li>Users add, delete or resizes any columns or rows in the worksheet.</li>
+
+    <li>Users change the row count or column count.</li>
+
+    <li>Users hide or unhide the rows or columns.</li>
+
+    <li>Users group or ungroup the rows and columns.</li>
+
+    <li>Users apply filters to the rows and columns.</li>
+
+    <li>Users expand or collapse the outline columns in the worksheet.</li>
+</ul>
+
+<p>Dynamic Column Sizing is also supported while importing and exporting JSON files.</p>
+
+<h3 id="d">Dynamic Column Sizing Rules</h3>
+
+<p>The following rules must be kept in mind while working with dynamic column size feature in the worksheet:</p>
+
+<ul>
+    <li>The rows and columns can both be set to star size in one sheet.</li>
+
+    <li>When users try to resize the star sized row or column, or call the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~autoFitColumn.html">autoFitColumn()</a>/<a href="SpreadJS~GC.Spread.Sheets.Worksheet~autoFitRow.html">autoFitRow()</a> methods, then the&nbsp;operated row or column size will overwrite to a fixed number with the actual size. In case you're working on the split resize mode (only nextTo mode), then it will overwrite both the operated row or column along with the next row or column size to a fixed number.</li>
+
+    <li>If the smallest star sizing is &lt;1 (less than 1) or available size is also &lt;1&nbsp;(less than 1), then the star size will keep old size because it will stop calculating the dynamic size.</li>
+
+    <li>If the users set the star sized row or column to "hidden" or "0*", then the methods&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~getColumnWidth.html">getColumnWidth()</a> and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~getRowHeight.html">getRowHeight()</a> will return 0.</li>
+
+    <li>If the users set the star sized row or column to an invalid string like "abc", it will be treated as the default value.</li>
+
+    <li>After users zoom the worksheet, the fixed row or column will zoom and the star sizing will stretch to fill the viewport.</li>
+
+    <li>When the star sized row or column changes, then any binding objects like shapes, charts, comments and floating objects in the worksheet will also follow the change.</li>
+</ul>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> The following limitations must be kept in mind while working with dynamic column size feature in the worksheet:</p>
+
+    <ul>
+        <li>The row headers and the column headers don't support dynamic sizing.</li>
+
+        <li>Because MS Excel doesn't provide support for dynamic column sizing, the dynamic sizing will not be applicable while importing and exporting excel files.</li>
+
+        <li>While printing to PDF or exporting to excel, it will display the size at view size(old size).</li>
+    </ul>
+</div>
+
+<h3 id="e">Using Code</h3>
+
+<p>Refer to the following example code to configure dynamic column sizing in a worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+activeSheet.suspendPaint();
+<span style="COLOR: #0000ff">var</span> colHeader = GC.Spread.Sheets.SheetArea.colHeader;
+activeSheet.setRowCount(12);
+activeSheet.setColumnCount(5);
+
+<span style="COLOR: #008000">// Setting dynamic column sizes
+</span>activeSheet.setColumnWidth(0, <span style="COLOR: #800000">"1.5*"</span>);
+activeSheet.setColumnWidth(1, <span style="COLOR: #800000">"1.5*"</span>);
+activeSheet.setColumnWidth(3, <span style="COLOR: #800000">"*"</span>);
+activeSheet.setColumnWidth(4, <span style="COLOR: #800000">"*"</span>);
+<span style="COLOR: #008000">// Set the row height
+</span>activeSheet.setRowHeight(0, 50, colHeader);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> row = 0; row &lt; 12; row++)
+{
+activeSheet.setRowHeight(row, <span style="COLOR: #800000">"*"</span>);
+<span style="COLOR: #0000ff">for</span> (col = 0; col &lt; 5; col++)
+  {
+    activeSheet.getCell(row, col)
+    .cellPadding(<span style="COLOR: #800000">'0 0 0 10'</span>)
+    .vAlign(GC.Spread.Sheets.VerticalAlign.center);
+   }
+ }
+activeSheet.setValue(0, 0, <span style="COLOR: #800000">'Company Name'</span>, colHeader);
+activeSheet.setValue(0, 1, <span style="COLOR: #800000">'City'</span>, colHeader);
+activeSheet.setValue(0, 2, <span style="COLOR: #800000">'State'</span>, colHeader);
+activeSheet.setValue(0, 3, <span style="COLOR: #800000">'Phone'</span>, colHeader);
+activeSheet.setValue(0, 4, <span style="COLOR: #800000">'Fax'</span>, colHeader);
+
+activeSheet.setArray(0, 0, [
+[<span style="COLOR: #800000">"Super Mart of the West"</span>, <span style="COLOR: #800000">"Bentonville"</span>, <span style="COLOR: #800000">"Arkansas"</span>, <span style="COLOR: #800000">"(800) 555-2797"</span>, <span style="COLOR: #800000">"(800) 555-2171"</span>],
+[<span style="COLOR: #800000">"Electronics Depot"</span>, <span style="COLOR: #800000">"Atlanta"</span>, <span style="COLOR: #800000">"Georgia"</span>, <span style="COLOR: #800000">"(800) 595-3232"</span>, <span style="COLOR: #800000">"(800) 595-3231"</span>],
+[<span style="COLOR: #800000">"K&amp;S Music"</span>, <span style="COLOR: #800000">"Minneapolis"</span>, <span style="COLOR: #800000">"Minnesota"</span>, <span style="COLOR: #800000">"(612) 304-6073"</span>, <span style="COLOR: #800000">"(612) 304-6074"</span>],
+[<span style="COLOR: #800000">"Tom's Club"</span>, <span style="COLOR: #800000">"Issaquah"</span>, <span style="COLOR: #800000">"Washington"</span>, <span style="COLOR: #800000">"(800) 955-2292"</span>, <span style="COLOR: #800000">"(800) 955-2293"</span>],
+[<span style="COLOR: #800000">"E-Mart"</span>, <span style="COLOR: #800000">"Hoffman Estates"</span>, <span style="COLOR: #800000">"Illinois"</span>, <span style="COLOR: #800000">"(847) 286-2500"</span>, <span style="COLOR: #800000">"(847) 286-2501"</span>],
+[<span style="COLOR: #800000">"Walters"</span>, <span style="COLOR: #800000">"Deerfield"</span>, <span style="COLOR: #800000">"Illinois"</span>, <span style="COLOR: #800000">"(847) 940-2500"</span>, <span style="COLOR: #800000">"(847) 940-2501"</span>],
+[<span style="COLOR: #800000">"StereoShack"</span>, <span style="COLOR: #800000">"Fort Worth"</span>, <span style="COLOR: #800000">"Texas"</span>, <span style="COLOR: #800000">"(817) 820-0741"</span>, <span style="COLOR: #800000">"(817) 820-0742"</span>],
+[<span style="COLOR: #800000">"Circuit Town"</span>, <span style="COLOR: #800000">"Oak Brook"</span>, <span style="COLOR: #800000">"Illinois"</span>, <span style="COLOR: #800000">"(800) 955-2929"</span>, <span style="COLOR: #800000">"(800) 955-9392"</span>],
+[<span style="COLOR: #800000">"Premier Buy"</span>, <span style="COLOR: #800000">"Richfield"</span>, <span style="COLOR: #800000">"Minnesota"</span>, <span style="COLOR: #800000">"(612) 291-1000"</span>, <span style="COLOR: #800000">"(612) 291-2001"</span>],
+[<span style="COLOR: #800000">"ElectrixMax"</span>, <span style="COLOR: #800000">"Naperville"</span>, <span style="COLOR: #800000">"Illinois"</span>, <span style="COLOR: #800000">"(630) 438-7800"</span>, <span style="COLOR: #800000">"(630) 438-7801"</span>],
+[<span style="COLOR: #800000">"Video Emporium"</span>, <span style="COLOR: #800000">"Dallas"</span>, <span style="COLOR: #800000">"Texas"</span>, <span style="COLOR: #800000">"(214) 854-3000"</span>, <span style="COLOR: #800000">"(214) 854-3001"</span>],
+[<span style="COLOR: #800000">"Screen Shop"</span>, <span style="COLOR: #800000">"Mooresville"</span>, <span style="COLOR: #800000">"North Carolina"</span>, <span style="COLOR: #800000">"(800) 445-6937"</span>, <span style="COLOR: #800000">"(800) 445-6938"</span>]
+]);
+
+spread.resumePaint();
+});
+&lt;<span style="COLOR: #800000">/script&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+﻿/* This StyleSheet contains custom styles for this project */
+body{
+  font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#i-body-content {
+  padding: 0 3rem;
+}
+
+@media screen and (max-width: 1068px) {
+  body {
+    font-size: 17px;
+    line-height: 1.52947;
+    font-weight: 400;
+    letter-spacing: -0.021em;
+    color: #333333;
+    font-style: normal;
+  }
+
+  img {
+    height: auto;
+  }
+
+  pre, code, .code, .i-code {
+    font-size: .75rem;
+  }
+
+  ol, ul {
+    padding-inline-start: 1.25rem;
+    padding-inline-end: 0;
+  }
+
+  .i-body-content table {
+    font-size: .75rem;
+  }
+
+  #i-header-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  #i-breadcrumbs-outer-container {
+    display: none;
+  }
+
+  #i-toc-outer-container,
+  #i-dynamic-toc-container {
+    display: block !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  #i-toc-outer-container {
+    top: 0;
+    position: sticky;
+    z-index: 1;
+  }
+
+  #i-toc-mobile-presenter {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    top: -40px;
+    height: 32px;
+    font-size: 0.875em;
+    bottom: auto;
+    width: 100%;
+    box-shadow: 0 0 1px 0 rgba(95, 95, 95, 0.35);
+    transition: top 0.5s cubic-bezier(0.28, 0.11, 0.32, 1) 0.4s,
+      visibility 0s linear 1s;
+    color: black;
+    background: #eee;
+    visibility: hidden;
+    padding: 1rem 0.5rem 1rem 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  #i-toc-mobile-presenter.visible {
+    visibility: visible;
+    top: 0;
+    transition-delay: 0.2s, 0s;
+  }
+
+  #i-toc-mobile-presenter .label {
+    flex: 1 1 auto;
+  }
+
+  #i-toc-container {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 32px;
+    margin: 0;
+    box-shadow: 0 0 1px 0 rgba(95, 95, 95, 0.35);
+  }
+
+  #i-toc-container.visible {
+    display: block;
+  }
+
+  #i-toc-content {
+    position: static;
+    padding: 0;
+    overflow: auto;
+    width: 100%;
+  }
+
+  #i-actions-content,
+  #i-dynamic-toc-container,
+  #i-toc-outer-container {
+    display: none;
+  }
+
+  #i-toc-outer-container ins.i-spacer.i-expandorcollapse {
+    display: block;
+    float: right;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    background-position: center center;
+    fill: currentColor;
+  }
+
+  #i-toc-outer-container ins.i-spacer {
+    display: none;
+  }
+
+  #i-toc-outer-container ins.i-expand {
+    background-image: url("../images/collapse.png");
+    background-image: url("../images/collapse-dark.png");
+  }
+
+  #i-toc-outer-container ins.i-collapse {
+    background-image: url("../images/expand.png");
+    background-image: url("../images/expand-dark.png");
+  }
+
+  ul#i-dt-root,
+  ul#i-dt-root ul {
+    background-color: #4f4f4f;
+  }
+
+  ul#i-dt-root li {
+    min-height: 22px;
+    line-height: 22px;
+    margin-top: 0;
+  }
+
+  ul#i-dt-root li.i-selected {
+    margin-top: 0;
+    background: inherit !important;
+  }
+
+  ul#i-dt-root li > ins.i-spacer.i-expandorcollapse {
+    margin-right: 6px;
+  }
+
+  ul#i-dt-root li.i-selected > a {
+    color: #ffffff !important;
+    pointer-events: none;
+  }
+
+  ul#i-dt-root a {
+    color: #cccccc !important;
+    margin-right: 46px;
+    margin-left: 22px;
+    padding: 6px 0;
+	font-size: .9375rem;
+  }
+
+  .i-page-title {
+    margin-top: 48px;
+    word-break: break-word;
+    font-size: 2rem;
+  }
+
+  #i-body-content {
+    padding: 0;
+  }
+
+  #i-body-content .i-in-this-topic-container {
+    padding-left: 0;
+    margin-bottom: 2.35294rem;
+    color: #666666;
+    font-size: 0.94118rem;
+    border-bottom: 1px solid #d6d6d6;
+  }
+
+  #i-body-content .i-in-this-topic-container ul.i-in-this-topic-root {
+    margin-top: 0.5rem;
+  }
+
+  #i-body-content .i-in-this-topic-container {
+    display: block;
+  }
+
+  #i-body-content .i-in-this-topic-container ul.i-in-this-topic li > a {
+    border-left: none;
+    padding: 0;
+  }
+
+  .i-content-width-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 692px;
+  }
+
+  .i-content-width-container.i-header-content {
+    width: inherit;
+    margin: inherit;
+  }
+
+  #i-header-container .i-header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  #i-header-container #i-header-content .i-project-title {
+    padding-left: 42px;
+    padding-top: 0;
+    height: auto;
+    font-size: 1.125rem;
+    line-height: 1.125;
+    background-position: 0 center;
+    flex: 1 1 auto;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  #i-header-container #i-header-content ul {
+    position: static;
+    margin: 0;
+  }
+
+  #i-header-container #i-header-content #i-index-button {
+    margin-right: 0;
+    min-width: 36px;
+  }
+
+  #i-body-content {
+    margin: 0;
+  }
+
+  #i-body-content .i-footer-content ul.social {
+    top: 90px;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .i-content-width-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 87.5%;
+  }
+
+  #i-breadcrumbs-outer-container {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.45em;
+    color: #333333;
+    padding: 0;
+  }
+
+  #i-body-content .i-footer-content {
+    margin: 0;
+  }
+
+  #i-body-content .i-footer-content ul.social {
+    font-size: 11px;
+    line-height: 1.333333;
+    font-weight: 400;
+    color: #888888;
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+  }
+
+  #i-body-content .i-footer-content ul.social {
+    position: static;
+    margin: 2rem 0 0;
+  }
+
+  #i-body-content .i-footer-content ul.social li a {
+    margin-right: 5px;
+  }
+}
+
+
+/* RaynorChen @ May. 26th, 2020 PROJECT_SPECIFIC_CSS
+
+I Extracted the public items from C1.css, AR.css, DOC.css, SP.css and WJ.css, 
+and pasted them here. 
+
+For the project-specific part, please refer to project-custom.css, and place the project-specific segment in 
+Help Studio "Custom Head Content" part */
+body{
+  font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#i-header-container .i-header-content {
+  position: relative;
+}
+#i-header-container .i-header-content .i-project-title {
+  color: #fff;
+  height: 35px;
+  background-position: 0px 5px;
+  padding-left: 40px;
+  padding-top: 8px;
+  font-size: 110%;
+  font-weight: 400;
+  background-repeat: no-repeat;
+}
+#i-header-container .i-header-content ul {
+  list-style: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 250px;
+}
+#i-header-container .i-header-content ul li {
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 90%;
+}
+#i-header-container .i-header-content ul li a {
+  color: #fff;
+  text-transform: uppercase;
+}
+#i-header-container .i-header-content ul li:after {
+  content: "  |";
+}
+#i-header-container .i-header-content ul li:last-child:after {
+  content: "";
+}
+
+@media only screen and (max-width: 1024px) {
+  #i-header-container .i-header-content ul {
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 110px;
+  }
+  }
+
+@media only screen and (max-width: 820px) {
+	
+	#i-header-container .i-header-content ul {
+		display: none;
+}
+}
+.i-footer-content {
+  padding: 5px 0px 40px;
+  position: relative;
+}
+.i-footer-content ul.social {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin-right: 20px;
+}
+.i-footer-content ul.social li {
+  list-style: none;
+  display: inline-block;
+}
+.i-footer-content ul.social li a {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  padding-right: 4px;
+  margin-right: 2px;
+  outline: none;
+  text-decoration: none;
+}
+.i-footer-content ul.social li:first-child a {
+  background: #ffffff url("../images/facebook.png") no-repeat;
+}
+.i-footer-content ul.social li:nth-child(2) a {
+  background: #ffffff url("../images/twitter.png") no-repeat;
+}
+.i-footer-content ul.social li:nth-child(3) a {
+  background: #ffffff url("../images/linkedin.png") no-repeat;
+}
+
+@media print {
+  #i-header-container {
+    display: none;
+  }
+}
+ul#i-dt-root li.i-selected{
+  background-repeat: repeat-y;
+  background-position: right;
+}
+
+ul#i-dt-root li.i-selected > a {
+    color: #212121;
+}
+
+/* Raynor Chen @ May. 26th, 2020 PROJECT_SPECIFIC_CSS End*/

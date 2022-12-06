@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Hidden Rows or Columns in Chart | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n611","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="85349434-ff22-47c1-8cb9-a598e4c04ef8"/>
+    <meta name="Microsoft.Help.TocParent" content="bdba97c4-037f-4cd7-ae56-830374286ef0"/>
+    <meta name="Microsoft.Help.TocOrder" content="10"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / Hidden Rows or Columns in Chart</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Hidden Rows or Columns in Chart</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpeadJS allows users to control whether to show the data of hidden rows or columns in a chart or not.&nbsp;The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Chart~ignoreHidden.html">ignoreHidden</a> function, when set to true,&nbsp;does not display the data of hidden row or column in the chart. The same can also&nbsp;be achieved through SpreadJS designer by&nbsp;checking the ‘Show data in&nbsp;hidden rows and columns’ checkbox.</p>
+
+<p>A&nbsp;row or column is considered hidden, if:</p>
+
+<ul>
+    <li>Its&nbsp;width is resized to 0</li>
+
+    <li>It&nbsp;is hidden</li>
+
+    <li>It&nbsp;is filtered out</li>
+
+    <li>Grouping is applied on it&nbsp;</li>
+</ul>
+
+<p><strong>Example</strong> - The following image depicts a chart&nbsp;that displays the daily Sales Record of different company's smartphones. You may notice that the 3rd row and C and D&nbsp;columns are hidden in the spreadsheet.&nbsp;The visible&nbsp;data is for&nbsp;4 dates of&nbsp;2&nbsp;companies (Apple and LG)&nbsp;whereas the chart depicts data for 6 dates of&nbsp;3 companies (Samsung, as well). To display the data of hidden row and columns in chart, set the value of&nbsp;<strong>ignoreHidden</strong> function as false and your chart will be displayed as shown in the below screenshot.</p>
+
+<p>&nbsp;</p>
+
+<p><img border="0" alt="Displaying the data of hidden rows in the chart." src="images/HiddenRows.PNG" /></p>
+
+<p>&nbsp;</p>
+
+<h4>Using Code</h4>
+
+<p>Refer to the following example code to display the data of&nbsp;hidden rows or columns in the chart.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// create array
+</span><span style="COLOR: #0000ff">var</span> dataArray = [
+    [<span style="COLOR: #800000">""</span>, <span style="COLOR: #800000">'2019/11/1'</span>, <span style="COLOR: #800000">'2019/12/1'</span>, <span style="COLOR: #800000">'2019/13/1'</span>, <span style="COLOR: #800000">'2019/14/1'</span>, <span style="COLOR: #800000">'2019/15/1'</span>, <span style="COLOR: #800000">'2019/16/1'</span>],
+    [<span style="COLOR: #800000">"Apple"</span>, 5782, 6263, 7766, 5389, 9830, 6260],
+    [<span style="COLOR: #800000">"Samsung"</span>, 4284, 4130, 3951, 3760, 3631, 3504],
+    [<span style="COLOR: #800000">"LG"</span>, 2814, 2491, 2455, 1652, 3073, 2.834]
+];
+<span style="COLOR: #008000">// set columns width
+</span>activeSheet.setColumnWidth(0, 90.0, GC.Spread.Sheets.SheetArea.viewport);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 1; i &lt; 8; i++) {
+    activeSheet.setColumnWidth(i, 80.0, GC.Spread.Sheets.SheetArea.viewport);
+}
+<span style="COLOR: #008000">// set array
+</span>activeSheet.setArray(0, 0, dataArray);
+
+<span style="COLOR: #008000">// hide Row[1] &amp; Column[3], Column[4]
+</span>activeSheet.setRowVisible(2, <span style="COLOR: #0000ff">false</span>, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setColumnVisible(2, <span style="COLOR: #0000ff">false</span>, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setColumnVisible(3, <span style="COLOR: #0000ff">false</span>, GC.Spread.Sheets.SheetArea.viewport);
+
+<span style="COLOR: #008000">// add chart
+</span><span style="COLOR: #0000ff">var</span> chart = activeSheet.charts.add(<span style="COLOR: #800000">'LineChart'</span>, GC.Spread.Sheets.Charts.ChartType.line, 2, 85, 400, 400, <span style="COLOR: #800000">'A1:G4'</span>);
+<span style="COLOR: #008000">// set chart title
+</span>chart.title({ text: <span style="COLOR: #800000">"Sales Record"</span> });
+
+<span style="COLOR: #008000">// set ignoreHidden method to false in order to display the hidden rows and columns in the chart
+</span>chart.ignoreHidden(<span style="COLOR: #0000ff">false</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,745 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>axes Method | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n8956","initialNodeContainer":"c315","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.Charts.Chart~axes"/>
+    <meta name="Description" content="Gets or sets the chart axes of the chart." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets.Charts.Chart_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets.Charts_namespace.html">GC.Spread.Sheets.Charts Namespace</a>
+ / <a href="SpreadJS~GC.Spread.Sheets.Charts.Chart.html">Chart type</a>
+ / axes Method</div></div>
+
+    
+<div id="valuePopupContent" class="i-popup-content">
+The chart axes of the chart.
+</div>
+<div id="value.primaryCategoryPopupContent" class="i-popup-content">
+The primary category axis of the chart.
+</div>
+<div id="value.primaryValuePopupContent" class="i-popup-content">
+The primary value axis of the chart.
+</div>
+<div id="value.secondaryCategoryPopupContent" class="i-popup-content">
+The secondary category axis of the chart.
+</div>
+<div id="value.secondaryValuePopupContent" class="i-popup-content">
+The secondary value axis of the chart. The primaryCategory, primaryValue, secondaryCategory and secondaryValue have same type.
+</div>
+<div id="value.primaryCategory.visiblePopupContent" class="i-popup-content">
+Indicates if the specified axis should be shown.
+</div>
+<div id="value.primaryCategory.tickLabelPositionPopupContent" class="i-popup-content">
+The tick label position.
+</div>
+<div id="value.primaryCategory.crossPointPopupContent" class="i-popup-content">
+Indicates the axis crosses value.
+</div>
+<div id="value.primaryCategory.lineStylePopupContent" class="i-popup-content">
+The line style of the primary category axis.
+</div>
+<div id="value.primaryCategory.lineStyle.colorPopupContent" class="i-popup-content">
+The line color of the primary category axis.
+</div>
+<div id="value.primaryCategory.lineStyle.transparencyPopupContent" class="i-popup-content">
+The transparency of the chart primary category axis line color.
+</div>
+<div id="value.primaryCategory.lineStyle.widthPopupContent" class="i-popup-content">
+The line width of the primary category axis.
+</div>
+<div id="value.primaryCategory.stylePopupContent" class="i-popup-content">
+The style of the primary category axis.
+</div>
+<div id="value.primaryCategory.style.colorPopupContent" class="i-popup-content">
+The color of the primary category axis.
+</div>
+<div id="value.primaryCategory.style.transparencyPopupContent" class="i-popup-content">
+The transparency of the chart primary category axis color.
+</div>
+<div id="value.primaryCategory.style.fontFamilyPopupContent" class="i-popup-content">
+The font family of the primary category axis.
+</div>
+<div id="value.primaryCategory.style.fontSizePopupContent" class="i-popup-content">
+The font size of the primary category axis, its unit is pixel.
+</div>
+<div id="value.primaryCategory.majorTickPositionPopupContent" class="i-popup-content">
+The major tick position of the primary category axis.
+</div>
+<div id="value.primaryCategory.minorTickPositionPopupContent" class="i-popup-content">
+The minor tick position of the primary category axis.
+</div>
+<div id="value.primaryCategory.baseUnitPopupContent" class="i-popup-content">
+The base unit scale of the date primary category axis.
+</div>
+<div id="value.primaryCategory.majorUnitPopupContent" class="i-popup-content">
+The major unit of the primary category axis.
+</div>
+<div id="value.primaryCategory.majorUnitScalePopupContent" class="i-popup-content">
+The major unit scale of the date primary category axis.
+</div>
+<div id="value.primaryCategory.minorUnitPopupContent" class="i-popup-content">
+The minor unit of the primary category axis.
+</div>
+<div id="value.primaryCategory.minorUnitScalePopupContent" class="i-popup-content">
+The minor unit scale of the date primary category axis.
+</div>
+<div id="value.primaryCategory.minPopupContent" class="i-popup-content">
+The minimum value of the related axis. (for value / date axis only)
+</div>
+<div id="value.primaryCategory.maxPopupContent" class="i-popup-content">
+The maximum value of the related axis. (for value / date axis only)
+</div>
+<div id="value.primaryCategory.formatPopupContent" class="i-popup-content">
+The format of the primary category axis.
+</div>
+<div id="value.primaryCategory.titlePopupContent" class="i-popup-content">
+The title of the primary category axis.
+</div>
+<div id="value.primaryCategory.title.textPopupContent" class="i-popup-content">
+The title text of the primary category axis.
+</div>
+<div id="value.primaryCategory.title.colorPopupContent" class="i-popup-content">
+The title color of the primary category axis.
+</div>
+<div id="value.primaryCategory.title.transparencyPopupContent" class="i-popup-content">
+The transparency of the primary category axis color.
+</div>
+<div id="value.primaryCategory.title.fontFamilyPopupContent" class="i-popup-content">
+The title font family of the primary category axis.
+</div>
+<div id="value.primaryCategory.title.fontSizePopupContent" class="i-popup-content">
+The title font size of the primary category axis, its unit is pixel.
+</div>
+<div id="value.primaryCategory.majorGridLinePopupContent" class="i-popup-content">
+The major grid line of the primary category axis.
+</div>
+<div id="value.primaryCategory.minorGridLinePopupContent" class="i-popup-content">
+The minor grid line of the primary category axis.
+</div>
+<div id="value.primaryCategory.labelAnglePopupContent" class="i-popup-content">
+The label angle of the primary category axis.
+</div>
+<div id="value.primaryCategory.scalingPopupContent" class="i-popup-content">
+The scaling informations of the primary category axis.
+</div>
+<div id="value.primaryCategory.scaling.logBasePopupContent" class="i-popup-content">
+The logarithmic scaling base value of the primary category axis.
+</div>
+<div id="value.primaryCategory.scaling.orientationPopupContent" class="i-popup-content">
+Indicates the specified axis order.
+</div>
+<div id="value.primaryCategory.displayUnitPopupContent" class="i-popup-content">
+The display unit informations of the primary category axis.
+</div>
+<div id="value.primaryCategory.displayUnit.unitPopupContent" class="i-popup-content">
+The built-in display unit string or custom number display unit of the primary category axis.
+</div>
+<div id="value.primaryCategory.displayUnit.visiblePopupContent" class="i-popup-content">
+The display unit label visible of the primary category axis.
+</div>
+<div id="value.primaryCategory.displayUnit.stylePopupContent" class="i-popup-content">
+The display unit label style of the primary category axis.
+</div>
+<div id="value.primaryCategory.displayUnit.style.colorPopupContent" class="i-popup-content">
+The display unit label text color of the primary category axis.
+</div>
+<div id="value.primaryCategory.displayUnit.style.transparencyPopupContent" class="i-popup-content">
+The display unit label text transparency of the primary category axis color.
+</div>
+<div id="value.primaryCategory.displayUnit.style.fontFamilyPopupContent" class="i-popup-content">
+The display unit label text font family of the primary category axis.
+</div>
+<div id="value.primaryCategory.displayUnit.style.fontSizePopupContent" class="i-popup-content">
+The display unit label text font size of the primary category axis, its unit is pixel.
+</div>
+<div id="value.primaryCategory.majorGridLine.colorPopupContent" class="i-popup-content">
+The color of the major grid line.
+</div>
+<div id="value.primaryCategory.majorGridLine.visiblePopupContent" class="i-popup-content">
+The visibility of the major grid line.
+</div>
+<div id="value.primaryCategory.majorGridLine.widthPopupContent" class="i-popup-content">
+The width of the major grid line.
+</div>
+<div id="value.primaryCategory.majorGridLine.transparencyPopupContent" class="i-popup-content">
+The transparency of the major grid line color.
+</div>
+
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">axes Method</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">Gets or sets the chart axes of the chart.</div>
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new <a href="SpreadJS~GC.Spread.Sheets.Charts.Chart.html">GC.Spread.Sheets.Charts.Chart</a>(sheet, name, chartType, x, y, width, height, dataRange, dataOrientation);
+var returnValue; // Type: any
+returnValue = instance.axes(value,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryValue,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.secondaryCategory,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.secondaryValue,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.visible,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.tickLabelPosition,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.crossPoint,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.lineStyle,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.lineStyle.color,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.lineStyle.transparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.lineStyle.width,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.style,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.style.color,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.style.transparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.style.fontFamily,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.style.fontSize,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.majorTickPosition,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.minorTickPosition,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.baseUnit,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.majorUnit,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.majorUnitScale,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.minorUnit,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.minorUnitScale,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.min,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.max,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.format,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.title,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.title.text,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.title.color,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.title.transparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.title.fontFamily,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.title.fontSize,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.majorGridLine,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.minorGridLine,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.labelAngle,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.scaling,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.scaling.logBase,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.scaling.orientation,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.displayUnit,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.displayUnit.unit,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.displayUnit.visible,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.displayUnit.style,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.displayUnit.style.color,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.displayUnit.style.transparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.displayUnit.style.fontFamily,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.displayUnit.style.fontSize,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.majorGridLine.color,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.majorGridLine.visible,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.majorGridLine.width,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value.primaryCategory.majorGridLine.transparency);</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function axes( 
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="valuePopupLink" data-popup-contentsource="#valuePopupContent" data-popup-showevent="click mouseenter">value</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategoryPopupLink" data-popup-contentsource="#value.primaryCategoryPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryValuePopupLink" data-popup-contentsource="#value.primaryValuePopupContent" data-popup-showevent="click mouseenter">value.primaryValue</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.secondaryCategoryPopupLink" data-popup-contentsource="#value.secondaryCategoryPopupContent" data-popup-showevent="click mouseenter">value.secondaryCategory</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.secondaryValuePopupLink" data-popup-contentsource="#value.secondaryValuePopupContent" data-popup-showevent="click mouseenter">value.secondaryValue</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.visiblePopupLink" data-popup-contentsource="#value.primaryCategory.visiblePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.visible</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.tickLabelPositionPopupLink" data-popup-contentsource="#value.primaryCategory.tickLabelPositionPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.tickLabelPosition</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.TickLabelPosition.html">TickLabelPosition</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.crossPointPopupLink" data-popup-contentsource="#value.primaryCategory.crossPointPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.crossPoint</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.lineStylePopupLink" data-popup-contentsource="#value.primaryCategory.lineStylePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.lineStyle</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.lineStyle.colorPopupLink" data-popup-contentsource="#value.primaryCategory.lineStyle.colorPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.lineStyle.color</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.lineStyle.transparencyPopupLink" data-popup-contentsource="#value.primaryCategory.lineStyle.transparencyPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.lineStyle.transparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.lineStyle.widthPopupLink" data-popup-contentsource="#value.primaryCategory.lineStyle.widthPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.lineStyle.width</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.stylePopupLink" data-popup-contentsource="#value.primaryCategory.stylePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.style</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.style.colorPopupLink" data-popup-contentsource="#value.primaryCategory.style.colorPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.style.color</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.style.transparencyPopupLink" data-popup-contentsource="#value.primaryCategory.style.transparencyPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.style.transparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.style.fontFamilyPopupLink" data-popup-contentsource="#value.primaryCategory.style.fontFamilyPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.style.fontFamily</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.style.fontSizePopupLink" data-popup-contentsource="#value.primaryCategory.style.fontSizePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.style.fontSize</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.majorTickPositionPopupLink" data-popup-contentsource="#value.primaryCategory.majorTickPositionPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.majorTickPosition</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.TickMark.html">TickMark</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.minorTickPositionPopupLink" data-popup-contentsource="#value.primaryCategory.minorTickPositionPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.minorTickPosition</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.TickMark.html">TickMark</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.baseUnitPopupLink" data-popup-contentsource="#value.primaryCategory.baseUnitPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.baseUnit</a></i> : GC.Spread.Sheets.Charts.TimeUnit,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.majorUnitPopupLink" data-popup-contentsource="#value.primaryCategory.majorUnitPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.majorUnit</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.majorUnitScalePopupLink" data-popup-contentsource="#value.primaryCategory.majorUnitScalePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.majorUnitScale</a></i> : GC.Spread.Sheets.Charts.TimeUnit,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.minorUnitPopupLink" data-popup-contentsource="#value.primaryCategory.minorUnitPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.minorUnit</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.minorUnitScalePopupLink" data-popup-contentsource="#value.primaryCategory.minorUnitScalePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.minorUnitScale</a></i> : GC.Spread.Sheets.Charts.TimeUnit,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.minPopupLink" data-popup-contentsource="#value.primaryCategory.minPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.min</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.maxPopupLink" data-popup-contentsource="#value.primaryCategory.maxPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.max</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.formatPopupLink" data-popup-contentsource="#value.primaryCategory.formatPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.format</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.titlePopupLink" data-popup-contentsource="#value.primaryCategory.titlePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.title</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.title.textPopupLink" data-popup-contentsource="#value.primaryCategory.title.textPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.title.text</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.title.colorPopupLink" data-popup-contentsource="#value.primaryCategory.title.colorPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.title.color</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.title.transparencyPopupLink" data-popup-contentsource="#value.primaryCategory.title.transparencyPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.title.transparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.title.fontFamilyPopupLink" data-popup-contentsource="#value.primaryCategory.title.fontFamilyPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.title.fontFamily</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.title.fontSizePopupLink" data-popup-contentsource="#value.primaryCategory.title.fontSizePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.title.fontSize</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.majorGridLinePopupLink" data-popup-contentsource="#value.primaryCategory.majorGridLinePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.majorGridLine</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.minorGridLinePopupLink" data-popup-contentsource="#value.primaryCategory.minorGridLinePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.minorGridLine</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.labelAnglePopupLink" data-popup-contentsource="#value.primaryCategory.labelAnglePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.labelAngle</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.scalingPopupLink" data-popup-contentsource="#value.primaryCategory.scalingPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.scaling</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.scaling.logBasePopupLink" data-popup-contentsource="#value.primaryCategory.scaling.logBasePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.scaling.logBase</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.scaling.orientationPopupLink" data-popup-contentsource="#value.primaryCategory.scaling.orientationPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.scaling.orientation</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.displayUnitPopupLink" data-popup-contentsource="#value.primaryCategory.displayUnitPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.displayUnit</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.displayUnit.unitPopupLink" data-popup-contentsource="#value.primaryCategory.displayUnit.unitPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.displayUnit.unit</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.displayUnit.visiblePopupLink" data-popup-contentsource="#value.primaryCategory.displayUnit.visiblePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.displayUnit.visible</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.displayUnit.stylePopupLink" data-popup-contentsource="#value.primaryCategory.displayUnit.stylePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.displayUnit.style</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.displayUnit.style.colorPopupLink" data-popup-contentsource="#value.primaryCategory.displayUnit.style.colorPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.displayUnit.style.color</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.displayUnit.style.transparencyPopupLink" data-popup-contentsource="#value.primaryCategory.displayUnit.style.transparencyPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.displayUnit.style.transparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.displayUnit.style.fontFamilyPopupLink" data-popup-contentsource="#value.primaryCategory.displayUnit.style.fontFamilyPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.displayUnit.style.fontFamily</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.displayUnit.style.fontSizePopupLink" data-popup-contentsource="#value.primaryCategory.displayUnit.style.fontSizePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.displayUnit.style.fontSize</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.majorGridLine.colorPopupLink" data-popup-contentsource="#value.primaryCategory.majorGridLine.colorPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.majorGridLine.color</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.majorGridLine.visiblePopupLink" data-popup-contentsource="#value.primaryCategory.majorGridLine.visiblePopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.majorGridLine.visible</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.majorGridLine.widthPopupLink" data-popup-contentsource="#value.primaryCategory.majorGridLine.widthPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.majorGridLine.width</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="value.primaryCategory.majorGridLine.transparencyPopupLink" data-popup-contentsource="#value.primaryCategory.majorGridLine.transparencyPopupContent" data-popup-showevent="click mouseenter">value.primaryCategory.majorGridLine.transparency</a></i> : number
+) : any;</pre>
+      </div>
+    
+
+      </div>
+    
+            <h4 class=dxh4>Parameters</h4><dl><dt><I>value</I></dt>
+<dd>The chart axes of the chart.</dd><dt><I>value.primaryCategory</I></dt>
+<dd>The primary category axis of the chart.</dd><dt><I>value.primaryValue</I></dt>
+<dd>The primary value axis of the chart.</dd><dt><I>value.secondaryCategory</I></dt>
+<dd>The secondary category axis of the chart.</dd><dt><I>value.secondaryValue</I></dt>
+<dd>The secondary value axis of the chart. The primaryCategory, primaryValue, secondaryCategory and secondaryValue have same type.</dd><dt><I>value.primaryCategory.visible</I></dt>
+<dd>Indicates if the specified axis should be shown.</dd><dt><I>value.primaryCategory.tickLabelPosition</I></dt>
+<dd>The tick label position.</dd><dt><I>value.primaryCategory.crossPoint</I></dt>
+<dd>Indicates the axis crosses value.</dd><dt><I>value.primaryCategory.lineStyle</I></dt>
+<dd>The line style of the primary category axis.</dd><dt><I>value.primaryCategory.lineStyle.color</I></dt>
+<dd>The line color of the primary category axis.</dd><dt><I>value.primaryCategory.lineStyle.transparency</I></dt>
+<dd>The transparency of the chart primary category axis line color.</dd><dt><I>value.primaryCategory.lineStyle.width</I></dt>
+<dd>The line width of the primary category axis.</dd><dt><I>value.primaryCategory.style</I></dt>
+<dd>The style of the primary category axis.</dd><dt><I>value.primaryCategory.style.color</I></dt>
+<dd>The color of the primary category axis.</dd><dt><I>value.primaryCategory.style.transparency</I></dt>
+<dd>The transparency of the chart primary category axis color.</dd><dt><I>value.primaryCategory.style.fontFamily</I></dt>
+<dd>The font family of the primary category axis.</dd><dt><I>value.primaryCategory.style.fontSize</I></dt>
+<dd>The font size of the primary category axis, its unit is pixel.</dd><dt><I>value.primaryCategory.majorTickPosition</I></dt>
+<dd>The major tick position of the primary category axis.</dd><dt><I>value.primaryCategory.minorTickPosition</I></dt>
+<dd>The minor tick position of the primary category axis.</dd><dt><I>value.primaryCategory.baseUnit</I></dt>
+<dd>The base unit scale of the date primary category axis.</dd><dt><I>value.primaryCategory.majorUnit</I></dt>
+<dd>The major unit of the primary category axis.</dd><dt><I>value.primaryCategory.majorUnitScale</I></dt>
+<dd>The major unit scale of the date primary category axis.</dd><dt><I>value.primaryCategory.minorUnit</I></dt>
+<dd>The minor unit of the primary category axis.</dd><dt><I>value.primaryCategory.minorUnitScale</I></dt>
+<dd>The minor unit scale of the date primary category axis.</dd><dt><I>value.primaryCategory.min</I></dt>
+<dd>The minimum value of the related axis. (for value / date axis only)</dd><dt><I>value.primaryCategory.max</I></dt>
+<dd>The maximum value of the related axis. (for value / date axis only)</dd><dt><I>value.primaryCategory.format</I></dt>
+<dd>The format of the primary category axis.</dd><dt><I>value.primaryCategory.title</I></dt>
+<dd>The title of the primary category axis.</dd><dt><I>value.primaryCategory.title.text</I></dt>
+<dd>The title text of the primary category axis.</dd><dt><I>value.primaryCategory.title.color</I></dt>
+<dd>The title color of the primary category axis.</dd><dt><I>value.primaryCategory.title.transparency</I></dt>
+<dd>The transparency of the primary category axis color.</dd><dt><I>value.primaryCategory.title.fontFamily</I></dt>
+<dd>The title font family of the primary category axis.</dd><dt><I>value.primaryCategory.title.fontSize</I></dt>
+<dd>The title font size of the primary category axis, its unit is pixel.</dd><dt><I>value.primaryCategory.majorGridLine</I></dt>
+<dd>The major grid line of the primary category axis.</dd><dt><I>value.primaryCategory.minorGridLine</I></dt>
+<dd>The minor grid line of the primary category axis.</dd><dt><I>value.primaryCategory.labelAngle</I></dt>
+<dd>The label angle of the primary category axis.</dd><dt><I>value.primaryCategory.scaling</I></dt>
+<dd>The scaling informations of the primary category axis.</dd><dt><I>value.primaryCategory.scaling.logBase</I></dt>
+<dd>The logarithmic scaling base value of the primary category axis.</dd><dt><I>value.primaryCategory.scaling.orientation</I></dt>
+<dd>Indicates the specified axis order.</dd><dt><I>value.primaryCategory.displayUnit</I></dt>
+<dd>The display unit informations of the primary category axis.</dd><dt><I>value.primaryCategory.displayUnit.unit</I></dt>
+<dd>The built-in display unit string or custom number display unit of the primary category axis.</dd><dt><I>value.primaryCategory.displayUnit.visible</I></dt>
+<dd>The display unit label visible of the primary category axis.</dd><dt><I>value.primaryCategory.displayUnit.style</I></dt>
+<dd>The display unit label style of the primary category axis.</dd><dt><I>value.primaryCategory.displayUnit.style.color</I></dt>
+<dd>The display unit label text color of the primary category axis.</dd><dt><I>value.primaryCategory.displayUnit.style.transparency</I></dt>
+<dd>The display unit label text transparency of the primary category axis color.</dd><dt><I>value.primaryCategory.displayUnit.style.fontFamily</I></dt>
+<dd>The display unit label text font family of the primary category axis.</dd><dt><I>value.primaryCategory.displayUnit.style.fontSize</I></dt>
+<dd>The display unit label text font size of the primary category axis, its unit is pixel.</dd><dt><I>value.primaryCategory.majorGridLine.color</I></dt>
+<dd>The color of the major grid line.</dd><dt><I>value.primaryCategory.majorGridLine.visible</I></dt>
+<dd>The visibility of the major grid line.</dd><dt><I>value.primaryCategory.majorGridLine.width</I></dt>
+<dd>The width of the major grid line.</dd><dt><I>value.primaryCategory.majorGridLine.transparency</I></dt>
+<dd>The transparency of the major grid line color.</dd></dl>
+
+            <h4 class=dxh4>Return Value</h4><div class="i-returns-content">If no value is set, returns the chart axes of the chart; otherwise, returns the chart. The majorGridLine and minorGridLine have same type.If no value is set, returns the chart axes of the chart; otherwise, returns the chart.</div></div>
+            
+
+            <a name="exampleBookmark"></a>
+            
+            
+            
+            
+            <div class="i-section-heading" id="i-remarks-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Remarks</span></div><div id="i-remarks-section-content" class="i-section-content"><p>The following table lists all the other parameters that can be used while getting or setting the chart axes.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>Parameter</td>
+
+            <td>Type</td>
+
+            <td>Description</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory</td>
+
+            <td>object</td>
+
+            <td>The primary category axis of the chart.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryValue</td>
+
+            <td>object</td>
+
+            <td>The primary value axis of the chart.</td>
+        </tr>
+
+        <tr>
+            <td>value.secondaryCategory</td>
+
+            <td>object</td>
+
+            <td>The secondary category axis of the chart.The secondary category axis of the chart.</td>
+        </tr>
+
+        <tr>
+            <td>value.secondaryValue</td>
+
+            <td>object</td>
+
+            <td>The secondary value axis of the chart.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.visible</td>
+
+            <td>boolean</td>
+
+            <td>Indicates if the specified axis should be shown.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.tickLabelPosition</td>
+
+            <td></td>
+
+            <td>The tick label position.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.lineStyle</td>
+
+            <td>object</td>
+
+            <td>The line style of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.lineStyle.color</td>
+
+            <td>string</td>
+
+            <td>The line color of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.lineStyle.width</td>
+
+            <td>number</td>
+
+            <td>The line width of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.style</td>
+
+            <td>object</td>
+
+            <td>The style of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.style.color</td>
+
+            <td>string</td>
+
+            <td>The color of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.style.fontFamily</td>
+
+            <td>string</td>
+
+            <td>The font family of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.style.fontSize</td>
+
+            <td>number</td>
+
+            <td>The font size of the primary category axis, its unit is pixel.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.majorTickPosition</td>
+
+            <td>-</td>
+
+            <td>The major tick position of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.minorTickPosition</td>
+
+            <td>-</td>
+
+            <td>The minor tick position of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.min</td>
+
+            <td>number</td>
+
+            <td>The minimum value of the related axis. (for value and date axis only)</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.max</td>
+
+            <td>number</td>
+
+            <td>The maximum value of the related axis. (for value and&nbsp;date axis only)</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.majorUnit</td>
+
+            <td>number</td>
+
+            <td>The major unit of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.minorUnit</td>
+
+            <td>number</td>
+
+            <td>The minor unit of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.format</td>
+
+            <td>string</td>
+
+            <td>The format of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.title</td>
+
+            <td>object</td>
+
+            <td>The title of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.title.text</td>
+
+            <td>string</td>
+
+            <td>The title text of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.title.color</td>
+
+            <td>string</td>
+
+            <td>The title color of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.title.fontFamily</td>
+
+            <td>string</td>
+
+            <td>The title font family of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.title.fontSize</td>
+
+            <td>number</td>
+
+            <td>The title font size of the primary category axis, its unit is pixel.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.majorGridLine</td>
+
+            <td>object</td>
+
+            <td>The major grid line of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.minorGridLine</td>
+
+            <td>object</td>
+
+            <td>The minor grid line of the primary category axis.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.majorGridLine.color</td>
+
+            <td>string</td>
+
+            <td>The color of the major grid line.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.majorGridLine.visible</td>
+
+            <td>boolean</td>
+
+            <td>The visibility of the major grid line.</td>
+        </tr>
+
+        <tr>
+            <td>value.primaryCategory.majorGridLine.width</td>
+
+            <td>number</td>
+
+            <td>The width of the major grid line.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p></p></div>
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets.Charts.Chart.html">Chart type</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

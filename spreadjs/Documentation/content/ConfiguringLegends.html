@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Add legends in the chart to understand the plotted data. Learn how to customize legend format, style, and position using SpreadJS." />
+    
+    <title>Legends | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n554","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Add legends in the chart to understand the plotted data. Learn how to customize legend format, style, and position using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="5a10b995-873e-4873-92e0-84972dc17700"/>
+    <meta name="Microsoft.Help.TocParent" content="0750c4c2-a97b-44a4-b551-b2d5b9e96832"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / <a href="ConfigureChartElements.html">Chart Elements</a>
+ / Legends</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Legends</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows users to configure and customize&nbsp;legends in the charts.</p>
+
+<h3 id="a">What are Legends?</h3>
+
+<p>Legends refer to the labels in a chart that help users in understanding the plotted data. A legend entry in a chart refers to the name of the data&nbsp;category that is plotted in the&nbsp;chart. Each legend entry in a chart possesses a unique color for better data visualization.</p>
+
+<h3 id="b">Usage Scenario</h3>
+
+<p>The default legend settings often fail to clearly communicate about the data in the very first impression. With SpreadJS, you can customize legend position, apply styles and format it as per your specific preferences. Legend customizations help your chart stand out from the rest while giving it an extremely standardized and professional look.</p>
+
+<p><strong>Example</strong> - A basic&nbsp;chart depicting&nbsp;the&nbsp;average monthly rainfall for different geographical regions is shown below.&nbsp;This chart has been formatted in SpreadJS using advanced customization properties for the legends (custom legend border style, custom fonts,&nbsp;custom background color&nbsp;and custom legend position(top right)) to represent data&nbsp;in a clear and effective way.</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Customized legend in a chart" src="images/spreadjsv13images/legend-enhancement.png" /></p>
+
+<h3 id="c">Add Legends to Charts</h3>
+
+<p>The primary goal of adding legends to the chart is to make it easy for the readers to understand the plotted information and analyse data. You can define legends in charts to show descriptions of the data lying the rows and columns of a worksheet and faciliate users in understanding the information plotted in a chart.&nbsp;</p>
+
+<p>For example - In the above chart image, you can see the four legend entries : Tokyo, New York, London and Berlin have been added to represent the region names.</p>
+
+<p>You can control whether to show or hide&nbsp;the legend in the chart by setting the <strong>visible</strong> parameter of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Chart~legend.html">legend()</a> method to true or false. By default, the visible parameter of the legend() method is set to&nbsp;true and the legends are visible in a chart.</p>
+
+<p>The following example code can be used to configure legends in a chart.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Configure Legend
+</span> <span style="COLOR: #0000ff">var</span> legend = chart.legend();
+ legend.visible = <span style="COLOR: #0000ff">true</span>;
+ chart.legend(legend);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3 id="d">Customize Legend Format,&nbsp;Position &amp; Style</h3>
+
+<p>Formatting legends, customizing their position and applying styles not only enhances the aesthetic appearance of the chart but also facilitates users in creating comparatively more powerful chart presentations. The advanced customization options available for chart legends allow users to create aesthetically appealing charts as per their specific business requirements and custom analytical preferences.</p>
+
+<ul>
+    <li><strong>Formatting and Positioning&nbsp;Legends</strong> - When a chart is created in SpreadJS, the legends appear&nbsp;at the bottom of the&nbsp;chart&nbsp;area&nbsp;by default. However, you can change the default&nbsp;position of the legend to display it at five various positions -&nbsp;top, bottom, left, right and top right using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Chart~legend.html" data-auto-update-caption="true"><font color="#0066CC">legend method</font></a>&nbsp;and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.LegendPosition.html" data-auto-update-caption="true"><font color="#0066CC">LegendPosition enumeration</font></a>.&nbsp;<br />
+    <br /></li>
+
+    <li><strong>Modifying Legend Style</strong> - SpreadJS also provides support for customizing the border style and the background color of the legend. This can be done by using the&nbsp;<strong>borderStyle</strong> property and the <strong>backColor</strong> property. Further, users can also customize the font color, font size, and font family of the legends in the chart using the <strong>fontSize</strong>, <strong>fontFamily</strong> and the <strong>color</strong> properties.</li>
+</ul>
+
+<h3 id="e">Using Code</h3>
+
+<p>The example&nbsp;code shared below generates a chart with customized legend format, position and style to depict&nbsp;average monthly rainfall for various regions.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script type=<span style="COLOR: #800000">"text/javascript"</span>&gt;
+<span style="COLOR: #0000ff">var</span> chart_columnClustered, chart_columnStacked, chart_columnStacked100, sheet;
+window.onload = <span style="COLOR: #0000ff">function</span> () {
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+sheet = spread.getActiveSheet();
+sheet.suspendPaint();
+<span style="COLOR: #0000ff">var</span> dataArray =
+[
+[<span style="COLOR: #800000">""</span>, <span style="COLOR: #800000">'Jan'</span>, <span style="COLOR: #800000">'Feb'</span>, <span style="COLOR: #800000">'Mar'</span>, <span style="COLOR: #800000">'Apr'</span>, <span style="COLOR: #800000">'May'</span>, <span style="COLOR: #800000">'Jun'</span>, <span style="COLOR: #800000">'Jul'</span>, <span style="COLOR: #800000">'Aug'</span>, <span style="COLOR: #800000">'Sep'</span>, <span style="COLOR: #800000">'Oct'</span>, <span style="COLOR: #800000">'Nov'</span>, <span style="COLOR: #800000">'Dec'</span>],
+[<span style="COLOR: #800000">"Tokyo"</span>, 49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+[<span style="COLOR: #800000">"New York"</span>, 83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3],
+[<span style="COLOR: #800000">"London"</span>, 48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2],
+[<span style="COLOR: #800000">"Berlin"</span>, 42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+];
+sheet.setArray(0, 0, dataArray);
+<span style="COLOR: #008000">// Add columnClustered chart
+</span>chart_columnClustered = sheet.charts.add(<span style="COLOR: #800000">'chart_columnClustered'</span>, GC.Spread.Sheets.Charts.ChartType.columnClustered, 20, 110, 550, 250, <span style="COLOR: #800000">"A1:M5"</span>);
+
+<span style="COLOR: #008000">// Using animation in charts
+</span>chart_columnClustered.useAnimation(<span style="COLOR: #0000ff">true</span>);
+<span style="COLOR: #008000">// Configure Chart Title
+</span><span style="COLOR: #0000ff">var</span> title = chart_columnClustered.title()
+title.fontSize = <span style="COLOR: #800000">"18.00"</span>;
+title.color = <span style="COLOR: #800000">"rgb(228,65,54)"</span>;
+title.text = <span style="COLOR: #800000">'AVERAGE MONTHLY RAINFALL'</span>;
+chart_columnClustered.title(title);
+<span style="COLOR: #008000">// Formatting Legend
+// Configure Legend's color, fontSize, backColor and fontFamily properties
+</span><span style="COLOR: #0000ff">var</span> legend = chart_columnClustered.legend();
+
+<span style="COLOR: #008000">// Set Visibilty of legend to true
+</span>legend.visible = <span style="COLOR: #0000ff">true</span>;
+legend.color = <span style="COLOR: #800000">'Green'</span>;
+legend.fontSize = 12;
+legend.fontFamily = <span style="COLOR: #800000">'Calibri'</span>;
+legend.backColor = <span style="COLOR: #800000">'Yellow'</span>;
+<span style="COLOR: #008000">// Customize Legend Position
+// Change legend's position to topRight
+</span><span style="COLOR: #0000ff">var</span> legendPosition = GC.Spread.Sheets.Charts.LegendPosition;
+legend.position = legendPosition.topRight;
+<span style="COLOR: #008000">// Customize Legend Style
+// Change legend's borderstyle
+</span>legend.borderStyle.width = 1;
+legend.borderStyle.color = <span style="COLOR: #800000">"blue"</span>;
+legend.borderStyle.backColor = <span style="COLOR: #800000">"Red"</span>;
+chart_columnClustered.legend(legend);
+sheet.resumePaint();
+};
+&lt;<span style="COLOR: #800000">/script&gt; </span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

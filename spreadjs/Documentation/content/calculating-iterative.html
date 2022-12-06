@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS provides iterative calculation in worksheets. Read through the topic to know more about iterative calculation. " />
+    
+    <title>Iterative Calculation | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3283","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS provides iterative calculation in worksheets. Read through the topic to know more about iterative calculation. " />
+    
+    <meta name="Microsoft.Help.Id" content="767cc7df-e5a7-4399-ba18-7ca47d626cfd"/>
+    <meta name="Microsoft.Help.TocParent" content="85a8a863-302f-4eb0-9304-dc26ab5bcb2c"/>
+    <meta name="Microsoft.Help.TocOrder" content="10"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="formulaoverview.html">Formula Overview</a>
+ / Iterative Calculation</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Iterative Calculation</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides support for iterative calculation, also referred to as circular reference, just like in Excel. In general, Iterative calculation is the repeated calculation of a worksheet until a definite numeric condition is met.It is used when the formula in a cell directly or indirectly refers to its own cell in spreadsheets to recalculate the formula until a specific result is found.</p>
+
+<p>You can enable iterative calculation in worksheets by using the <strong>iterativeCalculation</strong> property. You can also specify the number of times the formula should recalculate by setting the <strong>iterativeCalculationMaximumIterations</strong> property. Further, you can also specify the maximum amount of change between two calculation values by setting the <strong>iterativeCalculationMaximumChange</strong> property.</p>
+
+<p>On enabling the iterative calculation, all the circular references will iteratively calculate until all the value change is smaller than the IterativeCalculationMaximumChange or the iterate count is IterativeCalculationMaximumIterations. However, on disabling the iterative calculation, all the circular reference cell values will become zero, and the other cells referenced by it will also become zero.</p>
+
+<h3>Use-Cases</h3>
+
+<p>You can use iterative calculation in the following use-cases:</p>
+
+<p><strong>Calculating Customer's Future Investment Value</strong></p>
+
+<p>Let's assume that a customer has $50,000, and wants to invest this money in a cash deposit (CD) account to incur a monthly interest rate of 4.75%. To calculate the total value after 2 years, we’re going to calculate the principal for each month, and add the interest to the previous month. Here, we set the <strong>iterativeCalculation</strong> property to True to enable iterative calculations and set the Maximum Iterations to 24 to find the interest after 24 months (2 years), that is, the total cash value in the end of 25th month.</p>
+
+<p><img border="0" alt="Snapshot depicting the calculation of Customer's Future Investment Value" src="images/investment-iterative.png" /></p>
+
+<p>This use-case can be depicted using the code snippet below:</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+$(document).ready(function () {
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> sheet = spread.getSheet(0);
+<span style="COLOR: #008000">// set column width
+</span>sheet.setColumnWidth(0, 30);
+sheet.setColumnWidth(1, 110);
+sheet.setColumnWidth(2, 130);
+sheet.setColumnWidth(3, 30);
+sheet.setColumnWidth(4, 30);
+sheet.setColumnWidth(5, 230);
+sheet.setColumnWidth(6, 130);
+<span style="COLOR: #008000">// enable IterativeCalculation
+</span>spread.options.iterativeCalculation = <span style="COLOR: #0000ff">true</span>;
+spread.options.iterativeCalculationMaximumIterations = 24;
+spread.options.iterativeCalculationMaximumChange = 0.1;
+<span style="COLOR: #008000">// set text and values
+</span>sheet.setText(1, 1, <span style="COLOR: #800000">"Initial Cash"</span>);
+sheet.setValue(1, 2, 50000);
+sheet.setText(2, 1, <span style="COLOR: #800000">"Interest"</span>);
+sheet.setValue(2, 2, 0.0475);
+sheet.setText(4, 1, <span style="COLOR: #800000">"Month/ Year"</span>);
+sheet.setText(4, 2, <span style="COLOR: #800000">"Total Cash"</span>);
+<span style="COLOR: #008000">// create array
+</span><span style="COLOR: #0000ff">var</span> items = [
+<span style="COLOR: #800000">"Jan' 2019"</span>, <span style="COLOR: #800000">"Feb' 2019"</span>, <span style="COLOR: #800000">"Mar' 2019"</span>, <span style="COLOR: #800000">"April' 2019"</span>, <span style="COLOR: #800000">"May' 2019"</span>, <span style="COLOR: #800000">"June' 2019"</span>, <span style="COLOR: #800000">"July' 2019"</span>, <span style="COLOR: #800000">"Aug' 2019"</span>, <span style="COLOR: #800000">"Sept' 2019"</span>, <span style="COLOR: #800000">"Oct' 2019"</span>, <span style="COLOR: #800000">"Nov' 2019"</span>, <span style="COLOR: #800000">"Dec' 2019"</span>,
+<span style="COLOR: #800000">"Jan' 2020"</span>, <span style="COLOR: #800000">"Feb' 2020"</span>, <span style="COLOR: #800000">"Mar' 2020"</span>, <span style="COLOR: #800000">"April' 2020"</span>, <span style="COLOR: #800000">"May' 2020"</span>, <span style="COLOR: #800000">"June' 2020"</span>, <span style="COLOR: #800000">"July' 2020"</span>, <span style="COLOR: #800000">"Aug' 2020"</span>, <span style="COLOR: #800000">"Sept' 2020"</span>, <span style="COLOR: #800000">"Oct' 2020"</span>, <span style="COLOR: #800000">"Nov' 2020"</span>, <span style="COLOR: #800000">"Dec' 2020"</span>, <span style="COLOR: #800000">"Jan' 2021"</span>
+];
+<span style="COLOR: #008000">// set array
+</span>sheet.setArray(5, 1, items);
+<span style="COLOR: #008000">// set formulas
+</span>sheet.setFormula(5, 2, <span style="COLOR: #800000">'=C2*(1+C3)'</span>);
+sheet.setFormula(6, 2, <span style="COLOR: #800000">'=C6*(1+C3)'</span>);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 6; i &lt; 30; i++) {
+sheet.setFormula(i, 2, <span style="COLOR: #800000">'=C'</span> + i + <span style="COLOR: #800000">'*(1+C3)'</span>);
+}
+<span style="COLOR: #008000">// create table to add style on a range
+</span>sheet.tables.add(<span style="COLOR: #800000">"Table1"</span>, 4, 1, 26, 2, GC.Spread.Sheets.Tables.TableThemes.medium6);
+<span style="COLOR: #008000">// set values and formulas
+</span>sheet.setText(1, 5, <span style="COLOR: #800000">"Initial Cash"</span>);
+sheet.setValue(1, 6, 50000);
+sheet.setText(2, 5, <span style="COLOR: #800000">"Interest"</span>);
+sheet.setValue(2, 6, 0.0475);
+sheet.setText(3, 5, <span style="COLOR: #800000">"Total Cash after 2 yrs (as on Jan' 2021)"</span>);
+sheet.setFormula(3, 6, <span style="COLOR: #800000">'=G2*(1+G3)'</span>);
+<span style="COLOR: #008000">// this formula will generate circle reference
+</span>sheet.setFormula(1, 6, <span style="COLOR: #800000">'=G4'</span>);
+<span style="COLOR: #008000">// set formatter
+</span>sheet.setFormatter(1, 2, <span style="COLOR: #800000">'$#,##0.00'</span>);
+sheet.setFormatter(2, 2, <span style="COLOR: #800000">'0.00%'</span>);
+sheet.setFormatter(1, 6, <span style="COLOR: #800000">'$#,##0.00'</span>);
+sheet.setFormatter(2, 6, <span style="COLOR: #800000">'0.00%'</span>);
+sheet.setFormatter(3, 6, <span style="COLOR: #800000">'$#,##0.00'</span>);
+sheet.setFormatter(5, 2, <span style="COLOR: #800000">'$#,##0.00'</span>);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 6; i &lt; 30; i++) {
+sheet.setFormatter(i, 2, <span style="COLOR: #800000">'$#,##0.00'</span>);
+}
+<span style="COLOR: #008000">// set border for cell ranges
+</span>sheet.getRange(<span style="COLOR: #800000">"B2:C3"</span>, GC.Spread.Sheets.SheetArea.viewport).setBorder(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"black"</span>, GC.Spread.Sheets.LineStyle.thin), { all: <span style="COLOR: #0000ff">true</span> }, 3);
+sheet.getRange(<span style="COLOR: #800000">"F2:G4"</span>, GC.Spread.Sheets.SheetArea.viewport).setBorder(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"black"</span>, GC.Spread.Sheets.LineStyle.thin), { all: <span style="COLOR: #0000ff">true</span> }, 3);
+sheet.getRange(<span style="COLOR: #800000">"B5:C30"</span>, GC.Spread.Sheets.SheetArea.viewport).setBorder(<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"black"</span>, GC.Spread.Sheets.LineStyle.thin), { all: <span style="COLOR: #0000ff">true</span> }, 3);
+<span style="COLOR: #008000">// set backcolor for cell ranges
+</span>sheet.getRange(<span style="COLOR: #800000">"C2:C3"</span>).backColor(<span style="COLOR: #800000">"#D9E3F2"</span>);
+sheet.getRange(<span style="COLOR: #800000">"G2:G4"</span>).backColor(<span style="COLOR: #800000">"#D9E3F2"</span>);
+});
+&lt;/script&gt;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p><strong>Adding Timestamps to Cells</strong></p>
+
+<p>Iterative calculation can be used to set timestamps in worksheets. For instance, you are managing a list of tasks and want to add date and time in the adjacent cell at the completion of each task. In order to enable iterative calculation for timestamp use-case, we have set the <strong>iterativeCalculation</strong> property to true. Here, we have used the <strong>iterativeCalculationMaximumIterations</strong> property and set it to 24, so that it tells SpreadJS the maximum number of times it should run the formula. With iterative calculation, each time we enter a new item in the new row of the 'Employee Name' column, a timestamp will be automatically updated in the 'TimeStamp' column until it reaches the 23rd row.<br /></p>
+
+<p><img border="0" alt="Image depicting timestamp illustration in iterative calculation." src="images/timestampiterative.gif" /></p>
+
+<p>This use-case can be depicted using the code snippet below:</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+$(document).ready(function () {
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> sheet = spread.getSheet(0);
+sheet.suspendPaint();
+<span style="COLOR: #008000">// set column width
+</span>sheet.setColumnWidth(0, 200);
+sheet.setColumnWidth(1, 200);
+<span style="COLOR: #008000">// enable IterativeCalculation
+</span>spread.options.iterativeCalculation = <span style="COLOR: #0000ff">true</span>;
+spread.options.iterativeCalculationMaximumIterations = 24;
+spread.options.iterativeCalculationMaximumChange = 0.1;
+<span style="COLOR: #008000">// set backcolor for cell ranges
+</span>sheet.getRange(<span style="COLOR: #800000">"A1:B1"</span>).backColor(<span style="COLOR: #800000">"#D9E3F2"</span>);
+<span style="COLOR: #008000">// set text in cells
+</span>sheet.setText(0, 0, <span style="COLOR: #800000">"Employee Name"</span>);
+sheet.setText(0, 1, <span style="COLOR: #800000">"TimeStamp"</span>);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 2; i &lt; spread.options.iterativeCalculationMaximumIterations; i++) {
+sheet.setFormula(i - 1, 1, <span style="COLOR: #800000">'=IF(A'</span> + i + <span style="COLOR: #800000">'&lt;&gt;"",IF(B'</span> + i + <span style="COLOR: #800000">'&lt;&gt;"",B'</span> + i + <span style="COLOR: #800000">',NOW()),"")'</span>);
+sheet.setFormatter(i - 1, 1, <span style="COLOR: #800000">'dd-mm-yyyy hh:mm:ss'</span>);
+}
+<span style="COLOR: #008000">// Sample data
+</span>sheet.setText(1, 0, <span style="COLOR: #800000">"Andy"</span>);
+<span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style.font = <span style="COLOR: #800000">"bold 12px Arial"</span>;
+style.foreColor = <span style="COLOR: #800000">"white"</span>;
+style.backColor = <span style="COLOR: #800000">"#5B9BD5"</span>;
+style.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+style.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 2; i++)
+sheet.setStyle(0, i, style, GC.Spread.Sheets.SheetArea.viewport);
+sheet.resumePaint();
+});
+&lt;/script&gt;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

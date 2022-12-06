@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Add Button in a Tab | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n837","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="24e74e00-5fb0-4d77-9556-ffe57096cc47"/>
+    <meta name="Microsoft.Help.TocParent" content="8a161658-2d68-4074-8599-e3b103efd55b"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="spreadjs_designer_component.html">SpreadJS Designer Component</a>
+ / <a href="customizations.html">Customizations</a>
+ / Add Button in a Tab</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Add Button in a Tab</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS&nbsp;Designer Component allows you to add a button or checkbox&nbsp;in the Ribbon as explained below:</p>
+
+<h3>Add 'Save Data' Button</h3>
+
+<p>Follow the below steps to add a 'Save Data'&nbsp;button in the 'Home' tab of the ribbon component.</p>
+
+<ol>
+    <li>Access the default configuration.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Configure Workbook and Worksheet
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(<span style="COLOR: #800000">"ss"</span>);
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+
+<span style="COLOR: #008000">// Access the default config
+</span><span style="COLOR: #0000ff">var</span> config = GC.Spread.Sheets.Designer.DefaultConfig;
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Create the "Save Data" button layout structure and add into the "buttonGroups" field of the "HOME" ribbon.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Layout of the new button
+</span><span style="COLOR: #0000ff">var</span> saveData = {
+    <span style="COLOR: #800000">"label"</span>: <span style="COLOR: #800000">"Save Data"</span>,
+    <span style="COLOR: #800000">"thumbnailClass"</span>: <span style="COLOR: #800000">""</span>,
+    <span style="COLOR: #800000">"commandGroup"</span>: {
+        <span style="COLOR: #800000">"children"</span>: [
+            {
+                <span style="COLOR: #800000">"direction"</span>: <span style="COLOR: #800000">"vertical"</span>,
+                <span style="COLOR: #800000">"commands"</span>: [
+                    <span style="COLOR: #800000">"cmdSaveData"</span>
+                ]
+            }
+        ]
+    }
+}
+
+<span style="COLOR: #008000">// Add new button to config ribbon tab
+</span>config.ribbon[0].buttonGroups.unshift(saveData);
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Set the above command to commandMap in your project.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Create command for the new button
+</span>config.commandMap = {
+    cmdSaveData: {
+    title: <span style="COLOR: #800000">"Save data to server"</span>,
+    text: <span style="COLOR: #800000">"Save"</span>,
+    iconClass: <span style="COLOR: #800000">"cmdSaveData"</span>,
+    bigButton: <span style="COLOR: #800000">"true"</span>,
+    commandName: <span style="COLOR: #800000">"cmdSaveData"</span>,
+    execute: async (context, propertyName, fontItalicChecked) =&gt; {
+    <span style="COLOR: #008000">// customize operator
+</span>    alert(<span style="COLOR: #800000">'Save data successfully.'</span>);
+        }
+    }
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Add CSS style setting for "cmdSaveData" button.
+
+        <div class="i-filtered-content-HTML" data-title="HTML" data-itemid="HTML">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>HTML</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">&lt;!-- CSS style setting for new button --&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">style</span><span style="COLOR: #0000ff">&gt;</span>.cmdSaveData {
+    background-image: url('./saveData.png');
+    background-size: 35px 35px;
+}
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">style</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Initialize the&nbsp;designer instance by passing&nbsp;"config" parameter for customizable configuration.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">// Initialize the designer instance
+</span><span style="COLOR: #0000ff">var</span> designer = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Designer.Designer(document.getElementById(<span style="COLOR: #800000">"designerHost"</span>), config, spread);
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>&nbsp;The below output will be generated:</p>
+
+        <p><img border="0" alt="" src="images/save-data-button.png" /><br /></p>
+    </li>
+</ol>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong>&nbsp;You can also override the default behavior of a button/command by defining its desired commandMap in&nbsp;the project.</p>
+</div>
+
+<h3>Add Checkbox in Ribbon</h3>
+
+<p>You can add checkbox to the ribbon element and manage its checked or unchecked state. Follow step 1 listed above by adding a label name for checkbox&nbsp;and creating a "MyCheckbox" command. Further, set the&nbsp;"MyCheckbox" command to commandMap in your project as shown below: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+config.commandMap = {
+    MyCheckbox: {
+            title: <span style="COLOR: #800000">"Custom Checkbox"</span>,
+            text: <span style="COLOR: #800000">"MyCheckbox"</span>,
+            type: <span style="COLOR: #800000">'checkbox'</span>,
+            commandName: <span style="COLOR: #800000">"MyCheckbox"</span>,
+            execute: async (context, propertyName) =&gt; {
+            let state = context.getData(<span style="COLOR: #800000">"myCheckState"</span>);
+            context.setData(<span style="COLOR: #800000">"myCheckState"</span>, !state);
+            },
+            getState: (context) =&gt; {
+                <span style="COLOR: #0000ff">return</span> context.getData(<span style="COLOR: #800000">"myCheckState"</span>);
+            }
+    }
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p><br />
+Next, follow step 4 as listed above to generate&nbsp;the below output:</p>
+
+<p><img border="0" alt="" src="images/checkbox-button-designer-component.png" /><br /></p>
+
+<p></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

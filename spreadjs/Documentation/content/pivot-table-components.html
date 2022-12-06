@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Pivot Table Components | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n681","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="ca4d0000-f927-40cb-a7e9-dcc36cfe481d"/>
+    <meta name="Microsoft.Help.TocParent" content="f1825637-2866-4514-bd4c-8b65379a3900"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="pivot-table.html">Pivot Table</a>
+ / Pivot Table Components</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Pivot Table Components</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>This topic covers the&nbsp;basic information&nbsp;related to&nbsp;pivot table components and&nbsp;their terminology.</p>
+
+<p>The below image shows the Pivot Area (containing a pivot table) and Pivot Panel&nbsp;in a spreadsheet.</p>
+
+<p><img border="0" alt="Pivot table structure" src="images/PivotTable_structure.png" /></p>
+
+<h3>Pivot Area</h3>
+
+<p>The pivot area displays the pivot table which contains various fields and label items as shown in the below image:</p>
+
+<p><img border="0" alt="Pivot area" src="images/pivotarea.png" /></p>
+
+<h3>Pivot Panel</h3>
+
+<p>The pivot panel is a task pane which can be used to add, remove, drag and move fields in a&nbsp;pivot table easily.&nbsp;The pivot table panel consists of PivotTable Fields,&nbsp;PivotTable Area and Pivot View Manager section as shown in the below&nbsp;image:</p>
+
+<p><img border="0" alt="Pivot panel" src="images/pivotpanel.png" /></p>
+
+<p>You can also&nbsp;customize the&nbsp;layout of the&nbsp;pivot panel by using the <strong>panelLayout</strong> option. The above image shows the default panel layout (stack) whereas the&nbsp;below image shows the&nbsp;'flow' pivot&nbsp;panel.</p>
+
+<p><img border="0" alt="Customize Pivot panel" src="images/customize_pivotpanel.png" /></p>
+
+<p>The following example code sets the pivot panel layout to flow:</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> layoutType = panel.panelLayout();
+panel.panelLayout(GC.Spread.Pivot.PivotPanelLayoutType.flow);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Pivot Table Fields</h4>
+
+<p>The Pivot Table Fields section displays the fields from the data source, which can be added to a&nbsp;pivot table.&nbsp;You can&nbsp;select or unselect&nbsp;these fields&nbsp;to get the desired pivot table view.</p>
+
+<p><img border="0" alt="Show the pivot table field section" src="images/pivotablefields.png" /></p>
+
+<p>The following example code shows how to hide the PivotTable Fields section from the pivot panel.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Hide the "PivotTable fields" section
+</span><span style="COLOR: #0000ff">var</span> panel = <span style="COLOR: #0000ff">new</span> GC.Spread.Pivot.PivotPanel(<span style="COLOR: #800000">"myPivotPanel"</span>, myPivotTable, document.getElementById(<span style="COLOR: #800000">"panel"</span>));
+panel.sectionVisibility(GC.Spread.Pivot.PivotPanelSection.area | GC.Spread.Pivot.PivotPanelSection.viewList);
+        
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4><a id="a" name="a"></a>PivotTable Area</h4>
+
+<p>The Pivot Table Area is a&nbsp;section of the&nbsp;pivot panel which displays the row, column, value and filter fields of a&nbsp;pivot table.&nbsp;You can simply drag and drop the pivot table&nbsp;fields across these&nbsp;areas&nbsp;to switch between different pivot table views.</p>
+
+<p><img border="0" alt="Show the pivot table area section" src="images/pivottablearea.png" /></p>
+
+<p>The&nbsp;following table describes the above areas:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>Area</td>
+
+            <td>Description</td>
+        </tr>
+
+        <tr>
+            <td>Rows</td>
+
+            <td>Displays as rows in a&nbsp;pivot table with&nbsp;Row Labels&nbsp;as the values&nbsp;for&nbsp;selected fields.</td>
+        </tr>
+
+        <tr>
+            <td>Columns</td>
+
+            <td>Displays&nbsp;as columns in a pivot table with Column Labels as the values&nbsp;for selected fields.</td>
+        </tr>
+
+        <tr>
+            <td>Filters</td>
+
+            <td>Used for&nbsp;filter operation in a pivot table.</td>
+        </tr>
+
+        <tr>
+            <td>Values</td>
+
+            <td>Displays&nbsp;the statistics data for selected field.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following example code shows how to hide the Pivot Table Area section from the pivot panel.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Hide the "PivotTable Area" section
+</span><span style="COLOR: #0000ff">var</span> panel = <span style="COLOR: #0000ff">new</span> GC.Spread.Pivot.PivotPanel(<span style="COLOR: #800000">"myPivotPanel"</span>, myPivotTable, document.getElementById(<span style="COLOR: #800000">"panel"</span>));
+panel.sectionVisibility(GC.Spread.Pivot.PivotPanelSection.fields | GC.Spread.Pivot.PivotPanelSection.viewList);
+        
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Pivot View Manager</h4>
+
+<p>The Pivot&nbsp;view manager can be used to manage views&nbsp;of the pivot table. It&nbsp;can quickly restore the state of the&nbsp;pivot table saved at a certain moment. The following image shows the different saved views of&nbsp;pivot table in the view manager.</p>
+
+<p><img border="0" alt="Show the pivot table view manager" src="images/viewmanager.png" /></p>
+
+<p>The following example code shows how to hide the Pivot View Manager section from the pivot panel.</p>
+
+<div class="i-filtered-content-Javascript" data-title="Javascript" data-itemid="Javascript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Javascript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Hide the "Pivot View Manager" section
+</span><span style="COLOR: #0000ff">var</span> panel = <span style="COLOR: #0000ff">new</span> GC.Spread.Pivot.PivotPanel(<span style="COLOR: #800000">"myPivotPanel"</span>, myPivotTable, document.getElementById(<span style="COLOR: #800000">"panel"</span>));
+panel.sectionVisibility(GC.Spread.Pivot.PivotPanelSection.fields | GC.Spread.Pivot.PivotPanelSection.area);
+        
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>For more details, refer to <a href="pivot-view-manager.html">Pivot View Manager</a> topic.</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,638 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="This topic lists the user interface changes for SpreadJS." />
+    
+    <title>User Interface API Changes | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n43","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="This topic lists the user interface changes for SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="1ce52da6-6329-44a6-ace2-c077bc55f514"/>
+    <meta name="Microsoft.Help.TocParent" content="0b50a486-34d8-426d-9649-efd52abff220"/>
+    <meta name="Microsoft.Help.TocOrder" content="5"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="getstarted.html">Getting Started</a>
+ / <a href="APIchanges.html">API Changes</a>
+ / User Interface API Changes</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">User Interface API Changes</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>The following table lists user interface changes:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th style="TEXT-ALIGN: center">V13</th>
+
+            <th style="TEXT-ALIGN: center" colspan="3">V9</th>
+        </tr>
+
+        <tr>
+            <td><strong>GC.Spread.Sheet.CellRange</strong></td>
+
+            <td><strong>GcSpread.Sheets.Cell</strong></td>
+
+            <td><strong>GcSpread.Sheets.Row</strong></td>
+
+            <td><strong>GcSpread.Sheets.Column</strong></td>
+        </tr>
+
+        <tr>
+            <td>constructor(sheet, row, col, rowCount, colCount, sheetArea)</td>
+
+            <td>constructor(sheet, row, col, sheetArea)</td>
+
+            <td>constructor(sheet, index, sheetArea)</td>
+
+            <td>constructor(sheet, index, sheetArea)</td>
+        </tr>
+
+        <tr>
+            <td>sheet</td>
+
+            <td>sheet</td>
+
+            <td>sheet</td>
+
+            <td>sheet</td>
+        </tr>
+
+        <tr>
+            <td>row</td>
+
+            <td>row</td>
+
+            <td>index</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>rowCount</td>
+
+            <td>row2, row2 - row + 1</td>
+
+            <td>index2, index2 - index + 1</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>col</td>
+
+            <td>col</td>
+
+            <td>&nbsp;</td>
+
+            <td>index</td>
+        </tr>
+
+        <tr>
+            <td>colCount</td>
+
+            <td>col2, col2 - col + 1</td>
+
+            <td>&nbsp;</td>
+
+            <td>index2, index2 - index + 1</td>
+        </tr>
+
+        <tr>
+            <td>sheetArea</td>
+
+            <td>sheetArea</td>
+
+            <td>sheetArea</td>
+
+            <td>sheetArea</td>
+        </tr>
+
+        <tr>
+            <td>value(value)</td>
+
+            <td>value(value)</td>
+
+            <td>&nbsp;</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>text(value)</td>
+
+            <td>text(value)</td>
+
+            <td>&nbsp;</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>formula(value)</td>
+
+            <td>formula(value)</td>
+
+            <td>&nbsp;</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>tag(value)</td>
+
+            <td>tag(value)</td>
+
+            <td>tag(value)</td>
+
+            <td>tag(value)</td>
+        </tr>
+
+        <tr>
+            <td>backColor(value)</td>
+
+            <td>backColor(value)</td>
+
+            <td>backColor(value)</td>
+
+            <td>backColor(value)</td>
+        </tr>
+
+        <tr>
+            <td>foreColor(value)</td>
+
+            <td>foreColor(value)</td>
+
+            <td>foreColor(value)</td>
+
+            <td>foreColor(value)</td>
+        </tr>
+
+        <tr>
+            <td>hAlign(value)</td>
+
+            <td>hAlign(value)</td>
+
+            <td>hAlign(value)</td>
+
+            <td>hAlign(value)</td>
+        </tr>
+
+        <tr>
+            <td>vAlign(value)</td>
+
+            <td>vAlign(value)</td>
+
+            <td>vAlign(value)</td>
+
+            <td>vAlign(value)</td>
+        </tr>
+
+        <tr>
+            <td>themeFont(value)</td>
+
+            <td>themeFont(value)</td>
+
+            <td>themeFont(value)</td>
+
+            <td>themeFont(value)</td>
+        </tr>
+
+        <tr>
+            <td>font(value)</td>
+
+            <td>font(value)</td>
+
+            <td>font(value)</td>
+
+            <td>font(value)</td>
+        </tr>
+
+        <tr>
+            <td><span style="BACKGROUND-COLOR: rgb(255,255,255)">formatter(value)</span></td>
+
+            <td><span style="BACKGROUND-COLOR: rgb(255,255,255)">formatter(value)</span></td>
+
+            <td><span style="BACKGROUND-COLOR: rgb(255,255,255)">formatter(value)</span></td>
+
+            <td><span style="BACKGROUND-COLOR: rgb(255,255,255)">formatter(value)</span></td>
+        </tr>
+
+        <tr>
+            <td>borderLeft(value)</td>
+
+            <td>borderLeft(value)</td>
+
+            <td>borderLeft(value)</td>
+
+            <td>borderLeft(value)</td>
+        </tr>
+
+        <tr>
+            <td>borderTop(value)</td>
+
+            <td>borderTop(value)</td>
+
+            <td>borderTop(value)</td>
+
+            <td>borderTop(value)</td>
+        </tr>
+
+        <tr>
+            <td>borderRight(value)</td>
+
+            <td>borderRight(value)</td>
+
+            <td>borderRight(value)</td>
+
+            <td>borderRight(value)</td>
+        </tr>
+
+        <tr>
+            <td>borderBottom(value)</td>
+
+            <td>borderBottom(value)</td>
+
+            <td>borderBottom(value)</td>
+
+            <td>borderBottom(value)</td>
+        </tr>
+
+        <tr>
+            <td>locked(value)</td>
+
+            <td>locked(value)</td>
+
+            <td>locked(value)</td>
+
+            <td>locked(value)</td>
+        </tr>
+
+        <tr>
+            <td>textIndent(value)</td>
+
+            <td>textIndent(value)</td>
+
+            <td>textIndent(value)</td>
+
+            <td>textIndent(value)</td>
+        </tr>
+
+        <tr>
+            <td>wordWrap(value)</td>
+
+            <td>wordWrap(value)</td>
+
+            <td>wordWrap(value)</td>
+
+            <td>wordWrap(value)</td>
+        </tr>
+
+        <tr>
+            <td>shrinkToFit(value)</td>
+
+            <td>shrinkToFit(value)</td>
+
+            <td>shrinkToFit(value)</td>
+
+            <td>shrinkToFit(value)</td>
+        </tr>
+
+        <tr>
+            <td>backgroundImage(value)</td>
+
+            <td>backgroundImage(value)</td>
+
+            <td>backgroundImage(value)</td>
+
+            <td>backgroundImage(value)</td>
+        </tr>
+
+        <tr>
+            <td>backgroundImageLayout(value)</td>
+
+            <td>backgroundImageLayout(value)</td>
+
+            <td>backgroundImageLayout(value)</td>
+
+            <td>backgroundImageLayout(value)</td>
+        </tr>
+
+        <tr>
+            <td>validator(value)</td>
+
+            <td>dataValidator(value)</td>
+
+            <td>dataValidator(value)</td>
+
+            <td>dataValidator(value)</td>
+        </tr>
+
+        <tr>
+            <td>cellType(value)</td>
+
+            <td>cellType(value)</td>
+
+            <td>cellType(value)</td>
+
+            <td>cellType(value)</td>
+        </tr>
+
+        <tr>
+            <td>tabStop(value)</td>
+
+            <td>tabStop(value)</td>
+
+            <td>tabStop(value)</td>
+
+            <td>tabStop(value)</td>
+        </tr>
+
+        <tr>
+            <td>textDecoration(value)</td>
+
+            <td>textDecoration(value)</td>
+
+            <td>textDecoration(value)</td>
+
+            <td>textDecoration(value)</td>
+        </tr>
+
+        <tr>
+            <td>imeMode(value)</td>
+
+            <td>imeMode(value)</td>
+
+            <td>imeMode(value)</td>
+
+            <td>imeMode(value)</td>
+        </tr>
+
+        <tr>
+            <td>watermark(value)</td>
+
+            <td>watermark(value)</td>
+
+            <td>watermark(value)</td>
+
+            <td>watermark(value)</td>
+        </tr>
+
+        <tr>
+            <td>width(value)</td>
+
+            <td>&nbsp;</td>
+
+            <td>&nbsp;</td>
+
+            <td>width(value)</td>
+        </tr>
+
+        <tr>
+            <td>height(value)</td>
+
+            <td>&nbsp;</td>
+
+            <td>height(value)</td>
+
+            <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>visible(value)</td>
+
+            <td>&nbsp;</td>
+
+            <td>visible(value)</td>
+
+            <td>visible(value)</td>
+        </tr>
+
+        <tr>
+            <td>resizable(value)</td>
+
+            <td>&nbsp;</td>
+
+            <td>resizable(value)</td>
+
+            <td>resizable(value)</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+
+            <td>&nbsp;</td>
+
+            <td>clearStyleProperty(propertyName)</td>
+
+            <td>clearStyleProperty(propertyName)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following table lists method changes:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>V13</th>
+
+            <th>V9</th>
+        </tr>
+
+        <tr>
+            <td><strong>GC.Spread.Sheets.Worksheet</strong></td>
+
+            <td><strong>GcSpread.Sheets.Sheet</strong></td>
+        </tr>
+
+        <tr>
+            <td>getCell(row, col, sheetArea)</td>
+
+            <td>getCell(row, col, sheetArea)</td>
+        </tr>
+
+        <tr>
+            <td rowspan="5">getRange(row, col, rowCount ,colCount, sheetArea)</td>
+
+            <td>getCells(row, col, row2, col2, sheetArea)</td>
+        </tr>
+
+        <tr>
+            <td>getRow(index, sheetArea)</td>
+        </tr>
+
+        <tr>
+            <td>getRows(index, index2, sheetArea)</td>
+        </tr>
+
+        <tr>
+            <td>getColumn(index, sheetArea)</td>
+        </tr>
+
+        <tr>
+            <td>getColumns(index, index2, sheetArea)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The setBorder method has been&nbsp;changed as listed in the following table:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>V13</th>
+
+            <th>V9</th>
+        </tr>
+
+        <tr>
+            <td><strong>GC.Spread.Sheets.CellRange</strong></td>
+
+            <td><strong>GcSpread.Sheets.Sheet</strong></td>
+        </tr>
+
+        <tr>
+            <td>setBorder(border, option)</td>
+
+            <td>setBorder(cellRange, border, option, sheetArea)</td>
+        </tr>
+
+        <tr>
+            <td>clear(type)</td>
+
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

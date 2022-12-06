@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to use structured reference formulas in a table. Learn more about the structured references in SpreadJS docs." />
+    
+    <title>Structured Reference Formulas | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n677","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to use structured reference formulas in a table. Learn more about the structured references in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="60f1abd3-c156-4f13-90b0-095a23afa357"/>
+    <meta name="Microsoft.Help.TocParent" content="9d25871c-c47e-4700-a8b5-50b17e2a631f"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="tablegen.html">Tables</a>
+ / Structured Reference Formulas</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Structured Reference Formulas</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports structured reference formulas in tables.</p>
+
+<p>The structured reference formula uses keywords and the column name of the table to refer to cell ranges in the table.</p>
+
+<p>The components of a structured reference are illustrated in the following image. This formula adds total sales&nbsp;and&nbsp;tax amounts.</p>
+
+<p><img border="0" alt="Components of a structured reference" src="images/structure.png" /></p>
+
+<ol>
+    <li>
+        <div>
+            A table name is a meaningful name that you provide to reference the actual table data (excluding the headers and totals row, if any).
+        </div>
+    </li>
+
+    <li>
+        <div>
+            A column specifier is derived from the column header and is enclosed in brackets. The column specifier references the column data (excluding the column header and total, if any).
+        </div>
+    </li>
+
+    <li>
+        <div>
+            A special item specifier can be used to refer to specific portions of the table, such as the Totals row.
+        </div>
+    </li>
+
+    <li>
+        <div>
+            The table specifier is the outer portion of the structured reference that is enclosed in square brackets following the table name.
+        </div>
+    </li>
+
+    <li>
+        <div>
+            A structured reference is the entire string beginning with the table name and ending with the table specifier.
+        </div>
+    </li>
+</ol>
+
+<p>The user can use special items to refer to various areas of a table for easier use in formulas. The following table lists the special item specifiers that the user can use in a structured reference:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Special Item</strong></td>
+
+            <td><strong>Example</strong></td>
+
+            <td><strong>References</strong></td>
+
+            <td><strong>Cell Range</strong></td>
+        </tr>
+
+        <tr>
+            <td>#All</td>
+
+            <td>=DeptSales[#All]</td>
+
+            <td>Entire table including column headers, data, and totals</td>
+
+            <td>A1:E8</td>
+        </tr>
+
+        <tr>
+            <td>#Data</td>
+
+            <td>=DeptSales[#Data]</td>
+
+            <td>Data</td>
+
+            <td>A2:E7</td>
+        </tr>
+
+        <tr>
+            <td>#Headers</td>
+
+            <td>=DeptSales[#Headers]</td>
+
+            <td>Header&nbsp;row</td>
+
+            <td>A1:E1</td>
+        </tr>
+
+        <tr>
+            <td>#Totals</td>
+
+            <td>=DeptSales[#Totals]</td>
+
+            <td>Total row. Returns null if none exists</td>
+
+            <td>A8:E8</td>
+        </tr>
+
+        <tr>
+            <td>#This Row</td>
+
+            <td>=DeptSales[#This Row]</td>
+
+            <td>Portion of the columns in the current row</td>
+
+            <td>A5:E5 (current row is 5)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The "#This Row" item can be abbreviated as "@". For example =DeptSales[#This Row] is the same as =DeptSales[@].</p>
+
+<p>The "#Data" item can be combined with "#Headers" or "#Totals". The following table lists examples:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Special Item</strong></td>
+
+            <td><strong>Example</strong></td>
+
+            <td><strong>References</strong></td>
+
+            <td><strong>Cell Range</strong></td>
+        </tr>
+
+        <tr>
+            <td>#Headers and #Data</td>
+
+            <td>=DeptSales[[#Headers], [#Data]]</td>
+
+            <td>Column headers and data</td>
+
+            <td>A1:E7</td>
+        </tr>
+
+        <tr>
+            <td>#Data and #Totals</td>
+
+            <td>=DeptSales[[#Data], [#Totals]]</td>
+
+            <td>Data and the total row</td>
+
+            <td>A2:E8</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>If the special item is not specified, it is treated as data as&nbsp;shown in the following table:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Special Item</strong></td>
+
+            <td><strong>Example</strong></td>
+
+            <td><strong>References</strong></td>
+
+            <td><strong>Cell Range</strong></td>
+        </tr>
+
+        <tr>
+            <td>None</td>
+
+            <td>=DeptSales[] or =DeptSales</td>
+
+            <td>Data</td>
+
+            <td>A2:E7</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Column specifiers represent references to the entire data column with the exception of the column header and total. The following table lists the column specifiers:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Column Specifier</strong></td>
+
+            <td><strong>Example</strong></td>
+
+            <td><strong>References</strong></td>
+
+            <td><strong>Cell Range</strong></td>
+        </tr>
+
+        <tr>
+            <td>Single column</td>
+
+            <td>=DeptSales[SaleAmt]</td>
+
+            <td>"SaleAmt" column in data</td>
+
+            <td>C2:C7</td>
+        </tr>
+
+        <tr>
+            <td>Column range</td>
+
+            <td>=DeptSales[[SaleAmt]:[TaxAmt]]</td>
+
+            <td>Range of column "SaleAmt" to column "TaxAmt" in data</td>
+
+            <td>C2:E7</td>
+        </tr>
+
+        <tr>
+            <td>None</td>
+
+            <td>=DeptSales[[#Data]]</td>
+
+            <td>All columns in data</td>
+
+            <td>A2:E8</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>All table, column, and special item specifiers must be enclosed in matching brackets ([ ]). A specifier that contains other specifiers requires outer matching brackets to enclose the inner matching brackets of the other specifiers. Priority is from highest to lowest if there is a conflict between the policies.</p>
+
+<p>The following rules apply to the brackets:</p>
+
+<ol>
+    <li>
+        <div>
+            If there are no specifiers, the table specifier brackets can be left out. For example, "=DeptSales[]" equals "=DeptSales".
+        </div>
+    </li>
+
+    <li>
+        <div>
+            If there is only a single special item or a single column specifier, the table specifier brackets can be left out. For example, "=DeptSales[[#Data]]" equals "=DeptSales[#Data]", "=DeptSales[[TaxAmt]]" equals "=DeptSales[TaxAmt]".
+        </div>
+    </li>
+
+    <li>
+        <div>
+            If there is a column specifier or a combination of special items, the special item must be enclosed in matching brackets. For example, "=DeptSales[#Data, [TaxAm]]" and "=DeptSales[#Data, #Totals]" is not allowed.
+        </div>
+    </li>
+
+    <li>
+        <div>
+            If a table column header contains one of the following special characters, the entire column header must be enclosed in brackets: space, tab, line break, carriage return, comma (,), colon (:), period (.), left bracket ([) , right bracket (]), pound sign (#), single quotation mark ('), double quotation mark ("), left brace ({), right brace (}), dollar sign ($), caret (^), ampersand (&amp;), asterisk (*), plus sign (+), equal sign (=), minus sign (-), greater than symbol (&gt;), less than symbol (&lt;), and division sign (//). For example,&nbsp;if one column name is "#column1", the formula "=Table1[#column1]" is not allowed, it must be "=Table1['#column1]".
+        </div>
+    </li>
+
+    <li>
+        <div>
+            If there is a column range specifier, one of the column specifiers must be enclosed in brackets. For example, "=Table1[column1:column2]" is not allowed, it must be "=Table1[[column1]:column2]" or "=Table1[column1:[column2]]" or "=Table1[[column1]:[column2]]".
+        </div>
+    </li>
+
+    <li>
+        <div>
+            The <a href="mailto:'@'">'@'</a> special item brackets can be left out. For example, "=DeptSales[@, TaxAmt]" equals "=DeptSales[[@], TaxAmt]".
+        </div>
+    </li>
+</ol>
+
+<p>The following general rules also apply:</p>
+
+<ol>
+    <li>
+        <div>
+            All table, column, and special item specifiers are case insensitive.
+        </div>
+    </li>
+
+    <li>
+        <div>
+            The following characters have special meaning and require the use of a single quotation mark (') as an escape character: left bracket ([), right bracket (]), pound sign(#), and single quotation mark ('). For example, "=Table1[colu#mn1]" is not allowed, it must be "=Table1[colu'#mn1]".
+        </div>
+    </li>
+
+    <li>
+        <div>
+            Use the comma (,) to separate the combined special items and column specifiers. For example, "=DeptSales[[#Data], [#Totals], TaxAmt]".
+        </div>
+    </li>
+
+    <li>
+        <div>
+            The order between special items and column specifiers is independent. For example, "=DeptSales[[#Data], [#Totals], TaxAmt]" equals "=DeptSales[[#Totals], TaxAmt, [#Data]]".
+        </div>
+    </li>
+
+    <li>
+        <div>
+            The comma (,) behind the <a href="mailto:'@'">'@'</a> special item can be left out. For example, "=DeptSales[@, TaxAmt]" equals "=DeptSales[@TaxAmt]".
+        </div>
+    </li>
+</ol>
+
+<p>You can add structured references to formulas&nbsp;in tables using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table~setColumnDataFormula.html">setColumnDataFormula</a>&nbsp;and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Tables.Table~setColumnFormula.html">setColumnFormula</a>&nbsp;methods. You can also&nbsp;reference table data in&nbsp;formulas outside of the table area.&nbsp;For example, activeSheet.getCell(7,1).formula("SUM(Table1[SubTotal])");. The last formula that is set has priority between column and cell formulas.</p>
+
+<div class="i-box i-box-note">
+    The column specifier in the formula does not apply to the cells in headers and footers.
+</div>
+
+<p><img border="0" alt="Structured references used in table formulas" src="images/structure1.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>The following example creates a table and uses structured reference formulas to create totals.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.tables.add(<span style="COLOR: #800000">"Table1"</span>, 0, 0, 4, 3, GC.Spread.Sheets.Tables.TableThemes.dark1);
+activeSheet.getCell(0,0).text(<span style="COLOR: #800000">"Value1"</span>);
+activeSheet.getCell(0,1).text(<span style="COLOR: #800000">"Value2"</span>);
+activeSheet.getCell(0,2).text(<span style="COLOR: #800000">"SubTotal"</span>);
+activeSheet.getCell(1,0).text(<span style="COLOR: #800000">"1"</span>);
+activeSheet.getCell(2,0).text(<span style="COLOR: #800000">"2"</span>);
+activeSheet.getCell(3,0).text(<span style="COLOR: #800000">"3"</span>);
+activeSheet.getCell(1,1).text(<span style="COLOR: #800000">"5"</span>);
+activeSheet.getCell(2,1).text(<span style="COLOR: #800000">"5"</span>);
+activeSheet.getCell(3,1).text(<span style="COLOR: #800000">"5"</span>);
+<span style="COLOR: #0000ff">var</span> sTable = activeSheet.tables.findByName(<span style="COLOR: #800000">"Table1"</span>).setColumnDataFormula(2, <span style="COLOR: #800000">"=[Value1]*[Value2]"</span>);
+sTable.showFooter(<span style="COLOR: #0000ff">true</span>);
+<span style="COLOR: #008000">//set footer value
+</span>sTable.setColumnValue(0, <span style="COLOR: #800000">"Total"</span>);
+sTable.setColumnFormula(2, <span style="COLOR: #800000">"SUM(Table1[SubTotal])"</span>);
+activeSheet.getColumn(0).width(80);
+activeSheet.getColumn(1).width(80);
+activeSheet.getColumn(2).width(80);
+<span style="COLOR: #008000">//activeSheet.getCell(7,1).formula("SUM(Table1[SubTotal])");</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="tables.html">Create Tables</a></div>
+<div class="i-see-also-link">
+<a href="formulas.html">Formulas</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

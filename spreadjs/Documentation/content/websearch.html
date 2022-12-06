@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    <title>Search</title>
+        <meta name="Title" content="Search"/>
+    <script type="text/javascript">
+            Innovasys = {};
+            Innovasys.settings = {
+                isFullTextSearchPositionDataAvailable: true,
+                isFullTextSearchObjects: true,
+                isFullTextSearchFrameless: true
+            }
+        </script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/webindex-dist/css/bundle1633500776798.css">
+        <script src="https://cdn.grapecity.com/web/docs/webindex-dist/script/bundle1633500776798.js"></script>
+        
+        <script src="ftsindex.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true}},{settings:{"dynamictoc":{"initialNodeId":"n0","initialNodeContainer":"c0"},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Search</div></div>
+            <div style="display: none">
+            <span id="phrase_Search_SearchResults">
+                Search Results
+            </span>
+            <span id="phrase_Search_ResultCount">
+                results found.
+            </span>
+        </div>
+
+        <div id="i-search-container">
+            <div id="i-search-what-container">
+                <input id="i-search" type="text" name="i-search" />
+                <input id="i-execute-search" type="button" value="" />
+            </div>
+            <div id="i-operators">(Words can be combined using OR and AND)</div>
+
+            <div id="i-search-highlight-container">
+                <label>
+                    <input type="checkbox" id="i-highlight" checked="true" />Highlight search terms
+                </label>
+            </div>
+
+            <div id="i-searching" style="display: none">
+                <table id="i-progress" border="0">
+                    <tr>
+                        <td>Searching...</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="i-results" style="display: none"></div>
+        </div>
+        <script type="text/javascript" charset="utf-8">
+            $(function () {
+                setTimeout(function () {
+                    title = document.querySelector(".i-project-title-meta").innerText;
+                    removeTitleFromSearchResults();
+                    document.getElementById("i-search").addEventListener("keyup", function (e) {
+                        if (e.which == 13) {
+                            removeTitleFromSearchResults();
+                        }
+                    })
+                    document.getElementById("i-execute-search").addEventListener("click", removeTitleFromSearchResults);
+                });
+            });
+            function removeTitleFromSearchResults() {
+                var searchList = document.querySelector(".i-result-list");
+                document.querySelector(".i-result-list").innerHTML = replaceContent(searchList.innerHTML, " | " + title, "");
+            }
+            function replaceContent(content, toReplace, replaceWith) {
+                return content.split(toReplace).join(replaceWith);
+            }
+        </script>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                <p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+        
+            </div>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript">
+        $(function() {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Grouping | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n384","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="2722fbe2-6000-4c80-b2ea-0ef3a84c3c52"/>
+    <meta name="Microsoft.Help.TocParent" content="99497a2a-22fb-4bfe-a42a-cf54639f3829"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="tablesheet.html">TableSheet</a>
+ / <a href="tablesheet-operations.html">TableSheet Operations</a>
+ / Grouping</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Grouping</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>TableSheet supports grouping the data source by the specified fields, that is, merging same cell contents in a single cell automatically. The grouped columns are placed left to the base columns, and they consist of the following types of columns:</p>
+
+<ul>
+    <li>Base column: Contains the original column value.</li>
+
+    <li>Summary column: Contains aggregate results calculated by a user-defined formula.</li>
+
+    <li>Slicer column: Contains the slices of the aggregate results.</li>
+</ul>
+
+<p>The following image shows the different types of columns in TableSheet grouping.</p>
+
+<p><img border="0" alt="TableSheet Grouping example" src="images/ts-grouping.png" /></p>
+
+<p>You can use the TableSheet class methods&nbsp;<a href="SpreadJS~GC.Spread.Sheets.TableSheet.TableSheet~groupBy.html">groupBy</a>&nbsp;and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.TableSheet.TableSheet~removeGroupBy.html">removeGroupBy</a>&nbsp;to add and remove grouping respectively. The following code sample shows how to add grouped columns including summary columns and slicer columns.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> grouping() {
+    <span style="COLOR: #008000">//Create groupBy by single field (Selling package), with summary fields and slice fields
+</span>    sheet.groupBy([
+        {
+            caption: <span style="COLOR: #800000">"Selling Package"</span>, field: <span style="COLOR: #800000">"sellingPackage"</span>, width: 150, style: { backColor: <span style="COLOR: #800000">"#F9CA9A"</span> },
+            summaryFields: [
+                {
+                    caption: <span style="COLOR: #800000">"SUM(Unit Price)"</span>,
+                    formula: <span style="COLOR: #800000">"=SUM([unitPrice])"</span>,
+                    slice: { field: <span style="COLOR: #800000">"=YEAR([@validFrom])"</span>, width: 120, style: { backColor: <span style="COLOR: #800000">"#FCE3CA"</span>, formatter: <span style="COLOR: #800000">"#,##0.00"</span> } },
+                    width: 150,
+                    style: { backColor: <span style="COLOR: #800000">"#FAD7B2"</span>, formatter: <span style="COLOR: #800000">"#,##0.00"</span> }
+                }
+            ]
+        }
+    ]);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Group Outlines</h3>
+
+<p>TableSheet grouping provides outlines that can be used to expand or collapse the group entry along with its related base column content.</p>
+
+<p>By default, the group outline&nbsp;is placed in the column header along with the viewport. You can also configure it to show in&nbsp;row header area, or&nbsp;in both row header and column header, or you can hide the group outline altogether. The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.TableSheet.GroupOutlinePosition.html">GroupOutlinePosition</a>&nbsp;enumeration options can be used to set the position of the outline or to hide it.</p>
+
+<p><img border="0" alt="TableSheet Grouping Outline Positions" src="images/ts-grouping-outlineposition.gif" /></p>
+
+<p>The following code sample shows how to set the group outline in row header or to hide it as shown in the above GIF.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> grpOutlinePosition() {
+    <span style="COLOR: #008000">// set GroupOutlinePosition to rowHeader
+</span>    sheet.groupOutlinePosition(GC.Spread.Sheets.TableSheet.GroupOutlinePosition.rowHeader);
+}
+
+<span style="COLOR: #0000ff">function</span> grpOutlineHide() {
+    <span style="COLOR: #008000">// set GroupOutlinePostion to hide
+</span>    sheet.groupOutlinePosition(GC.Spread.Sheets.TableSheet.GroupOutlinePosition.none);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can also hide the base columns after grouping altogether by setting the boolean parameter of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.TableSheet.TableSheet~detailColumnsVisible.html">detailColumnsVisible</a>&nbsp;method to false.</p>
+
+<p><img border="0" alt="TableSheet Grouping Hide Detail Columns" src="images/ts-grouping-hidedetailcols.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> detailColumnVisible() {
+    <span style="COLOR: #008000">// hide detail columns
+</span>    sheet.detailColumnsVisible(<span style="COLOR: #0000ff">false</span>);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Multiple Grouping</h3>
+
+<p>TableSheet supports multiple grouping where more than one field can be defined in the groupBy method to create multi-level grouping.</p>
+
+<p><img border="0" alt="TableSheet Multiple Grouping" src="images/ts-grouping-multiple.png" /></p>
+
+<p>The following code sample shows how to set multiple grouping in a TableSheet view.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> grpByMultipleFields() {
+    <span style="COLOR: #008000">// group by "sellingPackage" field first and then group by date in quarters of available years using DATEPART formula
+</span>    sheet.groupBy([
+        { caption: <span style="COLOR: #800000">"Selling Package"</span>, field: <span style="COLOR: #800000">"sellingPackage"</span>, width: 150, style: { backColor: <span style="COLOR: #800000">"#FAD7B2"</span> } },
+        { caption: <span style="COLOR: #800000">"Year Quarter"</span>, field: `=DATEPART([@validFrom],<span style="COLOR: #800000">"yyyyQQQ"</span>)`, width: 150, style: { backColor: <span style="COLOR: #800000">"#FCE3CA"</span> } }
+    ]);
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Behavior of Multiple Grouping</h4>
+
+<p>When applying multiple grouping in a TableSheet, the layout takes more spaces by default. The following behavior of multiple grouping can help show the grouping result in a better way.</p>
+
+<ul>
+    <li>When a grouping is collapsed, the cells of detail columns will display empty.
+
+        <p><img border="0" alt="TableSheet Grouping Detail Columns Collapse" src="images/ts-grouping-multiplecollapse1.png" /></p>
+    </li>
+
+    <li>When a parent grouping is collapsed, the cells of the child group will also display empty.
+
+        <p><img border="0" alt="TableSheet Grouping Parent Group Collapse" src="images/ts-grouping-multiplecollapse2.png" /></p>
+    </li>
+</ul>
+
+<p>You can set the expand or collapse state of multiple grouping using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.TableSheet.TableSheet~expandGroup.html">expandGroup</a>&nbsp;and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.TableSheet.TableSheet~expandGroupItem.html">expandGroupItem</a>&nbsp;methods as well.</p>
+
+<h3>Sorting in Grouping</h3>
+
+<p>TableSheet supports sorting in grouping that works between the group columns and the base columns.</p>
+
+<p>The following image shows that sort results are based on the grouping results, where the “Selling Package” group column is in ascending order whereas the “Year Quarter” group column and “Stock Item Key” base column are in descending order.</p>
+
+<p><img border="0" alt="TableSheet Grouping Sort" src="images/ts-grouping-sort.png" /></p>
+
+<p>The following behavior is observed when using sorting in TableSheet grouping.</p>
+
+<ul>
+    <li>The sort status is shared between the source of the group column and itself.
+
+        <p><img border="0" alt="TableSheet Grouping Column and Base Column Sort Status" src="images/ts-grouping-sortsame.png" /></p>
+    </li>
+
+    <li>Only one column can be sorted at a group level.
+
+        <p><img border="0" alt="TableSheet Grouping One Column Sorting" src="images/ts-grouping-sortsingle.gif" /></p>
+    </li>
+
+    <li>The last sorting status before applying groupBy and after applying removeGroupBy methods is retained.
+
+        <p><img border="0" alt="TableSheet Grouping Last Sorting Status" src="images/ts-grouping-sortstatus.gif" /></p>
+    </li>
+</ul>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

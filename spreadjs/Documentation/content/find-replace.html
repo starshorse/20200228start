@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Find and Replace | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n775","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="5bdfcf0e-478f-4985-a19a-3ff3f7ebd82d"/>
+    <meta name="Microsoft.Help.TocParent" content="107fa408-448d-4997-abb2-1c64e7764a7f"/>
+    <meta name="Microsoft.Help.TocOrder" content="5"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="spdesigner.html">SpreadJS Designer</a>
+ / <a href="spdesignerwork.html">Work in the Designer</a>
+ / Find and Replace</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Find and Replace</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS Designer enables the user to search for data such as a string or number in your worksheet. You can&nbsp;locate the data as well as replace the specific data with something else.</p>
+
+<p>You can find something by&nbsp;using "<strong>Ctrl+F"</strong> shortcut keys or the "Find" button in the "Home" &gt; "Editing" tab group. These actions&nbsp;open the find dialog box in&nbsp;SpreadJS designer.&nbsp;Similar to&nbsp;Excel, you can open the Find dialog using the shortcut keys when the focus is on SpreadJS Designer.&nbsp;</p>
+
+<p>The Find dialog box prevents the opening of any other dialog box.</p>
+
+<p>The following image shows the find dialog box.</p>
+
+<p align="left"><img border="0" alt="" src="Images/findnreplace1.png" /></p>
+
+<div align="left">
+    In the above image, enter the string to be found in the text box given in&nbsp;the "Find what:" input field and then click on
+</div>
+
+<ul>
+    <li><strong>Find All</strong> to find all the occurrences of the string.</li>
+
+    <li><strong>Find Next</strong> to move to next occurrence of the string from the current cursor position.</li>
+
+    <li><strong>Close</strong> to close the dialog box.</li>
+</ul>
+
+<h3>Working with Replace Tab</h3>
+
+<p>This option allows the user to enter the&nbsp;string to find in the <strong>Find what</strong> textbox and enter the string which can replace the found string in <strong>Replace with</strong> textbox as&nbsp;shown in below image:</p>
+
+<p><img border="0" alt="" src="Images/findnreplace2.png" /></p>
+
+<ul>
+    <li><strong>Replace All:</strong>&nbsp;Click on&nbsp;this option to replace all the&nbsp;occurrences of the old string&nbsp;with the new string.</li>
+
+    <li><strong>Replace:</strong> Click on this to replace the string on current cursor position with the new string.</li>
+</ul>
+
+<h3>Working with Option button</h3>
+
+<p>SpreadJS Designer&nbsp;also enables the user to apply conditions on their search&nbsp;using&nbsp;<strong>Option</strong> button.</p>
+
+<p>The following image shows the dialog when a user presses the Option button.</p>
+
+<p><img border="0" alt="" src="Images/findnreplaceoption.png" />&nbsp;</p>
+
+<p>User can implement the find and replace conditions as follows:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Option</strong></td>
+
+            <td><strong>Explanation</strong></td>
+        </tr>
+
+        <tr>
+            <td>Within</td>
+
+            <td>
+                <p><strong>Worksheet:</strong> To find the string within a particular sheet.</p>
+
+                <p><strong>Workbook:</strong> To find the string in all the worksheets of a workbook.</p>
+
+                <p><strong>Match case:</strong> Select the checkbox if user wants to match the case of entered string.</p>
+
+                <p><strong>Match exactly:</strong> Select the checkbox if user wants to match the content of whole cell.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Search</td>
+
+            <td>
+                <p><strong>By Rows:</strong> Will list the Row value of the entered string.</p>
+
+                <p><strong>By Columns:</strong> Will list the column value of the entered string.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Look in</td>
+
+            <td>
+                <p><strong>Values:</strong> Normal search in the worksheet or workbook.</p>
+
+                <p><strong>Formula:</strong>&nbsp;It&nbsp;list cells where&nbsp;the searched formula is implemented.</p>
+
+                <p><strong>Use Wildcards:</strong> Select the checkbox if user has entered any wildcard characters criteria while Find or Replace operations.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

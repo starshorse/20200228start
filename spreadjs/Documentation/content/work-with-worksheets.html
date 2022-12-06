@@ -1,0 +1,676 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Work with Worksheets | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n191","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="e1701f73-1176-4b2a-8aae-889d0d48c4b0"/>
+    <meta name="Microsoft.Help.TocParent" content="bce304a2-3ad1-40e2-a047-d6e21bdbf9c8"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="worksheet.html">Worksheet</a>
+ / Work with Worksheets</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Work with Worksheets</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows you to perform various operations on worksheets to accomplish several important tasks.</p>
+
+<h3>Add Worksheet</h3>
+
+<p>You can add a worksheet to workbook by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~addSheet.html">Workbook.addSheet</a> method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+    <span style="COLOR: #008000">// Set the number of sheets to 3.
+</span>    <span style="COLOR: #0000ff">var</span> spread =
+    <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),
+    {sheetCount:3});
+
+   $(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span>()
+   {
+     <span style="COLOR: #008000">// Create a new sheet and add it at 2nd position.
+</span>     <span style="COLOR: #0000ff">var</span> sheet = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Worksheet();
+     sheet.name(<span style="COLOR: #800000">"The added sheet"</span>);
+     spread.addSheet(1, sheet);
+   });
+}); 
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Remove Worksheet</h3>
+
+<p>You can remove a worksheet&nbsp;from workbook by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~removeSheet.html">Workbook.removeSheet</a> method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+ {
+    <span style="COLOR: #008000">// Set the number of sheets to 3.
+</span>    <span style="COLOR: #0000ff">var</span> spread =
+    <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+
+    $(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span>()
+    {
+     <span style="COLOR: #008000">// Delete the second sheet.
+</span>     spread.removeSheet(1);
+    });
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Add Multiple Worksheets</h3>
+
+<p>You can set the number of sheets to add in a workbook by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~setSheetCount.html">Workbook.setSheetCount</a> method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),
+    {sheetCount:3});
+
+    <span style="COLOR: #008000">// Set the number of sheets to 5.
+</span>    spread.setSheetCount(5);
+}); 
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Rename Worksheet</h3>
+
+<p>You can change the name of a worksheet by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~name.html">Worksheet.name</a> method.</p>
+
+<p><img border="0" alt="Custom sheet names in a workbook" src="images/codesheet.png" /></p>
+
+<p>This code example changes the sheet name and sets the sheet tab color.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+   <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),
+   {sheetCount:3});
+  
+   <span style="COLOR: #008000">// Set the number of sheets to 5.
+</span>   spread.setSheetCount(5);
+  
+   <span style="COLOR: #008000">// Change the sheet names
+</span>   spread.sheets[0].name(<span style="COLOR: #800000">"The first sheet"</span>);
+   spread.sheets[1].name( <span style="COLOR: #800000">"The second sheet"</span>);
+  
+   <span style="COLOR: #008000">// Change sheet information such as sheet tab display color.
+</span>   spread.sheets[0].options.sheetTabColor = <span style="COLOR: #800000">"LemonChiffon"</span>;
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> An error is thrown when using&nbsp;duplicate names or&nbsp;special characters&nbsp;in&nbsp;worksheet&nbsp;name within a workbook.</p>
+
+    <p>Bind the sheet with <font color="#222222"><strong>invalidOperation</strong> event and&nbsp;set the InvalidOperationType to changeSheetName</font><strong>&nbsp;</strong>to&nbsp;receive the error message during runtime.</p>
+</div>
+
+<h3>Move Worksheet</h3>
+
+<p>You can change the sheet index and re-order the sheets in the tab strip by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~changeSheetIndex.html">Workbook.changeSheetIndex</a> method. This method accepts the sheet name and the target index number as parameters.</p>
+
+<p>Alternatively, the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Commands~moveSheet.html">moveSheet</a> command can also be used to move a sheet.</p>
+
+<p>The following example changes the sheet index of "Sheet2" and adds text in a worksheet cell using the new sheet index.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+window.onload = <span style="COLOR: #0000ff">function</span> ()
+{
+    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>), {sheetCount:5});
+
+    spread.changeSheetIndex(<span style="COLOR: #800000">"Sheet2"</span>, 3);
+
+    spread.sheets[3].getCell(0, 0).text(<span style="COLOR: #800000">"changeSheetIndex successful"</span>);
+
+    <span style="COLOR: #008000">// Alternatively, change sheet index by command.
+</span>    <span style="COLOR: #008000">// spread.commandManager().execute({cmd: "moveSheet", sheetName: "Sheet2", targetIndex: 3});
+</span>
+};
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p><img border="0" alt="" src="images/move-sheet.png" /></p>
+
+<h3 id="copy-sheet">Copy Worksheet</h3>
+
+<p>You can copy a sheet to a new worksheet&nbsp;using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Commands~copySheet.html">copySheet</a> command. This command accepts parameter values such as the sheet name, target index, and new sheet name. Additionally, you can also state whether to include data source binding in the copied sheet, which is true by default.</p>
+
+<p>The copied sheet looks exactly the same as the original sheet.&nbsp;It modifies the relevant current sheet references in the content and retains references to other sheets.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <strong>Original Sheet</strong>
+
+                <p><img border="0" alt="" src="images/origSheet-func.png" /></p>
+            </td>
+
+            <td>
+                <strong>Copied Sheet</strong>
+
+                <p><img border="0" alt="" src="images/copySheet-func.png" /></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The copied sheet also copies the custom names that belong to the original sheet.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <strong>Original Sheet</strong>
+
+                <p><img border="0" alt="" src="images/origSheet-customName.png" /></p>
+            </td>
+
+            <td>
+                <strong>Copied Sheet</strong>
+
+                <p><img border="0" alt="" src="images/copySheet-customName.png" /></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The copied sheet modifies&nbsp;all globally unique element names such as tables, slicers, charts, shapes, etc.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <strong>Original Sheet</strong>
+
+                <p><img border="0" alt="" src="images/origSheet-table.png" /></p>
+            </td>
+
+            <td>
+                <strong>Copied Sheet</strong>
+
+                <p><img border="0" alt="" src="images/copySheet-table.png" /></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following example copies the "Sheet1" to a new worksheet and modifies the existing sheet reference in formula&nbsp;and the table name.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+window.onload = <span style="COLOR: #0000ff">function</span> () {
+     
+    <span style="COLOR: #008000">// Configure Workbook and Worksheet
+</span>    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(<span style="COLOR: #800000">"ss"</span>, {sheetCount:5});
+    <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+    
+    <span style="COLOR: #0000ff">var</span> tableData = {
+        sales: [
+            { orderDate: <span style="COLOR: #800000">'1/6/2013'</span>, item: <span style="COLOR: #800000">'Pencil'</span>, units: 95, cost: 1.99},
+            { orderDate: <span style="COLOR: #800000">'4/1/2013'</span>, item: <span style="COLOR: #800000">'Binder'</span>, units: 60, cost: 4.99},
+            { orderDate: <span style="COLOR: #800000">'6/8/2013'</span>, item: <span style="COLOR: #800000">'Pen Set'</span>, units: 16, cost: 15.99},
+            { orderDate: <span style="COLOR: #800000">'8/1/2013'</span>, item: <span style="COLOR: #800000">'Pencil'</span>, units: 20, cost: 24.99},
+            { orderDate: <span style="COLOR: #800000">'10/8/2013'</span>, item: <span style="COLOR: #800000">'Binder'</span>, units: 31, cost: 16.99}
+        ]
+    };
+
+    activeSheet.getCell(7,2).text(<span style="COLOR: #800000">"Total"</span>);
+    activeSheet.getCell(7,3).formula(<span style="COLOR: #800000">"=SUM(Sheet1!D2:D6)"</span>);
+
+    <span style="COLOR: #0000ff">var</span> table = activeSheet.tables.add(<span style="COLOR: #800000">'Table1'</span>, 0, 0, 7, 4);
+    <span style="COLOR: #0000ff">var</span> tableColumn1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn(1, <span style="COLOR: #800000">"orderDate"</span>, <span style="COLOR: #800000">"Order Date"</span>, <span style="COLOR: #800000">"yyyy-mm-dd"</span>);
+    <span style="COLOR: #0000ff">var</span> tableColumn2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn(2, <span style="COLOR: #800000">"item"</span>, <span style="COLOR: #800000">"Item"</span>);
+    <span style="COLOR: #0000ff">var</span> tableColumn3 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn(3, <span style="COLOR: #800000">"units"</span>, <span style="COLOR: #800000">"Units"</span>);
+    <span style="COLOR: #0000ff">var</span> tableColumn4 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Tables.TableColumn(4, <span style="COLOR: #800000">"cost"</span>, <span style="COLOR: #800000">"Cost"</span>);
+    table.autoGenerateColumns(<span style="COLOR: #0000ff">false</span>);
+    table.bind([tableColumn1, tableColumn2, tableColumn3, tableColumn4], <span style="COLOR: #800000">'sales'</span>, tableData);
+    activeSheet.autoFitColumn(0);
+
+    spread.commandManager().execute({cmd: <span style="COLOR: #800000">"copySheet"</span>, sheetName: <span style="COLOR: #800000">"Sheet1"</span>, targetIndex: 3, newName: <span style="COLOR: #800000">"Sheet1 (2)"</span>, includeBindingSource: <span style="COLOR: #0000ff">true</span>});
+
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Hide or Unhide Worksheet</h3>
+
+<p>You can hide or unhide a worksheet in SpreadJS by accessing the sheet tab context menu. Right-click and select the options “Hide” or “Unhide…” to perform the operations.</p>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~visible.html">Worksheet.visible</a>&nbsp;class method can be used to set the visibility status of worksheets in runtime. It accepts boolean values to determine whether the worksheet is displayed.&nbsp;You can also set the visibility of a worksheet by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.SheetTabVisible.html">SheetTabVisible</a> enumeration options as a parameter in <strong>Worksheet.visible</strong> method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Configure Workbook and Worksheet
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(<span style="COLOR: #800000">"ss"</span>, { sheetCount: 5 });
+
+<span style="COLOR: #008000">// Hiding "Sheet2"
+</span>spread.getSheet(1).visible(<span style="COLOR: #0000ff">false</span>);
+
+<span style="COLOR: #008000">// Hiding "Sheet4"
+</span>spread.getSheet(3).visible(GC.Spread.Sheets.SheetTabVisible.hidden);
+<span style="COLOR: #008000">// or
+// spread.getSheet(3).visible(0);</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The <strong>SheetTabVisible.veryHidden</strong> enumeration option allows the application&nbsp;to hide a sheet in the Spread component. It means that a sheet cannot be set to visible&nbsp;through the UI by using the sheet tab context menu item "Unhide...".</p>
+
+<p>A “very hidden” sheet can therefore be only set to visible by using the Worksheet.visible method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Very hidden "Sheet3"
+</span>spread.getSheet(2).visible(GC.Spread.Sheets.SheetTabVisible.veryHidden);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> Users cannot perform the following operations on a “very hidden” sheet.</p>
+
+    <ul>
+        <li>Cannot be set as an active worksheet.</li>
+
+        <li>Cannot select the worksheet.</li>
+
+        <li>Content of the sheet cannot be retrieved using find or replace.</li>
+
+        <li>The content of the sheet cannot be affected by GoTo operations.</li>
+
+        <li>The content of the sheet cannot be referenced by hyperlinks.</li>
+
+        <li>Cannot print the worksheet.</li>
+    </ul>
+</div>
+
+<h3>Set Default Style</h3>
+
+<p>You can set the default sheet style by using below example code:</p>
+
+<p><img border="0" alt="Default sheet style" src="images/codedefault.png" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),
+    {sheetCount:3});
+    <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+   
+   <span style="COLOR: #008000">// Set Default Style
+</span>    activeSheet.setRowCount(5, GC.Spread.Sheets.SheetArea.viewport);
+    activeSheet.setColumnCount(5, GC.Spread.Sheets.SheetArea.viewport);
+  
+   <span style="COLOR: #008000">// Set the default styles.
+</span>   <span style="COLOR: #0000ff">var</span> defaultStyle = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+   defaultStyle.backColor = <span style="COLOR: #800000">"LemonChiffon"</span>;
+   defaultStyle.foreColor = <span style="COLOR: #800000">"Red"</span>;
+   defaultStyle.formatter = <span style="COLOR: #800000">"0.00"</span>;
+   defaultStyle.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+   defaultStyle.borderLeft =
+   <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"Green"</span>,GC.Spread.Sheets.LineStyle.medium);
+   defaultStyle.borderTop =
+   <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"Green"</span>,GC.Spread.Sheets.LineStyle.medium);
+   defaultStyle.borderRight =
+   <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"Green"</span>,GC.Spread.Sheets.LineStyle.medium);
+   defaultStyle.borderBottom = 
+   <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.LineBorder(<span style="COLOR: #800000">"Green"</span>,GC.Spread.Sheets.LineStyle.medium);
+   activeSheet.setDefaultStyle(defaultStyle, GC.Spread.Sheets.SheetArea.viewport);
+   <span style="COLOR: #0000ff">var</span> rowCount = activeSheet.getRowCount();
+   <span style="COLOR: #0000ff">var</span> colCount = activeSheet.getColumnCount();
+   <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> i = 0; i &lt; rowCount; i++)
+    {
+      <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> j = 0; j &lt; colCount; j++)
+       {
+         activeSheet.setValue(i, j, i+j, GC.Spread.Sheets.SheetArea.viewport);
+       }
+    }
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Change Gridlines Appearance</h3>
+
+<p>You can change the color&nbsp;or hide the grid lines.</p>
+
+<p><img border="0" alt="Changing the color and hiding the grid lines in a worksheet" src="images/codegrid.png" /></p>
+
+<p>This code example sets the grid line color and hides the horizontal grid lines.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),
+    {sheetCount:3});
+    <span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+  
+    <span style="COLOR: #008000">// Hide horizontal grid lines.
+</span>    sheet.options.gridline = {color:<span style="COLOR: #800000">"red"</span>, showVerticalGridline: <span style="COLOR: #0000ff">true</span>,
+    showHorizontalGridline: <span style="COLOR: #0000ff">false</span>};
+    spread.invalidateLayout();
+    spread.repaint();
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div><br />
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

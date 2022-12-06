@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Customize Scrollbar | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n180","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="19d1bda8-62f7-4b72-a83b-c86f2f1278b4"/>
+    <meta name="Microsoft.Help.TocParent" content="a9511168-6012-4626-93eb-1972a85a4fc6"/>
+    <meta name="Microsoft.Help.TocOrder" content="3"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="workbook.html">Workbook</a>
+ / <a href="scrollbar.html">Scrollbar</a>
+ / Customize Scrollbar</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Customize Scrollbar</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides two types of scrollbars:</p>
+
+<ul>
+    <li>Classic Scrollbar (Skin appearance)</li>
+
+    <li>Customizable Scrollbar (Mobile appearance)</li>
+</ul>
+
+<p>The default scrollbar is the classic scrollbar which can be referred&nbsp;<a href="scrollbars.html">here</a>.&nbsp;However, you can change the&nbsp;classic scrollbar to customizable one&nbsp;by setting <strong>ScrollbarAppearance</strong> enumeration to <strong>mobile</strong>. The customization of scrollbar&nbsp;includes various options, such as color, border, cap, hover, auto fade etc.&nbsp;These customizations in mobile appearance&nbsp;can be used to match a website's theme or&nbsp;specific&nbsp;style of a webpage.</p>
+
+<p>The mobile appearance displays four states of a scrollbar&nbsp;as explained below:</p>
+
+<ul>
+    <li><strong>Hide</strong>: The scrollbar hides itself&nbsp;when the&nbsp;mouse is moved away from&nbsp;it, after a few seconds.</li>
+
+    <li><strong>Normal</strong>: The scrollbar appears in normal state for a few seconds when the mouse is moved away from it.&nbsp;Other actions which display normal state are mouse wheel, traversing&nbsp;cells by keyboard, changing cell selection and sliding by touch.</li>
+
+    <li><strong>Hover</strong>: The scrollbar width and color changes&nbsp;in hover state which occurs&nbsp;when mouse is hovered over&nbsp;the scrollbar.</li>
+
+    <li><strong>Active</strong>: The active state of scrollbar occurs when the scrollbar is clicked and dragged in any direction. The scrollbar width, color and boundary changes as compared to normal state.</li>
+</ul>
+
+<p><img border="0" alt="" src="images/scrollbar_gif.gif" /></p>
+
+<p>SpreadJS&nbsp;applies a&nbsp;special state of mobile appearance&nbsp;when the mouse enters a spread host:</p>
+
+<ul>
+    <li><strong>spread-hovering</strong>: The scrollbar applies&nbsp;Normal and Hide states.</li>
+</ul>
+
+<p><img border="0" alt="" src="images/special_scrollbar_state.gif" /></p>
+
+<p>The difference between mobile and skin appearance of scrollbar has been explained below:</p>
+
+<table style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+    <tbody>
+        <tr>
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>Scrollbar Behavior</strong></th>
+
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>Skin Apearance</strong></th>
+
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>Mobile Appearance</strong></th>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Scrollable Area and Visibility</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Gets affected by tab strip</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Does not get affected&nbsp;by tab strip</td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Arrows and Span</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Visible</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Invisible</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> In mobile appearance, the scrollbar&nbsp;ignores any frozen rows or columns.
+</div>
+
+<h3>Using Code</h3>
+
+<p>This example shows how to set&nbsp;the scrollbar appearance&nbsp;to&nbsp;mobile&nbsp;by using code.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Set scrollbarAppearance to mobile
+</span> spread.options.scrollbarAppearance = GC.Spread.Sheets.ScrollbarAppearance.mobile;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can also customize the&nbsp;scrollbar style by using&nbsp;class names&nbsp;and styles as shown in below code:</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;style&gt;
+    .gc-scroll-mobile-container {
+        border-radius: 8px;
+    }
+
+    .gc-scroll-mobile-thumb {
+        border-radius: 8px;
+        border: none;
+        background-color: skyblue;
+        background-image: linear-gradient( 45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent );
+    }
+
+    .gc-scroll-mobile-state-active .gc-scroll-mobile-thumb {
+        border: none;
+        background-color: skyblue;
+        background-image: linear-gradient( 45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent );
+    }
+&lt;<span style="COLOR: #800000">/style&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The&nbsp;output of above code will display the scrollbar as below:</p>
+
+<p><img border="0" alt="" src="images/style_customized_scrollbar.gif" /></p>
+
+<p>&nbsp;</p>
+
+<p>Please follow the below mentioned&nbsp;styles in corresponding class names&nbsp;to customize the appearance of scrollbar.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>ClassNames and Styles</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">/* The recommended styles are in the {}. */</span>
+ 
+<span style="COLOR: #008000">/* Scrollbar Container (Normal State) */</span>
+.gc-scroll-mobile-container { border-radius, opacity, padding }          <span style="COLOR: #008000">/* The common style for scrollbar */</span>
+.gc-scroll-mobile-container-vertical { width }                           <span style="COLOR: #008000">/* The style for vertical scrollbar */</span>
+.gc-scroll-mobile-container-horizontal { height }                        <span style="COLOR: #008000">/* The style for horizontal scrollbar */</span>
+ 
+<span style="COLOR: #008000">/* Scrollbar Thumb (Normal State) */</span>
+.gc-scroll-mobile-thumb { background, border, border-radius, opacity }   <span style="COLOR: #008000">/* The style for scrollbar thumb */</span>
+ 
+<span style="COLOR: #008000">/* Scrollbar Track (Normal State) */</span>
+.gc-scroll-mobile-track { background, border, border-radius, opacity }   <span style="COLOR: #008000">/* The style for scrollbar track */</span>
+ 
+<span style="COLOR: #008000">/* Combo class name, Add to Scrollbar Container */</span>
+.gc-scroll-mobile-spread-hovering                                        <span style="COLOR: #008000">/* The style for scrollbar elements when mouse enter into spread host */</span>
+.gc-scroll-mobile-state-hide                                             <span style="COLOR: #008000">/* The hide state style for scrollbar elements */</span>
+.gc-scroll-mobile-state-hover                                            <span style="COLOR: #008000">/* The hover state style for scrollbar elements */</span>
+.gc-scroll-mobile-state-active                                           <span style="COLOR: #008000">/* The active state style for scrollbar elements */</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>You can also&nbsp;set the mobile scrollbar in SpreadJS designer as shown below:<br />
+<br />
+<img border="0" alt="" src="images/scrollbar_designer.png" /></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS allows you to specify themes for cells, columns, rows, or the widget. Learn more in SpreadJS docs." />
+    
+    <title>Configure Themes | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n737","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS allows you to specify themes for cells, columns, rows, or the widget. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="ae7b1577-f997-4b66-94bc-2f6aa1cf85ad"/>
+    <meta name="Microsoft.Help.TocParent" content="6eb360d0-8726-40ee-ab86-cf1cd72d035a"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="styletheme.html">Theme</a>
+ / Configure Themes</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Configure Themes</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can specify themes for cells, columns, rows, or the widget.</p>
+
+<p>You can use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~themeFont.html">themeFont</a> method for the cell, row, or column. You can&nbsp;use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~currentTheme.html">currentTheme</a>&nbsp;method for the sheet.</p>
+
+<p>The following theme names can be used with the <strong>currentTheme</strong> method:</p>
+
+<ul>
+    <li>Default</li>
+
+    <li>Office</li>
+
+    <li>Apex</li>
+
+    <li>Aspect</li>
+
+    <li>Concourse</li>
+
+    <li>Civic</li>
+
+    <li>Oriel</li>
+
+    <li>Origin</li>
+
+    <li>Paper</li>
+
+    <li>Solstice</li>
+
+    <li>Technic</li>
+
+    <li>Trek</li>
+
+    <li>Urban</li>
+
+    <li>Verve</li>
+
+    <li>Equity</li>
+
+    <li>Flow</li>
+
+    <li>Foundry</li>
+
+    <li>Median</li>
+
+    <li>Metro</li>
+
+    <li>Module</li>
+
+    <li>Opulent</li>
+</ul>
+
+<p>The following image displays the accents that you can set for the theme colors.</p>
+
+<p><img border="0" alt="Accents available for theme color in SpreadJS" src="images/cthemes.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>This example sets the theme with the <strong>currentTheme</strong> method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.currentTheme(<span style="COLOR: #800000">"Metro"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Using Code</h4>
+
+<p>This example sets theme colors.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.setColumnWidth(0, 22);
+activeSheet.setColumnWidth(1, 30);
+activeSheet.setColumnWidth(2, 22);
+activeSheet.getCell(1, 3, GC.Spread.Sheets.SheetArea.viewport).value(<span style="COLOR: #800000">"Theme Colors"</span>).themeFont(<span style="COLOR: #800000">"headings"</span>).hAlign(GC.Spread.Sheets.HorizontalAlign.center);
+activeSheet.addSpan(1, 3, 1, 10);
+activeSheet.getCell(2, 3, GC.Spread.Sheets.SheetArea.viewport).text(<span style="COLOR: #800000">"Background 1"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(2, 4, GC.Spread.Sheets.SheetArea.viewport).text(<span style="COLOR: #800000">"Text 1"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(2, 5, GC.Spread.Sheets.SheetArea.viewport).text(<span style="COLOR: #800000">"Background 2"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(2, 6, GC.Spread.Sheets.SheetArea.viewport).text(<span style="COLOR: #800000">"Text 2"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(2, 7, GC.Spread.Sheets.SheetArea.viewport).text(<span style="COLOR: #800000">"Accent 1"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(2, 8, GC.Spread.Sheets.SheetArea.viewport).text(<span style="COLOR: #800000">"Accent 2"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(2, 9, GC.Spread.Sheets.SheetArea.viewport).text(<span style="COLOR: #800000">"Accent 3"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(2, 10).text(<span style="COLOR: #800000">"Accent 4"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(2, 11).text(<span style="COLOR: #800000">"Accent 5"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(2, 12).text(<span style="COLOR: #800000">"Accent 6"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(3, 1).value(<span style="COLOR: #800000">"100"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(3, 3).backColor(<span style="COLOR: #800000">"Background 1"</span>);
+activeSheet.getCell(3, 4).backColor(<span style="COLOR: #800000">"Text 1"</span>);
+activeSheet.getCell(3, 5).backColor(<span style="COLOR: #800000">"Background 2"</span>);
+activeSheet.getCell(3, 6).backColor(<span style="COLOR: #800000">"Text 2"</span>);
+activeSheet.getCell(3, 7).backColor(<span style="COLOR: #800000">"Accent 1"</span>);
+activeSheet.getCell(3, 8).backColor(<span style="COLOR: #800000">"Accent 2"</span>);
+activeSheet.getCell(3, 9).backColor(<span style="COLOR: #800000">"Accent 3"</span>);
+activeSheet.getCell(3, 10).backColor(<span style="COLOR: #800000">"Accent 4"</span>);
+activeSheet.getCell(3, 11).backColor(<span style="COLOR: #800000">"Accent 5"</span>);
+activeSheet.getCell(3, 12).backColor(<span style="COLOR: #800000">"Accent 6"</span>);
+activeSheet.getCell(5, 1).value(<span style="COLOR: #800000">"80"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(5, 3).backColor(<span style="COLOR: #800000">"Background 1 80"</span>);
+activeSheet.getCell(5, 4).backColor(<span style="COLOR: #800000">"Text 1 80"</span>);
+activeSheet.getCell(5, 5).backColor(<span style="COLOR: #800000">"Background 2 80"</span>);
+activeSheet.getCell(5, 6).backColor(<span style="COLOR: #800000">"Text 2 80"</span>);
+activeSheet.getCell(5, 7).backColor(<span style="COLOR: #800000">"Accent 1 80"</span>);
+activeSheet.getCell(5, 8).backColor(<span style="COLOR: #800000">"Accent 2 80"</span>);
+activeSheet.getCell(5, 9).backColor(<span style="COLOR: #800000">"Accent 3 80"</span>);
+activeSheet.getCell(5, 10).backColor(<span style="COLOR: #800000">"Accent 4 80"</span>);
+activeSheet.getCell(5, 11).backColor(<span style="COLOR: #800000">"Accent 5 80"</span>);
+activeSheet.getCell(5, 12).backColor(<span style="COLOR: #800000">"Accent 6 80"</span>);
+activeSheet.getCell(6, 1).value(<span style="COLOR: #800000">"60"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(6, 3).backColor(<span style="COLOR: #800000">"Background 1 60"</span>);
+activeSheet.getCell(6, 4).backColor(<span style="COLOR: #800000">"Text 1 60"</span>);
+activeSheet.getCell(6, 5).backColor(<span style="COLOR: #800000">"Background 2 60"</span>);
+activeSheet.getCell(6, 6).backColor(<span style="COLOR: #800000">"Text 2 60"</span>);
+activeSheet.getCell(6, 7).backColor(<span style="COLOR: #800000">"Accent 1 60"</span>);
+activeSheet.getCell(6, 8).backColor(<span style="COLOR: #800000">"Accent 2 60"</span>);
+activeSheet.getCell(6, 9).backColor(<span style="COLOR: #800000">"Accent 3 60"</span>);
+activeSheet.getCell(6, 10).backColor(<span style="COLOR: #800000">"Accent 4 60"</span>);
+activeSheet.getCell(6, 11).backColor(<span style="COLOR: #800000">"Accent 5 60"</span>);
+activeSheet.getCell(6, 12).backColor(<span style="COLOR: #800000">"Accent 6 60"</span>);
+activeSheet.getCell(7, 1).value(<span style="COLOR: #800000">"40"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(7, 3).backColor(<span style="COLOR: #800000">"Background 1 40"</span>);
+activeSheet.getCell(7, 4).backColor(<span style="COLOR: #800000">"Text 1 40"</span>);
+activeSheet.getCell(7, 5).backColor(<span style="COLOR: #800000">"Background 2 40"</span>);
+activeSheet.getCell(7, 6).backColor(<span style="COLOR: #800000">"Text 2 40"</span>);
+activeSheet.getCell(7, 7).backColor(<span style="COLOR: #800000">"Accent 1 40"</span>);
+activeSheet.getCell(7, 8).backColor(<span style="COLOR: #800000">"Accent 2 40"</span>);
+activeSheet.getCell(7, 9).backColor(<span style="COLOR: #800000">"Accent 3 40"</span>);
+activeSheet.getCell(7, 10).backColor(<span style="COLOR: #800000">"Accent 4 40"</span>);
+activeSheet.getCell(7, 11).backColor(<span style="COLOR: #800000">"Accent 5 40"</span>);
+activeSheet.getCell(7, 12).backColor(<span style="COLOR: #800000">"Accent 6 40"</span>);
+activeSheet.getCell(8, 1).value(<span style="COLOR: #800000">"-25"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(8, 3).backColor(<span style="COLOR: #800000">"Background 1 -25"</span>);
+activeSheet.getCell(8, 4).backColor(<span style="COLOR: #800000">"Text 1 -25"</span>);
+activeSheet.getCell(8, 5).backColor(<span style="COLOR: #800000">"Background 2 -25"</span>);
+activeSheet.getCell(8, 6).backColor(<span style="COLOR: #800000">"Text 2 -25"</span>);
+activeSheet.getCell(8, 7).backColor(<span style="COLOR: #800000">"Accent 1 -25"</span>);
+activeSheet.getCell(8, 8).backColor(<span style="COLOR: #800000">"Accent 2 -25"</span>);
+activeSheet.getCell(8, 9).backColor(<span style="COLOR: #800000">"Accent 3 -25"</span>);
+activeSheet.getCell(8, 10).backColor(<span style="COLOR: #800000">"Accent 4 -25"</span>);
+activeSheet.getCell(8, 11).backColor(<span style="COLOR: #800000">"Accent 5 -25"</span>);
+activeSheet.getCell(8, 12).backColor(<span style="COLOR: #800000">"Accent 6 -25"</span>);
+activeSheet.getCell(9, 1).value(<span style="COLOR: #800000">"-50"</span>).themeFont(<span style="COLOR: #800000">"Body"</span>);
+activeSheet.getCell(9, 3).backColor(<span style="COLOR: #800000">"Background 1 -50"</span>);
+activeSheet.getCell(9, 4).backColor(<span style="COLOR: #800000">"Text 1 -50"</span>);
+activeSheet.getCell(9, 5).backColor(<span style="COLOR: #800000">"Background 2 -50"</span>);
+activeSheet.getCell(9, 6).backColor(<span style="COLOR: #800000">"Text 2 -50"</span>);
+activeSheet.getCell(9, 7).backColor(<span style="COLOR: #800000">"Accent 1 -50"</span>);
+activeSheet.getCell(9, 8).backColor(<span style="COLOR: #800000">"Accent 2 -50"</span>);
+activeSheet.getCell(9, 9).backColor(<span style="COLOR: #800000">"Accent 3 -50"</span>);
+activeSheet.getCell(9, 10).backColor(<span style="COLOR: #800000">"Accent 4 -50"</span>);
+activeSheet.getCell(9, 11).backColor(<span style="COLOR: #800000">"Accent 5 -50"</span>);
+activeSheet.getCell(9, 12).backColor(<span style="COLOR: #800000">"Accent 6 -50"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="styles.html">Styles</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Theme.html">Theme class</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.ThemeColors.html">ThemeColors class</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

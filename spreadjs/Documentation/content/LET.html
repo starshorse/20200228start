@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>LET | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3886","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="b3aea9e4-74ea-4eeb-b6d3-016f1d065d1c"/>
+    <meta name="Microsoft.Help.TocParent" content="f8f4ad58-e1ef-4156-9858-ff979f1bc8c0"/>
+    <meta name="Microsoft.Help.TocOrder" content="38"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / <a href="math-trig-functions.html">Math and Trigonometric Functions</a>
+ / LET</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">LET</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>This function is used to assign names to calculation results. The variable names can then be used to store intermediate calculations, values, or defining names within braces of the LET() function. To use this function, you have to define pairs of names and values associated with it, and a calculation that uses them all.</p>
+
+<p>By using this function, user don't have to remember what a specific range or cell reference referred to, or what your calculation is supposed to do, or even copy pasting the same expression all over again.</p>
+
+<h4>Syntax</h4>
+
+<p>LET<em>(name1, name_value1, calculation_or_name2, [name_value2, calculation_or_name3...])</em></p>
+
+<h4>Arguments</h4>
+
+<p>This function has these arguments:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Argument</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td><em>name</em></td>
+
+            <td>First name to assign. Must&nbsp;always begin&nbsp;with a letter and should not contain a '.'</td>
+        </tr>
+
+        <tr>
+            <td><em>name_value1</em></td>
+
+            <td>The value that is assigned to <em>name1</em>.</td>
+        </tr>
+
+        <tr>
+            <td><em>calculation_or_name2</em></td>
+
+            <td>
+                You can define one of the following.
+
+                <ul>
+                    <li>A calculation that uses all names within the LET function. This must be the last argument in the LET function.</li>
+
+                    <li>A second name to be assigned to a second name_value. If a name is specified, name_value2 and calculation_or_name3 become required.</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><em>name_value2</em></td>
+
+            <td>[Optional] The value or calculation that is assigned to <em>calculation_or_name2</em>.</td>
+        </tr>
+
+        <tr>
+            <td><em>calculation_or_name3</em></td>
+
+            <td>
+                [Optional] You can define one of the following.
+
+                <ul>
+                    <li>A calculation that uses all names within the LET function. This must be the last argument of this function.</li>
+
+                    <li>A third name to assign to a third name_value. If a name is specified, name_value3 and calculation_or_name4 become required.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Data Types</h4>
+
+<p>Returns variant data type.</p>
+
+<h4>Remarks</h4>
+
+<p>The last argument must always be a calculation that returns a result.</p>
+
+<h4>Examples</h4>
+
+<p>The following sample code show the basic usage of the LET function.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> formula = <span style="COLOR: #800000">'=LET(x,2,x+3)'</span>;
+sheet1.setValue(2, 0, <span style="COLOR: #800000">'Pair varible'</span>);
+sheet1.setValue(2, 1, formula);
+sheet1.setValue(3, 0, <span style="COLOR: #800000">'Result'</span>);
+sheet1.setFormula(3, 1, formula);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The following sample code show the usage of LET local variable and custom name with LET function.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+sheet1.addCustomName(<span style="COLOR: #800000">'user'</span>, <span style="COLOR: #800000">'="Michael"'</span>);
+                
+<span style="COLOR: #0000ff">var</span> formula = <span style="COLOR: #800000">'=LET(user,"Ivy","The actual user is: "&amp;user)'</span>;
+sheet1.setValue(2, 0, <span style="COLOR: #800000">'Always use LET local variable first'</span>);
+sheet1.setValue(2, 1, formula);
+sheet1.setValue(3, 0, <span style="COLOR: #800000">'Result'</span>);
+sheet1.setFormula(3, 1, formula);
+
+<span style="COLOR: #008000">// Use custom name if local variable is not available
+</span><span style="COLOR: #0000ff">var</span> formula = <span style="COLOR: #800000">'=LET(user,user,"The actual user is: "&amp;user)'</span>;
+sheet1.setValue(5, 0, <span style="COLOR: #800000">'Use custom name if local variable is not available'</span>);
+sheet1.setValue(5, 1, formula);
+sheet1.setValue(6, 0, <span style="COLOR: #800000">'Result'</span>);
+sheet1.setFormula(6, 1, formula);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> The name argument should not contain a '.' and has been updated to match Excel's updated behavior. Refer&nbsp;<a href="rnotesv141.html">Release Notes for Version 14.1.0</a> to&nbsp;learn more.
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

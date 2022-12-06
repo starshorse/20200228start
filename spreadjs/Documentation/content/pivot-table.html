@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Pivot Table | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n680","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="f1825637-2866-4514-bd4c-8b65379a3900"/>
+    <meta name="Microsoft.Help.TocParent" content="da6e2ac1-8472-406f-a292-f03731ed2cd7"/>
+    <meta name="Microsoft.Help.TocOrder" content="24"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / Pivot Table</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Pivot Table</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Pivot Table is a powerful data&nbsp;analysis tool used to calculate, summarize, and present bulk data in a meaningful manner in a spreadsheet. SpreadJS&nbsp;allows you to use&nbsp;Pivot Tables to&nbsp;analyze the extensive data in spreadsheets,&nbsp;and group the data in different ways to&nbsp;draw helpful conclusions easily.</p>
+
+<p>The following image shows a pivot table created for a&nbsp;food sales company.&nbsp;</p>
+
+<p><img border="0" alt="Usage of GETPIVOTDATA" src="images/pivottable_quickstart.png" /></p>
+
+<p>The data can be&nbsp;broken down into categories and subcategories,&nbsp;the subtotals and grand totals can be displayed, sorting and filtering operations can be applied, various layouts, styles, and themes can be applied&nbsp;while using&nbsp;a&nbsp;pivot table. The following gif shows how to summarize complex data by&nbsp;using a&nbsp;pivot table in a spreadsheet.</p>
+
+<p><img border="0" alt="Usage of GETPIVOTDATA" src="images/pivottable.gif" /></p>
+
+<p>&nbsp;</p>
+
+<p>For using pivot table and its various features,&nbsp;refer the below topics:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td height="8"><strong>Features</strong></td>
+
+            <td height="8"><strong>Description</strong></td>
+        </tr>
+
+        <tr>
+            <td><a href="pivot-table-components.html">Pivot Table Components</a></td>
+
+            <td>Describe pivot table structure, components and elements</td>
+        </tr>
+
+        <tr>
+            <td><a href="create-pivot-table.html">Create Pivot Table</a></td>
+
+            <td>Create Pivot Table in the spreadsheet through code</td>
+        </tr>
+
+        <tr>
+            <td><a href="filter-pt.html">Filter</a></td>
+
+            <td>
+                <p>Filter the fields in the&nbsp;pivot table by using:</p>
+
+                <ul>
+                    <li>Row Fields &amp; ColumnFields Filter</li>
+
+                    <li>Value Filter</li>
+
+                    <li>Label Filter</li>
+
+                    <li>Date Type filter</li>
+
+                    <li>Slicer</li>
+
+                    <li>TimeLine</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="sort-pt.html">Sort</a></td>
+
+            <td>Sort the data in the&nbsp;pivot table</td>
+        </tr>
+
+        <tr>
+            <td><a href="group-and-collapse.html">Group and Collapse</a></td>
+
+            <td>
+                Create groups according to the data type by using:
+
+                <ul>
+                    <li>Group Dates</li>
+
+                    <li>Group Text</li>
+
+                    <li>Group Numbers</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td height="15"><a href="refresh-data-source.html">Refresh Data Source</a></td>
+
+            <td height="15">Update the data in pivot table if&nbsp;data source is updated</td>
+        </tr>
+
+        <tr>
+            <td><a href="pivot-table-layout.html">Pivot Table Layout</a></td>
+
+            <td>
+                Change the layout of the&nbsp;pivot table:
+
+                <ul>
+                    <li>Compact Form</li>
+
+                    <li>Tabular Form</li>
+
+                    <li>Outline Form</li>
+
+                    <li>Additional Settings</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="themes-and-style.html">Themes and Style</a></td>
+
+            <td>
+                Change the theme and style of pivot table:
+
+                <ul>
+                    <li>Themes</li>
+
+                    <li>Style</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="context-menu.html">Context Menu</a></td>
+
+            <td>Describe context menu options</td>
+        </tr>
+
+        <tr>
+            <td><a href="pivot-table-settings.html">Pivot Table Settings</a></td>
+
+            <td>
+                Modify the settings of the pivot table created in a spreadsheet:
+
+                <ul>
+                    <li>AutoFit Column</li>
+
+                    <li>Calculated Fields</li>
+
+                    <li>Conditional Rule</li>
+
+                    <li>Merge and Center Cells With Labels</li>
+
+                    <li>Pivot Table ToolTip</li>
+
+                    <li>Pivot Table Serialize/Deserialize</li>
+
+                    <li>Show Empty Value As</li>
+
+                    <li>Pivot Table Show Data As</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="pivot-view-manager.html">Pivot View Manager</a></td>
+
+            <td>Add, modify and delete&nbsp;Pivot Table views</td>
+        </tr>
+
+        <tr>
+            <td><a href="pivot-table-print.html">Pivot Table Print</a></td>
+
+            <td>Print pivot table</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;</p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

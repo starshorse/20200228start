@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Row and Column States | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n276","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="dbaaa224-0409-4c17-aeef-35068669a229"/>
+    <meta name="Microsoft.Help.TocParent" content="c8216b24-cb71-4a40-b0be-a84e848e3d93"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / <a href="cell-states.html">Cell States</a>
+ / Row and Column States</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Row and Column States</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows you to configure styles according to the current state of the rows and columns.&nbsp;You can set all the states by&nbsp;using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.RowColumnStates.html">GC.Spread.Sheets.RowColumnStates</a> enumeration.</p>
+
+<p>You can use <strong>rowStateRule</strong> or <strong>columnStateRule</strong>&nbsp;from <a href="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.RuleType.html">ConditionalFormatting.RuleType</a> enumeration options and then add the rule to specify the state.</p>
+
+<p>The row and column states are based on conditional formatting so&nbsp;you can also use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.ConditionalFormats.html">ConditionalFormats</a> class methods,&nbsp;<a href="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.ConditionalFormats~addRowStateRule.html">addRowStateRule</a> and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.ConditionalFormats~addColumnStateRule.html">addColumnStateRule</a> to add row and column states.</p>
+
+<p><img border="0" alt="" src="images/rowcolStates.gif" /></p>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong>&nbsp;The row and column states&nbsp;do not support&nbsp;moving or copying&nbsp;conditional format range.</p>
+</div>
+
+<h3>Types of States</h3>
+
+<p>The following table lists all the available row and column state enumeration options in&nbsp;<a href="SpreadJS~GC.Spread.Sheets.RowColumnStates.html">GC.Spread.Sheets.RowColumnStates</a>.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Enumeration Option</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>edit</td>
+
+            <td>When any cell is edited, this action&nbsp;executes the specified row or column in&nbsp;edit state.</td>
+        </tr>
+
+        <tr>
+            <td>hover</td>
+
+            <td>When any cell is hovered, this action&nbsp;executes the specified row or column in&nbsp;hover state.</td>
+        </tr>
+
+        <tr>
+            <td>active</td>
+
+            <td>When any cell is in focus, this action&nbsp;executes the specified row or column in&nbsp;active state</td>
+        </tr>
+
+        <tr>
+            <td>selected</td>
+
+            <td>When any cell is selected, this action&nbsp;executes the specified row or column in&nbsp;selected state.</td>
+        </tr>
+
+        <tr>
+            <td height="19">updated</td>
+
+            <td height="19">When any cell is updated, it locks the corresponding row or column&nbsp;in a protected worksheet.</td>
+        </tr>
+
+        <tr>
+            <td>inserted</td>
+
+            <td>When any cell is inserted, it locks the corresponding row in a protected worksheet.</td>
+        </tr>
+
+        <tr>
+            <td>dirty</td>
+
+            <td>
+                <p>When any cell state is set as dirty, this action&nbsp;executes the specified row or column in&nbsp;dirty state. This makes the row or column&nbsp;to easily track any change in the sheet data.</p>
+
+                <div class="i-box i-box-note">
+                    <p>The dirty row state includes the inserted row state. But the dirty column state doesn't include the inserted column.</p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>invalid</td>
+
+            <td>When any cell is set as invalid, this action&nbsp;executes the specified row or column in&nbsp;invalid state.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Priority&nbsp;of States&nbsp;</h3>
+
+<p>If you set multiple states in same direction and same range, the applied state style will have a priority if the corresponding rows or columns meet different states at the same time.</p>
+
+<p>The state priority is followed&nbsp;in the below order:</p>
+
+<p>Edit &gt; Hover &gt; Active &gt; Selected &gt; Updated &gt; Inserted &gt; Dirty &gt; Invalid.</p>
+
+<h3>Using Code</h3>
+
+<p>The following code sample shows how to add row and column states using both&nbsp;<a href="SpreadJS~GC.Spread.Sheets.ConditionalFormatting.ConditionalFormats.html">ConditionalFormats</a> class methods and by adding a new state rule.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(document).ready(<span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #008000">// Set the number of sheets to 3.
+</span>    <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>), { sheetCount: 3 });
+    <span style="COLOR: #0000ff">var</span> sheet = spread.getSheet(0);
+
+    <span style="COLOR: #008000">// Using a new state rule
+</span>    <span style="COLOR: #0000ff">var</span> cfs = sheet.conditionalFormats;            
+    <span style="COLOR: #0000ff">var</span> ruleType = GC.Spread.Sheets.ConditionalFormatting.RuleType.rowStateRule;
+    <span style="COLOR: #0000ff">var</span> hoverstate = GC.Spread.Sheets.RowColumnStates.hover;
+    <span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style(<span style="COLOR: #800000">"yellow"</span>);
+    <span style="COLOR: #0000ff">var</span> ranges = [<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(-1, -1, -1, -1)];
+    <span style="COLOR: #0000ff">var</span> rule = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.ConditionalFormatting.StateRule(ruleType, hoverstate, style, ranges);
+    cfs.addRule(rule);
+
+    <span style="COLOR: #008000">// Using ConditionalFormats class methods
+</span>    <span style="COLOR: #0000ff">var</span> cfs1 = sheet.conditionalFormats;
+    <span style="COLOR: #0000ff">var</span> style1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style(<span style="COLOR: #800000">"lightblue"</span>);
+    <span style="COLOR: #0000ff">var</span> columnRange = [<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(-1, -1, -1, -1)];
+    cfs1.addColumnStateRule(GC.Spread.Sheets.RowColumnStates.selected, style1, columnRange); <span style="COLOR: #008000">// adding column state
+</span>
+    <span style="COLOR: #0000ff">var</span> cfs2 = sheet.conditionalFormats;
+    <span style="COLOR: #0000ff">var</span> style2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style(<span style="COLOR: #800000">"pink"</span>);
+    <span style="COLOR: #0000ff">var</span> rowRange2 = [<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Range(-1, -1, -1, -1)];
+    cfs2.addRowStateRule(GC.Spread.Sheets.RowColumnStates.dirty, style2, rowRange2); <span style="COLOR: #008000">// adding row state
+</span>});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

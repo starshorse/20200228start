@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Add and edit hyperlinks on shapes, connector shapes, or group shapes using SpreadJS" />
+    
+    <title>Hyperlinks on Shapes | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n507","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Add and edit hyperlinks on shapes, connector shapes, or group shapes using SpreadJS" />
+    
+    <meta name="Microsoft.Help.Id" content="39f08368-729c-48d7-8344-9305fff82a37"/>
+    <meta name="Microsoft.Help.TocParent" content="2f0db448-2a74-490e-81e2-1556b7c288e3"/>
+    <meta name="Microsoft.Help.TocOrder" content="11"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="UnderstandingShapes.html">Shapes</a>
+ / Hyperlinks on Shapes</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Hyperlinks on Shapes</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows you to add hyperlinks on shapes, connector shapes, or group shapes as well. They are supported for JSON and Excel I/O too.</p>
+
+<p><img border="0" alt="hyperlinks in shapes" src="images/shapehyperlink-sample.gif" /></p>
+
+<h3>Add Hyperlinks</h3>
+
+<p>You can add hyperlinks on shapes by using <strong>hyperlink</strong> method which accepts the following settings as an array object:</p>
+
+<ul>
+    <li>URL location (string): Specifies the URL of hyperlink. It can be a website, cell reference, or an email address.</li>
+
+    <li>Tooltip (string): Specifies the message to display when shape with hyperlink is hovered upon.</li>
+
+    <li>Target (number): Specifies where the linked document will open when the link is clicked. The target type can be chosen from HyperlinkTargetType enum whose default value is 0 (opens in a new window or tab).</li>
+</ul>
+
+<p></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// add hyperlink to shape
+</span><span style="COLOR: #0000ff">var</span> circle = sheet.shapes.add(<span style="COLOR: #800000">"circle"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.oval, 40, 60, 100, 100);
+circle.text(<span style="COLOR: #800000">"Visit Google"</span>);
+circle.hyperlink({url: <span style="COLOR: #800000">"http://www.google.com"</span>, tooltip: <span style="COLOR: #800000">'go to google'</span>});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>If a new hyperlink is set on an existing shape hyperlink, the old hyperlink data is lost and replaced by new hyperlink data.</p>
+
+<p>You can also pass a command string or function in hyperlink data to perform any custom operation on clicking the shape hyperlink. The below example code adds a rectangle shape and creates a custom stopwatch hyperlink over it.</p>
+
+<p><img border="0" alt="Custom hyperlink function in shapes" src="images/shapehyperlink-custom.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> rect3 = sheet.shapes.add(<span style="COLOR: #800000">"rectangle3"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.roundedRectangle, 261, 188, 280, 140);
+            
+<span style="COLOR: #008000">// Creating custom hyperlink for a stopwatch command
+</span><span style="COLOR: #0000ff">var</span> stopWatch = <span style="COLOR: #0000ff">new</span> Stopwatch(rect3);   <span style="COLOR: #008000">// Stopwatch() is a function created containing simple stopwatch commands
+</span>rect3.hyperlink({
+    command: <span style="COLOR: #0000ff">function</span> () {
+        <span style="COLOR: #0000ff">if</span> (!stopWatch.started) {
+            stopWatch.start();
+        } <span style="COLOR: #0000ff">else</span> {
+            stopWatch.stop();
+        }
+    }
+});
+rect3.text(<span style="COLOR: #800000">'Click here to start a timer'</span>);
+<span style="COLOR: #0000ff">var</span> style = rect3.style();
+style.fill.type = 0;
+style.line.color = <span style="COLOR: #800000">"rgb(11,116,77)"</span>;
+style.textEffect.color = <span style="COLOR: #800000">"rgb(11,116,77)"</span>;
+style.textFrame.hAlign = 1;
+style.textFrame.vAlign = 1;
+style.textEffect.font = <span style="COLOR: #800000">"22px Calibri"</span>
+rect3.style(style);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div><br />
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> While performing JSON I/O, the function is lost if it is passed to the command property in hyperlink data. Hence, it is recommended to use commands instead of functions.
+</div>
+
+<h3>Edit Hyperlinks</h3>
+
+<p>You can get the information of an existing hyperlink by using <strong>hyperlink</strong> method without any arguments. This lets you edit the existing object data and sets the changed data to the method again.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// get existing shape hyperlink info
+</span><span style="COLOR: #0000ff">var</span> circleLink = circle.hyperlink();            
+circleLink.url = <span style="COLOR: #800000">"www.google.co.in"</span>;
+<span style="COLOR: #008000">// set it to new hyperlink
+</span>circle.hyperlink(circleLink);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div><br />
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> If you do not set the changed hyperlink data back to the methd, the shape hyperlink uses the original data.
+</div>
+
+<h3>Remove Hyperlinks</h3>
+
+<p>You can remove hyperlinks from shapes by calling the hyperlink method with <em>null</em> argument.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// delete shape hyperlink
+</span>circle.hyperlink(<span style="COLOR: #0000ff">null</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Usage Scenario</h3>
+
+<p>Consider a use-case scenario where an interactive quarterly sales analysis report needs to be created. The report contains the sales dashboard in one worksheet and quarterly data in different worksheets. The quick navigation between different worksheets becomes very convenient by using hyperlinks.</p>
+
+<p><img border="0" alt="hyperlink usage scenario in shapes" src="images/shapeHyperlinkUsage.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// add shapes in Dashboard for different quarters
+</span><span style="COLOR: #0000ff">var</span> Q1shape = sheetDashboard.shapes.add(<span style="COLOR: #800000">"Q1shape"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.pentagon, 30, 60, 100, 100);
+Q1shape.text(<span style="COLOR: #800000">"Quarter 1"</span>);
+Q1shape.hyperlink({ url: <span style="COLOR: #800000">"sjs://Sheet2!A1"</span>, tooltip: <span style="COLOR: #800000">'Go to Quarter 1'</span> });
+
+<span style="COLOR: #0000ff">var</span> Q2shape = sheetDashboard.shapes.add(<span style="COLOR: #800000">"Q2shape"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.pentagon, 140, 60, 100, 100);
+Q2shape.text(<span style="COLOR: #800000">"Quarter 2"</span>);
+Q2shape.hyperlink({ url: <span style="COLOR: #800000">"sjs://Sheet3!A1"</span>, tooltip: <span style="COLOR: #800000">'Go to Quarter 2'</span> });
+
+<span style="COLOR: #0000ff">var</span> Q3shape = sheetDashboard.shapes.add(<span style="COLOR: #800000">"Q3shape"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.pentagon, 250, 60, 100, 100);
+Q3shape.text(<span style="COLOR: #800000">"Quarter 3"</span>);
+Q3shape.hyperlink({ url: <span style="COLOR: #800000">"sjs://Sheet4!A1"</span>, tooltip: <span style="COLOR: #800000">'Go to Quarter 3'</span> });
+
+<span style="COLOR: #0000ff">var</span> Q4shape = sheetDashboard.shapes.add(<span style="COLOR: #800000">"Q4shape"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.pentagon, 360, 60, 100, 100);
+Q4shape.text(<span style="COLOR: #800000">"Quarter 4"</span>);
+Q4shape.hyperlink({ url: <span style="COLOR: #800000">"sjs://Sheet5!A1"</span>, tooltip: <span style="COLOR: #800000">'Go to Quarter 4'</span> });
+
+<span style="COLOR: #008000">// add shapes in different sheets for previous and next buttons
+</span><span style="COLOR: #0000ff">var</span> BackToDashboardQ1 = sheet1.shapes.add(<span style="COLOR: #800000">"BackToDashboard"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.rectangle,210, 500, 164, 35);
+BackToDashboardQ1.text(<span style="COLOR: #800000">"Dashboard"</span>);
+BackToDashboardQ1.hyperlink({ url: <span style="COLOR: #800000">'sjs://Sheet1!A1'</span>, tooltip: <span style="COLOR: #800000">' Go to Dashboard'</span> });
+<span style="COLOR: #0000ff">var</span> RightArrowNextQ1 = sheet1.shapes.add(<span style="COLOR: #800000">"RightArrowNextQ1"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.rightArrowCallout, 400, 500, 164, 35);
+RightArrowNextQ1.text(<span style="COLOR: #800000">"Q2"</span>);
+RightArrowNextQ1.hyperlink({ url: <span style="COLOR: #800000">'sjs://Sheet3!A1'</span>, tooltip: <span style="COLOR: #800000">'Go Next Quarter - Q2'</span> });
+
+<span style="COLOR: #0000ff">var</span> LeftArrowPreviousQ2 = sheet2.shapes.add(<span style="COLOR: #800000">"LeftArrowPreviousQ2"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.leftArrowCallout, 20, 500, 164, 35);
+LeftArrowPreviousQ2.text(<span style="COLOR: #800000">"Q1"</span>);
+LeftArrowPreviousQ2.hyperlink({ url: <span style="COLOR: #800000">'sjs://Sheet2!A1'</span>, tooltip: <span style="COLOR: #800000">'Go to Previous Quarter Q1'</span> });
+<span style="COLOR: #0000ff">var</span> BackToDashboardQ2 = sheet2.shapes.add(<span style="COLOR: #800000">"BackToDashboard"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.rectangle,210, 500, 164, 35);
+BackToDashboardQ2.text(<span style="COLOR: #800000">"Dashboard"</span>);
+BackToDashboardQ2.hyperlink({ url: <span style="COLOR: #800000">'sjs://Sheet1!A1'</span>, tooltip: <span style="COLOR: #800000">' Go to Dashboard'</span> });
+<span style="COLOR: #0000ff">var</span> RightArrowNextQ2 = sheet2.shapes.add(<span style="COLOR: #800000">"RightArrowNextQ2"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.rightArrowCallout, 400, 500, 164, 35);
+RightArrowNextQ2.text(<span style="COLOR: #800000">"Q3"</span>);
+RightArrowNextQ2.hyperlink({ url: <span style="COLOR: #800000">'sjs://Sheet4!A1'</span>, tooltip: <span style="COLOR: #800000">'Go to Next Quarter - Q3'</span> });
+
+<span style="COLOR: #0000ff">var</span> LeftArrowPreviousQ3 = sheet3.shapes.add(<span style="COLOR: #800000">"LeftArrowPreviousQ3"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.leftArrowCallout, 20, 500, 164, 35);
+LeftArrowPreviousQ3.text(<span style="COLOR: #800000">"Q2"</span>);
+LeftArrowPreviousQ3.hyperlink({ url: <span style="COLOR: #800000">'sjs://Sheet3!A1'</span>, tooltip: <span style="COLOR: #800000">'Go to Previous Quarter Q2'</span> });
+<span style="COLOR: #0000ff">var</span> BackToDashboardQ3 = sheet3.shapes.add(<span style="COLOR: #800000">"BackToDashboard"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.rectangle,210, 500, 164, 35);
+BackToDashboardQ3.text(<span style="COLOR: #800000">"Dashboard"</span>);
+BackToDashboardQ3.hyperlink({ url: <span style="COLOR: #800000">'sjs://Sheet1!A1'</span>, tooltip: <span style="COLOR: #800000">' Go to Dashboard'</span> });
+<span style="COLOR: #0000ff">var</span> RightArrowNextQ3 = sheet3.shapes.add(<span style="COLOR: #800000">"RightArrowNextQ3"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.rightArrowCallout, 400, 500, 164, 35);
+RightArrowNextQ3.text(<span style="COLOR: #800000">"Q4"</span>);
+RightArrowNextQ3.hyperlink({ url: <span style="COLOR: #800000">'sjs://Sheet5!A1'</span>, tooltip: <span style="COLOR: #800000">'Go to Next Quarter - Q4'</span> });
+
+<span style="COLOR: #0000ff">var</span> LeftArrowPreviousQ4 = sheet4.shapes.add(<span style="COLOR: #800000">"LeftArrowPreviousQ4"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.leftArrowCallout, 20, 500, 164, 35);
+LeftArrowPreviousQ4.text(<span style="COLOR: #800000">"Q3"</span>);
+LeftArrowPreviousQ4.hyperlink({ url: <span style="COLOR: #800000">'sjs://Sheet4!A1'</span>, tooltip: <span style="COLOR: #800000">'Go to Previous Quarter Q3'</span> });
+<span style="COLOR: #0000ff">var</span> BackToDashboardQ4 = sheet4.shapes.add(<span style="COLOR: #800000">"BackToDashboard"</span>, GC.Spread.Sheets.Shapes.AutoShapeType.rectangle,210, 500, 164, 35);
+BackToDashboardQ4.text(<span style="COLOR: #800000">"Dashboard"</span>);
+BackToDashboardQ4.hyperlink({ url: <span style="COLOR: #800000">'sjs://Sheet1!A1'</span>, tooltip: <span style="COLOR: #800000">' Go to Dashboard'</span> });
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Using SpreadJS Designer</h3>
+
+<p>You can add hyperlinks on shapes by accessing the 'Hyperlink' dialog in the Spread designer. Right-click on the shape to select the 'Link' option from the context menu or click 'Hyerlink' in the ribbon to open 'Hyperlink' dialog.</p>
+
+<p>The 'Hyperlink' dialog displays options to set URL, target, and screen tip.</p>
+
+<p><img border="0" alt="hyperink dialog in SpreadJS designer" src="images/shape-link-designer.gif" /></p>
+
+<p>You can edit or remove the shape hyperlinks by choosing the respective options from context menu after right-clicking the selected shape.</p>
+
+<p><img border="0" alt="hyperlink edit and remove option in shape context menu" src="images/editremovelinks.png" /></p>
+
+<p>You can also move or resize a shape containing hyperlink by right-clicking the shape to select it and then using the move pointer to move or resize it.</p>
+
+<p><img border="0" alt="resize or move shape containing hyperlink" src="images/shapemoveresize.gif" /></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

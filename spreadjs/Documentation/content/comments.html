@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn about the cell comments in SpreadJS. Visit the topic to learn how you can specify the appearance and resize, move, or edit the comment." />
+    
+    <title>Cell Comments | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n287","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn about the cell comments in SpreadJS. Visit the topic to learn how you can specify the appearance and resize, move, or edit the comment." />
+    
+    <meta name="Microsoft.Help.Id" content="b206abd3-db23-4ba4-b1cc-0ac56232f4d0"/>
+    <meta name="Microsoft.Help.TocParent" content="e9628ea1-c098-40b6-a16a-ca0248291974"/>
+    <meta name="Microsoft.Help.TocOrder" content="9"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / Cell Comments</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Cell Comments</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports comments in cells. You can specify the appearance for the comment and comment icon. You can also resize, move, or edit the comment.</p>
+
+<h3>Customize Comments</h3>
+
+<p>You can add a comment to a cell and specify the appearance. You can also resize, move,&nbsp;or edit the comment.</p>
+
+<p><img border="0" alt="Cell comment" src="images/comment.png" /></p>
+
+<p>The following image displays the resize and move indicator icons. The resize icons are displayed when you select the comment. The move icon is displayed when the pointer is over the comment border.</p>
+
+<p><img border="0" alt="Resize and move indicator icons in cell comment" src="images/commentmove.png" /></p>
+
+<p>You can lock the comment events or the comment text if the sheet&nbsp;options.<strong>isProtected</strong>&nbsp;method is set to true. The following table displays the comment property values and the result if the sheet is protected.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Locked</strong></td>
+
+            <td><strong>LockText</strong></td>
+
+            <td><strong>Result</strong></td>
+        </tr>
+
+        <tr>
+            <td>false</td>
+
+            <td>false</td>
+
+            <td>Actions on comment take effect; the comment can be edited</td>
+        </tr>
+
+        <tr>
+            <td>true</td>
+
+            <td>false</td>
+
+            <td>Actions on comment do not take effect; the comment can be edited</td>
+        </tr>
+
+        <tr>
+            <td>false</td>
+
+            <td>true</td>
+
+            <td>Actions on comment take effect; the comment cannot be edited</td>
+        </tr>
+
+        <tr>
+            <td>true</td>
+
+            <td>true</td>
+
+            <td>Actions on comment do not take effect; the comment cannot be edited</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Resizing a row or column can cause the comment's location and size to change based on the settings for the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Comments.Comment~dynamicMove.html">dynamicMove</a> and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Comments.Comment~dynamicSize.html">dynamicSize</a> methods. The following table displays the result of the <strong>dynamicMove</strong> and <strong>dynamicSize</strong> settings.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>DynamicMove</strong></td>
+
+            <td><strong>DynamicSize</strong></td>
+
+            <td><strong>Result</strong></td>
+        </tr>
+
+        <tr>
+            <td>true</td>
+
+            <td>true</td>
+
+            <td>Comment is moved and sized with cells</td>
+        </tr>
+
+        <tr>
+            <td>true</td>
+
+            <td>false</td>
+
+            <td>Comment is moved, but not sized with cells</td>
+        </tr>
+
+        <tr>
+            <td>false</td>
+
+            <td>true or false</td>
+
+            <td>Comment is not moved or sized with cells</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>You can cut, copy, or paste text in the comment if the comment is in edit mode. The comment is copied with the cell if you copy&nbsp;the cell.</p>
+
+<p>The undo and redo actions apply if you cut, copy, or paste comment text, resize or move the comment, or change the comment's format.</p>
+
+<div class="i-box i-box-note">
+    There are some limitations when importing a comment from an Excel-formatted file. Some border styles and fonts are not imported. The comment location may be different if the sheet range is smaller than what is displayed in the original file. Comments are imported from XLSX files.
+</div>
+
+<h4>Using Code</h4>
+
+<p>The following code adds a comment to a cell and sets the color and display mode.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> comment = activeSheet.comments.add(5,5,<span style="COLOR: #800000">"new comment!"</span>);
+comment.text(<span style="COLOR: #800000">"new comment!"</span>);
+comment.backColor(<span style="COLOR: #800000">"red"</span>);
+comment.displayMode(GC.Spread.Sheets.Comments.DisplayMode.AlwaysShown);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Customize Comment Icon</h3>
+
+<p>When you insert a comment, a small red triangle appears on the upper-right corner of the cell by default. You can change this default color and size of the comment icon by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Comments.Comment~indicatorColor.html">indicatorColor</a> and&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Comments.Comment~indicatorSize.html">indicatorSize</a> methods.</p>
+
+<p>The following image shows a spreadsheet cell with a green comment icon.</p>
+
+<p><img border="0" alt="An example of a customized comment icon in a cell" src="images/comment-icon.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>The following code adds a comment to a cell and sets the color and size for the comment icon.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// create comment
+</span><span style="COLOR: #0000ff">var</span> comment = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Comments.Comment();
+comment.text(<span style="COLOR: #800000">"This is comment for Cell[2,2]"</span>);
+
+<span style="COLOR: #008000">// set indicatorSize
+</span>comment.indicatorSize(25); <span style="COLOR: #008000">// 6 as default
+</span>
+<span style="COLOR: #008000">// set indicatorColor
+</span>comment.indicatorColor(<span style="COLOR: #800000">'green'</span>); <span style="COLOR: #008000">// 'red' as default
+</span>
+<span style="COLOR: #008000">// add comment
+</span>activeSheet.comments.add(2, 1, comment);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Comments.Comment.html">Comment class</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

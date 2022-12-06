@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn about the QRCode barcode in SpreadJS. Learn about the various parameters available for the QRCode barcode sparkline in SpreadJS docs." />
+    
+    <title>QRCode | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n525","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn about the QRCode barcode in SpreadJS. Learn about the various parameters available for the QRCode barcode sparkline in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="b1bf1e16-988c-40fd-af1f-ed39d40cbc48"/>
+    <meta name="Microsoft.Help.TocParent" content="73fea5fd-578d-4064-8e63-808487d8360d"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="WorkingwithBarcodes.html">Barcodes</a>
+ / QRCode</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">QRCode</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>QRCode is a&nbsp;two dimensional barcode representing&nbsp;symbology that enables&nbsp;effective handling of&nbsp;numeric, alphanumeric and byte data. This barcode can encode up to 7,366 characters.</p>
+
+<p>A screenshot depicting&nbsp;QRCode barcode sparkline is shared below.</p>
+
+<p><img border="0" alt="QRCode barcode sparkline" src="images/qrcode.png" /></p>
+
+<h4>Formula definition</h4>
+
+<p>You can set&nbsp;QRCode sparkline in a worksheet using the following formula:</p>
+
+<p>=BC_QRCODE(value, color, backgroundColor, errorCorrectionLevel, model, version, mask, connection, connectionNo, charCode, charset, quietZoneLeft, quietZoneRight, quietZoneTop, quietZoneBottom)</p>
+
+<h4>Parameter</h4>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Name</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>value</td>
+
+            <td>A string that represents encode on the symbol of QRCode.</td>
+        </tr>
+
+        <tr>
+            <td>color</td>
+
+            <td>A color that represents the barcode color. The default value is 'rgb(0,0,0)'.</td>
+        </tr>
+
+        <tr>
+            <td>backgroundColor</td>
+
+            <td>A color that represents the barcode backgroundcolor. The default value is 'rgb(255, 255, 255)'</td>
+        </tr>
+
+        <tr>
+            <td>errorCorrectionLevel</td>
+
+            <td>A string that&nbsp;represents the error correction level of QRCode. It has 'L|M|Q|H' four error correction levels. The default value is 'L'.</td>
+        </tr>
+
+        <tr>
+            <td>model</td>
+
+            <td>A value that&nbsp;represents the model of QRCode.&nbsp;It has&nbsp;1 and&nbsp;2 models. The default value is 2.</td>
+        </tr>
+
+        <tr>
+            <td>version</td>
+
+            <td>Vesion range is 1-14 for model1 and&nbsp;model 2.&nbsp;It has 'auto|1-14|1-40' values. The default value is&nbsp; 'auto'.</td>
+        </tr>
+
+        <tr>
+            <td>mask</td>
+
+            <td>A value that&nbsp;represents mask pattern for QRCode. It has 'auto and&nbsp;0-7' eight mask pattern.</td>
+        </tr>
+
+        <tr>
+            <td height="19">connection</td>
+
+            <td height="19">A value that represents whether the symbol is part of a structured append message. The default value is false.</td>
+        </tr>
+
+        <tr>
+            <td>connectionNo</td>
+
+            <td>Specifies which block the symbol is in the structured append message.&nbsp;It has&nbsp;'0-15' values. The default value is '0'.</td>
+        </tr>
+
+        <tr>
+            <td>charCode</td>
+
+            <td>A value that represents the collection of characters of QRCode.</td>
+        </tr>
+
+        <tr>
+            <td>charset</td>
+
+            <td>A value that&nbsp;represents which charset to use.&nbsp;It has&nbsp;'UTF-8 and Shift-JIS'.</td>
+        </tr>
+
+        <tr>
+            <td>quietZoneLeft</td>
+
+            <td>A value that represents the size of left quiet zone.</td>
+        </tr>
+
+        <tr>
+            <td>quietZoneRight</td>
+
+            <td>A value that represents the size of right quiet zone.</td>
+        </tr>
+
+        <tr>
+            <td>quietZoneTop</td>
+
+            <td>A value that represents the size of top quiet zone.</td>
+        </tr>
+
+        <tr>
+            <td>quietZoneBottom</td>
+
+            <td>A value that represents the size of bottom quiet zone.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Using Code</h4>
+
+<p>This example code sets a QRCode sparkline in the worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+<span style="COLOR: #008000">// Set QR Code Barcode Sparkline
+</span>sheet.setValue(3, 1, <span style="COLOR: #800000">"QR Code"</span>, GC.Spread.Sheets.SheetArea.viewport);
+sheet.setValue(3, 2, <span style="COLOR: #800000">"Police:911"</span>, GC.Spread.Sheets.SheetArea.viewport);
+<span style="COLOR: #008000">// Set Style
+</span>sheet.setRowHeight(3, 100);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> col = 1; col &lt; 4; col++)
+{
+    sheet.setColumnWidth(col, 200);
+}
+sheet.getRange(3, 0, 1, 4).hAlign(GC.Spread.Sheets.HorizontalAlign.center);
+sheet.getRange(3, 0, 1, 4).vAlign(GC.Spread.Sheets.VerticalAlign.center);
+<span style="COLOR: #008000">// Set Formula
+</span>sheet.setFormula(3, 3, <span style="COLOR: #800000">'=BC_QRCODE(C4)'</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

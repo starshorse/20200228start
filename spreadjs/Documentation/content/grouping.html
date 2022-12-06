@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can set the display to allow rows or columns to be grouped as an outline according to the headers in SpreadJS. " />
+    
+    <title>Range Groups | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n437","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can set the display to allow rows or columns to be grouped as an outline according to the headers in SpreadJS. " />
+    
+    <meta name="Microsoft.Help.Id" content="42129696-50b4-4b42-9f45-c697f396d344"/>
+    <meta name="Microsoft.Help.TocParent" content="c1df05e0-71b4-44c1-8ef3-192464ac2c16"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="group.html">Group</a>
+ / Range Groups</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Range Groups</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides the ability to&nbsp;display the rows or columns&nbsp;grouped as an outline according to the headers. This creates a separate area beyond the headers that contains outlines for expanding or collapsing levels of rows or columns.</p>
+
+<p>The&nbsp;Level Number button&nbsp;shows the number of levels at which the outline exists. The Level Number buttons or the expand or collapse icon can be used to expand or collapse the group.</p>
+
+<p><img border="0" alt="Range grouping" src="images/rangegroup.png" /></p>
+
+<p>The appearance of range groups can be modified by using different CSS classes. For more information, refer to&nbsp;<a href="CustomizingtheRangeGroups.html" data-auto-update-caption="true">Customize Range Groups</a>.</p>
+
+<h3>Create Row or Column Group</h3>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Outlines.Outline~group.html">group</a> method of <strong>Outline</strong> class can be used to create a range group while the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Outlines.Outline~ungroup.html">unGroup</a> method&nbsp;can be used to remove the range group.&nbsp;The following image&nbsp;shows a&nbsp;row and column group.</p>
+
+<p><img border="0" alt="Hiding range groups" src="images/cgroup.png" /></p>
+
+<p>&nbsp;</p>
+
+<p>Refer to the following example code to create a&nbsp;row and column group.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.setRowCount(34);
+<span style="COLOR: #008000">// Set cell values
+</span>activeSheet.setValue(0,0,<span style="COLOR: #800000">"Product"</span>);
+activeSheet.setValue(0,1,<span style="COLOR: #800000">"2019 in Sales"</span>);
+activeSheet.setValue(0,2,<span style="COLOR: #800000">"2020 in Sales"</span>);
+activeSheet.setValue(1,0,<span style="COLOR: #800000">"Mobiles"</span>);
+activeSheet.setValue(1,1,<span style="COLOR: #800000">"350,000"</span>);
+activeSheet.setValue(1,2,<span style="COLOR: #800000">"500,000"</span>);
+activeSheet.setValue(2,0,<span style="COLOR: #800000">"Laptops"</span>);
+activeSheet.setValue(2,1,<span style="COLOR: #800000">"200,000"</span>);
+activeSheet.setValue(2,2,<span style="COLOR: #800000">"400,000"</span>);
+<span style="COLOR: #008000">// Set row and column groups
+</span>activeSheet.rowOutlines.group(1,2);
+activeSheet.columnOutlines.group(1,2);
+<span style="COLOR: #008000">//activeSheet.rowOutlines.expand(0,false);
+//activeSheet.columnOutlines.expand(0,false);
+</span>spread.invalidateLayout();
+spread.repaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>Alternatively, you can specify&nbsp;the&nbsp;command <strong>outlineRow</strong> or <strong>outlineColumn</strong>&nbsp;and use the&nbsp;<a href="SpreadJS~GC.Spread.Commands.CommandManager~execute.html">execute</a> method to create row or column groups.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+spread.commandManager().execute({cmd: <span style="COLOR: #800000">"outlineRow"</span>, sheetName: activeSheet.name(), index: 4, count: 3}); <span style="COLOR: #008000">// Specifying action and using execute method</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> The outline column feature can also&nbsp;be used&nbsp;to create a tree-like structure in a spreadsheet for better organization of data. For more information, refer to <a href="outlinecolumn.html">Outline Columns</a>.</p>
+</div>
+
+<h3>Set Group Direction</h3>
+
+<p>You can specify the direction&nbsp;of&nbsp;range group as forward or backward&nbsp;using the <strong>OutlineDirection</strong> enumeration&nbsp;in <strong>direction</strong> option.</p>
+
+<table style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+    <tbody>
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>Forward Direction</strong></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>Backward Direction</strong>&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="Forward direction in range group" src="images/rangegroup-forward-direction.gif" /></td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><img border="0" alt="Backward direction in range group" src="images/rangegroup-backward-direction.gif" /></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Refer to the following example code to set the direction of a&nbsp;row and column group.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.rowOutlines.group(1,2);
+activeSheet.columnOutlines.group(1,2);
+activeSheet.rowOutlines.direction(GC.Spread.Sheets.Outlines.OutlineDirection.backward);
+activeSheet.columnOutlines.direction(GC.Spread.Sheets.Outlines.OutlineDirection.forward);
+spread.invalidateLayout();
+spread.repaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Find and Collapse Groups</h3>
+
+<p>You can find and collapse or expand a group by using <strong>OutlineState</strong>&nbsp;option.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.rowOutlines.group(0,5);
+<span style="COLOR: #0000ff">var</span> rgi = activeSheet.rowOutlines.find(1, 0);
+rgi.state(GC.Spread.Sheets.Outlines.OutlineState.collapsed); <span style="COLOR: #008000">// Find and collapse a group
+</span>spread.invalidateLayout();
+spread.repaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Display Outlines in Sheet</h3>
+
+<p>You can&nbsp;specify whether to display the row&nbsp;and column outline&nbsp;using <strong>showRowOutline</strong> and <strong>showColumnOutline</strong> methods. These methods return&nbsp;the boolean&nbsp;values to indicate whether the outline is displayed, if no value is set.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Set showRowOutline and showColumnOutline activeSheet.showRowOutline(true);
+</span>activeSheet.rowOutlines.group(0, 2);
+activeSheet.showColumnOutline(<span style="COLOR: #0000ff">true</span>);
+activeSheet.columnOutlines.group(0, 2);
+<span style="COLOR: #008000">//activeSheet.rowOutlines.ungroup(0, 2);
+//activeSheet.columnOutlines.ungroup(0, 2);
+</span>spread.invalidateLayout();
+spread.repaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Outlines.Outline~expandGroup.html">expandGroup Method</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Outlines.Outline~expand.html">expand Method</a></div>
+<div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Outlines.Outline~group.html">group Method</a></div>
+<div class="i-see-also-link">
+<a href="CustomizingtheRangeGroups.html">Customize Range Groups</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

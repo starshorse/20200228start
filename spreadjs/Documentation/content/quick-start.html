@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Quick Start | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="a5b5255c-6ee4-4c04-a6fd-540128544dc8"/>
+    <meta name="Microsoft.Help.TocParent" content="881e1673-63c9-40dd-b583-5bb1d4d3ce08"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="getstarted.html">Getting Started</a>
+ / Quick Start</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Quick Start</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>The following quick start section helps you to view SpreadJS widget in a browser. For information on adding references, see ‘<a href="getstarted.html">Getting Started</a>’ topic.<br />
+You can get the latest files for scripts and css file references from&nbsp;<a href="https://www.grapecity.com/spreadjs/download">here</a>.</p>
+
+<h3>Create HTML Page</h3>
+
+<p>Please follow the below steps to&nbsp;create an HTML page to view SpreadJS widget:</p>
+
+<ol>
+    <li>Open ‘Notepad’ or your preferred code editor.</li>
+
+    <li>Add the following code which:<br />
+        a.&nbsp;Adds reference of SpreadJS script and css files<br />
+        b.&nbsp;Creates SpreadJS target DOM element<br />
+        c.&nbsp;Initializes SpreadJS in spread-container using any one of the following ways:<br />
+          i.&nbsp;Using document method to pick DOM ID.<br />
+           <code>var spread = new GC.Spread.Sheets.Workbook(document.getElementById("ss"), { sheetCount: 1 });</code><br />
+          ii.&nbsp;Using the DOM ID directly.<br />
+           <code>var spread = new GC.Spread.Sheets.Workbook("ss", { sheetCount: 1 });</code>
+
+        <div class="i-filtered-content-html" data-title="html" data-itemid="html">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>HTML</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #0000ff">&lt;!</span><span style="COLOR: #ff00ff">DOCTYPE html</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">html</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">head</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">meta</span> <span style="COLOR: #ff0000">charset</span><span style="COLOR: #0000ff">="utf-8"</span> <span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">meta</span> <span style="COLOR: #ff0000">name</span><span style="COLOR: #0000ff">="viewport"</span> <span style="COLOR: #ff0000">content</span><span style="COLOR: #0000ff">="width=device-width, initial-scale=1.0"</span> <span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #008000">&lt;!-- a) Add SpreadJS Script and CSS--&gt;</span>
+    <span style="COLOR: #008000">&lt;!-- a1) Add SpreadJS Script file--&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">script</span> <span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="text/javascript"</span>
+            <span style="COLOR: #ff0000">src</span><span style="COLOR: #0000ff">="SpreadJS\gc.spread.sheets.all.x.x.x.min.js"</span><span style="COLOR: #0000ff">&gt;&lt;/</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span>
+
+    <span style="COLOR: #008000">&lt;!-- a2) Add CSS File--&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link</span> <span style="COLOR: #ff0000">href</span><span style="COLOR: #0000ff">="SpreadJS\gc.spread.sheets.x.x.x.css"</span>
+          <span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="stylesheet"</span>
+          <span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="text/css"</span> <span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">style</span><span style="COLOR: #0000ff">&gt;</span>
+        .spread-container {
+            height: 550px;
+        }
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">style</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">head</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">h1</span><span style="COLOR: #0000ff">&gt;</span>SpreadJS<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">h1</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">p</span><span style="COLOR: #0000ff">&gt;</span>This section goes over how to initialize SpreadJS<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">p</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">div</span> <span style="COLOR: #ff0000">class</span><span style="COLOR: #0000ff">="sample-container"</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #008000">&lt;!-- b) Create SpreadJS's target DOM element, HTML DIV with id ss--&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">div</span> <span style="COLOR: #ff0000">id</span><span style="COLOR: #0000ff">="ss"</span> <span style="COLOR: #ff0000">class</span><span style="COLOR: #0000ff">="spread-container"</span><span style="COLOR: #0000ff">&gt;&lt;/</span><span style="COLOR: #800000">div</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">div</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span>
+    // c) Initialize SpreadJS in spread-container by div's id "ss"
+    window.onload = function ()
+    {
+        var spread = new GC.Spread.Sheets.Workbook(
+            document.getElementById( "ss" ),
+            { sheetCount: 1 }
+        );
+
+        // Alternatively, initialize SpreadJS using the DOM ID directly
+        // var spread = new GC.Spread.Sheets.Workbook("ss", { sheetCount: 1 });
+    };
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">html</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Save it as an HTML file. For example, ‘index.html’</li>
+
+    <li>Create ‘SpreadJS’ folder at the same location where you have saved the HTML file. Add following script and css files to ‘SpreadJS’ folder:<br />
+    gc.spread.sheets.all.x.x.x.min.js<br />
+    gc.spread.sheets.x.x.x.css</li>
+
+    <li>Open the HTML file in browser to view SpreadJS widget.<br />
+    &nbsp;</li>
+</ol>
+
+<h3>ASP.NET Web Application</h3>
+
+<p>Please follow below steps to create an ASP.NET Web application to view SpreadJS widget:</p>
+
+<ol>
+    <li>Create an Empty ASP.Net Web Application in Visual Studio.</li>
+
+    <li>Create 'scripts' folder in your project's root location and include following script file:<br />
+    gc.spread.sheets.all.x.x.x.min.js<br />
+    To add export functionality, add following additional script file:<br />
+    gc.spread.sheets.excelio.x.x.x.min.js</li>
+
+    <li>Create 'css' folder in your project's root location and include following css:<br />
+    gc.spread.sheets.x.x.x.css</li>
+
+    <li>Add an HTML Page to Visual Studio project.</li>
+
+    <li>Modify the content of the added HTML Page to:<br />
+        a.&nbsp;Add reference of SpreadJS script and css file<br />
+        b.&nbsp;Create SpreadJS target DOM element<br />
+        c.&nbsp;Initialize SpreadJS in spread-container by using any of the following ways:<br />
+          i.&nbsp;Using document method to pick DOM ID.<br />
+           <code>var spread = new GC.Spread.Sheets.Workbook(document.getElementById("ss"), { sheetCount: 1 });</code><br />
+          ii.&nbsp;Using the DOM ID directly.<br />
+           <code>var spread = new GC.Spread.Sheets.Workbook("ss", { sheetCount: 1 });</code>
+
+        <div class="i-filtered-content-html" data-title="html" data-itemid="html">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>HTML</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #0000ff">&lt;!</span><span style="COLOR: #ff00ff">DOCTYPE html</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">html</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">head</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">meta</span> <span style="COLOR: #ff0000">charset</span><span style="COLOR: #0000ff">="utf-8"</span> <span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">meta</span> <span style="COLOR: #ff0000">name</span><span style="COLOR: #0000ff">="viewport"</span> <span style="COLOR: #ff0000">content</span><span style="COLOR: #0000ff">="width=device-width, initial-scale=1.0"</span> <span style="COLOR: #0000ff">/&gt;</span>
+
+    <span style="COLOR: #008000">&lt;!-- a:- Add Script &amp; css file--&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">script</span> <span style="COLOR: #ff0000">src</span><span style="COLOR: #0000ff">="https://code.jquery.com/jquery-2.1.1.min.js"</span> <span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="text/javascript"</span><span style="COLOR: #0000ff">&gt;&lt;/</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">script</span> <span style="COLOR: #ff0000">src</span><span style="COLOR: #0000ff">="scripts/gc.spread.sheets.all.x.x.x.min.js"</span><span style="COLOR: #0000ff">&gt;&lt;/</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link</span> <span style="COLOR: #ff0000">href</span><span style="COLOR: #0000ff">="css/gc.spread.sheets.x.x.x.css"</span> <span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="stylesheet"</span> <span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span>
+        $( document ).ready( function ()
+        {
+             // Note: Apply license key here, before the Workbook is initialized
+             // GC.Spread.Sheets.LicenseKey = " [your Distribution license key here]";
+
+            // c:- Initialize SpreadJS in spread-container by div's id "ss"
+            // initializing Spread
+            var spread = new GC.Spread.Sheets.Workbook( document.getElementById( "ss" ) );
+            
+            // alternatively, initialize SpreadJS using the DOM ID directly
+            var spread = new GC.Spread.Sheets.Workbook("ss", { sheetCount: 1 });
+
+            // get the activesheet
+            var sheet = spread.getActiveSheet();
+        } );
+
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">script</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">head</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">h1</span><span style="COLOR: #0000ff">&gt;</span>SpreadJS<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">h1</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">p</span><span style="COLOR: #0000ff">&gt;</span>This section initializes SpreadJS<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">p</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #008000">&lt;!-- b:- Create SpreadJS's target DOM element, HTML DIV with id ss--&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">div</span> <span style="COLOR: #ff0000">id</span><span style="COLOR: #0000ff">="ss"</span> <span style="COLOR: #ff0000">style</span><span style="COLOR: #0000ff">="height:700px;width:900px"</span><span style="COLOR: #0000ff">&gt;&lt;/</span><span style="COLOR: #800000">div</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">html</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>&nbsp;View the HTML Page in browser to view SpreadJS widget.
+
+        <p><img border="0" alt="" src="images/spreadjs-widget.PNG" /></p>
+    </li>
+</ol>Refer the following topics to get started&nbsp;with some of the commonly used SpreadJS&nbsp;features:
+
+<ul>
+    <li><a href="data-binding.html">Data&nbsp;Binding</a></li>
+
+    <li><a href="importing-files.html">Importing Files to SpreadJS</a></li>
+
+    <li><a href="store-changes.html">Store Changes Made to Spreadsheet</a></li>
+
+    <li><a href="save-changes.html">Save Spreadsheet Changes to&nbsp;Database</a></li>
+</ul>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

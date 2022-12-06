@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>PivotTableChanged Event | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n7112","initialNodeContainer":"c258","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.Events~PivotTableChanged_EV"/>
+    <meta name="Description" content="After PivotTable filter/sort/collapse/fieldChanged." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets.Events_events"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+ / <a href="SpreadJS~GC.Spread.Sheets.Events.html">Events type</a>
+ / PivotTableChanged Event</div></div>
+
+    
+<div id="pivotTableNamePopupContent" class="i-popup-content">
+The PivotTable's name.
+</div>
+<div id="typePopupContent" class="i-popup-content">
+The specific operation name("filter" | "sort" | "collapse" | "fieldChanged" | "summarizedValueBy" | "showValueAs" | "dataPositionChanged" | "viewChanged").
+</div>
+<div id="fieldNamePopupContent" class="i-popup-content">
+Changed fieldName.
+</div>
+<div id="oldValuePopupContent" class="i-popup-content">
+PivotTable changes the value of the previous attribute(collapse, summarizedValueBy, showValueAs).
+</div>
+<div id="newValuePopupContent" class="i-popup-content">
+PivotTable changes the value of the previous attribute(collapse, summarizedValueBy, showValueAs).
+</div>
+<div id="sortTypePopupContent" class="i-popup-content">
+PivotTable sort changes the value of the attribute(sort).
+</div>
+<div id="filterInfoPopupContent" class="i-popup-content">
+PivotTable filter changes the value of the attribute(filter).
+</div>
+<div id="clearTypePopupContent" class="i-popup-content">
+PivotTable clear filter changes the value of the attribute(filter).
+</div>
+<div id="oldAreaPopupContent" class="i-popup-content">
+Old PivotTable Field Type(fieldChanged).
+</div>
+<div id="oldIndexPopupContent" class="i-popup-content">
+Old PivotTable Field index(fieldChanged).
+</div>
+<div id="newAreaPopupContent" class="i-popup-content">
+New PivotTable Field Type(fieldChanged).
+</div>
+<div id="newIndexPopupContent" class="i-popup-content">
+New PivotTable Field index(fieldChanged).
+</div>
+<div id="viewNamePopupContent" class="i-popup-content">
+Apply PivotTable Views Name(viewChanged).
+</div>
+
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">PivotTableChanged Event</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">After PivotTable filter/sort/collapse/fieldChanged.</div>
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance; // Type: <a href="SpreadJS~GC.Spread.Sheets.Events.html">Events</a>
+instance.PivotTableChanged = function(pivotTableName,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fieldName,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oldValue,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newValue,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sortType,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filterInfo,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clearType,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oldArea,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oldIndex,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newArea,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newIndex,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viewName) { };</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>PivotTableChanged = function ( 
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="pivotTableNamePopupLink" data-popup-contentsource="#pivotTableNamePopupContent" data-popup-showevent="click mouseenter">pivotTableName</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="typePopupLink" data-popup-contentsource="#typePopupContent" data-popup-showevent="click mouseenter">type</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="fieldNamePopupLink" data-popup-contentsource="#fieldNamePopupContent" data-popup-showevent="click mouseenter">fieldName</a></i> : string,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="oldValuePopupLink" data-popup-contentsource="#oldValuePopupContent" data-popup-showevent="click mouseenter">oldValue</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="newValuePopupLink" data-popup-contentsource="#newValuePopupContent" data-popup-showevent="click mouseenter">newValue</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="sortTypePopupLink" data-popup-contentsource="#sortTypePopupContent" data-popup-showevent="click mouseenter">sortType</a></i> : number,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="filterInfoPopupLink" data-popup-contentsource="#filterInfoPopupContent" data-popup-showevent="click mouseenter">filterInfo</a></i> : Object,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="clearTypePopupLink" data-popup-contentsource="#clearTypePopupContent" data-popup-showevent="click mouseenter">clearType</a></i> : number,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="oldAreaPopupLink" data-popup-contentsource="#oldAreaPopupContent" data-popup-showevent="click mouseenter">oldArea</a></i> : number,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="oldIndexPopupLink" data-popup-contentsource="#oldIndexPopupContent" data-popup-showevent="click mouseenter">oldIndex</a></i> : number,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="newAreaPopupLink" data-popup-contentsource="#newAreaPopupContent" data-popup-showevent="click mouseenter">newArea</a></i> : number,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="newIndexPopupLink" data-popup-contentsource="#newIndexPopupContent" data-popup-showevent="click mouseenter">newIndex</a></i> : number,
+&nbsp;&nbsp;&nbsp;(optional) <i><a class="i-popup-link" id="viewNamePopupLink" data-popup-contentsource="#viewNamePopupContent" data-popup-showevent="click mouseenter">viewName</a></i> : string
+) { };</pre>
+      </div>
+    
+
+      </div>
+    
+            <h4 class=dxh4>Parameters</h4><dl><dt><I>pivotTableName</I></dt>
+<dd>The PivotTable's name.</dd><dt><I>type</I></dt>
+<dd>The specific operation name("filter" | "sort" | "collapse" | "fieldChanged" | "summarizedValueBy" | "showValueAs" | "dataPositionChanged" | "viewChanged").</dd><dt><I>fieldName</I></dt>
+<dd>Changed fieldName.</dd><dt><I>oldValue</I></dt>
+<dd>PivotTable changes the value of the previous attribute(collapse, summarizedValueBy, showValueAs).</dd><dt><I>newValue</I></dt>
+<dd>PivotTable changes the value of the previous attribute(collapse, summarizedValueBy, showValueAs).</dd><dt><I>sortType</I></dt>
+<dd>PivotTable sort changes the value of the attribute(sort).</dd><dt><I>filterInfo</I></dt>
+<dd>PivotTable filter changes the value of the attribute(filter).</dd><dt><I>clearType</I></dt>
+<dd>PivotTable clear filter changes the value of the attribute(filter).</dd><dt><I>oldArea</I></dt>
+<dd>Old PivotTable Field Type(fieldChanged).</dd><dt><I>oldIndex</I></dt>
+<dd>Old PivotTable Field index(fieldChanged).</dd><dt><I>newArea</I></dt>
+<dd>New PivotTable Field Type(fieldChanged).</dd><dt><I>newIndex</I></dt>
+<dd>New PivotTable Field index(fieldChanged).</dd><dt><I>viewName</I></dt>
+<dd>Apply PivotTable Views Name(viewChanged).</dd></dl></div>
+
+            <a name="exampleBookmark"></a>
+            
+            
+            <div class="i-section-heading" id="i-example-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Example</span></div><div id="i-example-section-content" class="i-section-content"><div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-d72f44b1-e648-475e-aa00-2dc1dced2a36">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-d72f44b1-e648-475e-aa00-2dc1dced2a36" class="i-filtered-content-Javascript i-code"><pre><span style="color: #008000; ">//This example.
+</span>sheet.bind(GC.Spread.Sheets.Events.PivotTableChanged, <span style="color: #0000FF; ">function</span> (sender, args) {
+    alert(<span style="color: #800000; ">&quot;pivotTableName: &quot;</span> + args.pivotTableName + <span style="color: #800000; ">&quot;changeType: &quot;</span> + args.type);
+});</pre></div>
+	</div>
+</div>
+</div>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets.Events.html">Events type</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

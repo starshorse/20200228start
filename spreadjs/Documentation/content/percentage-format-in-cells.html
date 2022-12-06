@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how easily and efficiently you can work with numbers and percentage in spreadsheets using SpreadJS." />
+    
+    <title>Percentage Format | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n272","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how easily and efficiently you can work with numbers and percentage in spreadsheets using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="9d09338e-bcda-48c2-b377-7c40132dd11b"/>
+    <meta name="Microsoft.Help.TocParent" content="edc33bc6-5882-415f-89f2-158ee31d8259"/>
+    <meta name="Microsoft.Help.TocOrder" content="5"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / <a href="cellformat.html">Cell Format</a>
+ / Percentage Format</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Percentage Format</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Users can easily and efficiently work with numbers&nbsp;and percentage in Spreadsheets. SpreadJS provides support to automatically append the percentage '%' symbol at the end of the input (digits 0-9) for the cells that have the&nbsp;percentage format applied to them.</p>
+
+<p>&nbsp;<img border="0" alt="Cell with a percentage format" src="images/percent.gif" /></p>
+
+<p>SpreadJS applies different functionalities for different inputs while appending percentage symbol&nbsp;as elaborated below: &nbsp;</p>
+
+<p><b>Case 1: Entering a number</b></p>
+
+<p>If you enter a number in a percentage-formatted cell, then SpreadJS&nbsp;adds the&nbsp;% symbol to it. For example, the entering a value 6 in the cell&nbsp;formats it to&nbsp;6.00%.</p>
+
+<p><b>Case 2: Entering a character</b></p>
+
+<p>If you enter a character, symbol or letter in the percentage-formatted cell, SpreadJS does not append the % symbol&nbsp;to it.</p>
+
+<p><b>Case 3: Adding a character after a digit</b></p>
+
+<p>If you add a letter (such as 'h') after a number (such as '6') in the percentage-formatted cell, then SpreadJS will still append the percentage symbol (formatted as 6h%).</p>
+
+<p><b>Case 4: Deleting percentage symbol in cell-edit mode</b></p>
+
+<p>If you enter a number in the cell-edit mode and remove the %&nbsp;symbol from the number and exit the cell, then the number is again converted to the percentage format.</p>
+
+<p><strong>Case 5: Inserting number with&nbsp;% symbol in non-formatted cell</strong></p>
+
+<p>If you do not set the&nbsp;percentage format in a cell and directly type a number with the&nbsp;"%" symbol, like "11%", then&nbsp;the percentage format is set automatically.</p>
+
+<p><b>Case 6: Double-clicking a cell and inserting number</b></p>
+
+<p>If a percentage-formatted cell is double clicked and a number is inserted in the cell-edit mode, the number is converted to the&nbsp;percentage format first and the % symbol is added to it. That is, if we double-click the cell and add 45, it formats to 4500.00%.</p>
+
+<p><b>Case 7: Adding + or - symbols with numbers</b></p>
+
+<p>You can add + or – symbols before the number in a percentage-formatted cell. For example, +2 becomes 2.00% and -5 becomes -5.00%.</p>
+
+<h4>Using Code</h4>
+
+<p>This example depicts the use of percentage formatting in Spreadsheet cells.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// For Range A1:F10, set formatter
+</span><span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 10; i++)
+    <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> j = 0; j &lt; 6; j++)
+        activeSheet.getCell(i, j).formatter(<span style="COLOR: #800000">"0.00%"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

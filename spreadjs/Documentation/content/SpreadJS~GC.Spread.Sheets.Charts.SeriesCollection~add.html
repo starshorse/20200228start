@@ -1,0 +1,776 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>add Method (SeriesCollection) | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n9024","initialNodeContainer":"c319","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.Charts.SeriesCollection~add"/>
+    <meta name="Description" content="Adds a new series to series collection." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets.Charts.SeriesCollection_methods"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets.Charts_namespace.html">GC.Spread.Sheets.Charts Namespace</a>
+ / <a href="SpreadJS~GC.Spread.Sheets.Charts.SeriesCollection.html">SeriesCollection type</a>
+ / add Method</div></div>
+
+    
+<div id="seriesItemPopupContent" class="i-popup-content">
+The series of the chart.
+</div>
+<div id="seriesItem.symbolPopupContent" class="i-popup-content">
+, seriesItem The symbol of the series.
+</div>
+<div id="seriesItem.symbol.fillPopupContent" class="i-popup-content">
+The symbol fill color of the series.
+</div>
+<div id="seriesItem.symbol.fillColorTransparencyPopupContent" class="i-popup-content">
+The transparency of the symbol fill color.
+</div>
+<div id="seriesItem.symbol.sizePopupContent" class="i-popup-content">
+The symbol size of the series.
+</div>
+<div id="seriesItem.symbol.shapePopupContent" class="i-popup-content">
+The symbol shape of the series.
+</div>
+<div id="seriesItem.symbol.borderPopupContent" class="i-popup-content">
+The symbol border of the series.
+</div>
+<div id="seriesItem.symbol.border.colorPopupContent" class="i-popup-content">
+The symbol border color of the series.
+</div>
+<div id="seriesItem.symbol.border.colorTransparencyPopupContent" class="i-popup-content">
+The transparency of the symbol border color.
+</div>
+<div id="seriesItem.symbol.border.widthPopupContent" class="i-popup-content">
+The symbol border width of the series.
+</div>
+<div id="seriesItem.symbol.border.lineTypePopupContent" class="i-popup-content">
+The symbol border line Type of the series.
+</div>
+<div id="seriesItem.errorbarsPopupContent" class="i-popup-content">
+The error bars of the series.
+</div>
+<div id="seriesItem.errorbars.verticalPopupContent" class="i-popup-content">
+The vertical error bar of the series, each series may has different direction error bar(s) based on chart type.
+</div>
+<div id="seriesItem.errorbars.vertical.typePopupContent" class="i-popup-content">
+The error bar type.
+</div>
+<div id="seriesItem.errorbars.vertical.valuetypePopupContent" class="i-popup-content">
+The error bar value type.
+</div>
+<div id="seriesItem.errorbars.vertical.noEndCapPopupContent" class="i-popup-content">
+The error bar has end cap or not.
+</div>
+<div id="seriesItem.errorbars.vertical.valuePopupContent" class="i-popup-content">
+The error bar value, just take effect on the FixedValue(1) / Percentage(2) / StandardDeviation(3) value type.
+</div>
+<div id="seriesItem.errorbars.vertical.customPopupContent" class="i-popup-content">
+The error bar custom formulas, it contains positive formula and negative formula, just take effect on the Custom(0) value type.
+</div>
+<div id="seriesItem.errorbars.vertical.custom.positivePopupContent" class="i-popup-content">
+The error bar custom positive formula.
+</div>
+<div id="seriesItem.errorbars.vertical.custom.negativePopupContent" class="i-popup-content">
+The error bar custom negative formula.
+</div>
+<div id="seriesItem.errorbars.vertical.stylePopupContent" class="i-popup-content">
+The error bar styles.
+</div>
+<div id="seriesItem.errorbars.vertical.style.colorPopupContent" class="i-popup-content">
+The error bar color.
+</div>
+<div id="seriesItem.errorbars.vertical.style.transparencyPopupContent" class="i-popup-content">
+The error bar transparency.
+</div>
+<div id="seriesItem.errorbars.vertical.style.widthPopupContent" class="i-popup-content">
+The error bar width.
+</div>
+<div id="seriesItem.errorbars.horizontalPopupContent" class="i-popup-content">
+The horizontal error bar of the series, each series may has different direction error bar(s) based on chart type.
+</div>
+<div id="seriesItem.errorbars.horizontal.typePopupContent" class="i-popup-content">
+The error bar type.
+</div>
+<div id="seriesItem.errorbars.horizontal.valuetypePopupContent" class="i-popup-content">
+The error bar value type.
+</div>
+<div id="seriesItem.errorbars.horizontal.noEndCapPopupContent" class="i-popup-content">
+The error bar has end cap or not.
+</div>
+<div id="seriesItem.errorbars.horizontal.valuePopupContent" class="i-popup-content">
+The error bar value, just take effect on the FixedValue(1) / Percentage(2) / StandardDeviation(3) value type.
+</div>
+<div id="seriesItem.errorbars.horizontal.customPopupContent" class="i-popup-content">
+The error bar custom formulas, it contains positive formula and negative formula, just take effect on the Custom(0) value type.
+</div>
+<div id="seriesItem.errorbars.horizontal.custom.positivePopupContent" class="i-popup-content">
+The error bar custom positive formula.
+</div>
+<div id="seriesItem.errorbars.horizontal.custom.negativePopupContent" class="i-popup-content">
+The error bar custom negative formula.
+</div>
+<div id="seriesItem.errorbars.horizontal.stylePopupContent" class="i-popup-content">
+The error bar styles.
+</div>
+<div id="seriesItem.errorbars.horizontal.style.colorPopupContent" class="i-popup-content">
+The error bar color.
+</div>
+<div id="seriesItem.errorbars.horizontal.style.transparencyPopupContent" class="i-popup-content">
+The error bar transparency.
+</div>
+<div id="seriesItem.errorbars.horizontal.style.widthPopupContent" class="i-popup-content">
+The error bar width.
+</div>
+<div id="seriesItem.errorbars.horizontal.style.dashStylePopupContent" class="i-popup-content">
+The error bar dash style.
+</div>
+<div id="seriesItem.trendlinesPopupContent" class="i-popup-content">
+The trendlines of the series.[0].type The type of the trendline.[0].order The order of the polynomial trendline.[0].period The period of the movingAverage trendline.[0].intercept The intercept of the trendline.[0].forward The forward of the trendline.[0].backward The backward of the trendline.[0].displayEquation Whether display the equation of the trendline.[0].displayRSquared Whether display the R squared of the trendline.[0].fontFamily The fontFamily of the trendline.[0].fontSize The fontSize of the trendline.[0].fontColor The fontColor of the trendline.[0].name The name of the trendline.[0].style The line style of the trendline.[0].style.color The color of the trendline.[0].style.transparency The transparency of the trendline.[0].style.width The width of the trendline.[0].style.dashStyle The dash style of the trendline.The trendlines of the series.
+</div>
+<div id="seriesItem.trendlines2PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines3PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines4PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines5PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines6PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines7PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines8PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines9PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines10PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines11PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines12PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines13PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines14PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines15PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines16PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines17PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.trendlines18PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.chartTypePopupContent" class="i-popup-content">
+The chart type of the series.
+</div>
+<div id="seriesItem.axisGroupPopupContent" class="i-popup-content">
+The axis group of the series.
+</div>
+<div id="seriesItem.backColorPopupContent" class="i-popup-content">
+The background color of the series.
+</div>
+<div id="seriesItem.backColor.typePopupContent" class="i-popup-content">
+The pattern fill background color type of the chart series.
+</div>
+<div id="seriesItem.backColor.foregroundColorPopupContent" class="i-popup-content">
+The pattern fill foreground color of the chart series.
+</div>
+<div id="seriesItem.backColor.backgroundColorPopupContent" class="i-popup-content">
+The pattern fill background color of the chart series.
+</div>
+<div id="seriesItem.backColorTransparencyPopupContent" class="i-popup-content">
+The transparency of the series background color.
+</div>
+<div id="seriesItem.borderPopupContent" class="i-popup-content">
+The border of the series.
+</div>
+<div id="seriesItem.border.colorPopupContent" class="i-popup-content">
+The border color of the series.
+</div>
+<div id="seriesItem.border.lineTypePopupContent" class="i-popup-content">
+The border line type of the series.
+</div>
+<div id="seriesItem.border.transparencyPopupContent" class="i-popup-content">
+The transparency of the series border color.
+</div>
+<div id="seriesItem.border.widthPopupContent" class="i-popup-content">
+The border width of the series.
+</div>
+<div id="seriesItem.startAnglePopupContent" class="i-popup-content">
+The first slice angle of the chart whose chart type is pie. The default value is 0, which represents the 12 o'clock position.
+</div>
+<div id="seriesItem.namePopupContent" class="i-popup-content">
+The name formula of the series.
+</div>
+<div id="seriesItem.xValuesPopupContent" class="i-popup-content">
+The x values formula of the series.
+</div>
+<div id="seriesItem.yValuesPopupContent" class="i-popup-content">
+The y values formula of the series.
+</div>
+<div id="seriesItem.bubbleSizesPopupContent" class="i-popup-content">
+The bubble sizes formula of the series. This is used for bubble chart.
+</div>
+<div id="seriesItem.doughnutHoleSizePopupContent" class="i-popup-content">
+The hole size of the doughnut chart. This is used for doughnut chart, The maximum value is 0.9, the minimum value is 0.
+</div>
+<div id="seriesItem.gapWidthPopupContent" class="i-popup-content">
+The gap width of the bar and column chart group. The maximum value is 5, the minimum value is 0.
+</div>
+<div id="seriesItem.overlapPopupContent" class="i-popup-content">
+The overlap of the bar and column chart group. The maximum value is 1, the minimum value is -1.
+</div>
+<div id="seriesItem.trendlines19PopupContent" class="i-popup-content">
+
+</div>
+<div id="seriesItem.dataPointsPopupContent" class="i-popup-content">
+The data points of the series.
+</div>
+<div id="seriesItem.dataLabelsPopupContent" class="i-popup-content">
+The data labels of the series.
+</div>
+<div id="seriesItem.dataLabels.showValuePopupContent" class="i-popup-content">
+Whether to show value in series data labels.
+</div>
+<div id="seriesItem.dataLabels.showSeriesNamePopupContent" class="i-popup-content">
+Whether to show series name in series data labels.
+</div>
+<div id="seriesItem.dataLabels.showCategoryNamePopupContent" class="i-popup-content">
+Whether to show category name in series data labels.
+</div>
+<div id="seriesItem.dataLabels.showPercentagePopupContent" class="i-popup-content">
+Whether to show the percent value in series data labels.
+</div>
+<div id="seriesItem.dataLabels.separatorPopupContent" class="i-popup-content">
+the separator of the series data labels.
+</div>
+<div id="seriesItem.dataLabels.positionPopupContent" class="i-popup-content">
+The position of the series data labels.
+</div>
+<div id="seriesItem.dataLabels.formatPopupContent" class="i-popup-content">
+The format of the series data labels.
+</div>
+<div id="seriesItem.dataLabels.colorPopupContent" class="i-popup-content">
+The text color of the series data labels.
+</div>
+<div id="seriesItem.dataLabels.transparencyPopupContent" class="i-popup-content">
+The text color transparency of the series data labels.
+</div>
+<div id="seriesItem.dataLabels.backColorPopupContent" class="i-popup-content">
+The background color of the series data labels.
+</div>
+<div id="seriesItem.dataLabels.backColor.typePopupContent" class="i-popup-content">
+The pattern fill background color type of the chart series dataLabels.
+</div>
+<div id="seriesItem.dataLabels.backColor.foregroundColorPopupContent" class="i-popup-content">
+The pattern fill foreground color of the chart series dataLabels.
+</div>
+<div id="seriesItem.dataLabels.backColor.backgroundColorPopupContent" class="i-popup-content">
+The pattern fill background color of the chart series dataLabels.
+</div>
+<div id="seriesItem.dataLabels.backColorTransparencyPopupContent" class="i-popup-content">
+The background color transparency of the series data labels.
+</div>
+<div id="seriesItem.dataLabels.borderColorPopupContent" class="i-popup-content">
+The border color of the series data labels.
+</div>
+<div id="seriesItem.dataLabels.borderWidthPopupContent" class="i-popup-content">
+The border width of the series data labels.
+</div>
+<div id="seriesItem.dataLabels.borderColorTransparencyPopupContent" class="i-popup-content">
+The border color transparency of the series data labels.
+</div>
+
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">add Method</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">Adds a new series to series collection.</div>
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new <a href="SpreadJS~GC.Spread.Sheets.Charts.SeriesCollection.html">GC.Spread.Sheets.Charts.SeriesCollection</a>();
+var value; // Type: any
+value = instance.add(seriesItem,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.symbol,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.symbol.fill,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.symbol.fillColorTransparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.symbol.size,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.symbol.shape,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.symbol.border,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.symbol.border.color,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.symbol.border.colorTransparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.symbol.border.width,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.symbol.border.lineType,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical.type,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical.valuetype,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical.noEndCap,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical.value,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical.custom,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical.custom.positive,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical.custom.negative,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical.style,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical.style.color,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical.style.transparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.vertical.style.width,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.type,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.valuetype,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.noEndCap,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.value,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.custom,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.custom.positive,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.custom.negative,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.style,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.style.color,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.style.transparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.style.width,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.errorbars.horizontal.style.dashStyle,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines2,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines3,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines4,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines5,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines6,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines7,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines8,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines9,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines10,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines11,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines12,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines13,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines14,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines15,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines16,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines17,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines18,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.chartType,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.axisGroup,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.backColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.backColor.type,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.backColor.foregroundColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.backColor.backgroundColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.backColorTransparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.border,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.border.color,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.border.lineType,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.border.transparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.border.width,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.startAngle,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.name,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.xValues,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.yValues,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.bubbleSizes,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.doughnutHoleSize,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.gapWidth,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.overlap,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.trendlines19,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataPoints,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.showValue,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.showSeriesName,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.showCategoryName,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.showPercentage,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.separator,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.position,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.format,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.color,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.transparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.backColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.backColor.type,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.backColor.foregroundColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.backColor.backgroundColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.backColorTransparency,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.borderColor,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.borderWidth,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seriesItem.dataLabels.borderColorTransparency);</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function add( 
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItemPopupLink" data-popup-contentsource="#seriesItemPopupContent" data-popup-showevent="click mouseenter">seriesItem</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.symbolPopupLink" data-popup-contentsource="#seriesItem.symbolPopupContent" data-popup-showevent="click mouseenter">seriesItem.symbol</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.symbol.fillPopupLink" data-popup-contentsource="#seriesItem.symbol.fillPopupContent" data-popup-showevent="click mouseenter">seriesItem.symbol.fill</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.symbol.fillColorTransparencyPopupLink" data-popup-contentsource="#seriesItem.symbol.fillColorTransparencyPopupContent" data-popup-showevent="click mouseenter">seriesItem.symbol.fillColorTransparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.symbol.sizePopupLink" data-popup-contentsource="#seriesItem.symbol.sizePopupContent" data-popup-showevent="click mouseenter">seriesItem.symbol.size</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.symbol.shapePopupLink" data-popup-contentsource="#seriesItem.symbol.shapePopupContent" data-popup-showevent="click mouseenter">seriesItem.symbol.shape</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.SymbolShape.html">SymbolShape</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.symbol.borderPopupLink" data-popup-contentsource="#seriesItem.symbol.borderPopupContent" data-popup-showevent="click mouseenter">seriesItem.symbol.border</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.symbol.border.colorPopupLink" data-popup-contentsource="#seriesItem.symbol.border.colorPopupContent" data-popup-showevent="click mouseenter">seriesItem.symbol.border.color</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.symbol.border.colorTransparencyPopupLink" data-popup-contentsource="#seriesItem.symbol.border.colorTransparencyPopupContent" data-popup-showevent="click mouseenter">seriesItem.symbol.border.colorTransparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.symbol.border.widthPopupLink" data-popup-contentsource="#seriesItem.symbol.border.widthPopupContent" data-popup-showevent="click mouseenter">seriesItem.symbol.border.width</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.symbol.border.lineTypePopupLink" data-popup-contentsource="#seriesItem.symbol.border.lineTypePopupContent" data-popup-showevent="click mouseenter">seriesItem.symbol.border.lineType</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.LineType.html">LineType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbarsPopupLink" data-popup-contentsource="#seriesItem.errorbarsPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.verticalPopupLink" data-popup-contentsource="#seriesItem.errorbars.verticalPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.vertical.typePopupLink" data-popup-contentsource="#seriesItem.errorbars.vertical.typePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical.type</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.ErrorBarType.html">ErrorBarType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.vertical.valuetypePopupLink" data-popup-contentsource="#seriesItem.errorbars.vertical.valuetypePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical.valuetype</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.ErrorBarValueType.html">ErrorBarValueType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.vertical.noEndCapPopupLink" data-popup-contentsource="#seriesItem.errorbars.vertical.noEndCapPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical.noEndCap</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.vertical.valuePopupLink" data-popup-contentsource="#seriesItem.errorbars.vertical.valuePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical.value</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.vertical.customPopupLink" data-popup-contentsource="#seriesItem.errorbars.vertical.customPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical.custom</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.vertical.custom.positivePopupLink" data-popup-contentsource="#seriesItem.errorbars.vertical.custom.positivePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical.custom.positive</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.vertical.custom.negativePopupLink" data-popup-contentsource="#seriesItem.errorbars.vertical.custom.negativePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical.custom.negative</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.vertical.stylePopupLink" data-popup-contentsource="#seriesItem.errorbars.vertical.stylePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical.style</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.vertical.style.colorPopupLink" data-popup-contentsource="#seriesItem.errorbars.vertical.style.colorPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical.style.color</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.vertical.style.transparencyPopupLink" data-popup-contentsource="#seriesItem.errorbars.vertical.style.transparencyPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical.style.transparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.vertical.style.widthPopupLink" data-popup-contentsource="#seriesItem.errorbars.vertical.style.widthPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.vertical.style.width</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontalPopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontalPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.typePopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.typePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.type</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.ErrorBarType.html">ErrorBarType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.valuetypePopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.valuetypePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.valuetype</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.ErrorBarValueType.html">ErrorBarValueType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.noEndCapPopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.noEndCapPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.noEndCap</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.valuePopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.valuePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.value</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.customPopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.customPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.custom</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.custom.positivePopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.custom.positivePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.custom.positive</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.custom.negativePopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.custom.negativePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.custom.negative</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.stylePopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.stylePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.style</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.style.colorPopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.style.colorPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.style.color</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.style.transparencyPopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.style.transparencyPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.style.transparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.style.widthPopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.style.widthPopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.style.width</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.errorbars.horizontal.style.dashStylePopupLink" data-popup-contentsource="#seriesItem.errorbars.horizontal.style.dashStylePopupContent" data-popup-showevent="click mouseenter">seriesItem.errorbars.horizontal.style.dashStyle</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.LineType.html">LineType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlinesPopupLink" data-popup-contentsource="#seriesItem.trendlinesPopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines2PopupLink" data-popup-contentsource="#seriesItem.trendlines2PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines2</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.TrendlineType.html">TrendlineType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines3PopupLink" data-popup-contentsource="#seriesItem.trendlines3PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines3</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines4PopupLink" data-popup-contentsource="#seriesItem.trendlines4PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines4</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines5PopupLink" data-popup-contentsource="#seriesItem.trendlines5PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines5</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines6PopupLink" data-popup-contentsource="#seriesItem.trendlines6PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines6</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines7PopupLink" data-popup-contentsource="#seriesItem.trendlines7PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines7</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines8PopupLink" data-popup-contentsource="#seriesItem.trendlines8PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines8</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines9PopupLink" data-popup-contentsource="#seriesItem.trendlines9PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines9</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines10PopupLink" data-popup-contentsource="#seriesItem.trendlines10PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines10</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines11PopupLink" data-popup-contentsource="#seriesItem.trendlines11PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines11</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines12PopupLink" data-popup-contentsource="#seriesItem.trendlines12PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines12</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines13PopupLink" data-popup-contentsource="#seriesItem.trendlines13PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines13</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines14PopupLink" data-popup-contentsource="#seriesItem.trendlines14PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines14</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines15PopupLink" data-popup-contentsource="#seriesItem.trendlines15PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines15</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines16PopupLink" data-popup-contentsource="#seriesItem.trendlines16PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines16</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines17PopupLink" data-popup-contentsource="#seriesItem.trendlines17PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines17</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines18PopupLink" data-popup-contentsource="#seriesItem.trendlines18PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines18</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.LineType.html">LineType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.chartTypePopupLink" data-popup-contentsource="#seriesItem.chartTypePopupContent" data-popup-showevent="click mouseenter">seriesItem.chartType</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.ChartType.html">ChartType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.axisGroupPopupLink" data-popup-contentsource="#seriesItem.axisGroupPopupContent" data-popup-showevent="click mouseenter">seriesItem.axisGroup</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.AxisGroup.html">AxisGroup</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.backColorPopupLink" data-popup-contentsource="#seriesItem.backColorPopupContent" data-popup-showevent="click mouseenter">seriesItem.backColor</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.backColor.typePopupLink" data-popup-contentsource="#seriesItem.backColor.typePopupContent" data-popup-showevent="click mouseenter">seriesItem.backColor.type</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.PatternType.html">PatternType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.backColor.foregroundColorPopupLink" data-popup-contentsource="#seriesItem.backColor.foregroundColorPopupContent" data-popup-showevent="click mouseenter">seriesItem.backColor.foregroundColor</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.backColor.backgroundColorPopupLink" data-popup-contentsource="#seriesItem.backColor.backgroundColorPopupContent" data-popup-showevent="click mouseenter">seriesItem.backColor.backgroundColor</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.backColorTransparencyPopupLink" data-popup-contentsource="#seriesItem.backColorTransparencyPopupContent" data-popup-showevent="click mouseenter">seriesItem.backColorTransparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.borderPopupLink" data-popup-contentsource="#seriesItem.borderPopupContent" data-popup-showevent="click mouseenter">seriesItem.border</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.border.colorPopupLink" data-popup-contentsource="#seriesItem.border.colorPopupContent" data-popup-showevent="click mouseenter">seriesItem.border.color</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.border.lineTypePopupLink" data-popup-contentsource="#seriesItem.border.lineTypePopupContent" data-popup-showevent="click mouseenter">seriesItem.border.lineType</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.LineType.html">LineType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.border.transparencyPopupLink" data-popup-contentsource="#seriesItem.border.transparencyPopupContent" data-popup-showevent="click mouseenter">seriesItem.border.transparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.border.widthPopupLink" data-popup-contentsource="#seriesItem.border.widthPopupContent" data-popup-showevent="click mouseenter">seriesItem.border.width</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.startAnglePopupLink" data-popup-contentsource="#seriesItem.startAnglePopupContent" data-popup-showevent="click mouseenter">seriesItem.startAngle</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.namePopupLink" data-popup-contentsource="#seriesItem.namePopupContent" data-popup-showevent="click mouseenter">seriesItem.name</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.xValuesPopupLink" data-popup-contentsource="#seriesItem.xValuesPopupContent" data-popup-showevent="click mouseenter">seriesItem.xValues</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.yValuesPopupLink" data-popup-contentsource="#seriesItem.yValuesPopupContent" data-popup-showevent="click mouseenter">seriesItem.yValues</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.bubbleSizesPopupLink" data-popup-contentsource="#seriesItem.bubbleSizesPopupContent" data-popup-showevent="click mouseenter">seriesItem.bubbleSizes</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.doughnutHoleSizePopupLink" data-popup-contentsource="#seriesItem.doughnutHoleSizePopupContent" data-popup-showevent="click mouseenter">seriesItem.doughnutHoleSize</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.gapWidthPopupLink" data-popup-contentsource="#seriesItem.gapWidthPopupContent" data-popup-showevent="click mouseenter">seriesItem.gapWidth</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.overlapPopupLink" data-popup-contentsource="#seriesItem.overlapPopupContent" data-popup-showevent="click mouseenter">seriesItem.overlap</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.trendlines19PopupLink" data-popup-contentsource="#seriesItem.trendlines19PopupContent" data-popup-showevent="click mouseenter">seriesItem.trendlines19</a></i> : Array,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataPointsPopupLink" data-popup-contentsource="#seriesItem.dataPointsPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataPoints</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabelsPopupLink" data-popup-contentsource="#seriesItem.dataLabelsPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels</a></i> : Object,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.showValuePopupLink" data-popup-contentsource="#seriesItem.dataLabels.showValuePopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.showValue</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.showSeriesNamePopupLink" data-popup-contentsource="#seriesItem.dataLabels.showSeriesNamePopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.showSeriesName</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.showCategoryNamePopupLink" data-popup-contentsource="#seriesItem.dataLabels.showCategoryNamePopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.showCategoryName</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.showPercentagePopupLink" data-popup-contentsource="#seriesItem.dataLabels.showPercentagePopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.showPercentage</a></i> : boolean,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.separatorPopupLink" data-popup-contentsource="#seriesItem.dataLabels.separatorPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.separator</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.positionPopupLink" data-popup-contentsource="#seriesItem.dataLabels.positionPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.position</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.DataLabelPosition.html">DataLabelPosition</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.formatPopupLink" data-popup-contentsource="#seriesItem.dataLabels.formatPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.format</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.colorPopupLink" data-popup-contentsource="#seriesItem.dataLabels.colorPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.color</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.transparencyPopupLink" data-popup-contentsource="#seriesItem.dataLabels.transparencyPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.transparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.backColorPopupLink" data-popup-contentsource="#seriesItem.dataLabels.backColorPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.backColor</a></i> : undefined,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.backColor.typePopupLink" data-popup-contentsource="#seriesItem.dataLabels.backColor.typePopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.backColor.type</a></i> : <a href="SpreadJS~GC.Spread.Sheets.Charts.PatternType.html">PatternType</a>,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.backColor.foregroundColorPopupLink" data-popup-contentsource="#seriesItem.dataLabels.backColor.foregroundColorPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.backColor.foregroundColor</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.backColor.backgroundColorPopupLink" data-popup-contentsource="#seriesItem.dataLabels.backColor.backgroundColorPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.backColor.backgroundColor</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.backColorTransparencyPopupLink" data-popup-contentsource="#seriesItem.dataLabels.backColorTransparencyPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.backColorTransparency</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.borderColorPopupLink" data-popup-contentsource="#seriesItem.dataLabels.borderColorPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.borderColor</a></i> : string,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.borderWidthPopupLink" data-popup-contentsource="#seriesItem.dataLabels.borderWidthPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.borderWidth</a></i> : number,
+&nbsp;&nbsp;&nbsp;<i><a class="i-popup-link" id="seriesItem.dataLabels.borderColorTransparencyPopupLink" data-popup-contentsource="#seriesItem.dataLabels.borderColorTransparencyPopupContent" data-popup-showevent="click mouseenter">seriesItem.dataLabels.borderColorTransparency</a></i> : number
+) : any;</pre>
+      </div>
+    
+
+      </div>
+    
+            <h4 class=dxh4>Parameters</h4><dl><dt><I>seriesItem</I></dt>
+<dd>The series of the chart.</dd><dt><I>seriesItem.symbol</I></dt>
+<dd>, seriesItem The symbol of the series.</dd><dt><I>seriesItem.symbol.fill</I></dt>
+<dd>The symbol fill color of the series.</dd><dt><I>seriesItem.symbol.fillColorTransparency</I></dt>
+<dd>The transparency of the symbol fill color.</dd><dt><I>seriesItem.symbol.size</I></dt>
+<dd>The symbol size of the series.</dd><dt><I>seriesItem.symbol.shape</I></dt>
+<dd>The symbol shape of the series.</dd><dt><I>seriesItem.symbol.border</I></dt>
+<dd>The symbol border of the series.</dd><dt><I>seriesItem.symbol.border.color</I></dt>
+<dd>The symbol border color of the series.</dd><dt><I>seriesItem.symbol.border.colorTransparency</I></dt>
+<dd>The transparency of the symbol border color.</dd><dt><I>seriesItem.symbol.border.width</I></dt>
+<dd>The symbol border width of the series.</dd><dt><I>seriesItem.symbol.border.lineType</I></dt>
+<dd>The symbol border line Type of the series.</dd><dt><I>seriesItem.errorbars</I></dt>
+<dd>The error bars of the series.</dd><dt><I>seriesItem.errorbars.vertical</I></dt>
+<dd>The vertical error bar of the series, each series may has different direction error bar(s) based on chart type.</dd><dt><I>seriesItem.errorbars.vertical.type</I></dt>
+<dd>The error bar type.</dd><dt><I>seriesItem.errorbars.vertical.valuetype</I></dt>
+<dd>The error bar value type.</dd><dt><I>seriesItem.errorbars.vertical.noEndCap</I></dt>
+<dd>The error bar has end cap or not.</dd><dt><I>seriesItem.errorbars.vertical.value</I></dt>
+<dd>The error bar value, just take effect on the FixedValue(1) / Percentage(2) / StandardDeviation(3) value type.</dd><dt><I>seriesItem.errorbars.vertical.custom</I></dt>
+<dd>The error bar custom formulas, it contains positive formula and negative formula, just take effect on the Custom(0) value type.</dd><dt><I>seriesItem.errorbars.vertical.custom.positive</I></dt>
+<dd>The error bar custom positive formula.</dd><dt><I>seriesItem.errorbars.vertical.custom.negative</I></dt>
+<dd>The error bar custom negative formula.</dd><dt><I>seriesItem.errorbars.vertical.style</I></dt>
+<dd>The error bar styles.</dd><dt><I>seriesItem.errorbars.vertical.style.color</I></dt>
+<dd>The error bar color.</dd><dt><I>seriesItem.errorbars.vertical.style.transparency</I></dt>
+<dd>The error bar transparency.</dd><dt><I>seriesItem.errorbars.vertical.style.width</I></dt>
+<dd>The error bar width.</dd><dt><I>seriesItem.errorbars.horizontal</I></dt>
+<dd>The horizontal error bar of the series, each series may has different direction error bar(s) based on chart type.</dd><dt><I>seriesItem.errorbars.horizontal.type</I></dt>
+<dd>The error bar type.</dd><dt><I>seriesItem.errorbars.horizontal.valuetype</I></dt>
+<dd>The error bar value type.</dd><dt><I>seriesItem.errorbars.horizontal.noEndCap</I></dt>
+<dd>The error bar has end cap or not.</dd><dt><I>seriesItem.errorbars.horizontal.value</I></dt>
+<dd>The error bar value, just take effect on the FixedValue(1) / Percentage(2) / StandardDeviation(3) value type.</dd><dt><I>seriesItem.errorbars.horizontal.custom</I></dt>
+<dd>The error bar custom formulas, it contains positive formula and negative formula, just take effect on the Custom(0) value type.</dd><dt><I>seriesItem.errorbars.horizontal.custom.positive</I></dt>
+<dd>The error bar custom positive formula.</dd><dt><I>seriesItem.errorbars.horizontal.custom.negative</I></dt>
+<dd>The error bar custom negative formula.</dd><dt><I>seriesItem.errorbars.horizontal.style</I></dt>
+<dd>The error bar styles.</dd><dt><I>seriesItem.errorbars.horizontal.style.color</I></dt>
+<dd>The error bar color.</dd><dt><I>seriesItem.errorbars.horizontal.style.transparency</I></dt>
+<dd>The error bar transparency.</dd><dt><I>seriesItem.errorbars.horizontal.style.width</I></dt>
+<dd>The error bar width.</dd><dt><I>seriesItem.errorbars.horizontal.style.dashStyle</I></dt>
+<dd>The error bar dash style.</dd><dt><I>seriesItem.trendlines</I></dt>
+<dd>The trendlines of the series.[0].type The type of the trendline.[0].order The order of the polynomial trendline.[0].period The period of the movingAverage trendline.[0].intercept The intercept of the trendline.[0].forward The forward of the trendline.[0].backward The backward of the trendline.[0].displayEquation Whether display the equation of the trendline.[0].displayRSquared Whether display the R squared of the trendline.[0].fontFamily The fontFamily of the trendline.[0].fontSize The fontSize of the trendline.[0].fontColor The fontColor of the trendline.[0].name The name of the trendline.[0].style The line style of the trendline.[0].style.color The color of the trendline.[0].style.transparency The transparency of the trendline.[0].style.width The width of the trendline.[0].style.dashStyle The dash style of the trendline.The trendlines of the series.</dd><dt><I>seriesItem.trendlines2</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines3</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines4</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines5</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines6</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines7</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines8</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines9</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines10</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines11</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines12</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines13</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines14</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines15</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines16</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines17</I></dt>
+<dd></dd><dt><I>seriesItem.trendlines18</I></dt>
+<dd></dd><dt><I>seriesItem.chartType</I></dt>
+<dd>The chart type of the series.</dd><dt><I>seriesItem.axisGroup</I></dt>
+<dd>The axis group of the series.</dd><dt><I>seriesItem.backColor</I></dt>
+<dd>The background color of the series.</dd><dt><I>seriesItem.backColor.type</I></dt>
+<dd>The pattern fill background color type of the chart series.</dd><dt><I>seriesItem.backColor.foregroundColor</I></dt>
+<dd>The pattern fill foreground color of the chart series.</dd><dt><I>seriesItem.backColor.backgroundColor</I></dt>
+<dd>The pattern fill background color of the chart series.</dd><dt><I>seriesItem.backColorTransparency</I></dt>
+<dd>The transparency of the series background color.</dd><dt><I>seriesItem.border</I></dt>
+<dd>The border of the series.</dd><dt><I>seriesItem.border.color</I></dt>
+<dd>The border color of the series.</dd><dt><I>seriesItem.border.lineType</I></dt>
+<dd>The border line type of the series.</dd><dt><I>seriesItem.border.transparency</I></dt>
+<dd>The transparency of the series border color.</dd><dt><I>seriesItem.border.width</I></dt>
+<dd>The border width of the series.</dd><dt><I>seriesItem.startAngle</I></dt>
+<dd>The first slice angle of the chart whose chart type is pie. The default value is 0, which represents the 12 o'clock position.</dd><dt><I>seriesItem.name</I></dt>
+<dd>The name formula of the series.</dd><dt><I>seriesItem.xValues</I></dt>
+<dd>The x values formula of the series.</dd><dt><I>seriesItem.yValues</I></dt>
+<dd>The y values formula of the series.</dd><dt><I>seriesItem.bubbleSizes</I></dt>
+<dd>The bubble sizes formula of the series. This is used for bubble chart.</dd><dt><I>seriesItem.doughnutHoleSize</I></dt>
+<dd>The hole size of the doughnut chart. This is used for doughnut chart, The maximum value is 0.9, the minimum value is 0.</dd><dt><I>seriesItem.gapWidth</I></dt>
+<dd>The gap width of the bar and column chart group. The maximum value is 5, the minimum value is 0.</dd><dt><I>seriesItem.overlap</I></dt>
+<dd>The overlap of the bar and column chart group. The maximum value is 1, the minimum value is -1.</dd><dt><I>seriesItem.trendlines19</I></dt>
+<dd></dd><dt><I>seriesItem.dataPoints</I></dt>
+<dd>The data points of the series.</dd><dt><I>seriesItem.dataLabels</I></dt>
+<dd>The data labels of the series.</dd><dt><I>seriesItem.dataLabels.showValue</I></dt>
+<dd>Whether to show value in series data labels.</dd><dt><I>seriesItem.dataLabels.showSeriesName</I></dt>
+<dd>Whether to show series name in series data labels.</dd><dt><I>seriesItem.dataLabels.showCategoryName</I></dt>
+<dd>Whether to show category name in series data labels.</dd><dt><I>seriesItem.dataLabels.showPercentage</I></dt>
+<dd>Whether to show the percent value in series data labels.</dd><dt><I>seriesItem.dataLabels.separator</I></dt>
+<dd>the separator of the series data labels.</dd><dt><I>seriesItem.dataLabels.position</I></dt>
+<dd>The position of the series data labels.</dd><dt><I>seriesItem.dataLabels.format</I></dt>
+<dd>The format of the series data labels.</dd><dt><I>seriesItem.dataLabels.color</I></dt>
+<dd>The text color of the series data labels.</dd><dt><I>seriesItem.dataLabels.transparency</I></dt>
+<dd>The text color transparency of the series data labels.</dd><dt><I>seriesItem.dataLabels.backColor</I></dt>
+<dd>The background color of the series data labels.</dd><dt><I>seriesItem.dataLabels.backColor.type</I></dt>
+<dd>The pattern fill background color type of the chart series dataLabels.</dd><dt><I>seriesItem.dataLabels.backColor.foregroundColor</I></dt>
+<dd>The pattern fill foreground color of the chart series dataLabels.</dd><dt><I>seriesItem.dataLabels.backColor.backgroundColor</I></dt>
+<dd>The pattern fill background color of the chart series dataLabels.</dd><dt><I>seriesItem.dataLabels.backColorTransparency</I></dt>
+<dd>The background color transparency of the series data labels.</dd><dt><I>seriesItem.dataLabels.borderColor</I></dt>
+<dd>The border color of the series data labels.</dd><dt><I>seriesItem.dataLabels.borderWidth</I></dt>
+<dd>The border width of the series data labels.</dd><dt><I>seriesItem.dataLabels.borderColorTransparency</I></dt>
+<dd>The border color transparency of the series data labels.</dd></dl>
+
+            </div>
+            
+
+            <a name="exampleBookmark"></a>
+            
+            
+            <div class="i-section-heading" id="i-example-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Example</span></div><div id="i-example-section-content" class="i-section-content"><div class="i-filtered-content-Javascript">
+    
+	<div class="i-tab-container">
+	    <ul>
+	        <li><a href="#i-tab-content-361819bf-5116-4db2-af0a-2ac2421a7e43">Javascript</a></li>
+	    </ul>
+	    <div id="i-tab-content-361819bf-5116-4db2-af0a-2ac2421a7e43" class="i-filtered-content-Javascript i-code"><pre><span style="color: #008000; ">// This example shows how to add a new series.
+</span><span style="color: #0000FF; ">var</span> dataRange = <span style="color: #800000; ">&quot;A1:D4&quot;</span>;
+<span style="color: #0000FF; ">var</span> chart = activeSheet.charts.add(<span style="color: #800000; ">'Chart1'</span>, GC.Spread.Sheets.Charts.ChartType.columnClustered, 250, 20, 600, 400, dataRange);
+chart.series.add({
+    chartType: GC.Spread.Sheets.Charts.ChartType.columnClustered,
+    axisGroup: GC.Spread.Sheets.Charts.AxisGroup.primary,
+    backColor: {
+        color: <span style="color: #800000; ">&quot;lightblue&quot;</span>,
+        width: 2
+    },
+    xValues: <span style="color: #800000; ">&quot;A2:A4&quot;</span>,
+    yValues: <span style="color: #800000; ">&quot;B2:B4&quot;</span>
+});</pre></div>
+	</div>
+</div>
+</div>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets.Charts.SeriesCollection.html">SeriesCollection type</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

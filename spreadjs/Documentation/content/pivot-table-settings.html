@@ -1,0 +1,714 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Pivot Table Settings | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n701","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="b0432310-f981-4f70-baa9-b45be62d96e2"/>
+    <meta name="Microsoft.Help.TocParent" content="f1825637-2866-4514-bd4c-8b65379a3900"/>
+    <meta name="Microsoft.Help.TocOrder" content="11"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="pivot-table.html">Pivot Table</a>
+ / Pivot Table Settings</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Pivot Table Settings</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can modify the settings of a pivot table to make it more comprehensible.</p>
+
+<h3>Auto Fit Column</h3>
+
+<p>The&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~autoFitColumn.html">autoFitColumn</a> method can be used&nbsp;to automatically fit&nbsp;pivot table columns according to the data. The below GIF&nbsp;demonstrates auto fit columns in&nbsp;a pivot table.</p>
+
+<p><img border="0" alt="" src="images/pt-autoFitColumn-method.gif" /></p>
+
+<p>The following example code shows how to auto fit columns in a pivot table.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Auto fit columns
+</span>myPivotTable.autoFitColumn();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Calculated Fields</h3>
+
+<p>You can add custom fields into the value field area of a pivot table which calculates values using formulas. You can use constants&nbsp;or refer to other fields&nbsp;of the pivot table in the formula.</p>
+
+<p>The calculated field can be added using&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~addCalcField.html">addCalcField</a> method. Additionally, you can fetch and remove calculated field information using&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~getCalcFields.html">getCalcFields</a> and&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~removeCalcField.html">removeCalcField</a> methods respectively.</p>
+
+<p>In the below&nbsp;image, a calculated field "Tax" is added in a pivot table.</p>
+
+<p><img border="0" alt="" src="images/pt-calculatedfields.png" /></p>
+
+<p>The following example code shows how to add, fetch and remove a calculated field in a pivot table.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Add Calculated Field "Tax" which is equal to 0.08 % of UnitPrice field
+// UnitPrice is one of PivotTable's measure field
+</span>myPivotTable.addCalcField(<span style="COLOR: #800000">"Tax"</span>, <span style="COLOR: #800000">"=UnitPrice*0.08"</span>);
+myPivotTable.add(<span style="COLOR: #800000">"Tax"</span>, <span style="COLOR: #800000">"Tax Calculated is 0.08 percent of Unit Price"</span>, GC.Spread.Pivot.PivotTableFieldType.valueField, GC.Pivot.SubtotalType.sum);
+
+<span style="COLOR: #008000">// get calculated field
+</span>calcFieldsInfo = myPivotTable.getCalcFields();
+<span style="COLOR: #008000">// add Calculated Field's name in new sheet
+</span><span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; calcFieldsInfo.length; i++) {
+    calcFieldSheet.setValue(i + 1, 0, calcFieldsInfo[i].fieldName);
+    calcField = calcFieldsInfo[i].fieldName;
+    calcFieldSheet.setValue(i + 1, 1, calcFieldsInfo[i].formula);
+}
+
+<span style="COLOR: #008000">// remove calculated field
+</span>myPivotTable.removeCalcField(calcField);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Calculated Item</h3>
+
+<p>You can add a calculated item into the row or column&nbsp;field area&nbsp;where it calculates the particular item in the Pivot table&nbsp;using specified formulas. You can use constants&nbsp;or refer to other fields&nbsp;of the pivot table in the formula.</p>
+
+<p>The calculated&nbsp;item can be added using the&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~addCalcItem.html">addCalcItem</a> method. Additionally, you can fetch, update&nbsp;and remove calculated&nbsp;items using&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~getCalcItems.html">getCalcItems</a>,<strong>&nbsp;</strong><a href="SpreadJS~GC.Spread.Pivot.PivotTable~updateCalcItem.html">updateCalcItem</a>,&nbsp;and&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~removeCalcItem.html">removeCalcItem</a> methods respectively.</p>
+
+<h4>Behavior of Calculated Items</h4>
+
+<ul>
+    <li>Calculated items cannot be implemented on multiple fields in a pivot table report area.</li>
+
+    <li>The formula of&nbsp;a calculated item&nbsp;can refer to the data of a pivot table and&nbsp;not to the data&nbsp;of the&nbsp;worksheet.</li>
+
+    <li>SpreadJS can add a calculated item to the field being grouped, and add the base information to the group field.</li>
+
+    <li>If you have&nbsp;a number group field or a date group field, only a selection group can add a calculated item.</li>
+
+    <li>All references to the pivot table must follow&nbsp;the format "SourceFieldName[itemName]".</li>
+
+    <li>The "Calculation Type" of all value fields in a pivot report can only be one of the following: TypeSum, Count, Max, Min, Product, Count Numbers.</li>
+
+    <li>A field&nbsp;in a calculated item cannot exist in the Filter area of a pivot report.</li>
+
+    <li>SpreadJS allows us to&nbsp;set&nbsp;whether the value of the calcItem should be aggregated into subtotal.</li>
+</ul>
+
+<p>In the below&nbsp;image, a calculated&nbsp;item <strong>"Category[Bakery+Beverages]"</strong> is added in a pivot table.</p>
+
+<p><img border="0" alt="" src="images/calculateditem.png" /></p>
+
+<p>The following example code shows how to add, update and remove a calculated field in a pivot table.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Add Calculated Item "Category[Bakery+Beverages]" which is equal to "Category[Bakery] + Category[Beverages]"
+</span><span style="COLOR: #0000ff">function</span> addCalcItem(myPivotTable) {
+    myPivotTable.addCalcItem(<span style="COLOR: #800000">"Category"</span>, <span style="COLOR: #800000">"Category[Bakery + Beverages]"</span>, <span style="COLOR: #800000">"=Category[Bakery] + Category[Beverages]"</span>);
+    myPivotTable.autoFitColumn();
+    <span style="COLOR: #0000ff">return</span> myPivotTable;
+}
+
+<span style="COLOR: #008000">// Update calculated item
+</span><span style="COLOR: #0000ff">function</span> updateCalcItem(myPivotTable) {
+    myPivotTable.updateCalcItem(<span style="COLOR: #800000">"Category"</span>, <span style="COLOR: #800000">"Category[Bakery + Beverages]"</span>, <span style="COLOR: #800000">"=Category[Bakery] - Category[Beverages]"</span>, 1);
+    myPivotTable.options.calcItemAggregation = GC.Spread.Pivot.CalcItemAggregation.include;
+    myPivotTable.autoFitColumn();
+    <span style="COLOR: #0000ff">return</span> myPivotTable;
+}
+
+<span style="COLOR: #008000">// Remove calculated item
+</span><span style="COLOR: #0000ff">function</span> deleteCalcItem(myPivotTable) {
+    myPivotTable.removeCalcItem(<span style="COLOR: #800000">"Category"</span>, <span style="COLOR: #800000">"Category[Bakery + Beverages]"</span>);
+    myPivotTable.autoFitColumn();
+    <span style="COLOR: #0000ff">return</span> myPivotTable;
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Conditional Rule</h3>
+
+<p>You can apply conditional rules on a&nbsp;pivot area using the&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~addConditionalRule.html">addConditionalRule</a> method. Additionally, you can fetch or remove any existing conditional rules using the&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~getConditionalRules.html">getConditionalRules</a> and&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~removeConditionalRule.html">removeConditionalRule</a> methods respectively. The conditional rules work as expected irrespective of the changes to the pivot table layout.</p>
+
+<p>The following image shows color formatting conditional rule&nbsp;in value cells.</p>
+
+<p><img border="0" alt="" src="images/pivot-addConditionalRule.gif" /></p>
+
+<p>The following example code shows how to apply conditional rule in a&nbsp;pivot table.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Add conditional rule
+</span>myPivotTable.addConditionalRule([{ dataOnly: <span style="COLOR: #0000ff">true</span>, references: [{ fieldName: <span style="COLOR: #800000">"City"</span>, items: [<span style="COLOR: #800000">"Seattle"</span>] }] }], <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.ConditionalFormatting.ScaleRule(GC.Spread.Sheets.ConditionalFormatting.RuleType.threeScaleRule, 1 <span style="COLOR: #008000">/* LowestValue */</span>, 0, <span style="COLOR: #800000">"lightblue"</span>, 0 <span style="COLOR: #008000">/* Number */</span>, 500, <span style="COLOR: #800000">"yellow"</span>, 2 <span style="COLOR: #008000">/* HighestValue */</span>, 2000, <span style="COLOR: #800000">"green"</span>));
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Merge and Center Cells With Labels</h3>
+
+<p>You can merge and center justify the cells with labels using the&nbsp;<strong>mergeItem</strong> option. This option accepts boolean value and&nbsp;works according to the defined&nbsp;layout of a&nbsp;pivot table as described&nbsp;below:</p>
+
+<table style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">
+    <tbody>
+        <tr>
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>Options</strong></th>
+
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>Compact Form</strong></th>
+
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>Outline Form</strong></th>
+
+            <th style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid"><strong>Tabular Form</strong></th>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Merge</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Only Column header</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Only Column header</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Both column and row header</td>
+        </tr>
+
+        <tr>
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Center</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Only Column header</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Both column and row header</td>
+
+            <td style="BORDER-TOP: black thin solid; BORDER-RIGHT: black thin solid; BORDER-BOTTOM: black thin solid; BORDER-LEFT: black thin solid">Both column and row header</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>In the below GIF, the cells with labels are merged and centered using the <strong>mergeItem</strong> option.</p>
+
+<p><img border="0" alt="" src="images/pivot-mergeItems.gif" /></p>
+
+<p>The following example code shows how to merge and center justify the cells with labels in a pivot table.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Merge and center labeled cells
+</span>myPivotTable.options.mergeItem = <span style="COLOR: #0000ff">true</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Pivot Table ToolTip</h3>
+
+<p>You can enable tooltips in a pivot table to understand the additional meaning of data. The tooltip data appears&nbsp;when the mouse is hovered over pivot data. However,&nbsp;the tooltips are not&nbsp;displayed&nbsp;if there is no clear information in value field.&nbsp;You can use the&nbsp;<strong>showToolTip</strong> option to show tooltips in the row/column header area, data area, and subtotal/grandTotal area.</p>
+
+<p>The below image shows tooltips when the mouse is hovered over pivot data.</p>
+
+<p><img border="0" alt="" src="images/pivot-showToolTip.gif" /></p>
+
+<p>The following example code shows how to enable tooltips in a pivot table.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Show tooltip in pivot table
+</span>myPivotTable.options.showToolTip = <span style="COLOR: #0000ff">true</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Pivot Table Serialize and Deserialize</h3>
+
+<p>You can serialize and save pivot table data using&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~serialize.html">serialize</a> method and restore the serialized pivot table data to an existing pivot table using the&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~deserialize.html">deserialize</a> method. Serialization supports the following pivot table data: Fields, Options, Filter, Sort, Layout, PivotTable Position and Theme.<br /></p>
+
+<p>The following example code&nbsp;serializes and saves pivot table data, prints the serialization information and restores the data to an existing pivot table.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Using serialize method to save pivot table data
+</span>serialization = myPivotTable.serialize();
+<span style="COLOR: #008000">// Printing serialization info
+</span>info = JSON.stringify(serialization, <span style="COLOR: #0000ff">null</span>, 2);
+console.log(info);
+
+<span style="COLOR: #008000">// Using deserialize method to restore data
+</span>myPivotTable.deserialize(serialization);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Show Empty Value As</h3>
+
+<p>SpreadJS provides the following options to choose whether to display any custom value in case an empty value exists in the pivot table data source.</p>
+
+<ul>
+    <li><strong>showMissing</strong> indicates whether any value should be shown when the actual value is empty.&nbsp;It accepts boolean value and is true by default.</li>
+
+    <li><strong>missingCaption</strong> indicates what value should be shown when the actual value is empty. It accepts string and number values and is empty by default.</li>
+</ul>
+
+<p>The below image shows empty values as 'No Sales' in a pivot table.</p>
+
+<p><img border="0" alt="" src="images/pivot-emptyValue.png" /></p>
+
+<p>The following&nbsp;example code shows how to display a string value in place of empty value.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Display custom value in empty cell
+</span>myPivotTable.options.showMissing = <span style="COLOR: #0000ff">true</span>;
+myPivotTable.options.missingCaption = <span style="COLOR: #800000">"No Sales"</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Show Items with No Data</h3>
+
+<p>You can display items with no data in a pivot table using the&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~showNoData.html">showNoData</a> method and choose whether to show blank cells in a field. This method accepts parameters such as field name and a boolean value for whether the items should be displayed.</p>
+
+<p>This setting helps the user to compare the items of a data source by managing the item’s visibility in the pivot table. The visibility of data is not dependent on whether it holds any value or not.</p>
+
+<p>The following image displays each store’s data including the periods with no sales.</p>
+
+<p><img border="0" alt="" src="images/pt-showitem-nodata.png" /></p>
+
+<p>The following example code shows how to display items with no data.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> initPivotTable(sheet) {
+    myPivotTable = sheet.pivotTables.add(<span style="COLOR: #800000">"myPivotTable"</span>, <span style="COLOR: #800000">"tableSales"</span>, 1, 1, GC.Spread.Pivot.PivotTableLayoutType.outline, GC.Spread.Pivot.PivotTableThemes.dark3);
+    myPivotTable.suspendLayout();
+    myPivotTable.add(<span style="COLOR: #800000">"City"</span>, <span style="COLOR: #800000">"City"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+    myPivotTable.add(<span style="COLOR: #800000">"OrderDate"</span>, <span style="COLOR: #800000">"OrderDate"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+    myPivotTable.add(<span style="COLOR: #800000">"Product"</span>, <span style="COLOR: #800000">"Product"</span>, GC.Spread.Pivot.PivotTableFieldType.rowField);
+    let groupInfo = { originFieldName: <span style="COLOR: #800000">"OrderDate"</span>, dateGroups: [{ by: GC.Pivot.DateGroupType.months }] };
+    myPivotTable.group(groupInfo);
+    myPivotTable.add(<span style="COLOR: #800000">"Quantity"</span>, <span style="COLOR: #800000">"Quantity"</span>, GC.Spread.Pivot.PivotTableFieldType.valueField, GC.Pivot.SubtotalType.sum);
+    
+    <span style="COLOR: #008000">// Set showNoData to true for displaying products which doesn't have any quantity
+</span>    myPivotTable.showNoData(<span style="COLOR: #800000">"Product"</span>, <span style="COLOR: #0000ff">true</span>);
+    myPivotTable.resumeLayout();
+    myPivotTable.autoFitColumn();
+    <span style="COLOR: #0000ff">return</span> myPivotTable;
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Pivot Table Show Data As</h3>
+
+<p>You can show the pivot table data as different types of calculation values&nbsp;using&nbsp;<a href="SpreadJS~GC.Spread.Pivot.PivotTable~showDataAs.html">showDataAs</a> method. This method accepts field name and&nbsp;<a href="SpreadJS~GC.Spread.Pivot.IPivotShowDataAsInfo.html">IPivotShowDataAsInfo</a> object properties. The value fields can be set to different calculations using&nbsp;<a href="SpreadJS~GC.Pivot.PivotShowDataAs.html">PivotShowDataAs</a> enumeration.</p>
+
+<p>In the below GIF, the pivot table shows running total for&nbsp;"Years" field.</p>
+
+<p><img border="0" alt="" src="images/pivot-showDataAs.gif" /></p>
+
+<p>The following&nbsp;example code shows how to display the running total value for Years.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Using showDataAs method
+</span>myPivotTable.showDataAs(<span style="COLOR: #800000">"Sum of quantity"</span>, { showDataAs: GC.Pivot.PivotShowDataAs.runTotal, baseFieldName: <span style="COLOR: #800000">"Years"</span> });
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Show or Hide Headers</h3>
+
+<p>You can set whether a Pivot Table displays the names of the fields in the row and column directions or not by using the <strong>showHeaders</strong> property.&nbsp;It is set to true by default.</p>
+
+<p>In the below GIF, the pivot table shows&nbsp;and hides the row and column headers.</p>
+
+<p><img border="0" alt="" src="images/show_hide_headers.gif" /></p>
+
+<p>The following&nbsp;example code shows how to hide headers.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// set showHeader option to False to hide headers of pivot table
+</span>pt.options.showHeaders = <span style="COLOR: #0000ff">false</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>JSON I/O without Style</h3>
+
+<p>You can choose to keep or&nbsp;drop pivot table style while importing or exporting a spreadsheet&nbsp;to JSON format.&nbsp;The <strong>ignorestyle</strong> parameter of <strong>toJSON</strong>&nbsp;and <strong>fromJSON</strong>&nbsp;methods when set to true, drops the pivot cache and pivot table while&nbsp;keeping the pivot table values.</p>
+
+<p>The below image shows a pivot table without style when imported from a JSON file.</p>
+
+<p><img border="0" alt="" src="images/Pivot_table_without_style.png" /></p>
+
+<p>The following&nbsp;example code shows how to&nbsp;import or export&nbsp;a&nbsp;json file&nbsp;without style.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> bindExcelIOEvent(spread) {
+    <span style="COLOR: #008000">// import ssjson file when IgnoreStyle parameter is set to true
+</span>    <span style="COLOR: #0000ff">var</span> openButton = document.getElementById(<span style="COLOR: #800000">'openButton'</span>);
+    openButton.addEventListener(<span style="COLOR: #800000">'click'</span>, <span style="COLOR: #0000ff">function</span> () {
+        <span style="COLOR: #0000ff">var</span> file = document.getElementById(<span style="COLOR: #800000">"importFileName"</span>).files[0];
+        <span style="COLOR: #0000ff">var</span> fileName = file.name;
+        <span style="COLOR: #0000ff">var</span> suffix = fileName.substr(fileName.lastIndexOf(<span style="COLOR: #800000">'.'</span>));
+
+        <span style="COLOR: #0000ff">if</span> (suffix === <span style="COLOR: #800000">'.ssjson'</span> || suffix === <span style="COLOR: #800000">'json'</span>) {
+            <span style="COLOR: #0000ff">var</span> reader = <span style="COLOR: #0000ff">new</span> FileReader();
+            reader.onload = <span style="COLOR: #0000ff">function</span> () {
+                <span style="COLOR: #0000ff">var</span> spreadJson = JSON.parse(<span style="COLOR: #0000ff">this</span>.result);
+                spread.fromJSON(spreadJson, { ignoreStyle: <span style="COLOR: #0000ff">true</span> });
+            };
+            reader.readAsText(file);
+        }
+    });
+    <span style="COLOR: #008000">// export ssjson file when IgnoreStyle option is set to true
+</span>    <span style="COLOR: #0000ff">var</span> saveSSJSONButton = document.getElementById(<span style="COLOR: #800000">'saveSSJSONButton'</span>);
+    saveSSJSONButton.addEventListener(<span style="COLOR: #800000">'click'</span>, <span style="COLOR: #0000ff">function</span> () {
+        <span style="COLOR: #0000ff">var</span> fileName = <span style="COLOR: #800000">"ExportedFile"</span>;
+        <span style="COLOR: #0000ff">var</span> index = fileName.lastIndexOf(<span style="COLOR: #800000">'.'</span>);
+        <span style="COLOR: #0000ff">if</span> (index &gt;= 0) {
+            fileName = fileName.substr(0, index) + <span style="COLOR: #800000">'.ssjson'</span>;
+        } <span style="COLOR: #0000ff">else</span> {
+            fileName += <span style="COLOR: #800000">'.ssjson'</span>;
+        }
+        <span style="COLOR: #0000ff">var</span> json = spread.toJSON({ includeBindingSource: <span style="COLOR: #0000ff">true</span>, ignoreStyle: <span style="COLOR: #0000ff">true</span> }),
+            text = JSON.stringify(json);
+        saveAs(<span style="COLOR: #0000ff">new</span> Blob([text], { type: <span style="COLOR: #800000">"text/plain;charset=utf-8"</span> }), fileName);
+    });
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

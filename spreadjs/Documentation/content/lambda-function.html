@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>LAMBDA | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4332","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="c21344b3-eb03-4b2a-8ae4-5c43f693e27e"/>
+    <meta name="Microsoft.Help.TocParent" content="29687170-5432-4d61-a3d1-001debf68868"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / <a href="other-functions.html">Other Functions</a>
+ / LAMBDA</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">LAMBDA</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>This function allows you to create and name custom reusable functions that can be called like any other function.</p>
+
+<h4>Syntax</h4>
+
+<p>=LAMBDA([parameter1, parameter2, …,], calculation)</p>
+
+<h4>Arguments</h4>
+
+<p>This function has these arguments:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Argument</th>
+
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td><i>parameter</i></td>
+
+            <td>[Optional] A value that you want to pass to the function, such as a cell reference, string or number. You can enter up to 253 parameters.</td>
+        </tr>
+
+        <tr>
+            <td><i>calculation</i></td>
+
+            <td>[Required] The formula you want to execute and return as the result of the function. It must be the last argument and it must return a result.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Remarks</h4>
+
+<ul>
+    <li>If an incorrect number of parameters or more than 253 parameters are provided to a LAMBDA function, it returns a #VALUE! error.</li>
+
+    <li>If an incorrect number of arguments is passed to a LAMBDA function,&nbsp;it returns a #VALUE! error.</li>
+
+    <li>If you call a LAMBDA function from within itself and the call is circular,&nbsp;it returns a #NUM! error.</li>
+
+    <li>If you create a LAMBDA function in a cell without also calling it from within the cell, it returns a #CALC! error.</li>
+</ul>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> If the lambda function is recursive, the maximum recursion depth is related to the browser.
+</div>
+
+<h4>Data Types</h4>
+
+<p>The concise format returns a text value, whereas the strict format returns an array of the same size and shape as the input.</p>
+
+<h4>Examples</h4>
+
+<p>The following sample code shows the basic usage of LAMBDA function.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//basic usage of LAMBDA function using one parameter
+</span>sheet.setValue(1, 1, <span style="COLOR: #800000">"Converted Temp"</span>);
+spread.addCustomName(<span style="COLOR: #800000">'ToCelsius'</span>, <span style="COLOR: #800000">'LAMBDA(temp, (5/9) * (temp-32))'</span>);
+sheet.setFormula(2, 1, <span style="COLOR: #800000">'ToCelsius(104)'</span>); <span style="COLOR: #008000">// result is 40
+</span>            
+<span style="COLOR: #008000">//basic usage of LAMBDA function using two parameters
+</span>sheet.setValue(1, 3, <span style="COLOR: #800000">"Calculated Hypotenuse"</span>);
+spread.addCustomName(<span style="COLOR: #800000">'Hypotenuse'</span>, <span style="COLOR: #800000">'LAMBDA(a, b, SQRT((a^2+b^2)))'</span>);
+sheet.setFormula(2, 3, <span style="COLOR: #800000">'Hypotenuse(3, 4)'</span>); <span style="COLOR: #008000">// result is 5</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The below output will be generated:</p>
+
+<p><img border="0" alt="" src="images/lambdafunction.png" /></p>
+
+<h3>Lambda Helper Functions</h3>
+
+<p>SpreadJS supports seven new LAMBDA helper functions. These functions help creating re-usable LAMBDA functions&nbsp;by having&nbsp;LAMBDA function&nbsp;as a&nbsp;parameter.&nbsp;They also&nbsp;serve as stand-alone functions themselves. For more information, refer:</p>
+
+<ol>
+    <li><a href="byrow-function.html" data-auto-update-caption="true">BYROW</a></li>
+
+    <li><a href="bycol-function.html" data-auto-update-caption="true">BYCOL</a></li>
+
+    <li><a href="isomitted-function.html" data-auto-update-caption="true">ISOMITTED</a></li>
+
+    <li><a href="makearray-function.html" data-auto-update-caption="true">MAKEARRAY</a></li>
+
+    <li><a href="map-function.html" data-auto-update-caption="true">MAP</a></li>
+
+    <li><a href="reduce-function.html" data-auto-update-caption="true">REDUCE</a></li>
+
+    <li><a href="scan-function.html" data-auto-update-caption="true">SCAN</a></li>
+</ol>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

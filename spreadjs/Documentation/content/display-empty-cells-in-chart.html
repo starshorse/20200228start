@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Display Empty Cells in Chart | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n607","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="3cfe8506-6f00-4272-b79d-771d4c5f4f19"/>
+    <meta name="Microsoft.Help.TocParent" content="bdba97c4-037f-4cd7-ae56-830374286ef0"/>
+    <meta name="Microsoft.Help.TocOrder" content="8"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / Display Empty Cells in Chart</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Display Empty Cells in Chart</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>While visualizing data in spreadsheets, you may want to plot blank or empty cells along with other data in the chart.</p>
+
+<p>SpreadJS provides support for displaying empty cells and null values in charts just like in Excel. This feature is helpful in plotting the missing data in a chart and hence facilitates users in quickly identifying and correcting&nbsp;any issues with the data.</p>
+
+<p>With this feature, users can display empty cells or null values as gaps, show empty cells as zero values and connect empty points with a line as per their requirements and specific preferences.&nbsp;By default, charts referencing empty cells in a worksheet automatically fill the missing data by connecting the empty points as a line.</p>
+
+<h3 id="a">Show Empty Cells As Gaps</h3>
+
+<p>Users can display empty cells as gaps in the chart by using the <a href="SpreadJS~GC.Spread.Sheets.Charts.Chart~displayBlanksAs.html" data-auto-update-caption="true">displayBlanksAs()</a> method of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Chart.html" data-auto-update-caption="true">Chart</a> class.</p>
+
+<p><strong>Example</strong> - The following image depicts a chart that compares the annual sales revenues of two different companies. You may notice that the spreadsheet contains blank data in cells D2 and D3. Now, if you want to display these empty cells (D2 and D3) as gaps in the chart, simply set the value of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Chart~displayBlanksAs.html" data-auto-update-caption="true">displayBlanksAs()</a> method as "gaps" and your chart will be displayed as shown in the below screenshot.</p>
+
+<p><img border="0" alt="Empty cells as gaps in the chart" src="images/spreadjsv13images/gaps.png" />&nbsp;</p>
+
+<h3 id="b">Show Empty Cells As Zero Values</h3>
+
+<p>Users can display empty cells as zero values in the chart by using the <a href="SpreadJS~GC.Spread.Sheets.Charts.Chart~displayBlanksAs.html" data-auto-update-caption="true">displayBlanksAs()</a> method of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Chart.html" data-auto-update-caption="true">Chart</a> class.</p>
+
+<p><strong>Example</strong> - The following image depicts a chart that compares the annual sales revenues of two different companies. You may notice that the spreadsheet contains blank data in cells D2 and D3. Now, if you want to display these empty cells (D2 and D3) as zero values in the chart, simply set the value of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Chart~displayBlanksAs.html" data-auto-update-caption="true">displayBlanksAs()</a> method as "zero" and your chart will be displayed as shown in the below screenshot.</p>
+
+<p><img border="0" alt="Empty cells as zero values in the chart" src="images/spreadjsv13images/zero.png" />&nbsp;</p>
+
+<h3 id="c">Connect Empty Points With Line</h3>
+
+<p>Users can display empty data as a connected line&nbsp;in the chart by using the <a href="SpreadJS~GC.Spread.Sheets.Charts.Chart~displayBlanksAs.html" data-auto-update-caption="true">displayBlanksAs()</a> method of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Chart.html" data-auto-update-caption="true">Chart</a> class.</p>
+
+<p><strong>Example</strong> - The following image depicts a chart that compares the annual sales revenues of two different companies. You may notice that the spreadsheet contains blank data in cells D2 and D3. Now, if you want to display these empty cells (D2 and D3) as&nbsp;connected values in the chart, simply set the value of the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Charts.Chart~displayBlanksAs.html" data-auto-update-caption="true">displayBlanksAs()</a> method as "connected" and your chart will be displayed as shown in the below screenshot.</p>
+
+<p><img border="0" alt="Empty data as a connected line in the chart" src="images/spreadjsv13images/connected.png" /></p>
+
+<h3 id="d">Supported Chart Types</h3>
+
+<p>All chart types support this feature. However, there are some differences how empty cells will be displayed in various charts, as explained below:</p>
+
+<ul>
+    <li>For line, lineMarkers, xyScatterLines, xyScatterLinesNoMarkers, xyScatterSmooth, xyScatterSmoothNoMarkers, and radar chart types; all the three options (gaps, zero and connected) are supported.</li>
+
+    <li>For a combo chart, if it contains any series of type: line, lineMarkers, xyScatterLines, xyScatterLinesNoMarkers, xyScatterSmooth, xyScatterSmoothNoMarkers, and radar; then it will support all the three options (gaps, connected and zero); otherwise only two options : gaps and zero are supported.</li>
+
+    <li>For sunburst, treemap, lineMarkersStacked, lineMarkersStacked100, lineStacked, lineStacked100 chart types, only the zero option is supported (i.e. users can only show the empty cells as zero values).</li>
+
+    <li>For other non-combo chart types, only gaps and zero are supported.</li>
+</ul>
+
+<h3 id="e">Using Code</h3>
+
+<p>Refer to the following example code to&nbsp;display empty cells as gaps&nbsp;in a chart.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+activeSheet.suspendPaint();
+<span style="COLOR: #008000">// Prepare data for chart
+</span>activeSheet.setValue(0, 1, <span style="COLOR: #800000">"Y-2013"</span>);
+activeSheet.setValue(0, 2, <span style="COLOR: #800000">"Y-2014"</span>);
+activeSheet.setValue(0, 3, <span style="COLOR: #800000">"Y-2015"</span>);
+activeSheet.setValue(0, 4, <span style="COLOR: #800000">"Y-2016"</span>);
+activeSheet.setValue(0, 5, <span style="COLOR: #800000">"Y-2017"</span>);
+activeSheet.setValue(0, 6, <span style="COLOR: #800000">"Y-2018"</span>);
+activeSheet.setValue(1, 0, <span style="COLOR: #800000">"Gradlco Corp. Ltd"</span>);
+activeSheet.setValue(2, 0, <span style="COLOR: #800000">"Saagiate Corp. Ltd."</span>);
+activeSheet.setColumnWidth(0, 120);
+<span style="COLOR: #0000ff">var</span> dataArray =
+[
+[2331, 4663, , 5689, 6230, 6360],
+[2284, 2030, , 1560, 2324, 1304]
+
+];
+activeSheet.setArray(1, 1, dataArray);
+<span style="COLOR: #008000">// Add lineMarker chart
+</span><span style="COLOR: #0000ff">var</span> chart = activeSheet.charts.add(<span style="COLOR: #800000">'chart1'</span>, GC.Spread.Sheets.Charts.ChartType.lineMarkers, 30, 85, 400, 250, <span style="COLOR: #800000">'A1:G3'</span>);
+<span style="COLOR: #008000">// Configure - Displaying blank values as Gaps
+</span>chart.displayBlanksAs(GC.Spread.Sheets.Charts.DisplayBlanksAs.gaps);
+<span style="COLOR: #008000">// Configure Chart Title
+</span><span style="COLOR: #0000ff">var</span> title = chart.title();
+title.text = <span style="COLOR: #800000">"Annual Sales Record"</span>;
+title.fontFamily = <span style="COLOR: #800000">"Cambria"</span>;
+title.fontSize = 16;
+title.color = <span style="COLOR: #800000">"Red"</span>;
+chart.title(title);
+activeSheet.resumePaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="You can add column charts to your worksheet using SpreadJS. Learn the various column chart types supported by SpreadJS along with their sample code." />
+    
+    <title>Column Chart | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n572","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="You can add column charts to your worksheet using SpreadJS. Learn the various column chart types supported by SpreadJS along with their sample code." />
+    
+    <meta name="Microsoft.Help.Id" content="11c1345f-7152-46e6-832e-93f845a95bb7"/>
+    <meta name="Microsoft.Help.TocParent" content="1124f6de-499a-4032-8d2a-c338ec23d096"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / <a href="ChartTypes.html">Chart Types</a>
+ / Column Chart</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Column Chart</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>A column chart&nbsp;represents data in vertical bars across the plot area on a horizontal axis. This type of chart is ideal for performing comparisons and analysis&nbsp;between two or more categories of data.&nbsp;&nbsp;</p>
+
+<p>The data arranged in columns or rows of a worksheet can be plotted in a column chart.</p>
+
+<p>SpreadJS supports the following three types of column chart. In the examples shown below, the annual sales record for Quarter 1, Quarter 2 and Quarter 3 for different categories of gadgets: Mobile Phones, Laptops and Tablets is depicted in different types of column charts.</p>
+
+<h3>Clustered Column Chart</h3>
+
+<p>A clustered column chart can be used when you want to compare different values across different categories and show them in two-dimensional or three-dimensional vertical rectangles. This chart can be stacked normally in a regular way&nbsp;just like any other chart.</p>
+
+<p>An image of the clustered column chart is shown below:<br />
+<img border="0" alt="Clustered column chart" src="images/Clustered_Column.png" /></p>
+
+<h3>Stacked Column Chart</h3>
+
+<p>A stacked column chart can be used when you want to display the relationship of specific items to the whole across different categories and plot values in two-dimensional or three-dimensional vertical rectangles. This chart stacks the data series vertically (in a vertical direction).</p>
+
+<p>An image of the stacked column chart is shown below:<br />
+<img border="0" alt="Stacked column chart" src="images/Stacked_Column.png" /></p>
+
+<h3>100% Stacked Column Chart</h3>
+
+<p>A 100% stacked column chart can be used when you want to perform comparisons of the percentages that each of the values are contributing to the total, across all your categories in the spreadsheet. This chart stacks the data series vertically and also equalizes the plotted values to meet 100%. The plotted values are displayed in two-dimensional and three-dimensional rectangles.</p>
+
+<p>An image of the clustered column chart is shown below:<br />
+<img border="0" alt="100% stacked column chart" src="images/100_Stacked_Column.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>This code shows how to add the three types of column chart in a spreadsheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> chart_columnClustered, chart_columnStacked, chart_columnStacked100, sheet;
+        window.onload = <span style="COLOR: #0000ff">function</span> () {        
+            <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+            sheet = spread.getActiveSheet();
+            sheet.suspendPaint();
+            <span style="COLOR: #008000">//prepare data for chart
+</span>            sheet.setValue(0, 1, <span style="COLOR: #800000">"Q1"</span>);
+            sheet.setValue(0, 2, <span style="COLOR: #800000">"Q2"</span>);
+            sheet.setValue(0, 3, <span style="COLOR: #800000">"Q3"</span>);
+            sheet.setValue(1, 0, <span style="COLOR: #800000">"Mobile Phones"</span>);
+            sheet.setValue(2, 0, <span style="COLOR: #800000">"Laptops"</span>);
+            sheet.setValue(3, 0, <span style="COLOR: #800000">"Tablets"</span>);
+            <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> r = 1; r &lt;= 3; r++) {
+                <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> c = 1; c &lt;= 3; c++) {
+                    sheet.setValue(r, c, parseInt(Math.random() * 100));
+                }
+            }
+<span style="COLOR: #008000">//add columnClustered chart
+</span>            chart_columnClustered = sheet.charts.add(<span style="COLOR: #800000">'chart_columnClustered'</span>, GC.Spread.Sheets.Charts.ChartType.columnClustered, 250, 20, 600, 400, <span style="COLOR: #800000">"A1:D4"</span>);
+<span style="COLOR: #008000">//add columnStacked chart
+</span>            chart_columnStacked = sheet.charts.add(<span style="COLOR: #800000">'chart_columnStacked'</span>, GC.Spread.Sheets.Charts.ChartType.columnStacked, 250, 480, 600, 400, <span style="COLOR: #800000">"A1:D4"</span>);
+<span style="COLOR: #008000">//add columnStacked100 chart
+</span>            chart_columnStacked100 = sheet.charts.add(<span style="COLOR: #800000">'chart_columnStacked100'</span>, GC.Spread.Sheets.Charts.ChartType.columnStacked100, 250, 900, 600, 400, <span style="COLOR: #800000">"A1:D4"</span>);
+            sheet.resumePaint();
+        };
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Set Gap Width and Overlap</h3>
+
+<p>In Column chart, you can set the gap width between the series (different categories on primary axis) by using the <strong>gapWidth</strong> property. The value of <strong>gapWidth</strong> property can be set between 0 and 5 and the default value of this property is 1.</p>
+
+<p>Also, you can set the value for overlapping of series (in same category on primary axis) by using the <strong>overlap</strong> property. The value of this property must be between -1 and 1. If the value is set to -1, columns are positioned in such a way that there is a gap of one&nbsp;column between them. If the value is set to 1, columns are positioned on top of each other.</p>
+
+<p>The following image displays an example of gap width and overlapping of series in the chart.</p>
+
+<p><img border="0" alt="Set gap width and overlap in Column Chart " src="images/gapwidthandoverlap.png" /></p>
+
+<p>In order to set the gap width of the column chart along with overlap, refer to the following example code.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+<span style="COLOR: #008000">// Prepare data for chart
+</span><span style="COLOR: #0000ff">var</span> dataArray =
+    [
+        [<span style="COLOR: #800000">'Year'</span>, <span style="COLOR: #800000">'Actual (00$)'</span>, <span style="COLOR: #800000">'Target (00$)'</span>],
+        [<span style="COLOR: #800000">'2013'</span>, 20, 50],
+        [<span style="COLOR: #800000">'2014'</span>, 24, 50],
+        [<span style="COLOR: #800000">'2015'</span>, 34, 50],
+        [<span style="COLOR: #800000">'2016'</span>, 32, 50],
+        [<span style="COLOR: #800000">'2017'</span>, 51, 100],
+        [<span style="COLOR: #800000">'2018'</span>, 62, 100],
+        [<span style="COLOR: #800000">'2019'</span>, 89, 100]
+
+    ];
+<span style="COLOR: #008000">// Set data for chart
+</span>activeSheet.setArray(0, 0, dataArray);
+<span style="COLOR: #008000">// Set column widths and visibility
+</span>activeSheet.setColumnWidth(1, 90);
+activeSheet.setColumnWidth(2, 90);
+
+<span style="COLOR: #008000">// Add columnClustered chart
+</span>chart_colClustured = activeSheet.charts.add(<span style="COLOR: #800000">'chart_colClustured'</span>, GC.Spread.Sheets.Charts.ChartType.columnClustered, 270, 20, 500, 400);
+<span style="COLOR: #008000">// Add series to columnClustured chart
+</span><span style="COLOR: #0000ff">var</span> series = chart_colClustured.series();
+series.add({
+    chartType: GC.Spread.Sheets.Charts.ChartType.columnClustered,
+    axisGroup: GC.Spread.Sheets.Charts.AxisGroup.primary,
+    name: <span style="COLOR: #800000">"Sheet1!$C$1"</span>,
+    xValues: <span style="COLOR: #800000">"Sheet1!$A$2:$A$8"</span>,
+    yValues: <span style="COLOR: #800000">"Sheet1!$C$2:$C$8"</span>,
+
+});
+
+series.add({
+    chartType: GC.Spread.Sheets.Charts.ChartType.columnClustered,
+    axisGroup: GC.Spread.Sheets.Charts.AxisGroup.primary,
+    name: <span style="COLOR: #800000">"Sheet1!$B$1"</span>,
+    xValues: <span style="COLOR: #800000">"Sheet1!$A$2:$A$8"</span>,
+    yValues: <span style="COLOR: #800000">"Sheet1!$B$2:$B$8"</span>
+});
+
+<span style="COLOR: #008000">// Hide gridlines from the chart
+</span><span style="COLOR: #0000ff">var</span> gridLinesAxes = chart_colClustured.axes();
+gridLinesAxes.primaryCategory.majorGridLine.visible = <span style="COLOR: #0000ff">false</span>;
+gridLinesAxes.primaryValue.majorGridLine.visible = <span style="COLOR: #0000ff">false</span>;
+chart_colClustured.axes(gridLinesAxes);
+
+<span style="COLOR: #008000">// Get title and set it's text
+</span><span style="COLOR: #0000ff">var</span> title = chart_colClustured.title();
+title.fontSize = <span style="COLOR: #800000">"24.00"</span>;
+title.text = <span style="COLOR: #800000">"Yearly Sales Analysis"</span>;
+chart_colClustured.title(title);
+
+<span style="COLOR: #008000">// Set series(0) backColor
+</span><span style="COLOR: #0000ff">var</span> seriesItem = chart_colClustured.series().get(0);
+seriesItem.backColor = <span style="COLOR: #800000">"#A9CCE3"</span>;
+chart_colClustured.series().set(0, seriesItem);
+
+<span style="COLOR: #008000">// Set series(1) backColor
+</span><span style="COLOR: #0000ff">var</span> seriesItem = chart_colClustured.series().get(1);
+seriesItem.backColor = <span style="COLOR: #800000">"#1F618D"</span>;
+<span style="COLOR: #008000">// Set series's GapWidth
+</span>seriesItem.gapWidth = 2;
+<span style="COLOR: #008000">// Set series's overlap
+</span>seriesItem.overlap = 0.6;
+chart_colClustured.series().set(1, seriesItem);
+
+<span style="COLOR: #008000">// Set chart's dataLabels
+</span>chart_colClustured.dataLabels
+    ({
+        showValue: <span style="COLOR: #0000ff">true</span>,
+        color: <span style="COLOR: #800000">"black"</span>
+    });
+
+<span style="COLOR: #008000">// Set the style for cells
+</span><span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style.font = <span style="COLOR: #800000">"bold 12px Arial"</span>;
+style.foreColor = <span style="COLOR: #800000">"white"</span>;
+style.backColor = <span style="COLOR: #800000">"#5B9BD5"</span>;
+style.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+style.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 3; i++)
+    activeSheet.setStyle(0, i, style, GC.Spread.Sheets.SheetArea.viewport);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

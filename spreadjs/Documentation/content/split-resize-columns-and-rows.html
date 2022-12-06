@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Split Resize Columns and Rows | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n219","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="09bb0f21-b789-4696-821c-b1c9f6de823f"/>
+    <meta name="Microsoft.Help.TocParent" content="f108ca5b-c48b-491f-a225-98f6849aa6a3"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="rows-columns.html">Rows and Columns</a>
+ / Split Resize Columns and Rows</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Split Resize Columns and Rows</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports the split resize feature while working with spreadsheets.</p>
+
+<h3 id="a">How Split Resizing Works ?</h3>
+
+<p>The Split Resize feature allows users to resize the current row or column along with the next visible column or row without affecting the the remaining rows and columns in the worksheet. This prevents the adjacent rows and columns from being moved out of the visible area or viewport in the worksheet.</p>
+
+<p>For example - If you're working in split resize mode, resizing column A will also resize column B, but the size of all other columns (like Column C, D, E, F, G, H, I&nbsp;and so on) remains unmodified and hence your viewport area will not be affected.</p>
+
+<p><a class="i-dropdown-heading i-no-glyph">Normal Resize Mode vs Split Resize Mode</a><span class="i-dropdown-content">&nbsp;In the normal resize mode, resizing a row or column pushes all the adjacent rows and columns to the right, thus moving them out of the viewport. On the contrary, the split resize mode ensures that the position of the other rows and columns doesn't get affected when the resize operation is executed on the spreadsheet.</span>&nbsp;</p>
+
+<h3 id="b">Usage Scenario</h3>
+
+<p>Split Resizing is helpful especially when users are analysing complex applications like financial, banking, stock and trading applications. Moreover, working in the split resize mode is beneficial because it doesn't affect the pagination while exporting or printing the spreadsheet. On the other hand, the normal resize mode can push the rows to the next page and trim the tail columns as well.&nbsp;</p>
+
+<p><strong>For instance</strong>- Let's say you're carrying out stock application analysis in a worksheet&nbsp;and you need to compare the stock investment performance of multiple stocks&nbsp;sold to clients in the current fiscal year.&nbsp;</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Split resize mode" src="images/spreadjsv13images/resize-split.gif" /></p>
+
+<p><strong><u>Split Resize Mode</u></strong> - In the&nbsp;split resize mode, even after&nbsp;resizing the first column (Stock Investment Name) in the above spreadsheet, you will still be able to track the information in the last column-&nbsp; gain/loss percentage in the same viewport without having to scroll left and right again and again.</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Normal resize mode" src="images/spreadjsv13images/resize-normal.gif" /></p>
+
+<p><strong><u>Normal Mode</u></strong> - If you resize&nbsp;column A (Stock Investment Name)&nbsp;in normal mode, it is likely that the last column will go outside the viewport and you lose focus over the crucial information (i.e. - the gain/loss percentage) as depicted in the above image.</p>
+
+<h3 id="c">Enable Split Resizing</h3>
+
+<p>While resizing rows and columns, users can choose between two different modes - "<a href="SpreadJS~GC.Spread.Sheets.ResizeMode.html">normal</a>" and "<a href="SpreadJS~GC.Spread.Sheets.ResizeMode.html">split</a>". The default setting is normal. However, if you've pressed the Ctrl key while resizing the rows or columns, it will always use the Split Resize feature by default.&nbsp;</p>
+
+<p>The split resize feature can be enabled by using the "<a href="SpreadJS~GC.Spread.Sheets.ResizeMode.html">split</a>" option in the <a href="SpreadJS~GC.Spread.Sheets.ResizeMode.html" data-auto-update-caption="true">ResizeMode</a> enumeration. When the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.ResizeMode.html" data-auto-update-caption="true">ResizeMode</a>&nbsp;is set to&nbsp;<a href="SpreadJS~GC.Spread.Sheets.ResizeMode.html">split</a>, then:</p>
+
+<ul>
+    <li>Users can select only a single row or column (including entire row/column).</li>
+
+    <li>If users select multiple rows and columns, split resizing feature will not work and the rows and columns will be resized in the normal mode only.</li>
+
+    <li>If users resize the last row or column in one viewport (including the viewport divided by the freeze row or freeze columns feature), then also the split resizing feature will not work and the rows and columns will be resized in the normal mode only.</li>
+
+    <li>If a row or column is invisible (when column width = 0 or the column is hidden), then the modified row or column is resized along with the next visible row or column.</li>
+</ul>
+
+<p>The following operations can be executed in the split resize mode:</p>
+
+<ul>
+    <li>Users can hide rows and columns in the worksheet.</li>
+
+    <li>Users can resize the height and width of the rows and columns to zero.</li>
+
+    <li>Users can resize the rows and columns even when the zoom feature is also enabled.</li>
+</ul>
+
+<h3 id="d">Using Code</h3>
+
+<p>This example code can be used to resize the rows and columns in the split resize mode.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+$(document).ready(<span style="COLOR: #0000ff">function</span> ()
+{
+ <span style="COLOR: #008000">// Initializing Spread
+</span> <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+ 
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+<span style="COLOR: #008000">// Set columnResizeMode &amp; rowResizeMode to 'Split'
+</span>spread.options.columnResizeMode = GC.Spread.Sheets.ResizeMode.split;
+spread.options.rowResizeMode = GC.Spread.Sheets.ResizeMode.split;
+activeSheet.suspendPaint();
+<span style="COLOR: #0000ff">var</span> colHeader = GC.Spread.Sheets.SheetArea.colHeader;
+activeSheet.setRowCount(12);
+activeSheet.setColumnCount(5);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; activeSheet.getColumnCount(GC.Spread.Sheets.SheetArea.viewport); i++)
+activeSheet.setColumnWidth(i, 120);
+activeSheet.setValue(0, 0, <span style="COLOR: #800000">'Stock Investment Name'</span>, colHeader);
+activeSheet.setValue(0, 1, <span style="COLOR: #800000">'Current Quote($)'</span>, colHeader);
+activeSheet.setValue(0, 2, <span style="COLOR: #800000">'Market Value($)'</span>, colHeader);
+activeSheet.setValue(0, 3, <span style="COLOR: #800000">'Total Cost($)'</span>, colHeader);
+activeSheet.setValue(0, 4, <span style="COLOR: #800000">'Gain/Loss(%)'</span>, colHeader);
+activeSheet.setArray(0, 0, [
+[<span style="COLOR: #800000">"Citycon-Oyj Corporation"</span>, 232.460, 492.00, 500.00, <span style="COLOR: #800000">'-1.6%'</span>],
+[<span style="COLOR: #800000">"M-Secure Corporation"</span>, 560.270, 312.00, 300.00, <span style="COLOR: #800000">'4.0%'</span>],
+[<span style="COLOR: #800000">"Nortan Corporation"</span>, 433.220, 711.00, 688.50, <span style="COLOR: #800000">'3.3%'</span>],
+[<span style="COLOR: #800000">"Teski Corporation"</span>, 232.310, 693.00, 465.90, <span style="COLOR: #800000">'48.7%'</span>],
+]);
+spread.resumePaint(); 
+});
+&lt;<span style="COLOR: #800000">/script&gt;</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content=" Add and edit text in shapes in your worksheet using SpreadJS." />
+    
+    <title>Text on Shapes | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n505","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content=" Add and edit text in shapes in your worksheet using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="cae89a47-af82-4350-a5b5-2e6ea1e54d29"/>
+    <meta name="Microsoft.Help.TocParent" content="2f0db448-2a74-490e-81e2-1556b7c288e3"/>
+    <meta name="Microsoft.Help.TocOrder" content="10"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="UnderstandingShapes.html">Shapes</a>
+ / Text on Shapes</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Text on Shapes</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows you to add and edit text in shapes by using one of the following ways:</p>
+
+<ul>
+    <li>Double-clicking on the shape.</li>
+
+    <li>Selecting the shape and pressing Enter key.</li>
+
+    <li>Right-clicking the shape and selecting 'Edit Text' from the context menu.</li>
+</ul>
+
+<p>The text editor appears while adding or editing text in a shape and disappears when you click anywhere outside the shape.<br /></p>
+
+<p><img border="0" alt="edit text in shapes" src="images/text-edit.gif" /></p>
+
+<p>When a shape is double clicked, the text formatting options appear along with the text editor. It includes all the simple text formatting features, alignment and options. However, rich text is not supported.</p>
+
+<p><img border="0" alt="text edit options in shapes" src="images/shapetext-options.gif" /></p>
+
+<h3>Use Case Scenario</h3>
+
+<p>This use case considers a scenario of a boardroom seating plan for a meeting. The meeting is to be attended by some important group of people and hence their seating arrangement is planned well in advance. The seats are represented by using auto shapes and the names of members are mentioned by using text on shapes. In case of any changes, these names can be added, edited or removed as well.</p>
+
+<p><img border="0" alt="shape text edit usage scenario" src="images/boardroom-usecase.gif" /></p>
+
+<h3>Behavior of Shape Text</h3>
+
+<p>The text editor and text follows the behavior of shape. For example, when the zoom action is performed on a sheet, the text editor and the text is resized and relocated as well.</p>
+
+<p><img border="0" alt="zoom action effect in shape text and editor" src="images/text-edit-zoom.gif" /></p>
+
+<p></p>
+
+<p>With frozen rows or columns, the shape is folded over when scrolled. However, the text is not affected and remains in the same place.</p>
+
+<p><img border="0" alt="scroll effect on text in shapes" src="images/text-scroll.gif" /></p>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> This behavior is different from Excel where the text and text editor both fold with the shape.
+</div>
+
+<p>The text editor and text are rotated when a shape is rotated.<br />
+<img border="0" alt="text editor rotate with shapes" src="images/shape-rotate.gif" /></p>
+
+<h3>Behavior of Text Editor</h3>
+
+<p>The text editor auto-breaks the lines and auto-lengthens the text area while submitting the input.</p>
+
+<p><img border="0" alt="shape editor area auto lengthen and auto break lines" src="images/editor-area.gif" /></p>
+
+<p>All the text present inside a shape is selected when a shape is selected and enter key is pressed. The 'Esc' key submits the shape text and finishes editing.</p>
+
+<p><img border="0" alt="enter escape key support in shape text edit" src="images/editor-enter-esc.gif" /></p>
+
+<p>IME input is also supported as shape text.</p>
+
+<p><img border="0" alt="IME support in shape text edit" src="images/shapetext-ime.gif" /></p>
+
+<p></p>
+
+<p>The shape text editor is enabled or disabled as explained below:</p>
+
+<ul>
+    <li>If sheet is protected and 'edit object' (option in Protect Sheet dialog) is enabled and shape is locked, the text editor is enabled.</li>
+
+    <li>If sheet is protected and 'edit object' (option in Protect Sheet dialog) is disabled and shape is locked, the text editor is disabled.</li>
+
+    <li>If sheet is protected and shape is unlocked, the text editor is enabled.</li>
+</ul>
+
+<p></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

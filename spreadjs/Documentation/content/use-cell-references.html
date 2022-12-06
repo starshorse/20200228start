@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Use Cell References | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3250","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="a3672d1c-f1bd-4dbd-bd90-dd1df8e17b64"/>
+    <meta name="Microsoft.Help.TocParent" content="983559f2-2c0c-4594-915b-3de8df1ac089"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="formulaoverview.html">Formula Overview</a>
+ / <a href="cellreferences.html">Cell References in a Formula</a>
+ / Use Cell References</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Use Cell References</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS allows you to perform various operations by&nbsp;using cell references.</p>
+
+<h3>Convert Expression to Formula</h3>
+
+<p>This example&nbsp;converts an expression to formula using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CalcEngine~expressionToFormula.html">expressionToFormula()</a> method.&nbsp;</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread =
+<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>),
+{ sheetCount: 1 });
+sheet = spread.getSheet(0);
+sheet.setValue(0, 0, 1);
+sheet.setValue(0, 1, 2);
+sheet.setValue(0, 2, 3);
+sheet.addCustomName(<span style="COLOR: #800000">"customName1"</span>, <span style="COLOR: #800000">"=12"</span>, 0, 0);
+sheet.addCustomName(<span style="COLOR: #800000">"customName2"</span>, <span style="COLOR: #800000">"Average(20,45)"</span>, 0, 0);
+sheet.addCustomName(<span style="COLOR: #800000">"customName3"</span>, <span style="COLOR: #800000">"=$A$1:$C$1"</span>);
+sheet.setFormula(1, 0, <span style="COLOR: #800000">"customName1"</span>);
+sheet.setFormula(1, 1, <span style="COLOR: #800000">"customName2"</span>);
+sheet.setFormula(1, 2, <span style="COLOR: #800000">"sum(customName3)"</span>);
+
+<span style="COLOR: #0000ff">var</span> cname = sheet.getCustomName(<span style="COLOR: #800000">"customName2"</span>);
+<span style="COLOR: #0000ff">if</span> (cname <span style="COLOR: #0000ff">instanceof</span> GC.Spread.Sheets.NameInfo)
+{
+    <span style="COLOR: #008000">// Get CustomName
+</span>    <span style="COLOR: #0000ff">var</span> name = cname.getName();
+  
+    <span style="COLOR: #008000">// Get Expression
+</span>    <span style="COLOR: #0000ff">var</span> expression = cname.getExpression();
+  
+    <span style="COLOR: #008000">// Get Expression String
+</span>    <span style="COLOR: #0000ff">var</span> expStr = GC.Spread.Sheets.CalcEngine.expressionToFormula(sheet, expression, 0, 0);
+    console.log(<span style="COLOR: #800000">"Name: "</span> + name + <span style="COLOR: #800000">" ; Expression: "</span> + expStr);
+}                
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Convert Formula to Expression</h3>
+
+<p>This example&nbsp;converts a formula to an expression using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CalcEngine~formulaToExpression.html">formulaToExpression()</a> method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread =
+<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>),
+{ sheetCount: 1 });
+sheet = spread.getSheet(0);
+sheet.setValue(0, 0, 1);
+sheet.setValue(0, 1, 2);
+sheet.setValue(0, 2, 3);
+sheet.getCell(4, 4).formula(<span style="COLOR: #800000">"=SUM(A1:C1)"</span>);
+
+<span style="COLOR: #0000ff">var</span> formula = sheet.getFormula(4, 4);
+<span style="COLOR: #0000ff">var</span> expression = GC.Spread.Sheets.CalcEngine.formulaToExpression(sheet, formula, 0, 0);
+console.log(<span style="COLOR: #800000">"Function Name is: "</span> + expression.functionName); 
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Convert Formula to Ranges</h3>
+
+<p>This example converts a formula string to&nbsp;the specified cell range using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CalcEngine~formulaToRanges.html">formulaToRanges()</a> method.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread =
+<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>),
+{ sheetCount: 1 });
+sheet = spread.getSheet(0);
+
+<span style="COLOR: #008000">// Creating cell range using formulaToRanges() method
+</span>cellRanges = GC.Spread.Sheets.CalcEngine.formulaToRanges(sheet, <span style="COLOR: #800000">'B3:D5'</span>, 0, 0);
+
+<span style="COLOR: #008000">// Getting row/column indexes and rowCount/colCount of range in formula
+</span>console.log(<span style="COLOR: #800000">"Starting Row Index of cell range 'B3:D5' is "</span> + cellRanges[0].ranges[0].row);
+console.log(<span style="COLOR: #800000">"Starting Column Index of cell range 'B3:D5' is "</span> + cellRanges[0].ranges[0].col);
+console.log(<span style="COLOR: #800000">"RowCount of cell range 'B3:D5' is "</span> + cellRanges[0].ranges[0].rowCount);
+console.log(<span style="COLOR: #800000">"ColCount of cell range 'B3:D5' is "</span> + cellRanges[0].ranges[0].colCount);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Evaluate Formula</h3>
+
+<p>This example evaluates a formula using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CalcEngine~evaluateFormula.html">evaluateFormula()</a> method.&nbsp;</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread =
+<span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>),
+{ sheetCount: 1 });
+sheet = spread.getSheet(0);
+sheet.setValue(0, 0, 1);
+sheet.setValue(1, 0, 2);
+
+<span style="COLOR: #008000">// Using EvaluateFormula() method to evaluate formula without setting formula in sheet's cell
+</span><span style="COLOR: #0000ff">var</span> result =
+GC.Spread.Sheets.CalcEngine.evaluateFormula(sheet, <span style="COLOR: #800000">"SUM(A1:A2)"</span>, 0, 0);
+console.log(<span style="COLOR: #800000">"SUM(A1:A2) = "</span> + result);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3><br />
+Goal Seek Method</h3>
+
+<p>This example uses the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CalcEngine~goalSeek.html">goalSeek()</a> method in order to find a value for one cell&nbsp;that produces the desired formula result in another cell.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">/* This sample shows how to use the goal seek.
+Loan amount is 10000, term is 18 months and pay 600 each month,
+evaluate what interest rate you will need to secure in order to
+meet your loan goal */</span>
+
+sheet.setValue(0, 1, 10000); <span style="COLOR: #008000">// Loan Amount
+</span>sheet.setValue(1, 1, 18); <span style="COLOR: #008000">// Term in Months
+</span>sheet.setFormatter(2, 1, <span style="COLOR: #800000">"0%"</span>); <span style="COLOR: #008000">// Interest Rate
+</span>sheet.setFormatter(3, 1, <span style="COLOR: #800000">"0.00"</span>);
+sheet.setFormula(3, 1, <span style="COLOR: #800000">"PMT(B3/12,B2,B1)"</span>); <span style="COLOR: #008000">// Payment
+</span>GC.Spread.Sheets.CalcEngine.goalSeek(sheet, 2, 1, sheet, 3, 1, -600); <span style="COLOR: #008000">// Result in B3 is 10% </span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

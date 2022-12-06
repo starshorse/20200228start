@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Cross Workbook Formula | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3285","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="23029e8e-d7cc-47be-8e8f-a03efe0eaae6"/>
+    <meta name="Microsoft.Help.TocParent" content="85a8a863-302f-4eb0-9304-dc26ab5bcb2c"/>
+    <meta name="Microsoft.Help.TocOrder" content="11"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="formulaoverview.html">Formula Overview</a>
+ / Cross Workbook Formula</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Cross Workbook Formula</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS provides support for formulas that calculate values by referring to and using data from different workbooks. These formulas are known as cross-workbook formulas and can be used through the following syntax:</p>
+
+<p><strong>'filePath[workbookName]sheetName'!CellOrRangeAddress</strong></p>
+
+<p>For example: “=[Calc.xlsx]Sheet1!A1”, “=[Calc.xlsx]Sheet1!A1:B3”</p>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong>&nbsp;The cross-workbook reference does not support dynamic array spill or the INDIRECT function.</p>
+</div>
+
+<h3>Update Reference</h3>
+
+<p>You can set or update the data of external sources with the workbook JSON. The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~updateExternalReference.html">updateExternalReference</a> method accepts parameters such as the link name, the JSON data, and the file path.</p>
+
+<p>The following GIF illustrates how SpreadJS updates the external references&nbsp;set in&nbsp;"Workbook 1" and&nbsp;“Workbook 2” when the A1 cell is updated in “Workbook 1”.</p>
+
+<p><img border="0" alt="" src="images/cross-workbook-formula.gif" /></p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread1 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss1'</span>), { sheetCount: 1 });
+<span style="COLOR: #0000ff">var</span> spread2 = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss2'</span>), { sheetCount: 1 });
+            
+<span style="COLOR: #008000">// set value in cell A1 of Spread1
+</span>spread1.sheets[0].setValue(0, 0, 5);
+
+<span style="COLOR: #0000ff">var</span> spread1Task;
+<span style="COLOR: #0000ff">function</span> updateSpread1() {
+    <span style="COLOR: #0000ff">if</span> (!spread1Task) {
+        spread1Task = setTimeout(() =&gt; {
+            spread1.updateExternalReference(<span style="COLOR: #800000">"calc.xlsx"</span>, spread2.toJSON());
+            spread1Task = <span style="COLOR: #0000ff">null</span>;
+        })
+    }
+}
+<span style="COLOR: #0000ff">var</span> spread2Task;
+<span style="COLOR: #0000ff">function</span> updateSpread2() {
+    <span style="COLOR: #0000ff">if</span> (!spread2Task) {
+        spread2Task = setTimeout(() =&gt; {
+            spread2.updateExternalReference(<span style="COLOR: #800000">"result.xlsx"</span>, spread1.toJSON());
+            spread2Task = <span style="COLOR: #0000ff">null</span>;
+        })
+    }
+}
+
+spread1.bind(GC.Spread.Sheets.Events.ValueChanged, updateSpread2)
+spread1.bind(GC.Spread.Sheets.Events.RangeChanged, updateSpread2)
+spread2.bind(GC.Spread.Sheets.Events.ValueChanged, updateSpread1)
+spread2.bind(GC.Spread.Sheets.Events.RangeChanged, updateSpread1)
+
+<span style="COLOR: #008000">// sample
+</span>spread1.updateExternalReference(<span style="COLOR: #800000">"calc.xlsx"</span>, spread2.toJSON());
+spread2.updateExternalReference(<span style="COLOR: #800000">"result.xlsx"</span>, spread1.toJSON());
+spread1.sheets[0].setFormula(1, 0, <span style="COLOR: #800000">"='[calc.xlsx]Sheet1'!A1"</span>);
+spread2.sheets[0].setFormula(0, 0, <span style="COLOR: #800000">"='[result.xlsx]Sheet1'!A1^2"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Fetch Reference</h3>
+
+<p>You can fetch the cross-workbook reference list of the current workbook. The&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Workbook~getExternalReferences.html">getExternalReferences</a> method returns an array of objects containing the file name and the file path of the cross-workbook reference.</p>
+
+<p>The following code example shows how to fetch a list of external references used in the current worksheet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>), { sheetCount: 1 });
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+sheet.setFormula(0, 0, <span style="COLOR: #800000">"='[Jackson.xlsx]Sheet1'!A1"</span>);
+sheet.setFormula(1, 0, <span style="COLOR: #800000">"='[Petrosky]Sheet1'!A1"</span>);
+console.log(spread.getExternalReferences());
+<span style="COLOR: #008000">// Output:
+// Array(2)
+// 0: { name: 'Jackson.xlsx', filePath: '' }
+// 1: { name: 'Petrosky', filePath: '' }</span>
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Using SpreadJS Designer</h3>
+
+<p>The SpreadJS Designer helps to update the cross workbook values in a worksheet through the “Edit Links” option in the “Data” &gt; Queries &amp; Connections” ribbon group.</p>
+
+<p><img border="0" alt="" src="images/designer-editlinks.png" /></p>
+
+<p>It opens the following dialog window where you can update sources.</p>
+
+<p><img border="0" alt="" src="images/designer-editlinks-dialog.png" /></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

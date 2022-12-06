@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how to format the cell values using standard number, date time, and custom formats in SpreadJS." />
+    
+    <title>Basic Format | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n264","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how to format the cell values using standard number, date time, and custom formats in SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="5d15ddd3-f9c2-4d3d-8772-a8a1a3dbebd5"/>
+    <meta name="Microsoft.Help.TocParent" content="edc33bc6-5882-415f-89f2-158ee31d8259"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="cells.html">Cells</a>
+ / <a href="cellformat.html">Cell Format</a>
+ / Basic Format</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Basic Format</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can format cell values using standard number, date time, custom formats, and various other format options.</p>
+
+<p>Use&nbsp;the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~setFormatter.html">setFormatter</a> method to set a formatter string to a cell, and use the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~getFormatter.html">getFormatter</a> method to get the cell formatter.</p>
+
+<p>You can also create a custom formatter with the&nbsp;<a href="SpreadJS~GC.Spread.Formatter.FormatterBase.html">FormatterBase</a> class&nbsp;which supports the combo, conditional, and forecolor formatters.&nbsp;&nbsp;The "(", ")", and "*" expressions are not supported.</p>
+
+<h3>Standard Values Formatting</h3>
+
+<p>You can&nbsp;get the cell, column, or row by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.CellRange~formatter.html">formatter</a> method to get and set the formatter for the cell.</p>
+
+<p>The following code example shows how to format cell values with different format styles.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> dvalue= 12345.6789;
+activeSheet.setValue(0,0,dvalue);
+activeSheet.getCell(0, 1).formatter(<span style="COLOR: #800000">"M"</span>);
+activeSheet.setValue(0, 1, <span style="COLOR: #0000ff">new</span> Date(2011, 2, 9));
+activeSheet.getCell(0, 2).formatter(<span style="COLOR: #800000">"m"</span>);
+activeSheet.setValue(0, 2, <span style="COLOR: #0000ff">new</span> Date(2012, 10, 15));
+activeSheet.getCell(0, 3).formatter(<span style="COLOR: #800000">"General"</span>);
+activeSheet.setValue(0, 3, <span style="COLOR: #0000ff">new</span> Date(2012, 10, 15));
+activeSheet.getCell(0, 4).formatter(<span style="COLOR: #800000">"#.#%"</span>);
+activeSheet.setValue(0, 4, 1);
+activeSheet.getCell(1, 0).formatter(<span style="COLOR: #800000">'[&lt;0](0.0);[&gt;0]0.0;"zero";@'</span>);
+activeSheet.setValue(1, 0, 3);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Fraction Formatting</h3>
+
+<p>SpreadJS supports common fraction formats, such as "# ?/?", "# ??/??", "# ?/4", and "#,## ?/?". You can convert a negative value to a fraction.</p>
+
+<p>The following code&nbsp;example formats&nbsp;a cell value as a fraction.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> dvalue= 123.89;
+activeSheet.setValue(0,0,dvalue);
+activeSheet.getCell(0, 0).formatter(<span style="COLOR: #800000">"# ??/??"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>DB Number Formatting</h3>
+
+<p>SpreadJS also supports the local ID "$-411" and DBNumber.</p>
+
+<p>The following code&nbsp;example formats a cell value using locale ID "$-411".</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> dvalue= 123.89;
+activeSheet.setValue(0,0,dvalue);
+activeSheet.getCell(0,0).formatter(<span style="COLOR: #800000">"[$-411]dddd"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The following code example formats a cell value using&nbsp;DBNumber.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> dvalue= 123.89;
+activeSheet.setValue(0,0,dvalue);
+activeSheet.getCell(0,0).formatter(<span style="COLOR: #800000">"[DBNum2][$-411]General"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Culture Formatting</h3>
+
+<p>You can also set the culture to "ja-jp" or "en-us".&nbsp;Specify the culture for the widget or individual cells.</p>
+
+<p>The following code example sets the culture for the widget.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//widget setting
+</span>GC.Spread.Common.CultureManager.culture(<span style="COLOR: #800000">"ja-jp"</span>);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>Numbers are formatted based on the current culture. The default culture is English.&nbsp;The cell culture does not change the widget culture.</p>
+
+<p>The following code example sets the culture for the cell.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">//cell setting
+//Input date string "2014/01/07" in cell[0,0] and cell[0,1]
+</span>activeSheet.getCell(0,0).formatter(<span style="COLOR: #0000ff">new</span> GC.Spread.Formatter.GeneralFormatter(<span style="COLOR: #800000">"yyyy/MM/dd dddd"</span>, <span style="COLOR: #800000">"ja-jp"</span>));
+activeSheet.getCell(0,1).formatter(<span style="COLOR: #0000ff">new</span> GC.Spread.Formatter.GeneralFormatter(<span style="COLOR: #800000">"yyyy/MM/dd dddd"</span>, <span style="COLOR: #800000">"en-us"</span>));
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Color Formatting</h3>
+
+<p>The color format affects the foreColor and supports color string names as well as color index, ranging from color 1 to color 56.</p>
+
+<p><img border="0" alt="Color Index Formatting" src="images/format-colorindex.png" /></p>
+
+<p>The following code example shows how to set color formatting by index to change the color of the cells according to the value range.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+activeSheet.getRange(2,2,1,6).formatter(<span style="COLOR: #800000">"[color44][&lt;300]0.0;[color3][&gt;400]0.0;[color45]0.0"</span>)
+activeSheet.getCell(2,2).value(100);
+activeSheet.getCell(2,3).value(200);
+activeSheet.getCell(2,4).value(300);
+activeSheet.getCell(2,5).value(400);
+activeSheet.getCell(2,6).value(500);
+activeSheet.getCell(2,7).value(600);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> Using the color index in a formula does not have any color effect in Excel export.
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

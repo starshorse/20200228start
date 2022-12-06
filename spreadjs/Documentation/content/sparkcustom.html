@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn about the custom sparkline in SpreadJS. Learn the various options available for the custom sparkline formula along with their descriptions. " />
+    
+    <title>Custom Sparkline | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n655","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn about the custom sparkline in SpreadJS. Learn the various options available for the custom sparkline formula along with their descriptions. " />
+    
+    <meta name="Microsoft.Help.Id" content="2d558743-927b-48aa-8bdc-0d47b15314ff"/>
+    <meta name="Microsoft.Help.TocParent" content="fd9cab4f-16bf-437c-a370-bbba7f456cf3"/>
+    <meta name="Microsoft.Help.TocOrder" content="19"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="sparkmain.html">Sparklines</a>
+ / Custom Sparkline</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Custom Sparkline</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can create a custom sparkline with&nbsp;SpreadJS.</p>
+
+<p><img border="0" alt="Custom sparkline" src="images/sparkcustom.png" /></p>
+
+<p>Use the following steps to create a custom sparkline.</p>
+
+<ol>
+    <li>Implement the <a href="SpreadJS~GC.Spread.Sheets.Sparklines.SparklineEx~createFunction.html">createFunction</a> method from the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Sparklines.SparklineEx.html">SparklineEx</a> class.</li>
+
+    <li>Add the custom sparkline with the <a href="SpreadJS~GC.Spread.Sheets.Workbook~addSparklineEx.html">addSparklineEx</a> method.</li>
+
+    <li>Use the formula to display the sparkline.</li>
+</ol>
+
+<h4>Using Code</h4>
+
+<p>This example creates custom sparklines.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">function</span> Clock() {
+    GC.Spread.Sheets.Sparklines.SparklineEx.call(<span style="COLOR: #0000ff">this</span>);
+}
+Clock.prototype = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Sparklines.SparklineEx();
+Clock.prototype.createFunction = <span style="COLOR: #0000ff">function</span> () {
+    <span style="COLOR: #0000ff">var</span> func = <span style="COLOR: #0000ff">new</span> GC.Spread.CalcEngine.Functions.Function(<span style="COLOR: #800000">"CLOCK"</span>, 1, 1);
+    func.evaluate = <span style="COLOR: #0000ff">function</span> (args) {
+        <span style="COLOR: #0000ff">return</span> args[0];
+    };
+    <span style="COLOR: #0000ff">return</span> func;
+};
+Clock.prototype._drawCircle = <span style="COLOR: #0000ff">function</span> (context, centerX, centerY, radius) {
+    context.beginPath();
+    context.arc(centerX, centerY, radius, 0, Math.PI * 2, <span style="COLOR: #0000ff">true</span>);
+    context.stroke();
+};
+Clock.prototype._drawCenter = <span style="COLOR: #0000ff">function</span> (context, centerX, centerY, radius) {
+    context.beginPath();
+    context.arc(centerX, centerY, radius, 0, Math.PI * 2, <span style="COLOR: #0000ff">true</span>);
+    context.fill();
+};
+Clock.prototype._drawHand = <span style="COLOR: #0000ff">function</span> (context, centerX, centerY, loc, radius) {
+    <span style="COLOR: #0000ff">var</span> angle = (Math.PI * 2) * (loc / 60) - Math.PI / 2;
+    context.beginPath();
+    context.moveTo(centerX, centerY);
+    context.lineTo(centerX + Math.cos(angle) * radius, centerY + Math.sin(angle) * radius);
+    context.stroke();
+};
+Clock.prototype._drawHands = <span style="COLOR: #0000ff">function</span> (context, value, centerX, centerY, radius) {
+    <span style="COLOR: #0000ff">var</span> date = value, hour = date.getHours();
+    hour = hour &gt; 12 ? hour - 12 : hour;
+    <span style="COLOR: #0000ff">this</span>._drawHand(context, centerX, centerY, hour * 5 + (date.getMinutes() / 60) * 5, radius / 2);
+    <span style="COLOR: #0000ff">this</span>._drawHand(context, centerX, centerY, date.getMinutes(), radius * 3 / 4);
+    context.strokeStyle = <span style="COLOR: #800000">"red"</span>;
+    <span style="COLOR: #0000ff">this</span>._drawHand(context, centerX, centerY, date.getSeconds(), radius * 3 / 4);
+};
+Clock.prototype._drawNumerals = <span style="COLOR: #0000ff">function</span> (context, centerX, centerY, radius) {
+    <span style="COLOR: #0000ff">var</span> numerals = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+        angle,
+        numeralWidth;
+    <span style="COLOR: #0000ff">if</span> (radius &gt; 0) {
+        numerals.forEach(<span style="COLOR: #0000ff">function</span> (numeral) {
+            angle = Math.PI / 6 * (numeral - 3);
+            numeralWidth = context.measureText(numeral).width;
+            context.beginPath();
+            context.fillText(numeral, centerX + Math.cos(angle) * radius + numeralWidth / 2, centerY + Math.sin(angle) * radius + numeralWidth / 2);
+        });
+    }
+};
+Clock.prototype.paint = <span style="COLOR: #0000ff">function</span> (context, value, x, y, width, height) {
+    <span style="COLOR: #0000ff">if</span> (!(value <span style="COLOR: #0000ff">instanceof</span> Date)) {
+        <span style="COLOR: #0000ff">return</span>;
+    }
+    <span style="COLOR: #0000ff">var</span> centerX = x + width / 2,
+        centerY = y + height / 2,
+        margin = 10,
+        padding = 10,
+        radius = Math.min(width, height) / 2 - margin;
+    <span style="COLOR: #0000ff">if</span> (radius &lt;= 0) {
+        <span style="COLOR: #0000ff">return</span>;
+    }
+    context.save();
+    <span style="COLOR: #008000">//draw circle
+</span>    <span style="COLOR: #0000ff">this</span>._drawCircle(context, centerX, centerY, radius);
+    <span style="COLOR: #008000">//draw center
+</span>    <span style="COLOR: #0000ff">this</span>._drawCenter(context, centerX, centerY, 3);
+    <span style="COLOR: #008000">//draw hands
+</span>    <span style="COLOR: #0000ff">this</span>._drawHands(context, value, centerX, centerY, radius);
+    <span style="COLOR: #008000">//draw numerals
+</span>    <span style="COLOR: #0000ff">this</span>._drawNumerals(context, centerX, centerY, radius - padding);
+    context.restore();
+};
+spread.addSparklineEx(<span style="COLOR: #0000ff">new</span> Clock());
+<span style="COLOR: #0000ff">var</span> sheet = spread.getActiveSheet();
+<span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+style.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+style.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+sheet.setDefaultStyle(style);
+sheet.getCell(0, 1, GC.Spread.Sheets.SheetArea.viewport).value(<span style="COLOR: #800000">"Universal Time"</span>).font(<span style="COLOR: #800000">"20px Arial"</span>);
+sheet.setValue(1, 0, <span style="COLOR: #800000">"Beijing"</span>);
+sheet.setValue(1, 1, <span style="COLOR: #800000">"Tokyo"</span>);
+sheet.setValue(1, 2, <span style="COLOR: #800000">"New York"</span>);
+sheet.setFormula(2, 0, <span style="COLOR: #800000">'=CLOCK(A4)'</span>);
+sheet.setFormula(2, 1, <span style="COLOR: #800000">'=CLOCK(B4)'</span>);
+sheet.setFormula(2, 2, <span style="COLOR: #800000">'=CLOCK(C4)'</span>);
+sheet.getRange(3, -1, 1, -1, GC.Spread.Sheets.SheetArea.viewport).formatter(<span style="COLOR: #800000">"hh:mm:ss tt"</span>);
+sheet.setRowHeight(0, 50);
+sheet.setRowHeight(2, 200);
+sheet.setColumnWidth(0, 200);
+sheet.setColumnWidth(1, 200);
+sheet.setColumnWidth(2, 200);
+<span style="COLOR: #0000ff">function</span> updateTime() {
+    <span style="COLOR: #0000ff">var</span> now = <span style="COLOR: #0000ff">new</span> Date();
+    <span style="COLOR: #0000ff">var</span> utcNow = <span style="COLOR: #0000ff">new</span> Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
+    sheet.setValue(3, 0, <span style="COLOR: #0000ff">new</span> Date(utcNow.setHours(utcNow.getHours() + 8)));<span style="COLOR: #008000">//+8
+</span>    sheet.setValue(3, 1, <span style="COLOR: #0000ff">new</span> Date(utcNow.setHours(utcNow.getHours() + 1)));<span style="COLOR: #008000">//+9
+</span>    sheet.setValue(3, 2, <span style="COLOR: #0000ff">new</span> Date(utcNow.setHours(utcNow.getHours() - 14)));<span style="COLOR: #008000">//-5
+</span>}
+setInterval(updateTime, 1000);
+updateTime();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><div class="i-see-also-link">
+<a href="SpreadJS~GC.Spread.Sheets.Worksheet~setFormula.html">setFormula Method</a></div>
+
+</div>
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

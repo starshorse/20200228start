@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Save Spreadsheet Changes to Database | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n11","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="be2a48f2-b666-48dd-8d74-dce54f04f94f"/>
+    <meta name="Microsoft.Help.TocParent" content="a5b5255c-6ee4-4c04-a6fd-540128544dc8"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="getstarted.html">Getting Started</a>
+ / <a href="quick-start.html">Quick Start</a>
+ / Save Spreadsheet Changes to Database</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Save Spreadsheet Changes to Database</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>The following section describes the steps to save spreadsheet&nbsp;changes&nbsp;to database.</p>
+
+<p>You can perform the following steps in the sample created in the topic&nbsp;<a href="store-changes.html" data-auto-update-caption="true">Store Changes Made to Spreadsheet</a>.</p>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> SpreadJS does not update the database directly, but you can get the changed data by the following method and&nbsp;update the&nbsp;database&nbsp;accordingly.
+</div>
+
+<h3>Step 1: Get Dirty Cell Information and Convert it to JSON String</h3>
+
+<ol>
+    <li>Create <strong>saveToDB</strong> function and use <strong>getDirtyCells</strong> method to get information of changed cells,&nbsp;known as&nbsp;dirty cells.</li>
+
+    <li>Use&nbsp;<strong>JSON.stringify</strong> method to&nbsp;convert&nbsp;dirty cell&nbsp;information to JSON string.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #008000">//1: Create saveToDB()
+</span><span style="COLOR: #0000ff">function</span> saveToDB() {
+    <span style="COLOR: #008000">// Get the activesheet from the DOM element "ss"
+</span>    <span style="COLOR: #0000ff">var</span> ss = GC.Spread.Sheets.findControl(document.getElementById(<span style="COLOR: #800000">"ss"</span>));
+    <span style="COLOR: #0000ff">var</span> sheet = ss.getActiveSheet();
+    <span style="COLOR: #008000">// Store the dirty cells information in the dirtyCells variable
+</span>    <span style="COLOR: #0000ff">var</span> dirtyCells = sheet.getDirtyCells();
+    <span style="COLOR: #008000">// Get the HTML &lt;div&gt; element "msg" by id, this will be created in Step 2
+</span>    <span style="COLOR: #0000ff">var</span> div = document.getElementById(<span style="COLOR: #800000">"msg"</span>);
+    <span style="COLOR: #008000">// Display the JSON string in the div element to visualize the changed cell information
+</span>    div.innerHTML = JSON.stringify(dirtyCells, <span style="COLOR: #0000ff">null</span>, 4);
+    <span style="COLOR: #008000">// Note: Post changes to your database
+</span>}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+
+<h3>Step 2: Save Changes to Database</h3>
+
+<ol>
+    <li>Create an HTML &lt;div&gt; element with <strong>msg</strong> id after SpreadJS &lt;div&gt; element to display JSON string.</li>
+
+    <li>Create&nbsp;an input button <strong>Save to DB</strong> where the <strong>saveToDB</strong> function is invoked.&nbsp;The changes captured and converted to JSON string will be displayed in the &lt;div&gt; with id <strong>msg</strong> when the <strong>Save to DB</strong> button is clicked.<br />
+        <br />
+        The new HTML &lt;body&gt; with all buttons and &lt;div&gt; elements will look like below:
+
+        <div class="i-filtered-content-html" data-title="html" data-itemid="html">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">h1</span><span style="COLOR: #0000ff">&gt;</span>Save changes made to the spreadsheet to a database<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">h1</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">p</span><span style="COLOR: #0000ff">&gt;</span>
+        During this section we will create a Save to DB button and a DIV to
+        display the changes as a JSON string when the Save to DB button is
+        clicked.
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">p</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #008000">&lt;!-- Create a refresh button --&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">input</span> <span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="button"</span> <span style="COLOR: #ff0000">value</span><span style="COLOR: #0000ff">="Refresh"</span> <span style="COLOR: #ff0000">onclick</span><span style="COLOR: #0000ff">="refresh()"</span> <span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #008000">&lt;!-- Create Save to DB &lt;div&gt; and button --&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">input</span> <span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="button"</span> <span style="COLOR: #ff0000">value</span><span style="COLOR: #0000ff">="Save to DB"</span> <span style="COLOR: #ff0000">onclick</span><span style="COLOR: #0000ff">="saveToDB()"</span> <span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">br</span> <span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">br</span> <span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">div</span> <span style="COLOR: #ff0000">id</span><span style="COLOR: #0000ff">="ss"</span> <span style="COLOR: #ff0000">style</span><span style="COLOR: #0000ff">="height:400px;width:900px"</span><span style="COLOR: #0000ff">&gt;&lt;/</span><span style="COLOR: #800000">div</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #008000">&lt;!-- Changes &lt;div&gt; --&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">div</span> <span style="COLOR: #ff0000">class</span><span style="COLOR: #0000ff">="options-container"</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">h4</span><span style="COLOR: #0000ff">&gt;</span> Changes saved to database: <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">h4</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">div</span> <span style="COLOR: #ff0000">id</span><span style="COLOR: #0000ff">="msg"</span> <span style="COLOR: #ff0000">style</span><span style="COLOR: #0000ff">="width: 100%; height: 260px; border: 1px solid grey;"</span><span style="COLOR: #0000ff">&gt;&lt;/</span><span style="COLOR: #800000">div</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">div</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">body</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+
+<p>The JSON string&nbsp;which contains the changes and will be posted to&nbsp;database&nbsp;is displayed in&nbsp;the output as shown below:<br />
+<img border="0" alt="" src="images/save-changes-to-database.PNG" /></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

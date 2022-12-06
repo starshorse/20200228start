@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can use the SpreadJS JSON Schema document to validate the SpreadJS JSON data." />
+    
+    <title>JSON Schema with SpreadJS | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n398","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can use the SpreadJS JSON Schema document to validate the SpreadJS JSON data." />
+    
+    <meta name="Microsoft.Help.Id" content="d5a6d1a4-7982-4a53-a477-6a8675cc7dcd"/>
+    <meta name="Microsoft.Help.TocParent" content="da6e2ac1-8472-406f-a292-f03731ed2cd7"/>
+    <meta name="Microsoft.Help.TocOrder" content="8"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / JSON Schema with SpreadJS</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">JSON Schema with SpreadJS</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>The public schema describes SpreadJS JSON data format, makes the SpreadJS JSON data clear and useful for human and machine-readable documentation, and also provides complete structural validation which is useful for generating SpreadJS JSON data with code, automated testing, and validation of the JSON data. Refer to <a href="fullschema.html" data-auto-update-caption="true">SpreadJS Spread Schema</a> for the current and complete&nbsp;schema list.</p>
+
+<p>For more information about JSON Schema, see the <a href="http://json-schema.org">json-schema.org</a> web site.</p>
+
+<p>The JSON Schema document can be used to check whether a JSON data is valid. You can also create a valid JSON data according to the JSON Schema.</p>
+
+<p>This is a basic example of a JSON Schema:</p>
+
+<div class="i-filtered-content-Schema" data-title="Schema" data-itemid="Schema">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>Schema</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+{
+      <span style="COLOR: #800000">"title"</span>: <span style="COLOR: #800000">"LineBorder"</span>,
+      <span style="COLOR: #800000">"description"</span>: <span style="COLOR: #800000">"Indicates the color of the border line. Use a known color name or HEX style color value. The default value is black."</span>,
+      <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"object"</span>,
+      <span style="COLOR: #800000">"properties"</span>: {
+        <span style="COLOR: #800000">"color"</span>: {
+          <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"string"</span>,
+          <span style="COLOR: #800000">"default"</span>: <span style="COLOR: #800000">"black"</span>
+        },
+        <span style="COLOR: #800000">"style"</span>: {
+          <span style="COLOR: #800000">"$ref"</span>: <span style="COLOR: #800000">"#/definitions/LineStyle"</span>,
+          <span style="COLOR: #800000">"default"</span>: 0
+        }
+      }
+    }
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>For information about using a theme to create a validator, refer to this web site,&nbsp;<a href="http://json-schema.org/implementations.html">http://json-schema.org/implementations.html</a>. This site,&nbsp;<a href="https://json-schema-validator.herokuapp.com">https://json-schema-validator.herokuapp.com</a>, has online validators you can use to check your JSON data based on the JSON Schema document.</p>
+
+<p>You can use the&nbsp;SpreadJS JSON Schema document to validate the&nbsp;SpreadJS JSON data.</p>
+
+<p>The following steps validate&nbsp;SpreadJS JSON data using the&nbsp;json-schema-validator.</p>
+
+<ol>
+    <li>Validate part of the JSON data.
+
+        <p>a. For example, you have 2 JSON data of "NameInfo" and you want to know whether both of them are valid JSON data.</p>
+
+        <div class="i-filtered-content-jsonData1" data-title="jsonData1" data-itemid="jsonData1">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>jsonData1</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+{
+    <span style="COLOR: #800000">"name"</span>:<span style="COLOR: #800000">"name1"</span>,
+    <span style="COLOR: #800000">"row"</span>:4,
+    <span style="COLOR: #800000">"column"</span>:3,
+    <span style="COLOR: #800000">"formula"</span>:<span style="COLOR: #800000">"=SUM(A1,A3)"</span>
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="i-filtered-content-jsonData2" data-title="jsonData2" data-itemid="jsonData2">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>jsonData2</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+{
+<span style="COLOR: #800000">"name"</span>:<span style="COLOR: #800000">"name1"</span>,
+    <span style="COLOR: #800000">"row"</span>:<span style="COLOR: #800000">"4"</span>,
+    <span style="COLOR: #800000">"column"</span>:3,
+    <span style="COLOR: #800000">"formula"</span>:<span style="COLOR: #800000">"=SUM(A1,A3)"</span>
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>You can get the JSON Schema document of "NameInfo" as in the following:</p>
+
+        <div class="i-filtered-content-NameInfo_JSONSchema" data-title="NameInfo_JSONSchema" data-itemid="NameInfo_JSONSchema">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>NameInfo_JSONSchema</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+{
+      <span style="COLOR: #800000">"title"</span>: <span style="COLOR: #800000">"NameInfo"</span>,
+      <span style="COLOR: #800000">"description"</span>: <span style="COLOR: #800000">"Represents a custom named expression that can be used by formulas."</span>,
+      <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"object"</span>,
+      <span style="COLOR: #800000">"properties"</span>: {
+        <span style="COLOR: #800000">"name"</span>: {
+          <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"string"</span>
+        },
+        <span style="COLOR: #800000">"row"</span>: {
+          <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"integer"</span>,
+          <span style="COLOR: #800000">"minimum"</span>: 0
+        },
+        <span style="COLOR: #800000">"col"</span>: {
+          <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"integer"</span>,
+          <span style="COLOR: #800000">"minimum"</span>: 0
+        },
+        <span style="COLOR: #800000">"formula"</span>: {
+          <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"string"</span>
+        },
+        <span style="COLOR: #800000">"comment"</span>: {
+          <span style="COLOR: #800000">"type"</span>: <span style="COLOR: #800000">"string"</span>
+        }
+      }
+    }
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Validate the JSON data using the JSON Schema. The "jsonData2" is invalid. The type of its property "row" should be "integer".</p>
+
+        <p>b.&nbsp;A JSON schema references another JSON schema. For example, the following JSON Schema references another JSON Schema "LineStyle".</p>
+
+        <div class="i-filtered-content-LineBorder" data-title="LineBorder" data-itemid="LineBorder">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>LineBorder</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+{
+    <span style="COLOR: #800000">"title"</span> : <span style="COLOR: #800000">"LineBorder"</span>,
+    <span style="COLOR: #800000">"description"</span> : <span style="COLOR: #800000">"Indicates the color of the border line. Use a known color name or HEX style color value. The default value is black."</span>,
+    <span style="COLOR: #800000">"type"</span> : <span style="COLOR: #800000">"object"</span>,
+    <span style="COLOR: #800000">"properties"</span> : {
+        <span style="COLOR: #800000">"color"</span> : {
+            <span style="COLOR: #800000">"type"</span> : <span style="COLOR: #800000">"string"</span>,
+            <span style="COLOR: #800000">"default"</span> : <span style="COLOR: #800000">"black"</span>
+        },
+        <span style="COLOR: #800000">"style"</span> : {
+            <span style="COLOR: #800000">"$ref"</span> : <span style="COLOR: #800000">"#/definitions/LineStyle"</span>,
+            <span style="COLOR: #800000">"default"</span> : <span style="COLOR: #800000">"LineStyle.empty"</span>
+        }
+    }
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>If you want to validate the JSON data of "LineBorder", use a complete "LineBorder" JSON Schema.</p>
+
+        <div class="i-filtered-content-LineBorder_Complete" data-title="LineBorder_Complete" data-itemid="LineBorder_Complete">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>LineBorder_Complete</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+ {
+    <span style="COLOR: #800000">"title"</span> : <span style="COLOR: #800000">"LineBorder"</span>,
+    <span style="COLOR: #800000">"description"</span> : <span style="COLOR: #800000">"Indicates the color of the border line. Use a known color name or HEX style color value. The default value is black."</span>,
+    <span style="COLOR: #800000">"type"</span> : <span style="COLOR: #800000">"object"</span>,
+    <span style="COLOR: #800000">"properties"</span> : {
+        <span style="COLOR: #800000">"color"</span> : {
+            <span style="COLOR: #800000">"type"</span> : <span style="COLOR: #800000">"string"</span>,
+            <span style="COLOR: #800000">"default"</span> : <span style="COLOR: #800000">"black"</span>
+        },
+        <span style="COLOR: #800000">"style"</span> : {
+            <span style="COLOR: #800000">"$ref"</span> : <span style="COLOR: #800000">"#/definitions/LineStyle"</span>,
+            <span style="COLOR: #800000">"default"</span> : <span style="COLOR: #800000">"LineStyle.empty"</span>
+        }
+    },
+    <span style="COLOR: #800000">"definitions"</span>:{
+        <span style="COLOR: #800000">"LineStyle"</span>:{
+           <span style="COLOR: #800000">"title"</span>:<span style="COLOR: #800000">"LineStyle"</span>,
+           <span style="COLOR: #800000">"description"</span>:<span style="COLOR: #800000">"Specifies the line drawing style for the border. empty:0,thin:1,medium:2,dashed:3,dotted:4,thick:5,double:6,hair:7,mediumDashed:8,dashDot:9,mediumDashDot:10,dashDotDot:11,mediumDashDotDot:12,slantedDashDot:13."</span>,
+           <span style="COLOR: #800000">"enum"</span>:[0,1,2,3,4,5,6,7,8,9,10,11,12,13]
+        }
+    }
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+
+    <li>Validate the full JSON data. You can use the full version JSON Schema to validate the&nbsp;SpreadJS full version JSON data.</li>
+</ol>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

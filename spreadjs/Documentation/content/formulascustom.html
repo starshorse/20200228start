@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Work with SpreadJS to create your own custom formulas. Learn more in SpreadJS docs." />
+    
+    <title>Create Custom Formulas | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n455","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Work with SpreadJS to create your own custom formulas. Learn more in SpreadJS docs." />
+    
+    <meta name="Microsoft.Help.Id" content="28c05015-8421-4d3f-9818-98aed5acf9a5"/>
+    <meta name="Microsoft.Help.TocParent" content="20ec19b6-d22d-41ba-a05b-c2910bd90ae6"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="formulas.html">Formulas</a>
+ / Create Custom Formulas</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Create Custom Formulas</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>If you have functions that you use on a regular basis that are not in the built-in functions or if you wish to combine some of the built-in functions into a single function, you can do so by defining your own custom functions. They can be called as you would call any of the built-in functions. These custom functions can return either specified values or arrays. This is explained in the sections below:</p>
+
+<h3>Return Single Value in Custom Function</h3>
+
+<p>This example creates a custom function that returns a value.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),{sheetCount:3});
+<span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+<span style="COLOR: #008000">// Add Custom function
+// Type =myfunc(1)
+// in a cell to see the result
+</span><span style="COLOR: #0000ff">function</span> myfunc() {}
+myfunc.prototype = <span style="COLOR: #0000ff">new</span> GC.Spread.CalcEngine.Functions.Function(<span style="COLOR: #800000">"myfunc"</span>, 0, 0, {name: <span style="COLOR: #800000">"myfunc"</span>,description: <span style="COLOR: #800000">"This is my first function"</span>});
+myfunc.prototype.evaluate = <span style="COLOR: #0000ff">function</span> (args) {
+    <span style="COLOR: #0000ff">return</span> 100;}
+spread.addCustomFunction(<span style="COLOR: #0000ff">new</span> myfunc());
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Return Array in Custom Function</h3>
+
+<p>This example creates a custom function that returns an array.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+&lt;script&gt;
+        $(document).ready(function () {
+            <span style="COLOR: #008000">// initializing Spread
+</span>            <span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+            <span style="COLOR: #008000">// Get the activesheet
+</span>            <span style="COLOR: #0000ff">var</span> sheet = spread.getSheet(0);
+            <span style="COLOR: #008000">// allow dynamic array
+</span>            spread.options.allowDynamicArray = <span style="COLOR: #0000ff">true</span>;
+            <span style="COLOR: #008000">// create a factorial function
+</span>            function FactorialFunction() {
+                <span style="COLOR: #0000ff">this</span>.name = <span style="COLOR: #800000">"FACTORIAL"</span>;
+                <span style="COLOR: #0000ff">this</span>.maxArgs = 1;
+                <span style="COLOR: #0000ff">this</span>.minArgs = 1;
+            }
+            FactorialFunction.prototype = <span style="COLOR: #0000ff">new</span> GC.Spread.CalcEngine.Functions.Function();
+            <span style="COLOR: #008000">//evaluating the result of the formula
+</span>            FactorialFunction.prototype.evaluate = function (arg) {
+                <span style="COLOR: #0000ff">var</span> t = 1;
+                <span style="COLOR: #0000ff">var</span> result = [];
+                <span style="COLOR: #0000ff">if</span> (arguments.length === 1 &amp;&amp; !isNaN(parseInt(arg))) {
+                    <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 1; i &lt;= arg; i++) {
+                        t = i * t;
+                        result.push(t);
+                    }
+                    <span style="COLOR: #008000">//returning the CALCArray Object as a result of the function
+</span>                    <span style="COLOR: #0000ff">return</span> <span style="COLOR: #0000ff">new</span> GC.Spread.CalcEngine.CalcArray([result]);
+                }
+                <span style="COLOR: #0000ff">return</span> <span style="COLOR: #800000">"#VALUE!"</span>;
+            };
+            <span style="COLOR: #008000">//Adding description to the custom Function
+</span>            FactorialFunction.prototype.description = function () {
+                <span style="COLOR: #0000ff">return</span> {
+                    name: <span style="COLOR: #800000">"FACTORIAL"</span>,
+                    description:
+                        <span style="COLOR: #800000">"This is function which calculates the factorial from 1 and show in different cells of a row"</span>,
+                };
+            };
+            <span style="COLOR: #0000ff">var</span> factorial = <span style="COLOR: #0000ff">new</span> FactorialFunction();
+            sheet.addCustomFunction(factorial);
+            <span style="COLOR: #008000">// Merge three columns with origin at cell(0,0)
+</span>            sheet.addSpan(0, 0, 1, 7, GC.Spread.Sheets.SheetArea.viewport);
+            sheet.setValue(0, 0, <span style="COLOR: #800000">"This custom factorial function calculates the factorial from 1 to 7 "</span>);
+            <span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 1; i &lt; 8; i++) {
+                sheet.setText(2, i - 1, i + <span style="COLOR: #800000">"!"</span>);
+            }
+            <span style="COLOR: #008000">//set custom formula
+</span>            sheet.setFormula(3, 0, <span style="COLOR: #800000">"=Factorial(7)"</span>);
+            <span style="COLOR: #0000ff">var</span> style = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Style();
+            style.font = <span style="COLOR: #800000">"bold 12px Arial"</span>;
+            style.foreColor = <span style="COLOR: #800000">"white"</span>;
+            style.backColor = <span style="COLOR: #800000">"#5B9BD5"</span>;
+            style.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+            style.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+            sheet.setStyle(0, 0, style, GC.Spread.Sheets.SheetArea.viewport);
+        });
+    &lt;/script&gt;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+
+    
+    <title>CellRange type | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/dxjavascript-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/dxjavascript-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n6442","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    
+    
+    <meta name="Microsoft.Help.Id" content="SpreadJS~GC.Spread.Sheets.CellRange"/>
+    <meta name="Description" content="Represents a cell range in a sheet." />
+    <meta name="Microsoft.Help.TocParent" content="SpreadJS~GC.Spread.Sheets_namespace"/>
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+    <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            <div class="i-search-container">
+                <form action="websearch.html">
+                <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                <input type="submit" id="i-search-button" value=""/>
+                </form>
+            </div>
+            <a id="i-index-button" href="webindex.html"></a>
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+ / CellRange type</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">CellRange type</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <div class="i-description-content">Represents a cell range in a sheet.</div>
+               
+            <div class="i-section-heading" id="i-syntax-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Syntax</span></div><div id="i-syntax-section-content" class="i-section-content">
+      <div class="i-tab-container i-tab-container">
+      <ul>
+      
+      <li class="i-filtered-content-Javascript_Usage"><a href="#i-syntax-Javascript_Usage">Javascript (Usage)</a></li>
+    
+
+      <li class="i-filtered-content-Javascript"><a href="#i-syntax-Javascript">Javascript (Specification)</a></li>
+    
+
+      </ul>
+      
+      <div id="i-syntax-Javascript_Usage" class="i-filtered-content-Javascript_Usage">
+      <pre>var instance = new GC.Spread.Sheets.<a href="SpreadJS~GC.Spread.Sheets.CellRange.html">CellRange</a>(sheet, row, col, rowCount, colCount, sheetArea);</pre>
+      </div>
+    
+
+      <div id="i-syntax-Javascript" class="i-filtered-content-Javascript">
+      <pre>function CellRange;</pre>
+      </div>
+    
+
+      </div>
+    </div>
+
+            <a name="exampleBookmark"></a>
+            
+            
+            
+            
+            
+            <div class="i-section-heading" id="i-inheritance-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Inheritance Hierarchy</span></div><div id="i-inheritance-section-content" class="i-section-content"><P>Object<BR />&nbsp;&nbsp;&nbsp;<STRONG>GC.Spread.Sheets.CellRange</STRONG><BR /></P></div>
+            
+
+            <a name="ConstructorsBookmark"></a>
+            <div class="i-section-heading" id="i-publicConstructors-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Constructors</span></div><div id="i-publicConstructors-section-content" class="i-section-content"><table class="i-filtered-item-list"><tr><th>&nbsp;</th><th>Name</th><th>Description</th></tr>
+<tr><td class="i-image"><img alt="public Constructor" src="template/packages/core-ajax/images/publicConstructor.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~_ctor.html">CellRange Constructor</a></td><td class="i-member-description">Represents a cell range in a sheet. &nbsp;</td></tr>
+</table><a href="#top">Top</a></div>
+            
+            
+
+            <a name="FieldsBookmark"></a>
+            <div class="i-section-heading" id="i-publicFields-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Fields</span></div><div id="i-publicFields-section-content" class="i-section-content"><table class="i-filtered-item-list"><tr><th>&nbsp;</th><th>Name</th><th>Description</th></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~col.html">col</a></td><td class="i-member-description">Gets the starting column index. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~colCount.html">colCount</a></td><td class="i-member-description">Gets the column count. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~row.html">row</a></td><td class="i-member-description">Gets the starting row index. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~rowCount.html">rowCount</a></td><td class="i-member-description">Gets the row count. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~sheet.html">sheet</a></td><td class="i-member-description">Gets the sheet that contains this cell range. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Field" src="template/packages/core-ajax/images/publicField.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~sheetArea.html">sheetArea</a></td><td class="i-member-description">Gets the area that contains this cell range. &nbsp;</td></tr>
+</table><a href="#top">Top</a></div>
+            
+            
+
+            <a name="PropertiesBookmark"></a>
+            
+            
+            
+
+            <a name="MethodsBookmark"></a>
+            <div class="i-section-heading" id="i-publicMethods-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">Methods</span></div><div id="i-publicMethods-section-content" class="i-section-content"><table class="i-filtered-item-list"><tr><th>&nbsp;</th><th>Name</th><th>Description</th></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~backColor.html">backColor</a></td><td class="i-member-description">Gets or sets the background color for the cell, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~backgroundImage.html">backgroundImage</a></td><td class="i-member-description">Gets or sets the background image for the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~backgroundImageLayout.html">backgroundImageLayout</a></td><td class="i-member-description">Gets or sets the background image layout for the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~bindingPath.html">bindingPath</a></td><td class="i-member-description">Gets or sets the binding path for cell binding. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~borderBottom.html">borderBottom</a></td><td class="i-member-description">Gets or sets the bottom border of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~borderLeft.html">borderLeft</a></td><td class="i-member-description">Gets or sets the left border of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~borderRight.html">borderRight</a></td><td class="i-member-description">Gets or sets the right border of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~borderTop.html">borderTop</a></td><td class="i-member-description">Gets or sets the top border of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~cellButtons.html">cellButtons</a></td><td class="i-member-description">Gets or sets the cellButtons of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~cellPadding.html">cellPadding</a></td><td class="i-member-description">Gets or sets the cell padding. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~cellType.html">cellType</a></td><td class="i-member-description">Gets or sets the cell type of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~clear.html">clear</a></td><td class="i-member-description">Clears the specified area. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~comment.html">comment</a></td><td class="i-member-description">Gets or sets the comment for the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~diagonalDown.html">diagonalDown</a></td><td class="i-member-description">Gets or sets the diagonalDown of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~diagonalUp.html">diagonalUp</a></td><td class="i-member-description">Gets or sets the diagonalUp of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~dropDowns.html">dropDowns</a></td><td class="i-member-description">Gets or sets the dropDowns of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~font.html">font</a></td><td class="i-member-description">Gets or sets the font for the cell, such as "normal normal normal 20px/normal Arial". &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~foreColor.html">foreColor</a></td><td class="i-member-description">Gets or sets the color of the text in the cell, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~formatter.html">formatter</a></td><td class="i-member-description">Gets or sets the formatter for the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~formula.html">formula</a></td><td class="i-member-description">Gets or sets the formula for the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~hAlign.html">hAlign</a></td><td class="i-member-description">Gets or sets the horizontal alignment of the contents of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~height.html">height</a></td><td class="i-member-description">Gets or sets the height of the row in pixels. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~imeMode.html">imeMode</a></td><td class="i-member-description">Gets or sets the imeMode of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~isVerticalText.html">isVerticalText</a></td><td class="i-member-description">Gets or sets whether the cell's text is vertical. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~labelOptions.html">labelOptions</a></td><td class="i-member-description">Gets or sets the cell label options. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~locked.html">locked</a></td><td class="i-member-description">Gets or sets whether the cell is locked. When the sheet is protected, the locked cell cannot be edited. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~quotePrefix.html">quotePrefix</a></td><td class="i-member-description">Gets or sets the quote prefix of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~resizable.html">resizable</a></td><td class="i-member-description">Gets or sets whether the row or column can be resized by the user. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~setBorder.html">setBorder</a></td><td class="i-member-description">Sets the border for the specified area. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~setStyle.html">setStyle</a></td><td class="i-member-description">Sets the style for the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~setStyleName.html">setStyleName</a></td><td class="i-member-description">Sets the style name for the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~showEllipsis.html">showEllipsis</a></td><td class="i-member-description">Gets or sets the cell ellipsis property. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~shrinkToFit.html">shrinkToFit</a></td><td class="i-member-description">Gets or sets whether the cell shrinks the text to fit the cell size. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~tabStop.html">tabStop</a></td><td class="i-member-description">Gets or sets a value that indicates whether the user can set focus to the cell using the Tab key. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~tag.html">tag</a></td><td class="i-member-description">Gets or sets the tag for the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~text.html">text</a></td><td class="i-member-description">Gets or sets the formatted text for the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~textDecoration.html">textDecoration</a></td><td class="i-member-description">Gets or sets the type of the decoration added to the cell's text. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~textIndent.html">textIndent</a></td><td class="i-member-description">Gets or sets the text indent of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~textOrientation.html">textOrientation</a></td><td class="i-member-description">Gets or sets the text rotation angle of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~themeFont.html">themeFont</a></td><td class="i-member-description">Gets or sets the theme font for the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~toHtml.html">toHtml</a></td><td class="i-member-description">Gets the HTML content from the specified area. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~validator.html">validator</a></td><td class="i-member-description">Gets or sets the data validator for the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~vAlign.html">vAlign</a></td><td class="i-member-description">Gets or sets the vertical alignment of the contents of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~value.html">value</a></td><td class="i-member-description">Gets or sets the unformatted value of the cell. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~visible.html">visible</a></td><td class="i-member-description">Gets or sets whether the row or column is displayed. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~watermark.html">watermark</a></td><td class="i-member-description">Gets or sets the content of the cell watermark. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~width.html">width</a></td><td class="i-member-description">Gets or sets the width of the column in pixels. &nbsp;</td></tr>
+<tr><td class="i-image"><img alt="public Method" src="template/packages/core-ajax/images/publicMethod.png"></td><td class=i-member-link><a href="SpreadJS~GC.Spread.Sheets.CellRange~wordWrap.html">wordWrap</a></td><td class="i-member-description">Gets or sets whether the cell lets text wrap. &nbsp;</td></tr>
+</table><a href="#top">Top</a></div>
+            
+            
+
+            <a name="EventsBookmark"></a>
+            
+            
+            
+            <div class="i-section-heading" id="i-seealso-section-heading"><span class="i-section-heading-icon"><!-- --></span><span class="i-section-heading-text">See Also</span></div><div id="i-seealso-section-content" class="i-section-content"><h4 class="dxh4">Reference</h4><p><a href="SpreadJS~GC.Spread.Sheets_namespace.html">GC.Spread.Sheets Namespace</a>
+</p>
+</div>
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

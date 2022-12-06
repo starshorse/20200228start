@@ -1,0 +1,455 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Use the outline columns feature in SpreadJS to indent the text in columns to create a tree-like structure in spreadsheet.." />
+    
+    <title>Outline Columns | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n439","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Use the outline columns feature in SpreadJS to indent the text in columns to create a tree-like structure in spreadsheet.." />
+    
+    <meta name="Microsoft.Help.Id" content="3804f20d-f347-4743-8e05-41886794f23d"/>
+    <meta name="Microsoft.Help.TocParent" content="c1df05e0-71b4-44c1-8ef3-192464ac2c16"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="group.html">Group</a>
+ / Outline Columns</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Outline Columns</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Outline columns in SpreadJS refers to indenting text in the columns to create a tree-like structure in a spreadsheet for better organization of data.</p>
+
+<p>This feature is useful particularly when you want to add hierarchial relationships between rows and built-in expand and collapse user interface in a spreadsheet. Also, outlining columns can be of great help when you need to create&nbsp;project plan tasks and project plan sub-task hierarchy, financial statements and bills of material documents while working with large amounts of data lying&nbsp;in spreadsheets.</p>
+
+<p>Users can outline columns in a worksheet while&nbsp;also adding check boxes and images along with collapse and expand icons.</p>
+
+<p>The following image displays an outline column with collapse and expand icons, check boxes, images, and row outlines.</p>
+
+<p>&nbsp;</p>
+
+<p><img border="0" alt="Outline column with collapse and expand icons, check boxes, images, and row outlines" src="images/indentcolumn.png" /></p>
+
+<p>&nbsp;</p>
+
+<p>You can implement the collapse and expand icons in your worksheet by using the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Worksheet~showRowOutline.html" data-auto-update-caption="true">showRowOutline method</a>. The levels in the tree structure correspond to the number of indentations.</p>
+
+<p>You can also&nbsp;customize the images by level, show custom indicator, show checkbox and set maxlevel using <strong><em>outlineColumn.options</em></strong>.</p>
+
+<h4>Using Code</h4>
+
+<p>This example shows how to indent the columns and add images and check boxes.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #0000ff">var</span> rowCount = 38;
+<span style="COLOR: #0000ff">var</span> colCount = 10;
+activeSheet.setColumnCount(colCount);
+activeSheet.setRowCount(rowCount);
+activeSheet.setColumnWidth(0, 310);
+activeSheet.setColumnWidth(1, 150);
+activeSheet.setColumnWidth(2, 150);
+activeSheet.frozenColumnCount(1);
+activeSheet.setValue(0, 0, <span style="COLOR: #800000">"Name"</span>, GC.Spread.Sheets.SheetArea.colHeader);
+activeSheet.setValue(0, 1, <span style="COLOR: #800000">"Chapter"</span>, GC.Spread.Sheets.SheetArea.colHeader);
+activeSheet.setValue(0, 2, <span style="COLOR: #800000">"Page"</span>, GC.Spread.Sheets.SheetArea.colHeader);
+<span style="COLOR: #0000ff">var</span> commands = [
+    {name: <span style="COLOR: #800000">'Preface'</span>, chapter: <span style="COLOR: #800000">'1'</span>, page: 1, indent: 0},
+    {name: <span style="COLOR: #800000">'Java SE5 and SE6'</span>, chapter: <span style="COLOR: #800000">'1.1'</span>, page: 2, indent: 1},
+    {name: <span style="COLOR: #800000">'Java SE6'</span>, chapter: <span style="COLOR: #800000">'1.1.1'</span>, page: 2, indent: 2},
+    {name: <span style="COLOR: #800000">'The 4th edition'</span>, chapter: <span style="COLOR: #800000">'1.2'</span>, page: 2, indent: 1},
+    {name: <span style="COLOR: #800000">'Changes'</span>, chapter: <span style="COLOR: #800000">'1.2.1'</span>, page: 3, indent: 2},
+    {name: <span style="COLOR: #800000">'Note on the cover design'</span>, chapter: <span style="COLOR: #800000">'1.3'</span>, page: 4, indent: 1},
+    {name: <span style="COLOR: #800000">'Acknowledgements'</span>, chapter: <span style="COLOR: #800000">'1.4'</span>, page: 4, indent: 1},
+    {name: <span style="COLOR: #800000">'Introduction'</span>, chapter: <span style="COLOR: #800000">'2'</span>, page: 9, indent: 0},
+    {name: <span style="COLOR: #800000">'Prerequisites'</span>, chapter: <span style="COLOR: #800000">'2.1'</span>, page: 9, indent: 1},
+    {name: <span style="COLOR: #800000">'Learning Java'</span>, chapter: <span style="COLOR: #800000">'2.2'</span>, page: 10, indent: 1},
+    {name: <span style="COLOR: #800000">'Goals'</span>, chapter: <span style="COLOR: #800000">'2.3'</span>, page: 10, indent: 1},
+    {name: <span style="COLOR: #800000">'Teaching from this book'</span>, chapter: <span style="COLOR: #800000">'2.4'</span>, page: 11, indent: 1},
+    {name: <span style="COLOR: #800000">'JDK HTML documentation'</span>, chapter: <span style="COLOR: #800000">'2.5'</span>, page: 11, indent: 1},
+    {name: <span style="COLOR: #800000">'Exercises'</span>, chapter: <span style="COLOR: #800000">'2.6'</span>, page: 12, indent: 1},
+    {name: <span style="COLOR: #800000">'Foundations for Java'</span>, chapter: <span style="COLOR: #800000">'2.7'</span>, page: 12, indent: 1},
+    {name: <span style="COLOR: #800000">'Source code'</span>, chapter: <span style="COLOR: #800000">'2.8'</span>, page: 12, indent: 1},
+    {name: <span style="COLOR: #800000">'Coding standards'</span>, chapter: <span style="COLOR: #800000">'2.8.1'</span>, page: 14, indent: 2},
+    {name: <span style="COLOR: #800000">'Errors'</span>, chapter: <span style="COLOR: #800000">'2.9'</span>, page: 14, indent: 1},
+    {name: <span style="COLOR: #800000">'Introduction to Objects'</span>, chapter: <span style="COLOR: #800000">'3'</span>, page: 15, indent: 0},
+    {name: <span style="COLOR: #800000">'The progress of abstraction'</span>, chapter: <span style="COLOR: #800000">'3.1'</span>, page: 15, indent: 1},
+    {name: <span style="COLOR: #800000">'An object has an interface'</span>, chapter: <span style="COLOR: #800000">'3.2'</span>, page: 17, indent: 1},
+    {name: <span style="COLOR: #800000">'An object provides services'</span>, chapter: <span style="COLOR: #800000">'3.3'</span>, page: 18, indent: 1},
+    {name: <span style="COLOR: #800000">'The hidden implementation'</span>, chapter: <span style="COLOR: #800000">'3.4'</span>, page: 19, indent: 1},
+    {name: <span style="COLOR: #800000">'Reusing the implementation'</span>, chapter: <span style="COLOR: #800000">'3.5'</span>, page: 20, indent: 1},
+    {name: <span style="COLOR: #800000">'Inheritance'</span>, chapter: <span style="COLOR: #800000">'3.6'</span>, page: 21, indent: 1},
+    {name: <span style="COLOR: #800000">'Is-a vs. is-like-a relationships'</span>, chapter: <span style="COLOR: #800000">'3.6.1'</span>, page: 24, indent: 2},
+    {name: <span style="COLOR: #800000">'Interchangeable objects with polymorphism'</span>, chapter: <span style="COLOR: #800000">'3.7'</span>, page: 25, indent: 1},
+    {name: <span style="COLOR: #800000">'The singly rooted hierarchy'</span>, chapter: <span style="COLOR: #800000">'3.8'</span>, page: 28, indent: 1},
+    {name: <span style="COLOR: #800000">'Containers'</span>, chapter: <span style="COLOR: #800000">'3.9'</span>, page: 28, indent: 1},
+    {name: <span style="COLOR: #800000">'Parameterized types (Generics)'</span>, chapter: <span style="COLOR: #800000">'3.10'</span>, page: 29, indent: 1},
+    {name: <span style="COLOR: #800000">'Object creation &amp; lifetime'</span>, chapter: <span style="COLOR: #800000">'3.11'</span>, page: 30, indent: 1},
+    {name: <span style="COLOR: #800000">'Exception handling: dealing with errors'</span>, chapter: <span style="COLOR: #800000">'3.12'</span>, page: 31, indent: 1},
+    {name: <span style="COLOR: #800000">'Concurrent programming'</span>, chapter: <span style="COLOR: #800000">'3.13'</span>, page: 32, indent: 1},
+    {name: <span style="COLOR: #800000">'Java and the Internet'</span>, chapter: <span style="COLOR: #800000">'3.14'</span>, page: 33, indent: 1},
+    {name: <span style="COLOR: #800000">'What is the Web?'</span>, chapter: <span style="COLOR: #800000">'3.14.1'</span>, page: 33, indent: 2},
+    {name: <span style="COLOR: #800000">'Client-side programming'</span>, chapter: <span style="COLOR: #800000">'3.14.2'</span>, page: 34, indent: 2},
+    {name: <span style="COLOR: #800000">'Server-side programming'</span>, chapter: <span style="COLOR: #800000">'3.14.3'</span>, page: 38, indent: 2},
+    {name: <span style="COLOR: #800000">'Summary'</span>, chapter: <span style="COLOR: #800000">'3.15'</span>, page: 38, indent: 1},
+];
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> r = 0; r &lt; commands.length; r++) {
+    activeSheet.setValue(r, 0, commands[r][<span style="COLOR: #800000">'name'</span>]);
+    activeSheet.setValue(r, 1, commands[r][<span style="COLOR: #800000">'chapter'</span>]);
+    activeSheet.setValue(r, 2, commands[r][<span style="COLOR: #800000">'page'</span>]);
+    activeSheet.getRange(r, 0, 1, 1).textIndent(commands[r].indent);
+}
+activeSheet.outlineColumn.options({
+columnIndex: 0,
+showImage: <span style="COLOR: #0000ff">true</span>,
+showCheckBox: <span style="COLOR: #0000ff">true</span>,
+images: [<span style="COLOR: #800000">'star2.png'</span>, <span style="COLOR: #800000">'box4.png'</span>, <span style="COLOR: #800000">'rating4.png'</span>],
+maxLevel: 2
+});
+activeSheet.showRowOutline(<span style="COLOR: #0000ff">true</span>);
+spread.invalidateLayout();
+spread.repaint();
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+
+<p>This example adds and delete outlines in range grouping.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+$(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span> ()
+{
+    <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+    activeSheet.suspendPaint();
+   
+    <span style="COLOR: #008000">// Set Outline of row
+</span>    activeSheet.rowOutlines.group(0, 4);
+    activeSheet.rowOutlines.group(0, 1);
+    activeSheet.rowOutlines.group(2, 1);
+   
+    <span style="COLOR: #008000">// Set Outline of column
+</span>    activeSheet.columnOutlines.group(0, 4);
+    activeSheet.columnOutlines.group(0, 1);
+    activeSheet.columnOutlines.group(2, 1);
+    activeSheet.resumePaint();
+});
+
+$(<span style="COLOR: #800000">"#button2"</span>).click(<span style="COLOR: #0000ff">function</span>()
+{
+    <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+    activeSheet.suspendPaint();
+   
+    <span style="COLOR: #008000">// Remove Outline of row
+</span>    activeSheet.rowOutlines.ungroupRange(0, 4);
+    activeSheet.rowOutlines.ungroupRange(0, 1);
+    activeSheet.rowOutlines.ungroupRange(2, 1);
+   
+    <span style="COLOR: #008000">// Remove Outline of column
+</span>    activeSheet.columnOutlines.ungroupRange(0, 4);
+    activeSheet.columnOutlines.ungroupRange(0, 1);
+    activeSheet.columnOutlines.ungroupRange(2, 1);
+    activeSheet.resumePaint();
+});
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>&nbsp;</p>
+
+<p>This example expands and collapses group outlines.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+window.onload = <span style="COLOR: #0000ff">function</span>()
+{
+     <span style="COLOR: #0000ff">var</span> spread =
+     <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">"ss"</span>),
+     {sheetCount:3});
+     <span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+     activeSheet.suspendPaint();
+
+   <span style="COLOR: #008000">// Set Outline of row
+</span>   activeSheet.rowOutlines.group(0, 4);
+   activeSheet.rowOutlines.group(0, 1);
+   activeSheet.rowOutlines.group(2, 1);
+
+   <span style="COLOR: #008000">// Set Outline of column
+</span>   activeSheet.columnOutlines.group(0, 4);
+   activeSheet.columnOutlines.group(0, 1);
+   activeSheet.columnOutlines.group(2, 1);
+   activeSheet.resumePaint();
+
+  $(<span style="COLOR: #800000">"#button1"</span>).click(<span style="COLOR: #0000ff">function</span>()
+  {
+     <span style="COLOR: #008000">// Get the outline label count of the row
+</span>     <span style="COLOR: #0000ff">var</span> rgl = activeSheet.rowOutlines.getMaxLevel();
+     <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> index = 0; index &lt;= rgl; index++)
+     {
+        <span style="COLOR: #008000">// Expand Outline
+</span>        activeSheet.rowOutlines.expand(index, <span style="COLOR: #0000ff">true</span>);
+     }
+      <span style="COLOR: #008000">// Get the outline label count of the column
+</span>      <span style="COLOR: #0000ff">var</span> cgl = activeSheet.columnOutlines.getMaxLevel();
+      <span style="COLOR: #0000ff">var</span> gi = [];
+      <span style="COLOR: #0000ff">var</span> colCount = activeSheet.getColumnCount();
+      <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> index = 0, i = 0; index &lt;= cgl; index++)
+      {
+         <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> col = 0; col &lt; colCount; col++){
+         
+         <span style="COLOR: #008000">// Fetch group information of Outline
+</span>         <span style="COLOR: #0000ff">var</span> groupInfo = activeSheet.columnOutlines.find(col, index);
+         <span style="COLOR: #0000ff">if</span>(groupInfo)
+          {
+            gi[i] = groupInfo;
+            i++;
+            col = groupInfo.end;
+           }
+       }
+   }
+   
+   <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> i = 0; i &lt; gi.length; i++)
+  {         
+   <span style="COLOR: #008000">// Expand outline
+</span>   activeSheet.columnOutlines.expandGroup(gi[i], <span style="COLOR: #0000ff">true</span>);
+   }
+   activeSheet.invalidateLayout();
+   activeSheet.repaint();
+  });
+    
+   $(<span style="COLOR: #800000">"#button2"</span>).click(<span style="COLOR: #0000ff">function</span>()
+   { 
+     <span style="COLOR: #008000">// Get the outline row label count
+</span>     <span style="COLOR: #0000ff">var</span> rgl = activeSheet.rowOutlines.getMaxLevel();
+     <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> index = 0; index &lt;= rgl; index++){
+     
+     <span style="COLOR: #008000">// Collapse outline
+</span>     activeSheet.rowOutlines.expand(index, <span style="COLOR: #0000ff">false</span>);
+   }
+   
+   <span style="COLOR: #008000">// Get the outline column label count
+</span>   <span style="COLOR: #0000ff">var</span> cgl = activeSheet.columnOutlines.getMaxLevel();
+   <span style="COLOR: #0000ff">var</span> gi = [];
+   <span style="COLOR: #0000ff">var</span> colCount = activeSheet.getColumnCount();
+   <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> index = 0, i = 0; index &lt;= cgl; index++)
+   {
+     <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> col = 0; col &lt; colCount; col++)
+     {
+       <span style="COLOR: #008000">// Fetch group information of Outline
+</span>       <span style="COLOR: #0000ff">var</span> groupInfo = activeSheet.columnOutlines.find(col, index);
+       <span style="COLOR: #0000ff">if</span>(groupInfo)
+           {
+             gi[i] = groupInfo;
+             i++;
+             col = groupInfo.end;
+           }
+     }
+     }
+     
+     <span style="COLOR: #0000ff">for</span>(<span style="COLOR: #0000ff">var</span> i = 0; i &lt; gi.length; i++)
+     {
+        <span style="COLOR: #008000">// Collapse Outline
+</span>        activeSheet.columnOutlines.expandGroup(gi[i], <span style="COLOR: #0000ff">false</span>);
+     }
+     activeSheet.invalidateLayout();
+     activeSheet.repaint();
+});
+}
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> This feature has the following limitations:</p>
+
+    <ul>
+        <li>The new row level is the same level as the selected row's previous row when you insert rows.</li>
+
+        <li>The sortRange method recalculates indented text and refreshes indented columns.</li>
+
+        <li>Drag fill and drag move only change the cell contents.</li>
+
+        <li>Copy and paste only changes the cell content.</li>
+    </ul>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

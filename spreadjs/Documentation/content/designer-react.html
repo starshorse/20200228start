@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>React | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n829","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="1541af83-5e48-44fe-8e6a-4beb7445b651"/>
+    <meta name="Microsoft.Help.TocParent" content="ea700174-a666-4dc2-baac-498a53ec2422"/>
+    <meta name="Microsoft.Help.TocOrder" content="2"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="spreadjs_designer_component.html">SpreadJS Designer Component</a>
+ / <a href="designer-javaScript-frameworks.html">JavaScript Frameworks</a>
+ / React</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">React</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>You can perform the following steps to add SpreadJS Designer Component in&nbsp;a React application:</p>
+
+<ol>
+    <li>Create a React project by typing the following commands in Command Prompt.
+
+        <div class="i-filtered-content-" data-title="" data-itemid="">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Command Prompt</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+npm install -g create-react-app
+create-react-app designercomponent
+cd designercomponent
+npm start
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Install&nbsp;the following&nbsp;SpreadJS React modules to use SpreadJS Designer Component.
+
+        <div class="i-filtered-content-" data-title="" data-itemid="">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Command Prompt</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+npm install @grapecity/spread-excelio
+npm install @grapecity/spread-sheets
+npm install @grapecity/spread-sheets-barcode
+npm install @grapecity/spread-sheets-charts
+npm install @grapecity/spread-sheets-languagepackages
+npm install @grapecity/spread-sheets-pdf
+npm install @grapecity/spread-sheets-print
+npm install @grapecity/spread-sheets-shapes
+npm install @grapecity/spread-sheets-tablesheet
+npm install @grapecity/spread-sheets-pivot-addon
+npm install @grapecity/spread-sheets-designer
+npm install @grapecity/spread-sheets-designer-resources-en
+npm install @grapecity/spread-sheets-react
+npm install @grapecity/spread-sheets-designer-react
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Import the required modules using the following code snippet in App.js.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>App.js</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+import <span style="COLOR: #800000">'@grapecity/spread-sheets-designer-resources-en'</span>;
+import {Designer} from <span style="COLOR: #800000">'@grapecity/spread-sheets-designer-react'</span>;
+import <span style="COLOR: #800000">'@grapecity/spread-sheets-designer/styles/gc.spread.sheets.designer.min.css'</span>
+import <span style="COLOR: #800000">'@grapecity/spread-sheets/styles/gc.spread.sheets.excel2013white.css'</span>
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Render the Designer Component using the following code snippet in App.js.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>App.js</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #0000ff">function</span> App() {
+   <span style="COLOR: #0000ff">return</span> (
+      &lt;Designer styleInfo = {{width: <span style="COLOR: #800000">"1500px"</span>, height: <span style="COLOR: #800000">'90vh'</span>}}&gt;&lt;<span style="COLOR: #800000">/Designer&gt;
+</span>   );
+}
+export <span style="COLOR: #0000ff">default</span> App;
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+
+    <li>Run the application.
+
+        <div class="i-filtered-content-" data-title="" data-itemid="">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>Command Prompt</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+npm start
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+
+<h3>Access SpreadJS instance</h3>
+
+<p>You can also access the SpreadJS instance by using <strong>designerInitialized</strong> event. Follow steps 1, 2, and 3&nbsp;as listed above and continue:</p>
+
+<ol>
+    <li value="4">In order to render the Designer Component and accessing SpreadJS instance, you can use the following code snippet.
+
+        <div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="i-syntax-table">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="i-copy-code-wrapper">
+                                <span class="i-copy-code">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td class="i-code" colspan="2">
+                            <pre>
+<span style="COLOR: #0000ff">function</span> App() {
+    <span style="COLOR: #0000ff">return</span> (
+        &lt;Designer designerInitialized={designer =&gt; { getDesigner(designer) }}
+        styleInfo={{ width: <span style="COLOR: #800000">"100%"</span>, height: <span style="COLOR: #800000">'98vh'</span> }}&gt;&lt;<span style="COLOR: #800000">/Designer &gt;
+</span>    );
+}
+<span style="COLOR: #008000">// Function to get designer
+</span><span style="COLOR: #0000ff">function</span> getDesigner(designer) {
+    <span style="COLOR: #008000">//this is hosted spread instance
+</span>    <span style="COLOR: #0000ff">var</span> workbook = designer.getWorkbook();
+    <span style="COLOR: #0000ff">var</span> sheet = workbook.getActiveSheet(); sheet.setValue(1, 1, <span style="COLOR: #800000">'Test'</span>);
+}
+</pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br />
+    </li>
+</ol>
+
+<h3>Apply License</h3>
+
+<p>The licensed version allows you to use all features of SpreadJS Designer Component. You need to set the license key for SpreadJS, ExcelIO, and the Designer Component which can be done by using the following code snippet.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+import React from <span style="COLOR: #800000">'react'</span>;
+import <span style="COLOR: #800000">'@grapecity/spread-sheets-designer-resources-en'</span>;
+import * as GC from <span style="COLOR: #800000">'@grapecity/spread-sheets'</span>;
+import <span style="COLOR: #800000">'@grapecity/spread-sheets-designer'</span>;
+import {Designer} from <span style="COLOR: #800000">'@grapecity/spread-sheets-designer-react'</span>;
+import * as ExcelIO from <span style="COLOR: #800000">"@grapecity/spread-excelio"</span>;
+ 
+<span style="COLOR: #0000ff">var</span> sjsLicense = <span style="COLOR: #800000">"sjs-distribution-key"</span>;
+GC.Spread.Sheets.LicenseKey = sjsLicense;
+ExcelIO.LicenseKey = sjsLicense;
+ 
+GC.Spread.Sheets.Designer.LicenseKey = <span style="COLOR: #800000">" designer-component-distribution-key "</span>;
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

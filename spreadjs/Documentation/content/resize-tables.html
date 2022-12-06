@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Resize Tables | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n673","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="44663bbb-e3c0-46ee-9240-ff226046cf33"/>
+    <meta name="Microsoft.Help.TocParent" content="9d25871c-c47e-4700-a8b5-50b17e2a631f"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="tablegen.html">Tables</a>
+ / Resize Tables</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Resize Tables</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>SpreadJS supports the table resizing feature just like in Excel.</p>
+
+<p><strong>Table Resizing Indicator</strong> - The resizing indicator is displayed at the lower-right corner of the table provided the value of the showResizeHandle() method is set to true.</p>
+
+<p><strong>Table Resizing Handler</strong> - The table resizing handler is&nbsp;displayed when users hover the mouse over the table resizing indicator.</p>
+
+<p>While working with tables in spreadsheets, users can use&nbsp;the <a href="SpreadJS~GC.Spread.Sheets.Tables.Table~showResizeHandle.html">showResizeHandle()</a> method to get or set a value that indicates whether to display the resize handle for tables or not.</p>
+
+<p>When the value of the&nbsp;<strong>showResizeHandle()</strong> method is set to true, the table displays a small resizing indicator at the lower-right corner of the table. Afterwards,&nbsp;users can simply drag the table using the table resizing handler to resize table to&nbsp;the desired&nbsp;size as depicted in the below image.</p>
+
+<p><img style="MAX-WIDTH: 100%; HEIGHT: auto" border="0" alt="Resizing table in SpreadJS" src="images/spreadjsv13images/resize-table-gif.gif" />&nbsp;</p>
+
+<h3 id="a">Resize Table to a Range</h3>
+
+<p>Users can resize tables to a larger range as well as a smaller range depending upon their specific requirements.</p>
+
+<ul>
+    <li><strong>Larger Range</strong> - When the table is resized by moving the table resizing handler towards the right direction or bottom direction; the cells in the expanded area will copy the same style and new columns or rows&nbsp;will be added respectively&nbsp;with new names.</li>
+
+    <li><strong>Smaller Range</strong> - When the table is resized by moving the table resizing handler towards the left direction or top direction; the&nbsp;data values of the table will remain intact but the style will be removed from the other columns&nbsp;or rows respectively.&nbsp;</li>
+</ul>
+
+<h3 id="b">Resize Table with Header Row and Total Row</h3>
+
+<p>Users can also&nbsp;resize the tables that contain a header row and a total row.</p>
+
+<p>When the table containing a header row and total row&nbsp;is resized by moving the table resizing handler towards the right direction, then the cells in the expanded area will copy the same style and new columns will be added with new names.&nbsp;</p>
+
+<p>For bottom direction, the row count of the resized range contains header row and total row. For left direction, the data values in the table will be reserved but the style will be removed from other columns. For top direction, the row count will also be resized (as resized range row count + 1).</p>
+
+<h3 id="c">Resize Table Containing Formulas</h3>
+
+<p>When the table is resized, the selected range remains intact. After resizing the table containing styles and data, formulas will also&nbsp;remain intact and will&nbsp;apply&nbsp;automatically to the new range as well. The formula refferring to the table range will be updated after resizing the table.</p>
+
+<p>The following points must be kept in mind while resizing tables in SpreadJS:</p>
+
+<ul>
+    <li>User can only resize in either the column direction or row direction at the same time.</li>
+
+    <li>Minimum size of the table is the cell range containing one table row and one table column excluding the Header Row and total row.</li>
+
+    <li>Maximum size of the table is the&nbsp;cell range containing table row count, table column count, sheet row count, and&nbsp;sheet column count.</li>
+
+    <li>If there are values in the expanded area, those values will be automatically filled in the&nbsp;table.</li>
+
+    <li>In Excel, if the users resize a table that contains a total row; then all the values below the existing table range will fill upto the expand range. However, in SpreadJS, the total row will overlap the last row which is below the existing table range.</li>
+
+    <li>The table resizing feature is also supported when the cells in&nbsp;your spreadsheets contain sparklines.</li>
+</ul>
+
+<div class="i-box i-box-note">
+    <p><strong>Note:</strong> Tables can't be resized in the following scenarios:</p>
+
+    <ul>
+        <li>In table binding, the table resizing handler is disabled.</li>
+
+        <li>When a table is resized&nbsp;over a span cell, the error "Cannot complete operation: A table cannot overlap with a table or merged cells" is thrown to indicate that the operation is invalid.</li>
+
+        <li>When a table containing a total row&nbsp;is resized&nbsp;to bottom direction and filtered columns is resized, the error: "Cannot shift cells in a filtered range or table" is thrown.</li>
+
+        <li>When a table is resized&nbsp;in the vertical direction and the table is filtered, the error: "Cannot resize a table that's adjacent to a hidden row or column" is thrown to indicate that the operation is invalid.</li>
+
+        <li>When a table containing hidden rows and columns is resized&nbsp;in the vertical direction, the error "Cannot resize a table that's adjacent to a hidden row or column" is thrown to indicate that the operation is invalid.</li>
+
+        <li>When users resize a table over another table, the error "Cannot complete operation: Operations that include cells both inside and outside a table range, and operation that affect cells that overlap multiple tables are not allowed" is thrown to indicate that the operation is invalid.</li>
+    </ul>
+</div>
+
+<h3 id="d">Using Code</h3>
+
+<p>The following&nbsp;example code&nbsp;shows how to enable the table resizing handler to resize tables while working with spreadsheets.</p>
+
+<div class="i-filtered-content-JavaScript" data-title="JavaScript" data-itemid="JavaScript">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// Initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 1 });
+
+<span style="COLOR: #008000">// Get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getActiveSheet();
+<span style="COLOR: #008000">// Add Table
+</span><span style="COLOR: #0000ff">var</span> table = activeSheet.tables.add(<span style="COLOR: #800000">"table1"</span>, 1, 1, 4, 4, GC.Spread.Sheets.Tables.TableThemes.light1);
+<span style="COLOR: #008000">// Enable Table Resize Handler by setting table's showResizeHandle method to true
+</span>table.showResizeHandle(<span style="COLOR: #0000ff">true</span>);
+activeSheet.getCell(1, 1).text(<span style="COLOR: #800000">"First Name"</span>);
+activeSheet.getCell(1, 2).text(<span style="COLOR: #800000">"Last Name"</span>);
+activeSheet.getCell(1, 3).text(<span style="COLOR: #800000">"Score"</span>);
+activeSheet.getCell(1, 4).text(<span style="COLOR: #800000">"Position"</span>);
+activeSheet.getCell(2, 1).text(<span style="COLOR: #800000">"Alexa"</span>);
+activeSheet.getCell(2, 2).text(<span style="COLOR: #800000">"Wilder"</span>);
+activeSheet.getCell(2, 3).text(<span style="COLOR: #800000">"90"</span>);
+activeSheet.getCell(2, 4).text(<span style="COLOR: #800000">"Web Developer"</span>);
+activeSheet.getCell(3, 1).text(<span style="COLOR: #800000">"Victor"</span>);
+activeSheet.getCell(3, 2).text(<span style="COLOR: #800000">"Wooten"</span>);
+activeSheet.getCell(3, 3).text(<span style="COLOR: #800000">"70"</span>);
+activeSheet.getCell(3, 4).text(<span style="COLOR: #800000">".NET Developer"</span>);
+activeSheet.getCell(4, 1).text(<span style="COLOR: #800000">"Ifeoma"</span>);
+activeSheet.getCell(4, 2).text(<span style="COLOR: #800000">"Mays"</span>);
+activeSheet.getCell(4, 3).text(<span style="COLOR: #800000">"85"</span>);
+activeSheet.getCell(4, 4).text(<span style="COLOR: #800000">"Sales Manager"</span>);
+<span style="COLOR: #0000ff">for</span> (<span style="COLOR: #0000ff">var</span> i = 0; i &lt; 3; i++)
+activeSheet.setColumnWidth(i, 90.0, GC.Spread.Sheets.SheetArea.viewport);
+activeSheet.setColumnWidth(4, 120);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

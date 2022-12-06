@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="This topic summarizes how the print settings are handled when SpreadJS imports data from an Excel-formatted file." />
+    
+    <title>Print Settings Imported | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n4365","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="This topic summarizes how the print settings are handled when SpreadJS imports data from an Excel-formatted file." />
+    
+    <meta name="Microsoft.Help.Id" content="bdf009b6-5168-4b59-be9c-d55fba321005"/>
+    <meta name="Microsoft.Help.TocParent" content="f8b9be7b-fbea-49f0-b469-68819d5d4a54"/>
+    <meta name="Microsoft.Help.TocOrder" content="6"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="excelimpexp.html">Import and Export Reference</a>
+ / <a href="excelimport.html">Excel-Formatted Files Import</a>
+ / Print Settings Imported</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Print Settings Imported</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>This table summarizes how the&nbsp;<a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo.html">PrintInfo</a> settings are handled when&nbsp;SpreadJS imports data from an Excel-formatted file.</p>
+
+<table>
+    <tbody>
+        <tr>
+            <td><strong>Excel Setting</strong></td>
+
+            <td><strong>SpreadJS Setting</strong></td>
+
+            <td><strong>Remarks</strong></td>
+        </tr>
+
+        <tr>
+            <td>BlackAndWhite</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~blackAndWhite.html">blackAndWhite</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>CenterHorizontally or CenterVertically</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~centering.html">centering</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PrintArea</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~columnEnd.html">columnEnd</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PrintArea</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~columnStart.html">columnStart</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>FirstPageNumber</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~firstPageNumber.html">firstPageNumber</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>FitToPagesTall</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~fitPagesTall.html">fitPagesTall</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>FitToPagesWide</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~fitPagesWide.html">fitPagesWide</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>CenterFooter</td>
+
+            <td>footerCenter</td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>CenterFooterPicture</td>
+
+            <td>footerCenterImage</td>
+
+            <td>SpreadJS only supports this with OpenXml Excel.</td>
+        </tr>
+
+        <tr>
+            <td>LeftFooter</td>
+
+            <td>footerLeft</td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>LeftFooterPicture</td>
+
+            <td>footerLeftImage</td>
+
+            <td>SpreadJS only supports this with OpenXml Excel.</td>
+        </tr>
+
+        <tr>
+            <td>RightFooter</td>
+
+            <td>footerRight</td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>RightFooterPicture</td>
+
+            <td>footerRightImage</td>
+
+            <td>SpreadJS only supports this with OpenXml Excel.</td>
+        </tr>
+
+        <tr>
+            <td>CenterHeader</td>
+
+            <td>headerCenter</td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>CenterHeaderPicture</td>
+
+            <td>headerCenterImage</td>
+
+            <td>SpreadJS only supports this with OpenXml Excel.</td>
+        </tr>
+
+        <tr>
+            <td>LeftHeader</td>
+
+            <td>headerLeft</td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>LeftHeaderPicture</td>
+
+            <td>headerLeftImage</td>
+
+            <td>SpreadJS only supports this with OpenXml Excel.</td>
+        </tr>
+
+        <tr>
+            <td>RightHeader</td>
+
+            <td>headerRight</td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>RightHeaderPicture</td>
+
+            <td>headerRightImage</td>
+
+            <td>SpreadJS only supports this with OpenXml Excel.</td>
+        </tr>
+
+        <tr>
+            <td>LeftMargin or RightMargin or TopMargin or BottomMargin or FooterMargin or HeaderMargin</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~margin.html">margin</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>Orientation</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~orientation.html">orientation</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>Order</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~pageOrder.html">pageOrder</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PaperSize</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~paperSize.html">paperSize</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PrintTitleColumns</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~repeatColumnEnd.html">repeatColumnEnd</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PrintTitleColumns</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~repeatColumnStart.html">repeatColumnStart</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PrintTitleRows</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~repeatRowEnd.html">repeatRowEnd</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PrintTitleRows</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~repeatRowStart.html">repeatRowStart</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PrintArea</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~rowEnd.html">rowEnd</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PrintArea</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~rowStart.html">rowStart</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PrintHeadings</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~showColumnHeader.html">showColumnHeader</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PrintGridlines</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~showGridLine.html">showGridLine</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>PrintHeadings</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~showRowHeader.html">showRowHeader</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+
+        <tr>
+            <td>Zoom</td>
+
+            <td><a href="SpreadJS~GC.Spread.Sheets.Print.PrintInfo~zoomFactor.html">zoomFactor</a></td>
+
+            <td>SpreadJS imports the setting from Excel.</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

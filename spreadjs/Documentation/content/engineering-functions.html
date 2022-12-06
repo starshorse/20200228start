@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>Engineering Functions | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n3471","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="a7a3431c-308c-4558-ba25-6de0f44fc119"/>
+    <meta name="Microsoft.Help.TocParent" content="f00c213a-31d9-4eac-87f4-d899b4be3a44"/>
+    <meta name="Microsoft.Help.TocOrder" content="5"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="formulareference.html">Formula Reference</a>
+ / <a href="FormulaFunctions.html">Formula Functions</a>
+ / Engineering Functions</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Engineering Functions</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Spread provides the following engineering functions, listed alphabetically.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Function</th>
+
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><a href="BESSELI.html" data-auto-update-caption="true">BESSELI</a></td>
+
+            <td>This function calculates the modified Bessel function of the first kind evaluated for purely imaginary arguments.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BESSELJ.html" data-auto-update-caption="true">BESSELJ</a></td>
+
+            <td>This function calculates the Bessel function of the first kind.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BESSELK.html" data-auto-update-caption="true">BESSELK</a></td>
+
+            <td>This function calculates the modified Bessel function of the second kind evaluated for purely imaginary arguments.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BESSELY.html" data-auto-update-caption="true">BESSELY</a></td>
+
+            <td>This function calculates the Bessel function of the second kind.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BIN2DEC.html" data-auto-update-caption="true">BIN2DEC</a></td>
+
+            <td>This function converts a binary number to a decimal number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BIN2HEX.html" data-auto-update-caption="true">BIN2HEX</a></td>
+
+            <td>This function converts a binary number to a hexadecimal number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BIN2OCT.html" data-auto-update-caption="true">BIN2OCT</a></td>
+
+            <td>This function converts a binary number to an octal number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BITAND.html" data-auto-update-caption="true">BITAND</a></td>
+
+            <td>This function returns a bitwise "AND" of two numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BITLSHIFT.html" data-auto-update-caption="true">BITLSHIFT</a></td>
+
+            <td>This function returns a bitwise "OR" of two numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BITOR.html" data-auto-update-caption="true">BITOR</a></td>
+
+            <td>This function returns a bitwise "OR" of two numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BITRSHIFT.html" data-auto-update-caption="true">BITRSHIFT</a></td>
+
+            <td>This function returns a bitwise "OR" of two numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="BITXOR.html" data-auto-update-caption="true">BITXOR</a></td>
+
+            <td>This function returns a bitwise "XOR" of two numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="COMPLEX.html" data-auto-update-caption="true">COMPLEX</a></td>
+
+            <td>This function converts real and imaginary coefficients into a complex number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="CONVERT.html" data-auto-update-caption="true">CONVERT</a></td>
+
+            <td>This function converts a number from one measurement system to its equivalent in another measurement system.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DEC2BIN.html" data-auto-update-caption="true">DEC2BIN</a></td>
+
+            <td>This function converts a decimal number to a binary number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DEC2HEX.html" data-auto-update-caption="true">DEC2HEX</a></td>
+
+            <td>This function converts a decimal number to a hexadecimal number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DEC2OCT.html" data-auto-update-caption="true">DEC2OCT</a></td>
+
+            <td>This function converts a decimal number to an octal number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="DELTA.html" data-auto-update-caption="true">DELTA</a></td>
+
+            <td>This function identifies whether two values are equal. Returns 1 if they are equal; returns 0 otherwise.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ERF.html" data-auto-update-caption="true">ERF</a></td>
+
+            <td>This function calculates the error function integrated between a lower and an upper limit.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ERF.PRECISE.html" data-auto-update-caption="true">ERF.PRECISE</a></td>
+
+            <td>This function returns the error function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ERFC.html" data-auto-update-caption="true">ERFC</a></td>
+
+            <td>This function calculates the complementary error function integrated between a lower limit and infinity.</td>
+        </tr>
+
+        <tr>
+            <td><a href="ERFC.PRECISE.html" data-auto-update-caption="true">ERFC.PRECISE</a></td>
+
+            <td>This function returns the complementary ERF function.</td>
+        </tr>
+
+        <tr>
+            <td><a href="GESTEP.html" data-auto-update-caption="true">GESTEP</a></td>
+
+            <td>This function, greater than or equal to step, returns an indication of whether a number is equal to a threshold.</td>
+        </tr>
+
+        <tr>
+            <td><a href="HEX2BIN.html" data-auto-update-caption="true">HEX2BIN</a></td>
+
+            <td>This function converts a hexadecimal number to a binary number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="HEX2DEC.html" data-auto-update-caption="true">HEX2DEC</a></td>
+
+            <td>This function converts a hexadecimal number to a decimal number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="HEX2OCT.html" data-auto-update-caption="true">HEX2OCT</a></td>
+
+            <td>This function converts a hexadecimal number to an octal number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMABS.html" data-auto-update-caption="true">IMABS</a></td>
+
+            <td>This function returns the absolute value or modulus of a complex number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMAGINARY.html" data-auto-update-caption="true">IMAGINARY</a></td>
+
+            <td>This function returns the imaginary coefficient of a complex number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMARGUMENT.html" data-auto-update-caption="true">IMARGUMENT</a></td>
+
+            <td>This function returns the argument theta, which is an angle expressed in radians.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMCONJUGATE.html" data-auto-update-caption="true">IMCONJUGATE</a></td>
+
+            <td>This function returns the complex conjugate of a complex number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMCOS.html" data-auto-update-caption="true">IMCOS</a></td>
+
+            <td>This function returns the cosine of a complex number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMCOSH.html" data-auto-update-caption="true">IMCOSH</a></td>
+
+            <td>This function returns the hyperbolic cosine of a complex number in x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMCOT.html" data-auto-update-caption="true">IMCOT</a></td>
+
+            <td>This function returns the cotangent of a complex number in x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMCSC.html" data-auto-update-caption="true">IMCSC</a></td>
+
+            <td>This function returns the cosecant of a complex number in x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMCSCH.html" data-auto-update-caption="true">IMCSCH</a></td>
+
+            <td>This function returns the hyperbolic cosecant of a complex number in x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMDIV.html" data-auto-update-caption="true">IMDIV</a></td>
+
+            <td>This function returns the quotient of two complex numbers.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMEXP.html" data-auto-update-caption="true">IMEXP</a></td>
+
+            <td>This function returns the exponential of a complex number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMLN.html" data-auto-update-caption="true">IMLN</a></td>
+
+            <td>This function returns the natural logarithm of a complex number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMLOG10.html" data-auto-update-caption="true">IMLOG10</a></td>
+
+            <td>This function returns the common logarithm of a complex number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMLOG2.html" data-auto-update-caption="true">IMLOG2</a></td>
+
+            <td>This function returns the base-2 logarithm of a complex number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMPOWER.html" data-auto-update-caption="true">IMPOWER</a></td>
+
+            <td>This function returns a complex number raised to a power.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMPRODUCT.html" data-auto-update-caption="true">IMPRODUCT</a></td>
+
+            <td>This function returns the product of up to 29 complex numbers in the x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMREAL.html" data-auto-update-caption="true">IMREAL</a></td>
+
+            <td>This function returns the real coefficient of a complex number in the x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMSEC.html" data-auto-update-caption="true">IMSEC</a></td>
+
+            <td>This function returns the secant of a complex number in x+yi of x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMSECH.html" data-auto-update-caption="true">IMSECH</a></td>
+
+            <td>This function returns the hyperbolic secant of a complex number in x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMSIN.html" data-auto-update-caption="true">IMSIN</a></td>
+
+            <td>This function returns the sine of a complex number in the x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMSINH.html" data-auto-update-caption="true">IMSINH</a></td>
+
+            <td>This function returns the hyperbolic sine of a complex number in x+yi of x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMSQRT.html" data-auto-update-caption="true">IMSQRT</a></td>
+
+            <td>This function returns the square root of a complex number in the x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMSUB.html" data-auto-update-caption="true">IMSUB</a></td>
+
+            <td>This function returns the difference of two complex numbers in the x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMSUM.html" data-auto-update-caption="true">IMSUM</a></td>
+
+            <td>This function returns the sum of two or more complex numbers in the x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="IMTAN.html" data-auto-update-caption="true">IMTAN</a></td>
+
+            <td>This function returns the tangent of a complex number in x+yi or x+yj text format.</td>
+        </tr>
+
+        <tr>
+            <td><a href="OCT2BIN.html" data-auto-update-caption="true">OCT2BIN</a></td>
+
+            <td>This function converts an octal number to a binary number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="OCT2DEC.html" data-auto-update-caption="true">OCT2DEC</a></td>
+
+            <td>This function converts an octal number to a decimal number.</td>
+        </tr>
+
+        <tr>
+            <td><a href="OCT2HEX.html" data-auto-update-caption="true">OCT2HEX</a></td>
+
+            <td>This function converts an octal number to a hexadecimal number.</td>
+        </tr>
+    </tbody>
+</table>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

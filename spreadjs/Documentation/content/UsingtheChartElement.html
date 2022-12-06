@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Learn how you can use the chart functionality in SpreadJS with React to visualise data for your applications." />
+    
+    <title>Chart Element | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n129","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Learn how you can use the chart functionality in SpreadJS with React to visualise data for your applications." />
+    
+    <meta name="Microsoft.Help.Id" content="62adb0fc-463b-449e-9f6f-ff6699a0e971"/>
+    <meta name="Microsoft.Help.TocParent" content="bd3093d8-fe47-4f10-bff1-d4438599f71e"/>
+    <meta name="Microsoft.Help.TocOrder" content="4"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="javascript_frameworks.html">JavaScript Frameworks</a>
+ / <a href="UsingSpread.SheetswithReact.html">SpreadJS with React</a>
+ / Chart Element</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Chart Element</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>Using the chart functionality in SpreadJS with React, you can visualise data for your applications while keeping all the chart elements in synchronization with the native data binding support.</p>
+
+<ol>
+    <li>
+        <strong>Create a React Project</strong>
+
+        <p>Open the Command Prompt window and type the following commands:</p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>npm install -g create-react-app<br />
+                    create-react-app quick-start<br />
+                    cd quick-start<br />
+                    npm start</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>After you finish, the react project will be created at the specified location in the directory. For more information on how to create a React project, refer to&nbsp;<a href="https://reactjs.org/docs/create-a-new-react-app.html" target="_blank">https://reactjs.org/docs/create-a-new-react-app.html</a></p>
+    </li>
+
+    <li>
+        <strong>Install SpreadJS React module in project</strong>
+
+        <p>Next, you need to install @grapecity/spread-sheets-react in your project using the following command:</p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>npm install @grapecity/spread-sheets-react</td>
+                </tr>
+            </tbody>
+        </table>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+    </li>
+
+    <li>
+        <strong>Import SpreadJS CSS into index.js file</strong>
+
+        <p>Next, you need to import the SpreadJS CSS in your index.js file using the following code:</p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>import <a href="mailto:'@grapecity/spread-sheets/styles/gc.spread.sheets.">'@grapecity/spread-sheets/styles/gc.spread.sheets.</a>excel2013white.css';</td>
+                </tr>
+            </tbody>
+        </table>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </li>
+
+    <li>
+        <strong>Install Charts React Module in the Project</strong>
+
+        <p>Next, you need to install the charts module in your project using the following command:<br /></p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td>npm install @grapecity/spread-sheets-charts</td>
+                </tr>
+            </tbody>
+        </table><br />
+    </li>
+
+    <li>
+        <strong>Use Charts in React Application</strong>
+
+        <p>Now, you can modify the App.js file as per your requirements. Changes will be reflected when the browser window is refreshed. As an example, you can use the sample code given below:</p>
+
+        <p>This example shows how to use charts in a React Application.</p>
+
+        <div class="FilteredContentJavaScript" data-title="JavaScript" data-itemid="JavaScript">
+            <table class="SyntaxTable">
+                <tbody>
+                    <tr>
+                        <th>JavaScript</th>
+
+                        <th>
+                            <div class="CopyCodeWrapper">
+                                <span class="CopyCode">Copy Code</span>
+                            </div>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <p>import React from 'react';<br />
+                            import './App.css';<br />
+                            import GC from <a href="mailto:'@grapecity/spread-sheets'">'@grapecity/spread-sheets'</a>;<br />
+                            import { SpreadSheets, Worksheet } from <a href="mailto:'@grapecity/spread-sheets-react'">'@grapecity/spread-sheets-react'</a>;<br /></p>
+
+                            <p>// Import the&nbsp;Charts module<br />
+                            import <a href="mailto:'@grapecity/spread-sheets-charts'">'@grapecity/spread-sheets-charts'</a>;</p>
+
+                            <p>var SpreadJSKey = "xxx";<br />
+                            GC.Spread.Sheets.LicenseKey = SpreadJSKey;</p>
+
+                            <p>class App extends React.Component</p>
+
+                            <p>{<br />
+                            &nbsp;&nbsp;&nbsp; constructor(props)</p>
+
+                            <p>{<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; super(props);<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.hostStyle =<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: '1100px',<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: '800px'<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };<br />
+                            &nbsp;}<br /></p>
+
+                            <p>// Handling workbook initialized event<br />
+                            workbookInit = (spread) =&gt;</p>
+
+                            <p>{<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.setState({<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spread: spread});<br />
+                            let chart_columnClustered, chart_columnStacked, chart_columnStacked100;<br /></p>
+
+                            <p>// Fetching sheet<br />
+                            let sheetCharts = spread.getSheet(0);<br /></p>
+
+                            <p>// Setting Sheetname<br />
+                            sheetCharts.name("Charts");<br />
+                            sheetCharts.suspendPaint();</p>
+
+                            <p>//Prepare data for chart<br />
+                            sheetCharts.setValue(0, 1, "Q1");<br />
+                            sheetCharts.setValue(0, 2, "Q2");<br />
+                            sheetCharts.setValue(0, 3, "Q3");<br />
+                            sheetCharts.setValue(1, 0, "Mobile Phones");<br />
+                            sheetCharts.setValue(2, 0, "Laptops");<br />
+                            sheetCharts.setValue(3, 0, "Tablets");<br />
+                            for (var r = 1; r &lt;= 3; r++)</p>
+
+                            <p>{<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (var c = 1; c &lt;= 3; c++) {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sheetCharts.setValue(r, c, parseInt(Math.random() * 100));<br />
+                            }<br />
+                            }</p>
+
+                            <p>&nbsp;// Add columnClustered chart<br />
+                            chart_columnClustered = sheetCharts.charts.add('chart_columnClustered', GC.Spread.Sheets.Charts.ChartType.columnClustered, 5, 150, 300, 300, "A1:D4");<br />
+                            chart_columnClustered.title({ text: "Annual Sales" });</p>
+
+                            <p>// Add columnStacked chart<br />
+                            chart_columnStacked = sheetCharts.charts.add('chart_columnStacked', GC.Spread.Sheets.Charts.ChartType.columnStacked, 320, 150, 300, 300, "A1:D4");<br />
+                            chart_columnStacked.title({ text: "Annual Sales" });</p>
+
+                            <p>// Add columnStacked100 chart<br />
+                            chart_columnStacked100 = sheetCharts.charts.add('chart_columnStacked100', GC.Spread.Sheets.Charts.ChartType.columnStacked100, 640, 150, 300, 300, "A1:D4");<br />
+                            chart_columnStacked100.title({ text: "Annual Sales" });</p>
+
+                            <p>sheetCharts.resumePaint();<br />
+                            }</p>
+
+                            <p>render() {<br />
+                            return (<br />
+                            &lt;div&gt;<br />
+                            &lt;SpreadSheets backColor={this.spreadBackColor} hostStyle={this.hostStyle} workbookInitialized={this.workbookInit}&gt;<br />
+                            &lt;Worksheet&gt;<br />
+                            &lt;/Worksheet&gt;<br />
+                            &lt;/SpreadSheets&gt;<br />
+                            &lt;/div&gt;<br />
+                            )<br />
+                            }<br />
+                            }</p>
+
+                            <p>export default App;<br /></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ol>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

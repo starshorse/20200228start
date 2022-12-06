@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <title>AutoSum Functions | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n767","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="SpreadJS is a GrapeCity product that offers a comprehensive library for delivering true Excel-like experiences." />
+    
+    <meta name="Microsoft.Help.Id" content="dff2eb51-6163-4a6f-93bb-b8dad7aa2f3e"/>
+    <meta name="Microsoft.Help.TocParent" content="107fa408-448d-4997-abb2-1c64e7764a7f"/>
+    <meta name="Microsoft.Help.TocOrder" content="1"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="spdesigner.html">SpreadJS Designer</a>
+ / <a href="spdesignerwork.html">Work in the Designer</a>
+ / AutoSum Functions</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">AutoSum Functions</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>While using AutoSum&nbsp;functions in SpreadJS, such as sum, average, min, max etc, the range of cells on which the function should be applied is automatically calculated. When a cell is selected in a spreadsheet and a function is applied on it, the range is automatically highlighted. The calculation of range is based on the&nbsp;active cell and the calculated result is also displayed in the active cell.</p>
+
+<div class="i-box i-box-note">
+    <strong>Note:</strong> The automatic&nbsp;calculation of range is done only&nbsp;for the 'number' type fields.
+</div>
+
+<p>The below gif depicts the automatic calculation of range when sum function is applied:<br />
+<img border="0" alt="Autosum function" src="images/autoFunction.gif" /></p>
+
+<h3>&nbsp;</h3>
+
+<h3>Range&nbsp;Considered for Calculation</h3>
+
+<p>In case of numeric values:</p>
+
+<ul>
+    <li>The upper and left&nbsp;region of the active&nbsp;cell containing numbers are considered.</li>
+</ul>
+
+<p><strong>Upper Region</strong></p>
+
+<p><img border="0" alt="Upper region" src="images/AutoFunction_Top.PNG" /></p>
+
+<p>&nbsp;<strong>Left Region</strong></p>
+
+<p><img border="0" alt="Left region" src="images/AutoFunction_left.PNG" /></p>
+
+<p>&nbsp;</p>
+
+<ul>
+    <li>The bottom and&nbsp;right&nbsp;region of the active&nbsp;cell containing numbers are not&nbsp;considered.</li>
+</ul>
+
+<p><strong>Bottom region</strong></p>
+
+<p><img border="0" alt="Bottom region" src="images/AutoFunction_bottom.PNG" /></p>
+
+<p><strong>&nbsp;Right Region</strong></p>
+
+<p><img border="0" alt="Right region" src="images/AutoFunction_right.PNG" /></p>
+
+<p>&nbsp;</p>
+
+<ul>
+    <li>If both the upper and left region of the active cell&nbsp;contains numbers, the range of upper region is considered.</li>
+</ul>
+
+<p><img border="0" alt="Autosum function when both the regions contain numbers" src="images/AutoFunction1.png" /></p>
+
+<p>&nbsp;</p>
+
+<ul>
+    <li>If&nbsp;there are numbers above the cell but not adjacent to the cell, the range includes empty cells until numbers&nbsp;are&nbsp;encountered and no&nbsp;empty cells afterwards&nbsp;(same for left region)</li>
+</ul>
+
+<p>&nbsp;<img border="0" alt="Autosum function in case range includes empty cells" src="images/AutoFunction_empty.PNG" /></p>
+
+<p>&nbsp;</p>
+
+<p>In case of non-numeric value in cell:</p>
+
+<ul>
+    <li>Complete range is considered if a non-numeric value exists adjacent to the active cell (same for left region).</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><img border="0" alt="Autosum function in case of non-numeric value in cell" src="images/AutoFunction4.PNG" /></p>
+
+<ul>
+    <li>If left and upper region both contain left and right contain data, and the upper region contains non-numeric value adjacent to the cell on which function is applied, the range of left region is considered.&nbsp;&nbsp;</li>
+</ul>
+
+<p><img border="0" alt="Autosum function when the upper region contains non-numeric value" src="images/AutoFunction3.PNG" /></p>
+
+<ul>
+    <li>If the non-numeric value exists in between, the range&nbsp;is considered till&nbsp;it is encountered.&nbsp;</li>
+</ul>
+
+<p><img border="0" alt="Autosum function in case of non-numeric value between the range" src="images/AutoFunction5.PNG" /></p>
+
+<p>&nbsp;</p>
+
+<ul>
+    <li>If non-numeric values exists adjacent to the cell and in between too, the range is considered until the cell containing numbers&nbsp;is encountered and does not consider any non-numeric values afterwards.</li>
+</ul>
+
+<p><img border="0" alt="Automsum function when non-numeric values exists adjacent to the cell and in between as well" src="images/AutoFunction_empty_1.PNG" /></p>
+
+<p>&nbsp;</p>
+
+<h3>Special cases</h3>
+
+<p>If the top adjacent cells are empty, while the left adjacent cells are numbers, the left region is considered.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;<img border="0" alt="Autosum function when top adjacent cells are empty" src="images/AutoFunction_specialcase.PNG" /></p>
+
+<p>&nbsp;</p>
+
+<p>The boundary of the range under consideration automatically expands to the width of a span.</p>
+
+<p>&nbsp;</p>
+
+<p><img border="0" alt="Autosum function - special case" src="images/AutoFunction_specialcase1.PNG" /></p>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>

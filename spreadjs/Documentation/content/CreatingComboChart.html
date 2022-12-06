@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WT462SJ');</script>
+    <!-- End Google Tag Manager -->
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" value="IE=9" />
+	<meta property="og:description" content="Combo charts combines two or more chart types in a single chart. Learn how you can add combo charts to your worksheet using SpreadJS." />
+    
+    <title>Combo Chart | SpreadJS 15</title>
+    <meta name="Title" content="ItemTitleNoQuotes"/>
+    
+    <script src="https://cdn.grapecity.com/web/docs/topics-dist/script/bundle1633500776798.js"></script>
+    <link rel="stylesheet" href="https://cdn.grapecity.com/web/docs/topics-dist/css/bundle1633500776798.css">
+    <script type="text/javascript">var Innovasys=(Innovasys||{});$.extend(true,Innovasys,{settings:{isHideBodyDuringLoadDisabled:true,dynamictoc:{isEnabled:true},inthistopic:{isSupported:true},dynamicstyles:{isDynamicWordWrapEnabled:true}}},{settings:{"dynamictoc":{"initialNodeId":"n586","initialNodeContainer":"c0","isResizable":true},"inthistopic":{"isEnabled":true},"currentLocale":"-","isFrameless":true,"navigationKind":"inpage","versions":{"locale":{"currentId":"-"}}}});</script>
+    <meta name="Description" content="Combo charts combines two or more chart types in a single chart. Learn how you can add combo charts to your worksheet using SpreadJS." />
+    
+    <meta name="Microsoft.Help.Id" content="3c2b238e-4b11-4be0-8550-bfc24e902dbc"/>
+    <meta name="Microsoft.Help.TocParent" content="1124f6de-499a-4032-8d2a-c338ec23d096"/>
+    <meta name="Microsoft.Help.TocOrder" content="8"/>
+    <meta name="Microsoft.Help.F1" content=""/>
+    <meta name="Microsoft.Help.ContentType" content="Concepts" />
+    
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/hs-simpletab.css"></link>
+    <style>.i-is-new .i-page-title-text::after, ul#i-dt-root li.i-is-new>a::after { content: "New" }
+</style>
+    
+    
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="text/javascript">
+var currentHeader = function() {
+    return "spjs15";
+}
+</script>
+<style>
+
+#i-header-container {
+    background-color: #94c33d !important;
+}
+
+#i-header-container .i-header-content .i-project-title {
+    background-image: url("./template/packages/core-web/images/SP-32X32.png");
+}
+
+ul#i-dt-root li.i-selected {
+    background-image: url("./template/packages/core-web/images/BG_SP.png");
+    background-color: #f4f9eb;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT462SJ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="i-before-header-content" class="i-before-header-content">
+        
+    </div>
+
+     <div id="i-header-container">
+        <div id="i-header-content" class="i-header-content i-content-width-container">
+            
+            <div class="i-project-title">SpreadJS 15</div>
+            <div class="i-project-title-meta" style="display: none;">SpreadJS 15</div>
+            
+            
+                <div class="i-search-container">
+                    <form action="websearch.html">
+                    <input id="i-search" name="query" title="(Words can be combined using OR and AND)"/>
+                    <input type="submit" id="i-search-button" value="" />
+                    </form>
+                </div>
+                <a id="i-index-button" href="webindex.html"></a>
+            
+        </div>
+    </div>
+    
+    <div class="i-content-width-container"><div class="i-busy-overlay"></div></div>
+
+    <div id="i-breadcrumbs-outer-container" class="i-content-width-container"><div class="i-breadcrumbs-container">
+<a href="features.html">Features</a>
+ / <a href="Charts.html">Charts</a>
+ / <a href="ChartTypes.html">Chart Types</a>
+ / Combo Chart</div></div>
+
+    
+
+    <div id="i-actions-outer-container" class="i-content-width-container">
+        <div id="i-actions-container">
+            <div id="i-actions-content" class="i-fixed-to-top">
+                <!-- Spacing --> <span class="i-toggle-all-sections i-function-link">
+                <label class="i-collapse-all">Collapse All</label>
+                <label class="i-expand-all" style="display: none;">Expand All</label>
+            </span>
+                <div class="i-in-this-topic-container">
+                    <span class="i-action-group-heading">In This Topic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-toc-outer-container" class="i-content-width-container">
+        <div id="i-toc-container">
+            <div id="i-toc-content" class="i-fixed-to-top">
+                <div class="i-toc-content-scroll-container">
+                    <div id="i-dynamic-toc-container"><ul id="i-dt-root"></ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="i-body-content-container" class="i-content-width-container">
+        <div id="i-body-content" class="i-body-content">
+            <div class="i-page-title"><div class="i-page-title-text">Combo Chart</div></div>
+            <div class="i-in-this-topic-container">
+                <span class="i-action-group-heading">In This Topic</span>
+            </div>
+            <p>A Combo chart combines two or more chart types in a single chart, making it easier for users to interpret and understand data. This chart is ideal when you want to visualize different type of data that is completely unrelated (for instance: price and volume) or when you need to plot one or more data series on&nbsp;the&nbsp;secondary axis.</p>
+
+<p>The data arranged in columns or rows&nbsp;of&nbsp;a worksheet can be plotted in a Combo chart. You can create a combo chart in two ways: 1) By creating a column chart and 2) By adding a series and setting its chart type. For instance, by adding a line chart.</p>
+
+<p>In the example shown below, monthly registration number and distribution (which are two different types of data) of men and women is depicted with the help of a combo chart.<br />
+<img border="0" alt="Combo chart" src="images/Combo-chart.png" /></p>
+
+<h4>Using Code</h4>
+
+<p>This code shows how to add a combo chart in a spreadsheet.</p>
+
+<div class="i-filtered-content-CS" data-title="CS" data-itemid="CS">
+    <table class="i-syntax-table">
+        <tbody>
+            <tr>
+                <th>JavaScript</th>
+
+                <th>
+                    <div class="i-copy-code-wrapper">
+                        <span class="i-copy-code">Copy Code</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="i-code" colspan="2">
+                    <pre>
+<span style="COLOR: #008000">// initializing Spread
+</span><span style="COLOR: #0000ff">var</span> spread = <span style="COLOR: #0000ff">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span style="COLOR: #800000">'ss'</span>), { sheetCount: 3 });
+<span style="COLOR: #008000">// get the activesheet
+</span><span style="COLOR: #0000ff">var</span> activeSheet = spread.getSheet(0);
+
+<span style="COLOR: #008000">//prepare data for chart
+</span><span style="COLOR: #0000ff">var</span> dataArray = [[<span style="COLOR: #800000">""</span>, <span style="COLOR: #800000">"JAN"</span>, <span style="COLOR: #800000">"FEB"</span>, <span style="COLOR: #800000">"MAR"</span>, <span style="COLOR: #800000">"APR"</span>, <span style="COLOR: #800000">"MAY"</span>, <span style="COLOR: #800000">"JUN"</span>, <span style="COLOR: #800000">"JUL"</span>, <span style="COLOR: #800000">"AUG"</span>, <span style="COLOR: #800000">"SEP"</span>, <span style="COLOR: #800000">"OCT"</span>, <span style="COLOR: #800000">"NOV"</span>, <span style="COLOR: #800000">"DEC"</span>],
+[<span style="COLOR: #800000">"MEN"</span>, 327, 1776, 507, 1200, 800, 482, 204, 1390, 1001, 951, 381, 220],
+[<span style="COLOR: #800000">"WOMEN"</span>, 709, 1917, 2455, 2610, 1719, 1433, 1544, 3285, 5208, 3372, 2484, 4078],
+[<span style="COLOR: #800000">"TOTAL"</span>, 1036, 3693, 2962, 3810, 2519, 1915, 1748, 4675, 6209, 4323, 2865, 4298]
+];
+activeSheet.setArray(0, 0, dataArray);
+<span style="COLOR: #0000ff">var</span> chartType = [{
+    type: GC.Spread.Sheets.Charts.ChartType.columnClusterd,
+    comboType: GC.Spread.Sheets.Charts.ChartType.lineMarkers
+}];
+
+<span style="COLOR: #008000">// Add Combo Chart
+</span><span style="COLOR: #0000ff">var</span> chart = activeSheet.charts.add(<span style="COLOR: #800000">'ComboChart'</span>, chartType[0].type, 10, 120, 900, 300, <span style="COLOR: #800000">"A1:M3"</span>, GC.Spread.Sheets.Charts.RowCol.rows);
+chart.title({ text: <span style="COLOR: #800000">"Monthly Registration Number and Distribution of Men and Women"</span> });
+<span style="COLOR: #0000ff">var</span> seriesItem = {};
+seriesItem.chartType = chartType[0].comboType;
+seriesItem.border = { width: 3 };
+seriesItem.name = <span style="COLOR: #800000">'A4'</span>;
+seriesItem.xValues = <span style="COLOR: #800000">'B1:M1'</span>;
+seriesItem.yValues = <span style="COLOR: #800000">'B4:M4'</span>;
+chart.series().add(seriesItem);
+
+<span style="COLOR: #0000ff">var</span> dataLabels = chart.dataLabels();
+dataLabels.showValue = <span style="COLOR: #0000ff">true</span>;
+dataLabels.showSeriesName = <span style="COLOR: #0000ff">false</span>;
+dataLabels.showCategoryName = <span style="COLOR: #0000ff">false</span>;
+<span style="COLOR: #0000ff">var</span> dataLabelPosition = GC.Spread.Sheets.Charts.DataLabelPosition;
+dataLabels.position = dataLabelPosition.above;
+chart.dataLabels(dataLabels);
+</pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+            <a name="seealsobookmark"></a>
+            
+            
+            <div id="i-footer-content" class="i-footer-content">
+                
+<p>&nbsp;</p><p>&nbsp;</p><hr style="height: 1px" /><p><p>Copyright © 2022 GrapeCity, Inc. All rights reserved.</p>
+<p><a href="https://www.grapecity.com/forums/spreadjs/" target="_blank">Product Support Forum</a> | <a href="javascript:window.print()">Print this page</a></p>
+<ul class="social">
+<li><a href="https://www.facebook.com/GrapeCityUS/" target="_blank" class="facebook">&nbsp;</a></li>
+<li><a href="https://twitter.com/GrapeCityUS" target="_blank" class="twitter" rel="nofollow">&nbsp;</a></li>
+<li><a href="https://www.linkedin.com/company/grapecity" target="_blank" class="linkedin">&nbsp;</a></li>
+</ul>
+</p>
+
+            </div>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $(function () {
+            var documentInstance = new Innovasys.Content.Document(document.body);
+            documentInstance.load();
+        });
+    </script>
+</body>
+</html>
