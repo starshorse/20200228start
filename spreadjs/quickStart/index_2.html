@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<input type="button" value="Refresh" onclick="refresh_1()" /> 
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script src="dataBinding.js"></script> 
+	<script src="storeChangesMode_spreadsheet.js"></script> 
+	<script>
+		window.onload = function()
+				{
+					var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 1 } );
+				/*			
+					let data = createSampleData() 
+					loadTable( spread, data ) 		
+	      			*/
+					refresh_1() 
+					spread.bind( GC.Spread.Sheets.Events.CellChanged, function( event , data ){
+							var row = data.row, 
+							    col = data.col;
+							if( data.propertyName != "value" || row === undefined || col === undefined  ){
+										return;
+									}
+							showChanges( spread , row, col ) 
+					});
+					spread.bind( GC.Spread.Sheets.Events.RangeChanged , function( event, data ){
+							var row = data.row , 
+							col = data.col,
+							rowCount = data.rowCount,
+							colCount = data.colCount;
+							if(
+								row === undefined || col === undefined || rowCount === undefined || colCount === undefined 
+							){
+								return ;
+							}
+							showChanges( spread, row, col, rowCount , colCount );	
+					})
+				};
+	</script>
+	
+</html> 
+
+
+
