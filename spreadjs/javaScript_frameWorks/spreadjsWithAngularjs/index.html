@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/interop/gc.spread.excelio.15.2.2.min.js"></script>
+		<script src="../../node_modules/jquery/dist/jquery.min.js"></script> 
+	        <script src="../../node_modules/angular/angular.min.js"></script>     
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/interop/angularjs/gc.spread.sheets.angularjs.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+		 }
+		</style>
+	</head>
+	<body>
+		<gc-spread-sheets id ="ss" style="width:100%; height:500px; border:1px solid gray">
+			<worksheets>
+				<worksheet frozen-column-count="1" name="tbl_view">
+					<default-style backcolor="#c6e0b4" font="large Meiryo" border="#8ea9db dashed"></default-style>
+				 	<columns>
+						<column width="100">
+							<default-style formatter="#,##0.00">
+								<number-validator comparisonoperator="GreaterThan" value1="0"></number-validator> 
+							</default-style>	
+						</column> 
+					</columns>
+				</worksheet>
+			</worksheets>
+		</gc-spread-sheets>	
+	</body>	
+	<script src="app.js"></script> 
+
+</html> 	
