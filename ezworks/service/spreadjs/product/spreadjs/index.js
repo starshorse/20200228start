@@ -8,6 +8,10 @@ angular.module('gc_spreadjs',[])
 				{ sheetCount }
 			)
 			return gc_spreadjsFactory.spread 
+		},
+		Events : {
+			'ButtonClicked' : GC.Spread.Sheets.Events.ButtonClicked ,
+			'CellDoubleClick': GC.Spread.Sheets.Events.CellDoubleClick, 
 		}
 	}
 	return gc_spreadjsFactory 
