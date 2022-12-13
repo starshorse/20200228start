@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/interop/gc.spread.excelio.15.2.2.min.js"></script>
+		<script src="../node_modules/jquery/dist/jquery.min.js"></script> 
+	        <script src="../node_modules/angular/angular.min.js"></script>     
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/interop/angularjs/gc.spread.sheets.angularjs.15.2.2.min.js"></script>
+		<link href="../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+		 }
+		</style>
+	</head>
+	<body>
+		<div id='ss' style='width:100%; height:800px; border: 1px solid gray;'> 	
+	</body>	
+	<script>
+		var spread = new GC.Spread.Sheets.Workbook( document.getElementById('ss'), { sheetCount : 1 });
+		var sheet = spread.getSheet(0);
+		spread.suspendPaint(); 
+//		spread.suspendEvent();
+		sheet.suspendCalcService( true );		
+		sheet.setRowCount(10000);
+		sheet.setColumnCount( 100 );
+		for( var i = 0; i< 10000; i++ ){
+			for( var j = 0; j < 100; j++){
+//				sheet.setValue( i, j, new Date(), GC.Spread.Sheets.SheetArea.viewport ); 
+				sheet.setFormula( i, j,"DATE( 2019,3,11 )" , GC.Spread.Sheets.SheetArea.viewport ); 
+				sheet.getCell(i, j).formatter("yyyy/mm/dd"); 
+				sheet.setColumnWidth( j, 80.0, GC.Spread.Sheets.SheetArea.viewport ); 
+					}			
+		}
+//		spread.resumeEvent();
+		sheet.resumeCalcService( false ) ;			
+		spread.resumePaint(); 
+	</script> 
+</html> 	
