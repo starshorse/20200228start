@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/interop/gc.spread.excelio.15.2.2.min.js"></script>
+		<script src="../node_modules/jquery/dist/jquery.min.js"></script> 
+	        <script src="../node_modules/angular/angular.min.js"></script>     
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/interop/angularjs/gc.spread.sheets.angularjs.15.2.2.min.js"></script>
+		<link href="../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+		 }
+		</style>
+	</head>
+	<body>
+		<div id='ss' style='width:100%; height:800px; border: 1px solid gray;'> 	
+	</body>	
+	<script>
+		var startTime, endTime;
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById('ss'), { sheetCount : 1 });
+			var sheet = spread.getActiveSheet();
+			var data = generateData( 50000 );
+			var colInfos = generateBindingColumnInfos(7); 
+			loadingData( sheet, colInfos, data ); 
+			spread.bind( GC.Spread.Sheets.Events.RangeSorting, function( sender, args )
+			{
+				sheet.suspendDirty();
+			});
+			spread.bind( GC.Spread.Sheets.Events.RangeSorted, function( sender, args )
+			{
+				sheet.resumeDirty(); 
+			})
+		}
+		function loadingData( sheet, colInfos, data )
+		{
+			sheet.suspendPaint();
+			sheet.autoGenerateColumns = false;
+			sheet.bindColumns( colInfos );
+			sheet.setDataSource( data );
+			sheet.rowFilter( new GC.Spread.Sheets.Filter.HideRowFilter( new GC.Spread.Sheets.Range( 0,0, sheet.getRowCount(), sheet.getColumnCount() )));
+			sheet.resumePaint()
+		}
+		function generateData( itemCount )
+		{
+			var data = [];
+			var countries = ["China", "American" , "UK", "Japan", "France"];
+			var products = ["Computer", "Car", "Others"];
+			var colors =["Red", "Green", "Blue", "White" , "Black", "Yellow" , "Pink", "Oragne"]; 
+			var dt = new Date(); 
+			for( var i =0 ;i < itemCount; i++ ){
+				var item ={
+					id: i ,
+					date: new Date( dt.getFullYear(), i%12, 1), 
+					country: countries[ Math.floor( Math.random() * countries.length) ],
+					product: products[Math.floor( Math.random()* products.length )],
+					color: colors[ Math.floor( Math.random()* products.length )],
+					amount: 1000 + Math.random()*10000,
+					big: Math.random() > .5 
+				};
+				data.push( item );		
+			}
+			return data;
+					
+		}
+		function generateBindingColumnInfos( colCount )
+		{
+			var bindColumnInfos = [
+				{ name: "id", displayName: "ID", size: 60 },
+				{ name: "product", displayName: "Product", size: 90 },
+				{ name: "country", displayName: "Country", size: 90 },
+				{ name: "amount", displayName:  "Amount", size: 90 , formatter: "#,##0" },
+				{ name: "date", displayName: "Date", size: 90, formatter: 'yyyy-mm-dd' },
+				{ name: "color", displayName: "Color", size: 85 },
+				{ name: "big", displayName: "Big", size: 90 , cellType: new GC.Spread.Sheets.CellTypes.CheckBox()  },
+			];
+			return bindColumnInfos;		
+
+		}
+	</script> 
+</html> 	

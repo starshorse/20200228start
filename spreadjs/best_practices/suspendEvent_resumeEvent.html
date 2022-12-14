@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/interop/gc.spread.excelio.15.2.2.min.js"></script>
+		<script src="../node_modules/jquery/dist/jquery.min.js"></script> 
+	        <script src="../node_modules/angular/angular.min.js"></script>     
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/interop/angularjs/gc.spread.sheets.angularjs.15.2.2.min.js"></script>
+		<link href="../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+		 }
+		</style>
+	</head>
+	<body>
+		<div id='ss' style='width:100%; height:800px; border: 1px solid gray;'> 	
+	</body>	
+	<script>
+		var spread = new GC.Spread.Sheets.Workbook( document.getElementById('ss'), { sheetCount : 1 });
+		var sheet = spread.getSheet(0);
+		spread.bind( GC.Spread.Sheets.Events.CellChanged, function( sender, args ){
+			console.log("CellChanged event fired for Cell[" + args.row + "," + args.col + "] having value " + sheet.getValue( args.row , args.col ));			
+		})
+		spread.suspendPaint();
+		spread.suspendEvent();
+		for( var i = 0; i< 20 ; i++ )
+		{
+			for( var j = 0; j < 10 ; j++ ){
+				sheet.setValue( i, j, "111" );
+			}
+		}
+		spread.resumeEvent();
+		spread.resumePaint();
+		sheet.setValue( 22,2,"222"); 
+
+	</script> 
+</html> 	
