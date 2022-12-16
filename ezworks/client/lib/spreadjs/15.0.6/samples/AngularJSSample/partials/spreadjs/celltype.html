@@ -1,0 +1,36 @@
+﻿<h3>SpreadJS 셀 유형</h3>
+
+<p>
+    아래 샘플은 셀의 모양과 동작을 정의하는 셀 유형을 만드는 방법을 보여줍니다.
+</p>
+
+<gc-spread-sheets id="ss" newtabvisible="false">
+    <worksheets>
+        <worksheet datasource="employees">
+            <columns>
+                <column width="130" datafield="name" headertext="Name"></column>
+                <column width="90" datafield="phone" headertext="Phone"></column>
+                <column width="80" datafield="country" headertext="Country">
+                    <default-style>
+                        <combobox-cell-type>
+                            <item text="US"></item>
+                            <item text="UK"></item>
+                            <item text="Germany"></item>
+                            <item text="Maxico"></item>
+                        </combobox-cell-type>
+                    </default-style>
+                </column>
+                <column width="240" datafield="email" headertext="Email">
+                    <default-style>
+                        <hyperlink-cell-type></hyperlink-cell-type>
+                    </default-style>
+                </column>
+                <column datafield="onJob" headertext="OnJob">
+                    <default-style halign="center">
+                        <checkbox-cell-type></checkbox-cell-type>
+                    </default-style>
+                </column>
+            </columns>
+        </worksheet>
+    </worksheets>
+</gc-spread-sheets>
