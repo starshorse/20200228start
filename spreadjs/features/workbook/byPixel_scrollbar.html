@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div>
+			<input type='checkbox' id='scrollByPixel' checked >
+			<label for 'scrollByPixel'>Scroll By Pixel</label>
+			<input type='text' id='scrollPixel'>
+			<input type='button' id='setScrollByPixel' value='set scrollPixel'>
+		</div>	
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		 var data = [
+			 {
+			    "Country": "Canada",
+			    "State": "Ontario",
+			    "City": "Ottawa",
+			    "Product": "Kraft Grated Parmesan Cheese"
+			 },
+			 {
+			    "Country": "Canada",
+			    "State": "Ontario",
+			    "City": "Belleville",
+			    "Product": "KIND Bars Almond & Coconut Gluten Free"
+			 },
+			 {
+			     "Country": "Canada",
+			     "State": "Ontario",
+			     "City": "Alliston",
+			     "Product": "Kraft Grated Parmesan Cheese"
+			  },
+			  {
+			     "Country": "Canada",
+			     "State": "Saskatchewan",
+			     "City": "Prince Albert",
+			      "Product": "Smartfood Popcorn"
+			   },
+			   {
+			     "Country": "Canada",
+			     "State": "Alberta",
+			     "City": "Red Deer",
+			     "Product": "Smartfood Popcorn"
+			   },
+			   {
+			     "Country": "Canada",
+			     "State": "Alberta",
+			     "City": "Calgary",
+			     "Product": "Planters Deluxe Whole Cashew"
+			   },
+			   {
+			     "Country": "Canada",
+			     "State": "Alberta",
+			     "City": "Calgary",
+			     "Product": "Kraft Grated Parmesan Cheese"
+			   },
+			   {
+			      "Country": "Canada",
+			      "State": "Alberta",
+			      "City": "Okotoks",
+			      "Product": "Smartfood Popcorn"
+			   },
+			   {
+			      "Country": "India",
+			      "State": "Andhra Pradesh",
+			      "City": "Hyderabad",
+			      "Product": "Teddy Grahams Crackers"
+			   },
+			   {
+			      "Country": "South Africa",
+			      "State": "Gauteng",
+			      "City": "Roodepoort",
+			      "Product": "Jaybee's Gourmet Nuts Gift Pack (3 Lb)"
+			   },
+			   {
+			      "Country": "Finland",
+			      "State": "Ita-Suomen Laani",
+			      "City": "Kuopio",
+			      "Product": "Planters Deluxe Whole Cashew"
+			   },
+			   {
+			      "Country": "Switzerland",
+			      "State": "Geneve",
+			      "City": "Vesenaz",
+			      "Product": "KIND Bars Almond & Coconut Gluten Free"
+			   },
+			   {
+			      "Country": "Switzerland",
+			      "State": "Vaud",
+			      "City": "Lausanne",
+			      "Product": "Smartfood Popcorn"
+			   },
+			   {
+			     "Country": "Switzerland",
+			     "State": "Vaud",
+			     "City": "Morges",
+			     "Product": "Kraft Real Mayo"
+			   },
+			   {
+			     "Country": "Denmark",
+			     "State": "Frederiksborg",
+			     "City": "Helsingor",
+			     "Product": "Planters Deluxe Whole Cashew"
+			   },
+			   {
+			     "Country": "Denmark",
+			     "State": "Kobenhavn",
+			     "City": "Kobenhavn",
+			     "Product": "Kraft Grated Parmesan Cheese"
+			   },
+			   {
+			     "Country": "Denmark",
+			     "State": "Storstrom",
+			     "City": "Nakskov",
+			     "Product": "Kraft Grated Parmesan Cheese"
+			   }
+		  ];
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+//			spread.options.showHorizontalScrollbar = false;
+//			spread.options.showVerticalScrollbar = false ; 		
+			
+		        spread.options.scrollByPixel = true; 
+		        sheet.setRowHeight( 0, 30, 1);
+			sheet.autoGenerateColumns = false ; 
+			sheet.setDataSource( data ) 
+			var colInfos =
+			[
+				{ name: 'Country', size: 180 },
+				{ name: 'State', size: 120 },
+				{ name: 'City', size: 120 }, 
+				{ name: 'Product', size: 280 }
+			];
+			sheet.bindColumns( colInfos ); 		
+                        // Add Span 
+			var defaultStyle = sheet.getDefaultStyle(); 
+			defaultStyle.vAlign = GC.Spread.Sheets.VerticalAlign.center; 
+			defaultStyle.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+			sheet.setDefaultStyle( defaultStyle ); 
+			var cc = sheet.getColumnCount(), rc = sheet.getRowCount(); 
+			spread.suspendPaint(); 		
+			for( var c = 0 ; c < cc ; c++ ){
+				var tempValue = null, tempRow = -1, tempRowCount = -1 ;
+				for( var r =0 ; r < rc ; r++ ){
+					var cellValue = sheet.getValue( r, c ); 
+					if( tempValue == null ){
+						tempValue = cellValue;
+						tempRow = r;
+						tempRowCount = 1 ;
+					}else if( tempValue === cellValue ){
+						tempRowCount++;			
+					}else{
+						if( tempRowCount > 1 ){
+							sheet.addSpan( tempRow, c , tempRowCount, 1 ) 			
+						}			
+						tempValue = cellValue;
+						tempRow = r;
+						tempRowCount = 1;
+					}
+				
+				}
+				if( tempRowCount > 1 ){
+					sheet.addSpan( tempRow, c , tempRowCount , 1 )
+				}			
+
+			}			
+			console.log( selectedState ) 
+			spread.resumePaint() 		
+		
+		var scrollByPixel = document.getElementById("scrollByPixel") ;
+		scrollByPixel.addEventListener("change", function(){
+			spread.options.scrollByPixel = scrollByPixel.checked ;
+
+		});
+		var scrollPixel = document.getElementById("scrollPixel")
+		document.getElementById("setScrollByPixel").addEventListener("click", function(){
+			spread.options.scrollPixel = parseInt( scrollPixel.value ) 
+		})
+
+		sheet.scroll( 30, 15 ) // pixels 			
+					
+		};
+	</script>
+	
+</html> 
+
+
+
