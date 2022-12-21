@@ -4,6 +4,7 @@ angular.module('mySpreadjs',[])
 	var ezch_tbl_editorService = $injector.get('ezch_tbl_editorService') 
 	var spreadjs_eventsService = $injector.get('spreadjs_eventsService') 
 	$scope.spread = spread_product.create_spread( 3 ); 
+	ezch_tbl_editorService.initTblView( $scope.spread ) 
 	ezch_tbl_editorService.initTblList( $scope.spread ) 
 	spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
 	spreadjs_eventsService.register_sheet1_bind_cellDoubleClick( $scope.spread ) 

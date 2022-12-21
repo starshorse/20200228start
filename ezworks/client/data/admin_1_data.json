@@ -1,0 +1,50 @@
+[
+    {
+        "seq": 1,
+        "id_jpt": null,
+        "name": "customer_01",
+        "position": null,
+        "level": 5,
+        "password": "demo@",
+        "email": "customer_01@demo.co.kr",
+        "important": null,
+        "약칭": null,
+        "jandi_id_map": null,
+        "depart": null,
+        "configuration": null,
+        "createdAt": "2022-10-31T06:28:55.203Z",
+        "updatedAt": "2022-10-31T06:28:55.203Z"
+    },
+    {
+        "seq": 2,
+        "id_jpt": null,
+        "name": "richard.choi",
+        "position": "이사",
+        "level": -1,
+        "password": "ch1whdrb",
+        "email": "star_horse@naver.com",
+        "important": null,
+        "약칭": "JG",
+        "jandi_id_map": "JG",
+        "depart": null,
+        "configuration": null,
+        "createdAt": "2022-11-29T01:26:05.816Z",
+        "updatedAt": "2022-11-29T01:26:05.816Z"
+    },
+    {
+        "seq": 3,
+        "id_jpt": null,
+        "name": "심규정",
+        "position": "대리",
+        "level": null,
+        "password": "ezct@",
+        "email": "info7@ezchemtech.com",
+        "important": null,
+        "약칭": "KJ",
+        "jandi_id_map": "KJ",
+        "depart": null,
+        "configuration": null,
+        "createdAt": "2022-12-19T08:06:17.619Z",
+        "updatedAt": "2022-12-20T08:40:34.256Z"
+    }
+]
