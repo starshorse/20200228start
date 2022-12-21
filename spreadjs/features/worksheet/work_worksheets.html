@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script> 
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div>
+			<label for 'AddSheet'>AddSheet</label>
+			<input type='button' id ='button1' value='Add'>
+			<label for 'RemoveSheet'>removeSheet</label>
+			<input type='button' id ='button2' value='Remove'>
+		</div>	
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 3 } );
+			var activeSheet = spread.getSheet(0);
+
+			$('#button1').click( function()
+			{
+				// Create a new sheet and add it at 2nd position 			
+				var sheet = new GC.Spread.Sheets.Worksheet(); 
+				sheet.name('The added sheet')
+				spread.addSheet( 1, sheet ) 
+			})			
+		        $('#button2').click( function()
+			{
+
+				spread.removeSheet(1) 		
+			})			
+			spread.setSheetCount(5); 		
+			spread.sheets[0].name("The first sheet")
+			spread.sheets[1].name("The second sheet")
+			spread.sheets[0].options.sheetTabColor ="LemonChiffon";		
+		// Move WorkSheet. 
+			spread.changeSheetIndex("Sheet3", 1) 			
+		        spread.sheets[1].getCell(0,0).text('changeSheetIndex successful'); 						
+		// copy WorkSheet. 
+			var tableData = {
+				sales: [
+				    { orderDate: '1/6/2013', item: 'Pencil', units: 95, cost: 1.99},
+				    { orderDate: '4/1/2013', item: 'Binder', units: 60, cost: 4.99},
+				    { orderDate: '6/8/2013', item: 'Pen Set', units: 16, cost: 15.99},
+				    { orderDate: '8/1/2013', item: 'Pencil', units: 20, cost: 24.99},
+				    { orderDate: '10/8/2013', item: 'Binder', units: 31, cost: 16.99}
+				]
+			    };
+
+			    activeSheet.getCell(7,2).text("Total");
+			    activeSheet.getCell(7,3).formula("=SUM(Sheet1!D2:D6)");
+
+			    var table = activeSheet.tables.add('Table1', 0, 0, 7, 4);
+			    var tableColumn1 = new GC.Spread.Sheets.Tables.TableColumn(1, "orderDate", "Order Date", "yyyy-mm-dd");
+			    var tableColumn2 = new GC.Spread.Sheets.Tables.TableColumn(2, "item", "Item");
+			    var tableColumn3 = new GC.Spread.Sheets.Tables.TableColumn(3, "units", "Units");
+			    var tableColumn4 = new GC.Spread.Sheets.Tables.TableColumn(4, "cost", "Cost");
+			    table.autoGenerateColumns(false);
+			    table.bind([tableColumn1, tableColumn2, tableColumn3, tableColumn4], 'sales', tableData);
+			    activeSheet.autoFitColumn(0);
+
+			    spread.commandManager().execute({cmd: "copySheet", sheetName: spread.sheets[0].name() ,  targetIndex: 3, newName: "Sheet1 (2)", includeBindingSource: true});
+		// Hide or UnHide WorkSheet. 
+			    spread.getSheet(1).visible(false )
+			    spread.getSheet(3).visible( GC.Spread.Sheets.SheetTabVisible.hidden ); 		
+			    spread.getSheet(2).visible( GC.Spread.Sheets.SheetTabVisible.veryHidden ); 		
+	        // default Style .. 
+			   // Set Default Style
+			    activeSheet.setRowCount(5, GC.Spread.Sheets.SheetArea.viewport);
+			    activeSheet.setColumnCount(5, GC.Spread.Sheets.SheetArea.viewport);
+			  
+			   // Set the default styles.
+			   var defaultStyle = new GC.Spread.Sheets.Style();
+			   defaultStyle.backColor = "LemonChiffon";
+			   defaultStyle.foreColor = "Red";
+			   defaultStyle.formatter = "0.00";
+			   defaultStyle.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+			   defaultStyle.borderLeft =
+			   new GC.Spread.Sheets.LineBorder("Green",GC.Spread.Sheets.LineStyle.medium);
+			   defaultStyle.borderTop =
+			   new GC.Spread.Sheets.LineBorder("Green",GC.Spread.Sheets.LineStyle.medium);
+			   defaultStyle.borderRight =
+			   new GC.Spread.Sheets.LineBorder("Green",GC.Spread.Sheets.LineStyle.medium);
+			   defaultStyle.borderBottom = 
+			   new GC.Spread.Sheets.LineBorder("Green",GC.Spread.Sheets.LineStyle.medium);
+			   activeSheet.setDefaultStyle(defaultStyle, GC.Spread.Sheets.SheetArea.viewport);
+			   var rowCount = activeSheet.getRowCount();
+			   var colCount = activeSheet.getColumnCount();
+			   for(var i = 0; i < rowCount; i++)
+			    {
+			      for(var j = 0; j < colCount; j++)
+			       {
+				 activeSheet.setValue(i, j, i+j, GC.Spread.Sheets.SheetArea.viewport);
+			       }
+			    }
+			  spread.setActiveSheetIndex(1) 		
+	   //		  let sheet = spread.sheets[1]		
+	   		  let sheet = spread.getActiveSheet()  		
+			  console.log( spread.getActiveSheetIndex() ) 		
+			  sheet.options.gridline = { color:"red", showVerticalGridline: true , 
+			  showHorizontalGridline: false }; 
+			  spread.invalidateLayout();
+			  spread.repaint();
+
+		};
+	</script>
+	
+</html> 
+
+
+
