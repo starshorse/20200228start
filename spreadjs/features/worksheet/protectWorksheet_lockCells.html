@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+	// unlock Cells in a Protected Worksheet.
+			sheet.getCell( 1,1, GC.Spread.Sheets.SheetArea.viewport ).locked( false ); 
+			sheet.setValue( 1,1, 'unLocked' )
+			sheet.getRange( -1, 3, -1, 1).locked( false )
+			sheet.getRange( 5, -1,1,-1).locked( false )
+			sheet.options.isProtected = true ;
+	// Lock a Range of Cells in a Protected Worksheet  
+			let style = new GC.Spread.Sheets.Style(); 
+			style.locked = false; 
+			sheet.setDefaultStyle( style );
+			new GC.Spread.Sheets.CellRange( sheet, 0, 0, 13, 4 ).locked( true ); // 해당 영역만 Lock  
+			sheet.options.isProtected = true; 
+			style = new GC.Spread.Sheets.Style(); 
+			style.locked = true; 
+			sheet.setDefaultStyle( style );
+	// Enable Protection Options in a Locked Worksheet 
+			sheet.options.isProtected = true;
+			sheet.options.protectionOptions.allowDeleteRows  = true ; 
+			sheet.options.protectionOptions.allowDeleteColumns = true ;
+			sheet.options.protectionOptions.allowInsertRows = true ;
+			sheet.options.protectionOptions.allowInsertColumns = true; 
+			sheet.options.protectionOptions.allowDragInsertRows = true;
+			sheet.options.protectionOptions.allowDragInsertColumns = true; 
+			sheet.options.protectionOptions.allowOutlineColumns = true ; 
+	// Sheet Area Offset ..
+			sheet.options.sheetAreaOffset = { left: 2, top: 2 } 
+			spread.bind( GC.Spread.Sheets.Events.InvalidOperation, (e, args )=>{
+				alert( args.messge )
+				if( args.invalidType === GC.Spread.Sheets.InvalidOperationType.groupProtected ){
+					args.message = "Expand or Collagpse operation is not allowed for a protected worksheet" ;
+					alert( args.message )		
+				}
+
+			})
+
+
+		};
+	</script>
+	
+</html> 
+
+
+
