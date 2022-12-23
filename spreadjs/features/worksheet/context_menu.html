@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script> 
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div>
+			<input type="button" id="contextMenu_remove" value="context Menu remove">
+			<input type="button" id="contextMenu_disable" value="context Menu disable">
+		</div>	
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			document.getElementById("contextMenu_remove").addEventListener("click", function(e){ removeItem() });		
+			document.getElementById("contextMenu_disable").addEventListener("click", function(e){ disableMenu() });		
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var activeSheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+		// Customize the view and structure of the menu 
+			function CustomMenuView() {}
+			CustomMenuView.prototype = new GC.Spread.Sheets.ContextMenu.MenuView() ; 
+			CustomMenuView.prototype.createMenuItemElement = function( menuItemData ){
+				// create menu item view by your self 
+				// you can call super's createMenuItemElement here and only customize a few of menu item 
+				// should return menuitem view back 
+				var self = this;
+				if( menuItemData.name === "openDialog" ){
+					var containers = GC.Spread.Sheets.ContextMenu.MenuView.prototype.createMenuItemElement.call( self, menuItemData );
+					var supMenuItemContainer = containers[0];
+					return supMenuItemContainer; 
+				}else{
+					var menuItemView = GC.Spread.Sheets.ContextMenu.MenuView.prototype.createMenuItemElement.call( self, menuItemData );
+					return menuItemView 
+				}	
+			}
+			var openDialog = {
+				text: 'Open Dialog', 
+				name:'openDialog',
+				command: showLoginDialog,
+				workArea: 'viewport'
+			}
+			spread.contextMenu.menuData.push( openDialog );
+			spread.contextMenu.menuView = new CustomMenuView(); 
+			function showLoginDialog(){
+			}
+			// Add /Remove the custom menu options 
+			var removeItem = ()=>{		
+				$.each( spread.contextMenu.menuData, function( p , v){
+					if( v.name === 'openDialog' ){
+						spread.contextMenu.menuData.splice( p, 1 ) 		
+					}
+				})
+			}
+			var disableMenu = ()=>{
+				spread.options.allowContextMenu = false; 		
+				spread.contextMenu.menuView.scrollable( true );
+				spread.contextMenu.menuView.maxHeight( 400 ); 
+			}
+						
+		};
+	</script>
+	
+</html> 
+
+
+
