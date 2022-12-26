@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div>
+			<input type="button"  id="button1" value="AddRow" >
+			<input type="button"  id="button2" value="RemoveRow" >
+			<input type="button"  id="button3" value="AddCol" >
+			<input type="button"  id="button4" value="RemoveCol" >
+			<input type="button"  id="button5" value="Select Row 4" >
+			<input type="button"  id="button6" value="Clear Selection" >
+			<input type="button"  id="button7" value="Set Top Row" >
+			<input type="button"  id="button8" value="Set Top Column" >
+			<input type="button"  id="button9" value="Get topRow leftCol" >
+		</div>1
+		<div>
+		</div>	
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.setRowCount( 3 );
+			sheet.setValue( 0,0, "Row 1" ) 
+			sheet.setValue( 1,0, "Row 2" ) 
+		        sheet.setValue( 2,0, "Row 3" ) 
+		 	sheet.setColumnWidth( 0, 90.0 ) 
+			
+			document.getElementById("button1").addEventListener("click", function(e){
+				sheet.addRows(1,1)
+				sheet.setValue(1,0, "added row") 
+			})			
+			document.getElementById("button2").addEventListener("click", function(e){
+				sheet.deleteRows(1,1)
+			})			
+			document.getElementById("button3").addEventListener("click", function(e){
+				sheet.addColumns(1,1)
+				sheet.setValue(0,1, "added Column") 
+			})			
+			document.getElementById("button4").addEventListener("click", function(e){
+				sheet.deleteColumns(1,1)
+			})			
+							
+// Set number of Rows and Columns 
+			sheet.setRowCount( 3 )
+			sheet.setColumnCount(3)
+// Set Row Height and Column Width 
+			sheet.setRowHeight( 1, 90 )
+			sheet.setColumnWidth( 1, 120 ) 
+// Selet and Deselect Rows. 
+			sheet.setColumnCount(30) 
+			sheet.setRowCount(30)
+			document.getElementById("button5").addEventListener("click", function(e)
+			{
+				sheet.addSelection( 3, -1,1,-1 )
+			})
+			document.getElementById("button6").addEventListener("click", function(e)
+			{
+			        sheet.clearSelection();	
+			})
+// Set Top Row and Column 
+			document.getElementById("button7").addEventListener("click", function(e)
+			{
+				sheet.showRow( 9, GC.Spread.Sheets.VerticalPosition.top ) 
+			})
+			document.getElementById("button8").addEventListener("click", function(e)
+			{
+				sheet.showColumn( 9, GC.Spread.Sheets.HorizontalPosition.left ) 		
+			})
+// Get Index of Displayed Cell 
+			document.getElementById("button9").addEventListener("click", function(e)
+			{
+				let topRow = sheet.getViewportTopRow(1);
+				let leftCol = sheet.getViewportLeftColumn(1);
+				alert("Index of top row being displayed:" + topRow +"\n" +
+					"Index of first column being displayed:" + leftCol ); 
+			})
+                        
+						
+		};
+	</script>
+	
+</html> 
+
+
+

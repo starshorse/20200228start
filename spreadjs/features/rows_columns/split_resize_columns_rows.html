@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.setRowCount(10);
+			sheet.setColumnCount(7); 
+			sheet.setValue(0,0,"Western" );
+			sheet.setValue(0,1,"Westron" );
+			sheet.setValue(0,2,"Westron" );
+			sheet.setValue(1,0,"A");
+			sheet.setValue(1,1,"B");
+			sheet.setValue(1,2,"C");
+
+		 	spread.options.columnResizeMode = GC.Spread.Sheets.ResizeMode.split; 
+			spread.options.rowResizeMode = GC.Spread.Sheets.ResizeMode.split; 
+			sheet.suspendPaint();
+			let colHeader = GC.Spread.Sheets.SheetArea.colHeader;
+			sheet.setRowCount(12);
+			sheet.setColumnCount(5);
+			for( var i=0 ; i< sheet.getColumnCount(); i++ )
+				sheet.setColumnWidth( i , 120 );
+			
+			sheet.setValue(0,0, 'Stock Investment Name', colHeader );
+			sheet.setValue(0,1, 'Current Qute($)', colHeader );
+			sheet.setValue(0,2, 'Market Value($)', colHeader ); 
+			sheet.setValue(0,3, 'Total Cost($)', colHeader ); 
+			sheet.setValue(0,4, 'Gain/Loss(%)', colHeader ); 
+			sheet.setArray(0,0, [
+			['Citycon-Oyj corporation', 232.460, 492.00, 500.00, '-1.6%'], 
+			['M-Secure Corperation', 560.270, 312.00, 300.00, '4.0%' ],
+			['Nortan Corporation', 433.220, 711.00, 688.50, '3.3%'],
+			['Teski Corporation', 232.310, 693.00, 465.90, '48.7%']			
+			])
+			spread.resumePaint();		
+							
+		};
+	</script>
+	
+</html> 
+
+
+
