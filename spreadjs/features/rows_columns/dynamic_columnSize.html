@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.setRowCount(10);
+			sheet.setColumnCount(7); 
+			
+			sheet.suspendPaint(); 
+			var colHeader = GC.Spread.Sheets.SheetArea.colHeader ; 		
+
+
+			sheet.setValue(0,0,"Western" );
+			sheet.setValue(0,1,"Westron" );
+			sheet.setValue(0,2,"Westron" );
+			sheet.setValue(1,0,"A");
+			sheet.setValue(1,1,"B");
+			sheet.setValue(1,2,"C");
+// Freeze Columns and Rows. 
+			sheet.frozenRowCount(3)
+			sheet.frozenColumnCount(1)
+			sheet.options.frozenlineColor ="red" 		
+// Freeze Trailing Rows and Columns 					
+			sheet.frozenTrailingRowCount( 1, false );
+			sheet.frozenTrailingColumnCount( 1, false ); 
+
+			// setting dynamic column sizes 
+			sheet.setColumnWidth( 0, "1.5*" );
+			sheet.setColumnWidth( 1, "1.5*" );
+			sheet.setColumnWidth( 3, "*" );
+			sheet.setColumnWidth( 4, "*" ); 
+			// Set the row height 
+			sheet.setRowHeight( 0, 50, colHeader ); 
+			for( var row = 0; row < 12 ; row ++ )
+			{
+				sheet.setRowHeight( row, "*" ); 
+				for( col = 0 ; col <5 ; col++ ){
+					sheet.getCell( row, col )
+					.cellPadding('0 0 0 10')
+					.vAlign( GC.Spread.Sheets.VerticalAlign.center ); 		
+				}
+			}
+			sheet.setValue(0,0,'Company Name', colHeader );
+			sheet.setValue(0,1,'City', colHeader ); 
+			sheet.setValue(0,2,'State', colHeader );
+			sheet.setValue(0,3,'Phone', colHeader );
+			sheet.setValue(0,4, 'Fax', colHeader );
+
+			sheet.setArray(0, 0, [
+				["Super Mart of the West", "Bentonville", "Arkansas", "(800) 555-2797", "(800) 555-2171"],
+				["Electronics Depot", "Atlanta", "Georgia", "(800) 595-3232", "(800) 595-3231"],
+				["K&S Music", "Minneapolis", "Minnesota", "(612) 304-6073", "(612) 304-6074"],
+				["Tom's Club", "Issaquah", "Washington", "(800) 955-2292", "(800) 955-2293"],
+				["E-Mart", "Hoffman Estates", "Illinois", "(847) 286-2500", "(847) 286-2501"],
+				["Walters", "Deerfield", "Illinois", "(847) 940-2500", "(847) 940-2501"],
+				["StereoShack", "Fort Worth", "Texas", "(817) 820-0741", "(817) 820-0742"],
+				["Circuit Town", "Oak Brook", "Illinois", "(800) 955-29291212321343298459843579235723948231942304823472384723984238472384261", "(800) 955-9392"],
+				["Premier Buy", "Richfield", "Minnesota", "(612) 291-1000", "(612) 291-2001"],
+				["ElectrixMax", "Naperville", "Illinois", "(630) 438-7800", "(630) 438-7801"],
+				["Video Emporium", "Dallas", "Texas", "(214) 854-3000", "(214) 854-3001"],
+				["Screen Shop", "Mooresville", "North Carolina", "(800) 445-6937", "(800) 445-6938"]
+			]);
+			spread.resumePaint(); 		
+		};
+	</script>
+	
+</html> 
+
+
+

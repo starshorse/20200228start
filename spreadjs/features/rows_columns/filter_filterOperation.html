@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div>
+			<input type="button" id="button1" value="Get Filter Stats">
+			<input type="button" id="button2" value="Get Filter results">
+			<input type="button" id="button3" value="Hide">
+			<input type="button" id="button4" value="Show">
+			<input type="button" id="button5" value="Allow Auto Extend Range">
+		</div> 		
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var activeSheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			activeSheet.setRowCount(10);
+			activeSheet.setColumnCount(7); 
+					
+			activeSheet.setValue(0, 0, 10);
+			activeSheet.setValue(1, 0, 100);
+			activeSheet.setValue(2, 0, 50);
+			activeSheet.setValue(3, 0, 40);
+			activeSheet.setValue(4, 0, 80);
+			activeSheet.setValue(5, 0, 1);
+			activeSheet.setValue(6, 0, 65);
+			activeSheet.setValue(7, 0, 20);
+			activeSheet.setValue(8, 0, 30);
+			activeSheet.setValue(9, 0, 35);
+					
+			function CustomFilter(){
+				GC.Spread.Sheets.ConditionalFormatting.Condition.apply( this, arguments );
+			}
+			CustomFilter.prototype = new GC.Spread.Sheets.ConditionalFormatting.Condition(); 
+			CustomFilter.prototype.evaluate = function( evaluator, row, col ){
+				var value = evaluator.getValue( row, col );
+				if( value != null && value >= 10 && value <= 50 ){
+					return true;
+				}else{
+					return false; 			
+				}
+			}
+			
+		        let rowFilter = new GC.Spread.Sheets.Filter.HideRowFilter( new GC.Spread.Sheets.Range(0,0,7,1)); 
+			activeSheet.rowFilter( rowFilter );
+			rowFilter.addFilterItem(0, new CustomFilter()); 
+			rowFilter.filter(0);
+// Get Row Filter Status 
+                        document.getElementById("button1").addEventListener("click", function(e){
+				let rowFilter = spread.getActiveSheet().rowFilter(); 
+				if( rowFilter.isFiltered(0)){
+					console.log("Row-filtering executed for Column1");
+				}else{
+					console.log("Row-filtering not executed for Column1");
+				}			
+			})
+// Get Row Filter Results 
+			document.getElementById("button2").addEventListener("click", function(e){
+				let rowFilter = spread.getActiveSheet().rowFilter(); 
+				if(!rowFilter.isFiltered(0)){
+					return;		
+						}
+				let filterItems = rowFilter.getFilterItems(0); 
+				let str = "Filtered strings:";
+				filterItems.forEach( function( item ){
+					str += " " + item.expected(); 
+						})
+				console.log(str); 
+				console.log(""); 
+				// number of Filtered-In ( displayed ) rows 	
+				let range = rowFilter.range;		
+				let filteredInRows = [] , filteredOutRows = [];
+				for( var i = range.row, last = range.row + range.rowCount; i < last; i++ ){
+					if( rowFilter.isRowFilteredOut(i)){
+						filteredOutRows.push(i)		
+					}else{
+						filteredInRows.push(i);
+					}			
+				}
+				console.log("Number of Filtered-In( displayed ) rows: " + filteredInRows.length ); 
+				console.log(""); 
+				console.log("Number of Filtered-out( hidden ) rows:" + filteredOutRows.length ); 
+				console.log("");
+				filteredOutRows.forEach( function(item){
+					console.log("Filtered-Out (hidden) row index: " + item );		
+				})
+				console.log("");
+				// Filtered-In ( displayed )/Filtered-Out ( hidden ) rows 
+				filteredOutRows.forEach( function(item){
+					console.log("Data of Filtered-Out(hidden) row: " + activeSheet.getValue( item, 0 )); 
+				})			
+				console.log("");
+				filteredInRows.forEach( function(item){
+					console.log("Data of Filtered-In ( displayed )row: " + activeSheet.getValue(item, 0 ));		
+							
+				});			
+
+			})
+// Hide Filter Indicator 					
+			document.getElementById("button3").addEventListener("click", function(){
+				let rowFilter = spread.getActiveSheet().rowFilter(); 		
+				rowFilter.filterButtonVisible(0, false ); 
+				activeSheet.repain() 
+			})
+			document.getElementById("button4").addEventListener("click", function(){
+				let rowFilter = spread.getActiveSheet().rowFilter(); 		
+				rowFilter.filterButtonVisible(0, true ); 
+				activeSheet.repaint() 
+			})
+// Auto Extend Filter Range .. 					
+			spread.options.allowAutoExtendFilterRange = false ; 
+			function AllowAutoExtend( spread, rowFilter ){
+				spread.options.allowAutoExtendFilterRange = true;
+			        let extendFilterRange = rowFilter.extendedRange; 
+				console.log( extendFilterRange ) 
+			}			
+                        document.getElementById("button5").addEventListener("click", function(){
+				let rowFilter = spread.getActiveSheet().rowFilter(); 		
+				AllowAutoExtend( spread, rowFilter ) 
+			})
+
+		};
+	</script>
+	
+</html> 
+
+
+
