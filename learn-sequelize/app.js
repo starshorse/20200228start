@@ -26,21 +26,26 @@ if( process.env.NODE_ENV == 'development' ){
 	( async ()=>{
 		const users = await sequelize.query("SELECT * FROM Book", { type: sequelize.QueryTypes.SELECT });
 		console.log( users )
+	})();
+	( async ()=>{
+		const t = await sequelize.transaction() 
+		try{
+		     for( const i of [0,1,2,3,4,5] ){
+			await  models.User.create({ name:`RICHARD ${i}` , email :`richard.${i}@ez-office.co.kr` },{ transaction: t } ) 
+		     }
+		     await t.commit();	
+		}catch(err){
+		     await t.rollback(); 	
+		}
+
+	})()
+}else if( process.env.NODE_ENV == 'ezoffice' ){
+	console.log( models );
+	( async ()=>{
+	    let  data =	await models['TB_admin_1'].findAll()
+	    console.log( data ) 	
 	})()
 };
-
-( async ()=>{
-	const t = await sequelize.transaction() 
-	try{
-	     for( const i of [0,1,2,3,4,5] ){
-	     	await  models.User.create({ name:`RICHARD ${i}` , email :`richard.${i}@ez-office.co.kr` },{ transaction: t } ) 
-	     }
-	     await t.commit();	
-	}catch(err){
-	     await t.rollback(); 	
-	}
-
-})()
 
 // sequelize.sync() 
 
