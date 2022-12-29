@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script> 
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div>
+			<input type="button" id="button1" value="workCells"> 
+			<input type="button" id="button2" value="set Active Cell"> 
+			<input type="button" id="button3" value="Get Ranges of Selected Cells"> 
+		</div>	
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var activeSheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+			let sheet = spread.getActiveSheet(); 
+			sheet.getCell(0,0).formatter("0.00_);(0.00)" )
+			sheet.getCell(1,0).formatter("0.00_);(0.00)" )
+			sheet.getCell(0,1).formatter("0.00_);(0.00)" )
+			sheet.getCell(1,1).formatter("0.00_);(0.00)" )
+			sheet.getCell(0,0).text("10") 
+			sheet.setText(1,0,"10")
+			sheet.getCell(0,1).value(10) ; 		
+			sheet.setValue(1,1,10);		
+			document.getElementById("button1").addEventListener("click", function(e){
+				alert("Obtaining cell values by referring to Text property: "+
+				sheet.getCell(0,0).text() + "\n" +
+				"Obtaining cell values by calling GetText method:" + sheet.getText(1,0) + "\n" + 
+				"Obtaining cell values by referring to Value property:" + 
+				sheet.getCell(0,1).value() +"\n" +
+				"Obtaining cell values by calling GetValue method:" + sheet.getValue(1,1)); 
+						
+							
+			})
+// Set Active Cell 
+		      document.getElementById("button2").addEventListener("click", function(e)
+		      {			      
+				sheet.setActiveCell(3,3)
+				sheet.showCell( 3,3, GC.Spread.Sheets.VerticalPosition.top , GC.Spread.Sheets.HorizontalPosition.left );  
+		      })			      
+// Select Multiple Cells 
+		      sheet.selectionPolicy( GC.Spread.Sheets.SelectionPolicy.MultiRange ); 
+		      sheet.addSelection(0,0,2,2); 
+		      sheet.addSelection(3,3,2,2); 
+// Get Ranges of Selected Cells 
+		      document.getElementById("button3").addEventListener("click", function(e)
+		      {
+				let activeSheet = spread.getActiveSheet();
+			        let selectedRanges = activeSheet.getSelections();
+				for( var i = 0 ; i < selectedRanges.length; i++ )
+				{
+					console.log("-----------------------------");
+					console.log("Using Range class");
+					console.log("Selected top row index: " + selectedRanges[i].row ); 
+					console.log("Number of selected rows:" + selectedRanges[i].rowCount );
+					console.log("Selected first column index:" + selectedRanges[i].col );
+					console.log("Number of selected columns: " + selectedRanges[i].colCount ); 
+				}			
+
+
+			})		      
+// Set Conditional Formatting for Cells 
+		    let styleBlue = new GC.Spread.Sheets.Style();
+		    let stylePink = new GC.Spread.Sheets.Style();
+		    let styleLime = new GC.Spread.Sheets.Style();
+		    let styleYellow = new GC.Spread.Sheets.Style();
+		    let styleEmpty = new GC.Spread.Sheets.Style();
+		    styleBlue.backColor = "blue" ;			
+		    styleBlue.foreColor = "white" ;			
+		    stylePink.backColor = "pink" ;			
+		    styleLime.backColor = "lime" ;			
+		    styleYellow.backColor = "yellow" ;			
+		    styleEmpty.backColor = undefined ;			
+		    styleEmpty.foreColor = undefined ;			
+                    // Set conditional formats to respective cells
+		    sheet.conditionalFormats.addCellValueRule( GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.equalsTo, 0, undefined , styleEmpty , [new GC.Spread.Sheets.Range( 1,1,1,1 )]); 
+		    sheet.conditionalFormats.addCellValueRule( GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.lessThan, 10, undefined , styleBlue , [new GC.Spread.Sheets.Range( 1,1,1,1 )]); 
+		    sheet.conditionalFormats.addCellValueRule( GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.between, 20, 50 , stylePink , [new GC.Spread.Sheets.Range( 2,1,1,1 )]); 
+		    sheet.conditionalFormats.addCellValueRule( GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.between, 50, 80 , styleLime , [new GC.Spread.Sheets.Range( 3,1,1,1 )]); 
+		    sheet.conditionalFormats.addCellValueRule( GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.greaterThan, 80 , undefined, styleYellow , [new GC.Spread.Sheets.Range( 4,1,1,1 )]); 
+		    sheet.getCell(2,1).value(25)
+		    sheet.getCell(3,1).value(77)
+		    sheet.getCell(4,1).value(88)
+		    
+		    sheet.bind( GC.Spread.Sheets.Events.CellClick, function( e, info )
+		    {
+			if( info.sheetArea === GC.Spread.Sheets.SheetArea.viewport )
+			{
+				console.log("Clicked cell Index (" + info.row + "," + info.col + ")" );			
+				let cellRect = spread.getActiveSheet().getCellRect( info.row, info.col );
+				console.log("X coordinate:" + cellRect.x ); 
+				console.log("Y coordinate:" + cellRect.y );
+				console.log("Cell width:" + cellRect.width );
+				console.log("Cell height:" + cellRect.height );
+			}			
+					    
+		    })	
+		    $("#ss").click( function(e)
+		    {
+			let offset = $("#ss").offset();
+			let x = e.pageX - offset.left; 
+			let y = e.pageY - offset.top; 
+			let target = spread.getActiveSheet().hitTest( x, y );
+			if( target && ( target.rowViewportIndex === 0 || target.rowViewportIndex === 1 ) && ( target.colViewportIndex === 0 || target.colViewportIndex === 1 ))
+			{
+				console.log("Row index of mouse-clicked cells:" + target.row ); 
+				console.log("Column index of mouse-clicked cells: " + target.col );  		
+			}
+		    })			    
+		};
+	</script>
+	
+</html> 
+
+
+
