@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		var data = [{
+			     "name": "Peyton's Assets",
+			     "savings": 25000,
+			     "shares": 55000,
+			     "stocks": 15000,
+			     "house": 250000,
+			     "bonds": 11000,
+			     "car": 7500
+			}, {
+			     "name": "Icey's Assets",
+			     "savings": 30000,
+			     "shares": 45000,
+			     "stocks": 25000,
+			     "house": 20000,
+			     "bonds": 18000,
+			     "car": 75000
+			}, {
+			     "name": "Walter's Assets",
+			     "savings": 20000,
+			     "shares": 4000,
+			     "stocks": 95000,
+			     "house": 30000,
+			     "bonds": 10000,
+			     "car": 56000
+			}, {
+			     "name": "Chris's Assets",
+			     "savings": 70000,
+			     "shares": 85000,
+			     "stocks": 35000,
+			     "house": 20000,
+			     "bonds": 15000,
+			     "car": 45000
+			}];
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var renderSheet = spread.getSheet(0);
+			var templateSheet = new GC.Spread.Sheets.Worksheet() 		
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+				
+			templateSheet.suspendPaint()
+			templateSheet.addSpan(0,0,1,4);
+			templateSheet.getCell(0,0).font("20px Arial").hAlign( GC.Spread.Sheets.HorizontalAlign.center).vAlign(GC.Spread.Sheets.VerticalAlign.center)
+			templateSheet.setBindingPath(0,0, "name");
+			templateSheet.setValue(1,0,"Asset Type");
+			templateSheet.setValue(1,1,"Amount");
+			templateSheet.setValue(1,2,"Diagram");
+			templateSheet.setValue(1,3,"Note");
+			templateSheet.setValue(2,0, "Savings");
+			templateSheet.setBindingPath( 2,1,"savings");
+			templateSheet.setValue(3,0, "Shares");
+			templateSheet.setBindingPath(3,1, "shares");
+			templateSheet.setValue(4,0, "Stocks");
+			templateSheet.setBindingPath(4,1, "stocks");
+			templateSheet.setValue(5,0, "House");
+			templateSheet.setBindingPath(5,1,"house");
+			templateSheet.setValue(6,0, "Bonds");
+			templateSheet.setBindingPath(6,1,"bonds")
+			templateSheet.setValue(7,0, "Car" );
+			templateSheet.setBindingPath(6,1, "car"); 
+			templateSheet.setFormatter( -1, 1, "$#,##0" );
+			templateSheet.addSpan( 2,2,6,1 );
+			templateSheet.addSpan( 8,1,1,3 );
+			templateSheet.setValue( 8, 0, "Total");
+			templateSheet.getCell(8,0).font("14px Arial");
+			templateSheet.setFormula(8,1,"=SUM(B3:B8)") 
+			templateSheet.getCell(8,1).hAlign(GC.Spread.Sheets.HorizontalAlign.center ); 		
+			templateSheet.setFormula(2,2,' =PIESPARKLINE(B3:B8, "#919F81", "#D7913E", "CEA722", "#B58091", "#8974A9","#728BAD")');		
+			templateSheet.getCell(2,3).backColor("#919F81").formula("=B3/$B$9"); 		
+			templateSheet.getCell(3,3).backColor("#D7913E").formula("=B4/$B$9"); 		
+			templateSheet.getCell(4,3).backColor("#CEA722").formula("=B5/$B$9"); 		
+			templateSheet.getCell(5,3).backColor("#B58091").formula("=B6/$B$9"); 		
+			templateSheet.getCell(6,3).backColor("#8974A9").formula("=B7/$B$9"); 		
+			templateSheet.getCell(7,3).backColor("#728BAD").formula("=B8/$B$9");
+			templateSheet.setFormatter(-1,3,"0.00%") 		
+			templateSheet.setRowHeight(0,50);
+			for( var i=1; i< 8 ; i++ ){
+				templateSheet.setRowHeight( i , 25 ) 		
+			}
+			templateSheet.setColumnWidth( 0, 100);
+			templateSheet.setColumnWidth( 1, 100);
+			templateSheet.setColumnWidth( 2, 200); 
+			templateSheet.resumePaint() 
+			
+			renderSheet.setValue(0,0,data[0]) ;		
+			renderSheet.setValue(0,1,data[1]) ;		
+			renderSheet.setValue(1,0,data[2]) ;		
+			renderSheet.setValue(1,1,data[3]) ;		
+			let rangeTemplateCellType = new GC.Spread.Sheets.CellTypes.RangeTemplate( templateSheet, 0,0, 9, 4 ); 
+			renderSheet.getRange(0,0,2,2).cellType( rangeTemplateCellType );
+			renderSheet.setColumnWidth(0,400 );
+			renderSheet.setRowHeight( 0, 250 ); 
+			renderSheet.setColumnWidth(1,400 );
+			renderSheet.setRowHeight( 1, 250 ); 
+			renderSheet.resumePaint()		
+		};
+	</script>
+	
+</html> 
+
+
+

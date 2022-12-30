@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var activeSheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+// Button Cell 
+			let cellType = new GC.Spread.Sheets.CellTypes.Button();
+			cellType.buttonBackColor("#FFFF00");
+			cellType.text("this is a button");
+			activeSheet.getCell(0,2).cellType( cellType ); 
+// Check Box Cell
+			cellType = new GC.Spread.Sheets.CellTypes.CheckBox();
+			cellType.caption("caption")
+			cellType.textTrue("True")
+			cellType.textFalse("False")
+			cellType.textIndeterminate("Indeterminate");
+		        cellType.textAlign( GC.Spread.Sheets.CellTypes.CheckBoxTextAlign.bottom ); 
+			cellType.isThreeState( true );
+			cellType.boxSize(20); 
+			activeSheet.getCell(1,2).cellType( cellType );
+// Check Box List Cell 
+			let checkBoxListCellType = new GC.Spread.Sheets.CellTypes.CheckBoxList();
+			activeSheet.getCell(0,1).font("italic 16px Calibri"); 
+			activeSheet.getCell(0,1).foreColor("Red")
+			activeSheet.getCell(0,1, GC.Spread.Sheets.SheetArea.viewport ).value("What factors are important to you when buying software products?").wordWrap(true);  		
+			checkBoxListCellType.items([{ text: "Price", value:1 }, { text: "Usability", value: 2}, { text:"Features", value: 3 }, { text: "Support", value:4 }, { text: "Others", value: 5 }]);   		
+			checkBoxListCellType.itemSpacing({ horizontal: 20, vertical: 10 }) 
+			checkBoxListCellType.direction( GC.Spread.Sheets.CellTypes.Direction.vertical ); 
+			checkBoxListCellType.textAlign( GC.Spread.Sheets.CellTypes.CheckBoxTextAlign.right ); 
+			checkBoxListCellType.boxSize(20);
+			activeSheet.getCell(1,1).cellType( checkBoxListCellType ); 		
+			activeSheet.setRowHeight( 0, 70.0, GC.Spread.Sheets.SheetArea.viewport ); 		
+			activeSheet.setRowHeight( 1, 160.0, GC.Spread.Sheets.SheetArea.viewport ); 		
+
+			activeSheet.setColumnWidth( 1, 200.0 , GC.Spread.Sheets.SheetArea.viewport ); 		
+// Radio Button List Cell 
+			let radioButtonListCellType = new GC.Spread.Sheets.CellTypes.RadioButtonList(); 
+			activeSheet.setText(0,3, "Select Mode of Payment :", GC.Spread.Sheets.SheetArea.viewport ); 		
+			radioButtonListCellType.items( [ { text: "Credit Card", value:1 }, { text:"Debit Card", value:2 }, { text:"Cash", value: 3 }]); 
+			radioButtonListCellType.isFlowLayout( true ); 		
+			radioButtonListCellType.direction( GC.Spread.Sheets.CellTypes.Direction.horizontal ); 
+			radioButtonListCellType.itemSpacing(
+			{
+				horizontla: 20, vertical: 10
+			}) 
+			radioButtonListCellType.textAlign( GC.Spread.Sheets.CellTypes.CheckBoxTextAlign.left ); 
+			radioButtonListCellType.boxSize(20);
+			activeSheet.getCell( 1, 3).cellType( radioButtonListCellType ); 
+			activeSheet.setRowHeight( 1, 30.0 , GC.Spread.Sheets.SheetArea.viewport ); 		
+			activeSheet.setColumnWidth( 3, 3000.0 , GC.Spread.Sheets.SheetArea.viewport ); 		
+// Button List Cell 
+			let buttonListCellType = new GC.Spread.Sheets.CellTypes.ButtonList(); 
+			activeSheet.setText(3,1, "Select Programming Languages: ", GC.Spread.Sheets.SheetArea.viewport ); 
+                        buttonListCellType.items([
+			{ text: "Javascript", value: 1 },
+			{ text: "Python", value: 2 },
+			{ text: "C#", value: 3 },
+			{ text: "Java", value: 4 }
+			])
+			activeSheet.getCell(3, 1).cellType( buttonListCellType ); 
+			buttonListCellType.direction( GC.Spread.Sheets.CellTypes.Direction.vertical ); 		
+		        
+			buttonListCellType.itemSpacing({
+				horizontal: 80, 
+				vertical: 20
+			})
+			activeSheet.setRowHeight( 3, 250.0 , GC.Spread.Sheets.SheetArea.viewport ); 		
+			activeSheet.setColumnWidth( 1, 250.0 , GC.Spread.Sheets.SheetArea.viewport ); 			
+// Combo Box Cell 
+			let cellType2 = new GC.Spread.Sheets.CellTypes.ComboBox() ; 
+			cellType2.items(["a","b", "c"]);
+			activeSheet.getCell(4,2).cellType( cellType2 ); 
+			
+// editable Combo Box Cell 
+			let items2 = ["a", "ab", "abc", "apple", "boy", "cat","dog" ]; 
+			let eComboBoxCellType = new GC.Spread.Sheets.CellTypes.ComboBox().items( items2 ).editable( true ); 
+			activeSheet.getCell(4,3).cellType( eComboBoxCellType ); 
+			activeSheet.setColumnWidth(3, 120) 		
+					
+		};
+	</script>
+	
+</html> 
+
+
+
