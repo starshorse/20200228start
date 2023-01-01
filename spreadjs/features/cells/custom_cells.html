@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.setRowCount(10);
+			sheet.setColumnCount(7); 
+			sheet.setValue(0,0,"Western" );
+			sheet.setValue(0,1,"Westron" );
+			sheet.setValue(0,2,"Westron" );
+			sheet.setValue(1,0,"A");
+			sheet.setValue(1,1,"B");
+			sheet.setValue(1,2,"C");
+// Freeze Columns and Rows. 
+			sheet.frozenRowCount(3)
+			sheet.frozenColumnCount(1)
+			sheet.options.frozenlineColor ="red" 		
+// Freeze Trailing Rows and Columns 					
+			sheet.frozenTrailingRowCount( 1, false );
+			sheet.frozenTrailingColumnCount( 1, false ); 
+			sheet.suspendPaint();
+
+			function FivePointedStarCellType()	
+			{
+				this.fillStyle = "orange";
+				this.size = 10;
+			}
+			FivePointedStarCellType.prototype = new GC.Spread.Sheets.CellTypes.Base();		
+			FivePointedStarCellType.prototype.paint = function( ctx, value, x,y,w,h,style, context)
+			{
+				if(!ctx)
+				{
+					return;			
+				}	
+				ctx.save();
+				// draw inside the cell's boundary 
+				ctx.rect( x, y, w, h );
+				ctx.clip();
+				ctx.beginPath();
+				if(value)
+				{
+					ctx.fillStyle = this.fillStyle;
+				}else{
+					ctx.fillStyle = "gray";			
+				}
+				var size = this.size;
+				var dx = x + w /2 ;
+				var dy = y + h /2 ;
+				ctx.beginPath();
+				var dig = Math.PI / 5 * 4;
+				for( var i = 0; i < 5 ; i++ ){
+					ctx.lineTo( dx + Math.sin( i *dig )*size, dy + Math.cos( i*dig )*size);		
+				}	
+				ctx.closePath();
+				ctx.fill();
+				ctx.restore();
+			}			
+			FivePointedStarCellType.prototype.getHitInfo = function( x, y, cellStyle , cellRect, context )
+			{
+				var xm = cellRect.x + cellRect.width /2 ,
+				ym = cellRect.y + cellRect.height /2, size = 10; 
+				var info = { x:x, y:y, row:context.row , col:context.col, cellRect:cellRect, sheetArea: context.sheetArea };    	
+				if( xm -size <= x && x <= xm +size && ym -size <= y && y <= ym+size)
+				{
+					info.isReservedLocation = true;
+				}				
+				return info; 		
+							
+			}			
+			FivePointedStarCellType.prototype.processMouseUp = function( hitInfo )
+			{
+				var sheet = hitInfo.sheet;
+				if( sheet && hitInfo.isReservedLocation ){
+					var row = hitInfo.row, col = hitInfo.col, sheetArea = hitInfo.sheetArea; 
+					var newValue = !sheet.getValue( row, col, sheetArea );
+					var cellEditInfo = { row: row, col:col, newValue: newValue };
+					spread.commandManager().execute({ cmd: "editCell", sheetName: activeSheet.name(), row: row, col: col, newValue: newValue });		
+				        return true;
+				
+				}
+				return false ;		
+
+			}
+			function FullNameCellType(){						
+			}
+                        FullNameCellType.prototype = new GC.Spread.Sheets.CellTypes.Base();
+			FullNameCellType.prototype.paint = function( ctx, value, x, y, w, h, style, context )
+			{
+						
+				if( value ){
+				    GC.Spread.Sheets.CellTypes.Base.prototype.paint.apply( this, [ ctx, value.firstName + "." + value.lastName, x, y, w, h, style, context ]);}		
+			}			
+			FullNameCellType.prototype.updateEditor = function( editorContext, cellStyle, cellRect, contect ){
+			    if( editorContext ){
+				$( editorContext ).width( cellRect.width );
+				$( editorContext ).height( 100 );
+                            } 
+			};
+			FullNameCellType.prototype.createEditorElement = function( context )
+			{
+			      var div = document.createElement("div");
+			      var $div = $(div);
+			      $div.attr("gcUIElement", "gcEditingInput");
+			      $div.css("background-color", "white");
+			      $div.css("position", "absolute");
+			      $div.css("overflow", "hidden"); 
+			      $div.css("border", "2px #4292f7 solid"); 
+			      var $span1 = $("<span></span>");
+			      $span1.css("display","block"); 
+			      var $span2 = $("<span></span>");
+			      $span2.css("display","block");
+			      var $input1 = $("<input type='text' />");
+			      var $input2 = $("<input type='text' />"); 
+			      $div.append($span1);
+			      $div.append($input1);
+			      $div.append($span2);
+			      $div.append($input2);
+			      return div;
+			}
+			FullNameCellType.prototype.getEditorValue = function( editorContext )
+			{
+				if( editorContext && editorContext.children.length === 4 )
+				{
+					var input1 = editorContext.children[1];
+					var firstName = $(input1).val()
+					var input2 = editorContext.children[3]; 
+					var lastName = $(input2).val();
+					return { firstName: firstName, lastName: lastName };
+				}			
+			}			
+                        FullNameCellType.prototype.setEditorValue = function( editorContext, value ){
+				if( editorContext && editorContext.children.length === 4 )
+				{
+					var span1 = editorContext.children[0];
+					$(span1).text("First Name:");
+					var span2 = editorContext.children[2];
+					$(span2).text("Last Name:");
+					if(value){
+						var input1 = editorContext.children[1];
+						$(input1).val( value.firstName ); 
+						var input2 = editorContext.children[3];
+						$(input2).val(value.lastName );
+					}			
+				}			
+			}
+			FullNameCellType.prototype.isReservedKey = function( e, context )
+			{
+				return( e.keyCode === GC.Spread.Commands.Key.tab && !e.ctrlKey && !e.shiftKey && !e.altKey );		
+			}		
+                        FullNameCellType.prototype.isEditingValueChanged = function( oldValue, newValue, context ){
+
+				if( newValue.firstName != oldValue.firstName || newValue.lastName != oldValue.lastName ){
+				return true;
+		        	}
+				return false;		
+			}			
+
+
+
+			sheet.setCellType(0,0, new FivePointedStarCellType());
+			sheet.setValue(0,0,true ); 		
+			sheet.setRowHeight(0, 200 );		
+			sheet.setColumnWidth(0,200 );
+			sheet.setCellType(0,1, new FullNameCellType());
+			sheet.setColumnWidth( 1, 200 );
+			sheet.setValue(0,1, { firstName: "Bob", lastName: "Smith" });
+			sheet.resumePaint();
+		};
+	</script>
+	
+</html> 
+
+
+
