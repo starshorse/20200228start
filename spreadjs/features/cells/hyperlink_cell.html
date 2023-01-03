@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.setRowCount(10);
+			sheet.setColumnCount(7); 
+			sheet.setValue(0,0,"Western" );
+			sheet.setValue(0,1,"Westron" );
+			sheet.setValue(0,2,"Westron" );
+			sheet.setValue(1,0,"A");
+			sheet.setValue(1,1,"B");
+			sheet.setValue(1,2,"C");
+// Freeze Columns and Rows. 
+			sheet.frozenRowCount(3)
+			sheet.frozenColumnCount(1)
+			sheet.options.frozenlineColor ="red" 		
+// Freeze Trailing Rows and Columns 					
+			sheet.frozenTrailingRowCount( 1, false );
+			sheet.frozenTrailingColumnCount( 1, false ); 
+//HyperLink Cell 
+			sheet.suspendPaint()		
+			let cellType = new GC.Spread.Sheets.CellTypes.HyperLink(); 
+			cellType.linkColor("blue");
+			cellType.visitedLinkColor("#FF2235");
+			cellType.text("http://ezoffice365.com/");
+			cellType.linkToolTip("Company Web Site");
+			sheet.getCell(1,1).cellType(cellType).value("http://ezoffice365.com/");
+			sheet.getRange( 1, -1, 1,-1).height(30);		
+// Text Indentation
+			sheet.setColumnWidth( 1, 120);
+			sheet.setRowHeight( 1, 120);
+			sheet.getCell(1,1).textIndent(3);
+			sheet.getCell(1,1).wordWrap(true); 
+// Handle Cellback action on HyperLink Cell. 
+			let cellType_c = new GC.Spread.Sheets.CellTypes.HyperLink(); 		
+			sheet.setCellType( 3,2, cellType_c, GC.Spread.Sheets.SheetArea.viewport );
+			cellType_c.text("Spread.Sheets Site");
+			cellType_c.linkColor("blue");
+			// Set a callback action to the hyperlink 
+			cellType_c.onClickAction( function()
+			{
+				let setSheetTabColor = {
+					canUndo: true ,
+					execute: function( context, options, isUndo ){
+						sheet.name('Hyperlink');
+						sheet.options.sheetTabColor = 'red' ;		
+					}
+				}
+				let commandManager = spread.commandManager(); 
+				let commandName = 'setSheetTabStyle' 
+			// code to register this callback to the commandManger .. 			
+				commandManager.register( commandName, setSheetTabColor, null , false, false, false, false ); 
+				commandManager.execute({ cmd: commandName });
+			})		
+// The following code can be used to get and set whether to move to the active cell when the hyperlink is clicked. 
+			cellType_c.activeOnClick( true ); 
+			sheet.resumePaint() 		
+			
+
+		};
+	</script>
+	
+</html> 
+
+
+
