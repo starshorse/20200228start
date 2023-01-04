@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.setRowCount(10);
+			sheet.setColumnCount(7); 
+/*
+Character	Description
+_	You can use the underscore character "_" to create a space that is the width of a character in a number format. For example, _) causes positive numbers to line up with negative numbers that are enclosed in parentheses.
+*	Use the asterisk "*" in the number format to repeat the next character so that it fills the column width. For example, type 0*- to include enough dashes after a number to fill the cell. Type *0 before any format to include leading zeros.
+,	The comma displays the thousands separator in a number. Spread separates thousands by commas if the format contains a comma that is enclosed by number signs "#" or by zeros. A comma that follows a digit placeholder scales the number by 1,000. For example, if the format is #.0,, and you type 12,200,000 in the cell, the number $12200.0 is displayed.
+%	Use the percent sign "%" in the number format to display numbers as a percentage of 100. For example, to display .08 as 8%.
+?	This digit placeholder follows the same rules as 0 (zero); however, Spread adds a space for insignificant zeros on either side of the decimal point.   
+
+*/	       
+			sheet.setValue(1,0,'Standard Accounting Format : _($* #,##0.00_);_($* (#,##0.00);_($* "-"??+);_(@_)');
+			sheet.setValue(2,0, 'Value');		
+			sheet.setValue(3,0, 12);		
+			sheet.setValue(4,0, -12);		
+			sheet.setValue(5,0, 0);		
+			sheet.setValue(6,0, 'Text');		
+			sheet.setValue(2,2, 'Formatted Result');		
+			sheet.getRange(3,2,4,1).formatter('_($* #,##0.00_);_($* (#,##0.00);_($* "-"??+);_(@_)');
+			sheet.setValue(3,2, 12);		
+			sheet.setValue(4,2, -12);		
+			sheet.setValue(5,2, 0);		
+			sheet.setValue(6,2, 'Text');		
+// setFormatter method ..
+			sheet.setValue( 7,2, 12.34 )
+			sheet.setFormatter( 7,2, '/* #.##00') 
+		};
+	</script>
+	
+</html> 
+
+
+
