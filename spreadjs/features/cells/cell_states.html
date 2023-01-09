@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.setRowCount(10);
+			sheet.setColumnCount(7); 
+/*
+			
+The CellStatesType enumeration can be used to work with different cell states in the spreadsheet, as described in the table shared below:
+
+Enum Type and Value	Description
+hover = 0x01	Executes the specified action when mouse is hovered on a cell.
+invalid = 0x02	Sets the cell state to invalid if the conditional evaluation fails during data validation.
+readonly = 0x04	Locks the cell in a protected worksheet.
+edit = 0x08	Executes the specified action when the cell is being edited.
+active = 0x10	Executes the specified action when the cell is in focus.
+selected = 0x20	Executes the specified action when the cell is lying in the selection range of the worksheet.
+dirty = 0x40	Sets a cell state to dirty on changing the cell value or the reference cell value, to easily track any change in the sheet data.
+*/	       
+			sheet.setValue(0,1,"Y-2015");		
+			sheet.setValue(0,2,"Y-2016");		
+			sheet.setValue(0,3,"Y-2017");		
+			sheet.setValue(0,4,"Y-2018");		
+			sheet.setValue(0,5,"Y-2019");		
+			sheet.setValue(1,0,"Gradlco");		
+			sheet.setValue(2,0,"Saagiate");		
+			sheet.setValue(3,0,"Inferno");		
+			sheet.setColumnWidth(0,120);		
+
+			let hoverStyle = new GC.Spread.Sheets.Style();
+			hoverStyle.backColor = "pink";
+			hoverStyle.foreColor = "red";
+
+			let selectStyle = new GC.Spread.Sheets.Style();
+			selectStyle.backColor = "yellow";
+			selectStyle.foreColor ="red";
+
+			let dirtyStyle = new GC.Spread.Sheets.Style();
+			dirtyStyle.backColor = 'lightblue';
+			dirtyStyle.foreColor = 'red';
+				
+			let range = new GC.Spread.Sheets.Range(0,0,10,10);
+			// Applying styles on differnt CellStatesType.
+			sheet.cellStates.add( range, GC.Spread.Sheets.CellStatesType.dirty, dirtyStyle ); 
+			sheet.cellStates.add( range, GC.Spread.Sheets.CellStatesType.selected, selectStyle ); 
+			sheet.cellStates.add( range, GC.Spread.Sheets.CellStatesType.hover, hoverStyle ); 
+
+/*
+Enumeration Option	Description
+edit	When any cell is edited, this action executes the specified row or column in edit state.
+hover	When any cell is hovered, this action executes the specified row or column in hover state.
+active	When any cell is in focus, this action executes the specified row or column in active state
+selected	When any cell is selected, this action executes the specified row or column in selected state.
+updated	When any cell is updated, it locks the corresponding row or column in a protected worksheet.
+inserted	When any cell is inserted, it locks the corresponding row in a protected worksheet.
+dirty	
+When any cell state is set as dirty, this action executes the specified row or column in dirty state. This makes the row or column to easily track any change in the sheet data.
+
+The dirty row state includes the inserted row state. But the dirty column state doesn't include the inserted column.
+
+invalid	When any cell is set as invalid, this action executes the specified row or column in invalid state.
+*/	       
+			sheet.reset() 		
+		// Using a new state rule.. 			
+			let cfs = sheet.conditionalFormats;
+			let ruleType = GC.Spread.Sheets.ConditionalFormatting.RuleType.rowStateRule; 
+			let hoverstate = GC.Spread.Sheets.RowColumnStates.hover; 
+			let style = new GC.Spread.Sheets.Style("yellow");
+			let ranges = [ new GC.Spread.Sheets.Range( -1,-1,-1,-1)]; 
+			let rule = new GC.Spread.Sheets.ConditionalFormatting.StateRule( ruleType, hoverstate, style, ranges ); 
+			cfs.addRule( rule );
+		// Using conditionalFormats class methods 
+			let cfs1 = sheet.conditionalFormats;
+			let style1 = new GC.Spread.Sheets.Style("lightblue");
+			let columnRange = [ new GC.Spread.Sheets.Range( -1,-1,-1,-1)]; 
+			cfs1.addColumnStateRule( GC.Spread.Sheets.RowColumnStates.selected, style1, columnRange ); // adding column state 
+		
+		        let cfs2 = sheet.conditionalFormats; 
+			let style2 = new GC.Spread.Sheets.Style("pink");
+			let rowRange2  = [ new GC.Spread.Sheets.Range( -1, -1,-1, -1 )];
+			cfs2.addRowStateRule( GC.Spread.Sheets.RowColumnStates.dirty, style2, rowRange2 );		
+					
+		};
+	</script>
+	
+</html> 
+
+
+
