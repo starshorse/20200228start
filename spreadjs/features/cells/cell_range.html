@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div >
+			<input type="button" value="Select Style Range" id="selectStyleRange" >	
+		</div>	
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			let range = sheet.getRange(1,1,5,5, GC.Spread.Sheets.SheetArea.viewport ); 
+			range.text("Text");
+// Get Range by Range Address					
+			range = sheet.getRange('A1:E5', GC.Spread.Sheets.SheetArea.viewport ); 
+			range.text('HOOP'); 
+// Get Range by Type of Data 
+			sheet.setValue(2, 2, "value");
+			sheet.setValue(4, 2, "value");
+			sheet.setValue(6, 8, "value");
+			sheet.setValue(10, 15, "value");
+			sheet.setFormula(5, 5, "=C3");
+			sheet.setFormula(8, 8, "=I6");
+			sheet.setStyle(30,4, new GC.Spread.Sheets.Style())
+			sheet.setStyle(3, 24, new GC.Spread.Sheets.Style())
+			sheet.setRowHeight(8, 40);
+			sheet.getUsedRange(GC.Spread.Sheets.UsedRangeType.all);		
+			function getRangeStyle(){		
+				let sheet = spread.getSheet(0);		
+				let styleRange = sheet.getUsedRange( GC.Spread.Sheets.UsedRangeType.style ) 		
+				sheet.setSelection( styleRange.row, styleRange.col, styleRange.rowCount, styleRange.colCount, GC.Spread.Sheets.SheetArea.viewport, GC.Spread.Sheets.StorageType.style );
+			}		
+			document.getElementById("selectStyleRange").addEventListener("click", function(e){
+				getRangeStyle();
+			})
+						
+		};
+	</script>
+	
+</html> 
+
+
+
