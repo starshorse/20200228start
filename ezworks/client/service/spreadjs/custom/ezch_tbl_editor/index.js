@@ -6,13 +6,19 @@ angular.module('ezch_tbl_editorService',[])
 		cur_db: 'demo',
 		tbl_name:'TB_admin_1',
 		cur_id: 'richard.choi@ez-office.co.kr',
-		sql_state: { pos: null , state_1 :  'select ', state_2: null }
+		sql_state: { pos: null , state_1 :  'select ', state_2: null },
+//functions.		
+		update_editLists : null 		
 	}
 	return ezch_tbl_editorFactory 
 }])
 .service('ezch_tbl_editorService', ['$injector',function($injector){
 	var ezch_tbl_editorFactory = $injector.get('ezch_tbl_editorFactory') 
 	var $http = $injector.get('$http') 
+	this.setUpdate_editLists = ( update_editLists_f  )=>{
+		ezch_tbl_editorFactory.update_editLists = update_editLists_f ; 
+		ezch_tbl_editorFactory.update_editLists( ezch_tbl_editorFactory.saved_config_list.tbl_data ) 
+	}
 	this.getServerSide = async ()=>{
 		let id = ezch_tbl_editorFactory.cur_id  
 		let headers = { id } 
@@ -21,6 +27,7 @@ angular.module('ezch_tbl_editorService',[])
 		let result = await $http({ method:'GET', url, headers }) 
 		let configList = result.data.DATA.config_list 
 		ezch_tbl_editorFactory.saved_config_list.tbl_data = ( configList == undefined )? [] : configList ; 
+		ezch_tbl_editorFactory.update_editLists( ezch_tbl_editorFactory.saved_config_list.tbl_data ) 
 	}
 	this.updateServerSide = async ()=>{
 		let id = ezch_tbl_editorFactory.cur_id  
@@ -30,6 +37,7 @@ angular.module('ezch_tbl_editorService',[])
 		let url = `/tbl_editor/${db}/user/` 
 		let result  =  await $http({ method: 'POST', url, data , headers } )
 		console.log( result.data ) 
+		ezch_tbl_editorFactory.update_editLists( ezch_tbl_editorFactory.saved_config_list.tbl_data ) 
 	}
 	this.updateConfig = ( spread , updateConfig )=>{
 		if( updateConfig == null || updateConfig == '' ){
