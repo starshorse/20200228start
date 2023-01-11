@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.setRowCount(200);
+			sheet.setColumnCount(17); 
+/*
+	     ##  Configure Cell Buttons ##
+You can configure cell buttons by using different properties as described in the table below:
+
+Property	Description
+ButtonPosition	
+	      This property is of type ButtonPosition enumeration that specifies the position of the cell button. You can set the position of the cell button to left or right and create a custom style for displaying these buttons.
+CaptionAlignment	This property is of type CaptionAlignment enumeration that specifies the position of the caption in the cell button. You can configure the position of the caption to left or right.
+ButtonImageType	
+	       This property is of type ButtonImageType enumeration that specifies the image type of the cell button. You can configure the button image type as per the specific preferences such as dropdown, search, undo, redo. Refer to ButtonImageType Enumeration for the complete list.
+ButtonVisibility	
+	       This property is of type ButtonVisibility enumeration that specifies the visibility of the cell button. You can choose whether to show or hide the cell buttons on different cell states using the following values:
+always =0; 
+	       indicates the cell button is always visible.
+onSelected =1; 
+	       indicates that the cell button is visible only when the cell is in active state.
+onEditing =2; 
+	       indicates that the cell button is visible only when the cell enters in the edit mode.
+caption	
+	       This property specifies the text of the button that will be displayed in the caption.
+position	
+	       This property specifies the position of the button in the cell.
+enabled	This property specifies whether the cell button will respond to the user actions. The default value is set to true.
+useButtonStyle	
+	       This property specifies whether the cell button is a button style. The default value is false.
+width	This property specifies the width of the button. If you set this property to "null" or "undefined" then the button fit will automatically adjust itself based on the caption and the size of the image.
+visibility	
+	       This property specifies the visibility of the button. Three options are available ("always", "onselect" and "edit").
+imageType	
+	       This property specifies the type of the image that you want to display in the button. The default value for this property is "custom".
+command	This property allows you to execute a spread command or a callback when the cell button is clicked.
+imageSrc	
+	       This property allows you to upload an image by providing the source of the image when the imageType is set to custom.
+captionAlign	
+	       This property specifies the position of the image and the caption. The available options are "left" and "right".
+imageSize	
+	       This property specifies the image size. The default value is 16px.
+hoverBackColor	
+	       This property specifies the hover back color of cell button when the button is visible and enabled.
+
+	## Define Button Commands ##
+After creating the cell button, you can specify different command actions to associate different functionalities to the buttons as per the options mentioned in the following table.
+
+## Command Option	Description ##
+openColorPicker	This option can be used when you want to open a color picker on button click event.
+openDateTimePicker	This option can be used when you want to open a date time picker on button click event.
+openTimePicker	This option can be used when you want to open a time picker on button click event.
+openMonthPicker	This option can be used when you want to open a month picker on button click event.
+openSlider	This option can be used when you want to open a slider control on button click event.
+openWorkflowList	This option can be used when you want to open a workflow list on button click event.
+openCalculator	This option can be used when you want to open a calculator on button click event.
+openList	This option can be used when you want to open a list on button click event.
+*/
+		sheet.setColumnWidth( 3, 300 );
+		sheet.setColumnWidth( 4, 200 );
+		// Add a basic button with caption
+		let basicButtonStyle = new GC.Spread.Sheets.Style();
+		basicButtonStyle.cellButtons =[ { caption: "Insert" }];
+		sheet.setText( 2,3 ,"Basic button with caption");
+		sheet.setStyle( 2,4, basicButtonStyle ); 
+
+		let customButtonStyle = new GC.Spread.Sheets.Style();
+		customButtonStyle.cellButtons =
+		[
+			{
+				caption: "enable",
+				useButtonStyle: true,
+				// enabled: true
+				hoverBackColor :"#3390FF" ,
+				position: GC.Spread.Sheets.ButtonPosition.left 
+			},
+			{
+				caption: "disabled",
+				useButtonStyle: false,
+				enabled: false,
+				position: GC.Spread.Sheets.ButtonPosition.right
+			}			
+
+		]
+		sheet.setText( 4,3, "enabled/disabled buttons");
+		sheet.setStyle(4,4, customButtonStyle ); 
+		// Add button with built-in and custom image 
+		let ImageStyle = new GC.Spread.Sheets.Style();
+		ImageStyle.cellButtons =
+		[
+			{
+				useButtonStyle: true,
+				imageSize:{
+					height: 8,
+					width: 8
+				},
+				imageType: GC.Spread.Sheets.ButtonImageType.ellipsis		
+			},			
+			{
+				useButtonStyle: true,
+				imageType: GC.Spread.Sheets.ButtonImageType.custom,
+				imageSrc:"data:image/bmp;base64, Qk1eAAAAAAAAAD4AAAAoAAAACAAAAAgAAAABAAEAAAAAACAAAADEDgAAxA4AAAAAAAAAAAAAAAAAAP///wB+AAAApQAAANsAAAClAAAApQAAANsAAAClAAAAfgAAAA=="
+		        }		
+		];
+		sheet.setText( 6,3, "Image Buttons");
+		sheet.setStyle( 6,4, ImageStyle );
+		// Add Dropdown button with command action 
+		let dropdownStylecommand = new GC.Spread.Sheets.Style()
+		dropdownStylecommand.cellButtons = 
+	        [
+			{
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown ,
+				useButtonStyle: true,
+				command: "openColorPicker"
+			}			
+		]	
+		sheet.setText( 8,3, "Dropdown button with command");
+		sheet.setStyle( 8,4, dropdownStylecommand );
+		// Add button with command function 
+		let buttonCommandfunction = new GC.Spread.Sheets.Style();
+		buttonCommandfunction.cellButtons =			
+		[
+			{
+				imageType: GC.Spread.Sheets.ButtonImageType.search, 
+				command:( sheet, row, col, option )=>{
+					if( sheet.zoom() === 1 ){
+						sheet.zoom(1.5);
+					}else{
+						sheet.zoom(1);
+					}					
+				}
+			}			
+		];			
+                sheet.setText( 10,3,"Button with command function"); 
+		sheet.setStyle( 10,4 , buttonCommandfunction ); 			
+		
+		// Add button with Alert command action 
+		let visibleStyle = new GC.Spread.Sheets.Style();
+		visibleStyle.cellButtons =
+		[
+			{
+				caption:"Alert",
+				buttonBackColor: "#00C2D6",
+				command: ( sheet, row, col, option )=>{
+					alert("This is an alert.")			
+				}			
+			}			
+		];
+		sheet.setStyle( 7, 10, visibleStyle ); 			
+		
+		// Add button visibility property
+		let onScreenstyle = new GC.Spread.Sheets.Style(); 
+		onScreenstyle.cellButtons = [
+			{
+				caption: "On Select",
+				buttonBackColor: "#ffdc9d",
+				visibility: GC.Spread.Sheets.ButtonVisibility.onSelected 
+			}			
+		];	
+		sheet.setStyle( 10,10, onScreenstyle )
+		sheet.getCell(10,10).value("Select cell..").vAlign( GC.Spread.Sheets.VerticalAlign.bottom ); 			
+
+		};
+	</script>
+	
+</html> 
+
+
+
