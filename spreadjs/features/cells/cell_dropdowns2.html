@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			
+                            // Initializing Spread
+			var spread = new GC.Spread.Sheets.Workbook(document.getElementById('ss'), { sheetCount: 1 });
+			// Allow dynamic array
+			spread.options.allowDynamicArray = true;
+			// Get the activesheet
+			var sheet = spread.getActiveSheet();
+			sheet.suspendPaint();
+			// Set column widths
+			for (var i = 0; i < 3; i++)
+			    sheet.setColumnWidth(i, 70.0, GC.Spread.Sheets.SheetArea.viewport);
+			sheet.setColumnWidth(4, 30.0, GC.Spread.Sheets.SheetArea.viewport);
+			sheet.setColumnWidth(6, 30.0, GC.Spread.Sheets.SheetArea.viewport);
+			// Setting Data in Cells
+			sheet.setText(0, 0, "Region");
+			sheet.getCell(0, 0).backColor("LightGray");
+			sheet.setText(1, 0, "East");
+			sheet.setText(2, 0, "North");
+			sheet.setText(3, 0, "West");
+			sheet.setText(4, 0, "West");
+			sheet.setText(5, 0, "East");
+			sheet.setText(6, 0, "East");
+			sheet.setText(7, 0, "West");
+			sheet.setText(8, 0, "South");
+			sheet.setText(9, 0, "North");
+			sheet.setText(10, 0, "North");
+			sheet.setText(11, 0, "East");
+			sheet.setText(12, 0, "South");
+			sheet.setText(13, 0, "West");
+			sheet.setText(0, 1, "Sales Rep");
+			sheet.getCell(0, 1).backColor("LightGray");
+			sheet.setText(1, 1, "Tom");
+			sheet.setText(2, 1, "Fred");
+			sheet.setText(3, 1, "Amy");
+			sheet.setText(4, 1, "Sal");
+			sheet.setText(5, 1, "Hector");
+			sheet.setText(6, 1, "Xi");
+			sheet.setText(7, 1, "Amy");
+			sheet.setText(8, 1, "Sal");
+			sheet.setText(9, 1, "Fred");
+			sheet.setText(10, 1, "Tom");
+			sheet.setText(11, 1, "Hector");
+			sheet.setText(12, 1, "Sravan");
+			sheet.setText(13, 1, "Xi");
+			sheet.setText(0, 2, "Product");
+			sheet.getCell(0, 2).backColor("LightGray");
+			sheet.setText(1, 2, "Apple");
+			sheet.setText(2, 2, "Grape");
+			sheet.setText(3, 2, "Pear");
+			sheet.setText(4, 2, "Banana");
+			sheet.setText(5, 2, "Apple");
+			sheet.setText(6, 2, "Banana");
+			sheet.setText(7, 2, "Banana");
+			sheet.setText(8, 2, "Pear");
+			sheet.setText(9, 2, "Apple");
+			sheet.setText(10, 2, "Grape");
+			sheet.setText(11, 2, "Grape");
+			sheet.setText(12, 2, "Apple");
+			sheet.setText(13, 2, "Grape");
+			sheet.setText(0, 3, "Units");
+			sheet.getCell(0, 3).backColor("LightGray");
+			sheet.setText(1, 3, "6380");
+			sheet.setText(2, 3, "2344");
+			sheet.setText(3, 3, "3434");
+			sheet.setText(4, 3, "5461");
+			sheet.setText(5, 3, "2341");
+			sheet.setText(6, 3, "3234");
+			sheet.setText(7, 3, "6532");
+			sheet.setText(8, 3, "7323");
+			sheet.setText(9, 3, "2334");
+			sheet.setText(10, 3, "8734");
+			sheet.setText(11, 3, "1932");
+			sheet.setText(12, 3, "7682");
+			sheet.setText(13, 3, "3293");
+			sheet.setText(15, 0, "Product:");
+			sheet.getCell(15, 0).backColor("LightGray");
+			sheet.setText(15, 1, "Apple");
+			sheet.setText(16, 0, "Region:");
+			sheet.getCell(16, 0).backColor("LightGray");
+			sheet.setText(16, 1, "East");
+			// Create colInfos array
+			var colInfos = [
+			    { name: "Region", size: "*" },
+			    { name: "Sales Rep", size: "*" },
+			    { name: "Product", size: "*" },
+			    { name: "Units", size: "*" }
+			];
+			// Create style
+			var style = new GC.Spread.Sheets.Style();
+			// Setting "Filter" Formula( with one condition) wherein we filter range A1:D14
+			// based upon criteria wherein range C1:C14 is equal to value in cell B16
+			var dataSource = "FILTER(A1:D14, C1:C14=B16)";
+			style.cellButtons = [
+			    {
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+				command: "openMultiColumn",
+				useButtonStyle: true
+			    }
+			];
+			style.dropDowns = [
+			     {
+				type: GC.Spread.Sheets.DropDownType.multiColumn,
+				option: {
+				    width: 300,
+				    height: 220,
+				    dataSource: dataSource,
+				    bindingInfos: colInfos
+				}
+			    }
+			];
+			style.formatter = '=PROPERTY(@, "Sales Rep")';
+			// Set text
+			sheet.setText(0, 5, "DataSource is formula '=FILTER(A1:D14, C1:C14=B16)', return data parsed to the value of property 'Sales Rep'.");
+			// Set style
+			sheet.setStyle(1, 5, style);
+			// create another style
+			var style1 = new GC.Spread.Sheets.Style();
+			// Setting "Filter" Formula( with two conditions) wherein we filter range A1:D14
+			// based upon criteria wherein range C1:C14 is equal to value in cell B16
+			// and range A1:A14 is equal to value in cell B17
+			var dataSource1 = "FILTER(A1:D14, (C1:C14=B16)*(A1:A14=B17))";
+			style1.cellButtons = [
+			    {
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+				command: "openMultiColumn",
+				useButtonStyle: true
+			    }
+			];
+			style1.dropDowns = [
+			    {
+				type: GC.Spread.Sheets.DropDownType.multiColumn,
+				option: {
+				    width: 300,
+				    height: 220,
+				    dataSource: dataSource1,
+				    bindingInfos: colInfos
+				}
+			    }
+			];
+			style1.formatter = '=PROPERTY(@, "Units")';
+			// Set text
+			sheet.setText(0, 7, "DataSource is formula 'FILTER(A1:D14, (C1:C14=B16)*(A1:A14=B17))', return data parsed to the value of property 'Units'.");
+			// Set style
+			sheet.setStyle(1, 7, style1);
+			// Set column width
+			sheet.setColumnWidth(5, 300, GC.Spread.Sheets.SheetArea.viewport);
+			sheet.setColumnWidth(7, 300, GC.Spread.Sheets.SheetArea.viewport);
+			// Set wordwrap to true
+			sheet.getCell(0, 5).wordWrap(true);
+			sheet.getCell(0, 7).wordWrap(true);
+			// Set row height
+			sheet.setRowHeight(0, 70);
+			sheet.resumePaint();
+
+                        
+
+		};
+	</script>
+	
+</html> 
+
+
+

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.setRowCount(120);
+			sheet.setColumnCount(7); 
+// Cell Dropdowns
+// Calculator Dropdown .. 
+			let calStyle = new GC.Spread.Sheets.Style();
+			calStyle.cellButtons = [
+			{
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown, 
+				command: "openCalculator",
+				useButtonStyle: true,
+			}];
+			sheet.setText( 2,3, "Calculator Dropdown");
+			sheet.setStyle( 2,4, calStyle );		
+// Date Time Picker Dropdown 
+			let dateTimeStyle = new GC.Spread.Sheets.Style();
+			dateTimeStyle.cellButtons = [
+			{
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown ,
+				command: "openDateTimePicker",
+				useButtonStyle: true,
+			}];
+			dateTimeStyle.dropDowns = [
+			{
+				type: GC.Spread.Sheets.DropDownType.dateTimePicker, 
+				option:{
+					showTime: true,		
+				}
+			}			
+			];			
+			sheet.setText( 4,3, "DateTimePicker Dropdown");
+			sheet.setStyle( 4,4 , dateTimeStyle );
+// Month Picker Dropdown 
+			let monthPickerStyle = new GC.Spread.Sheets.Style();
+			monthPickerStyle.cellButtons =[
+			{			
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+				command: "openMonthPicker",
+				useButtonStyle: true,
+			}			
+			];			
+			monthPickerStyle.dropDowns = [
+			{
+				type: GC.Spread.Sheets.DropDownType.monthPicker, 
+				option:{
+					startYear: 2009,
+					stopYear: 2019,
+					height: 300,
+					}
+			}];
+			sheet.setText( 6,3, "Month Picker Drodown" );
+			sheet.setStyle(6,4, monthPickerStyle );
+// Time picker Dropdown 
+			let timePickerStyle = new GC.Spread.Sheets.Style();
+			timePickerStyle.cellButtons = [
+			{
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+				command: "openTimePicker",
+				useButtonStyle: true
+			}]			
+                        timePickerStyle.dropDowns = [
+			{
+				type: GC.Spread.Sheets.DropDownType.timePicker,
+				option:{
+					min: { hour: 8},
+					max: { hour:19 },
+					step: { minute: 30 },
+					formatString: "h:mm AM/PM",		
+				}			
+			}]			
+			sheet.setText( 8,3, "Time Picker Dropdown");
+			sheet.setStyle( 8,4, timePickerStyle ) ;
+// Color Picker Dropdown 
+			let colorPickerStyle = new GC.Spread.Sheets.Style();
+			colorPickerStyle.cellButtons = [
+			{
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+				command: "openColorPicker",
+				useButtonStyle: true,
+			}];
+			sheet.setText( 10,3, "Color Picker Dropdown");
+			sheet.setStyle( 10,4 , colorPickerStyle );		
+// List Dropdown 
+			let listStyle = new GC.Spread.Sheets.Style();
+			listStyle.cellButtons = [
+			{			
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown, 
+				command: "openList",
+				useButtonStyle: true,
+			}];
+			listStyle.dropDowns = [
+			{			
+				type: GC.Spread.Sheets.DropDownType.list, 
+				option: {
+				  items: [
+				  {
+				  text: 'item1',
+				  value: 'item1'
+				  },
+				  {
+				  text: 'item2',
+				  value: 'item2'
+				  },
+				  {
+				  text: 'item3',
+				  value: 'item3'
+				  },
+				  {
+				  text: 'item4',
+				  value: 'item4'
+				  }
+				  ],
+				}		
+					}			
+			];
+			sheet.setText( 12, 3, "List Dropdown");
+			sheet.setStyle( 12, 4, listStyle );
+			// set the list data
+			 var listData = {
+			     multiSelect: true,
+			      items: [
+				     {
+					text: 'SpreadSheets',
+					value: 'SpreadSheets',
+					layout: { displayAs: GC.Spread.Sheets.LayoutDisplayAs.popup },
+					items: [
+					    {
+						text: 'Spread.NET',
+						value: 'Spread.NET'
+					    },
+					    {
+						text: 'SpreadJS',
+						value: 'SpreadJS'
+					    },
+					    {
+						text: 'Spread COM',
+						value: 'Spread COM'
+					    },
+					    {
+						Stext: 'DataViewJS',
+						value: 'DataViewJS'
+					    }
+					]
+				    },
+				    {
+					text: 'Javascript',
+					value: 'Javascript',
+				    },
+				    {
+					text: 'Reporting',
+					value: 'Reporting',
+				    },
+				    {
+					text: 'Document APIS',
+					value: 'Document APIS',
+					layout: { displayAs: GC.Spread.Sheets.LayoutDisplayAs.popup },
+					items: [
+					    {
+						text: 'Documents for Excel',
+						value: 'Documents for Excel'
+					    },
+					    {
+						text: 'Excel Template Language',
+						value: 'Excel Template Language'
+					    },
+					    {
+						text: 'Documents for PDF',
+						value: 'Documents for PDF'
+					    },
+					    {
+						text: 'Documents for PDF Viewer',
+						value: 'Documents for PDF Viewer'
+					    },
+					    {
+						text: 'Documents for Microsoft Word',
+						value: 'Documents for Microsoft Word'
+					    },
+					    {
+						text: 'Documents for Imaging',
+						value: 'Documents for Imaging'
+					    }
+					]
+				    }
+				]
+			    };		
+			let listStyle2 = new GC.Spread.Sheets.Style();
+			listStyle2.cellButtons = [
+			{			
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown, 
+				command: "openList",
+				useButtonStyle: true,
+				caption:"Multi Menu"		
+			}];
+			listStyle2.dropDowns =[
+			{
+				type: GC.Spread.Sheets.DropDownType.list ,
+				option: listData
+			}]
+			sheet.setText( 14, 3, 'Multi select List');		
+			sheet.setStyle( 14,4 , listStyle2 );		
+// Slider DropDown
+			let horizontalSliderStyle = new GC.Spread.Sheets.Style();
+			horizontalSliderStyle.cellButtons = [
+			{
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+				command: "openSlider",
+				useButtonStyle: true,
+			}			
+			]			
+			horizontalSliderStyle.dropDowns = [
+			{
+				type: GC.Spread.Sheets.DropDownType.slider,
+				option: {
+					marks: [ 0,50,100 ],
+					step: 10,
+					direction: GC.Spread.Sheets.LayoutDirection.horizontal,
+				}
+			}]
+			sheet.setText( 15, 3, "slider Dropdown");
+			sheet.setStyle( 15, 4, horizontalSliderStyle ); 
+// Workflow List Dropdown 
+
+			let workflowListStyle = new GC.Spread.Sheets.Style();
+			workflowListStyle.cellButtons = [
+			{
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown, 
+				command: "openWorkflowList",
+				useButtonStyle: true,
+			}];
+			workflowListStyle.dropDowns = [
+			{
+				type: GC.Spread.Sheets.DropDownType.workflowList , 
+				option: {
+				  items: [
+				  { value: "New", transitions: [1] },
+				  { value: "Open", transitions: [0, 2, 3, 5] },
+				  { value: "In Progress", transitions: [1, 3, 5] },
+				  { value: "Resolved", transitions: [5, 4] },
+				  { value: "Reopened", transitions: [5, 3, 2] },
+				  { value: "Closed", transitions: [4] },
+				  ]
+				}		
+
+			}
+			];			
+			sheet.setText( 16, 3 , "Workflow List Dropdown");
+			sheet.setStyle( 16, 4, workflowListStyle ) 
+// Multiple Column Dropdown 
+		// DataSource is array
+			let dataSource = [
+			    {
+				"NAME": "James Smith",
+				"POSITION": "AVP",
+				"OFFICE": "Fox Studios",
+				"EXTN": 71,
+				"START_DATE": '3/08/2008',
+				"JOINING_YEAR": 2008
+			    }
+			];
+			let colInfos = [
+			    { name: "NAME", displayName: "NAME", size: "2*" },
+			    { name: "POSITION", displayName: "POSITION", size: "*" },
+			    { name: "OFFICE", size: "*" },
+			    { name: "EXTN", size: "*" },
+			    { name: "START_DATE", size: 100 },
+			    { name: "JOINING_YEAR", size: 100 }
+			];			
+			let style = new GC.Spread.Sheets.Style();
+			style.cellButtons = [
+			{
+				imageType : GC.Spread.Sheets.ButtonImageType.dropdown,
+				command: "openMultiColumn",
+				useButtonStyle: true,
+			}];
+			style.dropDowns =[
+			{
+				type: GC.Spread.Sheets.DropDownType.multiColumn ,
+				option:{
+					width: 600,
+					height: 150,
+					dataSource: dataSource,
+					bindingInfos: colInfos 
+				}					
+
+			}];			
+		        style.formatter = '=PROPERTY(@,"NAME")'; 
+			sheet.setStyle(0, 1, style );
+			sheet.setText(0,0,"DataSource is array, return data parsed to the value of property 'NAME'." );
+
+			sheet.getCell(0,0).wordWrap( true ); 
+			sheet.getCell(0,1).wordWrap( true );
+			sheet.setColumnWidth( 0, 200 );
+			sheet.setColumnWidth( 1, 400 );
+
+			sheet.setRowHeight( 0 , 70 );
+// Formula Reference Data Source .. 
+			spread.setActiveSheetIndex(1);
+			sheet = spread.getSheet(1) ;
+			spread.options.allowDynamicArray = true;		
+			sheet.suspendPaint();
+			// Set column widths
+			for (var i = 0; i < 3; i++)
+			    sheet.setColumnWidth(i, 70.0, GC.Spread.Sheets.SheetArea.viewport);
+			sheet.setColumnWidth(4, 30.0, GC.Spread.Sheets.SheetArea.viewport);
+			sheet.setColumnWidth(6, 30.0, GC.Spread.Sheets.SheetArea.viewport);
+			// Setting Data in Cells
+			sheet.setText(0, 0, "Region");
+			sheet.getCell(0, 0).backColor("LightGray");
+			sheet.setText(1, 0, "East");
+			sheet.setText(2, 0, "North");
+			sheet.setText(3, 0, "West");
+			sheet.setText(4, 0, "West");
+			sheet.setText(5, 0, "East");
+			sheet.setText(6, 0, "East");
+			sheet.setText(7, 0, "West");
+			sheet.setText(8, 0, "South");
+			sheet.setText(9, 0, "North");
+			sheet.setText(10, 0, "North");
+			sheet.setText(11, 0, "East");
+			sheet.setText(12, 0, "South");
+			sheet.setText(13, 0, "West");
+			sheet.setText(0, 1, "Sales Rep");
+			sheet.getCell(0, 1).backColor("LightGray");
+			sheet.setText(1, 1, "Tom");
+			sheet.setText(2, 1, "Fred");
+			sheet.setText(3, 1, "Amy");
+			sheet.setText(4, 1, "Sal");
+			sheet.setText(5, 1, "Hector");
+			sheet.setText(6, 1, "Xi");
+			sheet.setText(7, 1, "Amy");
+			sheet.setText(8, 1, "Sal");
+			sheet.setText(9, 1, "Fred");
+			sheet.setText(10, 1, "Tom");
+			sheet.setText(11, 1, "Hector");
+			sheet.setText(12, 1, "Sravan");
+			sheet.setText(13, 1, "Xi");
+			sheet.setText(0, 2, "Product");
+			sheet.getCell(0, 2).backColor("LightGray");
+			sheet.setText(1, 2, "Apple");
+			sheet.setText(2, 2, "Grape");
+			sheet.setText(3, 2, "Pear");
+			sheet.setText(4, 2, "Banana");
+			sheet.setText(5, 2, "Apple");
+			sheet.setText(6, 2, "Banana");
+			sheet.setText(7, 2, "Banana");
+			sheet.setText(8, 2, "Pear");
+			sheet.setText(9, 2, "Apple");
+			sheet.setText(10, 2, "Grape");
+			sheet.setText(11, 2, "Grape");
+			sheet.setText(12, 2, "Apple");
+			sheet.setText(13, 2, "Grape");
+			sheet.setText(0, 3, "Units");
+			sheet.getCell(0, 3).backColor("LightGray");
+			sheet.setText(1, 3, "6380");
+			sheet.setText(2, 3, "2344");
+			sheet.setText(3, 3, "3434");
+			sheet.setText(4, 3, "5461");
+			sheet.setText(5, 3, "2341");
+			sheet.setText(6, 3, "3234");
+			sheet.setText(7, 3, "6532");
+			sheet.setText(8, 3, "7323");
+			sheet.setText(9, 3, "2334");
+			sheet.setText(10, 3, "8734");
+			sheet.setText(11, 3, "1932");
+			sheet.setText(12, 3, "7682");
+			sheet.setText(13, 3, "3293");
+			sheet.setText(15, 0, "Product:");
+			sheet.getCell(15, 0).backColor("LightGray");
+			sheet.setText(15, 1, "Apple");
+			sheet.setText(16, 0, "Region:");
+			sheet.getCell(16, 0).backColor("LightGray");
+			sheet.setText(16, 1, "East");
+			// Create colInfos array
+			colInfos = [
+			    { name: "Region", size: "*" },
+			    { name: "Sales Rep", size: "*" },
+			    { name: "Product", size: "*" },
+			    { name: "Units", size: "*" }
+			];		
+			let style1 = new GC.Spread.Sheets.Style();
+	// Setting "Filter" Formula( with one condition) wherein we filter range A1:D14
+	// based upon criteria wherein range C1:C14 is equal to value in cell B16				
+			dataSource = "FILTER(A1:D14, C1:C14=B16)";
+			style1.cellButtons = [
+			{
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown, 
+				command: "openMultiColumn",
+				useButtonStyle: true 
+			}			
+			];
+			style1.dropDowns = [
+			{
+				type: GC.Spread.Sheets.DropDownType.multiColumn,
+				option:{
+					width: 300,
+					height: 220,
+					dataSource: dataSource, 
+					bindingInfos: colInfos
+				}			
+			}			
+			]			
+			style1.formatter ='=PROPERTY(@, "Sales Rep")';
+			sheet.setText( 0, 5,"DataSource is formula '=FILTER(A1:D14, C1:C14=B16)', return data parsed to the value of property 'Sales Rep'." );
+			sheet.setStyle( 1, 5, style1 );
+					
+					
+                        sheet.resumePaint();
+		};
+	</script>
+	
+</html> 
+
+
+
