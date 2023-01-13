@@ -12,6 +12,7 @@ angular.module('ezof_log_monitor',[
 	const updateUserDB = ( user_db )=>{
 		$scope.user_DB = user_db;
 		if( !$scope.$$phase )$scope.$apply() 
+		ezof_log_monitorFactory.cur_db = user_db ;
 	}
 	const updateAlertInfo = ( alert_info_message )=>{
 		$scope.alert_info_message = alert_info_message; 	
