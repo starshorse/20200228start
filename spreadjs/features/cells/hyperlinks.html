@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.setRowCount(10);
+			sheet.setColumnCount(7); 
+
+			sheet.setValue(0,0,'GrapeCity');
+			// Hyperlink to URL with ToolTip and link without underline 
+			sheet.setHyperlink(0,0, {
+				url: 'https://www.grapecity.com/spradjs',
+				tooltip: 'GrapeCity Website',
+				linkColor: '#0066cc',
+				visitedLinkColor: '#3399ff',
+				drawUnderline: false
+                        })
+			// Hyperlink to Sheet Location
+			sheet.setValue( 1, 0, 'Sheet2!A1:B2'); 
+			sheet.setHyperlink( 1, 0, { url: 'sjs://Sheet2!A1:B2', tooltip: 'Link to Sheet2!A1:B2' }, GC.Spread.Sheets.SheetArea.viewport ); 		
+			
+			// Hyperlink to Email Address 
+			sheet.setValue( 2,0, 'Send email') 
+			sheet.setHyperlink( 2,0, { url: 'richard.choi@ez-office.co.kr', tooltip: 'Send email to spread.sales@grapecity.com' })		
+			
+			// Hyperlink to Email Address & Subject 
+			sheet.setValue( 3,0, 'Send Email With Subject');
+			sheet.setHyperlink( 3, 0,{
+				url: 'spread.sales@grapecity.com?subject=Purchase of License',
+				tooltip: 'Send email to spread.sales@grapecity.com with Subject'
+			})			
+			// Hyperlink to Custom Command - Zoom Sheet. 
+			sheet.setValue( 4,0, 'Zoom Sheet' );
+			sheet.setHyperlink( 4,0, {
+				command: function( activeSheet ){		
+					if( activeSheet.zoom() === 1){
+						activeSheet.zoom(1.3);
+					}else{
+						activeSheet.zoom(1);
+					}			
+                	       }
+			})
+			// Set Date Hyperlink 
+			sheet.setValue( 5,0 , 'Set Date');
+			sheet.setHyperlink( 5,0,{ command: 'openMonthPicker' });		
+			// Hyperlink Formula
+			sheet.setValue( 6,1,"www.google.com")
+			sheet.setValue(6,2,  "Google");
+			sheet.setFormula( 6, 0, "=HYPERLINK(B7,C7)");		
+
+		};
+	</script>
+	
+</html> 
+
+
+
