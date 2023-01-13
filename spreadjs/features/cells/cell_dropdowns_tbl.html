@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			// Table Data Source. 		
+			
+                         // Initializing Spread
+			var spread = new GC.Spread.Sheets.Workbook(document.getElementById('ss'), { sheetCount: 1 });
+			// Allow dynamic array
+			spread.options.allowDynamicArray = true;
+			// Get the activesheet
+			var sheet = spread.getActiveSheet();
+			sheet.setColumnWidth(0, 80);
+			sheet.setColumnWidth(1, 80);
+			sheet.setColumnWidth(3, 340 );
+			sheet.suspendPaint();
+			// Create data
+			var data = [
+			    { Element: "Copper", Density: 8.94 },
+			    { Element: "Silver", Density: 10.49 },
+			    { Element: "Gold", Density: 19.30 },
+			    { Element: "Platinum", Density: 21.45 }
+			];		
+			// Set Data Source 
+			sheet.setDataSource( new GC.Spread.Sheets.Bindings.CellBindingSource({ ds: data })); 
+			// Add table 
+			let table = sheet.tables.add("tableSource", 0,0,1,1); 
+			// Bind table 
+			table.bindingPath("ds");
+			let style = new GC.Spread.Sheets.Style();
+			style.cellButtons = [
+			{
+				imageType: GC.Spread.Sheets.ButtonImageType.dropdown, 
+				command: "openMultiColumn", 
+				useButtonStyle: true,
+			}];
+			style.dropDowns = [
+			{
+				type: GC.Spread.Sheets.DropDownType.multiColumn,
+				option:{
+					width: 180,
+					height: 200,
+					dataSource: "tableSource[[#Headers],[#Data]]"
+				}			
+			}];
+			style.formatter ='=PROPERTY(@,"Element")';
+			sheet.setText(0,3, "DataSource is table reference, return data parsed to the value of property 'Element' ." );
+			sheet.setStyle(1,3, style );
+			sheet.getCell(1,3).wordWrap(true);
+
+			sheet.resumePaint();
+
+		};
+	</script>
+	
+</html> 
+
+
+
