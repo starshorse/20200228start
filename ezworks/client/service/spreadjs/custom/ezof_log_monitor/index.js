@@ -9,7 +9,11 @@ angular.module('ezof_log_monitorService',[])
 //functions.		
 		update_editLists : null,  		
 		update_cur_db: null ,
-		updateAlertInfo: null 
+		updateAlertInfo: null,
+// cell pos. 
+		tbl_data_pos: 'B7',
+		data_update_pos: 'E2',
+		update_time_pos: 'E3' 
 
 	}	
 	return ezof_log_monitorFactory 
@@ -33,6 +37,8 @@ angular.module('ezof_log_monitorService',[])
 
 	      tbl_view.bind( null, 'tbl_data_1', tbl_info ) 	
 	      ezof_log_monitorFactory.update_cur_db( db_name ); 
+	      let update_time_cell = sheet0.getRange( ezof_log_monitorFactory.update_time_pos );
+	      sheet0.getCell( update_time_cell.row , update_time_cell.col ).text(`Last update time: ${ (new Date()).toString() }` )
 		
 	}
 	this.initTblView = async ( spread )=>{
