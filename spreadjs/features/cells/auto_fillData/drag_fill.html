@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.setRowCount(10);
+			sheet.setColumnCount(7); 
+
+			spread.options.allowUserDragFill = true;
+			sheet.setValue(0,0, new Date( 2011, 1,1 ));
+			sheet.setValue(0,1, new Date( 2011, 2, 9  ));
+			sheet.setValue(0,2,5);
+			sheet.setValue(0,3,10);
+			sheet.setValue(0,4,1);
+
+			let start = new GC.Spread.Sheets.Range(0,0,1,1);
+			let r = new GC.Spread.Sheets.Range( 0,0,4,1);
+			sheet.fillAuto( start, r , 
+			{
+				fillType: GC.Spread.Sheets.Fill.FillType.date, 
+				series: GC.Spread.Sheets.Fill.FillSeries.column , 
+				fillDirection: GC.Spread.Sheets.Fill.FillDirection.down,
+				unit: GC.Spread.Sheets.Fill.FillDateUnit.day,
+				step: 1,
+				stop: new Date( 2011, 2, 11) 
+
+			})			
+			start = new GC.Spread.Sheets.Range(0,1,1,1); 
+			let r2 = new GC.Spread.Sheets.Range( 0,1,4,1 ); 
+			sheet.fillAuto( start, r2, 
+			{
+				fillType: GC.Spread.Sheets.Fill.FillType.date, 
+				series: GC.Spread.Sheets.Fill.FillSeries.column, 
+				fillDirection: GC.Spread.Sheets.Fill.FillDirection.down,
+				unit: GC.Spread.Sheets.Fill.FillDateUnit.day,
+				step: 1,
+				stop: new Date( 2011,2,11)
+					});			
+			start = new GC.Spread.Sheets.Range( 0,2,1,1);
+			let r3 = new GC.Spread.Sheets.Range( 0,2,4,1);
+			sheet.fillAuto( start , r3, 
+			{
+				fillType: GC.Spread.Sheets.Fill.FillType.auto, 
+				series: GC.Spread.Sheets.Fill.FillSeries.column, 
+			}); 
+                        start = new GC.Spread.Sheets.Range( 0,3,1,1);
+			let r4 = new GC.Spread.Sheets.Range( 0,3,4,1); 
+			sheet.fillAuto( start , r4,
+			{
+				fillType: GC.Spread.Sheets.Fill.FillType.growth, 
+				serires: GC.Spread.Sheets.Fill.FillSeries.column, 
+				step: 2,
+				stop: 55
+			})
+			start = new GC.Spread.Sheets.Range(0,4,1,1);
+			let r5 = new GC.Spread.Sheets.Range( 0,4,4,1) 
+			sheet.fillAuto( start, r5 , 
+			{
+				fillType: GC.Spread.Sheets.Fill.FillType.linear, 
+				series: GC.Spread.Sheets.Fill.FillSeries.column, 
+				step: 3,
+				stop: 20
+			})
+			sheet.setValue( 0,5,123);		
+
+			let r6 = new GC.Spread.Sheets.Range( 0,5,4,1 );
+			sheet.fillAuto( new GC.Spread.Sheets.Range( 0, 5,1,1 ), r6, 
+			{
+
+				fillType: GC.Spread.Sheets.Fill.FillType.auto, 
+				series: GC.Spread.Sheets.Fill.FillSeries.column 
+			})			
+// Find Invalid Rnage When Using Drag Fill 
+			spread.options.allowCopyPasteExcelStyle = true; 
+			sheet.addSpan( 4,3,2,2)		
+			spread.bind( GC.Spread.Sheets.Events.InvalidOperation, ( e, args )=>{
+				// This code registers the invalid range when drag fill operation is performed 
+				if( args.invalidType == GC.Spread.Sheets.InvalidOperationType.dragFill )
+					console.log( args.fillRange ) 
+				        alert("InvalidOperation Type Error");
+			})		
+
+
+		};
+	</script>
+	
+</html> 
+
+
+
