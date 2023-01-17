@@ -21,6 +21,9 @@ angular.module('mySpreadjs',[])
 	}else if( $injector.has('ezof_log_monitorService')){
 		var ezof_log_monitorService = $injector.get('ezof_log_monitorService') 
 		ezof_log_monitorService.initTblView( $scope.spread ) 
+	}else if( $injector.has('ezch_tbl_makerService')){
+		var ezch_tbl_makerService = $injector.get('ezch_tbl_makerService')
+		ezch_tbl_makerService.initTblView( $scope.spread ) 
 	}
 
 }])

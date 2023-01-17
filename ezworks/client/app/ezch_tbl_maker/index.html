@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app='ezch_tbl_maker'>
+	<head>
+		<link rel='stylesheet' href='../../lib/bootstrap/dist/css/bootstrap.min.css'>
+		<link rel='stylesheet' href='../../lib/spreadjs/15.2.2/css/gc.spread.sheets.excel2016colorful.15.2.2.css' />
+		<script src='../../lib/jquery/dist/jquery.min.js'></script> 
+		<script src='../../lib/bootstrap/dist/js/bootstrap.bundle.min.js'></script> 
+		<script src='../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js'></script>
+
+	</head>
+	<body>
+		<div ng-controller='ezch_tbl_makerCtrl'>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="#">EZoffice</a> 	
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggle-icon"></span>
+				</button> 	
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Log Collector<span class="sr-only">( current )</span></a> 
+						</li> 	
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+								저장리스트
+							</a>	
+							<div class="dropdown-menu">
+								<div ng-repeat="edit_list in edit_lists">
+									<a class="dropdown-item" ng-href="{{ edit_list_click( edit_list )}}">{{ edit_list.configName }}</a> 
+								</div>		
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">기본생성</a>  
+							</div>	
+						</li>	
+					</ul>	
+					<form class="form-inline my-2 my-lg-0">
+						<button class='btn  btn-sm btn-outline-secondary btn-block'><a href='javascript:closeWindow()'>Close</a></button>
+					</form>	
+
+			</nav>	
+			<div id='content'>
+				<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+					<div class='container-fluid row'>
+						<div class='input-group col-md-2 mx-0 px-0'>
+							  <div class="input-group-prepend">
+							      <label class="input-group-text" for="inputGroupSelect01">DB</label>
+							  </div>
+							    <select class="custom-select" id="inputGroupSelect01" ng-disabled="isDbSelectionDisabled">
+							      <option selected>{{ user_DB }}</option>
+							      <option value="common">Common</option>
+							      <option value="config">Config</option>
+							      <option value="ezoffice">ezoffice</option>
+							      <option value="ezchemtech">ezchemtech</option>
+							      <option value="orientpi">orientpi</option>
+							      <option value="demo">demo</option>
+							    </select>
+						</div>
+						<div class='col-md-2'>
+							<h5><span class='badge badge-secondary mx-3'>Collection</span>디자인</h5>
+						</div>
+						<div class='col-md-2'>
+							<h5><span class='badge badge-secondary mx-3'>App</span>테이블 생성기</h5>
+						</div>
+						<div class='col-md-4'>
+							<div class='alert alert-block' ng-class="{'alert-success': alert_info_message.class == 'success', 'alert-warning': alert_info_message.class == 'warning' }" role='alert' ng-init="alert_info_message.message ='Alert Message'; alert_info_message.class = 'warning'">
+							{{ alert_info_message.message }}
+							</div>
+						</div> 	
+					</div>	
+				</nav>
+				<my-spreadjs></my-spreadjs>
+			</div>	
+		</div>	
+	</body>	
+	<script src='../../lib/angular/angular.min.js'></script>
+	<script src='../../lib/angular-route/angular-route.js'></script> 
+	<script src='../../lib/angular-cookies/angular-cookies.js'></script>
+	<script src='../../parts/spreadjs/index.js'></script>
+	<script src='../../service/spreadjs/product/spreadjs/index.js'></script> 
+	<script src='../../service/spreadjs/custom/ezch_tbl_maker/index.js'></script> 
+<!--	<script src='../../service/spreadjs/events/index.js'></script> -->
+	<script src='app.js'></script> 
+</html>
