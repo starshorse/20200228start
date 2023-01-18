@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap Schema Form example</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+</head>
+<body ng-app="myModule" ng-cloak>
+      <h3>Basic Usage</h3>
+      <div ng-controller="FormController">
+	      <form name="myForm" sf-schema="schema" sf-form="form" sf-model="model" ng-submit="onSubmit(myForm)"></form> 
+      </div>	      
+<script type="text/javascript" src="../bower_components/tv4/tv4.js"></script>
+<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-schema-form/dist/angular-schema-form.js"></script>
+<script type="text/javascript" src="../bower_components/angular-schema-form/dist/angular-schema-form-bootstrap.js"></script>
+<script>
+	angular.module('myModule',['schemaForm'])
+	.controller('FormController', function( $scope ){
+		$scope.schema = {
+			type:"object",
+			properties: {
+				name:{ type:"string", minLength:2 ,title:"Name", description: "Name or" },
+				title:{
+					type:"String",
+					enum:['dr','jr','sir','mrs','mr','NaN','dj']
+				}
+			}
+		};
+		$scope.form =[
+			"*",
+			{
+				type:"submit",
+				title:"Save"
+			}
+		];
+		$scope.model = {}
+		$scope.onSubmit = function( form ){	
+			// First we broadcast an event so all fields validate themselves 
+			$scope.$broadcast('schemaFormValidate');		
+			// Then we check if the form is valid 
+			if( form.$valid ){
+				// ... do whatever you need to do with your data 		
+				console.log( "form valid" )	
+			}		
+		}		
+	})		
+
+</script>
+</body>
+</html>
