@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.name("String DragFill");
+			sheet.setValue( 0, 0, 'Please drag up or down');
+			sheet.setValue( 1,0, 'String contain numbers only');
+			sheet.setValue(6, 0, '123');
+			sheet.setValue(7, 0, '125');
+			sheet.setValue(6, 1, '-3');
+			sheet.setValue(7, 1, '-2');
+			sheet.setValue(6, 2, '003');
+			sheet.setValue(7, 2, '007');
+			sheet.setColumnWidth( 2, 80 ); 
+			sheet.setColumnWidth( 3, 20 ); 
+
+			sheet.setValue(1, 4, 'String contains number in the end');
+
+			// Choose "Fill Series" for the single one
+			sheet.setValue(6, 4, 'a2');
+			sheet.setValue(6, 5, 'a1');
+			sheet.setValue(7, 5, 'a5');
+			sheet.setValue(6, 6, 'a001');
+			sheet.setValue(7, 6, 'a002');
+			sheet.setValue(6, 7, '1a2a3a4a5');
+			sheet.setValue(7, 7, '1a2a3a4a6');
+			sheet.setColumnWidth(7, 80);		
+			
+			sheet.setValue(13, 0, 'String contains numbers initally');
+			sheet.setValue(18, 0, '5a');
+			sheet.setValue(19, 0, '2a');
+			sheet.setValue(18, 1, '003b');
+			sheet.setValue(19, 1, '005b');
+			sheet.setValue(18, 2, '1a1a1a');
+			sheet.setValue(19, 2, '2a1a1a');		
+
+			sheet.setValue(13, 4, 'String just to copy');
+			sheet.setValue(18, 4, 'a1a1');
+			sheet.setValue(19, 4, 'a2a2');
+			sheet.setValue(18, 5, '1a1');
+			sheet.setValue(19, 5, '2a2');
+			sheet.setValue(18, 6, 'a1');
+			sheet.setValue(19, 6, 'b2');		
+
+
+
+		};
+	</script>
+	
+</html> 
+
+
+
