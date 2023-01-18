@@ -103,7 +103,7 @@ angular.module('ezch_tbl_makerService',[])
 	      table1.autoGenerateColumns( false ) 
 
 	      spread.options.highlightInvalidData = true ;
-	      let dv = GC.Spread.Sheets.DataValidation.createListValidator('NVCHAR,NCHAR,DECIMAL,MONEY,INT') 	
+	      let dv = GC.Spread.Sheets.DataValidation.createListValidator('NVARCHAR,NCHAR,DECIMAL,MONEY,INT,DATE,DATETIME') 	
 	      sheet0.setDataValidator( 9, 3, 60, 1, dv, GC.Spread.Sheets.SheetArea.viewport ); 	
 		
 
@@ -135,13 +135,20 @@ angular.module('ezch_tbl_makerService',[])
 
 
  		cell = sheet0.getRange('AB10:AB60', GC.Spread.Sheets.SheetArea.viewport );
+ 		cell_check1 = sheet0.getRange('K10:K60', GC.Spread.Sheets.SheetArea.viewport );
 		sheet0.setColumnWidth( cell.col, 1200 );
+		sheet0.setColumnWidth( cell_check1.col, 200 );
+		sheet0.setColumnWidth( cell_check1.col+1, 200 );
 		
 		for( var k = 0 ; k < cell.rowCount ; k++ ){
 		    cell_formula =`=IF($C${10+k}="","",""""&$C${10+k}&""" "&$D${10+k}&IF(OR($D${10+k}="INT",$D${10+k}="DATE", $D${10+k}="MONEY"),"",IF($D${10+k}="DECIMAL","("&$E${10+k}&","&$F${10+k}&")","("&$E${10+k}&")"))&" "&IF($G${10+k}=""," NULL",$G${10+k})&IF(AND($G${10+k}=" NOT NULL",$H${10+k}<>"")," DEFAULT "&$H${10+k},"")&", ")`;
 		    console.log( cell_formula );	
 		    sheet0.setFormula( cell.row + k, cell.col, cell_formula )
 		    console.log( cell.row , k , cell.col ) ;  
+		    cell_formula =`=IF($D${10+k}="","-",IF(AND(OR($D${10+k}="DECIMAL",$D${10+k}="NVARCHAR",$D${10+k}="NCHAR"),OR($E${10+k}="",NOT(ISNUMBER($E${10+k})))),"자릿수1에 숫자 입력","-"))`	
+		    sheet0.setFormula( cell.row + k, cell_check1.col, cell_formula )
+		    cell_formula =`=IF($D${10+k}="","-",IF(AND($D${10+k}="DECIMAL",OR($F${10+k}="",NOT(ISNUMBER($F${10+k})))),"자릿수2에 숫자 입력","-"))`
+		    sheet0.setFormula( cell.row + k, cell_check1.col+1, cell_formula )
 		}
 		
 		cell = sheet0.getRange('AO12:AO12', GC.Spread.Sheets.SheetArea.viewport );
