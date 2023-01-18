@@ -23,6 +23,6 @@ angular.module('ezch_tbl_maker',[
 	document.getElementById('inputGroupSelect01').addEventListener('change', function(e){
 		let  db_name = document.getElementById('inputGroupSelect01').value 
 		let  spread = ezch_tbl_makerFactory.spread ; 
-                ezch_tbl_makerService.updateTblData( spread, db_name );
+                ezch_tbl_makerService.updateTblName( spread, db_name );
 	})
 }])

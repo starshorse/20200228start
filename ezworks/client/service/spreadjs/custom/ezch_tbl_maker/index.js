@@ -21,6 +21,10 @@ angular.module('ezch_tbl_makerService',[])
 .service('ezch_tbl_makerService', ['$injector',function($injector){
 	var ezch_tbl_makerFactory = $injector.get('ezch_tbl_makerFactory') 
 	var $http = $injector.get('$http') 
+	this.updateTblName = async( spread, db_name )=>{
+	      sheet0 = spread.getSheet(0)
+	      sheet0.setValue( sheet0.getRange('AO9:AO9').row , sheet0.getRange('AO9:AO9').col, db_name ) 
+	}
 	this.updateTblData = async ( spread , db_name )=>{
 	      sheet0 = spread.getSheet(0); 	
 	      let  tbl_name = ezch_tbl_makerFactory.tbl_name ;
@@ -107,7 +111,7 @@ angular.module('ezch_tbl_makerService',[])
 
 // default Data and formula 
 	        let cell_formula
-		cell = sheet0.getRange('AO10', GC.Spread.Sheets.SheetArea.viewport );
+		cell = sheet0.getRange('AO10:AO10', GC.Spread.Sheets.SheetArea.viewport );
 		sheet0.setColumnWidth( cell.col, 1200 );
 		cell_formula = sheet0.getFormula( cell.row, cell.col )
 	//      cell_formula = '="CREATE TABLE "&AO10&".dbo.TB_"&$C$8&" ( seq INT NOT NULL IDENTITY , created_time DATETIME NOT NULL DEFAULT GETDATE(), updated_time TIMESTAMP NOT NULL"&", "'
@@ -124,7 +128,9 @@ angular.module('ezch_tbl_makerService',[])
 		result nvarchar(20)    NULL 
 		priority nvarchar(10)   NOT NULL
 	*/  
-		cell_formula = '="CREATE TABLE "&AO10&".dbo.TB_"&SUBSTITUTE($C$7,"TB_","")&" ( seq INT NOT NULL IDENTITY , RegDate DATETIME NOT NULL DEFAULT dbo.getdate(), UpdateDate DATETIME NOT NULL DEFAULT dbo.getdate() "&", "'
+	        sheet0.suspendCalcService( true );
+
+		cell_formula = '="CREATE TABLE "&AO9&".dbo.TB_"&SUBSTITUTE($C$7,"TB_","")&" ( seq INT NOT NULL IDENTITY , RegDate DATETIME NOT NULL DEFAULT dbo.getdate(), UpdateDate DATETIME NOT NULL DEFAULT dbo.getdate() "&", "'
 		sheet0.setFormula( cell.row, cell.col , cell_formula )
 
 
@@ -132,18 +138,22 @@ angular.module('ezch_tbl_makerService',[])
 		sheet0.setColumnWidth( cell.col, 1200 );
 		
 		for( var k = 0 ; k < cell.rowCount ; k++ ){
-		    cell_formula =`=IF($C${10+k}="","",""""&$C${10+k}&""" "&$D${10+k}&IF(OR($D${10+k}="INT",$D${11+k}="DATE", $D${10+k}="MONEY"),"",IF($D${10+k}="DECIMAL","("&$E${10+k}&","&$F${10+k}&")","("&$E${10+k}&")"))&""&IF($G${10+k}=""," NULL",$G${10+k})&IF(AND($G${10+k}=" NOT NULL",$H${10+k}<>"")," DEFAULT "&$H${10+k},"")&", ")`;
+		    cell_formula =`=IF($C${10+k}="","",""""&$C${10+k}&""" "&$D${10+k}&IF(OR($D${10+k}="INT",$D${10+k}="DATE", $D${10+k}="MONEY"),"",IF($D${10+k}="DECIMAL","("&$E${10+k}&","&$F${10+k}&")","("&$E${10+k}&")"))&" "&IF($G${10+k}=""," NULL",$G${10+k})&IF(AND($G${10+k}=" NOT NULL",$H${10+k}<>"")," DEFAULT "&$H${10+k},"")&", ")`;
+		    console.log( cell_formula );	
 		    sheet0.setFormula( cell.row + k, cell.col, cell_formula )
+		    console.log( cell.row , k , cell.col ) ;  
 		}
 		
 		cell = sheet0.getRange('AO12:AO12', GC.Spread.Sheets.SheetArea.viewport );
 		cell_formula = sheet0.getFormula( cell.row, cell.col )
-		cell_formula = '="PRIMARY KEY (seq) "&AE&60&AJ$10'
+		cell_formula = '="PRIMARY KEY (seq) "&AE60&AJ$10&'
 		sheet0.setFormula( cell.row, cell.col, cell_formula );
 		
 		cell = sheet0.getRange('AO13:AO13', GC.Spread.Sheets.SheetArea.viewport );
 		cell_formula = '=")"'
 		sheet0.setFormula( cell.row, cell.col, cell_formula ) 
+
+		sheet0.resumeCalcService( false ); 
 
 
 
