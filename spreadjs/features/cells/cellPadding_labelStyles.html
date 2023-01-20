@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+
+			sheet.name("Date DragFill");
+			let type = new GC.Spread.Sheets.Style();
+			type.watermark = "User name";
+			type.cellPadding = "20";
+			type.labelOptions = { alignment: GC.Spread.Sheets.LabelAlignment.topLeft, visibility: GC.Spread.Sheets.LabelVisibility.visible };
+			sheet.setStyle( 0,1, type ); 
+			sheet.getRange(0, -1,1, -1, GC.Spread.Sheets.SheetArea.viewport ).height( 60) ;
+			sheet.getRange( -1,1,-1,1 ).width(150);
+			let combo = new GC.Spread.Sheets.CellTypes.ComboBox(); 		
+			combo.items([{ text: "Oranges", value:"11k" },{ text: "Applies", value:"15K" }, { text:"Grape", value:"100k" }]);		
+			combo.editorValueType( GC.Spread.Sheets.CellTypes.EditorValueType.text );
+			sheet.setCellType( 2,1, combo, GC.Spread.Sheets.SheetArea.viewport ); 
+			sheet.getCell(2,1, GC.Spread.Sheets.SheetArea.viewport).watermark("ComboBox Cell Type").cellPadding('10 10 20 10');
+			sheet.getCell(2,1, GC.Spread.Sheets.SheetArea.viewport ).labelOptions({ alignment: GC.Spread.Sheets.LabelAlignment.bottomCenter, foreColor: 'yellowgreen', font: 'bold 15px Arial'});
+			sheet.getRange( 2,-1,1,-1, GC.Spread.Sheets.SheetArea.viewport ).height(60);		
+			sheet.setValue( 2,1, "Oranges" )
+
+
+
+		};
+	</script>
+	
+</html> 
+
+
+

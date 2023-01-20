@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			spread.getSheet(1).isSelected( true ); 
+			spread.getSheet(2).isSelected( false ); 
+			spread.getSheet(3).isSelected( true ); 
+			spread.getSheet(4).isSelected( true );
+
+			var selectedState = spread.getSheet(3).isSelected();
+			console.log( selectedState ) 
+			let activeSheet = sheet 		
+			// Merge three columns with origin at cell(1,1).
+			 activeSheet.addSpan(1, 1, 1, 3, GC.Spread.Sheets.SheetArea.viewport);
+
+			 // Merge 2 rows x 2 columns with origin at cell(3,3).
+			 activeSheet.addSpan(3, 3, 2, 2, GC.Spread.Sheets.SheetArea.viewport);
+
+			 // Set on every anchor cell
+			 var cell = activeSheet.getCell(1, 1, GC.Spread.Sheets.SheetArea.viewport);
+			 cell.backColor("LightCyan");
+			 cell.value("Row binding");
+			 cell = activeSheet.getCell(3, 3, GC.Spread.Sheets.SheetArea.viewport);
+			 cell.backColor("LightPink");
+			 cell.value("Matrix binding");
+			 cell.hAlign(GC.Spread.Sheets.HorizontalAlign.center);
+			 cell.vAlign(GC.Spread.Sheets.VerticalAlign.center);
+
+		};
+	</script>
+	
+</html> 
+
+
+
