@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<input type='button' id ='button1' value='button1' />
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			let style = new GC.Spread.Sheets.Style(); 		
+			style.backColor = 'red';
+			style.borderLeft = new GC.Spread.Sheets.LineBorder("blue", GC.Spread.Sheets.LineStyle.medium ); 
+			style.borderTop = new GC.Spread.Sheets.LineBorder("blue", GC.Spread.Sheets.LineStyle.medium ); 
+			style.borderRight = new GC.Spread.Sheets.LineBorder("blue", GC.Spread.Sheets.LineStyle.medium ); 
+			style.borderBottom = new GC.Spread.Sheets.LineBorder("blue", GC.Spread.Sheets.LineStyle.medium );
+			sheet.setStyle( 1,1, style, GC.Spread.Sheets.SheetArea.viewport ); 
+
+			let activeSheet = spread.getSheet(1); 
+			//setDefaultStyle
+			activeSheet.setRowCount(5, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setColumnCount(5, GC.Spread.Sheets.SheetArea.viewport);
+// Set the default styles . 
+			let defaultStyle = new GC.Spread.Sheets.Style();
+			defaultStyle.backColor = 'LemonChiffon';
+			defaultStyle.foreColor = 'Red';
+			defaultStyle.formatter = '0.00';
+			defaultStyle.hAlign = GC.Spread.Sheets.HorizontalAlign.center; 
+			defaultStyle.borderLeft = new GC.Spread.Sheets.LineBorder("Green",GC.Spread.Sheets.LineStyle.medium);
+			defaultStyle.borderTop = new GC.Spread.Sheets.LineBorder("Green",GC.Spread.Sheets.LineStyle.medium);
+			defaultStyle.borderRight = new GC.Spread.Sheets.LineBorder("Green",GC.Spread.Sheets.LineStyle.medium);
+			defaultStyle.borderBottom = new GC.Spread.Sheets.LineBorder("Green",GC.Spread.Sheets.LineStyle.medium);			
+			activeSheet.setDefaultStyle(defaultStyle, GC.Spread.Sheets.SheetArea.viewport);
+			var rowCount = activeSheet.getRowCount();
+			var colCount = activeSheet.getColumnCount();
+			for(var i = 0; i < rowCount; i++){
+			    for(var j = 0; j < colCount; j++){
+				activeSheet.setValue(i, j, i+j, GC.Spread.Sheets.SheetArea.viewport);
+			    }
+			}		
+			spread.setActiveSheetIndex(1);		
+// Set Style for a Range.. 
+			activeSheet = spread.getSheet(2)
+			style = activeSheet.getDefaultStyle();
+			style.backColor = 'lightgray';
+			style.foreColor = 'purple';
+			let ns = GC.Spread.Sheets 
+			style.borderLeft = new ns.LineBorder("red", ns.LineStyle.hair);
+			style.borderTop = new ns.LineBorder("red", ns.LineStyle.hair);
+			style.borderRight = new ns.LineBorder("red", ns.LineStyle.hair);
+			style.borderBottom = new ns.LineBorder("red", ns.LineStyle.hair);
+			
+			let cell = activeSheet.getRange( 3,3,6,6 );
+			cell.value( 10 );
+			cell.formatter('0.0%');
+			cell.backColor('lightgreen');		
+  			cell.borderLeft(new ns.LineBorder("gray", ns.LineStyle.double));
+			cell.borderTop(new ns.LineBorder("gray", ns.LineStyle.double));
+			cell.borderRight(new ns.LineBorder("gray", ns.LineStyle.double));
+			cell.borderBottom(new ns.LineBorder("gray", ns.LineStyle.double));
+			var row = activeSheet.getRange(2, -1, 8, -1);
+			row.backColor("lightblue");
+			row.borderLeft(new ns.LineBorder("green", ns.LineStyle.dashed));
+			row.borderRight(new ns.LineBorder("green", ns.LineStyle.dashed));
+			var col = activeSheet.getRange(-1, 2, -1, 8);
+			col.backColor("pink");
+			col.borderTop(new ns.LineBorder("blue", ns.LineStyle.dashed));
+			col.borderBottom(new ns.LineBorder("blue", ns.LineStyle.dashed));				
+			spread.setActiveSheetIndex(2);		
+// Set Named Style .. 
+			activeSheet = spread.getSheet(3)
+			spread.setActiveSheetIndex(3); 
+			let namedStyle = new GC.Spread.Sheets.Style();
+
+			namedStyle.name = 'style1';
+			namedStyle.backColor = 'green';
+			activeSheet.addNamedStyle( namedStyle ); 
+			activeSheet.setStyleName( 1,1, 'style1') ;
+			activeSheet.setStyleName( 2,1, 'style1');
+			
+			style = activeSheet.getNamedStyle('style1');
+			style.foreColor = 'red' ;
+			activeSheet.repaint();
+			activeSheet.getCell(1,1).value('test');
+			$('#button1').click( function(){		
+				activeSheet.removeNamedStyle('style1');
+			}); 			
+
+
+
+		};
+	</script>
+	
+</html> 
+
+
+
