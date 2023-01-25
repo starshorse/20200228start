@@ -26,7 +26,8 @@ angular.module('ezof_dba_editorService',[])
 	}
 	this.updateTblPr_config = async ( spread,  tbl_name )=>{
 	      sheet1 = spread.getSheet(1); 	
-	      sheet1.getRange('C3:C3').text( tbl_name ); 
+	      let cellC3 = sheet1.getRange('C3:C3').text( tbl_name ); 
+	      sheet1.autoFitColumn( cellC3.col );	
 	      ezof_dba_editorFactory.tbl_name =  tbl_name  ; 
 	}
 	this.updateTblData = async ( spread , db_name )=>{
@@ -232,7 +233,7 @@ angular.module('ezof_dba_editorService',[])
 	     let tblName_column = ezof_dba_editorFactory.tblName_list.tbl_columns =  [ new GC.Spread.Sheets.Tables.TableColumn(1, 'TABLE_NAME', 'TABLE_NAME')]; 	
 	     tblName_view.bind( tblName_column , 'tbl_data_1', 	tblName_list ) 
 	 //    sheet1.setColumnWidth( 2, 200 );	
-	     sheet1.getRange('C2:C2').text("테이블 권한").backColor("yellow"); 	
+	     sheet1.getRange('C2:C2').text("테이블 권한").backColor("lightgreen"); 	
 	     let tbl_name = ezof_dba_editorFactory.tbl_name =  ezof_dba_editorFactory.tblName_list.tbl_data_1[0].TABLE_NAME ; 
 	     sheet1.getRange('C3:C3').text( tbl_name ); 
 	     sheet1.autoFitColumn(0) ;
@@ -241,7 +242,9 @@ angular.module('ezof_dba_editorService',[])
 	     let prType_combo = new GC.Spread.Sheets.CellTypes.ComboBox(); 
 	     prType_combo.items(["SELECT","UPDATE","INSERT","DELETE","REMOVE_ALL"])	
 	     sheet1.getRange('C5:C5').cellType( prType_combo );  	
-             sheet1.getRange('C5:C5').text("SELECT");
+             let cellC5 = sheet1.getRange('C5:C5').text("SELECT");
+	     sheet1.setRowHeight( cellC5.row , 40 );	
+	     sheet1.setColumnWidth( cellC5.col -1 , 20 );	
 		
 	     let allow_cellButton = new GC.Spread.Sheets.CellTypes.Button() 
 	     allow_cellButton.text('권한부여') 

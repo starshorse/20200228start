@@ -55,16 +55,31 @@
 			<div id='content'>
 				<nav class='navbar navbar-expand-lg navbar-light bg-light'>
 					<div class='container-fluid row'>
-						<div class='input-group col-md-2 mx-0 px-0'>
+						<div class='input-group col-md-1 mx-0 px-0'>
 							  <div class="input-group-prepend">
 							      <label class="input-group-text" for="inputGroupSelect01">DB</label>
 							  </div>
-							    <select class="custom-select" id="inputGroupSelect01" ng-disabled="isDbSelectionDisabled">
+							    <select class="custom-select" id="inputGroupSelect01" ng-disabled="isDbSelectionDisabled" ng-init="user_DB = 'demo'">
 							      <option selected>{{ user_DB }}</option>
 							      <option value="common">Common</option>
 							      <option value="config">Config</option>
 							      <option value="ezoffice">ezoffice</option>
 							      <option value="ezchemtech">ezchemtech</option>
+							      <option value="demo">demo</option>
+							      <option value="orientpi">orientpi</option>
+							    </select>
+						</div>
+						<div class='input-group col-md-1 mx-0 px-0'>
+							  <div class="input-group-prepend">
+							      <label class="input-group-text" for="inputGroupSelect01">USER</label>
+							  </div>
+							    <select class="custom-select" id="inputGroupSelect01" ng-disabled="isDbSelectionDisabled" ng-init="user_DB = 'demo'">
+							      <option selected>{{ user_DB }}</option>
+							      <option value="common">Common</option>
+							      <option value="config">Config</option>
+							      <option value="ezoffice">ezoffice</option>
+							      <option value="ezchemtech">ezchemtech</option>
+							      <option value="demo">demo</option>
 							      <option value="orientpi">orientpi</option>
 							    </select>
 						</div>

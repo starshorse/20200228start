@@ -59,18 +59,22 @@
 							  <div class="input-group-prepend">
 							      <label class="input-group-text" for="inputGroupSelect01">DB</label>
 							  </div>
-							    <select class="custom-select" id="inputGroupSelect01" ng-disabled="isDbSelectionDisabled">
+							  <select class="custom-select" id="inputGroupSelect01" ng-disabled="isDbSelectionDisabled" ng-init="user_DB ='demo'">
 							      <option selected>{{ user_DB }}</option>
-							      <option value="common">Common</option>
-							      <option value="config">Config</option>
+							      <option value="demo">demo</option>
+							      <option value="orientpi">orientpi</option>
 							      <option value="ezoffice">ezoffice</option>
+							      <option value="ezchemtech">ezchemtech</option>
 							    </select>
 						</div>
-						<div class='col-md-2'>
+						<div class='col-md-1'>
 							<h5><span class='badge badge-secondary mx-3'>Collection</span>디자인</h5>
 						</div>
+						<div class='col-md-1'>
+							<h6><span class='badge badge-secondary mx-3'>App</span>Table_editor</h6>
+						</div>
 						<div class='col-md-2'>
-							<h5><span class='badge badge-secondary mx-3'>App</span>테이블편집기</h5>
+							<h6><span class='badge badge-secondary mx-3'>Conf</span>TB_Admin_10203</h6>
 						</div>
 						<div class='col-md-4'>
 							<div class='alert alert-block' ng-class="{'alert-success': alert_info_message.class == 'success', 'alert-warning': alert_info_message.class == 'warning' }" role='alert' ng-init="alert_info_message.message ='Alert Message'; alert_info_message.class = 'warning'">

@@ -3,22 +3,210 @@ angular.module('ezch_tbl_editorService',[])
 	var ezch_tbl_editorFactory = {
 		tblView_tbl : { tbl_pos: null ,  tbl_view : null , tbl_columns: null , tbl_data_1 : null } ,
 		saved_config_list :  { tbl_view : null , tbl_columns : null , tbl_data : [{ configName: 'Test01', delete: false },{ configName:'e_approval_request01', delete: false }] } ,
-		cur_db: 'demo',
+		cellBinding_config_list: { tbl_name : 'TB_admin_1' , mass_enable: false , sql_enable: false , sqlState_where: 'order by seq desc' , cur_config_name: '' }, 
+		spread: null ,
 		tbl_name:'TB_admin_1',
+		cur_db: 'demo',
+		config_name:'TB_admin_1', 
 		cur_id: 'richard.choi@ez-office.co.kr',
-		sql_state: { pos: null , state_1 :  'select ', state_2: null },
+		sql_state: { pos: null , state_1 :  'select ', state_2:'order by seq desc' },
 //functions.		
-		update_editLists : null 		
+		update_editLists : null,
+		update_cur_db: null,
+		updateAlertInfo: null 
 	}
 	return ezch_tbl_editorFactory 
 }])
 .service('ezch_tbl_editorService', ['$injector',function($injector){
 	var ezch_tbl_editorFactory = $injector.get('ezch_tbl_editorFactory') 
 	var $http = $injector.get('$http') 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  TblView : Service.     
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	this.updateSql = async ( spread, user_db = null  )=>{
+		if( ezch_tbl_editorFactory.cellBinding_config_list.sql_enable == true ){
+			let sheet0 = spread.getSheet(0); 
+			let sqlState = ezch_tbl_editorFactory.sql_state.state_1 + ' ' + ezch_tbl_editorFactory.cellBinding_config_list.sqlState_where ;
+			let tbl_columns =  await $http.get('/data/admin_1_schema.json')
+			if( user_db == null )user_db = ezch_tbl_editorFactory.cur_db 
+			let tbl_data  = await $http({ method:'POST', url:`/tbl_editor/${user_db}/admin_1/sql`, data: { sql_state: sqlState } })
+			tbl_data.data = tbl_data.data.DATA 
+
+			tbl_columns = ezch_tbl_editorFactory.tblView_tbl.tbl_columns = tbl_columns.data 
+			let nameOnly = []
+			tbl_columns = tbl_columns.reduce(( acc, cur )=>{
+				let tableColumn = new GC.Spread.Sheets.Tables.TableColumn() 
+				nameOnly.push( cur.Field ) 
+				tableColumn.dataField( cur.Field )
+				tableColumn.name( cur.Field )
+				tableColumn.formatter( cur.Formatter ) 
+				acc.push(tableColumn) 
+				return acc
+			},[])
+
+			ezch_tbl_editorFactory.tblView_tbl.tbl_data_1 =  tbl_data.data 
+			let tbl_info = ezch_tbl_editorFactory.tblView_tbl 
+			let table1 = ezch_tbl_editorFactory.tblView_tbl.tbl_view 
+			let tbl_pos = ezch_tbl_editorFactory.tblView_tbl.tbl_pos 
+			
+			table1.autoGenerateColumns( false ) 
+			sheet0.tables.resize( table1, new GC.Spread.Sheets.Range( tbl_pos.row, tbl_pos.col, tbl_info.tbl_data_1.length , tbl_columns.length ))  	
+			table1.bind( tbl_columns , 'tbl_data_1', tbl_info ) 
+		}else{
+			this.updateData_1( spread ) 
+		}	
+	}
+        this.saveTblViewConfig = ( spread )=>{
+	}
+	this.massCheck_toggle = ( spread, IsMass )=>{
+		let sheet0 = spread.getSheet(0);
+		let mass_check = sheet0.getRange('B11:B11')
+		for( i = 1; i < 5; i++ )sheet0.setRowVisible( mass_check.row +i , IsMass ) 
+	}
+	this.updateData_1 = async( spread, user_db = null  )=>{
+		let sheet0 = spread.getSheet(0) 
+		let tbl_columns =  await $http.get('/data/admin_1_schema.json')
+//		let tbl_data    =  await $http.get('/data/admin_1_data.json')
+		if( user_db == null )user_db = ezch_tbl_editorFactory.cur_db 
+		let tbl_data  = await $http.get(`/tbl_editor/${ user_db}/admin_1`)
+		tbl_data.data = tbl_data.data.DATA 
+
+		tbl_columns = ezch_tbl_editorFactory.tblView_tbl.tbl_columns = tbl_columns.data 
+		let nameOnly = []
+		tbl_columns = tbl_columns.reduce(( acc, cur )=>{
+			let tableColumn = new GC.Spread.Sheets.Tables.TableColumn() 
+			nameOnly.push( cur.Field ) 
+			tableColumn.dataField( cur.Field )
+			tableColumn.name( cur.Field )
+			tableColumn.formatter( cur.Formatter ) 
+			acc.push(tableColumn) 
+			return acc
+		},[])
+
+
+		ezch_tbl_editorFactory.tblView_tbl.tbl_data_1 =  tbl_data.data 
+		let tbl_info = ezch_tbl_editorFactory.tblView_tbl 
+		let table1 = ezch_tbl_editorFactory.tblView_tbl.tbl_view 
+		let tbl_pos = ezch_tbl_editorFactory.tblView_tbl.tbl_pos 
+		
+		table1.autoGenerateColumns( false ) 
+	        sheet0.tables.resize( table1, new GC.Spread.Sheets.Range( tbl_pos.row, tbl_pos.col, tbl_info.tbl_data_1.length , tbl_columns.length ))  	
+		table1.bind( tbl_columns , 'tbl_data_1', tbl_info ) 
+		
+		let sql_pos = ezch_tbl_editorFactory.sql_state.pos 
+		let tbl_name = ezch_tbl_editorFactory.tbl_name
+		let field_list = nameOnly.join(',') 
+		let state = `select ${ field_list } from ${tbl_name}` 
+		ezch_tbl_editorFactory.sql_state.state_1 = state ;
+//		state = ezch_tbl_editorFactory.sql_state.state_2 ; 
+//		sheet0.getCell( sql_pos.row, sql_pos.col).value( state ).wordWrap(true)  
+		
+		ezch_tbl_editorFactory.cur_db = user_db ;
+
+	}
+	this.initTblView = async ( spread )=>{
+	      ezch_tbl_editorFactory.spread = spread ;
+
+	      let source = new GC.Spread.Sheets.Bindings.CellBindingSource( ezch_tbl_editorFactory.cellBinding_config_list )	
+
+	      let sheet0 = spread.getSheet(0); 
+	      sheet0.name('TblView')
+	      sheet0.setColumnCount(30)
+	      let defaultStyle = new GC.Spread.Sheets.Style() 
+	      sheet0.suspendPaint();
+	      sheet0.setDefaultStyle( defaultStyle ) 
+	      sheet0.resumePaint() 
+	      sheet0.frozenRowCount(17) 
+	      let cell_massCheck = sheet0.getRange('C7') 
+	      sheet0.setRowHeight( cell_massCheck.row-1, 40 ) 	
+	      sheet0.setRowHeight( cell_massCheck.row, 40 ) 	
+//	      sheet0.setValue( cell_massCheck.row-1 , cell_massCheck.col -1 , 'sql조건' ) 
+	      sheet0.setValue( cell_massCheck.row , cell_massCheck.col -1 , '대량데이터' ) 
+	      let cell_c1 = new GC.Spread.Sheets.CellTypes.CheckBox() 
+	      sheet0.clear( cell_massCheck, cell_massCheck.col, 1,1, GC.Spread.Sheets.SheetArea.viewport, GC.Spread.Sheets.StorageType.style ) 
+	      sheet0.setCellType( cell_massCheck.row, cell_massCheck.col, cell_c1 ) 	
+
+	      sheet0.setBindingPath( cell_massCheck.row, cell_massCheck.col, 'mass_enable' )		
+//	      sheet0.setCellType( cell_massCheck.row-1, cell_massCheck.col, cell_c1 ) 	
+		
+	      sheet0.setValue( cell_massCheck.row-1 , cell_massCheck.col +3 , '현재테이블' ) 
+	      let r = sheet0.getRange('G6:G6').backColor('#fefce3').text('TB_Admin_1') 	
+              r.setBorder( new GC.Spread.Sheets.LineBorder('#7FFFD4', GC.Spread.Sheets.LineStyle.medium ), { all:true }, 3 );  			
+
+	      let cell_bt1 = new GC.Spread.Sheets.CellTypes.Button() 
+	      cell_bt1.text('대량데이터실행')
+	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +1 , cell_bt1 ) 
+//	      sheet0.setCellType( cell_massCheck.row-1 , cell_massCheck.col +1 , cell_bt1 ) 
+	      let cell_bt2 = new GC.Spread.Sheets.CellTypes.Button() 
+	      cell_bt2.text('잠금해제')
+	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +4 , cell_bt2 ) 
+	      let cell_bt3 = new GC.Spread.Sheets.CellTypes.Button() 
+	      cell_bt3.text('새로고침/SQL 실행')
+	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +5 , cell_bt3 ) 
+
+	      let cell_bt4 = new GC.Spread.Sheets.CellTypes.Button() 
+	      cell_bt4.text('즐겨찾기 저장')
+	      sheet0.getRange('M7:M7').cellType( cell_bt4 ) 
+	      r = sheet0.getRange('M6:M6').backColor('#fefce3').text('TB_Admin_1')
+              r.setBorder( new GC.Spread.Sheets.LineBorder('#7FFFD4', GC.Spread.Sheets.LineStyle.medium ), { all:true }, 3 );  			
+
+	      sheet0.addSpan( cell_massCheck.row - 3 , cell_massCheck.col +6 , 4, 4 )			
+	      sheet0.getCell( cell_massCheck.row - 3 , cell_massCheck.col +6 ).backColor('#fefce3')
+	      r = sheet0.getRange( cell_massCheck.row -3 , cell_massCheck.col + 6,4,4 );
+              r.setBorder( new GC.Spread.Sheets.LineBorder('#7FFFD4', GC.Spread.Sheets.LineStyle.medium ), { all:true }, 3 );  			
+	      sheet0.setBindingPath( cell_massCheck.row -3 , cell_massCheck.col + 6 , 'sqlState_where' );	
+
+//	      sheet0.addSpan( cell_massCheck.row - 3 , cell_massCheck.col +10 , 4, 4 )			
+		
+	      let sql_enable = new GC.Spread.Sheets.CellTypes.CheckBox()
+	      sql_enable.caption('SQL input Enable')
+	      let cellH6 = sheet0.getRange('H6:H6').cellType( sql_enable ); 
+	      sheet0.setBindingPath( cellH6.row, cellH6.col, 'sql_enable' )		
+
+
+// mass data input..
+	      r = sheet0.getRange('B11:O15').backColor('#fefce3');
+              r.setBorder( new GC.Spread.Sheets.LineBorder('#7FFFD4', GC.Spread.Sheets.LineStyle.medium ), { all:true }, 3 );  			
+	      sheet0.getRange('B11:B15').backColor('#cccccc');
+		
+
+	      ezch_tbl_editorFactory.sql_state.pos = sheet0.getRange('I4')	
+		
+// init column with ..
+	      sheet0.setColumnWidth( 3, 200 );
+	      sheet0.setColumnWidth( 5, 200 );
+	      sheet0.setColumnWidth( 6, 200 );
+	      sheet0.setColumnWidth( 7, 200 );
+	      sheet0.setColumnWidth( 8, 400 );
+	      sheet0.setColumnWidth( 12, 200 );
+
+	      this.massCheck_toggle( spread, false ); 	
+//
+
+	      let cell_tblData = sheet0.getRange('B17') 	
+	      let table1 = ezch_tbl_editorFactory.tblView_tbl.tbl_view = sheet0.tables.add('tableView', cell_tblData.row , cell_tblData.col, 120, 20 );
+	      ezch_tbl_editorFactory.tblView_tbl.tbl_pos = cell_tblData 
+	      table1.style( GC.Spread.Sheets.Tables.TableThemes['medium4']) 
+
+	      sheet0.setDataSource( source )
+
+	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Global menu : Service.     
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	this.setUpdate_editLists = ( update_editLists_f  )=>{
 		ezch_tbl_editorFactory.update_editLists = update_editLists_f ; 
 		ezch_tbl_editorFactory.update_editLists( ezch_tbl_editorFactory.saved_config_list.tbl_data ) 
 	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//   TblList : Services 
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	this.getServerSide = async ()=>{
 		let id = ezch_tbl_editorFactory.cur_id  
 		let headers = { id } 
@@ -82,79 +270,23 @@ angular.module('ezch_tbl_editorService',[])
 		this.updateServerSide()
 
 	}
-	this.updateData_1 = async( spread )=>{
-		let sheet0 = spread.getSheet(0) 
-		let tbl_columns =  await $http.get('/data/admin_1_schema.json')
-		let tbl_data    =  await $http.get('/data/admin_1_data.json')
-		tbl_columns = ezch_tbl_editorFactory.tblView_tbl.tbl_columns = tbl_columns.data 
-		let nameOnly = []
-		tbl_columns = tbl_columns.reduce(( acc, cur )=>{
-			let tableColumn = new GC.Spread.Sheets.Tables.TableColumn() 
-			nameOnly.push( cur.Field ) 
-			tableColumn.dataField( cur.Field )
-			tableColumn.name( cur.Field )
-			tableColumn.formatter( cur.Formatter ) 
-			acc.push(tableColumn) 
-			return acc
-		},[])
+	this.updateTblList = async ( spread, user_db  )=>{
+	     ezch_tbl_editorFactory.cur_db = user_db ;
+	     let sheet1 = spread.getSheet(1); 
+	     await this.getServerSide() 	
+	     let saved_config_list = ezch_tbl_editorFactory.saved_config_list 
+	     let cell_savedConfig = sheet1.getRange('N2').backColor('#E3EFDA') 
+//	     saved_config_list.tbl_view = sheet1.tables.add( 'configList', cell_savedConfig.row + 2 , cell_savedConfig.col , 1 , 2 ) 	
+	     let del_cellButton = new GC.Spread.Sheets.CellTypes.Button() 
+	     del_cellButton.text('Delete') 
 
-
-		ezch_tbl_editorFactory.tblView_tbl.tbl_data_1 =  tbl_data.data 
-		let tbl_info = ezch_tbl_editorFactory.tblView_tbl 
-		let table1 = ezch_tbl_editorFactory.tblView_tbl.tbl_view 
-		let tbl_pos = ezch_tbl_editorFactory.tblView_tbl.tbl_pos 
-		
-		table1.autoGenerateColumns( false ) 
-	        sheet0.tables.resize( table1, new GC.Spread.Sheets.Range( tbl_pos.row, tbl_pos.col, tbl_info.tbl_data_1.length , tbl_columns.length ))  	
-		table1.bind( tbl_columns , 'tbl_data_1', tbl_info ) 
-		
-		let sql_pos = ezch_tbl_editorFactory.sql_state.pos 
-		let tbl_name = ezch_tbl_editorFactory.tbl_name
-		let field_list = nameOnly.join(',') 
-		let state = `select ${ field_list } from ${tbl_name}` 
-		sheet0.getCell( sql_pos.row, sql_pos.col).value( state ).wordWrap(true)  
-
-	}
-	this.initTblView = async ( spread )=>{
-	      let sheet0 = spread.getSheet(0); 
-	      sheet0.name('TblView')
-	      sheet0.setColumnCount(30)
-	      let defaultStyle = new GC.Spread.Sheets.Style() 
-	      sheet0.suspendPaint();
-	      sheet0.setDefaultStyle( defaultStyle ) 
-	      sheet0.resumePaint() 
-	      sheet0.frozenRowCount(17) 
-	      let cell_massCheck = sheet0.getRange('C7') 
-	      sheet0.setRowHeight( cell_massCheck.row-1, 40 ) 	
-	      sheet0.setRowHeight( cell_massCheck.row, 40 ) 	
-	      sheet0.setValue( cell_massCheck.row-1 , cell_massCheck.col -1 , 'sql조건' ) 
-	      sheet0.setValue( cell_massCheck.row , cell_massCheck.col -1 , '대량삽입' ) 
-	      let cell_c1 = new GC.Spread.Sheets.CellTypes.CheckBox() 
-	      sheet0.clear( cell_massCheck, cell_massCheck.col, 1,1, GC.Spread.Sheets.SheetArea.viewport, GC.Spread.Sheets.StorageType.style ) 
-	      sheet0.setCellType( cell_massCheck.row, cell_massCheck.col, cell_c1 ) 	
-	      sheet0.setCellType( cell_massCheck.row-1, cell_massCheck.col, cell_c1 ) 	
-		
-	      sheet0.setValue( cell_massCheck.row-1 , cell_massCheck.col +3 , '현재테이블' ) 
-	      let cell_bt1 = new GC.Spread.Sheets.CellTypes.Button() 
-	      cell_bt1.text('실행')
-	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +1 , cell_bt1 ) 
-	      sheet0.setCellType( cell_massCheck.row-1 , cell_massCheck.col +1 , cell_bt1 ) 
-	      let cell_bt2 = new GC.Spread.Sheets.CellTypes.Button() 
-	      cell_bt2.text('잠금해제')
-	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +4 , cell_bt2 ) 
-	      let cell_bt3 = new GC.Spread.Sheets.CellTypes.Button() 
-	      cell_bt3.text('업데이트')
-	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +5 , cell_bt3 ) 
-
-	      sheet0.addSpan( cell_massCheck.row - 3 , cell_massCheck.col +6 , 4, 4 )			
-	      sheet0.addSpan( cell_massCheck.row - 3 , cell_massCheck.col +10 , 4, 4 )			
-	      ezch_tbl_editorFactory.sql_state.pos = sheet0.getRange('I4')	
-		
-
-	      let cell_tblData = sheet0.getRange('B17') 	
-	      let table1 = ezch_tbl_editorFactory.tblView_tbl.tbl_view = sheet0.tables.add('tableView', cell_tblData.row , cell_tblData.col, 120, 20 );
-	      ezch_tbl_editorFactory.tblView_tbl.tbl_pos = cell_tblData 
-	      table1.style( GC.Spread.Sheets.Tables.TableThemes['medium4']) 
+	     let tableCol1 = new GC.Spread.Sheets.Tables.TableColumn(1, 'configName', 'Conifg List' ) 
+	     let tableCol2 = new GC.Spread.Sheets.Tables.TableColumn(2, 'delete', 'Del' , null, del_cellButton ) 	
+             
+	     ezch_tbl_editorFactory.saved_config_list.tbl_columns = [ tableCol1, tableCol2 ]
+ 
+	     saved_config_list.tbl_view.autoGenerateColumns( false ) 
+	     saved_config_list.tbl_view.bind([ tableCol1 , tableCol2 ]  , 'tbl_data', saved_config_list )		
 	}
 	this.initTblList = async ( spread )=>{
              let sheet1 = spread.getSheet(1);
@@ -181,7 +313,6 @@ angular.module('ezch_tbl_editorService',[])
 	     saved_config_list.tbl_view.bind([ tableCol1 , tableCol2 ]  , 'tbl_data', saved_config_list )		
 	 //    sheet1.options.isProtected = true 	
 	     await this.updateData_1( spread ) 
-
 	}
 }])
 .service('ezch_tbl_editor_eventsService', ['$injector', function($injector){
@@ -192,6 +323,22 @@ angular.module('ezch_tbl_editorService',[])
 		let updateConfig = sheet1.getValue( args.row , args.col ) 
 		if( args.col == cell_savedConfig.col && args.row > cell_savedConfig.row  ){
 			ezch_tbl_editorService.updateConfig( spread,  updateConfig )  
+		}
+	}
+	this.sheet0_buttonClicked = ( spread, sender, args )=>{
+		let sheet0 = spread.getSheet(0) 
+		let cell_updateSql = sheet0.getRange('H7') 
+		let cell_savedConfig = sheet0.getRange('M7') 
+		if( args.col == cell_updateSql.col ){
+			switch( args.row ){
+				case cell_updateSql.row:
+					ezch_tbl_editorService.updateSql( spread )
+					break; 
+				case cell_savedConfig.row:
+					ezch_tbl_editorService.saveTblViewConfig( spread )
+					break;
+				default:	
+			}
 		}
 	}
 	this.sheet1_buttonClicked = ( spread, sender, args )=>{

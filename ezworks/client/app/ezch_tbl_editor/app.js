@@ -5,4 +5,25 @@ angular.module('ezch_tbl_editor',[
 	'ezch_tbl_editorService'
 ])
 .controller('ezch_tbl_editorCtrl', ['$scope','$injector', function( $scope, $injector ){
+	var ezch_tbl_editorFactory = $injector.get('ezch_tbl_editorFactory')
+	var ezch_tbl_editorService = $injector.get('ezch_tbl_editorService')
+	$scope.user_DB
+	$scope.alert_info_message = { class: 'warning' ,message: 'init' }
+	const updateUserDB = ( user_db )=>{
+		$scope.user_DB = user_db;
+		if( !$scope.$$phase )$scope.$apply() 
+		ezch_tbl_editorFactory.cur_db = user_db ;
+	}
+	const updateAlertInfo = ( alert_info_message )=>{
+		$scope.alert_info_message = alert_info_message; 	
+		if( !$scope.$$phase )$scope.$apply() 
+	}
+	ezch_tbl_editorFactory.update_cur_db = updateUserDB ;	
+	ezch_tbl_editorFactory.updateAlertInfo = updateAlertInfo ; 
+	document.getElementById('inputGroupSelect01').addEventListener('change', function(e){
+		let  db_name = document.getElementById('inputGroupSelect01').value 
+		let  spread = ezch_tbl_editorFactory.spread ; 
+		ezch_tbl_editorService.updateTblList( spread, db_name ); 
+                ezch_tbl_editorService.updateData_1( spread, db_name );
+	})
 }])
