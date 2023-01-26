@@ -9,6 +9,7 @@ angular.module('ezch_tbl_editor',[
 	var ezch_tbl_editorService = $injector.get('ezch_tbl_editorService')
 	$scope.user_DB
 	$scope.alert_info_message = { class: 'warning' ,message: 'init' }
+	$scope.cur_config_name = ezch_tbl_editorFactory.config_name 
 	const updateUserDB = ( user_db )=>{
 		$scope.user_DB = user_db;
 		if( !$scope.$$phase )$scope.$apply() 
@@ -18,8 +19,13 @@ angular.module('ezch_tbl_editor',[
 		$scope.alert_info_message = alert_info_message; 	
 		if( !$scope.$$phase )$scope.$apply() 
 	}
+	const updateConfigName = ( config_name )=>{
+		$scope.cur_config_name = config_name ;
+		if( !$scope.$$phase )$scope.$apply() 
+	}
 	ezch_tbl_editorFactory.update_cur_db = updateUserDB ;	
 	ezch_tbl_editorFactory.updateAlertInfo = updateAlertInfo ; 
+	ezch_tbl_editorFactory.updateConfigName = updateConfigName ; 
 	document.getElementById('inputGroupSelect01').addEventListener('change', function(e){
 		let  db_name = document.getElementById('inputGroupSelect01').value 
 		let  spread = ezch_tbl_editorFactory.spread ; 
