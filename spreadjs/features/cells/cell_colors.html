@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var activeSheet = spread.getSheet(0);
+			//Set the backcolor and forecolor of cells.
+			    var cell = activeSheet.getCell(1, 1, GC.Spread.Sheets.SheetArea.viewport);
+			    cell.backColor("Blue");
+			    cell.foreColor("Red");
+			    cell.value("Color");		
+	// sets the forecolor and backcolor for the header .. 
+	//Set the backcolor and forecolor for the entire column header.
+		     var row = activeSheet.getRange(0, -1, 1, -1, GC.Spread.Sheets.SheetArea.colHeader);
+		     row.backColor("Red");
+		     row.foreColor("White");
+		     //Set the backcolor for the second row header.
+		     activeSheet.getCell(1, 0, GC.Spread.Sheets.SheetArea.rowHeader).backColor("Yellow");
+       // This example changes the color of the active cell.. 
+		     activeSheet.getCell(0,0).backColor('pink');
+		     activeSheet.bind( GC.Spread.Sheets.Events.LeaveCell, function( event, infos ){
+			// Reset the backcolor of cell before moving 
+			infos.sheet.getCell( infos.row, infos.col ).backColor(undefined); 
+		    })
+		     activeSheet.bind( GC.Spread.Sheets.Events.EnterCell, function( event, infos ){
+			// Set the backcolor of destination cells( currently active cells )
+		        infos.sheet.getCell( infos.row, infos.col ).backColor("pink");
+		    })			     
+
+		};
+	</script>
+	
+</html> 
+
+
+

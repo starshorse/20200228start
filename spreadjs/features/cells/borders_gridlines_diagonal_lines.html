@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+// specifies whether to show the gridlines and sets the gridline color 
+			sheet.options.gridline = { color:'#FF2235', showVerticalGridline: true , showHorizontalGridline: false }; 
+			
+			let cell = sheet.getCell( 1,1, GC.Spread.Sheets.SheetArea.viewport ); 
+			cell.borderLeft( new GC.Spread.Sheets.LineBorder("Red", GC.Spread.Sheets.LineStyle.thick )); 
+			cell.borderTop( new GC.Spread.Sheets.LineBorder("Blue", GC.Spread.Sheets.LineStyle.double )); 
+                        cell.borderRight( new GC.Spread.Sheets.LineBorder("Green", GC.Spread.Sheets.LineStyle.dasDot )); 
+			cell.borderBottom( new GC.Spread.Sheets.LineBorder("Yellow", GC.Spread.Sheets.LineStyle.mediumDashed ));		
+// sets the border color..
+			let activeSheet = sheet ; 		
+                        activeSheet.getRange(2, 2, 2, 2, GC.Spread.Sheets.SheetArea.viewport).setBorder(new GC.Spread.Sheets.LineBorder("#8A2BE2", GC.Spread.Sheets.LineStyle.medium), {all:true});
+			activeSheet.getRange(-1,5, -1, 1).borderTop(new GC.Spread.Sheets.LineBorder("#F0FFFF",GC.Spread.Sheets.LineStyle.medium));
+			activeSheet.getRange(-1, 5, -1, 1).borderLeft(new GC.Spread.Sheets.LineBorder("#F5F5DC",GC.Spread.Sheets.LineStyle.medium));
+			activeSheet.getRange(-1, 5, -1, 1).borderRight(new GC.Spread.Sheets.LineBorder("#FF02FF", GC.Spread.Sheets.LineStyle.dashDot));
+			activeSheet.getRange(-1, 5, -1, 1).borderBottom(new GC.Spread.Sheets.LineBorder("#FFE4C4",GC.Spread.Sheets.LineStyle.thin));
+			activeSheet.getRange(5, -1, 1, -1).borderTop(new GC.Spread.Sheets.LineBorder("#A52A2A",GC.Spread.Sheets.LineStyle.mediumDashed));
+			activeSheet.getRange(5, -1, 1, -1).borderLeft(new GC.Spread.Sheets.LineBorder("#FF02FF",GC.Spread.Sheets.LineStyle.medium));
+			activeSheet.getRange(5, -1, 1, -1).borderRight(new GC.Spread.Sheets.LineBorder("#5F9EA0", GC.Spread.Sheets.LineStyle.dashDot));
+			activeSheet.getRange(5, -1, 1, -1).borderBottom(new GC.Spread.Sheets.LineBorder("#6495ED",GC.Spread.Sheets.LineStyle.dotted));
+// code sets the diagonal lines in a cell.. 
+			cell = sheet.getCell(1,1);
+			cell.diagonalDown( new GC.Spread.Sheets.LineBorder("blue", GC.Spread.Sheets.LineStyle.thick ));
+			cell = sheet.getCell(1,3);
+		        cell.diagonalDown( new GC.Spread.Sheets.LineBorder("green", GC.Spread.Sheets.LineStyle.double )); 
+			cell.diagonalUp( new GC.Spread.Sheets.LineBorder("yellow", GC.Spread.Sheets.LineStyle.double )); 		
+                
+					
+		};
+	</script>
+	
+</html> 
+
+
+
