@@ -11,7 +11,7 @@
 	<body>
 		<div ng-controller='ezch_tbl_editorCtrl'>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a class="navbar-brand" href="#">EZoffice</a> 	
+				<a class="navbar-brand" href="#">{{ user_DB }}</a> 	
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggle-icon"></span>
 				</button> 	
@@ -25,14 +25,7 @@
 								편집리스트
 							</a>	
 							<div class="dropdown-menu">
-								<div ng-repeat="edit_list in edit_lists">
-									<a class="dropdown-item" ng-href="{{ edit_list_click( edit_list )}}">{{ edit_list.configName }}</a> 
-								</div>		
-							<!--	
-								<a class="dropdown-item" href="#">TB_admin_1</a>	
-								<a class="dropdown-item" href="#">TB_e_approval_request</a>	
-								<a class="dropdown-item" href="#">TB_Log_Collector</a>	
-							-->	
+							 <a class="dropdown-item" ng-repeat="edit_list in edit_lists" ng-click="edit_list_click( edit_list.configName )">{{ edit_list.configName }}</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#">기본편집기</a>  
 							</div>	
@@ -43,15 +36,6 @@
 					</form>	
 
 			</nav>	
-<!--			
-		<div class='container-fluid row'>
-				<div class='col-md-10'>
-				</div> 	
-				<div class='col-md-2'>
-					<button class='btn btn-info btn-block'><a href='javascript:closeWindow()'>Close</a></button>
-				</div>	
-			</div>
--->			
 			<div id='content'>
 				<nav class='navbar navbar-expand-lg navbar-light bg-light'>
 					<div class='container-fluid row'>

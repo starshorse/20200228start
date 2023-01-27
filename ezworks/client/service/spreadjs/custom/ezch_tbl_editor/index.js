@@ -308,7 +308,7 @@ angular.module('ezch_tbl_editorService',[])
 		this.updateServerSide()
 
 	}
-	this.updateTblList = async ( spread, user_db  )=>{
+	this.updateTblList = async ( spread, user_db , config_name = null )=>{
 	     ezch_tbl_editorFactory.cur_db = user_db ;
 	     let sheet1 = spread.getSheet(1); 
 	     await this.getServerSide() 	
@@ -325,6 +325,9 @@ angular.module('ezch_tbl_editorService',[])
  
 	     saved_config_list.tbl_view.autoGenerateColumns( false ) 
 	     saved_config_list.tbl_view.bind([ tableCol1 , tableCol2 ]  , 'tbl_data', saved_config_list )		
+		
+	     if( config_name != null )this.updateConfig( spread , config_name ); 	
+		
 	}
 	this.initTblList = async ( spread , configName = null )=>{
              let sheet1 = spread.getSheet(1);
@@ -357,7 +360,6 @@ angular.module('ezch_tbl_editorService',[])
 	     saved_config_list.tbl_view.autoGenerateColumns( false ) 
 	     saved_config_list.tbl_view.bind([ tableCol1 , tableCol2 ]  , 'tbl_data', saved_config_list )		
 	     saved_config_list.tbl_view.style( GC.Spread.Sheets.Tables.TableThemes['medium4']) 
-
 	 //    sheet1.options.isProtected = true 	
 	     if( configName == null ){
 		   this.invalid_tblView( spread )
@@ -365,7 +367,7 @@ angular.module('ezch_tbl_editorService',[])
 		this.updateConfig( spread, configName )   
 		this.updateViewConfig( spread, configName )
 	     	await this.updateData_1( spread ) 
-	     }	     
+	     }
 	}
 }])
 .service('ezch_tbl_editor_eventsService', ['$injector', function($injector){

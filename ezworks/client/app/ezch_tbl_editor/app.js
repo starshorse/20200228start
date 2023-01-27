@@ -10,6 +10,14 @@ angular.module('ezch_tbl_editor',[
 	$scope.user_DB
 	$scope.alert_info_message = { class: 'warning' ,message: 'init' }
 	$scope.cur_config_name = ezch_tbl_editorFactory.config_name 
+	
+	$scope.edit_list_click = ( config_name )=>{
+		let  spread = ezch_tbl_editorFactory.spread ; 
+		console.log( config_name ); 
+ 	        ezch_tbl_editorService.updateTblList( spread, $scope.user_DB , config_name ); 
+                ezch_tbl_editorService.updateData_1( spread, $scope.user_DB , 1 );  // set call_source from tblList :1 
+	}
+	
 	const updateUserDB = ( user_db )=>{
 		$scope.user_DB = user_db;
 		if( !$scope.$$phase )$scope.$apply() 
@@ -29,7 +37,10 @@ angular.module('ezch_tbl_editor',[
 	document.getElementById('inputGroupSelect01').addEventListener('change', function(e){
 		let  db_name = document.getElementById('inputGroupSelect01').value 
 		let  spread = ezch_tbl_editorFactory.spread ; 
+		
 		ezch_tbl_editorService.updateTblList( spread, db_name ); 
-                ezch_tbl_editorService.updateData_1( spread, db_name );
+		ezch_tbl_editorService.invalid_tblView( spread )
+//                ezch_tbl_editorService.updateData_1( spread, db_name );
+
 	})
 }])
