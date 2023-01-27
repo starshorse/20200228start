@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var activeSheet = spread.getSheet(0);
+			// Prepare data
+			activeSheet.setValue(1, 1, "Company Sales Data");
+			activeSheet.setValue(1, 3, "Year-2015");
+			activeSheet.setValue(1, 4, "Year-2016");
+			activeSheet.setValue(1, 5, "Year-2017");
+			activeSheet.setValue(1, 6, "Year-2018");
+			activeSheet.setValue(1, 7, "Year-2019");
+			activeSheet.setValue(2, 2, "Gradlco");
+			activeSheet.setValue(3, 2, "Saagiate");
+			activeSheet.setValue(4, 2, "Inferno");
+			activeSheet.setColumnWidth(1, 120);
+			for (var r = 2; r <= 4; r++) {
+				for (var c = 3; c < 8; c++) {
+					activeSheet.setValue(r, c, parseInt(Math.random() * 5000));
+				}
+			}
+			// Create a Style with TextOrientation and apply it on a range of cells 
+			var style = new GC.Spread.Sheets.Style(); 
+			style.textOrientation = 60 ;
+			style.backColor = "pink";
+			style.foreColor = "red";
+			for( var i = 3 ; i < 8  ; i++ )activeSheet.setStyle( 1 , i, style, GC.Spread.Sheets.SheetArea.viewport );
+	                // Set Row Height 
+			activeSheet.setRowHeight( 1, 60, GC.Spread.Sheets.SheetArea.viewport ); 
+			activeSheet.addSpan( 1,1,4,1, GC.Spread.Sheets.SheetArea.viewport ); 
+			
+			// Set textOrientation for Cell(1,1), this cell is without borders 
+			activeSheet.getCell(1,1).textOrientation(60);
+			activeSheet.getCell(1,1).hAlign( GC.Spread.Sheets.HorizontalAlign.center ); 
+			activeSheet.getCell(1,1).hAlign( GC.Spread.Sheets.VerticalAlign.center ); 
+			activeSheet.getCell(1,1).backColor('LightBlue'); 
+			// Set border for cells 
+			activeSheet.getRange( 1,3,4,5, GC.Spread.Sheets.SheetArea.viewport ).setBorder( new GC.Spread.Sheets.LineBorder("Blue", GC.Spread.Sheets.LineStyle.medium), { all: true }, 3 );
+
+			// Set cell's backColor 
+			for( var i = 2; i< 5 ;i++ )activeSheet.getCell(i,2).backColor('lightGray'); 
+
+
+		};
+	</script>
+	
+</html> 
+
+
+

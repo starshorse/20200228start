@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var SpreadJS =
+			{
+					richText: [{
+					    style: {
+						font: "bold 36px Calibri",
+						foreColor: "rgb(78,133,242)"
+					    },
+					    text: "S"
+					},
+					{
+					    style: {
+						font: "bold 36px Calibri",
+						foreColor: "rgb(228,65,52)"
+					    },
+					    text: "p"
+					},
+					{
+					    style: {
+						font: "bold 36px Calibri",
+						foreColor: "rgb(247,188,32)"
+					    },
+					    text: "r"
+					},
+					{
+					    style: {
+						font: "bold 36px Calibri",
+						foreColor: "rgb(78,133,242)"
+					    },
+					    text: "e"
+					},
+					{
+					    style: {
+						font: "bold 36px Calibri",
+						foreColor: "rgb(65,168,87)"
+					    },
+					    text: "a"
+					},
+					{
+					    style: {
+						font: "bold 36px Calibri",
+						foreColor: "rgb(228,65,54)"
+					    },
+					    text: "d"
+					}
+					]
+			};
+			 var sJS =
+			{
+					richText: [
+					    {
+						style: {
+						    font: "bold 24px Calibri",
+						    foreColor: "rgb(78,133,242)"
+						},
+						text: "S"
+					    },
+					    {
+						style: {
+						    font: "bold 24px Calibri",
+						    foreColor: "rgb(65,168,87)"
+						},
+						text: "p"
+					    },
+					    {
+						style: {
+						    font: "bold 24px Calibri",
+						    foreColor: "rgb(247,188,32)"
+						},
+						text: "r"
+					    },
+					    {
+						style: {
+						    font: "bold 24px Calibri",
+						    foreColor: "rgb(78,133,242)"
+						},
+						text: "e"
+					    },
+					    {
+						style: {
+						    font: "bold 24px Calibri",
+						    foreColor: "rgb(65,168,87)"
+						},
+						text: "a"
+					    },
+					    {
+						style: {
+						    font: "bold 24px Calibri",
+						    foreColor: "rgb(228,65,54)"
+						},
+						text: "d"
+					    }
+					]
+			};
+			sheet.setValue( 3,0 , SpreadJS , 3 );		
+			sheet.setRowHeight( 2, 90);
+			sheet.setRowHeight( 3, 90);
+			sheet.setValue( 2,2 , sJS , GC.Spread.Sheets.SheetArea.viewport ); 		
+			// Apply rich text to the column header cell
+			sheet.setValue(0, 4, { richText: [{ style: { font: 'bold 36px Arial ', foreColor: 'blue' }, text: 'Spread' }] }, GC.Spread.Sheets.SheetArea.colHeader);
+			sheet.setValue(0, 1, SpreadJS, GC.Spread.Sheets.SheetArea.colHeader);
+			// Apply rich text to a cell in the row header
+			sheet.setValue(2, 0, sJS, GC.Spread.Sheets.SheetArea.rowHeader);
+		};
+	</script>
+	
+</html> 
+
+
+

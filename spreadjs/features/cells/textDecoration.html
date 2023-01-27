@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var activeSheet = spread.getSheet(0);
+			// activeSheet.getCell( 0,0, GC.Spread.Sheets.SheetArea.viewport ).value('hello').textDecoration( GC.Spread.Sheets.TextDecorationType.underline ); 		
+			activeSheet.getCell( 0,0, GC.Spread.Sheets.SheetArea.viewport ).textDecoration( GC.Spread.Sheets.TextDecorationType.underline ); 		
+          		activeSheet.getRange(1, -1, 1, -1, GC.Spread.Sheets.SheetArea.viewport).textDecoration(GC.Spread.Sheets.TextDecorationType.overline | GC.Spread.Sheets.TextDecorationType.underline);
+			activeSheet.getRange(-1, 1, -1, 1, GC.Spread.Sheets.SheetArea.viewport).textDecoration(GC.Spread.Sheets.TextDecorationType.overline | GC.Spread.Sheets.TextDecorationType.lineThrough | GC.Spread.Sheets.TextDecorationType.underline);
+
+			var style = new GC.Spread.Sheets.Style();
+			style.textDecoration = GC.Spread.Sheets.TextDecorationType.overline | GC.Spread.Sheets.TextDecorationType.underline ;
+			activeSheet.setStyle( 1,1, style, GC.Spread.Sheets.SheetArea.viewport ); 
+ 			activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).value("Test");
+			activeSheet.getCell(1, 0, GC.Spread.Sheets.SheetArea.viewport).value("Test");
+			activeSheet.getCell(0, 1, GC.Spread.Sheets.SheetArea.viewport).value("Test");
+			
+// Double underline  Code. 
+			style.textDecoration = GC.Spread.Sheets.TextDecorationType.doubleUnderline;
+			activeSheet.setStyle(2,1,style);
+
+                        
+		};
+	</script>
+	
+</html> 
+
+
+
