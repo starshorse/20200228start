@@ -4,6 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.tableSheet.15.2.2.min.js"></script>
 		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
 		<style>
 		 .spread-container {
@@ -46,6 +47,30 @@
 						}
 					}		
 			});
+
+			var myTable = dataManager.addTable("myTable", {
+			    data: [
+				{ description: "Mow grass", dueDate: "8/11/2021", priority: "High", assignedTo: "Dad", isFinished: "Yes", isEncouraged: "False", credit: "20,75" },
+				{ description: "Clean Room", dueDate: "8/9/2021", priority: "Medium", assignedTo: "Daughter", isFinished: "No", isEncouraged: "True", credit: "10,50" },
+				{ description: "Organize Pantry", dueDate: "8/8/2021", priority: "Low", assignedTo: "Son", isFinished: "Yes", isEncouraged: "True", credit: "10,75" },
+				{ description: "Prepare BBQ", dueDate: "8/12/2021", priority: "High", assignedTo: "Mom", isFinished: "No", isEncouraged: "False", credit: "30,25" }
+			    ],
+			    schema: {
+				columns: {
+					dueDate: { dataType: "date", dataPattern: "dd/MM/yyyy" },
+					isFinished: {  dataPattern: "Yes|No" },
+					isEncouraged: { dataType: "boolean", dataPattern: "True|False" },
+					credit: { dataType: "number", dataPattern: "." }
+				}
+			    }
+			});
+			sheet = spread.addSheetTab( 0 , "TableSheet1", GC.Spread.Sheets.SheetType.tableSheet ); 
+			myTable.fetch().then( function() 
+			{
+				var view = myTable.addView("myView"); 
+				sheet.setDataView(view);
+			})			
+
 		};
 	</script>
 	

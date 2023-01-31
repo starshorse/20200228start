@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.tablesheet.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 1 } );
+			var sheet = spread.getSheet(0);
+			var dataManager = spread.dataManager();
+			var myTable = dataManager.addTable("myTable", 
+			{
+				remote:
+				{
+					read:
+					{
+						url: 'https://demodata.grapecity.com/wwi/api/v1/customers'
+					}
+				}
+			})			
+
+			// init a table sheet. 
+			var sheet = spread.addSheetTab(0, "TableSheet1", GC.Spread.Sheets.SheetType.tableSheet); 
+			//  bind a view to the table sheet.
+			myTable.fetch().then( function()
+			{
+				var view = myTable.addView("myView");
+				sheet.setDataView(view)
+			});			
+
+		};
+	</script>
+	
+</html> 
+
+
+
