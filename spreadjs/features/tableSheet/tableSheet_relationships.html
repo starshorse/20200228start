@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.tablesheet.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 1 } );
+			var sheet = spread.getSheet(0);
+			var dataManager = spread.dataManager();
+			var customerTable = dataManager.addTable("customerTable", 
+			{
+				remote:
+				{
+					read:
+					{
+						url: 'https://demodata.grapecity.com/wwi/api/v1/customers'
+					}
+				}
+			})			
+			var salesTable = dataManager.addTable("salesTable", 
+			{
+				remote:
+				{
+					read:
+					{
+						url: 'https://demodata.grapecity.com/wwi/api/v1/sales?PageNumber=10&PageSize=500'
+					}
+				}
+			})			
+	// Add a relationship.
+			dataManager.addRelationship( customerTable, "customerKey", "mySales" ,salesTable, "customerKey", "myCustomer"); 
+
+			// init a table sheet. 
+			var tableSheet = spread.addSheetTab(0, "TableSheet1", GC.Spread.Sheets.SheetType.tableSheet); 
+			//  bind a view to the table sheet.
+			customerTable.fetch().then( function()
+			{
+				var selectView = customerTable.addView("customersView",
+				[
+					{ value: 'customerKey' },
+					{ value: 'customer' },
+					{ value: 'category' }
+				]			
+				);
+				// create a multi column drop down to be used in relational View 
+				var multiSelectStyle = 
+				{
+					formatter: '{{ =IFERROR( CONCAT( PROPERTY(@,"customer"),",",PROPERTY( @,"customerKey")), "")}}',		
+					cellButtons: [
+					{
+						imageType: "dropdown",
+						command: "openMultiColumn",
+						useButtonStyle: true,		
+					}],
+					dropDowns:[
+					{
+						type:"multiColumn",
+						option:{
+							width: 400,
+							height: 300,
+							dataSource: selectView, 
+							bindingInfos:[
+								{ name: "customerKey", size: 100 , caption:"Customer Key" },
+								{ name: "customer", size:"*", caption:"Customer" },
+								{ name: "category", size: 100, caption: "Category" }		
+							]	
+						}			
+					}			
+					]			
+				}				
+                        var myView = salesTable.addView("myView", [
+				{ value: "saleKey", width: 100 , caption:"Sale Key"},
+				{ value: "salesPerson", width: 150, caption:"Sales Person" },
+				{ value: "myCustomer", width: 350, caption: "Customer Information", style: multiSelectStyle  },
+				{ value: "address", width: 350, caption: "Address" },
+				{ value: "stockItem", width: 350, caption: "Stock Item" },
+				{ value: "quantity", width: 100, caption: "Quantity" }
+			    ]);
+			    myView.fetch().then(function () {
+				console.log(myView);
+				// Set custom view into tableSheet.
+				tableSheet.setDataView(myView);
+			    });
+		});
+
+		};
+	</script>
+	
+</html> 
+
+
+
