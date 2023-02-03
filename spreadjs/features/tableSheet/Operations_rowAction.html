@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.tablesheet.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 1 } );
+			var sheet = spread.getSheet(0);
+			var dataManager = spread.dataManager();
+			var myTable = dataManager.addTable("myTable", 
+			{
+				remote:
+				{
+					read:
+					{
+						url: 'https://demodata.grapecity.com/wwi/api/v1/customers'
+					}
+				}
+			})			
+
+			// init a table sheet. 
+			var sheet = spread.addSheetTab(0, "TableSheet1", GC.Spread.Sheets.SheetType.tableSheet); 
+			// Initialize and row actions 
+			var rowActions = GC.Spread.Sheets.TableSheet.BuiltInRowActions ;
+			let options = sheet.rowActionOptions();
+
+			const ShowComment = "ShowComment";
+			const CheckRow = "CheckRow";
+			var checkMap = {};		
+
+			let Commands = GC.Spread.Sheets.Commands;
+			    Commands[ShowComment] = {
+				canUndo: false,
+				execute: function (context, options) {
+				    alert(options.item.Comments);
+				    return true;
+				}
+			    };
+			   Commands[CheckRow] = {
+				canUndo: false,
+				execute: function (context, options) {
+				    var id = options.item.Id;
+				    checkMap[id] = !checkMap[id];
+				    return true;
+				}
+			    };
+
+			options.push(
+				rowActions.removeRow, 
+				rowActions.saveRow,
+				rowActions.resetRow, 
+			);
+
+			//add a action of check/uncheck
+			    options.push({
+				name: 'check',
+				icons: ["data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiBmaWxsPSJ0cmFuc3BhcmVudCIvPgo8cmVjdCB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIGZpbGw9InRyYW5zcGFyZW50Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMEgwVjEySDEyVjBaTTEgMTFWMUgxMVYxMUgxWiIgZmlsbD0iIzY2NjY2NiIvPgo8L3N2Zz4K", "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiBmaWxsPSJ0cmFuc3BhcmVudCIvPgo8cmVjdCB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIGZpbGw9InRyYW5zcGFyZW50Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTIgMEgwVjEySDEyVjBaTTEgMTFWMUgxMVYxMUgxWiIgZmlsbD0iIzY2NjY2NiIvPgo8cGF0aCBkPSJNNS4yNSA5TDIgNS42MTI5TDMuMDA3MTQgNC41NjMyOEw1LjI1IDYuODkzM0w4Ljk4NTcxIDNMMTAgNC4wNDk2M0w1LjI1IDlINS4yNVoiIGZpbGw9IiM2NjY2NjYiLz4KPC9zdmc+Cg=="],
+				tooltip: "Check/Uncheck",
+				iconSelector: function (item) {
+				    return !!checkMap[item.id];
+				},
+				command: CheckRow
+			    });
+
+			    //show the comment flag if the data has a comment
+			    options.push({
+				name: 'comment',
+				icons: ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABmJLR0QA/wD/AP+gvaeTAAAAqklEQVQokZWPLQ7CUBCEv759lkMggAMQPAKN5QLNpj0BZ+gJ2tSiuAUag4ZKEi6ApW8xUAhJfxi3m29mMpGqpkAGjOjWHdh6IBORRZ7n5y46TdNZXddHVNV6khupqvmv4wJMWtiqLMspQGN4P/rU11D9Bv3d4IZAL0XAZ3Qcx3MRWbXRZjYGTh4gSZJlCGFvZjsze7R4biKy9gAhhL1zblMUxWHIhutQGOAJuws9bfdnMH0AAAAASUVORK5CYII="],
+				tooltip: "Show the comment",
+				iconSelector: function (item) {
+				    return item.notes ? item.notes.length > 0 : false;
+				},
+				shortcutKey: { key: 65 /* A */, ctrl: true, alt: true },
+				command: ShowComment
+			    });
+
+			    //show the attachment flag if the data has a attachment
+			    options.push({
+				name: 'attachment',
+				icons: ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAAmJLR0QA/4ePzL8AAADYSURBVBgZVcEtS4NhGIbha7KyGZZMZifIDA4/GCgWP7pYRQTv834MhoFhYnmwW4ZJmEwQRCxaDIaBNs268b4q6j9xKmPuODTI13nli5oGeeApjJK3xzCrPtvzBwrq4sZW1UO0OytuL0i+y33M6lfGjuzaJ2j7su3TsqKdqStjdS6YJLElIrc74zz7muKQn/uJzZB6xep2FUp0WJFEjVOvkFKmQTNMkTCvH7xvDJNS9kuOmSP1af3ho5qjxSfRFklCST0c0qjmyLNJx8fUF7Mc8MIbza0R/fMNfN1QmAjSSbsAAAAASUVORK5CYII="],
+				tooltip: "Attachment",
+				iconSelector: function (item) {
+				    return item.photoUrl ? item.photoUrl.length > 0 : false;
+				}
+			    });
+
+			sheet.rowActionOptions( options ); 
+
+
+			//  bind a view to the table sheet.
+			myTable.fetch().then( function()
+			{
+				var view = myTable.addView("myView",[
+					{ value: "customerKey", width: 150, caption: "Customer Key", allowSort: false, allowFilterByValue: false, allowFilterByList: false }, // this will disable the filter button in column header
+					{ value: "customer", width: 200, caption: "Customer", allowSort: false }, // this will hide only sorting in filter dropdown
+					{ value: "billToCustomer", width: 200, caption: "Bill To Customer", allowFilterByValue: false}, // this will hide only allowFilterByValue
+					{ value: "category", width: 120, caption: "Category", allowFilterByList: false }, // this will hide only allowFilterByList
+					{ value: "buyingGroup", width: 180, caption: "Buying Group" },
+					{ value: "primaryContact", width: 170, caption: "Primary Contact" },
+					{ value: "postalCode", width: 120, caption: "Postal Code" },
+					{ value: "validFrom", width: 150, caption: "Valid From" },
+					{ value: "validTo", width: 180, caption: "Valid To" }
+				]);
+			// set autoFilter to true to filter any new or updated values that are the same as filtered value .. 
+				view.autoFilter = true 		
+				sheet.setDataView(view)
+				sheet.togglePinnedRows([4,5]); // Pin rows 
+				sheet.togglePinnedColumns([ 1,3]); // Pin columns 
+			});			
+
+		};
+	</script>
+	
+</html> 
+
+
+

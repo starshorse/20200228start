@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.tablesheet.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		 .sample-tutorial {
+		   position: relative;
+		   height: 100%;
+		   overflow: hidden;
+		}
+
+		body {
+		   position: absolute;
+		   top: 0;
+		   bottom: 0;
+		   left: 0;
+		   right: 0;
+		   margin: 0;
+		}
+
+		.sample-spreadsheets {
+		   width: calc(100% - 303px);
+		   height: 100%;
+		   overflow: hidden;
+		   float: left;
+		}
+
+		.container {
+		   width: 300px;
+		   height: 100%;
+		   float: left;
+		   border: 1px solid lightgrey;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-tutorial">
+			<div id="ss" class="sample-spreadsheets"></div> 
+			<div id="panel" class="container"><div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 1 } );
+			var sheet = spread.getSheet(0);
+			spread.suspendPaint();		
+			var dataManager = spread.dataManager();
+			var customerTable = dataManager.addTable("cutomerTable", 
+			{
+				remote:
+				{
+					read:
+					{
+						url: 'https://demodata.grapecity.com/wwi/api/v1/customers'
+					}
+				}
+			})			
+
+			var salesTable = dataManager.addTable("salesTable", 
+			{
+				remote:
+				{
+					read:
+					{
+						url: 'https://demodata.grapecity.com/wwi/api/v1/sales'
+					}
+				}
+			})			
+			var stockItemsTable = dataManager.addTable("stockItemsTable", 
+			{
+				remote:
+				{
+					read:
+					{
+						url: 'https://demodata.grapecity.com/wwi/api/v1/stockItems'
+					}
+				}
+			})			
+
+			// init a table sheet. 
+			var sheet = spread.addSheetTab(0, "customerSheet", GC.Spread.Sheets.SheetType.tableSheet); 
+
+
+			sheet.options.allowAddNew = false ;		
+//  bind a view to the table sheet.
+			var headerStyle = {
+			    font: "italic bold 13pt Calibri",
+			    borderTop: {
+				color: "red",
+				style: "thick"
+			    },
+			    borderLeft: {
+				color: "red",
+				style: "thin"
+			    },
+			    borderRight: {
+				color: "red",
+				style: "thin"
+			    },
+			    borderBottom: {
+				color: "red",
+				style: "thin"
+			    }
+			};		
+// Cell Types and Dropdowns 		
+			// Code for RadioButtonList 		
+			var radioButtonListStyle = new GC.Spread.Sheets.Style(); 
+		        var cellTypeRadioButtonList = new GC.Spread.Sheets.CellTypes.RadioButtonList(); 
+			cellTypeRadioButtonList.items([
+			    { text: "Tailspin Toys (Head Office)", value: "Tailspin Toys (Head Office)" },
+			    { text: "Wingtip Toys (Head Office)", value: "Wingtip Toys (Head Office)" },
+			]);
+			radioButtonListStyle.cellType = cellTypeRadioButtonList;
+
+			// Code for ButtonList 
+			var buttonListStyle = new GC.Spread.Sheets.Style(); 
+			var buttonListCellType = new GC.Spread.Sheets.CellTypes.ButtonList(); 
+			buttonListCellType.items([
+			    { text: "Tailspin Toys", value: "Tailspin Toys" },
+			    { text: "Wingtip Toys", value: "Wingtip Toys" },
+			]);
+			buttonListStyle.cellType = buttonListCellType;
+
+			// Code for Date DropDown .. 
+			var dateStyle = {};
+			dateStyle.cellButtons = [
+			{
+				imageType: "dropdown", 
+				command:"openDateTimePicker",
+				useButtonStyle: true,
+			}];
+			dateStyle.dropDowns = [
+			{
+				type:"dateTimePicker",
+				option: {
+					showTime: true
+				}
+			}			
+			]			
+// Column Caption Multiple Headers 
+			customerTable.fetch().then( function()
+			{
+	//			var view = customerTable.addView("myView");
+				var view = customerTable.addView("myView", [
+					{ value: "customerKey", width: 130, headerStyle: headerStyle, caption:["Customer information", "Customer Key"] },// set the style of column header using headerStyle property
+					{ value: "customer", width: 200, headerStyle: headerStyle, caption: ["Customer information", "Customer"] },
+					{ value: "billToCustomer", width: 200, headerStyle: headerStyle, caption:["Customer information", "Bill To Customer"], style: radioButtonListStyle },
+					{ value: "category", width: 120, headerStyle: headerStyle, caption: "Category" },
+					{ value: "buyingGroup", width: 180, headerStyle: headerStyle, caption: "Buying Group", style: buttonListStyle },
+					{ value: "primaryContact", width: 170, headerStyle: headerStyle, caption: "Primary Contact" },
+					{ value: "postalCode", width: 120, headerStyle: headerStyle, caption: "Postal Code" },
+					{ value: "validFrom", width: 150, headerStyle: headerStyle, caption:["Validity", "Valid From"], style: dateStyle },
+					{ value: "validTo", width: 180, headerStyle: headerStyle, caption: ["Validity","Valid To"] }
+
+				    ])
+				sheet.setDataView(view)
+	// Tablesheet Panel
+				var host = document.getElementById("panel"); 		
+				panel = new GC.Spread.Sheets.TableSheet.TableSheetPanel("myPanel", sheet, host )
+			});			
+			// init a table sheet. 
+			sheet1 = spread.addSheetTab(1, "salesSheet", GC.Spread.Sheets.SheetType.tableSheet); 
+
+			//bind a view to the table sheet
+			salesTable.fetch().then(function () {
+			    var view = salesTable.addView("myView", [
+				{ value: "saleKey", caption: "Sale Key", headerFit: "stack", headerStyle: headerStyle },// set headerFit to stack
+				{ value: "cityKey", caption: "City Key", headerFit: "stack", headerStyle: headerStyle },
+				{ value: "stockItemKey", width: 50, caption: "Stock Item Key", headerFit: "stack", headerStyle: headerStyle },
+				{ value: "invoiceDateKey", width: 120, caption: "Invoice Date Key", headerFit: "vertical", headerStyle: headerStyle },
+				{ value: "deliveryDateKey", width: 120, caption: "Delivery Date Key", headerFit: "vertical", headerStyle: headerStyle },
+				{ value: "salesPerson", width: 150, caption: "Sales Person", headerFit: "vertical", headerStyle: headerStyle },
+				{ value: "address", caption: "Address", width: 300, headerFit: "normal", headerStyle: headerStyle }
+
+			    ]);
+			    sheet1.setDataView(view);
+			    sheet1.options.defaultStackRowHeight = 30;
+			    sheet1.setDefaultRowHeight(220, 1);
+			});
+// Free Header Area.. 					
+			// init a table sheet. 
+			sheet2 = spread.addSheetTab(2, "stockItemsSheet", GC.Spread.Sheets.SheetType.tableSheet); 
+			var currencyFormatter = {};
+			var formatter =  currencyFormatter.formatter = "$ 0.00";
+			var dataBarRule1 = {
+				ruleType: "dataBarRule1",
+				formula: "@>=50",
+				style: {
+				    font:"bold 12pt Calibri",
+				    backColor: "#F7D3BA",
+				    foreColor :"#F09478"
+				}
+			    };
+			var dataBarRule2 = {
+				ruleType: "dataBarRule1",
+				formula: "@>=50",
+				style: {
+				    font:"bold 12pt Calibri",
+				    foreColor: "#F7D3BA",
+				    backColor :"#F09478"
+				}
+			    };
+			var  Colors = { white:"white" ,green:"green", lightgreen:"lightgreen" , black:"black"  , darkgreen:"darkgreen" }		
+                    //bind a view to the table sheet
+			stockItemsTable.fetch().then(function () {
+			    var view = stockItemsTable.addView("myView", [
+
+				{ value: "stockItem", width: 300, caption: "Stock Item", headerStyle: headerStyle },
+				{ value: "unitPrice", width: 120, caption: "Unit Price", headerStyle: headerStyle },
+				{ value: "taxRate", width: 120, caption: "Tax Rate", headerStyle: headerStyle },
+				{ value: "recommendedRetailPrice", width: 190, caption: "Recommended Retail Price", style: currencyFormatter, headerStyle: headerStyle, conditionalFormats: [dataBarRule1] },
+				{ value: "=([@unitPrice] * [@taxRate])/100 + [@unitPrice]", caption: "Actual Retail Price", style: currencyFormatter, width: 190, headerStyle: headerStyle, conditionalFormats: [dataBarRule2] }, // calculated column
+
+			    ]);
+
+			    // create template sheet for free header area json
+			    var templateSheet = new GC.Spread.Sheets.Worksheet();
+			    templateSheet.options.keepUnknownFormulas = true;
+			    var currencyFormatterStyle = new GC.Spread.Sheets.Style();
+			    currencyFormatterStyle.formatter = formatter;
+			    currencyFormatterStyle.hAlign = GC.Spread.Sheets.HorizontalAlign.left;
+			    templateSheet.setRowCount(6);
+			    var freeHeaderAreaStyle = new GC.Spread.Sheets.Style();
+			    freeHeaderAreaStyle.backColor = Colors.white;
+
+			    templateSheet.setValue(0, 0, "Retail Price Analysis");
+			    templateSheet.getCell(0, 0).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font("bold 30px \"Calibri\"");
+			    templateSheet.addSpan(0, 0, 1, 5);
+			    var titleStyle = new GC.Spread.Sheets.Style();
+			    titleStyle.backColor = Colors.lightGreen;
+			    titleStyle.foreColor = Colors.black;
+			    templateSheet.setStyle(0, -1, titleStyle);
+			    templateSheet.setRowHeight(0, 80);
+
+			    templateSheet.getCell(1, 0)
+				.value("Whether a Stock Item's Actual Retail Price is either under or over Recommended Retail Price is automatically calculated.")
+				.font("italic 12px \"Calibri\"")
+				.foreColor("rgb(120,120,120)")
+				.textIndent(2);
+			    templateSheet.setStyle(1, -1, titleStyle);
+			    templateSheet.addSpan(1, 0, 1, 5);
+
+			    var headerDescriptionStyle = new GC.Spread.Sheets.Style();
+			    headerDescriptionStyle.backColor = Colors.lightGreen;
+			    headerDescriptionStyle.borderBottom = new GC.Spread.Sheets.LineBorder(Colors.middleGreen, GC.Spread.Sheets.LineStyle.thick);
+			    templateSheet.setStyle(2, -1, headerDescriptionStyle);
+			    templateSheet.addSpan(2, 0, 1, 5);
+			    templateSheet.setRowHeight(2, 16);
+
+			    templateSheet.setValue(3, 0, "Total Recommended Retail Price");
+			    templateSheet.getCell(3, 0).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font("bold 14px \"Calibri\"").foreColor(Colors.darkGreen);
+			    templateSheet.addSpan(3, 0, 1, 2);
+			    templateSheet.setFormula(3, 2, '=SUM(TableSheet1[Recommended Retail Price])');
+			    templateSheet.getCell(3, 2).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font("bold 14px \"Calibri\"").foreColor(Colors.darkGreen).formatter(formatter);
+			    templateSheet.setFormula(3, 3, '=HBARSPARKLINE(ROUND(C4/MAX(C4,C5),2),"' + Colors.darkGreen + '",false)');
+			    templateSheet.addSpan(3, 3, 1, 2);
+			    templateSheet.setStyle(3, -1, freeHeaderAreaStyle);
+
+			    templateSheet.setValue(4, 0, "Total Actual Retail Price");
+			    templateSheet.getCell(4, 0).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font("bold 14px \"Calibri\"").foreColor(Colors.brown);
+			    templateSheet.addSpan(4, 0, 1, 2);
+			    templateSheet.setFormula(4, 2, '=SUM(TableSheet1[Actual Retail Price])');
+			    templateSheet.getCell(4, 2).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font("bold 14px \"Calibri\"").foreColor(Colors.brown).formatter(formatter);
+			    var contentBorderStyle = new GC.Spread.Sheets.Style();
+			    contentBorderStyle.backColor = Colors.white;
+			    contentBorderStyle.borderBottom = new GC.Spread.Sheets.LineBorder(Colors.brown, GC.Spread.Sheets.LineStyle.thick);
+			    templateSheet.setStyle(4, -1, contentBorderStyle);
+			    templateSheet.setFormula(4, 3, '=HBARSPARKLINE(ROUND(C5/MAX(C4,C5),2),"' + Colors.brown + '",false)');
+			    templateSheet.addSpan(4, 3, 1, 2);
+
+			    templateSheet.setFormula(5, 0, '=IF(C4>C5,"Budget is under Total Recommended Retail Price by","Budget is over Total Recommended Retail Price")');
+			    templateSheet.getCell(5, 0).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font("bold 14px \"Calibri\"").foreColor(Colors.black);
+			    templateSheet.addSpan(5, 0, 1, 2);
+			    templateSheet.setFormula(5, 2, '=C4-C5');
+			    templateSheet.getCell(5, 2).hAlign(GC.Spread.Sheets.HorizontalAlign.left).font("bold 14px \"Calibri\"").formatter(formatter).foreColor(Colors.black);
+			    templateSheet.setStyle(5, -1, freeHeaderAreaStyle);
+			    templateSheet.addSpan(5, 2, 1, 3);
+
+			    let template = templateSheet.toJSON();
+			    sheet2.applyFreeHeaderArea(template);
+			    sheet2.setDataView(view);
+			});
+
+			spread.resumePaint(); 		
+					
+		};
+	</script>
+	
+</html> 
+
+
+
