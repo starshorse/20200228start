@@ -34,7 +34,7 @@
 				{
 					read:
 					{
-						url: 'https://demodata.grapecity.com/wwi/api/v1/stockItems'
+					      url: 'https://demodata.grapecity.com/northwind/api/v1/Products'
 					}
 				}
 			})			
@@ -44,10 +44,11 @@
 				ruleType: "formulaRule", 
 				formula: "@<10",
 				style:{
-					backColor: "green",
-					foreColor: "lime"
+					borderLeft: { color: "orange", style: "medium" },
+        				borderRight: { color: "orange", style: "medium" },
+        				borderTop: { color: "orange", style: "medium" },
+        				borderBottom: { color: "orange", style: "medium" }
 				}
-
 			};
 			// create a data validator
 			var positiveNumberValidator = {
@@ -67,14 +68,34 @@
 			//  bind a view to the table sheet.
 			myTable.fetch().then( function()
 			{
-				var view = myTable.addView("myView", [
+				var myView = myTable.addView("myView", [
+					{ value: "productId", caption: "ID" },
+    					{ value: "productName", caption: "Name", width: 400 },
+    					{ value: "ReorderLevel", caption: "ReorderLevel", width: 120},		
 					{ value: "stockItem", width: 300, caption: "Stock Item" },
 					{ value: "unitPrice", width: 120, caption: "Unit Price", conditionalFormats: [formulaRule], validator: positiveNumberValidator }, // apply conditional formating and data validation here
 					{ value: "taxRate", width: 120, caption: "Tax Rate" },
-					{ value: "=([@unitPrice] * [@taxRate])/100 + [@unitPrice]", caption: "Total Price", width: 150 }
+					{ value: "=([@unitPrice] * [@taxRate])/100 + [@unitPrice]", caption: "Total Price", width: 150 },
+					{ value: "UnitsInStock", caption: "Units In Stock", width: 100 },
+    					{ value: "UnitsOnOrder", caption: "Units On Order", width: 100 }		
 				]);
-				sheet.setDataView(view)
+
+				// Adding rules through addStyleRule method 
+				myView.addStyleRule("lowPrice", { backColor: "green", foreColor: "white" },{
+					formula: "[@UnitPrice] <= 10"		
+				})
+				myView.addStyleRule("HoverStyle", { backColor: "gray", foreColor: "white" },{
+					direction: GC.Data.StateRuleDirection.row, 
+					state: GC.Data.RowColumnStates.hover 
+				})			
+				myView.addStyleRule("SelectedStyle", { backColor: "yellow" , foreColor: "red" },{
+					direction: GC.Data.StateRuleDirection.column, 
+					state: GC.Data.RowColumnStates.selected 
+				})
+
+				sheet.setDataView( myView)
 			});			
+
 
 		};
 	</script>
