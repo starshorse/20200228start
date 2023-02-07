@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.tablesheet.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 1 } );
+			var sheet = spread.getSheet(0);
+			var dataManager = spread.dataManager();
+			var myTable = dataManager.addTable("myTable", 
+			{
+				remote:
+				{
+					read:
+					{
+						url: 'https://demodata.grapecity.com/wwi/api/v1/stockItems'
+					}
+				}
+			})			
+
+			// formula to apply conditional Formatting. 
+			var formulaRule = {
+				ruleType: "formulaRule", 
+				formula: "@<10",
+				style:{
+					backColor: "green",
+					foreColor: "lime"
+				}
+
+			};
+			// create a data validator
+			var positiveNumberValidator = {
+				type: "formula",
+				formula: '@>0',
+				inputTile: 'Data validation:',
+				inputMessage: 'UnitPrice cannot be less than 0.', 
+				hightlightStyle: {		
+					type: 'icon',
+					color: 'red',
+					position: 'outsideRight',
+				}			
+			};					
+
+			// init a table sheet. 
+			var sheet = spread.addSheetTab(0, "TableSheet1", GC.Spread.Sheets.SheetType.tableSheet); 
+			//  bind a view to the table sheet.
+			myTable.fetch().then( function()
+			{
+				var view = myTable.addView("myView", [
+					{ value: "stockItem", width: 300, caption: "Stock Item" },
+					{ value: "unitPrice", width: 120, caption: "Unit Price", conditionalFormats: [formulaRule], validator: positiveNumberValidator }, // apply conditional formating and data validation here
+					{ value: "taxRate", width: 120, caption: "Tax Rate" },
+					{ value: "=([@unitPrice] * [@taxRate])/100 + [@unitPrice]", caption: "Total Price", width: 150 }
+				]);
+				sheet.setDataView(view)
+				// Create a new sheet and add it at 2nd position 
+				var sheet1 = new GC.Spread.Sheets.Worksheet();
+					sheet1.name("TS reference in Formula ");
+					spread.addSheet( 1, sheet1 ); 
+					sheet1.setColumnWidth( 0, 250 );
+					sheet1.setColumnWidth( 1, 250 );
+
+					// TS Reference in WorkSheet Formula ) 		
+					sheet1.setValue(0,0, "Stock Items Count");
+					sheet1.setFormula(0,1, "=COUNTA(TableSheet1[Stock Item Key])"); 
+					sheet1.setValue(1,0,'Sum of Total Price');
+					sheet1.setFormula(1,1,'=SUM(TableSheet1[Total Price])'); 		
+					// unique tax rates 
+					sheet1.setValue(3,0, "Different Tax Rates are:-");
+					sheet1.setFormula(3,1,'=UNIQUE(TableSheet1[Tax Rate])'); 
+			});			
+// Reference TableSheet in a WorkSheet. 
+
+		};
+	</script>
+	
+</html> 
+
+
+
