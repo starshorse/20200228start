@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+			var person = { name: "Wang feng", age: 25 , address: { postcode: "710075" }}; 
+			var source = new GC.Spread.Sheets.Bindings.CellBindingSource( person );
+			sheet.setBindingPath( 0,0, "name" );
+			sheet.setBindingPath( 1,1, "age" );
+			sheet.setBindingPath( 3,3, "address.postcode"); 
+			sheet.setDataSource( source ); 
+
+/*
+Rule	Description
+Average rule	The average rule checks for values above or under the average.
+Cell value rule	The cell value rule compares values.
+Date rule	The date rule compares dates.
+Formula rule	The formula rule allows you to use formulas when checking the condition.
+Data bar rule	The data bar rule uses a bar that is displayed as the background for each cell. The length of the bar is based on the cell value.
+Icon set rule	The icon set rule displays icons based on the values. You can specify the type of icon and whether to show the icon or the icon and the data in the cell.
+Specific text rule	The specific text rule searches for text strings.
+Top 10 rule	The top 10 rule checks for values in the top or bottom of the range.
+Unique rule	The unique rule checks to see if the value is the only one of that value in the range.
+Duplicate rule	The duplicate rule checks for duplicate values.
+*/	       
+		 let activeSheet = sheet 
+		activeSheet.setValue(0,0, 1,3);
+		activeSheet.setValue(1,0, 50,3);
+		activeSheet.setValue(2,0, 100,3);
+		activeSheet.setValue(3,0, 2,3);
+		activeSheet.setValue(4,0, 60,3);
+		activeSheet.setValue(5,0, 90,3);
+		activeSheet.setValue(6,0, 3,3);
+		activeSheet.setValue(7,0, 40,3);
+		activeSheet.setValue(8,0, 70,3);
+		activeSheet.setValue(9,0, 5,3);
+		activeSheet.setValue(10,0, 35,3);
+
+		var style = new GC.Spread.Sheets.Style();
+		style.backColor = "red"
+		style.borderLeft = new GC.Spread.Sheets.LineBorder("blue", GC.Spread.Sheets.LineStyle.medium ); 
+		style.borderTop = new GC.Spread.Sheets.LineBorder("blue", GC.Spread.Sheets.LineStyle.medium ); 
+		style.borderRight = new GC.Spread.Sheets.LineBorder("blue", GC.Spread.Sheets.LineStyle.medium ); 
+		style.borderBottom = new GC.Spread.Sheets.LineBorder("blue", GC.Spread.Sheets.LineStyle.medium ); 
+
+// #1
+//		activeSheet.conditionalFormats.addAverageRule( GC.Spread.Sheets.ConditionalFormatting.AverageConditionType.above, style, [ new GC.Spread.Sheets.Range(0,0,10,3)]); 
+		// OR 			
+
+		var rule = new GC.Spread.Sheets.ConditionalFormatting.NormalConditionRule(); 
+		rule.ruleType( GC.Spread.Sheets.ConditionalFormatting.RuleType.averageRule ); 
+		rule.ranges([ new GC.Spread.Sheets.Range(0,0,10,13)]); 
+		rule.style( style );
+		rule.type( GC.Spread.Sheets.ConditionalFormatting.AverageConditionType.above ); 
+                activeSheet.conditionalFormats.addRule( rule ); 
+
+		};
+	</script>
+	
+</html> 
+
+
+
