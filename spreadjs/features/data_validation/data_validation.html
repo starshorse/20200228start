@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+			var person = { name: "Wang feng", age: 25 , address: { postcode: "710075" }}; 
+			var source = new GC.Spread.Sheets.Bindings.CellBindingSource( person );
+			sheet.setBindingPath( 0,0, "name" );
+			sheet.setBindingPath( 1,1, "age" );
+			sheet.setBindingPath( 3,3, "address.postcode"); 
+			sheet.setDataSource( source ); 
+			
+		// Date Validation 
+
+			spread.options.highlightInvalidData = true;
+			var dv = GC.Spread.Sheets.DataValidation.createDateValidator( GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.between, new Date( 2017,12,31 ), new Date( 2018,12,31 )); 
+			dv.showInputMessage( true );
+			dv.inputMessage("Enter a date between 12/31/2017 and 12/31/2018."); 
+			sheet.setDataValidator( 1,1,1,1, dv, GC.Spread.Sheets.SheetArea.viewport ); 		
+
+		// Formula List Validation 			
+		        var dv11 = GC.Spread.Sheets.DataValidation.createFormulaValidator("A1>0"); 		
+			dv11.showInputMessage( true ); 
+			dv11.inputMessage("Enter a value greater than 0 in A1."); 
+			dv11.inputTitle("Tip");
+			sheet.setDataValidator(0,0,1,1, dv11, GC.Spread.Sheets.SheetArea.viewport ); 
+		
+		// List Validation 
+			var dv21  = GC.Spread.Sheets.DataValidation.createListValidator("1,2,3");
+			dv21.showInputMessage( true );
+			dv21.inputMessage("Value must be 1,2 or 3 ");
+			dv21.inputTitle("tip");
+			sheet.setDataValidator( 2,2,1,1, dv21 , GC.Spread.Sheets.SheetArea.viewport ); 
+			alert( sheet.getDataValidator(2,2).getValidList( sheet, 2,2)); 		
+
+		
+                // Setting column width
+			sheet.setColumnWidth(0, 200.0, GC.Spread.Sheets.SheetArea.viewport);
+			sheet.setColumnWidth(1, 120.0, GC.Spread.Sheets.SheetArea.viewport);
+			sheet.setColumnWidth(2, 200.0, GC.Spread.Sheets.SheetArea.viewport);
+			sheet.setColumnWidth(3, 120.0, GC.Spread.Sheets.SheetArea.viewport);
+			// Using comma in Validation Lists
+			var dv1 = new GC.Spread.Sheets.DataValidation.createListValidator("123\\,456,234\\,567,789\\,564");
+			sheet.setText(1, 0, "Choose a number from cell B2");
+			dv1.inputTitle("Please choose a number:");
+			dv1.inputMessage("Number of money");
+			sheet.setDataValidator(3, 1, dv1);
+			var dv2 = new GC.Spread.Sheets.DataValidation.createListValidator("\\,,>,<,*,/");
+			sheet.setText(1, 2, "Choose an operator from cell D2");
+			dv2.inputTitle("Please choose an operator:");
+			dv2.inputMessage("operator of calculator");
+			sheet.setDataValidator(3, 3, dv2);
+              
+		// Number Valiation 
+			var dv31 = GC.Spread.Sheets.DataValidation.createNumberValidator( GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.between, "5", "20", true ); 
+			dv31.showInputMessage( true ); 
+			dv31.inputMessage("Value must be between 5 and 20. ");
+			dv31.inputTitle("Tip");
+
+			sheet.setDataValidator( 4,4,1,1, dv31, GC.Spread.Sheets.SheetArea.viewport ); 
+		// Text Length Validation
+			var dv41 = GC.Spread.Sheets.DataValidation.createTextLengthValidator( GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.greaterThen, "4","20" );
+			dv41.showInputMessage( true);
+			dv41.inputMessage("Number of charactors must be greater than 4.");
+			dv41.inputTitle("tip");
+			sheet.setDataValidator( 5,5,1,1, dv41, GC.Spread.Sheets.SheetArea.viewport ); 		
+
+                			
+
+		};
+	</script>
+	
+</html> 
+
+
+
