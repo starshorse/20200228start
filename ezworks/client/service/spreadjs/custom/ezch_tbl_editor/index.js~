@@ -10,7 +10,6 @@ angular.module('ezch_tbl_editorService',[])
 		config_name:'TB_admin_1', 
 		cur_id: 'richard.choi@ez-office.co.kr',
 		sql_state: { pos: null , state_1 :  'select ', state_2:'order by seq desc' },
-		bl_set_flag: 0,
 //functions.		
 		update_editLists : null,
 		update_cur_db: null,
@@ -124,66 +123,14 @@ angular.module('ezch_tbl_editorService',[])
 			     let s_index =  spread.getActiveSheetIndex()  
 			     if( s_index == 0){
 			     		let end_p = ezch_tbl_editorFactory.tblView_tbl.tbl_data_1.length  
-				        end_p_top = end_p - end_p%20   
-			     		sheet0.showRow( end_p_top , 17 )	 
-				        let activeColIndex = sheet0.getActiveColumnIndex() 
-				        sheet0.setActiveCell( end_p + 17 - 1  , activeColIndex ) 
-			     }	     
-		      }	      
-	      );	      
-	      spread.commandManager().register('nv_right', 
-		      function nv_right(){
-			     let s_index =  spread.getActiveSheetIndex()  
-			     if( s_index == 0){
-			     		let end_p = ezch_tbl_editorFactory.tblView_tbl.tbl_columns.length  
-				        let activeRowIndex = sheet0.getActiveRowIndex() 
-				        sheet0.setActiveCell( activeRowIndex , end_p ) 
-			     }	     
-		      }	      
-	      );	      
-	      spread.commandManager().register('bl_down', 
-		      function bl_down(){
-			     let s_index = spread.getActiveSheetIndex()
-			     let bl_set_flag = ezch_tbl_editorFactory.bl_set_flag 
-			     if( s_index == 0 && bl_set_flag ){
-				     let sheet0 = spread.getSheet( s_index )
-				     let selections = sheet0.getSelections(); 
-				     let rowDelta = ( ezch_tbl_editorFactory.tblView_tbl.tbl_data_1.length + 17 ) - (selections[0].row + selections[0].rowCount )	
-
-				     if( selections[0].row > 17 && rowDelta > 0 )
-				     {	     
-				     	sheet0.setSelection( selections[0].row , selections[0].col , selections[0].rowCount + rowDelta , selections[0].colCount ); 
-				     }	     
-				     ezch_tbl_editorFactory.bl_set_flag = 0 ; 
-
-			     }else{
-				    spread.commandManager().execute({ cmd: "selectionDown", sheetName: "TblView" , row: sheet0.getActiveRowIndex() , col: sheet0.getActiveColumnIndex() });  
-			     }	     
-		      }	      
-	      );	      
-	      spread.commandManager().register('bl_right', 
-		      function bl_right(){
-			     let s_index = spread.getActiveSheetIndex()
-			     let bl_set_flag = ezch_tbl_editorFactory.bl_set_flag 
-			     if( s_index == 0 && bl_set_flag ){
-				     let sheet0 = spread.getSheet( s_index )
-				     let selections = sheet0.getSelections(); 
-				     let colDelta = ( ezch_tbl_editorFactory.tblView_tbl.tbl_columns.length +1 ) - ( selections[0].col + selections[0].colCount ) 	
-				     if( selections[0].col > 0 && colDelta > 0) 	 
-				     	sheet0.setSelection( selections[0].row , selections[0].col , selections[0].rowCount, selections[0].colCount + colDelta ); 
-				     ezch_tbl_editorFactory.bl_set_flag = 0 ; 
-
-			     }else{
-				    spread.commandManager().execute({ cmd: "selectionRight", sheetName: "TblView" , row: sheet0.getActiveRowIndex() , col: sheet0.getActiveColumnIndex() });  
+				        end_p = end_p - end_p%20   
+			     		sheet0.showRow( end_p , 17 )	 
+				        let activeCell = sheet0.getActiveCell() 
+				        sheet0.setActiveCell( end_p , activeCell.col ) 
 			     }	     
 		      }	      
 	      );	      
 	      spread.commandManager().setShortcutKey('nv_down', GC.Spread.Commands.Key.down, true ,false , false ,false ); 	
-	      spread.commandManager().setShortcutKey('nv_right', GC.Spread.Commands.Key.right, true ,false , false ,false ); 	
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.right, false ,true, false ,false ); 	
-	      spread.commandManager().setShortcutKey('bl_right', GC.Spread.Commands.Key.right, false ,true, false ,false ); 	
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.down, false ,true, false ,false ); 	
-	      spread.commandManager().setShortcutKey('bl_down', GC.Spread.Commands.Key.down, false ,true, false ,false ); 	
 	      	
 		
 
@@ -279,84 +226,16 @@ angular.module('ezch_tbl_editorService',[])
 			     let s_index =  spread.getActiveSheetIndex()  
 			     if( s_index == 0){
 				let sheet0 = spread.getSheet( s_index ) 
-				let activeColIndex = sheet0.getActiveColumnIndex()
+				let activeCell = sheet0.getActiveCell()      
 			     	sheet0.showRow( 17, 18 )	      
-				sheet0.setActiveCell( 17, activeColIndex )      
+				sheet0.setActiveCell( 17, activeCell.col )      
 			     }	     
 		      }	      
 	      );	
-	      spread.commandManager().register('nv_left', 
-		      function nv_left(){
-			     let s_index =  spread.getActiveSheetIndex()  
-			     if( s_index == 0){
-				let sheet0 = spread.getSheet( s_index ) 
-				let activeRowIndex = sheet0.getActiveRowIndex()
-			     	sheet0.showColumn( 1 , 1 )	      
-				sheet0.setActiveCell( activeRowIndex , 1 )      
-			     }	     
-		      }	      
-	      );	
-	      spread.commandManager().register('bl_set', 
-		      function bl_set(){
-			     let s_index =  spread.getActiveSheetIndex()  
-			     if( s_index == 0){
-				let sheet0 = spread.getSheet( s_index ) 
-				 console.log('bl_set:on') 
-				 ezch_tbl_editorFactory.bl_set_flag = 1;   
-			     }	     
-		      }	      
-	      );	
-	      spread.commandManager().register('bl_up', 
-		      function bl_left(){
-			     let s_index = spread.getActiveSheetIndex()
-			     let bl_set_flag = ezch_tbl_editorFactory.bl_set_flag 
-			     if( s_index == 0 && bl_set_flag ){
-				     let sheet0 = spread.getSheet( s_index )
-				     let selections = sheet0.getSelections(); 
-				     if( selections[0].row > 17 )
-				     {	     
-				     	selections[0].rowCount += selections[0].row - 17 	
-				     	selections[0].row = 17 
-				     	sheet0.setSelection( selections[0].row , selections[0].col , selections[0].rowCount, selections[0].colCount ); 
-				     }	     
-				     ezch_tbl_editorFactory.bl_set_flag = 0 ; 
-
-			     }else{
-				    spread.commandManager().execute({ cmd: "selectionUp", sheetName: "TblView" , row: sheet0.getActiveRowIndex() , col: sheet0.getActiveColumnIndex() });  
-			     }	     
-		      }	      
-	      );	      
-	      spread.commandManager().register('bl_left', 
-		      function bl_left(){
-			     let s_index = spread.getActiveSheetIndex()
-			     let bl_set_flag = ezch_tbl_editorFactory.bl_set_flag 
-			     if( s_index == 0 && bl_set_flag ){
-				     let sheet0 = spread.getSheet( s_index )
-				     let selections = sheet0.getSelections(); 
-				     selections[0].colCount += selections[0].col - 1 	
-				     selections[0].col = 1 
-				     sheet0.setSelection( selections[0].row , selections[0].col , selections[0].rowCount, selections[0].colCount ); 
-				     ezch_tbl_editorFactory.bl_set_flag = 0 ; 
-
-			     }else{
-				    spread.commandManager().execute({ cmd: "selectionLeft", sheetName: "TblView" , row: sheet0.getActiveRowIndex() , col: sheet0.getActiveColumnIndex() });  
-			     }	     
-		      }	      
-	      );	      
-
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.up , true , false , false ,false ); 	
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.down , true , false , false ,false ); 	
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.right , true , false , false ,false ); 	
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.left , true , false , false ,false ); 	
-	      spread.commandManager().setShortcutKey('goToSheetBottomRight', GC.Spread.Commands.Key.end , true , true , false ,false ); 	
 	      spread.commandManager().setShortcutKey('nv_up', GC.Spread.Commands.Key.up, true ,false , false ,false ); 	
-	      spread.commandManager().setShortcutKey('nv_left', GC.Spread.Commands.Key.left, true ,false , false ,false ); 	
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.end , false , true , false ,false ); 	
-	      spread.commandManager().setShortcutKey('bl_set', GC.Spread.Commands.Key.end, false ,true, false ,false ); 	
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.left, false ,true, false ,false ); 	
-	      spread.commandManager().setShortcutKey('bl_left', GC.Spread.Commands.Key.left, false ,true, false ,false ); 	
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.up, false ,true, false ,false ); 	
-	      spread.commandManager().setShortcutKey('bl_up', GC.Spread.Commands.Key.up, false ,true, false ,false ); 	
+	      spread.commandManager().setShortcutKey('navigationTop', GC.Spread.Commands.Key.up , true , true , false ,false ); 	
+	      spread.commandManager().setShortcutKey('navigationBottom', GC.Spread.Commands.Key.down , true , true , false ,false ); 	
+
 
 	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
