@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+			var person = { name: "Wang feng", age: 25 , address: { postcode: "710075" }}; 
+			var source = new GC.Spread.Sheets.Bindings.CellBindingSource( person );
+			sheet.setBindingPath( 0,0, "name" );
+			sheet.setBindingPath( 1,1, "age" );
+			sheet.setBindingPath( 3,3, "address.postcode"); 
+			sheet.setDataSource( source ); 
+			var activeSheet = sheet
+			var style = new GC.Spread.Sheets.Style();
+			style.backColor ="green"
+			const case_num = 2 
+			switch( case_num ){		
+				case 1:		
+					var ranges = [ new GC.Spread.Sheets.Range(0,0,10,1)]; 
+					activeSheet.conditionalFormats.addUniqueRule( style, ranges ); 
+					break;
+				case 2:
+					var rule = new GC.Spread.Sheets.ConditionalFormatting.NormalConditionRule(); 
+					rule.ruleType( GC.Spread.Sheets.ConditionalFormatting.RuleType.uniqueRule ); 
+					rule.ranges( [ new GC.Spread.Sheets.Range(0,0,10,1)]);
+					rule.style( style );
+					activeSheet.conditionalFormats.addRule( rule ); 
+					break;
+			}
+			activeSheet.setValue(0, 0, 50);
+			activeSheet.setValue(1, 0, 50);
+			activeSheet.setValue(2, 0, 11);
+			activeSheet.setValue(3, 0, 5);		
+
+		};
+	</script>
+	
+</html> 
+
+
+
