@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+			var person = { name: "Wang feng", age: 25 , address: { postcode: "710075" }}; 
+			var source = new GC.Spread.Sheets.Bindings.CellBindingSource( person );
+			sheet.setBindingPath( 0,0, "name" );
+			sheet.setBindingPath( 1,1, "age" );
+			sheet.setBindingPath( 3,3, "address.postcode"); 
+			sheet.setDataSource( source ); 
+			sheet.visible(false)
+			
+			
+                    spread.getSheet(1).setArray(0, 0, [
+			    ["Order No.","Order Date","Product Type","Qty","Customer ID","Delivery Status"],
+			    ["1234", "11-Jul", "Electronic", "1", "861861", "Delivered"],
+			    ["1235", "12-Jul", "Clothing",   "4", "530317", "Past Due"],
+			    ["1236", "13-Jul", "Cleaning",   "2", "753904", "Past Due"],
+			    ["1237", "14-Jul", "Food Item",  "6", "623424", "Delivered"],
+			    ["1238", "15-Jul", "Electronic", "3", "214403", "Past Due"],
+			    ["1239", "16-Jul", "Clothing",   "7", "105146", "Due in 4 Days"],
+			    ["1240", "17-Jul", "Cleaning",   "3", "860876", "Past Due"],
+			    ["1241", "18-Jul", "Food Item",  "8", "126990", "Delivered"],
+			    ["1242", "19-Jul", "Electronic", "2", "505788", "Delivered"],
+			    ["1243", "20-Jul", "Clothing",   "5", "298332", "Due in 4 Days"]
+			]);
+
+			spread.getSheet(1).name("Sort by font color");
+			spread.getSheet(1).getCell(1, 5).foreColor("#548235");            
+			spread.getSheet(1).getCell(2, 5).foreColor("#C65911");            
+			spread.getSheet(1).getCell(3, 5).foreColor("#C65911");            
+			spread.getSheet(1).getCell(4, 5).foreColor("#548235");            
+			spread.getSheet(1).getCell(5, 5).foreColor("#C65911");            
+			spread.getSheet(1).getCell(6, 5).foreColor("#BF8F00");            
+			spread.getSheet(1).getCell(7, 5).foreColor("#C65911");            
+			spread.getSheet(1).getCell(8, 5).foreColor("#548235");            
+			spread.getSheet(1).getCell(9, 5).foreColor("#548235");            
+			spread.getSheet(1).getCell(10, 5).foreColor("#BF8F00");
+
+			var FontColorList = new GC.Spread.Sheets.CellTypes.RadioButtonList();
+			FontColorList.items([
+			    { text: "Green", value: "green" },
+			    { text: "Red", value: "red" }, 
+			    { text: "Yellow", value: "yellow" }
+			]);
+			spread.getSheet(1).getCell(12, 2).cellType(FontColorList);
+
+			var FontColorOrder = new GC.Spread.Sheets.CellTypes.RadioButtonList();
+			FontColorOrder.items([
+			    { text: "Top", value: "top" },
+			    { text: "Bottom", value: "bottom" }
+			]);
+			spread.getSheet(1).getCell(12, 3).cellType(FontColorOrder);
+			  
+			sortFontColor(spread.getSheet(1));
+
+			function sortFontColor (sheet){
+			    const FONT_COLOR_MAPPING = {
+				green:"#548235",
+				red:"#C65911",
+				yellow: "#BF8F00"
+			    }
+			    sheet.setColumnWidth(3,120);
+			    var style = new GC.Spread.Sheets.Style();
+			    style.cellButtons = [{
+				    caption:"Sort By Font Color",
+				    useButtonStyle:true,
+				    width:120,
+				    command:function (sheet){
+					var value = sheet.getValue(12,2);
+					var order = sheet.getValue(12,3);
+					value = value ? value : "green";
+					order = order ? order : "top";
+					var color = FONT_COLOR_MAPPING[value];
+					sheet.sortRange(1,0,10,6,true,[{
+					    index:5,
+					    fontColor:color,
+					    order:order
+					}])
+				    }
+				}];
+			    sheet.setStyle(13,3,style);
+			}
+		};
+	</script>
+	
+</html> 
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+			var person = { name: "Wang feng", age: 25 , address: { postcode: "710075" }}; 
+			var source = new GC.Spread.Sheets.Bindings.CellBindingSource( person );
+			sheet.setBindingPath( 0,0, "name" );
+			sheet.setBindingPath( 1,1, "age" );
+			sheet.setBindingPath( 3,3, "address.postcode"); 
+			sheet.setDataSource( source ); 
+			var activeSheet = sheet		
+
+		// Sort with Grouped Data .. 
+		/*			
+			Enum Value	Sort Type		Description
+			none		Flat Sort		Sorts the data in a flat manner without considering any group
+			group		Group Level Sort	Sorts and moves the group but keeps the group data as it is
+			child		Child Level Sort	Sorts the group data but keeps the group as it is
+			full		Full Sort		Sorts the group and group data, both			
+	         */
+		
+                    // set data
+			activeSheet.setArray(3, 0, [
+			    [2], [1], ['cc'], [2], [1], ['bb'], [1], [2], ['aa'], [1], [2], ['dd']
+			]);
+			activeSheet.rowOutlines.group(3, 2);
+			activeSheet.rowOutlines.group(6, 2);
+			activeSheet.rowOutlines.group(9, 2);
+			activeSheet.rowOutlines.group(12, 2);
+			spread.resumePaint();
+
+			// set rowFilter
+			activeSheet.rowFilter(new GC.Spread.Sheets.Filter.HideRowFilter(new GC.Spread.Sheets.Range(3, 0, 13, 1)));
+
+			//1) If you want to sort the grouped data by UI operation (sorting using filter dialog), you should use RangeSorting event
+			spread.bind(GC.Spread.Sheets.Events.RangeSorting, function (e, info) {
+			    // set GroupSort to full
+			    info.groupSort = GC.Spread.Sheets.GroupSort.full;
+			});
+				   
+			// 2) If you want to use api to sort the grouped data, you should use this code:
+			//activeSheet.sortRange(3, 0, 13, 1, true, [{ index: 0, ascending: true }], { groupSort: GC.Spread.Sheets.GroupSort.full });
+
+
+		};
+	</script>
+	
+</html> 
+
+
+

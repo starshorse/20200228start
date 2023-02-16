@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+			var person = { name: "Wang feng", age: 25 , address: { postcode: "710075" }}; 
+			var source = new GC.Spread.Sheets.Bindings.CellBindingSource( person );
+			sheet.setBindingPath( 0,0, "name" );
+			sheet.setBindingPath( 1,1, "age" );
+			sheet.setBindingPath( 3,3, "address.postcode"); 
+			sheet.setDataSource( source ); 
+			// get the activesheet
+			var activeSheet = spread.getSheet(0);
+			// Set data
+			activeSheet.setValue(0, 0, "Name");
+			activeSheet.setValue(0, 1, "Age");
+			activeSheet.setValue(1, 0, "Rick");
+			activeSheet.setValue(1, 1, 52);
+			activeSheet.setValue(2, 0, "Tim");
+			activeSheet.setValue(2, 1, 50);
+			activeSheet.setValue(3, 0, "Jerry");
+			activeSheet.setValue(3, 1, 46);
+			activeSheet.setValue(4, 0, "Jack");
+			activeSheet.setValue(4, 1, 98);
+			activeSheet.setValue(5, 0, "Sandy");
+			activeSheet.setValue(5, 1, 99);
+			activeSheet.setValue(6, 0, "Smith");
+			activeSheet.setValue(6, 1, 42);
+			activeSheet.setValue(7, 0, "Greg");
+			activeSheet.setValue(7, 1, 41);
+			activeSheet.setValue(8, 0, "Sia");
+			activeSheet.setValue(8, 1, 36);
+			activeSheet.setValue(9, 0, "Jennet");
+			activeSheet.setValue(9, 1, 38);
+			activeSheet.setValue(10, 0, "Rachel");
+			activeSheet.setValue(10, 1, 37);
+			// Hide Row
+			activeSheet.setRowHeight(4, 0.0, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setRowHeight(5, 0.0, GC.Spread.Sheets.SheetArea.viewport);
+
+			// Sort range i.e "Age" column with ignoreHidden set to true
+			activeSheet.sortRange(1,1,10,1, true, [{ index:1 , ascending: true }], { ignoreHidden: true });		
+		
+
+		};
+	</script>
+	
+</html> 
+
+
+
