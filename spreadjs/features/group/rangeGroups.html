@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+			var person = { name: "Wang feng", age: 25 , address: { postcode: "710075" }}; 
+			var source = new GC.Spread.Sheets.Bindings.CellBindingSource( person );
+			sheet.setBindingPath( 0,0, "name" );
+			sheet.setBindingPath( 1,1, "age" );
+			sheet.setBindingPath( 3,3, "address.postcode"); 
+			sheet.setDataSource( source ); 
+			// Create Row or Column Group 
+			var activeSheet = sheet 
+			activeSheet.setValue(0,0,"Product");
+			activeSheet.setValue(0,1,"2019 in Sales");
+			activeSheet.setValue(0,2,"2020 in Sales");
+			activeSheet.setValue(1,0,"Mobiles");
+			activeSheet.setValue(1,1,"350,000");
+			activeSheet.setValue(1,2,"500,000");
+			activeSheet.setValue(2,0,"Laptops");
+			activeSheet.setValue(2,1,"200,000");
+			activeSheet.setValue(2,2,"400,000");
+			// Set row and column groups		
+			const case_num = 1 
+			switch( case_num )
+			{
+				case 1:		
+					activeSheet.rowOutlines.group(1,2); 
+					activeSheet.columnOutlines.group(1,2);
+					activeSheet.rowOutlines.direction( GC.Spread.Sheets.Outlines.OutlineDirection.backward ); 
+					activeSheet.columnOutlines.direction( GC.Spread.Sheets.Outlines.OutlineDirection.forward ); 
+					spread.invalidateLayout();
+					spread.repaint()
+					break;
+				case 2:
+					spread.commandManager().execute({ cmd: "outlineRow", sheetName: activeSheet.name(), index: 4, count: 3 }); 		
+					break;
+			}				
+			
+
+		};
+	</script>
+	
+</html> 
+
+
+
