@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		 .gc-group {
+			background-color: rgb(180, 211, 230);
+			color: #999999;
+			border-width: 0px;
+			border-style:solid;
+		    }
+		 .gc-group-box {
+			background-color: #fff;
+			color: rgb(8, 154, 245);
+			border-color:rgb(32, 158, 241);
+		    }
+		 .gc-group-line{
+			border-width:2px;
+			border-style:solid;
+			border-color:rgb(137, 199, 243);
+		    }
+		 .gc-group-dot{
+			color:blue;
+		    }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<input type='button' id='button1' value='expands' />
+		<input type='button' id='button2' value='collapse' />
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+			var person = { name: "Wang feng", age: 25 , address: { postcode: "710075" }}; 
+			var source = new GC.Spread.Sheets.Bindings.CellBindingSource( person );
+			sheet.setBindingPath( 0,0, "name" );
+			sheet.setBindingPath( 1,1, "age" );
+			sheet.setBindingPath( 3,3, "address.postcode"); 
+			sheet.setDataSource( source ); 
+			var activeSheet = sheet 
+
+			 activeSheet.suspendPaint();
+
+			   // Set Outline of row
+			   activeSheet.rowOutlines.group(0, 4);
+			   activeSheet.rowOutlines.group(0, 1);
+			   activeSheet.rowOutlines.group(2, 1);
+
+			   // Set Outline of column
+			   activeSheet.columnOutlines.group(0, 4);
+			   activeSheet.columnOutlines.group(0, 1);
+			   activeSheet.columnOutlines.group(2, 1);
+			   activeSheet.resumePaint();		
+
+			 document.getElementById('button1').addEventListener('click', function(e){
+				// Get the outline label count of the row 
+				var rgl = activeSheet.rowOutlines.getMaxLevel(); 
+				for( var index = 0; index <= rgl ; index++ )
+				{
+					// Expand Outline 
+					activeSheet.rowOutlines.expand( index, true ); 
+				}			
+				// Get the outline lable count of the column 
+				var cgl = activeSheet.columnOutlines.getMaxLevel();
+				var gi = [];
+				var colCount = activeSheet.getColumnCount(); 
+				for( var index =0 , i = 0; index <= cgl; index++ )
+				{
+					for( var col = 0; col < colCount; col++ )
+					{
+					// Fetch group information of Outlines
+					 	var groupInfo = activeSheet.columnOutlines.find( col, index ); 
+						if( groupInfo )
+						{
+							gi[i] = groupInfo;
+							i++;
+							col = groupInfo.end;
+						}
+					}
+				}
+				for( var i = 0 ; i< gi.length ; i++ )
+				{
+					// Expand outline 
+					activeSheet.columnOutlines.expandGroup( gi[i], true ); 		
+				}
+                                 activeSheet.invalidateLayout();
+				 activeSheet.repaint()
+
+			 })			
+		       document.getElementById('button2').addEventListener('click', function(e){
+				// Get the outline row label count 
+			        var rgl = activeSheet.rowOutlines.getMaxLevel();
+				for( var index = 0; index <= rgl; index++ ){	       
+					// Collapse outline
+					activeSheet.rowOutlines.expand( index, false ); 
+				}				
+				// Get the outline column label count 
+				var cgl = activeSheet.columnOutlines.getMaxLevel(); 
+				var gi = [];
+				var colCount = activeSheet.getColumnCount(); 
+				for( var index = 0 , i = 0; index <= cgl; index++ )
+				{
+					for( var col=0; col < colCount ; col++ )
+					{			
+						// Fetch group information of Outline 
+						var groupInfo = activeSheet.columnOutlines.find( col, index ); 
+						if( groupInfo )
+						{	
+							gi[i] = groupInfo; 
+							i++;
+							col = groupInfo.end; 			
+						}
+							}			
+			       }
+			       for( var i = 0; i < gi.length; i++ )
+		               {
+					// Collapse Outline
+				 	activeSheet.columnOutlines.expandGroup( gi[i], false ); 
+			       }		   
+			       activeSheet.invalidateLayout(); 
+			       activeSheet.repaint() 	       
+					       
+			})				       
+
+		};
+	</script>
+	
+</html> 
+
+
+

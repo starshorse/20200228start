@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+			var person = { name: "Wang feng", age: 25 , address: { postcode: "710075" }}; 
+			var source = new GC.Spread.Sheets.Bindings.CellBindingSource( person );
+			sheet.setBindingPath( 0,0, "name" );
+			sheet.setBindingPath( 1,1, "age" );
+			sheet.setBindingPath( 3,3, "address.postcode"); 
+			sheet.setDataSource( source ); 
+			
+			var activeSheet = sheet 
+
+			spread.options.referenceStyle = GC.Spread.Sheets.ReferenceStyle.R1C1; 
+//			spread.options.referenceStyle = GC.Spread.Sheets.ReferenceStyle.A1; 
+				
+			 activeSheet.setColumnCount(2);
+			    activeSheet.options.colHeaderAutoText = GC.Spread.Sheets.HeaderAutoText.blank;
+			    activeSheet.setText(0, 1, "Value", GC.Spread.Sheets.SheetArea.colHeader);
+			    activeSheet.options.gridline = {showHorizontalGridline: false};
+			    activeSheet.setText(3, 0, "Sub-Total1");
+			    activeSheet.setText(7, 0, "Sub-Total2");
+			    activeSheet.setText(8, 0, "Aggregate");
+			    activeSheet.getRange(3, -1, 1, -1).backColor("lemonChiffon");
+			    activeSheet.getRange(7, -1, 1, -1).backColor("lemonChiffon");
+			    activeSheet.getRange(8, -1, 1, -1).backColor("lightPink");
+			    activeSheet.setValue(0, 1, 100);
+			    activeSheet.setValue(1, 1, 200);
+			    activeSheet.setValue(2, 1, 300);
+			    activeSheet.setValue(4, 1, 400);
+			    activeSheet.setValue(5, 1, 500);
+			    activeSheet.setValue(6, 1, 600);
+			  
+			   // Set the sub-total and the aggregate by using SUBTOTAL function.
+			   activeSheet.setFormula(3, 1, "SUBTOTAL(9,B1:B3)");
+			   activeSheet.setFormula(7, 1, "SUBTOTAL(9,B5:B7)");
+			   activeSheet.setFormula(8, 1, "SUBTOTAL(9,B1:B7)");		
+					
+                       // following option show affected after formulas .. 
+			 activeSheet.options.showFormulas = false ; 		
+		};
+	</script>
+	
+</html> 
+
+
+

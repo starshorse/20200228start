@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+			var person = { name: "Wang feng", age: 25 , address: { postcode: "710075" }}; 
+			var source = new GC.Spread.Sheets.Bindings.CellBindingSource( person );
+			sheet.setBindingPath( 0,0, "name" );
+			sheet.setBindingPath( 1,1, "age" );
+			sheet.setBindingPath( 3,3, "address.postcode"); 
+			sheet.setDataSource( source ); 
+			
+			var activeSheet = sheet 
+
+			spread.options.referenceStyle = GC.Spread.Sheets.ReferenceStyle.R1C1; 
+//			spread.options.referenceStyle = GC.Spread.Sheets.ReferenceStyle.A1; 
+				var sheet1 = spread.getSheet(0),
+			   sheet2 = spread.getSheet(1);
+			   sheet1.name("Sheet1");
+			   sheet2.name("Sheet2");
+			       
+			   sheet1.setValue(0, 0, 1000);
+			   sheet1.setValue(1, 0, 2000);
+			   sheet1.setValue(2, 0, 3000);
+			   sheet1.setValue(3, 0, 4000);
+			   sheet1.getRange(0, 0, 4, 1).backColor("lightPink");
+			   sheet2.setValue(0, 0, 5000);
+			   sheet2.getRange(0, 0, 1, 1).backColor("lightCyan");
+
+			   // Set a sum formula of "Sheet1: total of cell(0,0) to cell(3,0)" and "Sheet2: cell(0,0)".
+			   sheet2.setFormula(1, 1, "SUM(Sheet1!A1:A4) + Sheet2!A1");
+			   sheet2.getRange(1, 1, 1, 1).backColor("lemonChiffon");	
+				
+					
+
+		};
+	</script>
+	
+</html> 
+
+
+

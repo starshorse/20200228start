@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+			var person = { name: "Wang feng", age: 25 , address: { postcode: "710075" }}; 
+			var source = new GC.Spread.Sheets.Bindings.CellBindingSource( person );
+			sheet.setBindingPath( 0,0, "name" );
+			sheet.setBindingPath( 1,1, "age" );
+			sheet.setBindingPath( 3,3, "address.postcode"); 
+			sheet.setDataSource( source ); 
+			
+			var activeSheet = sheet 
+
+			spread.options.referenceStyle = GC.Spread.Sheets.ReferenceStyle.R1C1; 
+//			spread.options.referenceStyle = GC.Spread.Sheets.ReferenceStyle.A1; 
+				
+                    	activeSheet.setValue(0,0,1);
+			activeSheet.setValue(0,1,2);
+			activeSheet.setValue(0,2,10);
+			activeSheet.getCell(1,1).formula("=SUM(A1:C1)");
+
+			// Add Custom function
+			// Type =myfunc(1)
+			// in a cell to see the result. 
+			function myfunc()
+			{}
+			myfunc.prototype = new GC.Spread.CalcEngine.Functions.Function("myfunc",0,0,{ name: "myfunc", description: "This is my first function"});		
+			myfunc.prototype.evaluate = function(args)
+			{
+				return 100;		
+			}
+			spread.addCustomFunction( new myfunc() );	
+// Return Array in Custom Function
+			spread.options.allowDynamicArray = true;
+			// create a factorial function 
+			function FactorialFunction(){		
+				this.name = "FACTORIAL";
+				this.maxArgs = 1;
+				this.minArgs = 1;
+			}			
+			FactorialFunction.prototype = new GC.Spread.CalcEngine.Functions.Function();
+			// evaluating the result of the formula 
+			FactorialFunction.prototype.evaluate = function(arg)
+			{
+				var t = 1;
+				var result = [];
+				if( arguments.length === 1 && !isNaN( parseInt(arg)))
+				{
+					for( var i = 1; i <= arg; i++ )
+					{
+						t = i*t ;
+						result.push(t);
+					}			
+				// returning the CALCArray Object as a result of the function
+				return new GC.Spread.CalcEngine.CalcArray([result])
+				}
+				return "#VALUE!";		
+			}			
+			// Adding description to the custom Function 
+			FactorialFunction.prototype.description = function(){
+				return{
+					name: "FACTORIAL",
+				        description:"This is function which calculates the factorial form 1 and show in different cells of a row",
+							
+				}				
+			}		
+			var factorial = new FactorialFunction();
+			sheet.addCustomFunction( factorial); 
+			// Merge three columns with origin at cell(0,0)
+			sheet.addSpan( 0,0,1,7, GC.Spread.Sheets.SheetArea.viewport ); 
+			sheet.setValue(0,0, "This custom factorial function calculates the factorial from 1 to 7 ");
+			for( var i = 1; i< 8; i++){		
+				sheet.setText( 2, i-1, i+ "!" );		
+			}
+			//set custom formula 
+			sheet.setFormula( 3, 0, "=Factorial(7)");
+			var style = new GC.Spread.Sheets.Style();
+			style.font = "bold 12px Arial";
+			style.forColor = "white";
+			style.backColor = "#5B9BD5";
+			style.hAlign = GC.Spread.Sheets.HorizontalAlign.center; 
+			style.vAlign = GC.Spread.Sheets.VerticalAlign.center; 
+			sheet.setStyle(0,0, style, GC.Spread.Sheets.SheetArea.viewport ); 
+					
+
+		};
+	</script>
+	
+</html> 
+
+
+
