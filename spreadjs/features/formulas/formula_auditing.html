@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		var oldPrecedentCells, oldDependentCells; 
+		window.onload = function()
+		{
+		// Initializing Spread..
+
+//		var spread = new GC.Spread.Sheets.Workbook( $("#sampleDiv")[0], { autoFitType: GC.Spread.Sheets.AutoFitType.cellWithHeader }); 
+		var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { autoFitType: GC.Spread.Sheets.AutoFitType.cellWithHeader }); 
+		// Set datasource for the sheet . 
+		var jsonArray = [
+		{
+		  " DATE ": " 3-Oct-17 ",
+		  " TRANSACTION DETAILS ": " INDO GIBL Indiaforensic STL28091 ",
+		  " WITHDRAWAL AMOUNT ": 12106.00,
+		  " DEPOSIT AMOUNT ": 1000000.00,
+		  " BALANCE AMOUNT ": ""
+		},
+		{
+		  " DATE ": " 3-Oct-17 ",
+		  " TRANSACTION DETAILS ": " INDO GIBL Indiaforensic STL29091 ",
+		  " WITHDRAWAL AMOUNT ": 12611.00,
+		  " DEPOSIT AMOUNT ": 1000000.0,
+		  " BALANCE AMOUNT ": ""
+		},
+		{
+		  " DATE ": " 5-Oct-17 ",
+		  " TRANSACTION DETAILS ": " INDO GIBL Indiaforensic STL04101 ",
+		  " WITHDRAWAL AMOUNT ": 61400.00,
+		  " DEPOSIT AMOUNT ": null,
+		  " BALANCE AMOUNT ": ""
+		},
+		{
+		  " DATE ": " 16-Oct-17 ",
+		  " TRANSACTION DETAILS ": " FDRL/INTERNAL FUND TRANSFE ",
+		  " WITHDRAWAL AMOUNT ": null,
+		  " DEPOSIT AMOUNT ": 500000.00,
+		  " BALANCE AMOUNT ": "",
+		},
+		{
+		  " DATE ": " 17-Oct-17 ",
+		  " TRANSACTION DETAILS ": " INDO GIBL Indiaforensic STL06101 ",
+		  " WITHDRAWAL AMOUNT ": 6000.00,
+		  " DEPOSIT AMOUNT ": null,
+		  " BALANCE AMOUNT ": "",
+		},
+		{
+		  " DATE ": " 17-Oct-17 ",
+		  " TRANSACTION DETAILS ": " INDO GIBL Indiaforensic STL07101 ",
+		  " WITHDRAWAL AMOUNT ": 97950.00,
+		  " DEPOSIT AMOUNT ": null,
+		  " BALANCE AMOUNT ": ""
+		},
+		{
+		  " DATE ": " 18-Oct-17 ",
+		  " TRANSACTION DETAILS ": " INDO GIBL Indiaforensic STL17101 ",
+		  " WITHDRAWAL AMOUNT ": 206501.00,
+		  " DEPOSIT AMOUNT ": null,
+		  " BALANCE AMOUNT ": ""
+		},
+		{
+		  " DATE ": " 21-Oct-17 ",
+		  " TRANSACTION DETAILS ": " FDRL/INTERNAL FUND TRANSFE ",
+		  " WITHDRAWAL AMOUNT ": null,
+		  " DEPOSIT AMOUNT ": 500000.00,
+		  " BALANCE AMOUNT ": ""
+		},
+		{
+		  " DATE ": " 23-Oct-17 ",
+		  " TRANSACTION DETAILS ": " INDO GIBL Indiaforensic STL21101 ",
+		  " WITHDRAWAL AMOUNT ": 39000.00,
+		  " DEPOSIT AMOUNT ": null,
+		  " BALANCE AMOUNT ": ""
+		},
+		{
+		  " DATE ": " 26-Oct-17 ",
+		  " TRANSACTION DETAILS ": " INDO GIBL Indiaforensic STL25101 ",
+		  " WITHDRAWAL AMOUNT ": 170125.00,
+		  " DEPOSIT AMOUNT ": null,
+		  " BALANCE AMOUNT ": ""
+		},
+		{
+		  " DATE ": " 27-Oct-17 ",
+		  " TRANSACTION DETAILS ": "INDO GIBL Indiaforensic STL26101",
+		  " WITHDRAWAL AMOUNT ": 208000.00,
+		  " DEPOSIT AMOUNT ": null,
+		  " BALANCE AMOUNT ": ""
+		},
+		{
+		  " DATE ": " 30-Oct-17 ",
+		  " TRANSACTION DETAILS ": " FDRL/INTERNAL FUND TRANSFE ",
+		  " WITHDRAWAL AMOUNT ": null,
+		  " DEPOSIT AMOUNT ": 500000.00,
+		  " BALANCE AMOUNT ": ""
+		}
+		];
+		var activeSheet = spread.getActiveSheet();
+		activeSheet.setDataSource( jsonArray ); 
+		// Configure the sheet settings 
+		activeSheet.getRange(0,2,12,3 ).formatter('* #.00');
+		for( var c = 0; c < activeSheet.getColumnCount(); c++ )
+		{
+			activeSheet.autoFitColumn(c); 		
+	 	}			
+		// Set cell formulas 
+		activeSheet.setFormula(0,4,"D2");
+		for( var r = 1 ; r < activeSheet.getRowCount(); r++ )
+		{
+			activeSheet.setFormula(r, 4, "E" + r.toString() + "+ D" + ( r+1).toString() + "- C" + ( r+1 ).toString());		
+		}
+		// Trace precedents and dependents for the active cell 
+		activeSheet.bind( GC.Spread.Sheets.Events.SelectionChanging, function( e, info )
+		{
+			spread.suspendPaint(); 
+			var newRow = info.newSelections[0].row; 
+		 	var newCol = info.newSelections[0].col; 
+			ColorPrecedents( activeSheet, newRow, newCol ); 
+			ColorDependents( activeSheet, newRow, newCol ); 
+
+			spread.resumePaint();
+
+		}) 			
+		// Paint precedent cells in yellow color 
+		function ColorPrecedents( sheet, row, col )
+		{
+			if( oldPrecedentCells)
+			{
+				oldPrecedentCells.forEach( function(node )
+				{				
+					sheet.getCell( node.row, node.col ).backColor( undefined )			
+				});			
+			}
+			var precedentCells = sheet.getPrecedents( row, col ); 
+			if( precedentCells )
+			{
+				setTimeout(function()
+				{
+					oldPrecedentCells = precedentCells; 
+					precedentCells.forEach( function( node ){
+						sheet.getCell( node.row, node.col ).backColor("yellow");})
+				}, 10); 			
+			}	
+		}				
+		// Paint dependent cells in green color 
+		function ColorDependents( sheet, row, col )
+		{
+			if( oldDependentCells)
+			{
+				oldDependentCells.forEach( function( node ){		
+				sheet.getCell( node.row, node.col ).backColor( undefined ) 			
+				});
+			}
+			var dependentCells = sheet.getDependents(row, col); 
+			oldDependentCells = dependentCells ;
+			if( dependentCells ){
+				dependentCells.forEach( function(node)
+				{
+					sheet.getCell( node.row, node.col ).backColor("green"); 
+				})				
+						
+		}			
+		}
+
+		};
+	</script>
+	
+</html> 
+
+
+
