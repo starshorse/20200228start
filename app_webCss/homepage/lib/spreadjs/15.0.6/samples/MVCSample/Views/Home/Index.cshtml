@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "인덱스";
+}
+<meta charset="UTF-8">
+<script src="@Url.Content("~/Scripts/gc.spread.sheets.all.15.0.6.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/gc.spread.sheets.resources.ko.15.0.6.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/license.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/index.js")"></script>
+<script>GC.Spread.Common.CultureManager.culture('ko-kr');</script>
+<script type="text/javascript">
+    $(function () {
+        //initialize SpreadJS widget
+        var spread = new GC.Spread.Sheets.Workbook($("#ss")[0]);
+        var sheet = spread.getActiveSheet();
+        //load data from data source
+        showDelayDiv();
+        readData(sheet, '@Url.Action("LoadAll", "Home")', function () {
+            hideDelayDiv();
+        });
+
+        $("input[type=button]").button();
+        $("#create").click(function () {
+            createData(sheet, '@Url.Action("Create", "Home")', function () {
+                readData(sheet, '@Url.Action("LoadAll", "Home")');
+                alert("Create successfully.");
+            });
+        });
+        $("#update").click(function () {
+            updateData(sheet, '@Url.Action("UpdateAll", "Home")', function () {
+                alert("Update successfully.");
+            });
+        });
+        $("#delete").click(function () {
+            deleteData(sheet, '@Url.Action("Delete", "Home")', function () {
+                alert("Delete successfully.");
+            });
+        });
+        $("#sort").click(function () {
+            readData(sheet, '@Url.Action("Sort", "Home")', function () {
+                alert("Sort successfully.");
+            });
+        });
+    });
+</script>
+
+<div class="header">SpreadJS MVC 샘플</div>
+<div class="content">
+    <div class="intro">
+        <p class="summary">이 샘플은 데이터베이스에 대한 CRUD 작업을 포함하여 Spread.Sheets를 사용해 MVC 응용 프로그램을 만드는 방법을 보여줍니다.</p>
+        <p class="detail">
+            문서가 준비되면 Spread.Sheets가 초기화되고 Ajax 요청에 따라 서버에서 데이터를 로드합니다.
+            "만들기" 단추는 새 레코드를 만들어 클라이언트의 마지막 행에 삽입한 다음 서버에 변경 사항을 동기화합니다.
+            클라이언트에서 일부 레코드가 수정된 후 "업데이트" 단추를 사용하여 변경 사항을 서버에 동기화할 수 있습니다.
+            '삭제' 단추를 누르면 활성 행의 레코드가 삭제되고 변경 사항이 서버에 동기화됩니다.
+            CRUD 작업 외에도 Entity Framework는 예의 "정렬"과 같은 데이터베이스 작업을 더 많이 제공합니다.
+        </p>
+    </div>
+    <div id="ss"></div>
+    <div id="operation">
+        <input class="button btn btn-default" type="button" value="만들기" id="create" />
+        <input class="button btn btn-default" type="button" value="업데이트" id="update" />
+        <input class="button btn btn-default" type="button" value="삭제" id="delete" />
+        <input class="button btn btn-default" type="button" value="정렬" id="sort" />
+    </div>
+</div>

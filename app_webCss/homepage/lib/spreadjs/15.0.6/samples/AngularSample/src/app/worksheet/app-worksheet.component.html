@@ -1,0 +1,75 @@
+<h3>GC-워크시트</h3>
+<div>
+    <p>아래 샘플은 시트의 일부 속성을 바인딩하는 방법을 보여줍니다.</p>
+</div>
+
+<div>
+    <gc-spread-sheets [hostStyle]="hostStyle" hostClass="spreadContainer">
+        <gc-worksheet [rowCount]="rowCount" [colCount]="columnCount"
+                      [frozenRowCount]="frozenRowCount" [frozenColumnCount]="frozenColumnCount"
+                      [rowHeaderVisible]="rowHeaderVisible" [colHeaderVisible]="columnHeaderVisible"
+                      [frozenTrailingRowCount]="frozenTrailingRowCount"
+                      [frozenTrailingColumnCount]="frozenTrailingColumnCount" [sheetTabColor]="sheetTabColor"
+                      [frozenlineColor]="frozenlineColor" [selectionBackColor]="selectionBackColor"
+                      [selectionBorderColor]="selectionBorderColor" [dataSource]="data" [autoGenerateColumns]="autoGenerateColumns">
+            <gc-column width=150 dataField="Name"></gc-column>
+            <gc-column width=150 dataField="CountryRegionCode"></gc-column>
+            <gc-column width=100 dataField="City"></gc-column>
+            <gc-column width=200 dataField="AddressLine"></gc-column>
+            <gc-column width=100 dataField="PostalCode"></gc-column>
+        </gc-worksheet>
+    </gc-spread-sheets>
+</div>
+
+<div class="settingContainer">
+    <table>
+        <tr>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="rowHeaderVisible"/>행 머리글 표시</label>
+            </td>
+            <td>
+                <label><input type="checkbox" [(ngModel)]="columnHeaderVisible"/>열 머리글 표시</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label><input type="text" [(ngModel)]="rowCount"/>행 수</label>
+            </td>
+            <td>
+                <label><input type="text" [(ngModel)]="columnCount"/>열 수</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" [(ngModel)]="frozenRowCount"/>고정된 행 수
+            </td>
+            <td>
+                <input type="text" [(ngModel)]="frozenColumnCount"/>고정된 열 수
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" [(ngModel)]="frozenTrailingRowCount"/>고정된 후행 행 수
+            </td>
+            <td>
+                <input type="text" [(ngModel)]="frozenTrailingColumnCount"/>고정된 후행 열 수
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="color" [(ngModel)]="sheetTabColor"/> 시트 탭 색
+            </td>
+            <td>
+                <input type="color" [(ngModel)]="frozenlineColor"/> 고정된 선 색
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="color" [(ngModel)]="selectionBackColor"/> 선택 영역 배경색
+            </td>
+            <td>
+                <input type="color" [(ngModel)]="selectionBorderColor"/> 선택 영역 테두리 색
+            </td>
+        </tr>
+    </table>
+</div>
