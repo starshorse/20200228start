@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		
+                     // Add custom shape with formula
+		 window.onload = function ()
+		{
+		   var spread = new GC.Spread.Sheets.Workbook(document.getElementById("ss"));
+		   var sheet = spread.getActiveSheet();
+		   sheet.name("CustomShape");
+		   sheet.setArray(0, 0, [
+		   ["left", 480], ["top", 60], ["width", 400], ["height", 240],["angle"],
+		   ["background color and tranparency", "green", 0.5],
+		   ["border color and width", "blue", 0],
+		   ["shape text", "The demo text for custom shape"],
+		   ["text font", "15px Georgia"],
+		   ["text color", "red"],
+		   ["margins", 1, 2, 3, 4],
+		   ["horizontalAlignment", 1],
+		   ["verticalAlignment", 1],
+		   ["textDirection", "horizontal"],
+		   ["allowTextToOverflowShape", false],
+		   ["wrapTextInShape", true],
+		   ["line width", 3],
+		   ["line style", 5, "capType", 2, "joinType", 1],
+		   ["endPoints", 1, 1, 1, 5, 2, 2],
+		   ]);
+		   sheet.setColumnWidth(0, 280);
+		   sheet.setColumnWidth(1, 100);
+		   sheet.setColumnWidth(2, 70);
+		   sheet.setColumnWidth(3, 70);
+		   sheet.setColumnWidth(4, 70);
+		   sheet.setColumnWidth(5, 70);
+		   sheet.setCellType(11, 1,
+		   createComboCellType(GC.Spread.Sheets.HorizontalAlign, 2));
+		   sheet.setCellType(12, 1, createComboCellType(GC.Spread.Sheets.VerticalAlign));
+		   sheet.setCellType(17, 1,
+		   createComboCellType(GC.Spread.Sheets.Shapes.PresetLineDashStyle));
+		   sheet.setCellType(17, 3, createComboCellType(GC.Spread.Sheets.Shapes.LineCapStyle));
+		   sheet.setCellType(17, 5,
+		   createComboCellType(GC.Spread.Sheets.Shapes.LineJoinStyle));
+		   sheet.setCellType(18, 1,
+		   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadStyle));
+		   sheet.setCellType(18, 4,
+		   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadStyle));
+		   sheet.setCellType(18, 2,
+		   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadLength));
+		   sheet.setCellType(18, 5,
+		   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadLength));
+		   sheet.setCellType(18, 3,
+		   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadWidth));
+		   sheet.setCellType(18, 6,
+		   createComboCellType(GC.Spread.Sheets.Shapes.ArrowheadWidth));
+		   sheet.setFormula(4, 1, "=ROW(CustomShape!B10)");
+		   var model =
+		  {
+				left: "=CustomShape!B1",
+				top: "=CustomShape!B2",
+				width: "=CustomShape!B3",
+				height: "=CustomShape!B4",
+				angle: "=CustomShape!B5",
+				options: {
+				    endPoints: {
+					beginArrow:
+				   {
+					    type: "=CustomShape!B19", widthType:
+					    "=CustomShape!C19", lengthType: "=CustomShape!D19"
+		   },
+					endArrow: { type: "=CustomShape!E19", widthType:
+					"=CustomShape!F19", lengthType: "=CustomShape!G19" }
+				    },
+				    fill:
+				   {
+					type: 1, // solid fill (now only support solid fill)
+					color: "=CustomShape!B6",
+					transparency: "=CustomShape!C6"
+				    },
+				    stroke:
+				    {
+					type: 1, // solid fill (now only support solid fill)
+					color: "=CustomShape!B7",
+					transparency: "=CustomShape!C7",
+					width: "=CustomShape!B17",
+					lineStyle: "=CustomShape!B18",
+					capType: "=CustomShape!D18",
+					joinType: "=CustomShape!F18"
+				    },
+				    textFormatOptions:
+				    {
+					text: "=CustomShape!B8", // "Shape Text",
+					font: "=CustomShape!B9", // "bold 15px Georgia
+					fill:
+				      {
+					    type: 1, // solid fill (now only support solid fill)
+					    color: "=CustomShape!B10"
+					},
+					margins:
+				       {
+					    left: "=CustomShape!B11",
+					    top: "=CustomShape!C11",
+					    right: "=CustomShape!D11",
+					    bottom: "=CustomShape!E11"
+					},
+					verticalAlignment:
+					"=CustomShape!B13",  // (0: top, 1: center, 2: bottom)
+					horizontalAlignment:
+					"=CustomShape!B12", // (0: left, 1: center, 2: right)
+					textDirection:
+					"=CustomShape!B14", //f "vertical", "rotate90", "rotate270"
+					allowTextToOverflowShape: "=CustomShape!B15",
+					wrapTextInShape: "=CustomShape!B16"
+				    }
+				},
+				variables: {
+				    xOffset: 40,
+				    yOffset: 10
+				},
+				path: [[
+				    ["M", "=controls.0.x", 0],          // M: move to (x, y)
+				    ["L", "=width - controls.0.x", 0],  // L: line to (x, y)
+				    ["L", "=width - 2 * variables.xOffset", "=height"], ["L", "=variables.xOffset", "=height"],
+				    ["Z"]],  // Z: close path
+				[
+				    ["M", "=width - variables.xOffset", "=variables.yOffset"],
+				    ["L", "=width", "=variables.yOffset"],
+				    ["L", "=width", "=height - 4 * variables.yOffset"],
+				    ["L", "=width - variables.xOffset", "=height"]
+				]
+				],
+				controls: [
+				    {
+					x: "=BOUND(0.3*width, 0, false, 0, 0.5*width)", // formula used to provide position and range limitation (here default at position (0, 0.2 * width), and the y range from 0 to 0.5*width)
+					y: 0,
+					xBehavior: 0,  // 0 if adjust in x (horizontal), otherwise 1
+					yBehavior: 1   // 0 if adjust in y (vertical), otherwise 1
+				    }
+				],
+				connectionPoints: [
+				    {
+					x: "=0.5*width",
+					y: 0
+				    },
+				    {
+					x: "=0.5*controls.0.x",
+					y: "=0.5*height"
+				    },
+				    {
+					x: "=0.5*width",
+					y: "=1*height"
+				    },
+				    {
+					x: "=width-0.5*controls.0.x",
+					y: "=0.5*height"
+				    }
+				],
+				textRect:
+			       { left: "=controls.0.x", top: 20, bottom: "=height - 20",
+				right: "=width - variables.xOffset" }};
+				sheet.shapes.add('shape2', model);
+			 };
+		 function createComboCellType(enumType, max)
+			  {
+			    var combo = new GC.Spread.Sheets.CellTypes.ComboBox();
+			    var items = [];
+			    for (var name in enumType)
+			    {
+				var value = enumType[name];
+				if (!max || value <= max)
+				   {
+				    items.push
+				    ({
+					text: name,
+					value: value
+				    });
+				}
+			    }
+			    combo.items(items);
+			    combo.editorValueType(GC.Spread.Sheets.CellTypes.EditorValueType.value);
+			    return combo;
+		}
+
+                	
+	</script>
+	
+</html> 
+
+
+

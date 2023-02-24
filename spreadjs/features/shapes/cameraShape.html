@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+		 	// Get the Sheets.
+			var sheetDashboard = spread.sheets[0];
+			var sheet1 = spread.sheets[1]; 
+			var sheet2 = spread.sheets[2]; 
+			var sheet3 = spread.sheets[3]; 
+			var sheet4 = spread.sheets[4]; 
+
+			// Set sheet names
+			sheetDashboard.name("Dashboard");
+			sheet1.name("Fruits");
+			sheet2.name("Vegetables");
+			sheet3.name("Meat");
+			sheet4.name("Bakery"); 
+			
+			// Set sheetAreaOffset option 
+			sheetDashboard.options.sheetAreaOffset = { left: 1 , top:1 }; 
+			// Hide gridlines 
+			sheetDashboard.options.gridline = { showVertialGridline: false, showHorizontalGridline: false }; 
+			// Hide column & row headers
+			sheetDashboard.options.colHeaderVisible = false;
+			sheetDashboard.options.rowHeaderVisible = false; 
+			// Clear the cell selection and change selectionBordercolor 
+			sheetDashboard.clearSelection();
+			sheetDashboard.options.selectionBorderColor = "transparent"
+			// Add camera shapes in Dashboard sheet 
+			var CameraShape1 = sheetDashboard.shapes.addCameraShape("CameraShape1", "Fruits!A1:C8", 30,45, 340, 330 );
+			var CameraShape2 = sheetDashboard.shapes.addCameraShape("CameraShape2", "Vegetable!A1:C7", 440,45, 340, 330 );
+			var CameraShape3 = sheetDashboard.shapes.addCameraShape("CameraShape3", "Meat!A1:C6", 30,400, 340, 330 );
+			var CameraShape4 = sheetDashboard.shapes.addCameraShape("CameraShape4", "Bakery!A1:C8", 440,400, 340, 330 );
+					
+		};
+	</script>
+	
+</html> 
+
+
+

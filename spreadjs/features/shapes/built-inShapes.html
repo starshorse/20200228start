@@ -27,7 +27,19 @@
 		{
 			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
 			var sheet = spread.getSheet(0);
-			
+		// Add built-in shape "dout"
+			var donutShape = sheet.shapes.add('autoShape', GC.Spread.Sheets.Shapes.AutoShapeType.donut, 100, 50, 150, 150 ) ; 
+		// Adding text to built-in shape "donut"
+			donutShape.text("Donut Shape");
+		// Adding style to built-in shape "donut"
+			var shapeStyle = donutShape.style();
+			shapeStyle.textEffect.color ="Red";
+			shapeStyle.textEffect.font = "18px Arial";
+			shapeStyle.textFrame.hAlign = GC.Spread.Sheets.HorizontalAlign.center; 
+			shapeStyle.textFrame.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+			donutShape.style( shapeStyle );
+					
+
 		};
 	</script>
 	

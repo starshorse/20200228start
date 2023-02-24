@@ -28,6 +28,39 @@
 			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
 			var sheet = spread.getSheet(0);
 			
+			// Define a model to create custom shape 
+			var model = { left: 50, top: 50 , width: 300, height: 300, 
+					options:
+					{
+						fill:
+						{
+							type: 1,
+							color: "green",
+							transparency:0.5,
+						},
+						stroke:
+						{
+							type: 1, // solid fill( now only support solid fill ) 
+							color: "blue", 
+							width: 3
+						}				
+					},
+			 path: [
+				 [
+					["M", 4, 1], // M: move to (x, y)
+					["L", 104, 1], // L: line to (x, y)
+					["L", 4, 94],
+					["L", 104, 94],
+					["L", 4, 1],
+					["M", 4, 47],
+					["L", 104, 47],
+					["Z"]
+				  ]
+				]			
+			};			
+		//Add defined custom shape to sheet 
+		sheet.shapes.add('name', model )
+
 		};
 	</script>
 	

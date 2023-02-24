@@ -27,6 +27,16 @@
 		{
 			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
 			var sheet = spread.getSheet(0);
+			// Add the shapes that you want to group.. 
+			var shape1 = sheet.shapes.add("myShape1", GC.Spread.Sheets.Shapes.AutoShapeType.isoscelesTriangle, 150,100,100,100 );		
+			var shape2 = sheet.shapes.add("myShape2", GC.Spread.Sheets.Shapes.AutoShapeType.oval,300, 100,100,100 );		
+			// Grouping Shapes
+			var groupShape = sheet.shapes.group([shape1, shape2]); 
+			groupShape.isSelected(true); 
+			
+			// Rotate the grouped shape 
+			groupShape.rotate( 340);
+
 			
 		};
 	</script>

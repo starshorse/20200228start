@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+                    // get the activesheet
+			var activeSheet = spread.getSheet(0);
+			activeSheet.setArray(0, 0, [
+			    ["x", 10],
+			    ["y", 200],
+			    ["width", 300],
+			    ["height", 140],
+			    ["angle", 0],
+			    ["background color and tranparency", "red", 0.5],
+			    ["border color and width", "blue", 5],
+			    ["shape text", "The demo text for cloud shape"],
+			    ["text font", "15px Georgia"],
+			    ["text color", "Yellow"],
+			]);
+
+			var shape1 = activeSheet.shapes.add("shape1", GC.Spread.Sheets.Shapes.AutoShapeType.cloud, 50, 200, 100, 150);
+			var shapeStyle = shape1.style();
+			shapeStyle.fill.color = '=Sheet1!B6';
+			shape1.style(shapeStyle);
+
+			// Set width and height of shape using setFormula() method
+			shape1.setFormula("x", "=Sheet1!B1");
+			shape1.setFormula("y", "=Sheet1!B2");
+			shape1.setFormula("width", "=Sheet1!B3");
+			shape1.setFormula("height", "=Sheet1!B4");
+			shape1.setFormula("rotate", "=Sheet1!B5");
+			shape1.setFormula("text", "=Sheet1!B8");
+			shape1.setFormula("style.fill.color", "=Sheet1!B6");
+			shape1.setFormula("style.fill.transparency", "=Sheet1!C6");
+			shape1.setFormula("style.line.color", "=Sheet1!B7");
+			shape1.setFormula("style.line.width", "=Sheet1!C7");
+			shape1.setFormula("style.textEffect.font", "=Sheet1!B9");
+			shape1.setFormula("style.textEffect.color", "=Sheet1!B10");
+
+			//Use getFormula() method to return the formula used to set width & height of shape
+			console.log("Formula for Width : " + shape1.getFormula("width"));
+			console.log("Formula for Height : " + shape1.getFormula("height"));
+
+			//Use the attributes of shape to return the value of width and height of shape
+			console.log("Value of Width: ", shape1.width());
+			console.log("Value of Height: ", shape1.height());
+
+			activeSheet.setColumnWidth(0, 280);
+			activeSheet.setColumnWidth(1, 100);
+			for (var i = 2; i < 8; i++)
+			    activeSheet.setColumnWidth(i, 70);
+
+                
+		};
+	</script>
+	
+</html> 
+
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			sheet.name("BuildInShape");
+			sheet.setArray(0, 0, [
+			    ["DyeStuff Chemical Industry Water Wastage Analysis"],
+			    ["Waste Water / Year", "Million Litre(s)"],
+			    [2017, 8.1],
+			    [2018, 9.5],
+			    [2019, 10.2],
+			    [2020, 11],
+			    [2021, 11.6]
+			]);
+
+			var shape1 = sheet.shapes.add("shape1", GC.Spread.Sheets.Shapes.AutoShapeType.can, 150, 100, 70, 50);
+			shape1.setFormula("height", "=BuildInShape!B3*15");
+			shape1.setFormula("text", "=BuildInShape!A3");
+			shape1.setFormula("y", "=221.5-BuildInShape!B3*15");
+
+			var shape2 = sheet.shapes.add("shape2", GC.Spread.Sheets.Shapes.AutoShapeType.can, 230, 78, 70, 50);
+			shape2.setFormula("height", "=BuildInShape!B4*15");
+			shape2.setFormula("text", "=BuildInShape!A4");
+			shape2.setFormula("y", "=221.5-BuildInShape!B4*15");
+
+			var shape3 = sheet.shapes.add("shape3", GC.Spread.Sheets.Shapes.AutoShapeType.can, 310, 65, 70, 50);
+			shape3.setFormula("height", "=BuildInShape!B5*15");
+			shape3.setFormula("text", "=BuildInShape!A5");
+			shape3.setFormula("y", "=221.5-BuildInShape!B5*15");
+
+			var shape4 = sheet.shapes.add("shape4", GC.Spread.Sheets.Shapes.AutoShapeType.can, 390, 52, 70, 50);
+			shape4.setFormula("height", "=BuildInShape!B6*15");
+			shape4.setFormula("text", "=BuildInShape!A6");
+			shape4.setFormula("y", "=221.5-BuildInShape!B6*15");
+
+			var shape5 = sheet.shapes.add("shape5", GC.Spread.Sheets.Shapes.AutoShapeType.can, 470, 40, 70, 50);
+			shape5.setFormula("height", "=BuildInShape!B7*15");
+			shape5.setFormula("text", "=BuildInShape!A7");
+			shape5.setFormula("y", "=221.5-BuildInShape!B7*15");	
+			
+		};
+	</script>
+	
+</html> 
+
+
+

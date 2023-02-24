@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var shape1 = sheet.shapes.add('shape1', GC.Spread.Sheets.Shapes.AutoShapeType.rectangle , 50, 50, 250, 150 )		
+			var shape2 = sheet.shapes.add('shape2', GC.Spread.Sheets.Shapes.AutoShapeType.rectangle , 350, 50, 250, 150 )		
+			var shape3 = sheet.shapes.add('shape3', GC.Spread.Sheets.Shapes.AutoShapeType.rectangle , 50, 250, 250, 150 )		
+			var shape4 = sheet.shapes.add('shape4', GC.Spread.Sheets.Shapes.AutoShapeType.rectangle , 350, 250, 250, 150 )		
+			
+			// Add linear fill specified by direction 
+			addStyles( sheet.shapes.get('shape1'), { type: GC.Spread.Sheets.Shapes.GradientFillType.linear,
+						direction: GC.Spread.Sheets.Shapes.LinearGradientFillDirection.linearRight,
+						stops:[{ color: 'pink', position:0 }, { color:'blue', position:1 }]
+					}); 
+			// Add linear fill specified by angle 
+			addStyles( sheet.shapes.get('shape2'), { type: GC.Spread.Sheets.Shapes.GradientFillType.linear,
+						angle: 60,
+						stops:[ { color: 'yellow', position:0, transparency: 0.3 }, 
+						        { color:'green', position:0.5 ,  transparency: 0.5 },
+						        { color:'blue', position:1 ,  transparency: 0.8, brightness: 0.2 },
+						]
+					}); 
+			// Add radial fill specified by center direction		
+			addStyles( sheet.shapes.get('shape3'),
+			{
+				type: GC.Spread.Sheets.Shapes.GradientFillType.radial, 
+				direction: GC.Spread.Sheets.Shapes.RadialGradientFillDirection.fromCenter, 
+				stops:[{ color: 'blue', position:0 }, { color: 'pink', position:1 }]		
+			})				
+			// Add radial fill specified by bottom right direction 
+			addStyles( sheet.shapes.get('shape4'),
+			{
+				type: GC.Spread.Sheets.Shapes.GradientFillType.radial,
+				direction: GC.Spread.Sheets.Shapes.RadialGradientFillDirection.fromBottomRight, 
+				stops: [{ color: 'yellow' , position: 0}, {color:'green', position:1 }]
+			})				
+
+			function addStyles( shapeName, fillType ){
+					var style = shapeName.style(); 
+					style.fill = fillType;
+					shapeName.style( style ); 
+					}				
+
+		};
+	</script>
+	
+</html> 
+
+
+

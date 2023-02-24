@@ -27,6 +27,18 @@
 		{
 			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
 			var sheet = spread.getSheet(0);
+			var activeSheet = sheet
+			// Add a shape with solid fill ..
+			var shape1 = activeSheet.shapes.add("myShape1", GC.Spread.Sheets.Shapes.AutoShapeType.rectangle , 200,50,250,150); 
+			var style = shape1.style();
+			style.fill = { type: GC.Spread.Sheets.Shapes.ShapeFillType.solid, color:'red'};
+		        shape1.style(style); 	
+			// Add a shape with no fill 
+			var shape2 = activeSheet.shapes.add("myShape2", GC.Spread.Sheets.Shapes.AutoShapeType.diamond, 400,50,150,150); 
+			var style = shape1.style();
+			style.fill = { type: GC.Spread.Sheets.Shapes.ShapeFillType.none, color:'red'};
+		        shape2.style(style); 	
+			
 			
 		};
 	</script>

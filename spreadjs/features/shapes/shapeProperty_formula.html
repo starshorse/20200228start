@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			sheet.name("BuiltInShape");
+			sheet.setArray(0, 0, [
+			  ["x", 430], ["y", 25],
+			  ["width", 280], ["height", 160],
+			  ["angle", 0], ["background color and tranparency", "green", 0.5],
+			  ["border color and width", "blue", 0],
+			  ["shape text", "The demo text for built-in shape"],
+			  ["text font", "18px Georgia"],
+			  ["text color", "white"],
+			  ]);
+			  sheet.setColumnWidth(0, 220);
+			  sheet.setColumnWidth(1, 100);
+			  sheet.setColumnWidth(2, 70);
+			  sheet.setColumnWidth(3, 70);
+			  sheet.setColumnWidth(4, 70);
+			  sheet.setColumnWidth(5, 70);;	
+			 var shape1 = sheet.shapes.add("shape1", GC.Spread.Sheets.Shapes.AutoShapeType.oval, 100, 50, 100, 150 ); 		
+			 shape1.x("=BuiltInShape!B1");
+			 shape1.y("=BuiltInShape!B2"); 
+			 shape1.width("=BuiltInShape!B3");
+			 shape1.height("=BuiltInShape!B4");
+			 shape1.rotate("=BuiltInShape!B5");
+			 shape1.text("=BuiltInShape!B8"); 
+			 var shape1Style = shape1.style();
+			 shape1Style.fill.color = "=BuiltInShape!B6" ;
+			 shape1Style.fill.transparency = "=BuiltInShape!C6" ;
+			 shape1Style.line.color = "=BuiltInShape!B7" ;
+			 shape1Style.line.transparency = "=BuiltInShape!C7" ;
+			 shape1Style.textEffect.font = "=BuiltInShape!B9" ;
+			 shape1Style.textEffect.color = "=BuiltInShape!B10" ;
+			 shape1.style( shape1Style );		
+			
+		};
+	</script>
+	
+</html> 
+
+
+
