@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.barcode.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			// Set QR code Barcode Sparkline 
+			sheet.setValue( 3,1, "Code93", GC.Spread.Sheets.SheetArea.viewport ); 
+			sheet.setValue( 3,2, "9787560044231", GC.Spread.Sheets.SheetArea.viewport ); 
+			// Set Style
+			sheet.setRowHeight( 3, 100 ); 
+			for( var col = 1 ; col < 4 ; col++ )
+			{
+				sheet.setColumnWidth( col, 200 );		
+			}
+			sheet.getRange( 3, 0, 1, 4 ).hAlign( GC.Spread.Sheets.HorizontalAlign.center ); 
+			sheet.getRange( 3, 0, 1, 4 ).vAlign( GC.Spread.Sheets.VerticalAlign.center ); 
+			// Set Formula 
+			sheet.setFormula( 3, 3, '=BC_CODE93(C4)'); 
+			
+		};
+	</script>
+	
+</html> 
+
+
+
