@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			// Get the sheets
+			var sheetDashboard = spread.sheets[0];
+			var sheet1 = spread.sheets[1];
+			var sheet2 = spread.sheets[2];
+			var sheet3 = spread.sheets[3];
+			var sheet4 = spread.sheets[4];		
+			// add shapes in Dashboard for different quarters
+			var Q1shape = sheetDashboard.shapes.add("Q1shape", GC.Spread.Sheets.Shapes.AutoShapeType.pentagon, 30, 60, 100, 100);
+			Q1shape.text("Quarter 1");
+			Q1shape.hyperlink({ url: "sjs://Sheet2!A1", tooltip: 'Go to Quarter 1' });
+
+			var Q2shape = sheetDashboard.shapes.add("Q2shape", GC.Spread.Sheets.Shapes.AutoShapeType.pentagon, 140, 60, 100, 100);
+			Q2shape.text("Quarter 2");
+			Q2shape.hyperlink({ url: "sjs://Sheet3!A1", tooltip: 'Go to Quarter 2' });
+
+			var Q3shape = sheetDashboard.shapes.add("Q3shape", GC.Spread.Sheets.Shapes.AutoShapeType.pentagon, 250, 60, 100, 100);
+			Q3shape.text("Quarter 3");
+			Q3shape.hyperlink({ url: "sjs://Sheet4!A1", tooltip: 'Go to Quarter 3' });
+
+			var Q4shape = sheetDashboard.shapes.add("Q4shape", GC.Spread.Sheets.Shapes.AutoShapeType.pentagon, 360, 60, 100, 100);
+			Q4shape.text("Quarter 4");
+			Q4shape.hyperlink({ url: "sjs://Sheet5!A1", tooltip: 'Go to Quarter 4' });
+
+			// add shapes in different sheets for previous and next buttons 
+			var BackToDashboardQ1 = sheet1.shapes.add("BackToDashboard", GC.Spread.Sheets.Shapes.AutoShapeType.rectangle,210, 500, 164, 35);
+			BackToDashboardQ1.text("Dashboard");
+			BackToDashboardQ1.hyperlink({ url: 'sjs://Sheet1!A1', tooltip: ' Go to Dashboard' });
+			var RightArrowNextQ1 = sheet1.shapes.add("RightArrowNextQ1", GC.Spread.Sheets.Shapes.AutoShapeType.rightArrowCallout, 400, 500, 164, 35);
+			RightArrowNextQ1.text("Q2");
+			RightArrowNextQ1.hyperlink({ url: 'sjs://Sheet3!A1', tooltip: 'Go Next Quarter - Q2' });			
+			var LeftArrowPreviousQ2 = sheet2.shapes.add("LeftArrowPreviousQ2", GC.Spread.Sheets.Shapes.AutoShapeType.leftArrowCallout, 20, 500, 164, 35);
+			LeftArrowPreviousQ2.text("Q1");
+			LeftArrowPreviousQ2.hyperlink({ url: 'sjs://Sheet2!A1', tooltip: 'Go to Previous Quarter Q1' });
+			var BackToDashboardQ2 = sheet2.shapes.add("BackToDashboard", GC.Spread.Sheets.Shapes.AutoShapeType.rectangle,210, 500, 164, 35);
+			BackToDashboardQ2.text("Dashboard");
+			BackToDashboardQ2.hyperlink({ url: 'sjs://Sheet1!A1', tooltip: ' Go to Dashboard' });
+			var RightArrowNextQ2 = sheet2.shapes.add("RightArrowNextQ2", GC.Spread.Sheets.Shapes.AutoShapeType.rightArrowCallout, 400, 500, 164, 35);
+			RightArrowNextQ2.text("Q3");
+			RightArrowNextQ2.hyperlink({ url: 'sjs://Sheet4!A1', tooltip: 'Go to Next Quarter - Q3' });
+			var LeftArrowPreviousQ3 = sheet3.shapes.add("LeftArrowPreviousQ3", GC.Spread.Sheets.Shapes.AutoShapeType.leftArrowCallout, 20, 500, 164, 35);
+			LeftArrowPreviousQ3.text("Q2");
+			LeftArrowPreviousQ3.hyperlink({ url: 'sjs://Sheet3!A1', tooltip: 'Go to Previous Quarter Q2' });
+			var BackToDashboardQ3 = sheet3.shapes.add("BackToDashboard", GC.Spread.Sheets.Shapes.AutoShapeType.rectangle,210, 500, 164, 35);
+			BackToDashboardQ3.text("Dashboard");
+			BackToDashboardQ3.hyperlink({ url: 'sjs://Sheet1!A1', tooltip: ' Go to Dashboard' });
+			var RightArrowNextQ3 = sheet3.shapes.add("RightArrowNextQ3", GC.Spread.Sheets.Shapes.AutoShapeType.rightArrowCallout, 400, 500, 164, 35);
+			RightArrowNextQ3.text("Q4");
+			RightArrowNextQ3.hyperlink({ url: 'sjs://Sheet5!A1', tooltip: 'Go to Next Quarter - Q4' });
+
+			var LeftArrowPreviousQ4 = sheet4.shapes.add("LeftArrowPreviousQ4", GC.Spread.Sheets.Shapes.AutoShapeType.leftArrowCallout, 20, 500, 164, 35);
+			LeftArrowPreviousQ4.text("Q3");
+			LeftArrowPreviousQ4.hyperlink({ url: 'sjs://Sheet4!A1', tooltip: 'Go to Previous Quarter Q3' });
+			var BackToDashboardQ4 = sheet4.shapes.add("BackToDashboard", GC.Spread.Sheets.Shapes.AutoShapeType.rectangle,210, 500, 164, 35);
+			BackToDashboardQ4.text("Dashboard");
+			BackToDashboardQ4.hyperlink({ url: 'sjs://Sheet1!A1', tooltip: ' Go to Dashboard' });
+		
+			
+		};
+	</script>
+	
+</html> 
+
+
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			// Add Hyperlinks
+			var circle = sheet.shapes.add("circle", GC.Spread.Sheets.Shapes.AutoShapeType.oval, 40,60,100,100 );
+		        var rect3 = sheet.shapes.add("rectangle3", GC.Spread.Sheets.Shapes.AutoShapeType.roundedRectangle, 261,188,280,140 );
+
+			circle.text("Visit Google");
+			circle.hyperlink({ url: "http://www.google.com" , tooltip: 'go to google' }); 		
+			// get existing shape hyperlink info 
+			var circleLink = circle.hyperlink();
+			circleLink.url = "www.google.co.in";		
+			// set it to new hyperlink 
+			circle.hyperlink( circleLink );
+			// Remove Hyperlinks 		
+			circle.hyperlink( null ); 		
+			
+			var Stopwatch = function (shape) {
+			    let interval, ms, sec, min, _started, startTime, endTime;
+			    reset();
+
+			    function reset() {
+				ms = 0;
+				sec = 0;
+				min = 0;
+				shape.text('Click here to start a timer\r\n00 : 00 : 000');
+			    }
+
+			    function start() {
+				this.started = _started = !_started;
+				startTime = new Date();
+				if (!interval) {
+				    interval = setInterval(update, 10);
+				}
+			    }
+
+			    function stop() {
+				this.started = _started = !_started;
+				if (interval) {
+				    clearInterval(interval);
+				    interval = null;
+				    var text = shape.text()
+				    shape.text(text.replace('Click again to stop', 'Click to restart again'));
+				    ms = 0;
+				    sec = 0;
+				    min = 0;
+				}
+			    }
+			    function update() {
+				endTime = new Date();
+				var s = endTime - startTime;
+				ms = s % 1000;
+				s = (s - ms) / 1000;
+				sec = s % 60;
+				s = (s - sec) / 60;
+				min = s % 60;
+
+				let milli = (Array(3).join('0') + ms).slice(-3);
+				let seconds = sec < 10 ? '0' + sec : sec;
+				let minute = min < 10 ? '0' + min : min;
+
+				let timer = minute + " : " + seconds + " : " + milli;
+				shape.text(timer + '\r\nClick again to stop');
+			    }
+			    this.start = start;
+			    this.stop = stop;
+			    this.started = _started;
+			}
+
+
+
+			// Creating custom hyperlink for a stopwatch command 
+			var stopWatch = new Stopwatch(rect3); // Stopwatch() is a function created containing simple stopwatch commands
+			rect3.hyperlink({
+				command: function() {
+					if(!stopWatch.started){
+						stopWatch.start();		
+					}else{
+						stopWatch.stop(); 		
+					}	
+				}
+			})
+			rect3.text('Click here to start a timer');
+			var style = rect3.style(); 
+			style.fill.type = 0 ;
+			style.line.color = "rgb(11,116,77)";
+			style.textEffect.color = "rgb(11,116,77)";
+			style.textFrame.hAlign = 1;
+			style.textFrame.vAlign = 1;
+			style.textEffect.font = "22px Calibri"
+			rect3.style( style ); 
+			
+		};
+	</script>
+	
+</html> 
+
+
+
