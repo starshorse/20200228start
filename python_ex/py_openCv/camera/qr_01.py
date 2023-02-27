@@ -6,6 +6,7 @@ from playsound import playsound
 
 used_codes = []
 data_list = []
+font = cv2.FONT_HERSHEY_SIMPLEX
 
 try:
     f = open("qrbarcode_date.txt", "r", encoding="utf8") 
@@ -15,13 +16,13 @@ except FileNotFoundError:
 else:
     f.close() 
 
-#cap = cv2.VideoCapture( cv2.CAP_ANY+0)   # 0: default camera 
+cap = cv2.VideoCapture( cv2.CAP_ANY+0)   # 0: default camera 
 #cap = cv2.VideoCapture( cv2.CAP_OPENCV_MJPEG+0)   # 0: default camera 
 #cap = cv2.VideoCapture( cv2.CAP_FFMPEG+0)   # 0: default camera 
 #cap = cv2.VideoCapture( cv2.CAP_MSMF+0)   # 0: default camera 
 #cap = cv2.VideoCapture( 0,cv2.CAP_DSHOW )   # 0: default camera 
 #cap = cv2.VideoCapture("WIN_20230224_17_13_10_Pro.mp4") # 동영상 파일에서 읽기 ..
-cap = cv2.VideoCapture("WIN_20230224_18_00_17_Pro.mp4") # 동영상 파일에서 읽기 ..
+#cap = cv2.VideoCapture("WIN_20230224_18_00_17_Pro.mp4") # 동영상 파일에서 읽기 ..
 
 # 비디오 프레임 크기, 전체 프레임수, FPS 등 출력
 print('Frame width:', int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)))
@@ -44,7 +45,11 @@ while cap.isOpened():
     if success:
         for code in pyzbar.decode(frame): 
             cv2.imwrite('qrbarcode_image.png', frame )
+            x, y, w, h = code.rect
             my_code = code.data.decode('utf-8')
+            cv2.rectangle( frame , ( x,y ), (x+w , y+h ),(0,0,255),2)
+            cv2.putText( frame, my_code, ( x, y -20 ), font, 0.5 ,(0,0,255),1 ) 
+
             if my_code not in used_codes:
                 print("인식성공:", my_code)
       #          playsound("qrbarcode_beep.mp3")
