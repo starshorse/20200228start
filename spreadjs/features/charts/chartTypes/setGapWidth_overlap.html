@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 		
+			// Prepare data for chart
+			var dataArray =
+			    [
+				['Year', 'Actual (00$)', 'Target (00$)'],
+				['2013', 20, 50],
+				['2014', 24, 50],
+				['2015', 34, 50],
+				['2016', 32, 50],
+				['2017', 51, 100],
+				['2018', 62, 100],
+				['2019', 89, 100]
+
+			    ];
+			// Set data for chart
+			activeSheet.setArray(0, 0, dataArray);
+			// Set column widths and visibility
+			activeSheet.setColumnWidth(1, 90);
+			activeSheet.setColumnWidth(2, 90);
+			// Add columnClustered chart
+			chart_colClustured = activeSheet.charts.add('chart_colClustured', GC.Spread.Sheets.Charts.ChartType.columnClustered, 270, 20, 500, 400);			
+			// Add series to columnClustured chart
+			var series = chart_colClustured.series();
+			series.add({
+			    chartType: GC.Spread.Sheets.Charts.ChartType.columnClustered,
+			    axisGroup: GC.Spread.Sheets.Charts.AxisGroup.primary,
+			    name: "Sheet1!$C$1",
+			    xValues: "Sheet1!$A$2:$A$8",
+			    yValues: "Sheet1!$C$2:$C$8",
+
+			});
+
+			series.add({
+			    chartType: GC.Spread.Sheets.Charts.ChartType.columnClustered,
+			    axisGroup: GC.Spread.Sheets.Charts.AxisGroup.primary,
+			    name: "Sheet1!$B$1",
+			    xValues: "Sheet1!$A$2:$A$8",
+			    yValues: "Sheet1!$B$2:$B$8"
+			});		
+
+			// Hide gridlines from the chart
+			var gridLinesAxes = chart_colClustured.axes();
+			gridLinesAxes.primaryCategory.majorGridLine.visible = false;
+			gridLinesAxes.primaryValue.majorGridLine.visible = false;
+			chart_colClustured.axes(gridLinesAxes);
+			
+			// Get title and set it's text
+			var title = chart_colClustured.title();
+			title.fontSize = "24.00";
+			title.text = "Yearly Sales Analysis";
+			chart_colClustured.title(title);		
+			// Set series(0) backColor
+			var seriesItem = chart_colClustured.series().get(0);
+			seriesItem.backColor = "#A9CCE3";
+			chart_colClustured.series().set(0, seriesItem);
+
+			// Set series(1) backColor
+			var seriesItem = chart_colClustured.series().get(1);
+			seriesItem.backColor = "#1F618D";
+			// Set series's GapWidth
+			seriesItem.gapWidth = 2;
+			// Set series's overlap
+			seriesItem.overlap = 0.6;
+			chart_colClustured.series().set(1, seriesItem);		
+
+			// Set chart's dataLabels
+			chart_colClustured.dataLabels
+			    ({
+				showValue: true,
+				color: "black"
+			    });
+			// Set the style for cells
+			var style = new GC.Spread.Sheets.Style();
+			style.font = "bold 12px Arial";
+			style.foreColor = "white";
+			style.backColor = "#5B9BD5";
+			style.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+			style.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+			for (var i = 0; i < 3; i++)
+			    activeSheet.setStyle(0, i, style, GC.Spread.Sheets.SheetArea.viewport);		
+
+
+		
+			
+		};
+	</script>
+	
+</html> 
+
+
+

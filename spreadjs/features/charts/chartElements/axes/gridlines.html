@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+                        // Prepare data for chart
+			activeSheet.setValue(0, 1, "Y-2016");
+			activeSheet.setValue(0, 2, "Y-2017");
+			activeSheet.setValue(0, 3, "Y-2018");
+			activeSheet.setValue(1, 0, "Mobile Phones");
+			activeSheet.setValue(2, 0, "Laptops");
+			activeSheet.setValue(3, 0, "Tablets");       
+			for (var r = 1; r <= 3; r++)
+			{
+			   for (var c = 1; c <= 3; c++) {
+			   activeSheet.setValue(r, c, parseInt(Math.random() * 10000));
+				}
+			}
+			// Add chart 
+			var chart = activeSheet.charts.add('Chart1', GC.Spread.Sheets.Charts.ChartType.columnClustered, 20, 110,550, 250, "A1:D4"); 
+			// Configure chartArea 
+			var chartArea = chart.chartArea()
+			chartArea.backColor = "#DBF3FA"; 
+			chartArea.backColorTransparency = 0.1 ;
+			chartArea.fontSize = 14 ; 
+			// Set ChartArea's Border Style 
+			chartArea.border.width = 3; 
+			chartArea.border.dashStyle = 4; 
+			chartArea.border.color = "red";
+			chartArea.border.transparency = 0.5; 
+			chart.chartArea( chartArea );
+
+			
+			// Configure chart title 
+			var title = chart.title()
+			title.text = "Annual Sales Record";
+			title.fontFamily = "Cambria";
+			title.fontSize = 28;
+			title.color = "#696969";
+			chart.title( title ); 		
+                        // Chart label.. 
+			var dataLabels = chart.dataLabels(); 
+			dataLabels.showValue = true;
+			dataLabels.showSeriesName = false ; 
+			dataLabels.showCategoryName = false ;
+			dataLabels.color = "#000000";
+			var dataLabelPosition = GC.Spread.Sheets.Charts.DataLabelPosition; 
+			dataLabels.position = dataLabelPosition.outsideEnd;
+			chart.dataLabels( dataLabels ); 
+			// get series 0 & 1 and set it's properties
+			for (var i = 0; i < 2; i++) {
+			    var series = chart.series().get(i);
+			    series.dataLabels = {
+				showValue: false,
+				showSeriesName: true,
+				showCategoryName: false,
+				showPercentage: false,
+				separator: ",",
+				position: GC.Spread.Sheets.Charts.DataLabelPosition.Center,
+				format: "#,##0;-#,##0",
+				color: "white",
+				backColor: "red",
+				borderColor: "blue",
+				borderWidth: 2
+			    };
+			    chart.series().set(i, series);
+			}
+
+			// get series 2 and set it's properties
+			var series = chart.series().get(2);
+			series.dataLabels = {
+			    showValue: false,
+			    showSeriesName: true,
+			    showCategoryName: false,
+			    showPercentage: true,
+			    separator: ",",
+			    position: GC.Spread.Sheets.Charts.DataLabelPosition.Center,
+			    format: "#,##0;-#,##0",
+			    color: "white",
+			    backColor: "skyblue",
+			    borderColor: "green",
+			    borderWidth: 2
+			};
+			chart.series().set(2, series);		
+			// Configure chart gridlines 
+			//Configure chart gridlines
+			var axes = chart.axes();		
+			axes.primaryValue.majorGridLine.visible = true;
+			axes.primaryValue.majorGridLine.color = "Yellow";
+			axes.primaryValue.majorGridLine.width = 1;
+			axes.primaryValue.minorGridLine.visible = true;
+			axes.primaryValue.minorGridLine.color = "Orange";
+			axes.primaryValue.minorGridLine.width = 1;
+			axes.primaryCategory.majorGridLine.visible = true;
+			axes.primaryCategory.majorGridLine.color = "Green";
+			axes.primaryCategory.majorGridLine.width = 1;
+			axes.primaryCategory.minorGridLine.visible = true;
+			axes.primaryCategory.minorGridLine.color = "lightblue";
+			axes.primaryCategory.minorGridLine.width = 1;	
+			chart.axes( axes ); 		
+					
+
+		};
+	</script>
+	
+</html> 
+
+
+

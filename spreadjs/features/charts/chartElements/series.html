@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var chart_columnClustered, chart_columnStacked, chart_columnStacked100, sheet; 
+			sheet.suspendPaint(); 
+			var dataArray =
+			[
+			["", 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+			["Tokyo", 49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+			["New York", 83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3],
+			["London", 48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2],
+			["Berlin", 42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+			];
+			sheet.setArray(0, 0, dataArray);
+			// Add columnClustered chart 
+			chart_columnClustered = sheet.charts.add('chart_columnClustered', GC.Spread.Sheets.Charts.ChartType.columnClustered, 20, 110, 550, 250, "A1:M5" );
+			// Using animation in charts 
+			chart_columnClustered.useAnimation( true ); 
+			// Configure Chart Title 
+			var title = chart_columnClustered.title() 
+			title.fontSize = "18.00";
+			title.color = "rgb( 228, 65, 54 )";
+			title.text = 'AVERAGE MONTHLY RAINFALL';
+			chart_columnClustered.title( title ); 		
+		        // Formatting Legend 
+			// Configure Legend's Color, fontSize , backColor and fontFamily properties 
+			var legend = chart_columnClustered.legend(); 
+			// Set Visibilty of legend to true 
+			legend.visible = true;
+			legend.color = 'Green';
+			legend.fontSize = 12;
+			legend.fontFamily = 'Calibri';
+			legend.backColor ='Yellow'; 
+			// Customize Legend Position
+			// Change legend's position to topRight 
+			var legendPosition = GC.Spread.Sheets.Charts.LegendPosition; 
+			legend.position = legendPosition.topRight; 
+			// Customize Legend Style 
+			// Change legend's borderstyle 
+			legend.borderStyle.width = 1; 
+			legend.borderStyle.color = "blue";
+			legend.borderStyle.backColor ="Red";
+
+			chart_columnClustered.legend( legend );
+
+                        // Configure Series 
+			var series = chart_columnClustered.series();
+			var seriesItem = series.get(0)
+			seriesItem.yValues = "Sheet1!$A$1:$A:$5" ;
+			seriesItem.backColor = "#d3d3d3";
+			seriesItem.border.width = 2; 
+			series.set(0, seriesItem ); 
+
+			sheet.resumePaint();
+
+
+			
+		};
+	</script>
+	
+</html> 
+
+
+

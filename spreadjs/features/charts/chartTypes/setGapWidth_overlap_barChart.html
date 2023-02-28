@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			// Get the activesheet
+			var activeSheet = spread.getSheet(0);
+			// Prepare data for chart
+			var dataArray =
+			    [
+				['Year', 'Actual (00$)', 'Blank', 'Target (00$)'],
+				['2013', 20, 0, 50],
+				['2014', 24, 0, 50],
+				['2015', 34, 0, 50],
+				['2016', 32, 0, 50],
+				['2017', 51, 0, 100],
+				['2018', 62, 0, 100],
+				['2019', 95, 0, 100]
+
+			    ];
+			// Set data for chart
+			activeSheet.setArray(0, 0, dataArray);
+			// Set column widths and visibility
+			activeSheet.setColumnWidth(1, 90);
+			activeSheet.setColumnWidth(3, 90);
+			activeSheet.setColumnVisible(2, false, GC.Spread.Sheets.SheetArea.viewport);
+
+			// Add bar chart
+			chart_bar = activeSheet.charts.add('chart_bar', GC.Spread.Sheets.Charts.ChartType.bar, 270, 20, 500, 400);
+			// Add series to bar chart
+			var series = chart_bar.series();
+			series.add({
+			    chartType: GC.Spread.Sheets.Charts.ChartType.bar,
+			    axisGroup: GC.Spread.Sheets.Charts.AxisGroup.primary,
+			    name: "Sheet1!$D$1",
+			    xValues: "Sheet1!$A$2:$A$8",
+			    yValues: "Sheet1!$D$2:$D$8",
+
+			});
+
+			series.add({
+			    chartType: GC.Spread.Sheets.Charts.ChartType.bar,
+			    axisGroup: GC.Spread.Sheets.Charts.AxisGroup.primary,
+			    name: "Sheet1!$B$1",
+			    xValues: "Sheet1!$A$2:$A$8",
+			    yValues: "Sheet1!$B$2:$B$8"
+			});
+
+			series.add({
+			    chartType: GC.Spread.Sheets.Charts.ChartType.bar,
+			    axisGroup: GC.Spread.Sheets.Charts.AxisGroup.secondary,
+			    name: "Sheet1!$C$1",
+			    xValues: "Sheet1!$A$2:$A$8",
+			    yValues: "Sheet1!$C$2:$C$8"
+			});
+
+			// Hide gridlines from the chart
+			var gridLinesAxes = chart_bar.axes();
+			gridLinesAxes.primaryCategory.majorGridLine.visible = false;
+			gridLinesAxes.primaryValue.majorGridLine.visible = false;
+			chart_bar.axes(gridLinesAxes);
+
+			// Get title and set it's text
+			var title = chart_bar.title();
+			title.fontSize = "24.00";
+			title.text = "Yearly Sales Analysis";
+			chart_bar.title(title);
+
+			// Set series(0) backColor
+			var seriesItem = chart_bar.series().get(0);
+			seriesItem.backColor = "#A9CCE3";
+			chart_bar.series().set(0, seriesItem);
+
+			// Set series(1) backColor
+			var seriesItem = chart_bar.series().get(1);
+			seriesItem.backColor = "#1F618D";
+			// Set series's GapWidth
+			seriesItem.gapWidth = 2;
+			// Set series's overlap
+			seriesItem.overlap = 0.6;
+			chart_bar.series().set(1, seriesItem);
+
+			// Set chart's dataLabels
+			chart_bar.dataLabels
+			    ({
+				showValue: true,
+				color: "black"
+			    });
+		};
+	</script>
+	
+</html> 
+
+
+
