@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<script type="text/javascript" src="./stockChartData.js"></script> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			// 1. High-Low-Close 
+			// 2. Open-High-Low-Close 
+			// 3. Volumne-High-Low-Close 
+			// 4. Volumne-Open-High-Low-Close 		
+
+			var data = dataSource; 
+			spread.suspendPaint();
+			spread.options.tabStripRatio = 0.7; 
+			
+			var chartTypeStr = ['stockHLC', 'stockOHLC', 'stockVHLC', 'stockVOHLC' ]; 
+			var chartType = [{		
+				type: GC.Spread.Sheets.Charts.ChartType.stockHLC, 
+				desc: chartTypeStr[0],
+			},{
+				type: GC.Spread.Sheets.Charts.ChartType.stockOHLC, 
+				desc: chartTypeStr[1],
+			},{
+				type: GC.Spread.Sheets.Charts.ChartType.stockVHLC, 
+				desc: chartTypeStr[2],
+			},{
+				type: GC.Spread.Sheets.Charts.ChartType.stockVOHLC, 
+				desc: chartTypeStr[3],
+			}];			
+			
+			var sheets = spread.sheets 
+			for(  i = 0 ; i < chartTypeStr.length ;i++ )
+			{
+				sheet = sheets[i];
+				sheet.name( chartTypeStr[i]);
+				sheet.setArray(0,0,data); 		
+
+				sheet.getRange(0,0,61,1).formatter('dd/mm/yyyy');
+				sheet.setColumnWidth(0,80);
+			}		
+		
+			spread.resumePaint()
+			initStockHLCChartSheetData(sheets[0], chartTypeStr[0]);
+			initStockOHLCChartSheetData(sheets[1], chartTypeStr[1]);
+			initStockVHLCChartSheetData(sheets[2], chartTypeStr[2]);
+
+			for (var i = 0; i < chartType.length; i++) {
+				sheet = sheets[i];
+				initChart(sheet, chartType[i].type, i);//add chart
+			}		
+
+			function initChart(sheet, chartType, index) {
+				sheet.suspendPaint();
+				var rangeIndex = ['A1:D61', 'A1:E61', 'A1:E61', 'A1:F61'];
+				//add chart
+				var chart = sheet.charts.add('Chart1', chartType, 270, 60, 615, 270, rangeIndex[index]);
+				sheet.resumePaint();
+			}
+			function initStockHLCChartSheetData( sheet, sheetName )
+			{
+				sheet.name( sheetName ); 
+				sheet.suspendPaint();
+				var formula = "='stockVOHLC'!"; 
+				for( var i = 0 ; i< data.length -1 ; i++ )
+				{
+					var formula1 = formula + 'A' + ( i+1 );
+					sheet.setFormula(i , 0, formula1 ); 
+					console.log(formula1);		
+					formula1 = formula + 'D' + ( i+1); 
+					sheet.setFormula(i , 1, formula1 ); 
+					console.log(formula1);		
+					formula1 = formula + 'E' + ( i+1); 
+					sheet.setFormula(i , 2, formula1 ); 
+					console.log(formula1);		
+					formula1 = formula + 'F' + ( i+1); 
+					sheet.setFormula(i , 3, formula1 ); 
+					console.log(formula1);		
+				}				
+				sheet.getRange( 0,0,61,1).formatter('dd/mm/yyyy'); 		
+				sheet.setColumnWidth( 0, 80 );
+				sheet.resumePaint(); 
+			}			
+			function initStockOHLCChartSheetData(sheet, sheetName) {
+				sheet.name(sheetName);
+				sheet.suspendPaint();
+
+				var formula = "='stockVOHLC'!";
+				for (var i = 0; i < data.length - 1; i++) {
+					var formula1 = formula + 'A' + (i + 1);
+					sheet.setFormula(i, 0, formula1);
+					formula1 = formula + 'C' + (i + 1);
+					sheet.setFormula(i, 1, formula1);
+					formula1 = formula + 'D' + (i + 1);
+					sheet.setFormula(i, 2, formula1);
+					formula1 = formula + 'E' + (i + 1);
+					sheet.setFormula(i, 3, formula1);
+					formula1 = formula + 'F' + (i + 1);
+					sheet.setFormula(i, 4, formula1);
+				}
+				sheet.getRange(0, 0, 61, 1).formatter('dd/mm/yyyy');
+				sheet.setColumnWidth(0, 80);
+				sheet.resumePaint();
+			}			
+			function initStockVHLCChartSheetData(sheet, sheetName) {
+				sheet.name(sheetName);
+				sheet.suspendPaint();
+				var formula = "='stockVOHLC'!";
+				for (var i = 0; i < data.length - 1; i++) {
+					var formula1 = formula + 'A' + (i + 1);
+					sheet.setFormula(i, 0, formula1);
+					formula1 = formula + 'B' + (i + 1);
+					sheet.setFormula(i, 1, formula1);
+					formula1 = formula + 'D' + (i + 1);
+					sheet.setFormula(i, 2, formula1);
+					formula1 = formula + 'E' + (i + 1);
+					sheet.setFormula(i, 3, formula1);
+					formula1 = formula + 'f' + (i + 1);
+					sheet.setFormula(i, 4, formula1);
+				}
+				sheet.getRange(0, 0, 61, 1).formatter('dd/mm/yyyy');
+				sheet.setColumnWidth(0, 80);
+				sheet.resumePaint();
+		     }		
+					 
+		};
+	</script>
+	
+</html> 
+
+
+

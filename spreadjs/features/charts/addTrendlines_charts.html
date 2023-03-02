@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet ; 
+                        activeSheet.suspendPaint();
+			// Prepare data for chart
+			activeSheet.setValue(0, 1, "Y-2016");
+			activeSheet.setValue(0, 2, "Y-2017");
+			activeSheet.setValue(0, 3, "Y-2018");
+			activeSheet.setValue(1, 0, "Mobile Phones");
+			activeSheet.setValue(2, 0, "Laptops");
+			activeSheet.setValue(3, 0, "Tablets");
+			for (var r = 1; r <= 3; r++)
+			{
+			   for (var c = 1; c <= 3; c++) {
+			   activeSheet.setValue(r, c, parseInt(Math.random() * 5000));
+			   }
+			}
+			// Add columnClustered chart
+                        chart_columnClustered = activeSheet.charts.add('chart_columnClustered', GC.Spread.Sheets.Charts.ChartType.columnClustered, 50, 100, 600, 400, "A1:D4");
+		
+			// Adding TrendLines on series[0] i.e. Mobile Phones
+			var series1 = chart_columnClustered.series().get(0);
+			series1.trendlines = [
+			{
+			   type: 2,
+			   forward: 2,
+			   name: "MovingAverage",
+			   style: { color: "blue"
+			   },
+			   period: 3 // only used for Moving Average Trendline
+			}];
+			// Adding TrendLines on series[1] i.e. Laptops
+			var series2 = chart_columnClustered.series().get(1);
+			series2.trendlines = [
+			{
+			  type: 2,
+			  forward: 2,
+			  name: "MovingAverage",
+			  style:
+			  {
+			    color: "red"
+			  },
+			  period: 3
+			}];
+			// Adding TrendLines on series[2] i.e. Tablets
+			var series3 = chart_columnClustered.series().get(2);
+			series3.trendlines =
+			[
+			{
+			   type: 2,
+			   forward: 2,
+			   name: "MovingAverage",
+			   style: {color: "green"
+			   },
+			   period: 3
+			}];		
+			chart_columnClustered.series().set(0, series1 )
+			chart_columnClustered.series().set(1, series2);
+			chart_columnClustered.series().set(2, series3);		
+
+			// Configure Chart Title
+			var title = chart_columnClustered.title();
+			title.text = "Annual Sales Record";
+			title.fontFamily = "Cambria";
+			title.fontSize = 28;
+			title.color = "Red";
+			chart_columnClustered.title(title);
+
+			activeSheet.resumePaint(); 			
+			
+		};
+	</script>
+	
+</html> 
+
+
+

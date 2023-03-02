@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			//prepare data for chart
+			var dataArray = [
+			    ['Stage', 'Amount'],
+			    ['Prospects', 500],
+			    ['Qualified Prospects', 425],
+			    ['Needs Analysis', 200],
+			    ['Price Quotes', 150],
+			    ['Negotiations', 100],
+			    ['Closed Sales', 90]             
+			];
+
+			sheet.setArray(1, 1, dataArray);
+			
+			//add funnel chart
+			var chart = sheet.charts.add('chart1', GC.Spread.Sheets.Charts.ChartType.funnel, 300, 0, 500, 400, "B2:C8");
+				
+			//set chart title
+			var title = chart.title();
+			title.text = "Sales Pipeline";
+			chart.title(title);
+
+			//set data labels
+			var dataLabels = chart.dataLabels();
+			dataLabels.showValue = true;
+			dataLabels.color = 'white';
+			chart.dataLabels(dataLabels);		
+			
+		};
+	</script>
+	
+</html> 
+
+
+

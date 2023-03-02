@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet ; 
+			//prepare data for chart
+			var dataArray = [["", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+			["MEN", 327, 1776, 507, 1200, 800, 482, 204, 1390, 1001, 951, 381, 220],
+			["WOMEN", 709, 1917, 2455, 2610, 1719, 1433, 1544, 3285, 5208, 3372, 2484, 4078],
+			["TOTAL", 1036, 3693, 2962, 3810, 2519, 1915, 1748, 4675, 6209, 4323, 2865, 4298]
+			];
+			activeSheet.setArray(0, 0, dataArray);		
+			var chartType = [{	
+				type: GC.Spread.Sheets.Charts.ChartType.columnClusterd, 
+				comboType: GC.Spread.Sheets.Charts.ChartType.lineMarkers 
+			}]			
+			// Add Combo Chart 
+			var chart = activeSheet.charts.add('ComboChart', chartType[0].type, 10,120, 900, 300, "A1:M3", GC.Spread.Sheets.Charts.RowCol.rows ); 
+			chart.title({ text: "Monthly Registration Number and Distribution of Men and Woman" }); 
+			var seriesItem = {};		
+			seriesItem.chartType = chartType[0].comboType;
+			seriesItem.border = { width: 3};
+			seriesItem.name = 'A4'; 
+			seriesItem.xValues = 'B1:M1';
+			seriesItem.yValues = 'B4:M4';
+			chart.series().add( seriesItem ); 
+
+			var dataLabels = chart.dataLabels();
+			dataLabels.showValue = true;
+			dataLabels.showSeriesName = false;
+			dataLabels.showCategoryName = false ; 
+			var dataLabelPosition = GC.Spread.Sheets.Charts.DataLabelPosition; 
+			dataLabels.position = dataLabelPosition.above;
+			chart.dataLabels( dataLabels ); 
+
+		};
+	</script>
+	
+</html> 
+
+
+

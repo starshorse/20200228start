@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			sheet.setColumnWidth(2, 100);
+			  sheet.setColumnWidth(4, 100);
+			  var dataArray = [
+			  ['Region', 'Subregion', 'Country', 'Population'],
+			  ['Asia', 'Southern', 'India', 954051854],
+			  [, , 'Pakistan', 200813818],
+			  [, , 'Thailand', 466368149],
+			  [, , 'Others', 170220300],
+			  [, 'Eastern', 'China', 1215045928],
+			  [, , 'Japan', 527185332],
+			  [, , 'Others', 191652273],
+			  [, 'South-Eastern', , 955036576],
+			  [, 'Western', , 272298399],
+			  [, 'Central', , 71860465],
+			  ['Africa', 'Eastern', , 433043132],
+			  [, 'Western', , 381980688],
+			  [, 'Northern', , 237784677],
+			  [, 'Others', , 234512021],
+			  ['Europe', , , 742648010],
+			  ['Others', , , 1057117703]
+			  ];
+			  
+			  sheet.setArray(1, 1, dataArray);		
+			var chart = sheet.charts.add('chart1', GC.Spread.Sheets.Charts.ChartType.treemap,450, 0, 500, 500, "B2:E18");		
+			var title = chart.title()
+			title.fontSize = "24.00";
+			title.color = "rgb(228,65,54)";
+			title.text = 'WORLD POPULATION';
+			chart.title(title);		
+			 var dataPoints = chart.series().dataPoints();
+			 var fillColors = ['#4472c4', '#a5a5a5', '#ffc000', '#ed7d31'];
+			 fillColors.forEach(function (color, index)
+			 {
+				  var dataPoint = dataPoints.get(index);
+				  dataPoint.fillColor = color;
+				  dataPoint.transparency = 0; // 0~1
+				  dataPoints.set(index, dataPoint);
+			 })		
+			
+		};
+	</script>
+	
+</html> 
+
+
+
