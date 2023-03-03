@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			// Set Column Width
+			    sheet.setColumnWidth(2, 100);
+			    sheet.setColumnWidth(4, 100);
+
+			    // Create Data Array
+			    var dataArray =
+			[
+			    ['Region', 'Subregion', 'country', 'Population'],
+			    ['Asia', 'Southern', 'India', 1354051854],
+			    [, , 'Pakistan', 200813818],
+			    [, , 'Bangladesh', 166368149],
+			    [, , 'Others', 170220300],
+			    [, 'Eastern', 'China', 1415045928],
+			    [, , 'Japan', 127185332],
+			    [, , 'Others', 111652273],
+			    [, 'South-Eastern', , 655636576],
+			    [, 'Western', , 272298399],
+			    [, 'Central', , 71860465],
+			    ['Africa', 'Eastern', , 433643132],
+			    [, 'Western', , 381980688],
+			    [, 'Northern', , 237784677],
+			    [, 'Others', , 234512021],
+			    ['Europe', , , 742648010],
+			    ['Others', , , 1057117703]
+			];
+
+			    // Set Array
+			    sheet.setArray(1, 1, dataArray);
+			    var treemapChart = sheet.charts.add('chart1', GC.Spread.Sheets.Charts.ChartType.treemap, 450, 0, 500, 500, "B2:E18");		
+				
+			// Get title and set it's backcolor with a pattern
+			    var title = treemapChart.title();
+			    title.fontSize = "24.00";
+			    title.text = "WORLD POPULATION";
+			    title.backColor = {
+				type: GC.Spread.Sheets.Charts.PatternType.divot,
+				foregroundColor: "Orange",
+			       backgroundColor: "pink",
+			    };
+			    treemapChart.title(title);			
+			
+                       // get dataPoints and set it's patternType
+			    var dataPoints = treemapChart.series().dataPoints();
+			    var fillColors = [{
+				type: GC.Spread.Sheets.Charts.PatternType.sphere,
+				foregroundColor: "LightGreen",
+				backgroundColor: "lightgray",
+			    }, {
+				type: GC.Spread.Sheets.Charts.PatternType.darkUpwardDiagonal,
+				foregroundColor: "pink",
+				backgroundColor: "white",
+			    },
+			    {
+				type: GC.Spread.Sheets.Charts.PatternType.divot,
+				foregroundColor: "purple",
+				backgroundColor: "white",
+			    },
+			    {
+				type: GC.Spread.Sheets.Charts.PatternType.dottedPercent40,
+				foregroundColor: "LightBlue",
+				backgroundColor: "white",
+			    }
+			    ];
+			    for (var i = 0; i < fillColors.length; i++) {
+				var dataPoint = dataPoints.get(i);
+				dataPoint.fillColor = fillColors[i];
+				dataPoints.set(i, dataPoint);
+			    }
+			// get datalabels and set it's backcolor to black
+			    var dataLabels = treemapChart.dataLabels();
+			    dataLabels.color = 'black';
+			    treemapChart.dataLabels(dataLabels);			
+
+			
+		};
+	</script>
+	
+</html> 
+
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+		        var activeSheet = sheet 
+			activeSheet.suspendPaint();
+			// Prepare data for chart
+			activeSheet.setValue(0, 1, "Y-2013");
+			activeSheet.setValue(0, 2, "Y-2014");
+			activeSheet.setValue(0, 3, "Y-2015");
+			activeSheet.setValue(0, 4, "Y-2016");
+			activeSheet.setValue(0, 5, "Y-2017");
+			activeSheet.setValue(0, 6, "Y-2018");
+			activeSheet.setValue(1, 0, "Gradlco Corp. Ltd");
+			activeSheet.setValue(2, 0, "Saagiate Corp. Ltd.");
+			activeSheet.setColumnWidth(0, 120);
+			var dataArray =
+			[
+			[2331, 4663, , 5689, 6230, 6360],
+			[2284, 2030, , 1560, 2324, 1304]
+
+			];
+			activeSheet.setArray(1, 1, dataArray);
+			// Add lineMarker chart
+			var chart = activeSheet.charts.add('chart1', GC.Spread.Sheets.Charts.ChartType.lineMarkers, 30, 85, 400, 250, 'A1:G3');
+			// Configure - Displaying blank values as Gaps
+			chart.displayBlanksAs( GC.Spread.Sheets.Charts.DisplayBlanksAs.gaps ); 		
+			chart.displayBlanksAs( GC.Spread.Sheets.Charts.DisplayBlanksAs.zero ); 		
+			chart.displayBlanksAs( GC.Spread.Sheets.Charts.DisplayBlanksAs.connected ); 		
+			// Configure Chart Title
+			var title = chart.title();
+			title.text = "Annual Sales Record";
+			title.fontFamily = "Cambria";
+			title.fontSize = 16;
+			title.color = "Red";
+			chart.title(title);
+			activeSheet.resumePaint() 		
+					
+			
+		};
+	</script>
+	
+</html> 
+
+
+

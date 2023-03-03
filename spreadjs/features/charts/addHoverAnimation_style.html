@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet ;
+			activeSheet.suspendPaint();
+			// Prepare data for the chart
+			activeSheet.setValue(0, 1, "Y-2015");
+			activeSheet.setValue(0, 2, "Y-2016");
+			activeSheet.setValue(0, 3, "Y-2017");
+			activeSheet.setValue(0, 4, "Y-2018");
+			activeSheet.setValue(0, 5, "Y-2019");
+			activeSheet.setValue(1, 0, "Gradlco");
+			activeSheet.setValue(2, 0, "Saagiate");
+			activeSheet.setValue(3, 0, "Inferno");
+			activeSheet.setColumnWidth(0, 120);
+			for (var r = 1; r <= 3; r++)
+			{
+			  for (var c = 1; c <= 5; c++)
+			   {
+			  activeSheet.setValue(r, c, parseInt(Math.random() * 5000));
+			    }
+			}
+			// Configure Line Marker chart with HoverStyle
+			var lineMarkerChart = activeSheet.charts.add('lineMarkerChart', GC.Spread.Sheets.Charts.ChartType.lineMarkers, 20, 100, 380, 330, "A1:F4", GC.Spread.Sheets.Charts.RowCol.columns);
+			lineMarkerChart.title({ text: "HoverStyle with markers" });
+			var seriesItem = lineMarkerChart.series().get(0);
+			seriesItem.symbol.size = 20;
+			lineMarkerChart.series().set(0, seriesItem);
+			/*		
+			var hoverStyle = lineMarkerChart.hoverStyle();
+			// Set applyHoverStyle to true
+			hoverStyle.applyHoverStyle = true;
+			hoverStyle.color = "orange";
+			hoverStyle.transparency = 0.1;
+			hoverStyle.borderStyle.transparency = 0.1;
+			hoverStyle.borderStyle.color = '#FF0000';
+			hoverStyle.borderStyle.width = 3;
+			hoverStyle.borderStyle.dashStyle = GC.Spread.Sheets.Charts.LineType.lgDash;
+			hoverStyle.symbolStyle.color = "yellow";
+			hoverStyle.symbolStyle.transparency = 0.1;
+			hoverStyle.symbolStyle.borderStyle.transparency = 0.1;
+			hoverStyle.symbolStyle.borderStyle.color = 'rgb(0, 0, 255)';
+			hoverStyle.symbolStyle.borderStyle.width = 9;
+			hoverStyle.symbolStyle.borderStyle.dashStyle = GC.Spread.Sheets.Charts.LineType.lgDash;
+	                */
+			var hoverStyle = {
+				color: "orange",
+				transparency: 0.1,
+				borderStyle: {
+				    transparency: 0.1,
+				    color: '#FF0000',
+				    width: 3,
+				    dashStyle: GC.Spread.Sheets.Charts.LineType.lgDash
+				},
+				symbolStyle: {
+				    color: "yellow",
+				    transparency: 0.1,
+				    borderStyle: {
+					transparency: 0.1,
+					color: 'rgb(0, 0, 255)',
+					width: 9,
+					dashStyle: GC.Spread.Sheets.Charts.LineType.lgDash
+				    }
+				}
+			    };
+			lineMarkerChart.hoverStyle(hoverStyle);		
+			// Configure Pie chart with Hover Animation
+			var pieChart = activeSheet.charts.add('pieChart', GC.Spread.Sheets.Charts.ChartType.pie, 420, 100, 380, 330, 'A1:F4');
+			pieChart.title({ text: "HoverStyle with Animation" });
+			pieChart.useAnimation(true);		
+
+                         var hoverStyle1 = {
+				color: "orange",
+				transparency: 0.6,
+				borderStyle: {
+				    transparency: 0.1,
+				    color: '#FF0000',
+				    width: 9,
+				    dashStyle: GC.Spread.Sheets.Charts.LineType.lgDash
+				}
+			    }; 
+			pieChart.hoverStyle( hoverStyle1 ); 		
+
+
+
+			activeSheet.resumePaint();		
+					
+			
+		};
+	</script>
+	
+</html> 
+
+
+

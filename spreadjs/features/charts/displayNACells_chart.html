@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			
+                    // get the activesheet
+			var activeSheet = spread.getActiveSheet();
+			activeSheet.suspendPaint()		
+			// create array
+			var na_error = GC.Spread.CalcEngine.Errors.NotAvailable;
+			var dataArray = [
+			    ["", "Apple", "Samsung", "LG", "Motorola", "OnePlus"],
+			    ["Jan", 2, na_error, 3, 4, 5],
+			    ["Feb", na_error, 3, na_error, 5, 6],
+			    ["Mar", 3, 4, 5, na_error, 7],
+			];
+			// set data
+			activeSheet.setArray(0, 0, dataArray);
+
+			// add chart
+			var chart = activeSheet.charts.add('Chart', GC.Spread.Sheets.Charts.ChartType.area, 2, 85, 350, 350, 'A1:F4');
+
+			// displayNaNAsBlank just make the #N/A treat as "blank"
+			chart.displayNaNAsBlank(true);
+			//then displayBlanksAs will tell chart how the "blank" displays i.e. zero/ gaps/ connected
+			chart.displayBlanksAs(GC.Spread.Sheets.Charts.DisplayBlanksAs.gaps);
+			chart.displayBlanksAs(GC.Spread.Sheets.Charts.DisplayBlanksAs.zero);
+			chart.displayBlanksAs(GC.Spread.Sheets.Charts.DisplayBlanksAs.connected);
+
+			// set chart title
+			chart.title({ text: "Display NAN As Blank" });
+			activeSheet.resumePaint();		
+			
+		};
+	</script>
+	
+</html> 
+
+
+
