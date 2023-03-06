@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+
+			activeSheet.setValue(0, 0, "Data Range is A2-A9");
+			activeSheet.setValue(1, 0, 1);
+			activeSheet.setValue(2, 0, -2);
+			activeSheet.setValue(3, 0, -1);
+			activeSheet.setValue(4, 0, 6);
+			activeSheet.setValue(5, 0, 4);
+			activeSheet.setValue(6, 0, -4);
+			activeSheet.setValue(7, 0, 3);
+			activeSheet.setValue(8, 0, 8);
+			activeSheet.setValue(0, 2, "Date axis range is C2-C9");
+			activeSheet.setValue(1, 2, '2011/1/5');
+			activeSheet.setValue(2, 2, '2011/1/1');
+			activeSheet.setValue(3, 2, '2011/2/11');
+			activeSheet.setValue(4, 2, '2011/3/1');
+			activeSheet.setValue(5, 2, '2011/2/1');
+			activeSheet.setValue(6, 2, '2011/2/3');
+			activeSheet.setValue(7, 2, '2011/3/6');
+			activeSheet.setValue(8, 2, '2011/2/19');
+			var data = new GC.Spread.Sheets.Range(1, 0, 8, 1);
+			var dateAxis = new GC.Spread.Sheets.Range(1, 2, 8, 1);
+			var setting = new GC.Spread.Sheets.Sparklines.SparklineSetting();
+			setting.options.showMarkers = true;
+			setting.options.lineWeight = 3;
+			setting.options.displayXAxis = true;
+			setting.options.showFirst = true;
+			setting.options.showLast = true;
+			setting.options.showLow = true;
+			setting.options.showHigh = true;
+			setting.options.showNegative = true;
+			setting.options.seriesColor = "Text 2 1";
+			setting.options.firstMarkerColor = "Text 2 3";
+			setting.options.negativeColor = "Accent 2 1";
+			setting.options.markersColor = "Accent 3 1";
+			setting.options.lowMarkerColor = "Accent 4 1";
+			setting.options.highMarkerColor = "Accent 6 1";
+			setting.options.lastMarkerColor = "Accent 6 6";
+			setting.options.axisColor = "Text 1 1";
+			activeSheet.addSpan(11, 0, 1, 3, null)
+			activeSheet.setText(11, 0, "Sparkline with dateAxis:", null);
+			activeSheet.setText(12, 0, "(1) Line", null);
+			activeSheet.setText(12, 3, "(2)Column", null);
+			activeSheet.setText(12, 6, "(3)Winloss", null);
+			//line
+			activeSheet.addSpan(14, 0, 4, 3, null);
+			activeSheet.setSparkline(14, 0, data
+				     , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+				     , GC.Spread.Sheets.Sparklines.SparklineType.line
+				     , setting
+				     , dateAxis
+				     , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+				 );
+			//column
+			activeSheet.addSpan(14, 3, 4, 3, null);
+			activeSheet.setSparkline(14, 3, data
+				     , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+				     , GC.Spread.Sheets.Sparklines.SparklineType.column
+				     , setting
+				     , dateAxis
+				     , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+				 );
+			//winloss
+			activeSheet.addSpan(14, 6, 4, 3, null);
+			activeSheet.setSparkline(14, 6, data
+				     , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+				     , GC.Spread.Sheets.Sparklines.SparklineType.winloss
+				     , setting
+				     , dateAxis
+				     , GC.Spread.Sheets.Sparklines.DataOrientation.Vertical
+				 );
+					
+			
+		};
+	</script>
+	
+</html> 
+
+
+

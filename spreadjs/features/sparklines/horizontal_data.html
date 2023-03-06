@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var Spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = Spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+			// options - GC.Spread.Sheets.Sparklines.DataOrientation.vertical
+			//            displayDateAxis ( true ) 	 	
+
+			activeSheet.setValue(1, 0, 10);
+			activeSheet.setValue(2, 0, 0);
+			activeSheet.setValue(3, 0, -3);
+			activeSheet.setValue(4, 0, -5);
+			activeSheet.setValue(0, 0, 1);
+			activeSheet.setValue(0, 1, 2);
+			activeSheet.setValue(0, 2, 4);
+			activeSheet.setValue(0, 3, 8);
+			activeSheet.setValue(0, 4, 6);
+			activeSheet.setValue(0, 5, new Date(2014, 1, 1));
+			activeSheet.setValue(1, 5, new Date(2014, 9, 1));
+			activeSheet.setValue(2, 5, new Date(2014, 7, 1));
+			activeSheet.setValue(3, 5, new Date(2014, 5, 1));
+			activeSheet.setValue(4, 5, new Date(2014, 3, 1));
+			var sparkline = activeSheet.setSparkline( 5, 0, new GC.Spread.Sheets.Range( 0,0,5,5 ), GC.Spread.Sheets.Sparklines.DataOrientation.horizontal, 
+						GC.Spread.Sheets.Sparklines.SparklineType.line , new GC.Spread.Sheets.Sparklines.SparklineSetting(), 
+						new GC.Spread.Sheets.Range( 0,5,5,1 ),
+						GC.Spread.Sheets.Sparklines.DataOrientation.vertical );
+//			sparkline.dataOrientation( GC.Spread.Sheets.Sparklines.DataOrientation.vertical ); 		
+			sparkline.displayDateAxis( false ); 		
+					
+			
+		};
+	</script>
+	
+</html> 
+
+
+

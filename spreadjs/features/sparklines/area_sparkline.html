@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+/*			
+he area sparkline formula has the following options:
+
+Option	Description
+Points	A cell range. Invalid numbers are ignored.
+Min	A number that represents the minimum value of the sparkline. This setting is optional.
+Max	A number that represents the maximum value of the sparkline. This setting is optional.
+Line1	A number that represents a horizontal line's vertical position. This setting is optional.
+Line2	A number that represents a second horizontal line's vertical position. This setting is optional.
+ColorPositive	A string that represents the area color of positive values. This setting is optional.
+ColorNegative	A string that represents the area color of negative values. This setting is optional.
+The area formula has the following format:
+
+=AREASPARKLINE(points, min, max, line1, line2, colorPositive, colorNegative)
+*/      
+		activeSheet.addSpan(6, 0, 3, 4);
+		activeSheet.setValue(0, 0, 10);
+		activeSheet.setValue(1, 0, 5);
+		activeSheet.setValue(2, 0, 25);
+		activeSheet.setValue(3, 0, -5);
+		activeSheet.setValue(4, 0, 17);
+		activeSheet.setValue(5, 0, 1);					
+		activeSheet.setFormula(6, 0, '=AREASPARKLINE(A1:A6,-15,15,5,-5,"red","green")');
+		activeSheet.setColumnWidth(0, 80);
+		activeSheet.setColumnWidth(1, 80);
+		activeSheet.setColumnWidth(2, 80);
+		activeSheet.setColumnWidth(3, 80);			
+			
+		};
+	</script>
+	
+</html> 
+
+
+
