@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+/*
+Option	Description
+variance	A number or reference that represents the bar length, such as 2 or "A1".
+reference	A number or reference that represents the location of the reference line, such as 0 or "A2". This setting is optional. The default value is 0.
+mini	A number or reference that represents the minimum value of the sparkline, such as -5 or "A3". This setting is optional. The default value is -1.
+maxi	A number or reference that represents the maximum value of the sparkline, such as 5 or "A4". This setting is optional. The default value is 1.
+mark	A number or reference that represents the position of the mark line, such as 3 or "A5". This setting is optional.
+tickunit	A number or reference that represents a tick unit, such as 1 or "A6". This setting is optional. The default value is 0.
+legend	A boolean that represents whether to display the text. The default is optional. The default value is FALSE.
+colorPositive	A string that represents the color sheme for variance and is larger than reference. This setting is optional. The default value is "green".
+colorNegative	A string that represents the color scheme for variance and is smaller than reference. This setting is optional. The default value is "red".
+vertical	A boolean that represents whether to display the sparkline vertically. This setting is optional. The default value is FALSE.
+The vari sparkline formula has the following format:
+
+=VARISPARKLINE(variance, reference, mini, maxi, mark, tickunit, legend, colorPositive, colorNegative, vertical)
+*/
+			activeSheet.setFormula(0,1,'=VARISPARKLINE(3,0,-5,5,0.5,0.5,TRUE,"green","red",FALSE)');
+			activeSheet.setFormula(0,0,'=VARISPARKLINE(-3,3,-5,5,0.5,0.5,TRUE,"green","red",TRUE)');					
+			activeSheet.setColumnWidth( 0, 300 );		
+			activeSheet.setColumnWidth( 1, 300 );		
+					
+			activeSheet.setRowHeight( 0, 300 );
+			activeSheet.setRowHeight( 1, 300 );
+			
+		};
+	</script>
+	
+</html> 
+
+
+

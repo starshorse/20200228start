@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+/*
+Option	Description
+value	A number or reference that represents the length of the bar. The value should be between 100% and -100%.
+colorScheme	A string that represents the color of the bar. This setting is optional. The default value is "grey".
+axisVisible	A Boolean value that indicates whether or not to show the axis. Its default value is true.
+barHeight	A number greater than 0 and less than or equal to 1, which indicates the percentage of bar height according to the cell height.
+The hbar sparkline formula has the following format:
+
+=VBARSPARKLINE(value, colorScheme, axisVisible, barHeight)
+*/	
+			activeSheet.setValue(0, 0, .3);
+			activeSheet.setValue(1, 0, -0.3);
+			activeSheet.setValue(2, 0, 2);
+
+			activeSheet.setFormula(0, 1, '=VBARSPARKLINE(A1,"red", FALSE, 0.5)');
+			activeSheet.setFormula(1, 1, '=VBARSPARKLINE(A2,"blue")');
+			activeSheet.setFormula(2, 1, '=VBARSPARKLINE(A3,"green", TRUE, A3)');
+
+			for (var i = 0; i < 4; i++) {
+			    activeSheet.setRowHeight(i, 40);
+			}
+			activeSheet.setColumnWidth(0, 80);
+			activeSheet.setColumnWidth(1, 200);					
+			
+		};
+	</script>
+	
+</html> 
+
+
+

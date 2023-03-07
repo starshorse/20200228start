@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+/*					
+Option	Description
+pointsRange	A reference that represents the range of cells that contains values, such as "B2:B8".
+pointIndex	A number or reference that represents the points index. The pointIndex is >= 1 such as 1 or "D2".
+labelsRange	A reference that represents the range of cells that contains the labels, such as "A2:A8". This setting is optional. The default value is no label.
+minimum	A number or reference that represents the minimum values of the display area. This setting is optional. The default value is the minimum of the sum (the sum of the points' value), such as -2000. The minimum you set must be less than the default minimum; otherwise, the default minimum is used.
+maximum	A number or reference that represents the maximum values of the display area. This setting is optional. The default value is the maximum of the sum (the sum of the points' value), such as 6000. The maximum you set must be greater than the default maximum; otherwise, the default maximum is used.
+colorPositive	A string that represents the color of the first or last positive sparkline's box (this point's value is positive). This setting is optional. The default value is "#8CBF64". If the first or last box represents a positive value, the box's color is set to colorPositive. The middle positive box is set to a lighter color than colorPositive.
+colorNegative	A string that represents the color of the first or last negative sparkline's box (this point's value is negative). This setting is optional. The default value is "#D6604D". If the first or last box represents the negative value, the box's color is set to colorNegative. The middle negative box is set to a lighter color than colorNegative.
+vertical	A boolean that represents whether the box's direction is vertical or horizontal. This setting is optional. The default value is FALSE. You must set vertical to true or false for a group of formulas, because all the formulas represent the entire sparkline.
+itemTypeRange	An array or reference that represents all the item types of the data range. The values should be {"-", "+", "="} or "A1:A7" that reference the value of {"+", "-", "="}, where "+" indicates positive change, "-" indicates negative change and "=" indicates total columns. This setting is optional.
+colorTotal	A string that either represents the color of the last sparkline's box when itemTypeRange does not exist or represents the color of the resulting sparkline's box when itemTypeRange exists. This setting is optional.
+There are different usecases for Cascade sparkline upon the parameters used in CASCADESPARKLINE formula. The below section discusses about two such use-cases.
+	       = CASCADESPARKLINE(pointsRange, pointIndex, labelsRange, minimum, maximum, colorPositive, colorNegative, vertical)
+*/
+
+// case2 
+
+                    // set text in cells
+			sheet.setText(0, 1, '000$');
+			sheet.setText(0, 2, 'LABELS');
+			sheet.setText(0, 3, 'ITEMS');
+			sheet.setText(0, 4, 'ITEM TYPE');
+
+			// create displayLabels array
+			var displayLabels = [
+			    'CONSOLIDATED PROFIT & LOSS ACCOUNT', 'Net Sales',
+			    '   Cost of Sales', '   Research and development', '   Selling, general and administrative', '   Customer Finance impairment',
+			    '   Impairment of goodwill', '   Amortization of goodwill', 'Operating Profit', '   Share of results of associates', '   Financial income and expenses',
+			    'Profit before tax', '  Tax', '   Minority interests', 'Net Profit'
+			];
+
+			// create items array
+			var items = [
+			    29616, 17278, 7052, 6239, 292, 103, 206, 1554, 3300, 1506, 3252, 1484, 92, 1676
+			];
+
+			// create labels array
+			var labels = [29616, 12338, 5286, -953, -1245, -1348, -1554, 1554, 4854, 6360, 3252, 1768, 1676, 1676
+			];
+
+			// create itemTypes array
+			var itemTypes = [
+			    '+', '-', '-', '-', '-', '-', '-', '=', '+', '+', '=', '-', '-', '='
+			];
+
+			// set arrays
+			sheet.setArray(0, 0, displayLabels);
+			sheet.setArray(1, 2, items);
+			sheet.setArray(1, 3, labels);
+			sheet.setArray(1, 4, itemTypes);
+
+			// set CASCADESPARKLINE formula
+			sheet.setFormula(1, 1, '=CASCADESPARKLINE(D2:D15, SEQUENCE(COUNTA(D2:D15),1,1,1),C2:C15,,,"#66C2A5","#FF7722",false,E2:E15,"#A9A9A9")');
+
+                				
+			
+		};
+	</script>
+	
+</html> 
+
+
+
