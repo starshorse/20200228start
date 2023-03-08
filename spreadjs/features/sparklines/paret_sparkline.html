@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+			/*
+			The pareto sparkline formula has the following format:
+			=PARETOSPARKLINE(points, pointIndex, colorRange, target, target2, hightlightPosition, lable, vertical, targetColor, target2Color, labelColor, barSize)
+			*/		
+			activeSheet.addSpan(0, 0, 1, 3);
+			activeSheet.getCell(0, 0, GC.Spread.Sheets.SheetArea.viewport).value("Reason for Being Late")
+			    .font("20px Arial")
+			    .hAlign(GC.Spread.Sheets.HorizontalAlign.center)
+			    .vAlign(GC.Spread.Sheets.VerticalAlign.center)
+			    .backColor("purple")
+			    .foreColor("white");
+			activeSheet.getRange(1, 2, 6, 1, GC.Spread.Sheets.SheetArea.viewport).setBorder(new GC.Spread.Sheets.LineBorder("transparent", GC.Spread.Sheets.LineStyle.thin),
+			    { inside: true });
+			activeSheet.setValue(1, 0, "Traffic");
+			activeSheet.setValue(2, 0, "Child care");
+			activeSheet.setValue(3, 0, "Public transportation");
+			activeSheet.setValue(4, 0, "Weather");
+			activeSheet.setValue(5, 0, "Overslept");
+			activeSheet.setValue(6, 0, "Emergency");
+			activeSheet.setValue(7, 0, "target");
+			activeSheet.setValue(8, 0, "target2");
+			activeSheet.setValue(1, 1, 20);
+			activeSheet.setValue(2, 1, 15);
+			activeSheet.setValue(3, 1, 13);
+			activeSheet.setValue(4, 1, 5);
+			activeSheet.setValue(5, 1, 4);
+			activeSheet.setValue(6, 1, 1);
+			activeSheet.setValue(7, 1, 0.5);
+			activeSheet.setValue(8, 1, 0.8);
+			activeSheet.setValue(1, 2, "#FF1493");
+			activeSheet.setValue(2, 2, "#FFE7BA");
+			activeSheet.setValue(3, 2, "#FFD700");
+			activeSheet.setValue(4, 2, "#FFAEB9");
+			activeSheet.setValue(5, 2, "#FF8C69");
+			activeSheet.setValue(6, 2, "#FF83FA");
+			activeSheet.setValue(9, 0, "targetColor");
+			activeSheet.setValue(10, 0, "target2Color");
+			activeSheet.setValue(9, 1, "#006400");
+			activeSheet.setValue(10, 1, "#00BFFF");
+			activeSheet.addSpan(7, 2, 2, 2);
+			activeSheet.getCell(7, 2, GC.Spread.Sheets.SheetArea.viewport).wordWrap(true);
+			activeSheet.setValue(7, 2, 'Result: The reason 80% of the employees are late - "traffic", "child care" and "public transportation".');
+			activeSheet.setColumnWidth(0, 120);
+			activeSheet.setColumnWidth(1, 80);
+			activeSheet.setColumnWidth(2, 80);
+			activeSheet.setColumnWidth(3, 340);
+			activeSheet.setRowHeight(0, 30);
+			activeSheet.setRowHeight(1, 30);
+			activeSheet.setRowHeight(2, 30);
+			activeSheet.setRowHeight(3, 30);
+			activeSheet.setRowHeight(4, 30);
+			activeSheet.setRowHeight(5, 30);
+			activeSheet.setRowHeight(6, 30);
+			activeSheet.setRowHeight(7, 30);
+			//$B$10, $B$11, C2: C7, D2: D7		
+			//targetColor, target2Color, labelColor, barSize)
+			activeSheet.setFormula(1, 3, '=PARETOSPARKLINE(B2:B7,1,C2:C7,B8,B9,4,2,false,B10,B11,C2,1)');
+			activeSheet.setFormula(2, 3, '=PARETOSPARKLINE(B2:B7,2,C2:C7,B8,B9,4,2,false,B10,B11,C3,0.8)');
+			activeSheet.setFormula(3, 3, '=PARETOSPARKLINE(B2:B7,3,C2:C7,B8,B9,4,2,false,B10,B11,C4,0.6)');
+			activeSheet.setFormula(4, 3, '=PARETOSPARKLINE(B2:B7,4,C2:C7,B8,B9,4,2,false,B10,B11,C5,0.5)');
+			activeSheet.setFormula(5, 3, '=PARETOSPARKLINE(B2:B7,5,C2:C7,B8,B9,4,2,false,B10,B11,C6,0.1)');
+			activeSheet.setFormula(6, 3, '=PARETOSPARKLINE(B2:B7,6,C2:C7,B8,B9,4,2,false,B10,B11,C7,0.3)');
+		};
+	</script>
+	
+</html> 
+
+
+

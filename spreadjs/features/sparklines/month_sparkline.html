@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			spread.suspendPaint(); 		
+			// set data
+ 			for (var rowIndex = 1; rowIndex <= 31; rowIndex++) {
+                		activeSheet.setValue(rowIndex, 0, new Date(2017, 0, rowIndex));
+			}
+			activeSheet.setValue(1,1,10, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(2,1,5, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(3,1,98, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(4,1,50, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(5,1,75, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(6,1,25, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(7,1,65, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(8,1,30, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(9,1,22, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(10,1,82, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(11,1,89, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(12,1,43, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(13,1,15, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(14,1,12, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(15,1,63, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(16,1,54, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(17,1,77, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(18,1,39, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(19,1,20, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(20,1,65, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(21,1,20, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(22,1,20, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(23,1,20, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(24,1,18, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(25,1,20, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(26,1,42, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(27,1,21, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(28,1,20, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(29,1,99, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(30,1,20, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(31,1,9, GC.Spread.Sheets.SheetArea.viewport);			
+			activeSheet.setFormula( 6,2 , '=MONTHSPARKLINE( 2017,1,A2:B32,"yellow", "lightgreen", "green", "darkgreen" )'); 
+			activeSheet.setColumnWidth( 2, 300 )	
+			activeSheet.setRowHeight( 6, 300 )		
+					
+			spread.resumePaint() 
+					
+			
+		};
+	</script>
+	
+</html> 
+
+
+
