@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+		        // enable DynamicArray 
+			spread.options.allowDynamicArray = true; 
+			var renderSheet = sheet 
+			var templateSheet = spread.getSheet(1); 
+			var dataSheet = spread.getSheet(2);
+			spread.suspendPaint();
+			initTemplateSheet( templateSheet );		
+			initDataSheet( dataSheet ); 		
+			initRenderSheet( renderSheet ); 		
+			spread.resumePaint(); 
+			function ImageCellType()
+			{
+				this.typeName = "ImageCellType";			
+			}
+			ImageCellType.prototype = new GC.Spread.Sheets.CellTypes.Base();			
+			ImageCellType.prototype.paint = function( ctx, value, x, y, w,h , style, context )
+			{
+				style.backgroundImage = value ;
+				style.backgroundImageLayout = GC.Spread.Sheets.ImageLayout.center; 
+				GC.Spread.Sheets.CellTypes.Text.prototype.paint.apply( this, [ ctx,'', x,y,w,h,style, context]);
+			}				
+		/*					
+			function initRenderSheet( renderSheet )
+			{			
+			    renderSheet.name("RenderSheet");
+			    renderSheet.setColumnCount(8);
+			    renderSheet.setRowCount(1);
+			    renderSheet.setRowHeight(0, 400);
+			    for (var i = 0; i < 8; i++) {
+				renderSheet.setColumnWidth(i, 400);
+				renderSheet.setFormula(0, i, 'RANGEBLOCKSPARKLINE(TemplateSheet!A2:F11, OBJECT(tblPlayers[#Headers], INDEX(tblPlayers[#Data],COLUMN(),SEQUENCE(COUNTA(tblPlayers[#Headers]),1))))');
+			    }						
+			}
+	      	*/ 
+			function initRenderSheet (renderSheet) {
+			    renderSheet.name("RenderSheet");
+			    renderSheet.setColumnCount(50);
+			    renderSheet.setColumnWidth(0, 1200);
+			    renderSheet.getCell(0, 0).value("Top 5 Products (by units sold)")
+				.font("20px Arial").vAlign(GC.Spread.Sheets.VerticalAlign.center)
+				.foreColor("white").backColor("#82bc00");
+				renderSheet.setRowHeight(0, 35);
+			    for (var i = 1; i < 6; i++) {
+				renderSheet.setRowHeight(i, 250);
+				renderSheet.setFormula(i, 0, 'RANGEBLOCKSPARKLINE(TemplateSheet!A2:M11, OBJECT(product_table[#Headers], INDEX(product_table[#Data],ROW()-1,SEQUENCE(COUNTA(product_table[#Headers]),1))))');
+			    }
+			}				
+			function initTemplateSheet( templateSheet )
+			{
+				templateSheet.fromJSON( templateJson ); 
+				templateSheet.name("TemplateSheet"); 
+				var imageCellType = new ImageCellType();
+		//		templateSheet.getCell( 2,1).cellType( imageCellType );
+		//              templateSheet.setFormatter(2,1,"=IMAGE(\"$DEMOROOT$/spread/source/images/products/\"&@)");
+		                templateSheet.setFormatter(2,1,"=IMAGE(\"https://www.grapecity.com/spreadjs/demos/spread/source/images/products/\"&@)");
+            			templateSheet.setBindingPath(2,1,"Image");
+			}	
+			function initDataSheet( dataSheet )
+			{
+				dataSheet.fromJSON(dataJson); 		
+			}				
+		};
+	</script>
+	<script type="text/javascript" src="./range-block-data.js"></script>
+	<script type="text/javascript" src="./range-block-template.js"></script>
+	
+</html> 
+
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			var Top10_CountryPopulation = [['Country','Rank','Population(2020)','LandArea(km sq)'],
+						       ['China',1, 1439323776, 9388211 ]] 		
+			// set data
+                        spread.suspendPaint();
+			// get sheet
+			var sheet1 = spread.getSheet(0);
+			// set sheetAreaOffset option
+			sheet1.options.sheetAreaOffset = { left:1, top:10 };
+			// Hide gridlines 
+			sheet1.options.gridline = { showVerticalGridline: false , showHorizontalGridline: false };
+			// Hide row / col headers 
+			sheet1.options.colHeaderVisible = false ; 
+			sheet1.options.rowHeaderVisible = false ;		
+
+			sheet1.setArray(1,1, Top10_CountryPopulation );		
+			// set value in cells
+			sheet1.setValue(1, 0, "Flag", GC.Spread.Sheets.SheetArea.dataArea);
+			sheet1.setValue(0, 0, "Top 10 Populated Countries", GC.Spread.Sheets.SheetArea.dataArea);
+			// set alignment of header row
+			sheet1.getRange(-1, 0, -1, 10).hAlign(GC.Spread.Sheets.HorizontalAlign.center);
+			sheet1.addSpan(0, 0, 1, 5, GC.Spread.Sheets.SheetArea.dataArea);
+			// add table to sheet1
+			sheet1.tables.add('tablePopulation', 1, 0, 11, 5);
+			// set column width
+			sheet1.setColumnWidth(0, 70);
+			sheet1.setColumnWidth(1, 100);
+			sheet1.setColumnWidth(2, 80);
+			sheet1.setColumnWidth(3, 150);
+			sheet1.setColumnWidth(4, 150);
+			// set row height
+			sheet1.setRowHeight(0, 40);
+			for (var i = 2; i < 12; i++)
+			    sheet1.setRowHeight(i, 30);
+
+			// set Image function formula in cells
+			sheet1.setFormula(2, 0, '= IMAGE("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/23px-Flag_of_the_People%27s_Republic_of_China.svg.png")');
+			sheet1.setFormula(3, 0, '= IMAGE("https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg")');
+			sheet1.setFormula(4, 0, '= IMAGE("https://previews.123rf.com/images/auttkhamkhauncham/auttkhamkhauncham1507/auttkhamkhauncham150700090/42304741-usa-flag.jpg")');
+			sheet1.setFormula(5, 0, '= IMAGE("https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg")');
+			sheet1.setFormula(6, 0, '= IMAGE("https://static.vecteezy.com/system/resources/previews/000/114/048/non_2x/free-vector-pakistan-flag.jpg")');
+			sheet1.setFormula(7, 0, '= IMAGE("https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg")');
+			sheet1.setFormula(8, 0, '= IMAGE("https://i.pinimg.com/originals/73/22/94/732294310c7e9fa3da611030168923fb.jpg")');
+			sheet1.setFormula(9, 0, '= IMAGE("https://images-na.ssl-images-amazon.com/images/I/31V23jzzMgL._AC_.jpg")');
+			sheet1.setFormula(10, 0, '= IMAGE("https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1200px-Flag_of_Russia.svg.png")');
+			sheet1.setFormula(11, 0, '= IMAGE("https://upload.wikimedia.org/wikipedia/en/2/20/Flag_of_Mexico_1917.png")');         
+
+			// set style for Row 0
+			var style1 = new GC.Spread.Sheets.Style();
+			style1.font = "bold 24px Calibri";
+			style1.foreColor = "black";
+			style1.backColor = "#9FD5B7";
+			style1.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+			style1.vAlign = GC.Spread.Sheets.VerticalAlign.center;
+			sheet1.setStyle(0, 0, style1, GC.Spread.Sheets.SheetArea.dataArea);
+			
+			// set style for header row 1
+			var style1 = new GC.Spread.Sheets.Style();
+			style1.font = "bold 14px Calibri";
+			style1.foreColor = "black";
+			style1.backColor = "#9FD5B7";
+			for (var i = 0; i < 5; i++)
+			    sheet1.setStyle(1, i, style1, GC.Spread.Sheets.SheetArea.dataArea);		
+			// set style for remaining rows
+			var style2 = new GC.Spread.Sheets.Style();
+			style2.backColor = "#EDFDF4";
+			for (var i = 0; i < 5; i++)
+			    for (var j = 2; j < 12; j++)
+				sheet1.setStyle(j, i, style2, GC.Spread.Sheets.SheetArea.dataArea);
+			
+			sheet1.getCell(2, 3).formatter("##,##,##0");
+
+			// set border for dataArea cells
+			sheet1.getRange("A2:E12").setBorder(
+			    new GC.Spread.Sheets.LineBorder("white", GC.Spread.Sheets.LineStyle.thin),
+			    { top: true, bottom: true, left: true, right: true }, GC.Spread.Sheets.SheetArea.dataArea);
+
+		        spread.resumePaint();		
+					
+			
+		};
+	</script>
+	
+</html> 
+
+
+
