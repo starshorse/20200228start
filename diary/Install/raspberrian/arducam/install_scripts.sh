@@ -29,4 +29,5 @@ sudo pip3 install picamera2 --upgrade
 git clone https://github.com/ArduCAM/picamera2_examples
 git clone https://github.com/raspberrypi/picamera2 
 git clone https://github.com/ArduCAM/Arducam-Pivariety-V4L2-Driver.git
+git clone https://github.com/ArduCAM/PTZ-Camera-Controller.git
 sudo reboot now 
