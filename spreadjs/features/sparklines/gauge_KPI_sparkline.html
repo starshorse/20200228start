@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+                        var sheet1 = sheet 
+			var sheet2 = spread.sheets[1]; 		
+                        // Hide gridlines
+			sheet1.options.gridline = { showVerticalGridline: false, showHorizontalGridline: false };
+			// Hide row/ col headers
+			sheet1.options.colHeaderVisible = false;
+			sheet1.options.rowHeaderVisible = false;
+			// set column width
+			for (var i = 0; i < 3; i++)
+			    sheet1.setColumnWidth(i, 340);
+			for (var i = 0; i < 4; i++)
+			    sheet2.setColumnWidth(i, 70);
+			for (var i = 0; i < 5; i++)
+			    sheet2.setColumnWidth(i, 170);
+			// set row height
+			sheet1.setRowHeight(0, 35, GC.Spread.Sheets.SheetArea.dataArea);
+			sheet1.setRowHeight(1, 280, GC.Spread.Sheets.SheetArea.dataArea);
+				  
+			// set data
+			sheet1.setValue(0, 0, "Sales($'000) Dashboard FY 2019-20", GC.Spread.Sheets.SheetArea.dataArea);
+			var dataArray1 =
+			    [
+				["Parameters", "Target", "Current", "Min", "Max"],
+				["Revenue", 900, 1200, 0, 2000],
+				["Profit", 1200, 1100, 0, 2000],
+				["Sales", 1600, 1800, 0, 2000]
+			    ];
+			sheet2.setArray(0, 0, dataArray1);
+			// set GaugeKPISparkline formula
+			sheet1.setFormula(1, 0, '=GAUGEKPISPARKLINE(Sheet2!B2,Sheet2!C2,Sheet2!D2,Sheet2!E2,TRUE,TEXT(Sheet2!B3/1000,"$0.0K"),Sheet2!A2,TEXT(Sheet2!D2/1000,"$0.0K"),TEXT(Sheet2!E2/1000,"$0.0K"),{"normal normal 11pt Calibri","normal bold 16pt Calibri","normal normal 9pt Calibri","normal normal 9pt Calibri"},-90,90,0.4,0,{0,1200,"#FFB2BD"},{1200,1500,"#FFDFB0"},{1500,2000,"#BCEAB4"})');
+			sheet1.setFormula(1, 1, '=GAUGEKPISPARKLINE(Sheet2!B3,Sheet2!C3,Sheet2!D3,Sheet2!E3,TRUE,TEXT(Sheet2!B3/1000,"$0.0K"),Sheet2!A3,TEXT(Sheet2!D3/1000,"$0.0K"),TEXT(Sheet2!E3/1000,"$0.0K"),{"normal normal 11pt Calibri","normal bold 16pt Calibri","normal normal 9pt Calibri","normal normal 9pt Calibri"},-90,90,0.4,0,{0,1200,"#FFB2BD"},{1200,1500,"#FFDFB0"},{1500,2000,"#BCEAB4"})');
+			sheet1.setFormula(1, 2, '=GAUGEKPISPARKLINE(Sheet2!B4,Sheet2!C4,Sheet2!D4,Sheet2!E4,TRUE,TEXT(Sheet2!B4/1000,"$0.0K"),Sheet2!A4,TEXT(Sheet2!D4/1000,"$0.0K"),TEXT(Sheet2!E4/1000,"$0.0K"),{"normal normal 11pt Calibri","normal bold 16pt Calibri","normal normal 9pt Calibri","normal normal 9pt Calibri"},-90,90,0.6,0,{0,1200,"#FFB2BD"},{1200,1500,"#FFDFB0"},{1500,2000,"#BCEAB4"})');
+				   
+			sheet1.addSpan(0, 0, 1, 3, GC.Spread.Sheets.SheetArea.dataArea);
+			// set style for Row 0
+			style1 = new GC.Spread.Sheets.Style();
+			style1.font = "bold 28px Calibri";
+			style1.foreColor = "white";
+			style1.backColor = "#14928F";
+			style1.hAlign = GC.Spread.Sheets.HorizontalAlign.center;
+			sheet1.setStyle(0, 0, style1, GC.Spread.Sheets.SheetArea.dataArea);
+
+			
+					
+		
+					
+			
+		};
+	</script>
+	
+</html> 
+
+
+

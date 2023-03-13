@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+                        
+                       // Data
+			var data = {
+			name: 'Jones', region: 'East',
+			sales: [
+				{ orderDate: '1/6/2013', item: 'Pencil', units: 95, cost: 1.99, isMakeMoney: true },
+				{ orderDate: '4/1/2013', item: 'Binder', units: 60, cost: 4.99, isMakeMoney: false },
+				{ orderDate: '6/8/2013', item: 'Pen Set', units: 16, cost: 15.99, isMakeMoney: false }
+			]
+			};
+
+			var convert = function (item) {
+			return item['cost'] + '$';
+			}
+			       
+			// Add table
+			var table = activeSheet.tables.add('tableSales', 0, 0, 5, 5);
+			var tableColumn1 = new GC.Spread.Sheets.Tables.TableColumn(1, "orderDate", "Order Date", "d/M/yy");
+			var tableColumn2 = new GC.Spread.Sheets.Tables.TableColumn(2, "item", "Item");
+			var tableColumn3 = new GC.Spread.Sheets.Tables.TableColumn(3, "units", "Units");
+			var tableColumn4 = new GC.Spread.Sheets.Tables.TableColumn(4, "cost", "Cost", null, null, convert);
+			var tableColumn5 = new GC.Spread.Sheets.Tables.TableColumn(5, "isMakeMoney", "IsMakeMoney", null, new GC.Spread.Sheets.CellTypes.CheckBox());
+			  
+			table.autoGenerateColumns(false);
+				
+			// Bind table using the bind() method
+			table.bind([tableColumn1, tableColumn2, tableColumn3, tableColumn4, tableColumn5], 'sales', data);
+			for (var i = 0; i < 5; i++)
+			activeSheet.setColumnWidth(i, 110.0, GC.Spread.Sheets.SheetArea.viewport);		
+			
+		};
+	</script>
+	
+</html> 
+
+
+

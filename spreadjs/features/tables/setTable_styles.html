@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+// Set Table Footer Style .
+			// Add data
+			 for (var col = 1; col < 6; col++) {
+			     for (var row = 2; row < 11; row++) {
+				activeSheet.setValue(row, col, row + col);
+			     }
+			 }
+			var tableStyle = new GC.Spread.Sheets.Tables.TableTheme(); 
+			var thinBorder = new GC.Spread.Sheets.LineBorder("black", GC.Spread.Sheets.LineStyle.dotted ); 		
+			tableStyle.wholeTableStyle( new GC.Spread.Sheets.Tables.TableStyle("aliceblue", "green", "bold 10pt arial", thinBorder, thinBorder, thinBorder, thinBorder ,thinBorder, thinBorder, GC.Spread.Sheets.TextDecorationType.none ));
+			var tStyleInfo = new GC.Spread.Sheets.Tables.TableStyle(); 
+			tStyleInfo.backColor = "green";
+			tStyleInfo.foreColor = "red"; 
+			tStyleInfo.borderBottom = new GC.Spread.Sheets.LineBorder("green", GC.Spread.Sheets.LineStyle.thin);
+			tStyleInfo.borderLeft = new GC.Spread.Sheets.LineBorder("yellow", GC.Spread.Sheets.LineStyle.medium);
+			tStyleInfo.borderTop = new GC.Spread.Sheets.LineBorder("green", GC.Spread.Sheets.LineStyle.thin);
+			tStyleInfo.borderRight = new GC.Spread.Sheets.LineBorder("green", GC.Spread.Sheets.LineStyle.thin);
+			tStyleInfo.font = "bold 11pt arial";					
+			tableStyle.footerRowStyle( tStyleInfo ); 		
+					
+			var sTable = activeSheet.tables.add( "Custom", 1,1,10,5, tableStyle ); 
+			sTable.showFooter( true ); 		
+			// Set footer value 
+		 	sTable.setColumnValue( 0, "Total" );
+
+			// Set footer formula 
+			sTable.setColumnFormula( 4, "SUM(F3:F11)"); 
+// Display Table Footer Dropdown 
+			// Add Table
+			var table = activeSheet.tables.add("table1", 1, 7, 4, 4, GC.Spread.Sheets.Tables.TableThemes.light1);			
+			// Enable table's footer using showFooter method 
+			table.showFooter( true ); 
+			// Eable table's useFooterDropDownList to true 		
+	                table.useFooterDropDownList( true ); 		
+			activeSheet.getCell(1, 8).text("First Name");
+			activeSheet.getCell(1, 9).text("Last Name");
+			activeSheet.getCell(1, 10).text("Score");
+			activeSheet.getCell(1, 11).text("Position");
+			activeSheet.getCell(2, 8).text("Alexa");
+			activeSheet.getCell(2, 9).text("Wilder");
+			activeSheet.getCell(2, 10).text("90");
+			activeSheet.getCell(2, 11).text("Web Developer");
+			activeSheet.getCell(3, 8).text("Victor");
+			activeSheet.getCell(3, 9).text("Wooten");
+			activeSheet.getCell(3, 10).text("70");
+			activeSheet.getCell(3, 11).text(".NET Developer");
+			activeSheet.getCell(4, 8).text("Ifeoma");
+			activeSheet.getCell(4, 9).text("Mays");
+			activeSheet.getCell(4, 10).text("85");
+			activeSheet.getCell(4, 11).text("Sales Manager");		
+			for (var i = 8; i < 3; i++)
+			activeSheet.setColumnWidth(i, 90.0, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setColumnWidth(11, 120);		
+		};
+	</script>
+	
+</html> 
+
+
+
