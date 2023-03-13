@@ -28,4 +28,4 @@ sudo pip3 install picamera2 --upgrade
 
 git clone https://github.com/ArduCAM/picamera2_examples
 git clone https://github.com/raspberrypi/picamera2 
-
+sudo reboot now 
