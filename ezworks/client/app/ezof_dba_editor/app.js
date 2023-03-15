@@ -20,9 +20,10 @@ angular.module('ezof_dba_editor',[
 	}
 	ezof_dba_editorFactory.update_cur_db = updateUserDB ;	
 	ezof_dba_editorFactory.updateAlertInfo = updateAlertInfo ; 
-	document.getElementById('inputGroupSelect01').addEventListener('change', function(e){
+	document.getElementById('inputGroupSelect01').addEventListener('change', async function(e){
 		let  db_name = document.getElementById('inputGroupSelect01').value 
 		let  spread = ezof_dba_editorFactory.spread ; 
-                ezof_dba_editorService.updateTblData( spread, db_name );
+                await ezof_dba_editorService.updateTblData( spread, db_name );
+                await ezof_dba_editorService.updateData_1( spread );
 	})
 }])

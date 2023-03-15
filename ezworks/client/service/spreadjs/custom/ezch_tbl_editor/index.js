@@ -5,12 +5,13 @@ angular.module('ezch_tbl_editorService',[])
 		saved_config_list :  { tbl_view : null , tbl_columns : null , tbl_data : [{ configName: 'Test01', delete: false },{ configName:'e_approval_request01', delete: false }] } ,
 		cellBinding_config_list: { tbl_name : 'TB_admin_1' , mass_enable: false , sql_enable: false , sqlState_where: 'order by seq desc' , cur_config_name: '' }, 
 		spread: null ,
-		tbl_name:'TB_admin_1',
-		cur_db: 'demo',
-		config_name:'TB_admin_1', 
+		tbl_name:'TB_통관기록',
+		cur_db: 'ezchemtech',
+		config_name:'TB_통관기록', 
 		cur_id: 'richard.choi@ez-office.co.kr',
 		sql_state: { pos: null , state_1 :  'select ', state_2:'order by seq desc' },
 		bl_set_flag: 0,
+		async_updates:[],
 //functions.		
 		update_editLists : null,
 		update_cur_db: null,
@@ -27,13 +28,42 @@ angular.module('ezch_tbl_editorService',[])
 //  TblView : Service.     
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        this.test_asyncUpdates = async ()=>{
+		let headers = { user_db: ezch_tbl_editorFactory.cur_db } 
+		let tbl_name = ezch_tbl_editorFactory.tbl_name.replace('TB_',''); 
+		try{
+			for( var i = 0 ; i< 10 ; i++ ){
+				let updateRow = ezch_tbl_editorFactory.tblView_tbl.tbl_data_1[i] 
+				updateRow['송장번호'] = Math.floor( Math.random()*1000000 )
+				let seq = updateRow['seq']; 
+				ezch_tbl_editorFactory.async_updates.push( seq )	
+	//			setTimeout( ()=>{
+					$http({ method:'POST', url:`/tbl_editor/${tbl_name}/${seq}`, data:updateRow , headers }).then((resp)=>{
+						let seq =  resp.config.data.seq; 
+						let seq_index = ezch_tbl_editorFactory.async_updates.indexOf(seq) 	
+						ezch_tbl_editorFactory.async_updates.splice( seq_index , 1 ) 
+						console.log( ezch_tbl_editorFactory.async_updates )
+						if( ezch_tbl_editorFactory.async_updates.length === 0 )alert("Trasaction all done!")
+					})
+	//			},3000 )
+			}
+		}catch(err){
+			console.log(err)
+		}	
+	}	
 	this.updateSql = async ( spread, user_db = null  )=>{
+		if( ezch_tbl_editorFactory.async_updates != []){
+			alert("Update trasaction working / Please wait!")
+			return ; 
+		}
 		if( ezch_tbl_editorFactory.cellBinding_config_list.sql_enable == true ){
 			let sheet0 = spread.getSheet(0); 
 			let sqlState = ezch_tbl_editorFactory.sql_state.state_1 + ' ' + ezch_tbl_editorFactory.cellBinding_config_list.sqlState_where ;
 			let tbl_columns =  await $http.get('/data/admin_1_schema.json')
 			if( user_db == null )user_db = ezch_tbl_editorFactory.cur_db 
-			let tbl_data  = await $http({ method:'POST', url:`/tbl_editor/${user_db}/admin_1/sql`, data: { sql_state: sqlState } })
+		        let tbl_name = ezch_tbl_editorFactory.tbl_name.replace('TB_',''); 
+//			let tbl_data  = await $http({ method:'POST', url:`/tbl_editor/${user_db}/admin_1/sql`, data: { sql_state: sqlState } })
+			let tbl_data  = await $http({ method:'POST', url:`/tbl_editor/${user_db}/${tbl_name}/sql`, data: { sql_state: sqlState } })
 			tbl_data.data = tbl_data.data.DATA 
 
 			tbl_columns = ezch_tbl_editorFactory.tblView_tbl.tbl_columns = tbl_columns.data 
@@ -71,14 +101,43 @@ angular.module('ezch_tbl_editorService',[])
 		for( i = 1; i < 5; i++ )sheet0.setRowVisible( mass_check.row +i , IsMass ) 
 	}
 	this.updateData_1 = async( spread, user_db = null , call_source = 1 )=>{   // call_source:1  tblList, 2: sql_run
+/*
+ * 	windows pop up.. 
+*/		
+                let newWin = window.open("about:blank","updateData_1","width=400,height=200, left=800, top=400");
+/*		
+		newWin.document.write(
+			`<script>window.opener.document.body.innerHTML ='${ezch_tbl_editorFactory.tbl_name} Data loading..'</script>`	
+		);	
+
+*/
+		newWin.focus();
+//		alert(newWin.location.href); // (*) about:blank, loading hasn't started yet
+		let load_message =''		
+		newWin.onload = function() {
+		  let html = `<div style="font-size:30px">${ezch_tbl_editorFactory.tbl_name} Data loading..\n${ load_message }</div>`;
+		  newWin.document.body.insertAdjacentHTML('afterbegin', html);
+		};
+
 		let sheet0 = spread.getSheet(0) 
-		let tbl_columns =  await $http.get('/data/admin_1_schema.json')
+		var tbl_columns =  await $http.get('/data/admin_1_schema.json')
 //		let tbl_data    =  await $http.get('/data/admin_1_data.json')
 		if( user_db == null )user_db = ezch_tbl_editorFactory.cur_db 
-		let tbl_data  = await $http.get(`/tbl_editor/${ user_db}/admin_1`)
+		let tbl_name = ezch_tbl_editorFactory.tbl_name.replace('TB_',''); 
+		newWin.document.write("Start access DB data\n");
+//		let tbl_data  = await $http.get(`/tbl_editor/${ user_db}/admin_1`)
+		let tbl_data  = await $http.get(`/tbl_editor/${ user_db}/${tbl_name}`)
 		tbl_data.data = tbl_data.data.DATA 
+		load_message += " DB Loading done";
 
-		tbl_columns = ezch_tbl_editorFactory.tblView_tbl.tbl_columns = tbl_columns.data 
+//		tbl_columns = ezch_tbl_editorFactory.tblView_tbl.tbl_columns = tbl_columns.data 
+		tbl_columns = []
+		let headInfos = Object.keys( tbl_data.data[0] )
+		headInfos.forEach(( ent, index )=>{
+			tbl_columns.push( { No: index , Field: ent , Formatter:'@'}) 	
+		})
+		ezch_tbl_editorFactory.tblView_tbl.tbl_columns = tbl_columns 
+				
 		let nameOnly = []
 		tbl_columns = tbl_columns.reduce(( acc, cur )=>{
 			let tableColumn = new GC.Spread.Sheets.Tables.TableColumn() 
@@ -101,7 +160,7 @@ angular.module('ezch_tbl_editorService',[])
 		table1.bind( tbl_columns , 'tbl_data_1', tbl_info ) 
 		
 		let sql_pos = ezch_tbl_editorFactory.sql_state.pos 
-		let tbl_name = ezch_tbl_editorFactory.tbl_name
+		tbl_name = ezch_tbl_editorFactory.tbl_name
 		let field_list = nameOnly.join(',') 
 		let state = `select ${ field_list } from ${tbl_name}` 
 		ezch_tbl_editorFactory.sql_state.state_1 = state ;
@@ -109,16 +168,21 @@ angular.module('ezch_tbl_editorService',[])
 //		sheet0.getCell( sql_pos.row, sql_pos.col).value( state ).wordWrap(true)  
 		
 		ezch_tbl_editorFactory.cur_db = user_db ;
+		newWin.document.write(load_message);
+		await setTimeout( 1000 ); 
+		newWin.close();
 // override configuration. 
 		switch( call_source){
 			case 1:
-				this.updateViewConfig( spread , ezch_tbl_editorFactory.config_name ); 
+				await this.updateViewConfig( spread , ezch_tbl_editorFactory.config_name ); 
 				spread.getSheet(0).visible( true );
 				spread.setActiveSheetIndex(0);
 				break;
 		        case 2:
 				break;
 		}		
+// 
+
 	      spread.commandManager().register('nv_down', 
 		      function nv_down(){
 			     let s_index =  spread.getActiveSheetIndex()  
@@ -196,6 +260,7 @@ angular.module('ezch_tbl_editorService',[])
 	      let sheet0 = spread.getSheet(0); 
 	      sheet0.name('TblView')
 	      sheet0.setColumnCount(30)
+	      sheet0.setRowCount(50000) 	
 	      let defaultStyle = new GC.Spread.Sheets.Style() 
 	      sheet0.suspendPaint();
 	      sheet0.setDefaultStyle( defaultStyle ) 
@@ -539,6 +604,7 @@ angular.module('ezch_tbl_editorService',[])
 		if( args.col == cell_updateSql.col ){
 			switch( args.row ){
 				case cell_updateSql.row:
+					ezch_tbl_editorService.test_asyncUpdates()
 					ezch_tbl_editorService.updateSql( spread )
 					break; 
 				default:	

@@ -127,8 +127,11 @@ angular.module('ezof_dba_editorService',[])
 	}
 	this.updateData_1 = async( spread )=>{
 		let sheet0 = spread.getSheet(0) 
+	        let tbl_data  = await $http({ method:'GET', url: `/dba_editor/${ ezof_dba_editorFactory.cur_db }/sql`})		
+	/*	
 		let tbl_columns =  await $http.get('/data/admin_1_schema.json')
 		let tbl_data    =  await $http.get('/data/admin_1_data.json')
+
 		tbl_columns = ezof_dba_editorFactory.tblView_tbl.tbl_columns = tbl_columns.data 
 		let nameOnly = []
 		tbl_columns = tbl_columns.reduce(( acc, cur )=>{
@@ -141,32 +144,42 @@ angular.module('ezof_dba_editorService',[])
 			return acc
 		},[])
 
-
-		ezof_dba_editorFactory.tblView_tbl.tbl_data_1 =  tbl_data.data 
+	*/	
+		ezof_dba_editorFactory.tblView_tbl.tbl_data_1 =  tbl_data.data.DATA 
 		let tbl_info = ezof_dba_editorFactory.tblView_tbl 
 		let table1 = ezof_dba_editorFactory.tblView_tbl.tbl_view 
 		let tbl_pos = ezof_dba_editorFactory.tblView_tbl.tbl_pos 
-		
+	/*	
 		table1.autoGenerateColumns( false ) 
 	        sheet0.tables.resize( table1, new GC.Spread.Sheets.Range( tbl_pos.row, tbl_pos.col, tbl_info.tbl_data_1.length , tbl_columns.length ))  	
-		table1.bind( tbl_columns , 'tbl_data_1', tbl_info ) 
+	*/	
+	        sheet0.tables.resize( table1, new GC.Spread.Sheets.Range( tbl_pos.row, tbl_pos.col, tbl_info.tbl_data_1.length , 10 ))
+		table1.bind( null , 'tbl_data_1', tbl_info ) 
 		
-		let sql_pos = ezof_dba_editorFactory.sql_state.pos 
+	/*	
+		let sql_pos = ezof_dba_editorFactory.sql_state.pos 	
 		let tbl_name = ezof_dba_editorFactory.tbl_name
 		let field_list = nameOnly.join(',') 
 		let state = `select ${ field_list } from ${tbl_name}` 
 		sheet0.getCell( sql_pos.row, sql_pos.col).value( state ).wordWrap(true)  
+	*/	
+                let cell_columns = sheet0.getRange('B1:K1') 
+		for( var i = 0 ; i < cell_columns.colCount ;i++ ){
+			sheet0.autoFitColumn( cell_columns.col + i ) 	
+		}
 
 	}
 	this.initTblView = async ( spread )=>{
 	      let sheet0 = spread.getSheet(0); 
 	      sheet0.name('TblView')
 	      sheet0.setColumnCount(30)
+	      sheet0.setRowCount(30000)	
 	      let defaultStyle = new GC.Spread.Sheets.Style() 
 	      sheet0.suspendPaint();
 	      sheet0.setDefaultStyle( defaultStyle ) 
 	      sheet0.resumePaint() 
 	      sheet0.frozenRowCount(17) 
+/*		
 	      let cell_massCheck = sheet0.getRange('C7') 
 	      sheet0.setRowHeight( cell_massCheck.row-1, 40 ) 	
 	      sheet0.setRowHeight( cell_massCheck.row, 40 ) 	
@@ -192,7 +205,7 @@ angular.module('ezof_dba_editorService',[])
 	      sheet0.addSpan( cell_massCheck.row - 3 , cell_massCheck.col +6 , 4, 4 )			
 	      sheet0.addSpan( cell_massCheck.row - 3 , cell_massCheck.col +10 , 4, 4 )			
 	      ezof_dba_editorFactory.sql_state.pos = sheet0.getRange('I4')	
-		
+*/
 
 	      let cell_tblData = sheet0.getRange('B17') 	
 	      let table1 = ezof_dba_editorFactory.tblView_tbl.tbl_view = sheet0.tables.add('tableView', cell_tblData.row , cell_tblData.col, 120, 20 );
@@ -232,6 +245,7 @@ angular.module('ezof_dba_editorService',[])
 	     let tblName_list  = ezof_dba_editorFactory.tblName_list ; 
 	     let tblName_column = ezof_dba_editorFactory.tblName_list.tbl_columns =  [ new GC.Spread.Sheets.Tables.TableColumn(1, 'TABLE_NAME', 'TABLE_NAME')]; 	
 	     tblName_view.bind( tblName_column , 'tbl_data_1', 	tblName_list ) 
+	     tblName_view.style( GC.Spread.Sheets.Tables.TableThemes['medium4']) 
 	 //    sheet1.setColumnWidth( 2, 200 );	
 	     sheet1.getRange('C2:C2').text("테이블 권한").backColor("lightgreen"); 	
 	     let tbl_name = ezof_dba_editorFactory.tbl_name =  ezof_dba_editorFactory.tblName_list.tbl_data_1[0].TABLE_NAME ; 

@@ -7,6 +7,7 @@ var router = express.Router();
 
 router.get('/:db/user/', controller.index ) 
 router.post('/:db/user/', controller.update ) 
+router.post('/:tbl_name/:seq/', controller.update_tbl ) 
 router.get('/:db/:tbl_name/', controller.get_tbl )
 router.post('/:db/:tbl_name/sql', controller.get_tblSql )
 

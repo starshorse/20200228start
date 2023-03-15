@@ -2,7 +2,43 @@
 const { readFileSync , writeFileSync,  statSync } = require('fs') 
 const path = require('path') 
 const axios = require('axios') 
+///////////////////////////////////////////////////////////////////////////////////////////
+//  Axios timeout added.. 
+//////////////////////////////////////////////////////////////////////////////////////////
+console.log = (() => {
+  var console_log = console.log;
+  var timeStart = new Date().getTime();
+  
+  return function() {
+    var delta = new Date().getTime() - timeStart;
+    var args = [];
+    args.push((delta / 1000).toFixed(2) + ':');
+    for(var i = 0; i < arguments.length; i++) {
+      args.push(arguments[i]);
+    }
+    console_log.apply(console, args);
+  };
+})();
 
+axios.interceptors.request.use( req => {
+  req.meta = req.meta || {}
+  req.meta.requestStartedAt = new Date().getTime();
+  return req;
+});
+
+axios.interceptors.response.use(res => {
+  console.log(`Execution time for: ${res.config.url} - ${ new Date().getTime() - res.config.meta.requestStartedAt} ms`)
+  return res;
+},
+res => {
+  console.error(`Execution time for: ${res.config.url} - ${new Date().getTime() - res.config.meta.requestStartedAt} ms`)
+  throw res;
+});	
+	
+
+///////////////////////////////////////////////////////////////////////////////////////////
+//  Router..  
+//////////////////////////////////////////////////////////////////////////////////////////
 exports.index = function( req, res){
 	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
 	let id = req.headers.id 
@@ -37,6 +73,35 @@ exports.update = function( req, res){
 	result.DATA = JSON.parse( readFileSync( id_path, 'utf-8'))
 	return res.status( 200 ).json( result ) 
 }
+exports.update_tbl = async function( req, res){
+	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let id = req.headers.id 
+	let user_db = req.headers.db 
+	let seq = req.params.seq 
+	let tbl_name = req.params.tbl_name ;
+	let data = req.body 
+	let headers = { user_db ,id } 
+	
+	let  hades_data 
+	try{
+		hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${tbl_name}/${seq}`, data , headers : headers, timeout: 2000 })
+		result.STATUS = 1 
+		result.RESULT = 'success'
+		result.MESSAGE = '' 
+		result.DATA = hades_data.data.tbl_data ; 
+	}catch(err){
+		try{
+			hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${tbl_name}/${seq}`, data , headers : headers, timeout: 2000 })
+			result.STATUS = 1 
+			result.RESULT = 'success'
+			result.MESSAGE = '' 
+			result.DATA = hades_data.data.tbl_data ; 
+	        }catch(err){		
+                	console.log( "server", err ) 	
+		}
+	}	
+	return res.status( 200 ).json( result ) 
+}
 exports.get_tbl = async function( req, res){
 	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
 	let id = req.headers.id 
@@ -44,7 +109,7 @@ exports.get_tbl = async function( req, res){
 	let tbl_name = req.params.tbl_name ;
 	let headers = { user_db } 
 		
-	let  hades_data = await axios({ method:"GET", url:`http://192.168.0.80:5000/ezchemtech/TableEditor/Data/${tbl_name}`, headers : headers })
+	let  hades_data = await axios({ method:"GET", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/Data/${tbl_name}`, headers : headers })
 
 	result.STATUS = 1 
 	result.RESULT = 'success'
@@ -55,7 +120,7 @@ exports.get_tbl = async function( req, res){
 exports.get_tblSql = async function( req, res ){
 	let data = { db_name : req.params.db , sql_state: req.body.sql_state } 
 	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
-	let  hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5000/ezchemtech/TableMaker/`, data })
+	let  hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableMaker/`, data })
 
 	result.STATUS = 1 
 	result.RESULT = 'success'
