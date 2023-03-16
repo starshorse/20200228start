@@ -1,0 +1,44 @@
+.sample-tutorial {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sample-spreadsheets {
+   width: calc(100% - 280px);
+   height: 100%;
+   overflow: hidden;
+   float: left;
+}
+
+.options-container {
+   float: right;
+   width: 280px;
+   padding: 12px;
+   height: 100%;
+   box-sizing: border-box;
+   background: #fbfbfb;
+   overflow: auto;
+}
+
+body {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+}
+
+.group{
+   width: 250px;
+   margin-bottom: 20px;
+}
+
+.collapse {
+   width: 250px;
+   margin-top: 20px;
+}
+
+select{
+   width: 250px;
+}
