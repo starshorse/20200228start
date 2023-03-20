@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+
+			spread.suspendPaint();
+			// get sheets
+			var pivotLayoutSheet = spread.getSheet(0);
+			var dataSourceSheet = spread.getSheet(1);
+			// set sheet name
+			pivotLayoutSheet.name("PivotLayout");
+			dataSourceSheet.name("DataSource");		
+			// set row count
+			dataSourceSheet.setRowCount(2000);
+			var table_1  = dataSourceSheet.tables.add('tableSales', 0, 0, 1000, 6);					
+			var dataSrc = { data: orderLists }
+				
+                        table_1.bind( null , 'data', dataSrc ) 
+
+			initPivotTable(pivotLayoutSheet )		
+			// auto fit columns in both the sheets
+			    autoFit(pivotLayoutSheet);
+			    autoFit(dataSourceSheet);					
+
+			spread.resumePaint();		
+			function initPivotTable(sheet)
+			{
+				// add pivottable
+				var myPivotTable = sheet.pivotTables.add("myPivotTable", "tableSales", 0, 0, GC.Spread.Pivot.PivotTableLayoutType.tabular, GC.Spread.Pivot.PivotTableThemes.dark3);
+				myPivotTable.suspendLayout();
+				// show rowHeader and columnHeader for PivotTable
+				myPivotTable.options.showRowHeader = true;
+				myPivotTable.options.showColumnHeader = true;
+				// add column fields
+				// myPivotTable.add("Category", "Category", GC.Spread.Pivot.PivotTableFieldType.columnField);
+				myPivotTable.add("Product", "Product", GC.Spread.Pivot.PivotTableFieldType.columnField);
+				// add row fields
+				myPivotTable.add("Region", "Region", GC.Spread.Pivot.PivotTableFieldType.rowField);
+				myPivotTable.add("City", "City", GC.Spread.Pivot.PivotTableFieldType.rowField);
+				// add value field with SubtotalType Sum
+				myPivotTable.add("Quantity", "Sum of quantity", GC.Spread.Pivot.PivotTableFieldType.valueField, GC.Pivot.SubtotalType.sum);
+				// add filter field
+				myPivotTable.add("OrderDate", "OrderDate", GC.Spread.Pivot.PivotTableFieldType.filterField);
+				myPivotTable.resumeLayout();
+				return myPivotTable;		
+			}			
+			function autoFit(sheet) {
+			     // auto fit columns
+			     let columnCount = sheet.getColumnCount()
+			     for (let i = 0; i < columnCount; i++) {
+				 sheet.autoFitColumn(i);
+			     }					
+			}	
+		};
+	</script>
+	<script src="./order_pr.js"></script> 
+	
+</html> 
+
+
+
