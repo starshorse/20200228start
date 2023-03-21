@@ -25,6 +25,7 @@
 		<div class = "sample-container">
 			<div id="ss" class="spread-container"></div> 
 		</div>
+	<div id="slicerHost" style="height: 300px; width: 50%"></div>	
 	</body>
 	<script>
 		window.onload = function()
@@ -33,8 +34,19 @@
 			var sheet = spread.getSheet(0);
 			var activeSheet = sheet 
 			// set data
-
-					
+			//create table
+			var dataSource = [
+			    { Name: "Bob", City: "NewYork", Birthday: "1968/6/8" },
+			    { Name: "Betty", City: "NewYork", Birthday: "1972/7/3" },
+			    { Name: "Alice", City: "Washington", Birthday: "2012/2/15" },
+			];
+			var table = activeSheet.tables.addFromDataSource("table1", 1, 1, dataSource);
+			var slicerData = table.getSlicerData();
+			//create item slicer and add slicer data to item slicer.
+			var slicer = new GC.Spread.Sheets.Slicers.ItemSlicer("slicer", slicerData, "Name");
+			//Add the item slicer to the dom tree.
+			//The "slicerHost" is the div you want to add the slicer's dom to.
+			$("#slicerHost").append(slicer.getDOMElement());		
 			
 		};
 	</script>
