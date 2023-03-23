@@ -12,6 +12,13 @@ angular.module('ezch_tbl_editorService',[])
 		sql_state: { pos: null , state_1 :  'select ', state_2:'order by seq desc' },
 		bl_set_flag: 0,
 		async_updates:[],
+// tblView( sheet0 ) runtime lock.. 
+	        lock_style: null,
+		unlock_style: null, 
+		lastSelections: [],
+		currentSelections: [],
+// tblView( sheet0 ) Filter.. 
+		tblView_filter: { button_obj: null, text: ['선택필터적용' ,'선택필테해제'], filter_state: 0 , filter_info: [] }, 
 //functions.		
 		update_editLists : null,
 		update_cur_db: null,
@@ -23,6 +30,45 @@ angular.module('ezch_tbl_editorService',[])
 .service('ezch_tbl_editorService', ['$injector',function($injector){
 	var ezch_tbl_editorFactory = $injector.get('ezch_tbl_editorFactory') 
 	var $http = $injector.get('$http') 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  core. : Service.     
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	this.getEzch_tbl_editorFactory = ()=>ezch_tbl_editorFactory ; 		
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  TblView : Filter Service.     
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	this.applyFilter = ( spread, filter_state )=>{
+	      let sheet0 = spread.getSheet(0); 	
+	      let table1 = ezch_tbl_editorFactory.tblView_tbl.tbl_view ;
+	      let rowFilter = table1.rowFilter(); 	
+	      let tbl_range = table1.range(); 
+	      if( filter_state )
+	      {	
+		      let selections = ezch_tbl_editorFactory.lastSelections ;
+		      for( selection of selections )
+		      {	
+				if(  selection.col >= tbl_range.col && selection.col < tbl_range.col + tbl_range.colCount && selection.row >= tbl_range.row && selection.row < tbl_range.row + tbl_range.rowCount )
+				{
+				   let text = sheet0.getValue( selection.row, selection.col );	
+				   let condition = new GC.Spread.Sheets.ConditionalFormatting.Condition(
+					GC.Spread.Sheets.ConditionalFormatting.ConditionType.textCondition, {
+						compareType: GC.Spread.Sheets.ConditionalFormatting.TextCompareType.equalsTo, 
+						expected: text
+					}		
+				   )
+				   rowFilter.addFilterItem( selection.col , condition);
+				   rowFilter.filter( selection.col ); 	
+				}		
+		      }	
+	     }else{
+//		    rowFilter.unfilter();  
+		    reoFilter.reset();  		    
+	     } 	     
+	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //  TblView : Service.     
@@ -159,6 +205,8 @@ angular.module('ezch_tbl_editorService',[])
 	        sheet0.tables.resize( table1, new GC.Spread.Sheets.Range( tbl_pos.row, tbl_pos.col, tbl_info.tbl_data_1.length , tbl_columns.length ))  	
 		table1.bind( tbl_columns , 'tbl_data_1', tbl_info ) 
 		
+		// let rowFilter = sheet0.rowFilter();
+
 		let sql_pos = ezch_tbl_editorFactory.sql_state.pos 
 		tbl_name = ezch_tbl_editorFactory.tbl_name
 		let field_list = nameOnly.join(',') 
@@ -286,6 +334,13 @@ angular.module('ezch_tbl_editorService',[])
 	      cell_bt1.text('대량데이터실행')
 	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +1 , cell_bt1 ) 
 //	      sheet0.setCellType( cell_massCheck.row-1 , cell_massCheck.col +1 , cell_bt1 ) 
+// Select Filter button.. 
+	      let cell_bt5 = new GC.Spread.Sheets.CellTypes.Button() 
+	      ezch_tbl_editorFactory.tblView_filter.button_obj = cell_bt5 ;	
+	      cell_bt5.text( ezch_tbl_editorFactory.tblView_filter.text[0] )
+	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +3 , cell_bt5 ) 
+
+
 	      let cell_bt2 = new GC.Spread.Sheets.CellTypes.Button() 
 	      cell_bt2.text('잠금해제')
 	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +4 , cell_bt2 ) 
@@ -422,6 +477,12 @@ angular.module('ezch_tbl_editorService',[])
 	      spread.commandManager().setShortcutKey('bl_left', GC.Spread.Commands.Key.left, false ,true, false ,false ); 	
 	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.up, false ,true, false ,false ); 	
 	      spread.commandManager().setShortcutKey('bl_up', GC.Spread.Commands.Key.up, false ,true, false ,false ); 	
+// set unlock Style. 
+              ezch_tbl_editorFactory.unlock_style = new GC.Spread.Sheets.Style(); 
+	      ezch_tbl_editorFactory.unlock_style.name = 'UNlockStyle'; 
+	      ezch_tbl_editorFactory.unlock_style.backColor = 'LemonChiffon'; 
+	      sheet0.addNamedStyle( ezch_tbl_editorFactory.unlock_style ); 	
+		
 
 	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -589,6 +650,7 @@ angular.module('ezch_tbl_editorService',[])
 }])
 .service('ezch_tbl_editor_eventsService', ['$injector', function($injector){
 	var ezch_tbl_editorService = $injector.get('ezch_tbl_editorService') 
+	var ezch_tbl_editorFactory = ezch_tbl_editorService.getEzch_tbl_editorFactory();
 	this.sheet1_cellDoubleClick = ( spread, sender, args )=>{
 		let sheet1 = spread.getSheet(1) 
 		let cell_savedConfig = sheet1.getRange('N4') 
@@ -601,9 +663,21 @@ angular.module('ezch_tbl_editorService',[])
 		let sheet0 = spread.getSheet(0) 
 		let cell_updateSql = sheet0.getRange('H7') 
 		let cell_savedConfig = sheet0.getRange('M7') 
+		let cell_filterCells = sheet0.getRange('F7')
+		let cell_lockCells = sheet0.getRange('G7')
 		if( args.col == cell_updateSql.col ){
 			switch( args.row ){
 				case cell_updateSql.row:
+					sheet0.suspendPaint();
+					sheet0.options.isProtected = false 
+					for( selection of ezch_tbl_editorFactory.currentSelections )
+					{
+						sheet0.getRange( selection.row, selection.col, selection.rowCount, selection.colCount ).locked( true );
+						sheet0.clear( selection.row, selection.col, selection.rowCount, selection.colCount, GC.Spread.Sheets.SheetArea.viewport, GC.Spread.Sheets.StorageType.style );
+					}
+					sheet0.options.isProtected = true 	
+					ezch_tbl_editorFactory.currentSelections = [] ;
+					sheet0.resumePaint();
 					ezch_tbl_editorService.test_asyncUpdates()
 					ezch_tbl_editorService.updateSql( spread )
 					break; 
@@ -618,7 +692,36 @@ angular.module('ezch_tbl_editorService',[])
 					break;
 				default:	
 			}	
-		}
+		}else if( args.col == cell_lockCells.col ){
+			switch( args.row ){
+				case cell_lockCells.row:
+				        console.log( ezch_tbl_editorFactory.lastSelections );		
+					sheet0.suspendPaint();
+					sheet0.options.isProtected = false 
+					ezch_tbl_editorFactory.currentSelections =  ezch_tbl_editorFactory.currentSelections.concat( ezch_tbl_editorFactory.lastSelections );
+					for( selection of ezch_tbl_editorFactory.currentSelections )
+					{
+						sheet0.getRange( selection.row, selection.col, selection.rowCount, selection.colCount ).styleName('UNLockStyle').locked( false );
+					}
+					sheet0.options.isProtected = true 	
+					sheet0.resumePaint();
+					let activeCell = ezch_tbl_editorFactory.lastSelections[0] ; 
+					sheet0.setActiveCell( activeCell.row , activeCell.col ); 
+
+					break;
+			}		
+		}else if( args.col == cell_filterCells.col ){
+			switch( args.row ){
+				case cell_filterCells.row:
+					let cell_bt5 = ezch_tbl_editorFactory.tblView_filter.button_obj ;
+					let state_f = 1 - ezch_tbl_editorFactory.tblView_filter.filter_state ;
+	                                cell_bt5.text( ezch_tbl_editorFactory.tblView_filter.text[state_f] )
+					ezch_tbl_editorFactory.tblView_filter.filter_state = state_f ;  
+					ezch_tbl_editorService.applyFilter( spread, state_f ); 
+					break;
+				default:	
+			}		
+		}		
 	}
 	this.sheet1_buttonClicked = ( spread, sender, args )=>{
 		let sheet1 = spread.getSheet(1) 
@@ -643,5 +746,8 @@ angular.module('ezch_tbl_editorService',[])
 			}	
 		}	
 	}
+	this.sheet0_selectionChanged = ( spread, sender, args )=>{
+		ezch_tbl_editorFactory.lastSelections = args.oldSelections 
+	}		
 
 }]);

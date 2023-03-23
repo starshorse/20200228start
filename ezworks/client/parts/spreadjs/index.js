@@ -18,6 +18,7 @@ angular.module('mySpreadjs',[])
 		ezch_tbl_editorService.setUpdate_editLists( $scope.edit_lists_update )
 		spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
 		spreadjs_eventsService.register_sheet1_bind_cellDoubleClick( $scope.spread ) 
+		spreadjs_eventsService.register_sheet0_bind_selectionChanged( $scope.spread ) 
 	}else if( $injector.has('ezof_log_monitorService')){
 		var ezof_log_monitorService = $injector.get('ezof_log_monitorService') 
 		ezof_log_monitorService.initTblView( $scope.spread ) 

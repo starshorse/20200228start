@@ -35,4 +35,11 @@ angular.module('spreadjs_events',[])
 			if( postEvent != null ) postEvent() 
 		})
 	}
+	this.register_sheet0_bind_selectionChanged = ( spread, preEvent = null, postEvent = null )=>{
+		let sheet0 = spread.getSheet(0); 
+		sheet0.unbind( spreadjs_product.Events.SelectionChanged )
+		sheet0.bind( spreadjs_product.Events.SelectionChanged , ( sender, args )=>{
+			eventsService.sheet0_selectionChanged( spread , sender, args )
+		})
+	}	
 }])
