@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title> SpreadJS V11 Client ExcelIO</title> 
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/interop/gc.spread.excelio.15.2.2.min.js"></script>
+		<link href="../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+		 }
+		</style>
+	</head>
+	<body>
+		<div>
+		    	<input type="file" name="files[]" id="fileDemo" accept=".xlsx"/>
+		    	<input type="button" id="loadExcel" value="Import" onclick="ImportFile()"/>
+		    	<input type="button" class="btn btn-default" id="saveExcel" value="Export" onclick="ExportFile()"/>
+			<input type="text" id="exportFileName" placeholder="Export file name" class="form-control" value="export.xlsx"/>
+		    	<div id="ss" style="width:100%;height:500px"></div>
+		</div>
+	</body>
+	<script>
+		var workbook, excelIO;
+		window.onload = function()
+		{
+			workbook = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 1 } );
+			// refresh() 
+			excelIO = new GC.Spread.Excel.IO(); 
+		};
+		function ImportFile()
+		{
+			var excelFile = document.getElementById("fileDemo").files[0]; 
+			excelIO.open( excelFile, function(json){		
+				var workbookObj = json; 
+				workbook.fromJSON( workbookObj );
+			}, function(e){
+				console.log(e);		
+			});			
+		}				
+		function ExportFile(){
+			var fileName = document.getElementById("exportFileName").value;
+			if( fileName.substr(-5,5) !== '.xlsx'){		
+				fileName += '.xlsx';		
+			}
+					
+//			var json = JSON.stringify( workbook.toJSON()); 
+			var sheet0 = workbook.getSheet(0);
+			var json = JSON.stringify( sheet0.toJSON()); 		
+
+			excelIO.save( json, function( blob ){		
+				saveAs( blob, fileName );		
+			}, function(e){				
+				console.log(e);		
+			});				
+		};
+				
+
+	</script>
+	
+</html> 
+
+
+
