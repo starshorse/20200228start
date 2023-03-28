@@ -20,7 +20,7 @@ LEFT JOIN sys.sql_logins sl
 WHERE sp.type NOT IN ('G', 'R')
 ORDER BY create_date DESC;
 GO
---# SQL Server CREATE LOGIN statement options 
+-- # SQL Server CREATE LOGIN statement options 
 -- The CHECK_POLICY option 
 -- The CHECK_EXPIREATION option 
 -- The MUST_CHANGE option 
@@ -29,6 +29,7 @@ WITH PASSWORD = 'UcxSj12.' MUST_CHANGE,
      CHECK_POLICY=ON, 
      CHECK_EXPIRATION=ON;
 GO
-
-
+-- # Creating a login from a Windows domain account 
+CREATE LOGIN "DESKTOP-HUJUVSS\rrr"
+FROM WINDOWS;
 
