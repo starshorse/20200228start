@@ -1,0 +1,1 @@
+select count(*) as cnt, Maker from dbo.TB_eztable te where 수주확정일 > '2023-01-01' group by Maker order by Maker DESC 
