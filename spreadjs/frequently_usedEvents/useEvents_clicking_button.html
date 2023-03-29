@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.slicers.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.print.15.2.2.min.js"></script>
+		<link href="../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet1 = spread.getSheet(0);
+			var sheet2 = spread.getSheet(1);
+			var sheet = sheet1 ;		
+			var activeSheet = sheet1 
+
+			sheet1.setColumnCount( 100 )		
+			sheet2.setColumnCount( 100 )		
+			// set data
+			activeSheet.bind(GC.Spread.Sheets.Events.LeaveCell, function (sender, args) 
+			{
+			    console.log("The column index before moving: " + args.col);
+			    console.log("The row index before moving: " + args.row);    
+			});		
+			activeSheet.bind(GC.Spread.Sheets.Events.EditStarting, function (sender, args) 
+			{  
+			    console.log("Start cell editing.");
+			});
+
+			activeSheet.bind(GC.Spread.Sheets.Events.EditEnded, function (sender, args) 
+			 {
+			    console.log("Finish cell editing.");
+			 });		
+			activeSheet.bind(GC.Spread.Sheets.Events.EditChange, function (sender, args) 
+			{
+			    console.log("Cell (" + args.row + ", " + args.col + ") data has been changed.")
+			});		
+			sheet1.bind(GC.Spread.Sheets.Events.TopRowChanged, function (sender, args) 
+			{
+			  /* Set the displayed top row of sheet1 to sheet2 
+			   (vertical scroll  synchronization). */
+
+			  sheet2.showRow(args.newTopRow, GC.Spread.Sheets.VerticalPosition.top);
+			});
+
+			sheet1.bind(GC.Spread.Sheets.Events.LeftColumnChanged, function (sender, args) 
+			{
+			 /* Set the displayed left column of sheet1 to sheet2 
+			  (Horizontal scroll synchronization). */
+			sheet2.showColumn(args.newLeftCol, GC.Spread.Sheets.HorizontalPosition.left);
+			});		
+// the Sheet Tab Changes.. 
+			spread.addSheet();
+			spread.bind(GC.Spread.Sheets.Events.ActiveSheetChanging, 
+			function (sender, args) 
+			{
+			    // Cancel sheet switching.
+			    args.cancel = true;
+			});
+
+			spread.bind(GC.Spread.Sheets.Events.ActiveSheetChanged, function (sender, args) 
+			{
+			    console.log("Active sheet has been switched.");
+			});		
+			sheet.bind(GC.Spread.Sheets.Events.DragDropBlock, function (e, args) 
+			{
+			  console.log("From Column:" + args.fromCol);
+			  console.log("From Row:" + args.fromRow);
+			  console.log("To Column:" + args.toCol);
+			  console.log("To Row:" + args.toRow);
+			});		
+/* Use Event when Sheet Changes 
+*/
+			// Bind SheetChanged event
+			spread.bind(GC.Spread.Sheets.Events.SheetChanged, function (sender, args) {
+			    console.log("Changed type: " + args.propertyName + " & Sheet Index : " + args.sheetIndex);
+			});
+
+			// Bind SheetChanging event
+			spread.bind(GC.Spread.Sheets.Events.SheetChanging, function (sender, args) {
+			    console.log("Changing type: " + args.propertyName + " & Sheet Index : " + args.sheetIndex);		
+			});			
+// Use Events when Range Changes
+			// Add data
+			for (var col = 1; col < 6; col++) {
+			    for (var row = 2; row < 11; row++) {
+				activeSheet.setValue(row, col, row + col);
+			    }
+			}
+			for (var col = 7; col < 12; col++) {
+			    for (var row = 2; row < 5; row++) {
+				activeSheet.setValue(row, col, row + col);
+			    }
+			}
+			// Add tables
+			activeSheet.tables.add("Table1", 1, 1, 10, 5, GC.Spread.Sheets.Tables.TableThemes.dark1);
+			activeSheet.tables.add("Table2", 1, 7, 4, 5, GC.Spread.Sheets.Tables.TableThemes.dark1);
+
+			// Bind RangeChanged event
+			activeSheet.bind(GC.Spread.Sheets.Events.RangeChanged, function (sender, args) {
+			    if (args.tableNames) {
+				console.log("RangeChanged event fired for Table : " + args.tableNames);
+			    }
+			});
+/* Use Events when clicking a Button */
+			var cellType = new GC.Spread.Sheets.CellTypes.Button();
+			cellType.buttonBackColor("#FFFF00");
+			cellType.text("this is a button");
+			activeSheet.setCellType(20,1,cellType);
+
+			spread.bind(GC.Spread.Sheets.Events.ButtonClicked, function (e, args)
+			{
+			   var sheet = args.sheet, row = args.row, col = args.col;
+			   var cellType = activeSheet.getCellType(row, col);
+			   if (cellType instanceof GC.Spread.Sheets.CellTypes.Button)
+			     {
+				alert("Button Clicked");
+			     }
+			});			
+					
+		};
+	</script>
+	
+</html> 
+
+
+
