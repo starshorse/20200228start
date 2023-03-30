@@ -33,6 +33,17 @@ ORDER BY
     product_name 
 OFFSET 10 ROWS 
 FETCH NEXT 10 ROWS ONLY;
+GO
 /*
 To get the top 10 most expensive products you use both OFFSET and FETCH clauses:
 */
+SELECT
+    product_name,
+    list_price
+FROM
+    "production.products"
+ORDER BY
+    list_price DESC,
+    product_name 
+OFFSET 0 ROWS 
+FETCH FIRST 10 ROWS ONLY;
