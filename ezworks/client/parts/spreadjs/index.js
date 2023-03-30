@@ -33,7 +33,10 @@ angular.module('mySpreadjs',[])
 		ezof_dba_editorService.setUpdate_editLists( $scope.edit_lists_update )
 		spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
 		spreadjs_eventsService.register_sheet1_bind_cellDoubleClick( $scope.spread ) 
-	}
+	}else if( $injector.has('db_administrationService')){
+		var db_administrationService = $injector.get('db_administrationService')
+		db_administrationService.initWorkbook( $scope.spread );
+	}	
 
 }])
 .directive('mySpreadjs', function(){
