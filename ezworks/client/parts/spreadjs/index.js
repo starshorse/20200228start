@@ -1,6 +1,7 @@
 angular.module('mySpreadjs',[])
-.controller('mySpreadjsCtrl',['$scope','$injector',function( $scope, $injector){
+.controller('mySpreadjsCtrl',['$scope','$injector',async function( $scope, $injector){
         var spread_product = $injector.get('gc_spreadjsFactory') 
+	var $http = $injector.get('$http');
 	$scope.spread = spread_product.create_spread( 3 ); 
 	$scope.edit_lists = null 
 	$scope.edit_lists_update = ( edit_lists )=>{
@@ -35,7 +36,10 @@ angular.module('mySpreadjs',[])
 		spreadjs_eventsService.register_sheet1_bind_cellDoubleClick( $scope.spread ) 
 	}else if( $injector.has('db_administrationService')){
 		var db_administrationService = $injector.get('db_administrationService')
-		db_administrationService.initWorkbook( $scope.spread );
+		var spreadjs_eventsService = $injector.get('spreadjs_eventsService') 
+		await db_administrationService.initWorkbook( $scope.spread );
+		spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
+		spreadjs_eventsService.register_sheet0_bind_cellDoubleClick( $scope.spread ) 
 	}	
 
 }])
