@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"></script>
+ 		<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/interop/gc.spread.excelio.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.slicers.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.print.15.2.2.min.js"></script>
+		<link href="../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<input type="file" name="files[]" id="fileDemo" accept=".xlsx"/>
+		    <input type="button" id="loadExcel" value="Import" onclick="ImportFile()"/>
+		    <input type="button" class="btn btn-default" id="saveExcel" value="Export" onclick="ExportFile()"/>
+		<input type="text" id="exportFileName" placeholder="Export file name" class="form-control" value="export.xlsx"/>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		var workbook 
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			workbook = spread;		
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+			// set allowCopyPasteExcelStyle to true
+			spread.options.allowCopyPasteExcelStyle = true;
+			excelIO = new GC.Spread.Excel.IO();
+		};
+		function ImportFile() {
+			var excelFile = document.getElementById("fileDemo").files[0];
+			excelIO.open(excelFile, function (json) {
+			    var workbookObj = json;
+			   workbook.fromJSON(workbookObj);
+			}, function (e) {
+			    console.log(e);
+			});
+		    }
+
+	       function ExportFile() {
+			var fileName = document.getElementById("exportFileName").value;
+			if (fileName.substr(-5, 5) !== '.xlsx') {
+		    		fileName += '.xlsx';
+			}
+			var json = JSON.stringify(workbook.toJSON());
+				excelIO.save(json, function (blob) {
+		    		saveAs(blob, fileName);
+			}, function (e) {
+		    	console.log(e);
+		});
+	    }		
+	</script>
+	
+</html> 
+
+
+

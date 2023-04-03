@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.slicers.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.print.15.2.2.min.js"></script>
+		<link href="../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+			// set allowCopyPasteExcelStyle to true
+			spread.options.allowCopyPasteExcelStyle = true;
+			var manager = spread.commandManager();
+			var commandManager = manager
+// following disable up, down keys. 					
+			var upKey = manager.setShortcutKey(undefined, GC.Spread.Commands.Key.up, false, false, false, false);
+			var downKey = manager.setShortcutKey(undefined, GC.Spread.Commands.Key.down, false, false, false, false);
+// change the default key. 					
+			spread.commandManager().setShortcutKey('navigationPageUp', GC.Spread.Commands.Key.up, false, false, false, false);
+			//Change the default Down arrow key action to "Page Down" for the active cell.
+			spread.commandManager().setShortcutKey('navigationPageDown', GC.Spread.Commands.Key.down, false, false, false, false);
+			sheet.setValue( 1,1,'erjiefklewmrewkrjewrieworjwer');
+// Execute.. 
+			spread.commandManager().execute({cmd: "autoFitColumn", sheetName: "Sheet1", columns: [{col: 1}], rowHeader: false, autoFitType: GC.Spread.Sheets.AutoFitType.cell});		
+// Register 
+			//For example, the following code registers the changeBackColor command and then executes the command.
+			var command = {
+			  canUndo: true,
+			  execute: function (context, options, isUndo) {
+			    var Commands = GC.Spread.Sheets.Commands;
+			    options.cmd = "changeBackColor";
+			    if (isUndo) {
+			      Commands.undoTransaction(context, options);
+			      return true;
+			    } else {
+			      Commands.startTransaction(context, options);
+			      var sheet = context.getSheetFromName(options.sheetName);
+			      var cell = sheet.getCell(options.row, options.col);
+			      cell.backColor(options.backColor);
+			      Commands.endTransaction(context, options);
+			      return true;
+			    }
+			  }
+			};		
+			commandManager.register("changeBackColor", command);
+			commandManager.execute({cmd: "changeBackColor", sheetName: spread.getSheet(0).name(), row: 1, col: 2, backColor: "red"})		
+// custom cmd with key.			
+			spread.commandManager().register('myCmd',
+				function ColorAction() {                    
+				    //Click on a cell and press the Enter key.
+				    activeSheet.getCell(activeSheet.getActiveRowIndex(), activeSheet.getActiveColumnIndex()).backColor("red");
+				}
+			    );
+			//Map the created action to the Enter key.
+			spread.commandManager().setShortcutKey('myCmd', GC.Spread.Commands.Key.enter, false, false, false, false);			
+		};
+	</script>
+	
+</html> 
+
+
+
