@@ -11,6 +11,9 @@ angular.module('spreadjs_events',[])
 	}else if( $injector.has('db_administration_eventsService') ){
 		eventsService = $injector.get('db_administration_eventsService');
 	}	
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//      cellDoubleChick 
+////////////////////////////////////////////////////////////////////////////////////////////////////
 	this.register_sheet0_bind_cellDoubleClick = ( spread, preEvent = null, postEvent = null )=>{
 		let sheet0 = spread.getSheet(0) 
 		sheet0.unbind( spreadjs_product.Events.CellDoubleClick )
@@ -25,6 +28,9 @@ angular.module('spreadjs_events',[])
 			eventsService.sheet1_cellDoubleClick( spread, sender, args ) 
 		})
 	}
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//       buttonClicked 
+////////////////////////////////////////////////////////////////////////////////////////////////////
 	this.register_spread_bind_buttonClicked = ( spread,  preEvent = null , postEvent = null )=>{
 		spread.unbind( spreadjs_product.Events.ButtonClicked ) 
 		spread.bind( spreadjs_product.Events.ButtonClicked, ( sender, args )=>{
@@ -46,11 +52,46 @@ angular.module('spreadjs_events',[])
 			if( postEvent != null ) postEvent() 
 		})
 	}
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//       CellChanged 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+	this.register_sheet0_bind_cellChanged = ( spread, preEvent = null, postEvent = null )=>{
+		let sheet = spread.getSheet(0); 
+		sheet.unbind( spreadjs_product.Events.CellChanged )
+		sheet.bind( spreadjs_product.Events.CellChanged , ( sender, args )=>{
+			eventsService.sheet0_cellChanged( spread , sender, args )
+		})
+	}	
+	this.register_sheet1_bind_cellChanged = ( spread, preEvent = null, postEvent = null )=>{
+		let sheet = spread.getSheet(1); 
+		sheet.unbind( spreadjs_product.Events.CellChanged )
+		sheet.bind( spreadjs_product.Events.CellChanged , ( sender, args )=>{
+			eventsService.sheet1_cellChanged( spread , sender, args )
+		})
+	}	
+	this.register_sheet2_bind_cellChanged = ( spread, preEvent = null, postEvent = null )=>{
+		let sheet = spread.getSheet(2); 
+		let sheet_cellChanged = eventsService.sheet2_cellChanged 
+		sheet.unbind( spreadjs_product.Events.CellChanged )
+		sheet.bind( spreadjs_product.Events.CellChanged , ( sender, args )=>{
+			sheet_cellChanged( spread , sender, args )
+		})
+	}	
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//       selectionChanged 
+////////////////////////////////////////////////////////////////////////////////////////////////////
 	this.register_sheet0_bind_selectionChanged = ( spread, preEvent = null, postEvent = null )=>{
 		let sheet0 = spread.getSheet(0); 
 		sheet0.unbind( spreadjs_product.Events.SelectionChanged )
 		sheet0.bind( spreadjs_product.Events.SelectionChanged , ( sender, args )=>{
 			eventsService.sheet0_selectionChanged( spread , sender, args )
+		})
+	}	
+	this.register_sheet1_bind_selectionChanged = ( spread, preEvent = null, postEvent = null )=>{
+		let sheet1 = spread.getSheet(1); 
+		sheet1.unbind( spreadjs_product.Events.SelectionChanged )
+		sheet1.bind( spreadjs_product.Events.SelectionChanged , ( sender, args )=>{
+			eventsService.sheet1_selectionChanged( spread , sender, args )
 		})
 	}	
 }])

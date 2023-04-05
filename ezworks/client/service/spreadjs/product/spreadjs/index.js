@@ -12,6 +12,7 @@ angular.module('gc_spreadjs',[])
 		Events : {
 			'ButtonClicked' : GC.Spread.Sheets.Events.ButtonClicked ,
 			'CellDoubleClick': GC.Spread.Sheets.Events.CellDoubleClick, 
+			'CellChanged': GC.Spread.Sheets.Events.CellChanged, 
 			'SelectionChanged': GC.Spread.Sheets.Events.SelectionChanged, 
 		}
 	}
