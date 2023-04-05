@@ -5,5 +5,5 @@ SELECT DP1.name AS DatabaseRoleName,
    ON DRM.role_principal_id = DP1.principal_id  
  LEFT OUTER JOIN sys.database_principals AS DP2  
    ON DRM.member_principal_id = DP2.principal_id  
-WHERE DP1.type = 'R'
+WHERE DP1.type = 'R' AND DP2.name = 'james'
 ORDER BY DP1.name;

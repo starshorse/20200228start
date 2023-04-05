@@ -3,7 +3,7 @@ SELECT DISTINCT rp.name,
                 PermissionType = pm.class_desc, 
                 pm.permission_name, 
                 pm.state_desc, 
-                ObjectType = CASE 
+                ObjectType_1 = CASE 
                                WHEN obj.type_desc IS NULL 
                                      OR obj.type_desc = 'SYSTEM_TABLE' THEN 
                                pm.class_desc 
@@ -22,6 +22,7 @@ FROM   sys.database_principals rp
               ON s.schema_id = obj.schema_id
 WHERE  rp.type_desc = 'DATABASE_ROLE' 
        AND pm.class_desc <> 'DATABASE' 
+	   AND obj.type_desc = 'USER_TABLE'
 ORDER  BY rp.name, 
           rp.type_desc, 
           pm.class_desc 
