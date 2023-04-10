@@ -29,10 +29,14 @@ angular.module('mySpreadjs',[])
 	}else if( $injector.has('ezof_dba_editorService')){
 		var ezof_dba_editorService = $injector.get('ezof_dba_editorService')
 		var spreadjs_eventsService = $injector.get('spreadjs_eventsService') 
+	/*	
 		ezof_dba_editorService.initTblView( $scope.spread )
 		ezof_dba_editorService.initTblList( $scope.spread ) 
 		ezof_dba_editorService.setUpdate_editLists( $scope.edit_lists_update )
+	*/	
+		await ezof_dba_editorService.initWorkbook( $scope.spread );
 		spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
+		spreadjs_eventsService.register_sheet0_bind_cellDoubleClick( $scope.spread ) 
 		spreadjs_eventsService.register_sheet1_bind_cellDoubleClick( $scope.spread ) 
 	}else if( $injector.has('db_administrationService')){
 		var db_administrationService = $injector.get('db_administrationService')

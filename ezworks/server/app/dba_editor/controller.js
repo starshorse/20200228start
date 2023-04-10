@@ -2,7 +2,118 @@
 const { readFileSync , writeFileSync,  statSync } = require('fs') 
 const path = require('path') 
 const axios = require('axios') 
+const sql = require('mssql')
+const sqlServer = require('../../config/database/sqlserver')
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//   GET Codes.. 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const sql_exec_get = async ( user_id , passwd , db_name , sql_state )=>{
+	let result = { RESULT : -1 , ERRORMESSAGE:"" , SQL:sql_state , DATABASE:db_name , RAWDATA: null }
+	let config = sqlServer.getConfig( user_id , passwd, db_name ); 
+	try{
+		await sql.connect( config )
+		let result_1 = await sql.query( sql_state )
+		console.log( result_1.recordset) 
+		await sql.close() 
+		result.RESULT = 0 
+		result.RAWDATA = JSON.parse( JSON.stringify( result_1 ))
+		result.DATA = result_1.recordset
+	        return  result
+	}catch(err){
+		await sql.close() 
+		console.log(err) 
+		result.ERRORMESSAGE = err.originalError.message ;
+		result.RAWDATA = JSON.parse( JSON.stringify( err ))
+	        return  result
+	}
+}
+exports.get_organizations_list = async( req, res )=>{ 
+	const db_name = 'config'
+	const sql_state = `	
+	SELECT
+	      orgName AS organization  
+	FROM TB_Organization
+	ORDER BY seq DESC;
+	`
+        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
 
+}
+exports.get_organization = async( req, res )=>{
+	const db_name = 'config'
+	let org_name = req.params.id 
+	const sql_state = `
+	SELECT 
+		*
+	FROM TB_Organization
+	WHERE orgName = '${org_name}'
+	`
+        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
+exports.get_authOrg = async( req, res )=>{
+	const db_name = 'config'
+	let org_name = req.params.id 
+	const sql_state = `
+	SELECT 
+	 Auth.authKey , Auth.orgAuthSecret , Auth.orgAuthSecretExpiredDateTime, Auth.remark      
+	FROM TB_Organization AS Org INNER JOIN TB_Auth_Organization AS Auth ON Org.seq = Auth.orgSeq 
+	WHERE Org.orgName = '${org_name}'
+	`
+        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//   Post Codes.. 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const sql_exec_post = async ( user_id , passwd , db_name , sql_state )=>{
+	let result = { RESULT : -1 , ERRORMESSAGE:"" , SQL:sql_state , DATABASE:db_name , RAWDATA: null }
+	let config = sqlServer.getConfig( user_id , passwd, db_name ); 
+	try{
+		await sql.connect( config )
+		let result_1 = await sql.query( sql_state )
+		console.log( result.recordset) 
+		await sql.close() 
+		result.RESULT = 0 
+		result.RAWDATA = JSON.parse( JSON.stringify( result_1 ))
+	        return  result
+	}catch(err){
+		await sql.close() 
+		console.log(err) 
+		result.ERRORMESSAGE = err.originalError.message ;
+		result.RAWDATA = JSON.parse( JSON.stringify( err ))
+	        return  result
+	}
+}
+exports.add_organization = async( req, res )=>{
+	const db_name = 'config'
+	let data = req.body 
+	let data_fields = Object.keys( data ).join(',') , data_values = ( Object.values( data ).map( (e)=>"'"+e+"'" )).join(',');
+	const sql_state = `
+	INSERT INTO TB_Organization ( ${ data_fields } ) VALUES ( ${ data_values } ) 
+	`
+        let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
+exports.update_organization = async( req, res )=>{
+	const db_name = 'config'
+	let org_name = req.params.id 
+	let data = req.body 
+	let dataSet = []
+	for( const [ key , value ] of Object.entries( data )){
+		let data_e = `${key} = '${value}'`
+		dataSet.push( data_e );
+	}
+	let sqlSet = dataSet.join(',') 
+	const sql_state = `
+	UPDATE  TB_Organization SET  ${ sqlSet } WHERE orgName = '${ org_name }' 
+	`
+        let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//   old Codes.. 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 exports.index = async function( req, res){
 	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
 	let user_db = req.params.db 

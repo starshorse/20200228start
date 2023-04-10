@@ -1,6 +1,31 @@
 angular.module('ezof_dba_editorService',[])
 .factory('ezof_dba_editorFactory', ['$injector',function($injector){
 	var ezof_dba_editorFactory = {
+		pos:{ organization : {
+				curOrganization: 'F5:F5',
+			        addOrg: 'C8:C8',
+			        curOrg_info: 'G11:G16',
+			        org_info:'F3:H21',
+				btn_org_info_update:'H20:H20',
+			        btn_key_info :'H6:H6',
+				pos_org_info: { mainDB: 'G11:G11' , orgName: 'G12:G12' , orgCommonName: 'G13:G13' , orgFullName : 'G14:G14' , orgType: 'G15:G15', orgBRN: 'G16:G16' }, 
+			        curOrg_auth_info: 'K11:K13',
+				org_auth_info: 'J3:L21'
+
+			} ,
+			users:{
+				curOrganization: 'G5:G5',
+			        addUser: 'C8:C8',
+			        curUser: 'F5:F5',
+			        curMLK: 'I5:I5',
+				curMLK_info: 'J11:J13'
+			}
+		      },	
+		sheet_organization_table:{ name: 'Table1', tbl_view: null , data:[]},
+		sheet_users_table_users :{ name: 'Table2', tbl_view: null , data:[]},
+		sheet_users_table_userMLKs :{ name: 'Table3', tbl_view: null , data:[]},
+		binding_data: { cur_organization : null , cur_user: null, cur_MLK : null },
+// old parts.		
 		spread: null ,
 		tblView_tbl : { tbl_pos: null ,  tbl_view : null , tbl_columns: null , tbl_data_1 : null } ,
 		tblName_list : { tbl_pos: null ,  tbl_view : null , tbl_columns: null , tbl_data_1 : null } ,
@@ -19,6 +44,159 @@ angular.module('ezof_dba_editorService',[])
 .service('ezof_dba_editorService', ['$injector',function($injector){
 	var ezof_dba_editorFactory = $injector.get('ezof_dba_editorFactory') 
 	var $http = $injector.get('$http') 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//    Workbook init 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+	this.initWorkbook = async ( spread )=>{
+		let initDesign = await $http.get('/app/ezof_dba_editor/ezof_dba_editor.ssjson')
+		spread.fromJSON( initDesign.data ); 
+		this.sheet_users_invalidate( spread ) ;
+		this.sheet_organization_init( spread ); 
+	}
+	this.sheet_users_invalidate = ( spread, yes = 1 )=>{
+		if( yes ){
+			spread.getSheetFromName('Users').visible( false );
+		}else{
+			spread.getSheetFromName('Users').visible( true );
+		}			
+	}
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+//     Organization Sheet 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+	this.sheet_organization_init = async ( spread )=>{
+                let sheet = spread.getSheetFromName('Organization') ;
+		sheet.setColumnCount( 200 );
+		sheet.options.isProtected = false ;
+		let table = sheet.tables.findByName( ezof_dba_editorFactory.sheet_organization_table.name ) 		
+		ezof_dba_editorFactory.sheet_organization_table.tbl_view = table; 
+
+		this.sheet_organization_list_update( spread ); 
+		let binding_data = new GC.Spread.Sheets.Bindings.CellBindingSource( ezof_dba_editorFactory.binding_data ); 
+		let cell_curOrganization = sheet.getRange( ezof_dba_editorFactory.pos.organization.curOrganization ) 
+		sheet.setBindingPath( cell_curOrganization.row, cell_curOrganization.col , "cur_organization")
+		sheet.setDataSource( binding_data );
+
+		sheet.getRange( ezof_dba_editorFactory.pos.organization.addOrg ).locked( false );
+		sheet.getRange( ezof_dba_editorFactory.pos.organization.curOrg_info ).locked( false ); 
+		sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_info.orgName ).backColor('#bbb3d1').locked( true ); 
+                sheet.options.isProtected = true ;
+//		await this.sheet_userRoles_init( spread ); 
+	}
+	this.sheet_organization_list_update = async ( spread )=>{
+                let sheet = spread.getSheetFromName('Organization') ;
+		this.sheet_organization_part_orgInfo_invalidate( spread );
+		let organization_list = await  $http.get('/dba_editor/organizations_list');
+		if( organization_list.data.RESULT == -1 ){
+			alert( organization_list.data.ERRORMESSAGE )
+			return ;
+		}
+		ezof_dba_editorFactory.sheet_organization_table.data = organization_list.data.DATA 
+		let table = ezof_dba_editorFactory.sheet_organization_table.tbl_view; 
+		table.autoGenerateColumns( false )
+		let tableColumn1 = new GC.Spread.Sheets.Tables.TableColumn(); 
+		tableColumn1.name('Organization');
+		tableColumn1.dataField('organization');
+		table.bind( [tableColumn1] , 'data' , ezof_dba_editorFactory.sheet_organization_table ) 
+	}
+	this.sheet_organization_addOrg = async ( spread , nw_orgId )=>{
+		if( nw_orgId == null || nw_orgId == ''){
+			alert(" orgName can't null or '' ");
+			return ; 
+		}
+		let nw_e = { mainDB: 'TBD' , orgName: nw_orgId , orgCommonName: 'TBD' , orgFullName : 'TBD' , orgType: '법인', orgBRN: 'TBD' } 
+	        let result = await  $http({ method:'POST',
+					    url: '/dba_editor/organization',
+					    data: nw_e 
+					});
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return ;
+		}
+		this.sheet_organization_list_update( spread )	
+		this.sheet_organization_organizationSelected( spread, nw_orgId );
+	}
+	this.sheet_organization_organizationSelected = async ( spread, organization_id )=>{
+                ezof_dba_editorFactory.binding_data.cur_organization = organization_id; 
+		await this.sheet_organization_part_orgInfo_update( spread ); 
+//		spread.setActiveSheet('UserRoles');
+	}
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+//     Organization Sheet -  orgInfo part 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+	this.sheet_organization_part_orgInfo_update = async ( spread )=>{
+		let sheet = spread.getSheetFromName('Organization');
+                let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization; 
+		let result = await $http.get(`/dba_editor/organizations_list/${ organization_id }`) 
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return 
+		}
+		for( const [ key, value ] of Object.entries( result.data.DATA[0] )){
+			sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_info[key] ).text( value );
+		}
+		this.sheet_organization_part_orgInfo_invalidate( spread , 0 );
+	}
+	this.sheet_organization_part_orgInfo_DB_update = async ( spread )=>{
+		let sheet = spread.getSheetFromName('Organization');
+                let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization; 
+		let update_e = { mainDB: sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_info.mainDB).text() , 
+				 orgCommonName: sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_info.orgCommonName).text() , 
+			         orgFullName : sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_info.orgFullName).text() , 
+			         orgType:  sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_info.orgType).text() , 
+			         orgBRN:  sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_info.orgBRN).text() , 
+		               } 
+	        let result = await  $http({ method:'POST',
+					    url: `/dba_editor/organization/${ organization_id }`,
+					    data: update_e  
+					});
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return ;
+		}
+		alert("DB Update Done!"); 
+
+	}
+	const setColumnVisible =  ( sheet , yes , cells_area )=>{
+		if( yes ){
+			for( i = cells_area.col ; i < cells_area.col + cells_area.colCount ; i++ ){
+				sheet.setColumnVisible( i, false );
+			}
+		}else{
+			for( i = cells_area.col ; i < cells_area.col + cells_area.colCount ; i++ ){
+				sheet.setColumnVisible( i, true );
+			}
+		}	
+	}
+	this.sheet_organization_part_orgInfo_invalidate = ( spread , yes=1 )=>{
+                let sheet = spread.getSheetFromName('Organization') ;
+		let cell_orgInfo = sheet.getRange( ezof_dba_editorFactory.pos.organization.org_info )
+		setColumnVisible( sheet, yes, cell_orgInfo ) 
+		if( yes )
+			this.sheet_organization_part_orgMLKInfo_invalidate( spread); 
+	}
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+//     Organization Sheet -  orgInfo part -orgMLK part. 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+	this.sheet_organization_part_orgMLKInfo_update = async ( spread )=>{
+                let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization; 
+		let result = await $http.get(`/dba_editor/authOrgs_list/${ organization_id }`) 
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return 
+		}
+		let yesNo = false ; 
+		if( result.data.DATA.length == 0)
+			yesno = confirm(" Organization Key not Exist, do you want to create one ?");
+	
+	}	
+	this.sheet_organization_part_orgMLKInfo_invalidate = ( spread , yes=1 )=>{
+                let sheet = spread.getSheetFromName('Organization') ;
+		let cell_orgAuthInfo = sheet.getRange( ezof_dba_editorFactory.pos.organization.org_auth_info )
+		setColumnVisible( sheet, yes, cell_orgAuthInfo ) 
+	}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//    API server interface..
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         this.allowConfig = async( spread, pr_name )=>{
 	       let pr_name2api = pr_name	
 	       let result  = await $http({ method:'GET', url: `/dba_editor/${ ezof_dba_editorFactory.cur_db }/${ ezof_dba_editorFactory.tbl_name}/${ pr_name }`})		
@@ -128,41 +306,13 @@ angular.module('ezof_dba_editorService',[])
 	this.updateData_1 = async( spread )=>{
 		let sheet0 = spread.getSheet(0) 
 	        let tbl_data  = await $http({ method:'GET', url: `/dba_editor/${ ezof_dba_editorFactory.cur_db }/sql`})		
-	/*	
-		let tbl_columns =  await $http.get('/data/admin_1_schema.json')
-		let tbl_data    =  await $http.get('/data/admin_1_data.json')
-
-		tbl_columns = ezof_dba_editorFactory.tblView_tbl.tbl_columns = tbl_columns.data 
-		let nameOnly = []
-		tbl_columns = tbl_columns.reduce(( acc, cur )=>{
-			let tableColumn = new GC.Spread.Sheets.Tables.TableColumn() 
-			nameOnly.push( cur.Field ) 
-			tableColumn.dataField( cur.Field )
-			tableColumn.name( cur.Field )
-			tableColumn.formatter( cur.Formatter ) 
-			acc.push(tableColumn) 
-			return acc
-		},[])
-
-	*/	
 		ezof_dba_editorFactory.tblView_tbl.tbl_data_1 =  tbl_data.data.DATA 
 		let tbl_info = ezof_dba_editorFactory.tblView_tbl 
 		let table1 = ezof_dba_editorFactory.tblView_tbl.tbl_view 
 		let tbl_pos = ezof_dba_editorFactory.tblView_tbl.tbl_pos 
-	/*	
-		table1.autoGenerateColumns( false ) 
-	        sheet0.tables.resize( table1, new GC.Spread.Sheets.Range( tbl_pos.row, tbl_pos.col, tbl_info.tbl_data_1.length , tbl_columns.length ))  	
-	*/	
 	        sheet0.tables.resize( table1, new GC.Spread.Sheets.Range( tbl_pos.row, tbl_pos.col, tbl_info.tbl_data_1.length , 10 ))
 		table1.bind( null , 'tbl_data_1', tbl_info ) 
 		
-	/*	
-		let sql_pos = ezof_dba_editorFactory.sql_state.pos 	
-		let tbl_name = ezof_dba_editorFactory.tbl_name
-		let field_list = nameOnly.join(',') 
-		let state = `select ${ field_list } from ${tbl_name}` 
-		sheet0.getCell( sql_pos.row, sql_pos.col).value( state ).wordWrap(true)  
-	*/	
                 let cell_columns = sheet0.getRange('B1:K1') 
 		for( var i = 0 ; i < cell_columns.colCount ;i++ ){
 			sheet0.autoFitColumn( cell_columns.col + i ) 	
@@ -179,33 +329,6 @@ angular.module('ezof_dba_editorService',[])
 	      sheet0.setDefaultStyle( defaultStyle ) 
 	      sheet0.resumePaint() 
 	      sheet0.frozenRowCount(17) 
-/*		
-	      let cell_massCheck = sheet0.getRange('C7') 
-	      sheet0.setRowHeight( cell_massCheck.row-1, 40 ) 	
-	      sheet0.setRowHeight( cell_massCheck.row, 40 ) 	
-	      sheet0.setValue( cell_massCheck.row-1 , cell_massCheck.col -1 , 'sql조건' ) 
-	      sheet0.setValue( cell_massCheck.row , cell_massCheck.col -1 , '대량삽입' ) 
-	      let cell_c1 = new GC.Spread.Sheets.CellTypes.CheckBox() 
-	      sheet0.clear( cell_massCheck, cell_massCheck.col, 1,1, GC.Spread.Sheets.SheetArea.viewport, GC.Spread.Sheets.StorageType.style ) 
-	      sheet0.setCellType( cell_massCheck.row, cell_massCheck.col, cell_c1 ) 	
-	      sheet0.setCellType( cell_massCheck.row-1, cell_massCheck.col, cell_c1 ) 	
-		
-	      sheet0.setValue( cell_massCheck.row-1 , cell_massCheck.col +3 , '현재테이블' ) 
-	      let cell_bt1 = new GC.Spread.Sheets.CellTypes.Button() 
-	      cell_bt1.text('실행')
-	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +1 , cell_bt1 ) 
-	      sheet0.setCellType( cell_massCheck.row-1 , cell_massCheck.col +1 , cell_bt1 ) 
-	      let cell_bt2 = new GC.Spread.Sheets.CellTypes.Button() 
-	      cell_bt2.text('잠금해제')
-	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +4 , cell_bt2 ) 
-	      let cell_bt3 = new GC.Spread.Sheets.CellTypes.Button() 
-	      cell_bt3.text('업데이트')
-	      sheet0.setCellType( cell_massCheck.row , cell_massCheck.col +5 , cell_bt3 ) 
-
-	      sheet0.addSpan( cell_massCheck.row - 3 , cell_massCheck.col +6 , 4, 4 )			
-	      sheet0.addSpan( cell_massCheck.row - 3 , cell_massCheck.col +10 , 4, 4 )			
-	      ezof_dba_editorFactory.sql_state.pos = sheet0.getRange('I4')	
-*/
 
 	      let cell_tblData = sheet0.getRange('B17') 	
 	      let table1 = ezof_dba_editorFactory.tblView_tbl.tbl_view = sheet0.tables.add('tableView', cell_tblData.row , cell_tblData.col, 120, 20 );
@@ -273,6 +396,20 @@ angular.module('ezof_dba_editorService',[])
 .service('ezof_dba_editor_eventsService', ['$injector', function($injector){
 	var ezof_dba_editorService = $injector.get('ezof_dba_editorService') 
 	var ezof_dba_editorFactory = $injector.get('ezof_dba_editorFactory') 
+	this.sheet0_cellDoubleClick =( spread, sender, args )=>{
+		// check login list .. 
+		let table = ezof_dba_editorFactory.sheet_organization_table.tbl_view 
+		let data = ezof_dba_editorFactory.sheet_organization_table.data 
+		let drange = table.dataRange();
+
+		switch( args.col ){
+			case drange.col:
+				if( args.row >= drange.row &&  args.row < ( drange.row + data.length ))
+					ezof_dba_editorService.sheet_organization_organizationSelected( spread, spread.getSheet(0).getValue( args.row, args.col )); 
+				break;
+			default:
+		}
+	}
 	this.sheet1_cellDoubleClick = ( spread, sender, args )=>{
 		let sheet1 = spread.getSheet(1) 
 		let cell_savedConfig = sheet1.getRange('N4:N4') 
@@ -282,6 +419,28 @@ angular.module('ezof_dba_editorService',[])
 			ezof_dba_editorService.updateConfig( spread,  updateConfig )  
 		}else if( args.col == cell_tblName_list.col && args.row > 1 && args.row < ( cell_tblName_list.row + ezof_dba_editorFactory.tblName_list.tbl_data_1.length )){
 			ezof_dba_editorService.updateTblPr_config( spread, sheet1.getValue( args.row, args.col ))
+		}	
+	}
+	this.spread_buttonClicked = ( spread, sender ,args )=>{
+		let sheetName  = args.sheet.name()
+		switch( sheetName ){
+			case 'Organization':
+				let cell_addOrg = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.addOrg ) 
+				let btn_org_info_update = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.btn_org_info_update ) 
+				let btn_key_info = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.btn_key_info ) 
+				switch( args.col ){
+					case (cell_addOrg.col + 1):
+						ezof_dba_editorService.sheet_organization_addOrg( spread , args.sheet.getValue( cell_addOrg.row, cell_addOrg.col )) 
+						break;
+					case btn_org_info_update.col:
+						if( args.row == btn_org_info_update.row )
+							ezof_dba_editorService.sheet_organization_part_orgInfo_DB_update( spread );
+						else if( args.row == btn_key_info.row )
+							ezof_dba_editorService.sheet_organization_part_orgMLKInfo_update( spread );
+						break;
+					default:	
+				}
+				break;
 		}	
 	}
 	this.sheet1_buttonClicked = ( spread, sender, args )=>{
