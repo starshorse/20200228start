@@ -10,7 +10,8 @@ angular.module('ezof_dba_editorService',[])
 			        btn_key_info :'H6:H6',
 				pos_org_info: { mainDB: 'G11:G11' , orgName: 'G12:G12' , orgCommonName: 'G13:G13' , orgFullName : 'G14:G14' , orgType: 'G15:G15', orgBRN: 'G16:G16' }, 
 			        curOrg_auth_info: 'K11:K13',
-				org_auth_info: 'J3:L21'
+				org_auth_info: 'J3:L21',
+				pos_org_auth_info:{ authKey: 'K11:K11', orgAuthSecret: 'K12:K12' , remark:'K13:K13' },
 
 			} ,
 			users:{
@@ -178,6 +179,7 @@ angular.module('ezof_dba_editorService',[])
 //     Organization Sheet -  orgInfo part -orgMLK part. 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	this.sheet_organization_part_orgMLKInfo_update = async ( spread )=>{
+		let sheet = spread.getSheetFromName('Organization');
                 let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization; 
 		let result = await $http.get(`/dba_editor/authOrgs_list/${ organization_id }`) 
 		if( result.data.RESULT == -1 ){
@@ -185,9 +187,25 @@ angular.module('ezof_dba_editorService',[])
 			return 
 		}
 		let yesNo = false ; 
-		if( result.data.DATA.length == 0)
+		if( result.data.DATA.length == 0){
 			yesno = confirm(" Organization Key not Exist, do you want to create one ?");
-	
+			if( yesno == false ) return ; 
+			let  data = { company: organization_id , id: organization_id, type: 'Organization' }
+			let result = await $http({ method: 'POST' , url: '/mlk_auth/sign_key', data })
+			console.log( result.data ) 
+			data = { org_name : organization_id , mlk_value : result.data.MLK_VALUE } 
+			result = await $http({ method:'POST' , url:'/dba_editor/authOrg', data }) 
+			if( result.data.RESULT == -1 ){
+				alert( result.data.ERRORMESSAGE );
+				return 
+			}
+			confirm("machine Key  generate done!, go check?"); 
+		        result = await $http.get(`/dba_editor/authOrgs_list/${ organization_id }`) 
+		}
+		for( const [ key, value ] of Object.entries( result.data.DATA[0] )){
+			sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_auth_info[key] ).text( value ).wordWrap(true);
+		}
+		this.sheet_organization_part_orgMLKInfo_invalidate( spread, 0 ); 
 	}	
 	this.sheet_organization_part_orgMLKInfo_invalidate = ( spread , yes=1 )=>{
                 let sheet = spread.getSheetFromName('Organization') ;
