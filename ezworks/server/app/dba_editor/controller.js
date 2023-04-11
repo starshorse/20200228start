@@ -63,6 +63,17 @@ exports.get_authOrg = async( req, res )=>{
         let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
 	return res.status(200).json(result) 
 }
+exports.get_users_list = async( req, res )=>{
+	const db_name = 'config'
+	let org_name = req.params.id 
+	const sql_state = `
+	SELECT  defaultDB , dbLoginID AS user
+	from TB_User a INNER JOIN TB_Organization b on a.orgSeq = b.seq 
+	where orgName = '${ org_name }'
+	`
+        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   Post Codes.. 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -122,6 +133,29 @@ exports.add_authOrg = async( req, res )=>{
 	from TB_Organization
 	where orgName = '${ org_name }'
 	`	
+        let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
+exports.update_authOrg = async( req, res )=>{
+	const db_name = 'config'
+	let org_name = req.params.id 
+	let authKey = req.body.authKey 
+	let remark = req.body.remark 
+
+	const sql_state = `
+        DECLARE
+	@V_SEQ AS INT
+	SET @V_SEQ = 0 ;
+
+	BEGIN
+	select @V_SEQ  =  orgSeq 
+	from  TB_Auth_Organization a inner join TB_Organization b on a.orgSeq = b.seq 
+	where b.orgName = '${ org_name }'
+
+	IF @V_SEQ <> 0
+	UPDATE TB_Auth_Organization SET authKey = '${ authKey }', remark ='${ remark }' WHERE orgSeq = @V_SEQ 
+	END;
+	`
         let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
 	return res.status(200).json(result) 
 }

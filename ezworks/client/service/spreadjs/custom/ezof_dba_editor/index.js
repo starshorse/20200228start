@@ -6,20 +6,25 @@ angular.module('ezof_dba_editorService',[])
 			        addOrg: 'C8:C8',
 			        curOrg_info: 'G11:G16',
 			        org_info:'F3:H21',
+				btn_org_members:'H5:H5',
 				btn_org_info_update:'H20:H20',
 			        btn_key_info :'H6:H6',
 				pos_org_info: { mainDB: 'G11:G11' , orgName: 'G12:G12' , orgCommonName: 'G13:G13' , orgFullName : 'G14:G14' , orgType: 'G15:G15', orgBRN: 'G16:G16' }, 
 			        curOrg_auth_info: 'K11:K13',
 				org_auth_info: 'J3:L21',
+				btn_org_auth_info_update:'L20:L20',
 				pos_org_auth_info:{ authKey: 'K11:K11', orgAuthSecret: 'K12:K12' , remark:'K13:K13' },
 
 			} ,
 			users:{
-				curOrganization: 'G5:G5',
+				curOrganization: 'C5:C5',
 			        addUser: 'C8:C8',
 			        curUser: 'F5:F5',
 			        curMLK: 'I5:I5',
-				curMLK_info: 'J11:J13'
+				mlk_list_info:'F4:G110',
+				curMLK:'J11:J13',
+				pos_curMLK_info:{ machAuthSecret: 'J11:J11', machAuthIdentifier: 'J12:J12', machInfo:'J13:J13' },
+				curMLK_info:'J3:K17'
 			}
 		      },	
 		sheet_organization_table:{ name: 'Table1', tbl_view: null , data:[]},
@@ -52,13 +57,15 @@ angular.module('ezof_dba_editorService',[])
 		let initDesign = await $http.get('/app/ezof_dba_editor/ezof_dba_editor.ssjson')
 		spread.fromJSON( initDesign.data ); 
 		this.sheet_users_invalidate( spread ) ;
-		this.sheet_organization_init( spread ); 
+		await this.sheet_organization_init( spread ); 
+	        await this.sheet_users_init( spread ); 
 	}
 	this.sheet_users_invalidate = ( spread, yes = 1 )=>{
 		if( yes ){
 			spread.getSheetFromName('Users').visible( false );
 		}else{
 			spread.getSheetFromName('Users').visible( true );
+			spread.setActiveSheet('Users')
 		}			
 	}
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -71,7 +78,6 @@ angular.module('ezof_dba_editorService',[])
 		let table = sheet.tables.findByName( ezof_dba_editorFactory.sheet_organization_table.name ) 		
 		ezof_dba_editorFactory.sheet_organization_table.tbl_view = table; 
 
-		this.sheet_organization_list_update( spread ); 
 		let binding_data = new GC.Spread.Sheets.Bindings.CellBindingSource( ezof_dba_editorFactory.binding_data ); 
 		let cell_curOrganization = sheet.getRange( ezof_dba_editorFactory.pos.organization.curOrganization ) 
 		sheet.setBindingPath( cell_curOrganization.row, cell_curOrganization.col , "cur_organization")
@@ -80,7 +86,11 @@ angular.module('ezof_dba_editorService',[])
 		sheet.getRange( ezof_dba_editorFactory.pos.organization.addOrg ).locked( false );
 		sheet.getRange( ezof_dba_editorFactory.pos.organization.curOrg_info ).locked( false ); 
 		sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_info.orgName ).backColor('#bbb3d1').locked( true ); 
+		sheet.getRange( ezof_dba_editorFactory.pos.organization.org_auth_info ).locked( false ); 
+		sheet.getRange( ezof_dba_editorFactory.pos.organization.curOrg_auth_info ).locked( false ); 
+		sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_auth_info.orgAuthSecret ).backColor('#bbb3d1').locked( true ); 
                 sheet.options.isProtected = true ;
+	        await this.sheet_organization_list_update( spread ); 
 //		await this.sheet_userRoles_init( spread ); 
 	}
 	this.sheet_organization_list_update = async ( spread )=>{
@@ -135,6 +145,8 @@ angular.module('ezof_dba_editorService',[])
 		for( const [ key, value ] of Object.entries( result.data.DATA[0] )){
 			sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_info[key] ).text( value );
 		}
+		this.sheet_organization_part_orgMLKInfo_invalidate( spread ); // Hide machine Key info Section.
+		this.sheet_users_invalidate( spread );                        // Hide users sheet.
 		this.sheet_organization_part_orgInfo_invalidate( spread , 0 );
 	}
 	this.sheet_organization_part_orgInfo_DB_update = async ( spread )=>{
@@ -207,10 +219,75 @@ angular.module('ezof_dba_editorService',[])
 		}
 		this.sheet_organization_part_orgMLKInfo_invalidate( spread, 0 ); 
 	}	
+	this.sheet_organization_part_orgMLKInfo_DB_update = async ( spread )=>{
+		let sheet = spread.getSheetFromName('Organization');
+                let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization; 
+		let update_e = { authKey : sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_auth_info.authKey ).text() , 
+			         remark :  sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_auth_info.remark ).text() , 
+		               } 
+	        let result = await  $http({ method:'POST',
+					    url: `/dba_editor/authOrg/${ organization_id }`,
+					    data: update_e  
+					});
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return ;
+		}
+		alert("DB Update Done!"); 
+
+	}
 	this.sheet_organization_part_orgMLKInfo_invalidate = ( spread , yes=1 )=>{
                 let sheet = spread.getSheetFromName('Organization') ;
 		let cell_orgAuthInfo = sheet.getRange( ezof_dba_editorFactory.pos.organization.org_auth_info )
 		setColumnVisible( sheet, yes, cell_orgAuthInfo ) 
+	}
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+//     Users Sheet 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+	this.sheet_users_init = async ( spread )=>{
+                let sheet = spread.getSheetFromName('Users') ;
+		sheet.setColumnCount( 200 );
+		sheet.options.isProtected = false ;
+		let table = sheet.tables.findByName( ezof_dba_editorFactory.sheet_users_table_users.name ) 		
+		ezof_dba_editorFactory.sheet_users_table_users.tbl_view = table; 
+
+//		this.sheet_organization_list_update( spread ); 
+		let binding_data = new GC.Spread.Sheets.Bindings.CellBindingSource( ezof_dba_editorFactory.binding_data ); 
+		let cell_curOrganization = sheet.getRange( ezof_dba_editorFactory.pos.users.curOrganization ) 
+		sheet.setBindingPath( cell_curOrganization.row, cell_curOrganization.col , "cur_organization")
+		sheet.setDataSource( binding_data );
+
+		sheet.getRange( ezof_dba_editorFactory.pos.users.addUser ).locked( false );
+		sheet.getRange( ezof_dba_editorFactory.pos.users.curMLK_info ).locked( false ); 
+		sheet.getRange( ezof_dba_editorFactory.pos.users.pos_curMLK_info.machAuthSecret ).backColor('#bbb3d1').locked( true ); 
+		sheet.getRange( ezof_dba_editorFactory.pos.users.pos_curMLK_info.machAuthIdentifier ).backColor('#bbb3d1').locked( true ); 
+                sheet.options.isProtected = true ;
+	}
+	this.sheet_users_update = ( spread )=>{
+		this.sheet_users_list_update( spread );
+		this.sheet_users_invalidate( spread , 0 ); // active
+	}
+	this.sheet_users_list_update = async ( spread )=>{
+                let sheet = spread.getSheetFromName('Users') ;
+		this.sheet_users_part_MLKList_invalidate( spread );
+                let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization ;
+		let users_list = await  $http.get(`/dba_editor/users_list/${ organization_id }`);
+		if( users_list.data.RESULT == -1 ){
+			alert( users_list.data.ERRORMESSAGE )
+			return ;
+		}
+		ezof_dba_editorFactory.sheet_users_table_users.data = users_list.data.DATA 
+		let table = ezof_dba_editorFactory.sheet_users_table_users.tbl_view; 
+		table.autoGenerateColumns( false )
+		let tableColumn1 = new GC.Spread.Sheets.Tables.TableColumn(); 
+		tableColumn1.name('Users');
+		tableColumn1.dataField('user');
+		table.bind( [tableColumn1] , 'data' , ezof_dba_editorFactory.sheet_users_table_users ) 
+	}
+	this.sheet_users_part_MLKList_invalidate = ( spread , yes=1 )=>{
+                let sheet = spread.getSheetFromName('Users') ;
+		let cell_mlkList = sheet.getRange( ezof_dba_editorFactory.pos.organization.user_mlk_list )
+		setColumnVisible( sheet, yes, cell_mlkList ) 
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //    API server interface..
@@ -445,7 +522,9 @@ angular.module('ezof_dba_editorService',[])
 			case 'Organization':
 				let cell_addOrg = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.addOrg ) 
 				let btn_org_info_update = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.btn_org_info_update ) 
+				let btn_org_auth_info_update = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.btn_org_auth_info_update ) 
 				let btn_key_info = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.btn_key_info ) 
+				let btn_org_members = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.btn_org_members ) 
 				switch( args.col ){
 					case (cell_addOrg.col + 1):
 						ezof_dba_editorService.sheet_organization_addOrg( spread , args.sheet.getValue( cell_addOrg.row, cell_addOrg.col )) 
@@ -455,6 +534,12 @@ angular.module('ezof_dba_editorService',[])
 							ezof_dba_editorService.sheet_organization_part_orgInfo_DB_update( spread );
 						else if( args.row == btn_key_info.row )
 							ezof_dba_editorService.sheet_organization_part_orgMLKInfo_update( spread );
+						else if( args.row == btn_org_members.row )
+							ezof_dba_editorService.sheet_users_update( spread ); 
+						break;
+					case btn_org_auth_info_update.col:
+						if( args.row == btn_org_auth_info_update.row )
+							ezof_dba_editorService.sheet_organization_part_orgMLKInfo_DB_update( spread );
 						break;
 					default:	
 				}
