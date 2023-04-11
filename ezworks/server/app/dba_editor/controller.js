@@ -111,6 +111,20 @@ exports.update_organization = async( req, res )=>{
         let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
 	return res.status(200).json(result) 
 }
+exports.add_authOrg = async( req, res )=>{
+	const db_name = 'config'
+	let org_name = req.body.org_name 
+	let MLK_KEY  = req.body.mlk_value 
+
+	const sql_state = `
+	INSERT INTO TB_Auth_Organization( orgSeq, authKey , orgAuthSecret , orgAuthSecretExpiredDateTime  )
+	select seq  , 'TBD', '${ MLK_KEY }' , '2024-12-31'
+	from TB_Organization
+	where orgName = '${ org_name }'
+	`	
+        let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   old Codes.. 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
