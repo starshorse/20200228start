@@ -67,7 +67,7 @@ exports.get_users_list = async( req, res )=>{
 	const db_name = 'config'
 	let org_name = req.params.id 
 	const sql_state = `
-	SELECT  defaultDB , dbLoginID AS user
+	SELECT  defaultDB , dbLoginID AS 'user'
 	from TB_User a INNER JOIN TB_Organization b on a.orgSeq = b.seq 
 	where orgName = '${ org_name }'
 	`
@@ -129,9 +129,9 @@ exports.add_authOrg = async( req, res )=>{
 
 	const sql_state = `
 	INSERT INTO TB_Auth_Organization( orgSeq, authKey , orgAuthSecret , orgAuthSecretExpiredDateTime  )
-	select seq  , 'TBD', '${ MLK_KEY }' , '2024-12-31'
-	from TB_Organization
-	where orgName = '${ org_name }'
+	SELECT seq  , 'TBD', '${ MLK_KEY }' , '2024-12-31'
+	FROM TB_Organization
+	WHERE orgName = '${ org_name }'
 	`	
         let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
 	return res.status(200).json(result) 
@@ -158,6 +158,22 @@ exports.update_authOrg = async( req, res )=>{
 	`
         let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
 	return res.status(200).json(result) 
+}
+exports.add_user = async( req, res )=>{
+	const db_name = 'config'
+	const pwd = '!@34qwer' 
+	let org_name = req.body.org_name 
+	let id = req.body.id 
+	const sql_state = `
+		CREATE LOGIN "${ id }" WITH PASSWORD = '${ pwd }' 
+		INSERT INTO TB_User( orgSeq, defaultDB , dbLoginID , dbLoginPWD ) 
+		SELECT seq , mainDB , '${ id }', '${ pwd }'
+		FROM TB_Organization
+		WHERE orgName = '${ org_name }'
+	`
+        let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   old Codes.. 
