@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.slicers.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.print.15.2.2.min.js"></script>
+		<link href="../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		//Add button controls to page
+		<input type="button" id="button1" value="button1"/>
+		<input type="button" id="button2" value="button2"/>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+			// set allowCopyPasteExcelStyle to true
+			spread.options.allowCopyPasteExcelStyle = true;
+			// autoFitColumn Type.. & autoFitRow 
+			sheet.setValue( 0, 3, 'This is Test for autoFit Column commands');
+			sheet.getCell(3,0).wordWrap(true); 
+			sheet.setValue( 3, 0, 'This is Test for autoFit Row commands');
+			var columns = [ { col: 3 } ];
+			spread.options.allowUndo = true;
+			spread.commandManager().execute({cmd: "autoFitColumn", sheetName: "Sheet1", columns: columns, rowHeader: false, autoFitType: GC.Spread.Sheets.AutoFitType.cell});		
+			var rows = [ { row: 3 } ];
+			spread.commandManager().execute({cmd: "autoFitRow", sheetName: "Sheet1", rows: rows, columnHeader: false, autoFitType: GC.Spread.Sheets.AutoFitType.cell});		
+// shortcutKey.
+			// Clear Type
+			spread.commandManager().setShortcutKey('clear', GC.Spread.Commands.Key.tab, false, false, false, false); // Tab key	
+			// moveToNextCell Type. 
+			//This example maps the moveToNextCell action.
+			spread.focus();
+			spread.commandManager().setShortcutKey('moveToNextCell', GC.Spread.Commands.Key.a, false, false, false, false); // a
+			// moveToNextCellThenControl type.
+			//This example maps the moveToNextCellThenControl action.
+			spread.commandManager().setShortcutKey('moveToNextCellThenControl', GC.Spread.Commands.Key.tab, false, false, false, false); // Tab key
+			spread.commandManager().setShortcutKey('moveToPreviousCellThenControl', GC.Spread.Commands.Key.tab, false, true, false, false); // Shift key and Tab key		
+			// navigationEnd type
+			//This example uses the navigationEnd method.
+			spread.commandManager().setShortcutKey('navigationEnd', GC.Spread.Commands.Key.tab,  false, false, false, false); // Tab key
+			/*
+	       			navigationEnd2 type
+	       			Represents the command used to move the active cell to the last column without regard to frozen trailing columns.
+	       		*/
+			//This example uses the navigationEnd2 action.
+			spread.commandManager().setShortcutKey("navigationEnd2", GC.Spread.Commands.Key.a, false, false, false, false);		
+			// navigationHome type 
+			//This example uses the navigationHome action.
+			spread.commandManager().setShortcutKey("navigationHome", GC.Spread.Commands.Key.a, false, false, false, false);
+			/*
+				navigationHome2 type
+				Represents the command used to move the active cell to the first column without regard to frozen columns
+			*/
+			//This example uses the navigationHome2 action.
+	 		spread.commandManager().setShortcutKey("navigationHome2", GC.Spread.Commands.Key.a, false, false, false, false);		
+			// navigationFirst type 
+			//This example uses the navigationFirst action.
+			spread.commandManager().setShortcutKey("navigationFirst", GC.Spread.Commands.Key.a, false, false, false, false);
+			// navigationLast type 
+			//This example uses the navigationLast action.
+			spread.commandManager().setShortcutKey("navigationLast", GC.Spread.Commands.Key.a, false, false, false, false);
+
+			// navigationPageDown type 
+			//This example uses the navigationPageDown action.
+			spread.commandManager().setShortcutKey("navigationPageDown", GC.Spread.Commands.Key.a, false, false, false, false);
+			// navigationPageUp type
+			//This example uses the navigationPageUp action.
+			spread.commandManager().setShortcutKey("navigationPageUp", GC.Spread.Commands.Key.a, false, false, false, false);
+			// navigationNextSheet  previous sheet type 
+			//This example uses the navigationNextSheet action.
+			spread.commandManager().setShortcutKey("navigationNextSheet", GC.Spread.Commands.Key.a, false, false, false, false);
+			spread.commandManager().setShortcutKey("navigationPreviousSheet", GC.Spread.Commands.Key.c, false, false, false, false);		
+			// navigationLefti right type
+			//This example uses the navigationLeft action.
+			spread.commandManager().setShortcutKey("navigationLeft", GC.Spread.Commands.Key.a, false, false, false, false);		
+			//This example uses the navigationRight action.
+			spread.commandManager().setShortcutKey("navigationRight", GC.Spread.Commands.Key.c, false, false, false, false);		
+			//This example maps the navigationBottom action to the Tab key.
+			//This example uses the navigationTop action.
+			spread.commandManager().setShortcutKey("navigationTop", GC.Spread.Commands.Key.tab, false, false, false, false); // Tab key 
+			spread.commandManager().setShortcutKey('navigationBottom', GC.Spread.Commands.Key.tab, false, true, false, false); // Shift key and Tab key
+			///This example maps the navigationUp action to a.
+			spread.commandManager().setShortcutKey('navigationUp', GC.Spread.Commands.Key.a, false, false, false, false); // a/ navigationBottom & navigationDown.. type
+			spread.commandManager().setShortcutKey('navigationDown', GC.Spread.Commands.Key.c, false, false, false, false); // c key
+
+
+			sheet.getRange( 8,5,3,2).text('Hello ClearValues');		
+			// ClearValues type 
+			spread.commandManager().execute({cmd: "clearValues", sheetName: "Sheet1", ranges: [new GC.Spread.Sheets.Range(8, 5, 2, 1)]});
+			
+			//This example uses the clipboardPaste method.
+			activeSheet.setValue(0, 0, 1, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(1, 0, 2, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setFormula(2, 0, "=A1+A2", GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(0, 1, 3, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(1, 1, 4, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setFormula(2, 1, "=B1+B2", GC.Spread.Sheets.SheetArea.viewport);
+			var fromRange = [new GC.Spread.Sheets.Range(0, 0, 3, 2)];
+			var toRanges = [new GC.Spread.Sheets.Range(5, 0, 3, 2)];
+			$("#button1").click(function () {
+			    //Cut Paste Action
+			    spread.commandManager().execute({cmd: "clipboardPaste", sheetName: "Sheet1", fromSheet: activeSheet, fromRanges: fromRange, pastedRanges: toRanges, isCutting: true, clipboardText: "", pasteOption: GC.Spread.Sheets.ClipboardPasteOptions.all});
+			});
+			$("#button2").click(function () {
+			    spread.commandManager().execute({cmd: "clipboardPaste", sheetName: "Sheet1", fromSheet: activeSheet, fromRanges: fromRange, pastedRanges: toRanges, isCutting: false, clipboardText: "", pasteOption: GC.Spread.Sheets.ClipboardPasteOptions.all});
+			});		
+			// copySheet type .. 		
+			//This example copy a sheet.
+			let targetIndex = 2 		
+			spread.commandManager().execute({cmd: "copySheet", sheetName: "Sheet1", targetIndex: targetIndex, newName: "Sheet1 (2)", includeBindingSource: true});		
+			
+			spread.setActiveSheet('Sheet1');		
+
+			// dragDrop type.. 
+			sheet.setValue( 12,11, 'This cell drapDrop from (12,11)')		
+			spread.commandManager().execute({cmd: "dragDrop",  sheetName: "Sheet1", fromRow:12, fromColumn:11, toRow:22, toColumn:12, rowCount:2, columnCount:2, copy: true, insert: false, option: GC.Spread.Sheets.CopyToOptions.value});		
+                        // fill type 
+			sheet.getRange( srange ).text('Source');
+			var srange = new GC.Spread.Sheets.Range(10, 5, 1, 1);
+			var frange = new GC.Spread.Sheets.Range(11, 5, 5, 1);
+			spread.commandManager().execute({cmd: "fill", sheetName: "Sheet1", startRange: srange, fillRange: frange, autoFillType: GC.Spread.Sheets.Fill.AutoFillType.fillSeries, fillDirection: GC.Spread.Sheets.Fill.FillDirection.down });
+                        // moveSheet type.. 
+			spread.commandManager().execute({cmd: "moveSheet", sheetName: "Sheet1", targetIndex: targetIndex});		
+
+
+			
+		};
+	</script>
+	
+</html> 
+
+
+
