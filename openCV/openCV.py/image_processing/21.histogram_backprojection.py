@@ -1,9 +1,15 @@
+
+#히스토그램 역투영(Histogram backprojection)
+# 히스토그램 역투영은 영상의 각 픽셀이 주어진 히스토그램 모델에 얼마나 일치하는지를 검사하는 방법입니다.
+# 임의의 색상 영역을 검출할 때 효과적입니다.
+# YCrCb 색 공간을 이용합니다. (밝기에 상관없이 색을 검출하기 위함입니다.)
+# HSV는 H 값을 이용해서 색상을 표현하기 좋을 때 이용합니다.
 import numpy as np
 import cv2 as cv
-roi = cv.imread('roi.jpg')
+roi = cv.imread('box.png')
 assert roi is not None, "file could not be read, check with os.path.exists()"
 hsv = cv.cvtColor(roi,cv.COLOR_BGR2HSV)
-target = cv.imread('box.png')
+target = cv.imread('roi.jpg')
 assert target is not None, "file could not be read, check with os.path.exists()"
 hsvt = cv.cvtColor(target,cv.COLOR_BGR2HSV)
 # calculating object histogram
