@@ -27,6 +27,8 @@
 		//Add button controls to page
 		<input type="button" id="button1" value="button1"/>
 		<input type="button" id="button2" value="button2"/>
+		<input type="button" id="button3" value="Undo"/>
+		<input type="button" id="button4" value="Redo"/>
 		<div class = "sample-container">
 			<div id="ss" class="spread-container"></div> 
 		</div>
@@ -107,8 +109,54 @@
 			///This example maps the navigationUp action to a.
 			spread.commandManager().setShortcutKey('navigationUp', GC.Spread.Commands.Key.a, false, false, false, false); // a/ navigationBottom & navigationDown.. type
 			spread.commandManager().setShortcutKey('navigationDown', GC.Spread.Commands.Key.c, false, false, false, false); // c key
+			// Selection Bottom type.. 
+			//This example uses the selectionBottom action.
+                        spread.commandManager().setShortcutKey('selectionBottom', GC.Spread.Commands.Key.a, false, false, false, false);
+			//This example uses the selectionDown action.
+			spread.commandManager().setShortcutKey('selectionDown', GC.Spread.Commands.Key.a, false, false, false, false);		
+			// selectionEnd Type 
+			//This example uses the selectionEnd action.
+			spread.focus();
+			spread.commandManager().setShortcutKey('selectionEnd', GC.Spread.Commands.Key.a, false, false, false, false);
+			// selectionFirst type 
+			//This example uses the selectionFirst action.
+			spread.focus();
+			spread.commandManager().setShortcutKey('selectionFirst', GC.Spread.Commands.Key.a, false, false, false, false);
+			// selectionHome type 
+			//This example uses the selectionHome action.
+			spread.focus();
+			spread.commandManager().setShortcutKey('selectionHome', GC.Spread.Commands.Key.a, false, false, false, false);
+			// SelectionLast type 
+			//This example uses the selectionLast action.
+			spread.focus();
+			spread.commandManager().setShortcutKey('selectionLast', GC.Spread.Commands.Key.a, false, false, false, false);		
+			// selectioLeft type 
+			//This example uses the selectionLeft action.
+			spread.commandManager().setShortcutKey('selectionLeft', GC.Spread.Commands.Key.a, false, false, false, false);
+			// selectionPageDown type 
+			//This example uses the selectionPageDown action.
+			spread.commandManager().setShortcutKey('selectionPageDown', GC.Spread.Commands.Key.a, false, false, false, false);
+			// selectionPageUp type 		
+			//This example uses the selectionPageUp action.
+			spread.commandManager().setShortcutKey('selectionPageUp', GC.Spread.Commands.Key.a, false, false, false, false);		
+			// selectionRight type 
+			//This example uses the selectionRight action.
+			spread.commandManager().setShortcutKey("selectionRight", GC.Spread.Commands.Key.a, false, false, false, false);
+			// selectionType type 
+			//This example uses the selectionTop action.
+			spread.commandManager().setShortcutKey("selectionTop", GC.Spread.Commands.Key.a, false, false, false, false);
+			// selectionUp type 
+			//This example uses the selectionUp action.
+			spread.commandManager().setShortcutKey("selectionUp", GC.Spread.Commands.Key.a, false, false, false, false);
+			// selectNextControl type.. 		
+			//This example maps the selectNextControl action to the Tab key.
+			spread.commandManager().setShortcutKey('selectNextControl', GC.Spread.Commands.Key.tab, false, false, false, false); // Tab key
+			spread.commandManager().setShortcutKey('selectPreviousControl', GC.Spread.Commands.Key.tab, false, true, false, false); // Shift key and Tab key		
 
 
+/*
+	   commandManager().execute..   	  
+	       */
 			sheet.getRange( 8,5,3,2).text('Hello ClearValues');		
 			// ClearValues type 
 			spread.commandManager().execute({cmd: "clearValues", sheetName: "Sheet1", ranges: [new GC.Spread.Sheets.Range(8, 5, 2, 1)]});
@@ -146,6 +194,24 @@
 			spread.commandManager().execute({cmd: "fill", sheetName: "Sheet1", startRange: srange, fillRange: frange, autoFillType: GC.Spread.Sheets.Fill.AutoFillType.fillSeries, fillDirection: GC.Spread.Sheets.Fill.FillDirection.down });
                         // moveSheet type.. 
 			spread.commandManager().execute({cmd: "moveSheet", sheetName: "Sheet1", targetIndex: targetIndex});		
+			// outlineColumn Type..
+			spread.commandManager().execute({cmd: "outlineColumn", sheetName: "Sheet1", index: 3, count: 5});		
+			// outlineRow type.. 
+			spread.commandManager().execute({cmd: "outlineRow", sheetName: "Sheet1", index: 3, count: 5});
+			//This example uses the undo or redo action.
+			$("#button3").click(function () {
+			   if(spread.undoManager().canUndo()){
+			       spread.undoManager().undo();
+			   }
+			});
+			$("#button4").click(function () {
+			    if(spread.undoManager().canRedo()){
+				spread.undoManager().redo();
+			    }
+			});		
+			// renameSheet type 
+			//This example renames a sheet.
+			spread.commandManager().execute({cmd: "renameSheet", sheetName: "Sheet1", name: "SheetName"});
 
 
 			
