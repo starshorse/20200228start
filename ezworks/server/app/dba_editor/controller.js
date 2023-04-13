@@ -63,6 +63,21 @@ exports.get_authOrg = async( req, res )=>{
         let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
 	return res.status(200).json(result) 
 }
+exports.get_authMlk = async( req, res )=>{
+	const db_name = 'config'
+	let login_id = req.params.id 
+	const sql_state = `
+	 SELECT b.seq AS seq 
+	      ,[machAuthSecret]
+	      ,[machAuthSecretExpiredDateTime]
+	      ,[machAuthIdentifier]
+	      ,[machInfo]
+	  FROM TB_User AS a INNER JOIN TB_Auth_Machine AS b ON b.userSeq = a.seq 
+	  WHERE dbLoginID = '${ login_id }'	
+	`
+        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
 exports.get_users_list = async( req, res )=>{
 	const db_name = 'config'
 	let org_name = req.params.id 
@@ -155,6 +170,37 @@ exports.update_authOrg = async( req, res )=>{
 	IF @V_SEQ <> 0
 	UPDATE TB_Auth_Organization SET authKey = '${ authKey }', remark ='${ remark }' WHERE orgSeq = @V_SEQ 
 	END;
+	`
+        let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
+exports.add_authMlk = async( req, res )=>{
+	const db_name = 'config'
+	let user_id  = req.body.user_id 
+	let machInfo = req.body.machInfo 
+	let MLK_KEY  = req.body.mlk_value 
+
+	const sql_state = `
+	INSERT INTO TB_Auth_Machine (authOrgSeq
+	      ,userSeq
+	      ,isUnattended
+	      ,machAuthSecret
+	      ,machAuthSecretExpiredDateTime
+	      ,machInfo)
+	SELECT   b.seq AS authOrgSeq , a.seq AS userSeq, isUnattended = 0, machAuthSecret = '${ MLK_KEY }', machAuthSecretExpiredDateTime=CONVERT(DATETIME,'2024-12-31'), machInfo='${ machInfo }'
+	FROM TB_User AS a INNER JOIN TB_Auth_Organization AS b ON a.orgSeq = b.orgSeq
+	WHERE a.dbLoginID = '${ user_id }'
+	`	
+        let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
+exports.update_authMlk = async( req, res )=>{
+	const db_name = 'config'
+	let seq = req.params.id 
+	let machInfo = req.body.machInfo 
+
+	const sql_state = `
+	UPDATE TB_Auth_Machine SET machInfo = '${ machInfo }' WHERE seq = ${ seq } 
 	`
         let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
 	return res.status(200).json(result) 

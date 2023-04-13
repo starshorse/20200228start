@@ -15,15 +15,17 @@ angular.module('ezof_dba_editorService',[])
 				btn_org_auth_info_update:'L20:L20',
 				pos_org_auth_info:{ authKey: 'K11:K11', orgAuthSecret: 'K12:K12' , remark:'K13:K13' },
 
-			} ,
+			},
 			users:{
 				curOrganization: 'C5:C5',
 			        addUser: 'C8:C8',
+				addMLK: 'F8:F8',
 				btn_add_user:'D8:D8', 
+				btn_add_MLK:'G8:G8',
 			        curUser: 'F5:F5',
 			        curMLK: 'I5:I5',
 				mlk_list_info:'F4:G110',
-				curMLK:'J11:J13',
+			//	curMLK:'J11:J13',
 				pos_curMLK_info:{ machAuthSecret: 'J11:J11', machAuthIdentifier: 'J12:J12', machInfo:'J13:J13' },
 				curMLK_info:'J3:K17'
 			}
@@ -251,8 +253,10 @@ angular.module('ezof_dba_editorService',[])
 		let binding_data = new GC.Spread.Sheets.Bindings.CellBindingSource( ezof_dba_editorFactory.binding_data ); 
 		let cell_curOrganization = sheet.getRange( ezof_dba_editorFactory.pos.users.curOrganization ) 
 		let cell_curUser = sheet.getRange( ezof_dba_editorFactory.pos.users.curUser ) 
+		let cell_curMLK = sheet.getRange( ezof_dba_editorFactory.pos.users.curMLK ) 
 		sheet.setBindingPath( cell_curOrganization.row, cell_curOrganization.col , "cur_organization")
 		sheet.setBindingPath( cell_curUser.row, cell_curUser.col , "cur_user")
+		sheet.setBindingPath( cell_curMLK.row, cell_curMLK.col , "cur_MLK")
 		sheet.setDataSource( binding_data );
 	}
 	this.sheet_users_init = async ( spread )=>{
@@ -261,10 +265,13 @@ angular.module('ezof_dba_editorService',[])
 		sheet.options.isProtected = false ;
 		let table = sheet.tables.findByName( ezof_dba_editorFactory.sheet_users_table_users.name ) 		
 		ezof_dba_editorFactory.sheet_users_table_users.tbl_view = table; 
+		let table_mlk = sheet.tables.findByName( ezof_dba_editorFactory.sheet_users_table_userMLKs.name ) 		
+		ezof_dba_editorFactory.sheet_users_table_userMLKs.tbl_view = table_mlk; 
 
 		this.sheet_users_binding_data( spread ); 
 
 		sheet.getRange( ezof_dba_editorFactory.pos.users.addUser ).locked( false );
+		sheet.getRange( ezof_dba_editorFactory.pos.users.addMLK ).locked( false );
 		sheet.getRange( ezof_dba_editorFactory.pos.users.curMLK_info ).locked( false ); 
 		sheet.getRange( ezof_dba_editorFactory.pos.users.pos_curMLK_info.machAuthSecret ).backColor('#bbb3d1').locked( true ); 
 		sheet.getRange( ezof_dba_editorFactory.pos.users.pos_curMLK_info.machAuthIdentifier ).backColor('#bbb3d1').locked( true ); 
@@ -306,6 +313,57 @@ angular.module('ezof_dba_editorService',[])
 	this.sheet_users_userSelected = async ( spread, user_id )=>{
                 ezof_dba_editorFactory.binding_data.cur_user = user_id; 
 		spread.refresh(); 
+		this.sheet_users_mlkList_update( spread ) 
+//		await this.sheet_users_part_mlkList_update( spread ); 
+	}
+	this.sheet_users_addMLK = async ( spread , machInfo )=>{
+                let user_id  = ezof_dba_editorFactory.binding_data.cur_user;
+                let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization ;
+		let data = { company: organization_id , id: user_id, type: 'Machine' }
+		let result = await $http({ method: 'POST' , url: '/mlk_auth/sign_key', data })
+		console.log( result.data ) 
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE )
+			return ;
+		}
+		let mlk_value = result.data.MLK_VALUE 
+		data = { user_id , mlk_value , machInfo }
+		result = await $http({ method: 'POST' , url: '/dba_editor/authMlk', data })
+		console.log( result.data ) 
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE )
+			return ;
+		}
+
+		this.sheet_users_mlkList_update( spread );
+	}
+	this.sheet_users_mlkList_update = async ( spread )=>{
+                let sheet = spread.getSheetFromName('Users') ;
+                user_id  = ezof_dba_editorFactory.binding_data.cur_user;
+		let mlks_list = await  $http.get(`/dba_editor/authMlks_list/${ user_id }`);
+		if( mlks_list.data.RESULT == -1 ){
+			alert( mlks_list.data.ERRORMESSAGE )
+			return ;
+		}
+		ezof_dba_editorFactory.sheet_users_table_userMLKs.data = mlks_list.data.DATA 
+		let table = ezof_dba_editorFactory.sheet_users_table_userMLKs.tbl_view; 
+		table.autoGenerateColumns( false )
+		let tableColumn1 = new GC.Spread.Sheets.Tables.TableColumn(); 
+		tableColumn1.name('ID(seq)');
+		tableColumn1.dataField('seq');
+		table.bind( [tableColumn1] , 'data' , ezof_dba_editorFactory.sheet_users_table_userMLKs ) 
+		
+	}
+	this.sheet_users_userMlkSelected = async ( spread, mlk_id )=>{
+                let sheet = spread.getSheetFromName('Users') ;
+	        let mlk_obj = data_mlk = ezof_dba_editorFactory.sheet_users_table_userMLKs.data.find((ent)=> ent.seq == mlk_id ) 
+                ezof_dba_editorFactory.binding_data.cur_MLK =  mlk_obj.machAuthSecret.slice(-10)
+		for( const [ key, value ] of Object.entries( mlk_obj )){
+			if(  ezof_dba_editorFactory.pos.users.pos_curMLK_info[key] ) 
+				sheet.getRange( ezof_dba_editorFactory.pos.users.pos_curMLK_info[key] ).text( value ).wordWrap(true);
+		}
+		spread.refresh(); 
+//		this.sheet_users_mlkList_update( spread ) 
 //		await this.sheet_users_part_mlkList_update( spread ); 
 	}
 	this.sheet_users_part_MLKList_invalidate = ( spread , yes=1 )=>{
@@ -545,11 +603,18 @@ angular.module('ezof_dba_editorService',[])
 			let table = ezof_dba_editorFactory.sheet_users_table_users.tbl_view 
 			let data = ezof_dba_editorFactory.sheet_users_table_users.data 
 			let drange = table.dataRange();
+			let table_mlk = ezof_dba_editorFactory.sheet_users_table_userMLKs.tbl_view 
+			let data_mlk = ezof_dba_editorFactory.sheet_users_table_userMLKs.data 
+			let drange_mlk = table_mlk.dataRange();
 
 			switch( args.col ){
 				case drange.col:
 					if( args.row >= drange.row &&  args.row < ( drange.row + data.length ))
 						ezof_dba_editorService.sheet_users_userSelected( spread, spread.getSheetFromName('Users').getValue( args.row, args.col )); 
+					break;
+				case drange_mlk.col:
+					if( args.row >= drange_mlk.row &&  args.row < ( drange_mlk.row + data_mlk.length ))
+						ezof_dba_editorService.sheet_users_userMlkSelected( spread, spread.getSheetFromName('Users').getValue( args.row, args.col )); 
 					break;
 				default:
 			}
@@ -585,10 +650,15 @@ angular.module('ezof_dba_editorService',[])
 				break;
 			case 'Users':
 				let btn_add_user = args.sheet.getRange( ezof_dba_editorFactory.pos.users.btn_add_user ) 
+				let btn_add_MLK = args.sheet.getRange( ezof_dba_editorFactory.pos.users.btn_add_MLK ) 
 				let cell_add_user = args.sheet.getRange( ezof_dba_editorFactory.pos.users.addUser ) 
+				let cell_add_MLK = args.sheet.getRange( ezof_dba_editorFactory.pos.users.addMLK ) 
 				switch( args.col ){
 					case btn_add_user.col:
 						ezof_dba_editorService.sheet_users_addUser( spread , args.sheet.getValue( cell_add_user.row, cell_add_user.col ))
+						break;
+					case btn_add_MLK.col:
+						ezof_dba_editorService.sheet_users_addMLK( spread , args.sheet.getValue( cell_add_MLK.row, cell_add_MLK.col ))
 						break;
 				}
 				break;
