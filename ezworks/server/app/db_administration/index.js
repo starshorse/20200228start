@@ -13,9 +13,9 @@ router.get('/roles_data/:db_name/:role', controller.get_roles_data )
 router.get('/logins_list', controller.get_logins_list ) 
 
 router.post('/login', controller.add_login ) 
+router.post('/login/sql',controller.exe_sql ) 
 router.post('/role', controller.add_role ) 
 router.post('/role_member', controller.add_role_member ) 
-
 router.post('/roles_data/:id', controller.update_roles_data ) 
 
 module.exports = router; 

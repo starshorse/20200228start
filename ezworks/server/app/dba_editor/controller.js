@@ -221,6 +221,15 @@ exports.add_user = async( req, res )=>{
 	return res.status(200).json(result) 
 
 }
+exports.assign_userDB = async( req, res )=>{
+	const db_name = req.body.mainDB 
+	const id = req.body.id 
+	const sql_state =`
+		CREATE USER "${ id }" FOR LOGIN "${ id }"
+	`
+        let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   old Codes.. 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

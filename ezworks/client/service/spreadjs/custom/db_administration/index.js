@@ -1,7 +1,13 @@
 angular.module('db_administrationService', [])
 .factory('db_administrationFactory', ['$injector', function( $injector ){
 	var db_administrationFactory  = {
-		pos:{ login : {} ,
+		pos:{ login : {
+				SQLEdit:'J11:J11',
+				SQLResult:'J23:J23',
+				btn_asLogin:'D10:D10',
+			 	btn_sqlExec:'K11:K11',	
+				asLogin:'G10:G10'
+			} ,
 			userRoles:{
 				curLogin: 'F6:F6',
 				dbList: 'C6:C6',
@@ -14,6 +20,7 @@ angular.module('db_administrationService', [])
 			}
 		      },	
 		sheet_login_table:{ name: 'Table1', tbl_view: null , data:[]},
+		sheet_login_asLogin: null , 
 		sheet_userRoles_table_roles :{ name: 'Table2', tbl_view: null , data:[]},
 		sheet_userRoles_table_userRoles :{ name: 'Table3', tbl_view: null , data:[]},
 		sheet_roleEdit_table_roleEdit :{ name: 'Table4', tbl_view: null , data:[], ch_tbl_list:[]},
@@ -24,6 +31,7 @@ angular.module('db_administrationService', [])
 .service('db_administrationService', ['$injector', function( $injector ){
 	var db_administrationFactory = $injector.get('db_administrationFactory') 
 	var $http = $injector.get('$http');
+	var $cookies = $injector.get('$cookies') 
 	this.initWorkbook = async ( spread )=>{
 		let initDesign = await $http.get('/app/db_administration/dba_editor.ssjson')
 		spread.fromJSON( initDesign.data ); 
@@ -32,6 +40,10 @@ angular.module('db_administrationService', [])
 		this.sheet_userRoles_invalidate( spread ) ;
 		this.sheet_roleEdit_init( spread ); 
 		this.sheet_roleEdit_invalidate( spread ) ;
+		if( login_id = $cookies.get('login_id') ){
+			this.loginSelected( spread, login_id ) 
+			$cookies.remove('login_id', { path: '/app/db_administration/'} ); 
+		}
 	}
 	this.sheet_userRoles_invalidate = ( spread, yes = 1 )=>{
 		if( yes ){
@@ -71,6 +83,7 @@ angular.module('db_administrationService', [])
 		table.bind( [tableColumn1] , 'data' , db_administrationFactory.sheet_login_table ) 
 		let drange = table.dataRange();
 		sheet.getRange( drange ).locked(true);
+		sheet.getRange( db_administrationFactory.pos.login.SQLEdit ).locked(false)
                 sheet.options.isProtected = true ;
 
 		await this.sheet_userRoles_init( spread ); 
@@ -81,6 +94,25 @@ angular.module('db_administrationService', [])
 		this.sheet_roleEdit_invalidate( spread ) 
 		await this.sheet_userRoles_update_1( spread, null, login_id ); 
 		spread.setActiveSheet('UserRoles');
+	}
+	this.sheet_login_asLogin = async( spread, login_id )=>{
+		let sheet = spread.getSheetFromName('Login');
+		db_administrationFactory.sheet_login_asLogin = login_id 
+		sheet.getRange( db_administrationFactory.pos.login.asLogin ).text( login_id );
+
+	}
+	this.sheet_login_exeSql = async( spread )=>{
+		let sheet = spread.getSheetFromName('Login');
+		sheet.getRange( db_administrationFactory.pos.login.SQLResult ).text('').wordWrap(true);
+		let sql_state =  sheet.getRange( db_administrationFactory.pos.login.SQLEdit ).text();
+		let user_id  = db_administrationFactory.sheet_login_asLogin  
+		let data = { sql_state , id: user_id } 
+		let result = await $http({ method:'POST', url:'/db_administration/login/sql', data }) 
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE )
+			return ;
+		}
+		sheet.getRange( db_administrationFactory.pos.login.SQLResult ).text( JSON.stringify( result.data )).wordWrap(true);
 	}
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //     UserRoles Sheet 
@@ -153,6 +185,11 @@ angular.module('db_administrationService', [])
 		let result = await $http({ method: 'POST' , 
 					   url: '/db_administration/role_member' ,
 					   data: { db_name: db_name , login_id: db_administrationFactory.binding_data.cur_login , role: nw_role , isDelete: isDelete } })   
+		
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE )
+			return ;
+		}
 		await this.sheet_userRoles_update_1_userRolesList( spread, db_name ,  db_administrationFactory.binding_data.cur_login ) 
 	}
 	this.sheet_userRoles_role_selected = async( spread, selected_role )=>{
@@ -311,10 +348,23 @@ angular.module('db_administrationService', [])
 			sheet2.resumeEvent()
 		}
 	}
-	this.spread_buttonClicked = ( spread, sender, args )=>{
+	this.spread_buttonClicked = async ( spread, sender, args )=>{
 		let sheet_name = args.sheet.name() 
 		switch( sheet_name ){
 			case 'Login':
+				let btn_asLogin = args.sheet.getRange( db_administrationFactory.pos.login.btn_asLogin ) 
+				let btn_sqlExec = args.sheet.getRange( db_administrationFactory.pos.login.btn_sqlExec ) 
+				if( args.col == btn_asLogin.col ){
+					// check login list .. 
+					let table = db_administrationFactory.sheet_login_table.tbl_view 
+					let data = db_administrationFactory.sheet_login_table.data 
+					let drange = table.dataRange();
+				        if( args.row >= drange.row &&  args.row < ( drange.row + data.length ))
+						db_administrationService.sheet_login_asLogin( spread, args.sheet.getValue( args.row , args.col -1 )) 
+
+				}else if( args.col == btn_sqlExec.col ){
+					await db_administrationService.sheet_login_exeSql( spread ) 
+				}
 				break;
 			case 'UserRoles':
 				let table_roles = db_administrationFactory.sheet_userRoles_table_roles.tbl_view 

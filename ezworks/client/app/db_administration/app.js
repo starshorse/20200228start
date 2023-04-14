@@ -1,4 +1,5 @@
 angular.module('db_administration',[
+	'ngCookies',
 	'mySpreadjs',
 	'gc_spreadjs',
 	'spreadjs_events',
@@ -20,10 +21,12 @@ angular.module('db_administration',[
 	}
 	db_administrationFactory.update_cur_db = updateUserDB ;	
 	db_administrationFactory.updateAlertInfo = updateAlertInfo ; 
+/*	
 	document.getElementById('inputGroupSelect01').addEventListener('change', async function(e){
 		let  db_name = document.getElementById('inputGroupSelect01').value 
 		let  spread = db_administrationFactory.spread ; 
                 await db_administrationService.updateTblData( spread, db_name );
                 await db_administrationService.updateData_1( spread );
 	})
+*/	
 }])

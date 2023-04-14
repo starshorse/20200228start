@@ -158,6 +158,14 @@ const sql_exec_post = async ( user_id , passwd , db_name , sql_state )=>{
 	}
 }
 exports.add_login = async( req, res )=>{}
+exports.exe_sql = async( req, res)=>{
+	let db_name = 'master'
+	let sql_state = req.body.sql_state 
+	let id = req.body.id 
+	let pw = '!@34qwer' 
+        let result = await sql_exec_post( id , pw , db_name , sql_state );   
+	return res.status(200).json( result ) 
+}
 exports.add_role = async( req, res )=>{
 	let db_name = req.body.db_name 
 	let role = req.body.role 
@@ -174,11 +182,11 @@ exports.add_role_member = async( req, res )=>{
 	let sql_state 
 	if( isDelete ){
 		sql_state = `
-		ALTER ROLE ${role} DROP MEMBER ${ member }
+		ALTER ROLE ${role} DROP MEMBER "${ member }"
 		`
 	}else{
 		sql_state = `
-		ALTER ROLE ${role} ADD MEMBER ${ member }
+		ALTER ROLE ${role} ADD MEMBER "${ member }"
 		`
 	}	
         let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   

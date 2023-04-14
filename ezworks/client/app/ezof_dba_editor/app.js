@@ -1,4 +1,5 @@
 angular.module('ezof_dba_editor',[
+	'ngCookies',
 	'mySpreadjs',
 	'gc_spreadjs',
 	'spreadjs_events',
@@ -20,10 +21,12 @@ angular.module('ezof_dba_editor',[
 	}
 	ezof_dba_editorFactory.update_cur_db = updateUserDB ;	
 	ezof_dba_editorFactory.updateAlertInfo = updateAlertInfo ; 
+/*	
 	document.getElementById('inputGroupSelect01').addEventListener('change', async function(e){
 		let  db_name = document.getElementById('inputGroupSelect01').value 
 		let  spread = ezof_dba_editorFactory.spread ; 
                 await ezof_dba_editorService.updateTblData( spread, db_name );
                 await ezof_dba_editorService.updateData_1( spread );
 	})
+*/	
 }])
