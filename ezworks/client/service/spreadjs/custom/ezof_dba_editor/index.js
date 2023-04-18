@@ -103,7 +103,7 @@ angular.module('ezof_dba_editorService',[])
 	this.sheet_organization_list_update = async ( spread )=>{
                 let sheet = spread.getSheetFromName('Organization') ;
 		this.sheet_organization_part_orgInfo_invalidate( spread );
-		let organization_list = await  $http.get('/dba_editor/organizations_list');
+		let organization_list = await  $http.get('/Hades/dba_editor/organizations_list');
 		if( organization_list.data.RESULT == -1 ){
 			alert( organization_list.data.ERRORMESSAGE )
 			return ;
@@ -123,7 +123,7 @@ angular.module('ezof_dba_editorService',[])
 		}
 		let nw_e = { mainDB: 'TBD' , orgName: nw_orgId , orgCommonName: 'TBD' , orgFullName : 'TBD' , orgType: '법인', orgBRN: 'TBD' } 
 	        let result = await  $http({ method:'POST',
-					    url: '/dba_editor/organization',
+					    url: '/Hades/dba_editor/organization',
 					    data: nw_e 
 					});
 		if( result.data.RESULT == -1 ){
@@ -144,7 +144,7 @@ angular.module('ezof_dba_editorService',[])
 	this.sheet_organization_part_orgInfo_update = async ( spread )=>{
 		let sheet = spread.getSheetFromName('Organization');
                 let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization; 
-		let result = await $http.get(`/dba_editor/organizations_list/${ organization_id }`) 
+		let result = await $http.get(`/Hades/dba_editor/organizations_list/${ organization_id }`) 
 		if( result.data.RESULT == -1 ){
 			alert( result.data.ERRORMESSAGE );
 			return 
@@ -173,7 +173,7 @@ angular.module('ezof_dba_editorService',[])
 			         orgBRN:  sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_info.orgBRN).text() , 
 		               } 
 	        let result = await  $http({ method:'POST',
-					    url: `/dba_editor/organization/${ organization_id }`,
+					    url: `/Hades/dba_editor/organization/${ organization_id }`,
 					    data: update_e  
 					});
 		if( result.data.RESULT == -1 ){
@@ -207,7 +207,7 @@ angular.module('ezof_dba_editorService',[])
 	this.sheet_organization_part_orgMLKInfo_update = async ( spread )=>{
 		let sheet = spread.getSheetFromName('Organization');
                 let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization; 
-		let result = await $http.get(`/dba_editor/authOrgs_list/${ organization_id }`) 
+		let result = await $http.get(`/Hades/dba_editor/authOrgs_list/${ organization_id }`) 
 		if( result.data.RESULT == -1 ){
 			alert( result.data.ERRORMESSAGE );
 			return 
@@ -220,13 +220,13 @@ angular.module('ezof_dba_editorService',[])
 			let result = await $http({ method: 'POST' , url: '/mlk_auth/sign_key', data })
 			console.log( result.data ) 
 			data = { org_name : organization_id , mlk_value : result.data.MLK_VALUE } 
-			result = await $http({ method:'POST' , url:'/dba_editor/authOrg', data }) 
+			result = await $http({ method:'POST' , url:'/Hades/dba_editor/authOrg', data }) 
 			if( result.data.RESULT == -1 ){
 				alert( result.data.ERRORMESSAGE );
 				return 
 			}
 			confirm("machine Key  generate done!, go check?"); 
-		        result = await $http.get(`/dba_editor/authOrgs_list/${ organization_id }`) 
+		        result = await $http.get(`/Hades/dba_editor/authOrgs_list/${ organization_id }`) 
 		}
 		for( const [ key, value ] of Object.entries( result.data.DATA[0] )){
 			sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_auth_info[key] ).text( value ).wordWrap(true);
@@ -240,7 +240,7 @@ angular.module('ezof_dba_editorService',[])
 			         remark :  sheet.getRange( ezof_dba_editorFactory.pos.organization.pos_org_auth_info.remark ).text() , 
 		               } 
 	        let result = await  $http({ method:'POST',
-					    url: `/dba_editor/authOrg/${ organization_id }`,
+					    url: `/Hades/dba_editor/authOrg/${ organization_id }`,
 					    data: update_e  
 					});
 		if( result.data.RESULT == -1 ){
@@ -290,7 +290,7 @@ angular.module('ezof_dba_editorService',[])
 	this.sheet_users_addUser = async ( spread , user_id )=>{
                 let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization ;
 		let data = { org_name : organization_id , id: user_id } 
-		let result = await $http({ method: 'POST', url:'/dba_editor/user/', data }) 
+		let result = await $http({ method: 'POST', url:'/Hades/dba_editor/user/', data }) 
 		if( result.data.RESULT == -1 ){
 			alert( result.data.ERRORMESSAGE )
 			return ;
@@ -298,7 +298,7 @@ angular.module('ezof_dba_editorService',[])
 	// assign default DB .. 
                 let cur_mainDB  = ezof_dba_editorFactory.binding_data.cur_mainDB ;
 		data = { mainDB : cur_mainDB , id: user_id } 
-		result = await $http({ method: 'POST', url:'/dba_editor/user/assignDB', data }) 
+		result = await $http({ method: 'POST', url:'/Hades/dba_editor/user/assignDB', data }) 
 		if( result.data.RESULT == -1 ){
 			alert( result.data.ERRORMESSAGE )
 			return ;
@@ -314,7 +314,7 @@ angular.module('ezof_dba_editorService',[])
 		this.sheet_users_part_MLKList_invalidate( spread );
 		this.sheet_users_part_MLKInfo_invalidate( spread );
                 let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization ;
-		let users_list = await  $http.get(`/dba_editor/users_list/${ organization_id }`);
+		let users_list = await  $http.get(`/Hades/dba_editor/users_list/${ organization_id }`);
 		if( users_list.data.RESULT == -1 ){
 			alert( users_list.data.ERRORMESSAGE )
 			return ;
@@ -352,7 +352,7 @@ angular.module('ezof_dba_editorService',[])
 		}
 		let mlk_value = result.data.MLK_VALUE 
 		data = { user_id , mlk_value , machInfo }
-		result = await $http({ method: 'POST' , url: '/dba_editor/authMlk', data })
+		result = await $http({ method: 'POST' , url: '/Hades/dba_editor/authMlk', data })
 		console.log( result.data ) 
 		if( result.data.RESULT == -1 ){
 			alert( result.data.ERRORMESSAGE )
@@ -364,7 +364,7 @@ angular.module('ezof_dba_editorService',[])
 	this.sheet_users_mlkList_update = async ( spread )=>{
                 let sheet = spread.getSheetFromName('Users') ;
                 user_id  = ezof_dba_editorFactory.binding_data.cur_user;
-		let mlks_list = await  $http.get(`/dba_editor/authMlks_list/${ user_id }`);
+		let mlks_list = await  $http.get(`/Hades/dba_editor/authMlks_list/${ user_id }`);
 		if( mlks_list.data.RESULT == -1 ){
 			alert( mlks_list.data.ERRORMESSAGE )
 			return ;
@@ -395,7 +395,7 @@ angular.module('ezof_dba_editorService',[])
                 let mlk_id =  ezof_dba_editorFactory.binding_data.cur_MLK_seq ; 
 		let update_e = {  machInfo :  sheet.getRange( ezof_dba_editorFactory.pos.users.pos_curMLK_info.machInfo ).text() } 
 	        let result = await  $http({ method:'POST',
-					    url: `/dba_editor/authMlk/${ mlk_id }`,
+					    url: `/Hades/dba_editor/authMlk/${ mlk_id }`,
 					    data: update_e  
 					});
 		if( result.data.RESULT == -1 ){
