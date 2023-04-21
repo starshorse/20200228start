@@ -23,6 +23,7 @@
 	<body>
 		<h1>SpreadJS</h1>
 		<p>This section goes over how to initialize SpreadJs</p>
+		<input type='button'  id='button1'  value='clearRule' />
 		<div class = "sample-container">
 			<div id="ss" class="spread-container"></div> 
 		</div>
@@ -120,8 +121,94 @@
 			activeSheet.setValue(3,13,-1,3);
 			activeSheet.conditionalFormats.addIconSetRule(GC.Spread.Sheets.ConditionalFormatting.IconSetType.fourTrafficLights, [new GC.Spread.Sheets.Range(0,13,4,1)]);
 
+			// Add a hover state rule in row direction.
+			activeSheet.conditionalFormats.addRowStateRule(GC.Spread.Sheets.RowColumnStates.hover, new GC.Spread.Sheets.Style("yellow"), [new GC.Spread.Sheets.Range(-1, -1, -1, -1)]);		
+
+			// addRule Method..
+			var scale = new GC.Spread.Sheets.ConditionalFormatting.ScaleRule();
+			scale.ruleType(GC.Spread.Sheets.ConditionalFormatting.RuleType.threeScaleRule);
+			scale.midColor("red");
+			scale.midType(GC.Spread.Sheets.ConditionalFormatting.ScaleValueType.number);
+			scale.midValue(50);
+			scale.maxColor("blue");
+			scale.maxType(GC.Spread.Sheets.ConditionalFormatting.ScaleValueType.number);
+			scale.maxValue(100);
+			scale.minColor("yellow");
+			scale.minType(GC.Spread.Sheets.ConditionalFormatting.ScaleValueType.number);
+			scale.minValue(10);
+			scale.ranges([new GC.Spread.Sheets.Range(0, 14, 10, 3)]);
+			activeSheet.conditionalFormats.addRule(scale);
+			activeSheet.setValue(0,14, 1,3);
+			activeSheet.setValue(1,14, 50,3);
+			activeSheet.setValue(2,14, 100,3);
+
+			// addSpecifiTextRule Method 
+			var style = new GC.Spread.Sheets.Style();
+			style.backColor = "red";
+			var ranges=[new GC.Spread.Sheets.Range(0,15,10,1)];
+			activeSheet.conditionalFormats.addSpecificTextRule(GC.Spread.Sheets.ConditionalFormatting.TextComparisonOperators.contains, "test", style, ranges);
+			activeSheet.setValue(0, 15, "testing");
+			activeSheet.setValue(1, 15, "test");
+			activeSheet.setValue(2, 15, "a");
+			activeSheet.setValue(3, 15, "t");
+			// addTop 10Rule Method 
+			var style = new GC.Spread.Sheets.Style();
+			style.backColor = "red";
+			var ranges=[new GC.Spread.Sheets.Range(0,16,10,1)];
+			activeSheet.conditionalFormats.addTop10Rule(GC.Spread.Sheets.ConditionalFormatting.Top10ConditionType.top, 2, style, ranges);
+			activeSheet.setValue(0, 16, 1);
+			activeSheet.setValue(1, 16, 50);
+			activeSheet.setValue(2, 16, 11);
+			activeSheet.setValue(3, 16, 5);
+
+			activeSheet.setColumnCount( 100 );
+			// addUniqueRule Method.. 
+			var style = new GC.Spread.Sheets.Style();
+			style.backColor = "green";
+			activeSheet.setValue(0, 17, 50);
+			activeSheet.setValue(1, 17, 50);
+			activeSheet.setValue(2, 17, 11);
+			activeSheet.setValue(3, 17, 5);
+			let testRule  = activeSheet.conditionalFormats.addUniqueRule(style, [new GC.Spread.Sheets.Range(0,17,10,1)]);
+
+                        document.getElementById('button1').addEventListener('click', function(e){
+				activeSheet.conditionalFormats.clearRule();
+			})
+			// containsRule Method 
+			var ruleTest = activeSheet.conditionalFormats.containsRule( testRule, 0,17 ); 
+			alert( ruleTest ); 		
 					
-			
+	                // count Method 
+			var style = new GC.Spread.Sheets.Style();
+			style.backColor = "red";
+			var rule = new GC.Spread.Sheets.ConditionalFormatting.NormalConditionRule();
+			rule.ruleType(GC.Spread.Sheets.ConditionalFormatting.RuleType.cellValueRule);
+			rule.ranges([new GC.Spread.Sheets.Range(0,0,5,1)]);
+			rule.operator(GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.between);
+			rule.style(style);
+			rule.value1(2);
+			rule.value2(100);
+			activeSheet.conditionalFormats.addRule(rule);
+			activeSheet.setValue(0,0,1,3);
+			activeSheet.setValue(1,0,45,3);
+			var ruletest_count = activeSheet.conditionalFormats.count();
+			alert(ruletest_count);
+
+			// getRule Method 
+			var ruletest_role0 = activeSheet.conditionalFormats.getRule(0);
+			alert( ruletest_role0.minColor() )
+			// getRules Method
+
+			var ruletest = activeSheet.conditionalFormats.getRules();
+			alert(ruletest[0].minColor);		
+
+			for( i= 0 ; i< ruletest.length - 5 ; i++ ){
+				activeSheet.conditionalFormats.removeRule( ruletest[i] ) 		
+			}
+			// removeRuleByRange Method.. 
+			activeSheet.conditionalFormats.removeRuleByRange( 0,14,5,4 );
+
+
 		};
 	</script>
 	
