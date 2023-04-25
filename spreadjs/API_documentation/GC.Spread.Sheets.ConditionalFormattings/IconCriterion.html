@@ -45,10 +45,14 @@
 			//rule
 			var iconSetRule = new GC.Spread.Sheets.ConditionalFormatting.IconSetRule();
 			iconSetRule.ranges([new GC.Spread.Sheets.Range(0,0,4,1)]);
+			// Enumeration IconSetTYpe ( fiveArrowColored, fiveArrowsGray, fiveBoxes, fiveQuarters , fiveRatings , fourArrowsColored, forArraowGray, fourRatings, fourRedToBlack, fourTrafficeLights , nolcons, threeArrowsColored, threeArrowGray , threeFlags, threeSigns, threeStars, threeSymbolsCircleed, threeSymbolsUncircled , threeTrafficLighsRimmed, threeTrafficLighsUnrimmed, threeTrangles 		
 			iconSetRule.iconSetType(GC.Spread.Sheets.ConditionalFormatting.IconSetType.fourTrafficLights);
 			var iconCriteria = iconSetRule.iconCriteria();
+			// Enumeration IconValueType ( formula, number, percent , percentil ) 		
 			iconCriteria[0] = new GC.Spread.Sheets.ConditionalFormatting.IconCriterion(true, GC.Spread.Sheets.ConditionalFormatting.IconValueType.number, 1);
+			// Enumeration IconValueType ( formula, number, percent , percentil ) 		
 			iconCriteria[1] = new GC.Spread.Sheets.ConditionalFormatting.IconCriterion(true, GC.Spread.Sheets.ConditionalFormatting.IconValueType.number, 10);
+			// Enumeration IconValueType ( formula, number, percent , percentil ) 		
 			iconCriteria[2] = new GC.Spread.Sheets.ConditionalFormatting.IconCriterion(true, GC.Spread.Sheets.ConditionalFormatting.IconValueType.number, 20);
 			iconSetRule.reverseIconOrder(false);
 			iconSetRule.showIconOnly(false);

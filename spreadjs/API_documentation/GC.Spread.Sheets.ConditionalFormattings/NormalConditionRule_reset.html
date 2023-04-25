@@ -59,12 +59,14 @@
 			rule.ruleType(GC.Spread.Sheets.ConditionalFormatting.RuleType.averageRule);
 			rule.ranges([new GC.Spread.Sheets.Range(0, 0, 10, 3)]);
 			rule.style(style);
+			// Enumeration AverageConditionType ( above, above1StdDev, above2StdDev , above3StdDev, below, below1StdDev, below2StdDev , below3StdDev, equalOrAbove, equalOrBelow 		
 			rule.type(GC.Spread.Sheets.ConditionalFormatting.AverageConditionType.above);
 			activeSheet.conditionalFormats.addRule(rule);
 			rule.reset();
 
 			var style = new GC.Spread.Sheets.Style();
 			style.backColor = "red";
+			// Enumeration DateOccurring Type Enumeration ( last7Days, lastMonth, lastQuarter, lastWeek, lastWeek, lastYear, nextMonth, nextQuarter, nextWeek, nextYear, thisMonth, thisQuarter, thisWeek, thisYear, today, tomorrow, yesterday		
 			var rule = new GC.Spread.Sheets.ConditionalFormatting.NormalConditionRule(GC.Spread.Sheets.ConditionalFormatting.RuleType.dateOccurringRule, [new GC.Spread.Sheets.Range(0,1,10,1)], style, null, null, null, null, null, GC.Spread.Sheets.ConditionalFormatting.DateOccurringType.nextWeek);
 			activeSheet.conditionalFormats.addRule(rule);
 			var d = new Date();

@@ -43,8 +43,10 @@
                          // DataBarRule Constructor .. 
 			var dataBarRule = new GC.Spread.Sheets.ConditionalFormatting.DataBarRule();
 			dataBarRule.ranges([new GC.Spread.Sheets.Range(0,0,4,1)]);
+		        // Enumeration ScaleValue Type ( automax, automin, formula, highestValue , lowestValue , number , percent, percentile  			
 			dataBarRule.minType(GC.Spread.Sheets.ConditionalFormatting.ScaleValueType.number);
 			dataBarRule.minValue(-1);
+		        // Enumeration ScaleValue Type ( automax, automin, formula, highestValue , lowestValue , number , percent, percentile  			
 			dataBarRule.maxType(GC.Spread.Sheets.ConditionalFormatting.ScaleValueType.number);
 			dataBarRule.maxValue(40);
 			// 4. Color 		
@@ -54,6 +56,7 @@
 			// 3.border Color. 		
 			dataBarRule.borderColor("orange");
 			// 5.dataBarDirection .. 		
+			// Enumeration BarDirection Enumeration ( leftToRight , rightToLeft ) 		
 			dataBarRule.dataBarDirection(GC.Spread.Sheets.ConditionalFormatting.BarDirection.leftToRight);
 			// 8.negativeFillColor Method.. 		
 			dataBarRule.negativeFillColor("yellow");
@@ -64,6 +67,7 @@
 			// 11.useNegativeBorderColor Method.. 		
 			dataBarRule.useNegativeBorderColor(true);
 			// 2.axisPosition		
+			// Enumeration DataBarAxisPosition Enumeration ( automatic, cellMidPoint, none ) 		
 			dataBarRule.axisPosition(GC.Spread.Sheets.ConditionalFormatting.DataBarAxisPosition.automatic);
 			// 1.axisColor .. 
 			dataBarRule.axisColor("blue");

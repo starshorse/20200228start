@@ -50,7 +50,9 @@
 			style.backColor = "red";
 			style.foreColor = "black";
 			var cell = new GC.Spread.Sheets.ConditionalFormatting.NormalConditionRule();
+			// Enumeration , Ruletype ( averageRule, cellValueRue, columnStateRule,  conditionRuleBase , dataBarRule ,  dateOccuringRule , duplicateRule , formulaRule , iconSetRule , rowStateRule, specificTextRule , threeScaleRule, top10Rule, twoScaleRule, uniqueRule		
 			cell.ruleType(GC.Spread.Sheets.ConditionalFormatting.RuleType.cellValueRule);
+			// Enumeration , ComparisionOperators ( between, equalsTo , greaterThan , greaterThanOrEqualsTo , lessThan, lessThanOrEqualTo , notBetween , notEqualTo 		
 			cell.operator(GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.greaterThan);
 			cell.value1(5);
 			cell.ranges([new GC.Spread.Sheets.Range(0, 1, 10, 1)]);
@@ -60,7 +62,9 @@
 			var style1 = new GC.Spread.Sheets.Style();
 			style1.foreColor = "red";
 			var top = new GC.Spread.Sheets.ConditionalFormatting.NormalConditionRule();
+			// Emumeration , Ruletype ( averageRule, cellValueRue, columnStateRule,  conditionRuleBase , dataBarRule ,  dateOccuringRule , duplicateRule , formulaRule , iconSetRule , rowStateRule, specificTextRule , threeScaleRule, top10Rule, twoScaleRule, uniqueRule		
 			top.ruleType(GC.Spread.Sheets.ConditionalFormatting.RuleType.top10Rule);
+			// Emuneration , Top10ConditionType ( .top , .bottom ) 		
 			top.type(GC.Spread.Sheets.ConditionalFormatting.Top10ConditionType.top);
 			top.rank(3);
 			top.style(style1);

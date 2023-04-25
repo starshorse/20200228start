@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.slicers.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.print.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+			// set allowCopyPasteExcelStyle to true
+			spread.options.allowCopyPasteExcelStyle = true;
+
+			activeSheet.suspendPaint();
+			var rowFilter = new GC.Spread.Sheets.Filter.HideRowFilter(new GC.Spread.Sheets.Range(-1, 0, -1, 1));
+			activeSheet.rowFilter(rowFilter);
+			activeSheet.getCell(0, 0).value("A1").backColor("blue");
+			activeSheet.getCell(1, 0).value("A2").backColor("yellow");
+			activeSheet.getCell(2, 0).value("A3").backColor("red");
+			activeSheet.getCell(3, 0).value("A4").backColor("green");
+			activeSheet.getCell(4, 0).value("A5").backColor("yellow");
+			// Enumeration ColorCompareType ( backgroundColr , forgroundColor ) 		
+			var nCondition = new GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.colorCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.ColorCompareType.backgroundColor, expected: "yellow"});
+			var filter = activeSheet.rowFilter();
+			filter.addFilterItem(0, nCondition);
+			filter.filter(0);
+
+			
+			// Enumeration Comparion Operators ( between, equalsTo, greaterThan , greaterThanOrEqualsTo, lessThan , lessThanOrEqualTo, notBetween, notEqualsTo 
+			spread.options.highlightInvalidData = true;
+			var dv = GC.Spread.Sheets.DataValidation.createDateValidator(GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.between, new Date(2012, 11, 31), new Date(2013, 11, 31));
+			dv.showInputMessage(true);
+			dv.inputMessage("Enter a date between 12/31/2012 and 12/31/2013.");
+			dv.inputTitle("Tip");
+			activeSheet.getCell(-1, 2).validator(dv);		
+
+			var style = new GC.Spread.Sheets.Style();
+			style.backColor = "red";
+			var ranges=[new GC.Spread.Sheets.Range(0,3,5,1)];
+			activeSheet.conditionalFormats.addCellValueRule(GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.between, 2, 100, style, ranges);
+			activeSheet.setValue(0,3,1,3);
+			activeSheet.setValue(1,3,45,3); 
+			
+			// Enumeration CustomValueType Enumeration ( empty, error, formula , nonEmpty, nonError ) 
+			var nCondition = new GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.formulaCondition, {customValueType: GC.Spread.Sheets.ConditionalFormatting.CustomValueType.formula,
+			    formula: "E2>0"});
+			var validator = new GC.Spread.Sheets.DataValidation.DefaultDataValidator(nCondition);
+			validator.type(GC.Spread.Sheets.DataValidation.CriteriaType.custom);
+			activeSheet.getCell(3, 4, GC.Spread.Sheets.SheetArea.viewport).validator(validator);
+			spread.options.highlightInvalidData = true;
+			activeSheet.setValue(3, 4, -4);		
+			// Enmeration GeneralComparisionOperators ( equalsTo, greaterThan, greaterThanOrEqualsTo, lessThan, lessThanOrEualsTo, notEuqalsTo 
+			spread.options.highlightInvalidData = true;
+			var dv = new GC.Spread.Sheets.DataValidation.createTextLengthValidator(GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.greaterThan, 5);
+			activeSheet.setDataValidator(2, 5, 1, 1, dv, GC.Spread.Sheets.SheetArea.viewport);
+			activeSheet.setValue(2, 5, "abcf");		
+
+			// Enumeration LogicalOperators ( and , or ) 
+			var condition1 = new GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.dateCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.DateCompareType.afterEqualsTo, expected: new Date(2012, 11, 31)});
+			var condition2 = new GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.dateCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.DateCompareType.beforeEqualsTo, expected: new Date(2013, 11, 31)});
+			var nCondition = new GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.relationCondition, {compareType: GC.Spread.Sheets.ConditionalFormatting.LogicalOperators.and, item1: condition1, item2: condition2});
+			var validator = new GC.Spread.Sheets.DataValidation.DefaultDataValidator(nCondition);
+			validator.type(GC.Spread.Sheets.DataValidation.CriteriaType.custom);
+			activeSheet.getCell(1, 6, GC.Spread.Sheets.SheetArea.viewport).validator(validator);
+			spread.options.highlightInvalidData = true;
+			activeSheet.setValue(1, 6, new Date(2012, 11, 25));
+
+			activeSheet.resumePaint();
+					
+			
+		};
+	</script>
+	
+</html> 
+
+
+

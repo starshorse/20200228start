@@ -41,6 +41,7 @@
 			activeSheet.setArray(0,0,[1,2,3,4,5,6,7,8,9,10]);
 			var cell = new GC.Spread.Sheets.ConditionalFormatting.NormalConditionRule();
 			cell.ruleType(GC.Spread.Sheets.ConditionalFormatting.RuleType.cellValueRule);
+			// Enumeration , ComparisionOperators ( between, equalsTo , greaterThan , greaterThanOrEqualsTo , lessThan, lessThanOrEqualTo , notBetween , notEqualTo 		
 			cell.operator(GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.greaterThan);
 			cell.value1(5);
 			cell.ranges([new GC.Spread.Sheets.Range(0, 0, 10, 1)]);
@@ -58,6 +59,7 @@
 			var style = new GC.Spread.Sheets.Style();
 			style.backColor = "red";
 			var ranges=[new GC.Spread.Sheets.Range(0,1,10,1)];
+			// Enumeration TextComparisionOperators ( beginsWith, contains, doesNotContain , endsWith ) 		
 			activeSheet.conditionalFormats.addSpecificTextRule(GC.Spread.Sheets.ConditionalFormatting.TextComparisonOperators.contains, "test", style, ranges);
 			activeSheet.setValue(0, 1, "testing");
 			activeSheet.setValue(1, 1, "test");
