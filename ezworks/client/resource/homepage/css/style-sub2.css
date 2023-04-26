@@ -1,0 +1,172 @@
+#traffic {
+	border-bottom: 1px solid #585aa7;
+}
+#sub-top {
+	z-index: 1;
+}
+#sub-top .image {
+	/* background-size: contain; */
+}
+#traffic .sect {
+	
+}
+#sub-bottom {
+	/* margin-top: 200px; */
+}
+#traffic-sect01 {
+	position: relative;
+	margin-top: 20px;
+	margin-left: 300px;
+}
+#traffic-sect01-wrap {
+	position: relative;
+}
+#traffic-sect01::before,
+#traffic-sect01-wrap::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+#traffic-sect01::before {
+	z-index: 3;
+	right: -200%;
+	background-color: rgba(56, 143, 158, 1);
+	opacity: .8;
+}
+#sub-bottom::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: -200%;
+	bottom: 0;
+	background-image: url('/img/tire-track1.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: left center;
+	opacity: .6;
+}
+/* #traffic-sect01-wrap::after {
+	background-image: url('/img/bg-vege.svg');
+	background-size: contain;
+	background-repeat: repeat-y;
+	background-position: -2% center;
+	opacity: .2;
+} */
+#traffic-sect01 .instruction-area {
+	z-index: 5;
+	position: relative;
+	padding: 40px 0 80px;
+}
+#traffic-sect01 .inst-part {
+	color: #fff;
+	padding: 40px 60px;
+	/* border-top: 1px solid rgba(56, 143, 158, .5); */
+}
+#traffic-sect01 .inst-part.rev {
+	background: rgba(255,255,255,0.5);
+}
+#traffic-sect01 .inst-part h1 {
+	position: relative;
+	padding: 0 60px 40px 100px;
+}
+#traffic-sect01 .inst-part h1::before {
+	content: '';
+	position: absolute;
+	top: 1.5em;
+	left: 0;
+	width: 60px;
+	height: 4px;
+	background-color: #202b5e;
+}
+#traffic-sect01 .inst-part.rev h1::before {
+	background-color: #202b5e;
+}
+#traffic-sect01 .inst-part h1 .title {
+	font-size: 2.6em;
+	font-weight: 900;
+	/* color: rgba(56, 143, 158, 1); */
+	color: #202b5e;
+	line-height: 1.5em;
+}
+#traffic-sect01 .inst-part.rev h1 .title {
+	color: #202b5e;
+}
+#traffic-sect01 .inst-part .cont {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-size: 1.4em;
+	line-height: 1.4em;
+	padding-top: 20px;
+}
+#traffic-sect01 .inst-part .num {
+	align-self: flex-start;
+	display: inline-block;
+	font-weight: 900;
+	color: #bbb;
+	position: relative;
+}
+#traffic-sect01 .inst-part.rev .num {
+	color: #777;
+}
+#traffic-sect01 .inst-part .num::before {
+	content: '';
+	position: absolute;
+	top: .6em;
+	right: -30px;
+	width: 15px;
+	height: 2px;
+	background-color: #bbb;
+}
+#traffic-sect01 .inst-part.rev .num::before {
+	background-color: #777;
+}
+/* #traffic-sect01 .info-list-type li {
+	background-image: url('/img/icon/check-mark.svg');
+} */
+#traffic-sect01 .inst-part .inst {
+	display: block;
+	padding-top: 24px;
+}
+
+
+
+
+
+@media screen and (max-width: 800px) {
+	#sub-bottom {
+		margin-top: 0;
+	}
+	
+	#sub-bottom::after {
+		opacity: .8;
+	}
+	#traffic .sect {
+		display: block;
+		opacity: 1;
+    	visibility: visible;
+	}
+	#traffic-sect01 {
+		margin-top: 0;
+		margin-left: 0;
+	}
+	#sub-bottom {
+		padding: 0;
+	}
+	#traffic-sect01 .inst-part {
+		padding: 40px 20px;
+	}
+	#traffic-sect01 .inst-part h1 {
+		width: 100%;
+		padding: 20px 0;
+	}
+	#traffic-sect01 .inst-part h1::before {
+		top: 0;
+	}
+	#traffic-sect01 .inst-part h1 .title {
+		font-size: 2em;
+	}
+}

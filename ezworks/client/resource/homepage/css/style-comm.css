@@ -1,0 +1,236 @@
+
+
+#section00 {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+#section00 .image-wrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#section00 .image-area {
+	flex-direction: column;
+	justify-content: center;
+}
+
+#section00 .main-title {
+	font-family: Sunflower;
+	text-shadow: 2px 2px 4px rgba(0,0,0,.4);
+}
+#section00 .main-title h2 {
+	font-size: 2.6em;
+	position: relative;
+	overflow: hidden;
+}
+#section00 .main-title h2 span,
+#section00 .inst span {
+	display: block;
+	max-width: 800px;
+	opacity: 0;
+	/*visibility: hidden;*/
+}
+#section00 .main-title .title.no1 span {
+	transform: translate3d(30%, 0, 0);
+}
+#section00 .main-title .title.no2 span {
+	transform: translate3d(-30%, 0, 0);
+}
+#section00 .inst span {
+	transform: translate3d(10%, 0, 0);	
+}
+#section00 .image-slide.selected .main-title h2 span,
+#section00 .image-slide.selected .inst span {
+	animation-name: mainslide;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+@keyframes mainslide {
+	to {
+		opacity: 1;
+		visibility: visible;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+#section00-wrap {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	max-width: 1200px;
+	transform: translateX(-50%);
+}
+
+#section00-wrap .btn-area {
+	padding: 20px 0 5vh;
+	text-align: center;
+}
+#section00-wrap .btn {
+	display: inline-block;
+	font-size: 1.4em;
+	font-weight: 600;
+	color: #fff;
+	width: 100%;
+	max-width: 320px;
+	padding: 20px 0;
+	cursor: pointer;
+	background-color: #388f9e;
+	transition: background-color .3s;
+}
+#section00-wrap .btn:hover {
+	background-color: #202b5e
+}
+#scroll-area {
+    position: relative;
+    top: -6vh;
+    left: 0;
+    right: 0;
+}
+#scroll-area .icn-area {
+   	position: relative;
+   	margin: 0 auto;
+   	text-align: right;
+}
+#scroll-area .action-btn {
+	margin-right: 40px;
+}
+
+#section00-wrap .bottom {
+	display: flex;
+}
+#section00-wrap .bottom .text-wrap {
+	position: relative;
+}
+#section00-wrap .bottom .text-box {
+	position: relative;
+}
+#section00-wrap .text-box li {
+	min-height: 144px;
+	padding: 40px 40px 0;
+}
+
+
+
+
+
+#section01 {}
+#section01-wrap {}
+.over-bg-white::before {
+	content: '';
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: -60px;
+	background-color: #fff;
+}
+#section01-wrap ._left .image-wrap {
+	margin-left: 0;
+	margin-right: 0;
+}
+#section01-wrap ._left .image-area {
+	box-shadow: -8px 10px 16px 0px rgba(162,162,162,.2);
+	border-radius: 600px;
+	overflow: hidden;
+	/*background-color: #ab9576;*/
+}
+
+.sect-title-area {
+	position: absolute;
+	top: 0;
+	left: 20px;
+}
+.sect-title-area .num {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	border-radius: 40px;
+	border: 1px solid #fff;
+}
+.sect-title-area .num.bk {
+	border-color: #000;
+}
+.sect-title-area .num::after {
+	content: '';
+	position: absolute;
+	top: 54px;
+	left: 50%;
+	width: 2px;
+	height: 20px;
+	margin-left: -1px;
+	background-color: #fff;
+}
+.sect-title-area .num.bk::after {
+	background-color: #000;
+}
+.sect-title-area .title {
+	position: relative;
+  bottom: -26px;
+
+	transform-origin: 0 100%;
+	transform: rotate(90deg) translate3d( 0%, -30%, 0);
+}
+#section01::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+/*	background-image: url('/img/icon/emblem-bg.svg'); */
+	background-size: 250px;
+	background-position: 80% 80%;
+	background-repeat: round;
+	background-attachment: fixed;
+	backface-visibility: hidden;
+}
+#section02 {
+	overflow: hidden;
+}
+#section02::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+/*	background-image: url('/img/icon/church.svg'); */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	backface-visibility: hidden;
+}
+#section02-wrap ._left {
+	padding-bottom: 0;
+}
+#section02-wrap ._left .image-wrap {
+	/*overflow-y: hidden;*/
+	min-height: 600px;
+	box-shadow: -22px 0px 54px 0px rgba(0,0,0,.3);
+	border: 6px solid #fff;
+	border-bottom: none;
+}
+#section04 {
+	background-position: 16% center;
+}
+#section05 {
+	z-index: 2;
+}
+#section06-wrap,
+#section06.bg-cover1::before {
+	z-index: 1;
+	pointer-events: none;
+}
+#section06-wrap .pointer-events-auto {
+	pointer-events: auto;
+}
+
+

@@ -1,0 +1,4 @@
+#section02::before,
+#about-sect02::before {
+	background-attachment: scroll;
+}

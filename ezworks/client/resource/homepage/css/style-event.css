@@ -1,0 +1,84 @@
+#v-cal .vcal-header {
+  justify-content: center;
+}
+.vanilla-calendar .vcal-header__label {
+  font-size: 2em;
+	width: auto;
+}
+.vanilla-calendar .vcal-btn,
+.vanilla-calendar .vcal-header svg {
+	width: 36px;
+	height: 36px;
+}
+.vanilla-calendar .vcal-header svg {
+	fill: #F2845C;
+}
+.vanilla-calendar .vcal-week {
+	color: #fff;
+	background-color: rgb(137, 194, 167);
+}
+#v-cal .vcal-body-wrap {
+	padding: 4px;
+}
+#v-cal .vcal-date-wrap {
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  background-color: rgba(180, 214, 198, 0.4);
+}
+#v-cal .vcal-date {
+  align-items: flex-start;
+  padding: 4px;
+}
+.vanilla-calendar .vcal-date .day-date {
+    font-weight: 600;
+    color: #909090;
+}
+#v-cal .vcal-date[data-calendar-day="0"] .day-date {
+	color: #F2845C;
+}
+.sch-evt-list li {
+	position: relative;
+}
+.sch-evt-list li h3 {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: color .3s;
+}
+.sch-evt-list li:hover h3 {
+	color: #ff0000;
+}
+.sch-evt-list li .detail {
+	z-index: 1;
+	position: absolute;
+	top: 18px;
+	left: 16px;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 1px 1px 2px 0px rgba(166, 166, 166, .4);
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s;
+}
+.sch-evt-list li:hover .detail {
+	opacity: 1;
+	visibility: visible;
+	transition: .3s .6s;
+}
+@media screen and (max-width: 800px) {
+	#v-cal .vcal-week {
+		display: none;
+	}
+	#v-cal .vcal-date {
+	    width: 100%;
+	    max-width: none;
+	    flex-basis: 100%;
+	}
+	.vanilla-calendar .vcal-date .day {
+		display: block;
+	}
+	#v-cal .vcal-date.first-day {
+		margin-left: 0;
+	}
+}

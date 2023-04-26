@@ -1,0 +1,28 @@
+<html ng-app='adminWeb'> 
+	<head>               
+		<script data-require='jquery@*' data-semver='2.1.1' src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>                          
+		<link rel='stylesheet' href='/lib/spreadjs/15.0.6/css/gc.spread.sheets.excel2016colorful.15.0.6.css' /> 
+		<script src='/lib/spreadjs/15.0.6/scripts/gc.spread.sheets.all.15.0.6.min.js'></script> 
+
+		<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css' integrity='sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l' crossorigin='anonymous'>   
+		<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js' integrity='sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns' crossorigin='anonymous'></script>  
+		<link rel='stylesheet' href='/resource/css/db_edit_style.css' />
+		<style>.active { color: red; font-weight: bolder; }</style>
+	</head>                                                                
+		<body>                                                             
+			<a ui-sref="hello" ui-sref-active="active">Hello</a>
+			<a ui-sref="people" ui-sref-active="active">People</a>
+  			<a ui-sref="about">About</a>
+			
+			 <li ng-repeat="person in $ctrl.people">
+    				<a ui-sref="person({ personId: person.id })">{{person.name}}</a>
+ 			 </li>
+
+  			<ui-view></ui-view>
+			<div ng-controller='adminWebCtrl'>                             
+        	        </div>                                                        
+			 <script src='/lib/angular/angular.js'></script>               
+			 <script src='/lib/angular-ui-router/angular-ui-router.js'></script>               
+			 <script src='app.js'></script>                                
+			</body>                                                        
+	</html>

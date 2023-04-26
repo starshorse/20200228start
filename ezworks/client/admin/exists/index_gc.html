@@ -1,0 +1,129 @@
+<html ng-app='myDbEditExists'> 
+	<head>               
+		<script data-require='jquery@*' data-semver='2.1.1' src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>                          
+		<link rel='stylesheet' href='/lib/spreadjs/15.0.6/css/gc.spread.sheets.excel2016colorful.15.0.6.css' /> 
+		<script src='/lib/spreadjs/15.0.6/scripts/gc.spread.sheets.all.15.0.6.min.js'></script> 
+
+		<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css' integrity='sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l' crossorigin='anonymous'>   
+		<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js' integrity='sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns' crossorigin='anonymous'></script>  
+		<link rel='stylesheet' href='/resource/css/db_edit_style.css' />
+		<link href="/lib/jsoneditor/dist/jsoneditor.min.css" rel="stylesheet" type="text/css">
+	    <script src="/lib/jsoneditor/dist/jsoneditor.min.js"></script> 
+        <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/inline/ckeditor.js"></script>
+		<base href="/admin/exists/">
+	</head>                                                                
+		<body>                                                             
+ 		<div ng-controller='myDbEditExistsCtrl'>                             
+			<div ng-controller='myDbEditSidebarCtrl'>
+			<my-header></my-header>
+			<div class='wrapper'>
+			<!-- Sidebar -->
+			<ng-include src="'/parts/sidebars/sidebars.html'"></ng-include> 
+			<!-- Page Content -->
+			<div id='content'>
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<div class="container-fluid row">
+						<div class='col-md-2 mx-0 px-0'>
+							<toggle-sidebar></toggle-sidebar> 
+						</div>
+					<div class='input-group col-md-2 mx-0 px-0'>
+						  <div class="input-group-prepend">
+						      <label class="input-group-text" for="inputGroupSelect01">Server</label>
+						  </div>
+						  <select class="custom-select" id="inputGroupSelect01" ng-disabled="isDbSelectionDisabled" ng-init="cur_server ='demo'">
+						<!--	  
+						      <option selected>{{ cur_server }}</option>
+						-->   
+						      <option ng-value="server" ng-repeat="server in server_list">{{ server }}</option>
+						    </select>
+					</div>
+					<div class='col-md-3'>
+						<h4><span class="badge badge-secondary">App</span>{{ app_cur.title }}</h4>
+					</div>  
+					<div class='col-md-5'>
+					</div> 	
+					</div>
+				</nav>
+				<div id='appWrapper' class='mx-2 px-2'>
+					<my-indicate></my-indicate> 
+					<ng-view></ng-view>
+					<div ng-show='dataMode == 0'>		
+					    <cmd-input></cmd-input>                                    
+					    <my-mainbtn></my-mainbtn>
+						<my-spreadjs></my-spreadjs>                                
+						<my-events></my-events>
+						<my-sheet1></my-sheet1>
+						<my-addopts></my-addopts>
+				   </div>
+					<div ng-show='dataMode == 2'>
+						<json-editor></json-editor> 
+					</div>
+					<div ng-show='dataMode == 3'>
+						<ck-editor></ck-editor> 
+					</div> 
+				</div>
+			  </div>
+			  </div>
+    			<my-footer></my-footer> 
+			</div>           
+				<!-- Modal -->
+				<my-domodal></my-domodal> 
+			<!-- Modal -->
+			</div>  
+		</div>  <!-- ng-controller='myDbEditSidebarCtrl'-->
+		<!--			<ng-include src="'/parts/app/script_l1.html'"></ng-include> -->
+			 <script src='/lib/angular/angular.js'></script>               
+		     <script src='/lib/angular-cookies/angular-cookies.js'></script> 
+		     <script src='/lib/angular-route/angular-route.js'></script> 
+			 <script src='/utils/shortcut.js'></script> 
+			 <script src='app.js'></script>                                
+			 <script src='/parts/app/index.js'></script>                                
+			 <SCRIPT src='/parts/spreads/index.js'></script>                           
+			 <SCRIPT src='/parts/headers/index.js'></script>                           
+			 <SCRIPT src='/parts/sidebars/index.js'></script>                           
+		     <script src='/parts/mainbuttons/index.js'></script> 
+			 <SCRIPT src='/parts/spreads/sheetFormat/index.js'></script>                           
+			 <SCRIPT src='/parts/spreads/addSheets/index.js'></script>                           
+			 <SCRIPT src='/parts/footers/index.js'></script>                           
+	    	 <script src='/parts/toggle_sidebar/index.js'></script> 
+			 <SCRIPT src='/parts/do_modal/index.js'></script>                           
+			 <SCRIPT src='/parts/app/status_indicate/index.js'></script>                           
+			 <SCRIPT src='/parts/jsoneditor/index.js'></script>                           
+			 <SCRIPT src='/parts/ckeditor/index.js'></script>                           
+			 <SCRIPT src='/parts/cmd_input/index.js'></script>                           
+			 <!--  <SCRIPT src='/db_edit/parts/spreadjs/index.js'></script>                          --> 
+			 <!--  <SCRIPT src='/db_edit/parts/spreadjs/events/index.js'></script>                   -->
+			 <SCRIPT src='/admin/parts/spreadjs/sheet1/index.js'></script>                           
+			 <script src='/admin/parts/spreadjs/addSheets/sh_add_opts.js'></script> 
+			 <!--  <SCRIPT src='/db_edit/parts/sidebar.js'></script>                                 --> 
+
+		     <script src='/service/admin/index.js'></script> 
+			 <SCRIPT src='/service/do_modal/index.js'></script>                           
+			 <SCRIPT src='/service/do_modal/sce_modalHelp/index.js'></script>                           
+			 <!--			 <SCRIPT src='/db_edit/service/work_space/index.js'></script>           -->                
+			 <SCRIPT src='/service/work_space/index.js'></script>                           
+			 <SCRIPT src='/service/work_space/cmd_input/index.js'></script>                           
+			 <SCRIPT src='/service/work_space/collections/index.js'></script>                           
+			 <SCRIPT src='/service/work_space/hot_link/index.js'></script>                           
+			 <SCRIPT src='/service/mainbuttons/index.js'></script>                           
+			 <SCRIPT src='/service/work_space/create_app/index.js'></script>                           
+			 <SCRIPT src='/service/work_space/templates/index.js'></script>                           
+			 <SCRIPT src='/service/spreadjs/index.js'></script> 
+			 <SCRIPT src='/service/spreadjs/sheetFormat/index.js'></script>
+			 <SCRIPT src='/service/spreadjs/sheetCmd/index.js'></script>
+			 <SCRIPT src='/service/spreadjs/sheetLock/index.js'></script>
+			 <SCRIPT src='/service/spreadjs/addSheets/index.js'></script>
+			 <SCRIPT src='/service/spreadjs/events/index.js'></script>
+			 <SCRIPT src='/service/spreadjs/filters/index.js'></script>
+			 <SCRIPT src='/service/spreadjs/formulas/index.js'></script>
+			 <!-- <SCRIPT src='/service/spreadjs/product/wijmo/index.js'></script> -->
+			 <SCRIPT src='/service/spreadjs/product/spreadjs/index.js'></script>
+			 <SCRIPT src='/service/rest_api/index.js'></script>                           
+			 <SCRIPT src='/service/cmd_input/uploadFile_csv/index.js'></script>                           
+			 <SCRIPT src='/service/jsoneditor/index.js'></script>                           
+			 <SCRIPT src='/service/async_job/index.js'></script>                           
+			 <SCRIPT src='/service/danfo_js/index.js'></script>                           
+			 <SCRIPT src='/service/parse_str/index.js'></script>                           
+			 <SCRIPT src='/service/ui/index.js'></script>                           
+			</body>                                                        
+	</html>
