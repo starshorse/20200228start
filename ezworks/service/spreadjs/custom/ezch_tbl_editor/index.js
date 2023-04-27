@@ -1,6 +1,12 @@
 angular.module('ezch_tbl_editorService',[])
 .factory('ezch_tbl_editorFactory', ['$injector',function($injector){
 	var ezch_tbl_editorFactory = {
+// tblView( sheet0 ) runtime lock.. 
+	        lock_style: null,
+		unlock_style: null, 
+		lastSelections: [],
+		currentSelections: [],
+//  app user configuration.. 		
 		saved_config_list :  { tbl_view : null , tbl_columns : null , tbl_data : [{ configName: 'Test01', delete: false },{ configName:'e_approval_request01', delete: false }] } 
 	}
 	return ezch_tbl_editorFactory 
@@ -97,5 +103,8 @@ angular.module('ezch_tbl_editorService',[])
 			}
 		}
 	}
+	this.sheet0_selectionChanged = ( spread, sender, args )={
+		ezch_tbl_editorFactory.lastSelections = args.oldSelections 
+	}		
 
 }])

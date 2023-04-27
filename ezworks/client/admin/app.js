@@ -1,7 +1,12 @@
  angular.module('adminWeb', [
-	 'ui.router'
+	'ui.router',
+	'ngCookies',
+	'mySpreadjs',
+	'gc_spreadjs',
+	'spreadjs_events',
+	'jupitor_admin_editor'
 ])
-.config(function($stateProvider) {
+.config(function($stateProvider, $urlRouterProvider ) {
   var helloState = {
     name: 'hello',
     url: '/hello',
@@ -27,16 +32,19 @@
   $stateProvider.state(helloState);
   $stateProvider.state(aboutState);
   $stateProvider.state(personState);
+  $urlRouterProvider.otherwise('/hello'); 
 })
 .component('hello', {
+/*	
   template:  '<h3>{{$ctrl.greeting}} Solar System!</h3>' +
              '<button ng-click="$ctrl.toggleGreeting()">toggle greeting</button>',
-           
+*/	     
+  template:'<my-spreadjs></my-spreadjs>',
   controller: function() {
     this.greeting = 'hello';
   
     this.toggleGreeting = function() {
-      this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
+    this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
     }
   }
 })

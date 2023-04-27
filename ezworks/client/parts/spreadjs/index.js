@@ -48,7 +48,10 @@ angular.module('mySpreadjs',[])
 		spreadjs_eventsService.register_sheet0_bind_cellChanged( $scope.spread ) 
 		spreadjs_eventsService.register_sheet1_bind_cellChanged( $scope.spread ) 
 		spreadjs_eventsService.register_sheet2_bind_cellChanged( $scope.spread ) 
-	}	
+	}else if( $injector.has('jupitor_admin_editorService')){
+		var jupitor_admin_editorService = $injector.get('jupitor_admin_editorService') 
+		jupitor_admin_editorService.initWorkbook( $scope.spread )
+	}
 
 }])
 .directive('mySpreadjs', function(){
