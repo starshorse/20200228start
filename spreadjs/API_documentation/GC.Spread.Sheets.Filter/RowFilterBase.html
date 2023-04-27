@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.slicers.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.print.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<input type='button' id='button1' value='custom Filter' />
+		<input type='button' id='button2' value='Filter' />
+		<input type='button' id='button3' value='remove Filter' />
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+			// set allowCopyPasteExcelStyle to true
+			spread.options.allowCopyPasteExcelStyle = true;
+			// 1.filter Method. 
+			// 2.addFilterItem .. 		
+			// 3.filterButtonVisible. 		
+			// 4.isFiltered		
+			// 5.openFilterDialog Method.. 		
+			// custom filter .. 
+		//Create a custom condition.
+			function CustomFilter(){
+			    GC.Spread.Sheets.ConditionalFormatting.Condition.apply(this, arguments);
+			    //this.conditionType("CustomFilter");
+			};
+			CustomFilter.prototype = new GC.Spread.Sheets.ConditionalFormatting.Condition();
+			CustomFilter.prototype.evaluate = function (evaluator, row, col) {
+			    var value = evaluator.getValue(row, col);
+
+			    if (value !== null && value >= 10 && value <= 50) {
+				//Return True only when the following conditions are satisfied.
+				// (1)Values are entered.
+				// (2)Values are not lower than 10.
+				// (3)Values are not greater than 50.
+				return true;
+			    } else {
+				return false;
+			    }
+			};					
+			activeSheet.setValue(0, 0, 10);
+			activeSheet.setValue(1, 0, 100);
+			activeSheet.setValue(2, 0, 50);
+			activeSheet.setValue(3, 0, 40);
+			activeSheet.setValue(4, 0, 80);
+			activeSheet.setValue(5, 0, 1);
+			activeSheet.setValue(6, 0, 65);
+			activeSheet.setValue(7, 0, 20);
+			activeSheet.setValue(8, 0, 30);
+			activeSheet.setValue(9, 0, 35);
+			for (var i = 0; i < 10; i++) {
+				sheet.setValue(i, 0, i);
+			    }
+			    sheet.rowFilter(new GC.Spread.Sheets.Filter.HideRowFilter(new GC.Spread.Sheets.Range(1, 0, 10, 1)));
+
+
+			$('#button2').click( function(){
+			        sheet.rowFilter().openFilterDialog(sheet.hitTest(97, 30).filterButtonHitInfo);		
+				let rowFilter = new GC.Spread.Sheets.Filter.HideRowFilter( new GC.Spread.Sheets.Range( 0,0,7,1 ));
+				activeSheet.rowFilter( rowFilter );
+				console.log( rowFilter.getFilteredItems())		
+				console.log( rowFilter.getFilterItems(0))		
+				console.log( rowFilter.getSortState(0))		
+				 if (rowFilter.isFiltered(0)) {
+					alert("Row-filtering executed for Column1");
+				 } else {
+					alert("Row-filtering not executed for Column1");
+				 }		
+		//		rowFilter.openFilterDialog(sheet.hitTest(97, 30).filterButtonHitInfo);		
+			})			
+			$('#button1').click( function(){
+				let rowFilter = new GC.Spread.Sheets.Filter.HideRowFilter( new GC.Spread.Sheets.Range( 0,0,7,1 ));
+				activeSheet.rowFilter( rowFilter );
+				rowFilter.addFilterItem( 0, new CustomFilter());
+				rowFilter.filter(0);		
+				rowFilter.filterButtonVisible(0, true );
+				alert( rowFilter.filterButtonVisible(0)); 
+				rowFilter.sortColumn(0, true ); 
+
+			})
+			$("#button3").click(function () {
+			    // Remove filtering for Column1
+			    var rowFilter = activeSheet.rowFilter();
+			    if (rowFilter) {
+				rowFilter.removeFilterItems(0);
+				rowFilter.filter();
+			    }
+			});		
+					
+		};
+	</script>
+	
+</html> 
+
+
+
