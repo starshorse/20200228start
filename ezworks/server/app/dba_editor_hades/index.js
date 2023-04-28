@@ -5,6 +5,7 @@ var controller = require('./controller');
 
 var router = express.Router();
 
+router.get('/web_users/', controller.get_web_users )
 router.get('/organizations_list/', controller.get_organizations_list ) 
 router.get('/organizations_list/:id', controller.get_organization ) 
 router.get('/authOrgs_list/:id', controller.get_authOrg ) 

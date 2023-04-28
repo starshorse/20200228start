@@ -10,6 +10,8 @@ angular.module('spreadjs_events',[])
 		eventsService = $injector.get('ezof_dba_editor_eventsService');
 	}else if( $injector.has('db_administration_eventsService') ){
 		eventsService = $injector.get('db_administration_eventsService');
+	}else if( $injector.has('jupitor_admin_editor_eventsService') ){
+		eventsService = $injector.get('jupitor_admin_editor_eventsService');
 	}	
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //      cellDoubleChick 

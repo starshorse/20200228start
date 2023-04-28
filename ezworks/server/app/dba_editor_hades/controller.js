@@ -29,51 +29,18 @@ const sql_exec_get = async ( user_id , passwd , db_name , sql_state )=>{
 	}
 }
 exports.get_organizations_list = async( req, res )=>{ 
-/*	
-	const db_name = 'config'
-	const sql_state = `	
-	SELECT
-	      orgName AS organization  
-	FROM TB_Organization
-	ORDER BY seq DESC;
-	`
-        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
-	return res.status(200).json(result) 
-*/	
 	let hades_url = hades_url_base + `/dba_editor/organizations_list`
 	let result = await axios.get( hades_url )
 	return res.status(200).json(result.data) 
 }
 exports.get_organization = async( req, res )=>{
 	let org_name = req.params.id 
-/*	
-	const db_name = 'config'
-	const sql_state = `
-	SELECT 
-		*
-	FROM TB_Organization
-	WHERE orgName = '${org_name}'
-	`
-        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
-	return res.status(200).json(result) 
-*/	
 	let hades_url = hades_url_base + `/dba_editor/organizations_list/${ org_name }`
 	let result = await axios.get( hades_url )
 	return res.status(200).json(result.data) 
 }
 exports.get_authOrg = async( req, res )=>{
 	let org_name = req.params.id 
-/*	
-	const db_name = 'config'
-	const sql_state = `
-	SELECT 
-	 Auth.authKey , Auth.orgAuthSecret , Auth.orgAuthSecretExpiredDateTime, Auth.remark      
-	FROM TB_Organization AS Org INNER JOIN TB_Auth_Organization AS Auth ON Org.seq = Auth.orgSeq 
-	WHERE Org.orgName = '${org_name}'
-	`
-        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
-	return res.status(200).json(result) 
-*/
 	let hades_url = hades_url_base + `/dba_editor/authOrgs_list/${ org_name }`
 	let result = await axios.get( hades_url )
 	return res.status(200).json(result.data) 
@@ -81,20 +48,6 @@ exports.get_authOrg = async( req, res )=>{
 }
 exports.get_authMlk = async( req, res )=>{
 	let login_id = req.params.id 
-/*	
-	const db_name = 'config'
-	const sql_state = `
-	 SELECT b.seq AS seq 
-	      ,[machAuthSecret]
-	      ,[machAuthSecretExpiredDateTime]
-	      ,[machAuthIdentifier]
-	      ,[machInfo]
-	  FROM TB_User AS a INNER JOIN TB_Auth_Machine AS b ON b.userSeq = a.seq 
-	  WHERE dbLoginID = '${ login_id }'	
-	`
-        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
-	return res.status(200).json(result) 
-*/
 	let hades_url = hades_url_base + `/dba_editor/authMlks_list/${ login_id }`
 	let result = await axios.get( hades_url )
 	return res.status(200).json(result.data) 
@@ -102,17 +55,12 @@ exports.get_authMlk = async( req, res )=>{
 }
 exports.get_users_list = async( req, res )=>{
 	let org_name = req.params.id 
-/*	
-	const db_name = 'config'
-	const sql_state = `
-	SELECT  defaultDB , dbLoginID AS 'user'
-	from TB_User a INNER JOIN TB_Organization b on a.orgSeq = b.seq 
-	where orgName = '${ org_name }'
-	`
-        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
-	return res.status(200).json(result) 
-*/
 	let hades_url = hades_url_base + `/dba_editor/users_list/${ org_name }`
+	let result = await axios.get( hades_url )
+	return res.status(200).json(result.data) 
+}
+exports.get_web_users = async( req, res )=>{
+	let hades_url = hades_url_base + `/dba_editor/web_users/`
 	let result = await axios.get( hades_url )
 	return res.status(200).json(result.data) 
 }

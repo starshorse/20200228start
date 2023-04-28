@@ -1,3 +1,10 @@
+/*
+	note: 
+		1. initWorkBbook should be sync with await before regsiter events. 
+		   spreadjs_eventsService.register_sheet0_bind_cellDoubleClick( $scope.spread ) 
+		
+
+*/
 angular.module('mySpreadjs',[])
 .controller('mySpreadjsCtrl',['$scope','$injector',async function( $scope, $injector){
         var spread_product = $injector.get('gc_spreadjsFactory') 
@@ -49,8 +56,12 @@ angular.module('mySpreadjs',[])
 		spreadjs_eventsService.register_sheet1_bind_cellChanged( $scope.spread ) 
 		spreadjs_eventsService.register_sheet2_bind_cellChanged( $scope.spread ) 
 	}else if( $injector.has('jupitor_admin_editorService')){
-		var jupitor_admin_editorService = $injector.get('jupitor_admin_editorService') 
-		jupitor_admin_editorService.initWorkbook( $scope.spread )
+		var jupitor_admin_editorService = $injector.get('jupitor_admin_editorService') 	
+		await jupitor_admin_editorService.initWorkbook( $scope.spread )
+		var spreadjs_eventsService = $injector.get('spreadjs_eventsService') 
+		spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
+		spreadjs_eventsService.register_sheet0_bind_cellDoubleClick( $scope.spread ) 
+		spreadjs_eventsService.register_sheet1_bind_cellDoubleClick( $scope.spread ) 
 	}
 
 }])
