@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.slicers.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.print.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<input type="button" id="button1" value="button1"/>	
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+			// set allowCopyPasteExcelStyle to true
+			spread.options.allowCopyPasteExcelStyle = true;
+			var customFloatingObject = new GC.Spread.Sheets.FloatingObjects.FloatingObject("f1", 20, 20, 60, 64);
+			var btn = document.createElement('button');
+			btn.style.width = "60px";
+			btn.style.height = "30px";
+			btn.innerText = "button1";
+			customFloatingObject.content(btn);
+			activeSheet.floatingObjects.add(customFloatingObject);
+
+			var customFloatingObject1 = new GC.Spread.Sheets.FloatingObjects.FloatingObject("f2", 5, 5, 30, 64);
+			var btn1 = document.createElement('button');
+			btn1.style.width = "60px";
+			btn1.style.height = "30px";
+			btn1.innerText = "button2";
+			customFloatingObject1.content(btn1);
+			activeSheet.floatingObjects.add(customFloatingObject1);
+
+			var floating = activeSheet.floatingObjects.all();
+			for(var i = 0; i < floating.length; i++){
+		        	alert(floating[i].name());		
+                        }
+			// 1.get..		
+			// 2.remove.. 		
+			// 3.zIndex .. 		
+			activeSheet.floatingObjects.zIndex("f2", 897);
+			activeSheet.floatingObjects.zIndex("f1", 898);		
+			$("#button1").click(function () {
+				var floating = activeSheet.floatingObjects.get("f1");
+				floating.isVisible(false);
+				activeSheet.resumePaint();
+				activeSheet.floatingObjects.remove("f2");
+				activeSheet.repaint();		
+			 });			
+
+					
+			
+		};
+	</script>
+	
+</html> 
+
+
+
