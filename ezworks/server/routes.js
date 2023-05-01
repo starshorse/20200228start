@@ -9,11 +9,11 @@ module.exports = function( app ){
 	        app.use('/Hades/dba_editor', require('./app/dba_editor_hades')); 
 		app.use('/Hades/db_administration', require('./app/db_administration_hades')); 
 	}	
-	else{ 
-/*		
-	        app.use('/dba_editor', require('./app/dba_editor')); 
-		app.use('/db_administration', require('./app/db_administration')); 
-*/		
+	else if( process.env.PROXY_HADES == 'local' ){ 
+	        app.use('/Hades/dba_editor', require('./app/dba_editor')); 
+		app.use('/Hades/db_administration', require('./app/db_administration')); 
+	}	
+	else{	
 		app.use('/Hades', createProxyMiddleware({
 			target: 'http://192.168.0.80:8000',
 			changeOrigin: true ,
