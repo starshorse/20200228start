@@ -205,6 +205,22 @@ exports.assign_userDB = async( req, res )=>{
         let result = await sql_exec_post( undefined , undefined, db_name , sql_state );   
 	return res.status(200).json(result) 
 }
+exports.update_web_userSeq = async( req, res )=>{
+	let db = req.params.db 
+	let id = req.params.id 
+	let userSeq = req.body.userSeq 
+	let hades_url = hades_url_base + `/dba_editor/web_userSeq/${ db }/${ id }`
+	let result = await axios.post( hades_url, { userSeq } ).catch((err)=>console.log(err));
+	return res.status(200).json(result.data) 
+}
+exports.update_web_user = async( req, res )=>{
+	let db = req.params.db 
+	let id = req.params.id 
+	let data = req.body 
+	let hades_url = hades_url_base + `/dba_editor/web_user/${ db }/${ id }`
+	let result = await axios.post( hades_url, data ).catch((err)=>console.log(err));
+	return res.status(200).json(result.data) 
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   old Codes.. 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

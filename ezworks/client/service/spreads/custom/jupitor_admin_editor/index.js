@@ -18,7 +18,7 @@ angular.module('jupitor_admin_editor',[])
 			        curUser: 'F5:F5',
 				curOrg: 'I5:I5',
 			        addUser: 'C8:C8',
-				addMLK: 'F8:F8',
+				curLogin: 'F8:F8',
 				user_info:'I3:K17',
 				login_info:'F1:G110',
 				btn_add_user:'D8:D8', 
@@ -37,7 +37,7 @@ angular.module('jupitor_admin_editor',[])
 		sheet_Users_table_users :{ name: 'Table2', tbl_view: null , data:[]},
 		sheet_Users_table_logins :{ name: 'Table3', tbl_view: null , data:[]},
 		sheet_Permissions_table_permissions :{ name: 'Table4', tbl_view: null , data:[]},
-		binding_data: { cur_server : null , cur_DB: null, cur_user: null , cur_organization: null },
+		binding_data: { cur_server : null , cur_DB: null, cur_user: null , cur_organization: null ,  cur_login: null  },
 	}
 	return jupitor_admin_editorFactory 	
 })
@@ -140,8 +140,10 @@ angular.module('jupitor_admin_editor',[])
 		let binding_data = new GC.Spread.Sheets.Bindings.CellBindingSource( jupitor_admin_editorFactory.binding_data ); 
 		let cell_cur_server = sheet.getRange( jupitor_admin_editorFactory.pos.Users.curServer ) 
 		let cell_curUser = sheet.getRange( jupitor_admin_editorFactory.pos.Users.curUser ) 
+		let cell_curLogin = sheet.getRange( jupitor_admin_editorFactory.pos.Users.curLogin ) 
 		sheet.setBindingPath( cell_cur_server.row, cell_cur_server.col , "cur_server")
 		sheet.setBindingPath( cell_curUser.row, cell_curUser.col , "cur_user")
+		sheet.setBindingPath( cell_curLogin.row, cell_curLogin.col , "cur_login")
 		sheet.setDataSource( binding_data );
 	}
 	this.sheet_Users_init = async ( spread )=>{
@@ -156,6 +158,9 @@ angular.module('jupitor_admin_editor',[])
 		this.sheet_Users_binding_data( spread ); 
 
 		sheet.getRange( jupitor_admin_editorFactory.pos.Users.addUser ).locked( false );
+		sheet.getRange( jupitor_admin_editorFactory.pos.Users.user_info ).locked( false );
+		sheet.getRange( jupitor_admin_editorFactory.pos.Users.pos_user_info.position ).backColor('#bbb3d1').locked( true ); 
+		sheet.getRange( jupitor_admin_editorFactory.pos.Users.pos_user_info.level ).backColor('#bbb3d1').locked( true ); 
                 sheet.options.isProtected = true ;
 	}
 	this.sheet_users_update = ( spread )=>{
@@ -199,7 +204,42 @@ angular.module('jupitor_admin_editor',[])
 		tableColumn1.name('Logins');
 		tableColumn1.dataField('user');
 		table.bind( [tableColumn1] , 'data' , jupitor_admin_editorFactory.sheet_Users_table_logins ) 
+		// set cur Login.. 
+		let cur_user_rec = jupitor_admin_editorFactory.web_users.filter((ent)=>ent.email == user_id );
+		let cur_login  = jupitor_admin_editorFactory.sheet_Users_table_logins.data.find((ent)=>ent.seq == cur_user_rec[0].userSeq )
+		if( cur_login )
+			jupitor_admin_editorFactory.binding_data.cur_login = cur_login.user 
+		else 
+			jupitor_admin_editorFactory.binding_data.cur_login = null  
+
+
 		this.sheet_Users_part_loginInfo_invalidate( spread, 0 );
+	}
+	this.sheet_Users_loginSelected = async ( spread, login_id )=>{
+		let selected_login = jupitor_admin_editorFactory.sheet_Users_table_logins.data.find((ent)=>ent.user == login_id );
+		console.log( selected_login )
+		let cur_user = jupitor_admin_editorFactory.binding_data.cur_user ; 
+		let cur_user_rec = jupitor_admin_editorFactory.web_users.filter((ent)=>ent.email == cur_user );
+		console.log( cur_user_rec  )
+		for( user_ent of cur_user_rec ){
+			let db_name = user_ent.db_name 
+			let id = user_ent.email 
+			let userSeq = selected_login.seq 
+			let result  = await $http({ method:'POST', url: `/Hades/dba_editor/web_userSeq/${ db_name }/${ id }` , data:{ userSeq } }).catch((err)=>console.log(err));
+			if( result.data.RESULT == -1 ){
+				alert( users_list.data.ERRORMESSAGE )
+			}
+		}
+		this.sheet_users_update( spread )
+	}	
+	this.sheet_Users_editInfo = async ( spread )=>{
+                let sheet = spread.getSheetFromName('Users') ;
+                let user_id  = jupitor_admin_editorFactory.binding_data.cur_user ; 
+		let cur_user_rec = jupitor_admin_editorFactory.web_users.filter((ent)=>ent.email == user_id );
+		for( const [ key, value ] of Object.entries( cur_user_rec[0] )){
+			sheet.getRange( jupitor_admin_editorFactory.pos.Users.pos_user_info[key] ).text( value ).wordWrap(true);
+		}
+		this.sheet_Users_part_userInfo_invalidate( spread, 0 );
 	}
 	this.sheet_Users_invalidate = ( spread, yes = 1 )=>{
 		if( yes ){
@@ -223,6 +263,24 @@ angular.module('jupitor_admin_editor',[])
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //    Sheet Users -  part userInfo 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+	this.sheet_users_part_userInfo_update = async ( spread )=>{
+                let sheet = spread.getSheetFromName('Users') ;
+		let update_e = { name : sheet.getRange( jupitor_admin_editorFactory.pos.Users.pos_user_info.name ).text() , 
+			         password :  sheet.getRange( jupitor_admin_editorFactory.pos.Users.pos_user_info.password ).text() , 
+		               } 
+		let cur_user = jupitor_admin_editorFactory.binding_data.cur_user ; 
+		let cur_user_rec = jupitor_admin_editorFactory.web_users.filter((ent)=>ent.email == cur_user );
+		console.log( cur_user_rec  )
+		for( user_ent of cur_user_rec ){
+			let db_name = user_ent.db_name 
+			let id = user_ent.email 
+			let result  = await $http({ method:'POST', url: `/Hades/dba_editor/web_user/${ db_name }/${ id }` , data: update_e }).catch((err)=>console.log(err));
+			if( result.data.RESULT == -1 ){
+				alert( users_list.data.ERRORMESSAGE )
+			}
+		}
+		alert("Data update Done!"); 
+	}
 	this.sheet_Users_part_userInfo_invalidate = ( spread , yes= 1 )=>{
                 let sheet = spread.getSheetFromName('Users') ;
 		let cell_userInfo = sheet.getRange( jupitor_admin_editorFactory.pos.Users.user_info )
@@ -292,26 +350,32 @@ angular.module('jupitor_admin_editor',[])
 				}
 				break;
 			case 'Users':
-				let btn_add_user = args.sheet.getRange( jupitor_admin_editorFactory.pos.users.btn_add_user ) 
-				let btn_add_MLK = args.sheet.getRange( jupitor_admin_editorFactory.pos.users.btn_add_MLK ) 
-				let btn_edit_role = args.sheet.getRange( jupitor_admin_editorFactory.pos.users.btn_edit_role ) 
-				let btn_MLK_info_update = args.sheet.getRange( jupitor_admin_editorFactory.pos.users.btn_mlk_info_update ) 
-				let cell_add_user = args.sheet.getRange( jupitor_admin_editorFactory.pos.users.addUser ) 
-				let cell_add_MLK = args.sheet.getRange( jupitor_admin_editorFactory.pos.users.addMLK ) 
+				let btn_add_user = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_add_user ) 
+				let btn_edit_info = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_edit_info ) 
+				let btn_view_info = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_view_info ) 
+				let btn_select_start = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_select_start ) 
+				let btn_user_info_update = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_user_info_update ) 
+				let cell_add_user = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.addUser ) 
+				// check click login list .. 
+				let table = jupitor_admin_editorFactory.sheet_Users_table_logins.tbl_view 
+				let data = jupitor_admin_editorFactory.sheet_Users_table_logins.data 
+				let drange = table.dataRange();
 				switch( args.col ){
 					case btn_add_user.col:
 						if( args.row == btn_add_user.row )
-							jupitor_admin_editorService.sheet_users_addUser( spread , args.sheet.getValue( cell_add_user.row, cell_add_user.col ))
+							jupitor_admin_editorService.sheet_Users_addUser( spread , args.sheet.getValue( cell_add_user.row, cell_add_user.col ))
 						break;
-					case btn_add_MLK.col:
-						if( args.row == btn_add_MLK.row )
-							jupitor_admin_editorService.sheet_users_addMLK( spread , args.sheet.getValue( cell_add_MLK.row, cell_add_MLK.col ))
-						else if( args.row == btn_edit_role.row )
-							jupitor_admin_editorService.sheet_users_goEditRole( spread ) 
+					case btn_edit_info.col:
+						if( args.row == btn_edit_info.row )
+							jupitor_admin_editorService.sheet_Users_editInfo( spread )
+						else if( args.row == btn_view_info.row )
+							jupitor_admin_editorService.sheet_Users_viewInfo( spread ) 
+						else if( args.row >= drange.row &&  args.row < ( drange.row + data.length ))
+							jupitor_admin_editorService.sheet_Users_loginSelected( spread, spread.getSheet(1).getValue( args.row, args.col -1 )); 
 						break;
-					case btn_MLK_info_update.col:
-						if( args.row == btn_MLK_info_update.row )
-							jupitor_admin_editorService.sheet_users_part_MLKInfo_DB_update( spread );
+					case btn_user_info_update.col:
+						if( args.row == btn_user_info_update.row )
+							jupitor_admin_editorService.sheet_users_part_userInfo_update( spread );
 						break;
 				}
 				break;

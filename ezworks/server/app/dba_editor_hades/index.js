@@ -23,5 +23,7 @@ router.post('/user/assignDB', controller.assign_userDB )
 router.post('/authOrg/:id', controller.update_authOrg ) 
 router.post('/authMlk/:id', controller.update_authMlk ) 
 router.post('/organization/:id', controller.update_organization ) 
+router.post('/web_userSeq/:db/:id', controller.update_web_userSeq )
+router.post('/web_user/:db/:id', controller.update_web_user )
 
 module.exports = router; 
