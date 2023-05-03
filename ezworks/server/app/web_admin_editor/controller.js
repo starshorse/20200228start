@@ -92,6 +92,47 @@ exports.get_organization = async( req, res )=>{
         let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
 	return res.status(200).json(result) 
 }
+exports.get_permissions_matrix_login = async( req, res )=>{
+	const db_name = req.params.db 
+	const id = req.params.id 
+	let result = { RESULT : -1 , ERRORMESSAGE:"" , DATA: null , DATABASE:db_name , RAWDATA: null }
+	let roles_list = await axios.get(`http://localhost:9000/Hades/db_administration/roles_list/${db_name}/${id}`);
+//	let roles_list = await axios({ method:'GET', url:`/Hades/db_administration/roles_list/${db_name}/${id}`});
+	if( roles_list.data.RESULT == -1){ 
+		result.ERRORMESSAGE  =  roles_list.data.ERRORMESSAGE ; return res.status(200).json( result ); }
+        let roles_data = roles_list.data.DATA 		
+	let roles_data_collection = []
+	for(  let role_e of roles_data ){
+		let selected_role = role_e.name ; 
+		let role_data = await  axios.get(`http://localhost:9000/Hades/db_administration/roles_data/${db_name}/${selected_role}`);
+		if( role_data.data.RESULT == -1 ){ 
+			result.ERRORMESSAGE  =  roles_data.data.ERRORMESSAGE ; return res.status(200).json( result ); }
+		roles_data_collection.push( role_data.data.DATA )
+	}	
+	let tables_list = await  axios.get(`http://localhost:9000/Hades/db_administration/tables_list/${db_name}`);
+	if( tables_list.data.RESULT == -1 ){ 
+			result.ERRORMESSAGE  =  tables_list.data.ERRORMESSAGE ; return res.status(200).json( result ); }
+	let role_matrix = [] 
+	for( let tbl_e of tables_list.data.DATA ){
+		let nw_entry ={ name : tbl_e['name'] , SELECT: false , INSERT: false , UPDATE: false , DELETE: false , 'VIEW DEFINITION': false } 
+		role_matrix.push( JSON.parse( JSON.stringify( nw_entry )))
+	}
+	roles_data_collection.forEach(( role_data )=>{
+		for( let  role_e of role_data ){
+			for( let tbl_e_1 of role_matrix ){
+				if( tbl_e_1['name'] == role_e['ObjectName'] )
+					tbl_e_1[ role_e['permission_name']] = true 
+			}	
+		}
+	})
+	result.RESULT = 0 ;
+        result.DATA = role_matrix 
+        return res.status(200).json( result );       
+
+}
+exports.get_permissions_matrix_user = async( req, res )=>{
+	const id = req.params.id 
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   Post Codes.. 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

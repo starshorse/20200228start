@@ -30,7 +30,7 @@ angular.module('jupitor_admin_editor',[])
 			},
 			Permissions:{
 				curDB:'C6:C6',
-				curUser: 'E6:E6',
+				curLogin: 'E6:E6',
 			}
 		      },	
 		sheet_Servers_table:{ name: 'Table1', tbl_view: null , data:[]},
@@ -54,6 +54,7 @@ angular.module('jupitor_admin_editor',[])
 		this.sheet_Users_invalidate( spread ) ;
 		await this.sheet_Servers_init( spread ); 
 	        await this.sheet_Users_init( spread ); 
+	        await this.sheet_Permissions_init( spread ); 
 	}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //    Sheet Servers  
@@ -96,6 +97,7 @@ angular.module('jupitor_admin_editor',[])
 	}
 	this.sheet_Servers_serverSelected = async ( spread, Server_id )=>{
                 jupitor_admin_editorFactory.binding_data.cur_server = Server_id; 
+                jupitor_admin_editorFactory.binding_data.cur_DB = Server_id; 
 		await this.sheet_Servers_part_serverInfo_update( spread ); 
 	}
 	const setColumnVisible =  ( sheet , yes , cells_area )=>{
@@ -166,6 +168,7 @@ angular.module('jupitor_admin_editor',[])
 	this.sheet_users_update = ( spread )=>{
 		this.sheet_Users_list_update( spread );
 		this.sheet_Users_invalidate( spread , 0 ); // active
+		this.sheet_Permissions_invalidate( spread);
 	}
 	this.sheet_Users_list_update = async ( spread )=>{
                 let sheet = spread.getSheetFromName('Users') ;
@@ -190,6 +193,7 @@ angular.module('jupitor_admin_editor',[])
 	}
 	this.sheet_Users_userSelected = async ( spread, user_id )=>{
 		this.sheet_Users_part_userInfo_invalidate( spread );
+		this.sheet_Permissions_invalidate( spread);
                 jupitor_admin_editorFactory.binding_data.cur_user = user_id; 
                 let server_id  = jupitor_admin_editorFactory.binding_data.cur_server ;
 		let login_list = await  $http.get(`/Hades/dba_editor/users_list/${ server_id }`);
@@ -289,6 +293,99 @@ angular.module('jupitor_admin_editor',[])
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //    Sheet Permission 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+	this.sheet_Permissions_binding_data = async ( spread )=>{
+                let sheet = spread.getSheetFromName('Permissions') ;
+		let binding_data = new GC.Spread.Sheets.Bindings.CellBindingSource( jupitor_admin_editorFactory.binding_data ); 
+		let cell_cur_DB = sheet.getRange( jupitor_admin_editorFactory.pos.Permissions.curDB ) 
+		let cell_curLogin = sheet.getRange( jupitor_admin_editorFactory.pos.Permissions.curLogin ) 
+		sheet.setBindingPath( cell_cur_DB.row, cell_cur_DB.col , "cur_DB")
+		sheet.setBindingPath( cell_curLogin.row, cell_curLogin.col , "cur_login")
+		sheet.setDataSource( binding_data );
+	}
+	this.sheet_Permissions_init = async ( spread )=>{
+                let sheet = spread.getSheetFromName('Permissions') ;
+		sheet.setColumnCount( 200 );
+
+		this.sheet_Permissions_binding_data( spread ); 
+		sheet.options.isProtected = false ;
+		let table = sheet.tables.findByName( jupitor_admin_editorFactory.sheet_Permissions_table_permissions.name ) 		
+		jupitor_admin_editorFactory.sheet_Permissions_table_permissions.tbl_view = table; 
+                sheet.options.isProtected = true ;
+	}
+	this.sheet_Permissions_get_userRolesList = async ( spread, db_name )=>{
+		let cur_login = jupitor_admin_editorFactory.binding_data.cur_login 
+		let roles_list = await  $http.get(`/Hades/db_administration/roles_list/${db_name}/${cur_login}`);
+		if( roles_list.data.RESULT == -1){ alert( roles_list.data.ERRORMESSAGE ); return; }
+		return roles_list.data.DATA 
+	}
+	// update from userRoles sheet. using login ID.. 
+	this.sheet_Permissions_get_matrix = async( spread , cur_login )=>{
+		let db_name = jupitor_admin_editorFactory.binding_data.cur_DB 
+                let sheet = spread.getSheetFromName('Permissions') ;
+		let result = await $http.get(`/web_admin_editor/permissions_matrix_login/${ db_name }/${ cur_login}`) 
+		if( result.data.RESULT == -1 ){ alert( result.data.ERRORMESSAGE ); return; }
+
+		role_matrix = result.data.DATA;
+
+		jupitor_admin_editorFactory.sheet_Permissions_table_permissions.data = role_matrix  
+		let table  = jupitor_admin_editorFactory.sheet_Permissions_table_permissions.tbl_view 
+		let tbl_info  = jupitor_admin_editorFactory.sheet_Permissions_table_permissions 
+//		table.expandBoundRows( true ); 
+		table.bind( null , 'data' , tbl_info ) 
+		let drange = table.dataRange() 
+		let checkBox = new GC.Spread.Sheets.CellTypes.CheckBox(); 
+		checkBox.caption("Enabled")
+		checkBox.textAlign(GC.Spread.Sheets.CellTypes.CheckBoxTextAlign.right);
+		sheet.getRange( drange.row, drange.col + 1, drange.rowCount, drange.colCount -1 ).cellType( checkBox ); 
+		let rowFilter  = table.rowFilter();
+		spread.resumePaint(); 
+	}
+	this.sheet_Permissions_update_1 = async ( spread )=>{
+		let cur_login = jupitor_admin_editorFactory.binding_data.cur_login 
+		this.sheet_Permissions_get_matrix( spread, cur_login ); 
+/* move to Server for sharing. 		
+		let roles_data = await this.sheet_Permissions_get_userRolesList( spread , db_name ); 
+		let roles_data_collection = []
+		for( role_e of roles_data ){
+			let selected_role = role_e.name ; 
+			let role_data = await  $http.get(`/Hades/db_administration/roles_data/${db_name}/${selected_role}`);
+		        if( role_data.data.RESULT == -1 ){ alert( role_data.data.ERRORMESSAGE ); return; }
+			roles_data_collection.push( role_data.data.DATA )
+		}	
+		let tables_list = await  $http.get(`/Hades/db_administration/tables_list/${db_name}`);
+		if( tables_list.data.RESULT == -1 ){ alert( tables_list.data.ERRORMESSAGE ); return; }
+		spread.suspendPaint();
+		let role_matrix = [] 
+		for( tbl_e of tables_list.data.DATA ){
+			nw_entry ={ name : tbl_e['name'] , SELECT: false , INSERT: false , UPDATE: false , DELETE: false , 'VIEW DEFINITION': false } 
+			role_matrix.push( JSON.parse( JSON.stringify( nw_entry )))
+		}
+		roles_data_collection.forEach(( role_data )=>{
+			for( role_e of role_data ){
+				for( tbl_e_1 of role_matrix ){
+					if( tbl_e_1['name'] == role_e['ObjectName'] )
+						tbl_e_1[ role_e['permission_name']] = true 
+				}	
+			}
+		})
+*/		
+		this.sheet_Permissions_invalidate( spread, 0);
+	}
+	this.sheet_Permissions_update_2 = async( spread )=>{
+		let cur_user = jupitor_admin_editorFactory.binding_data.cur_user; 
+		let web_login_matrix = await  $http.get(`/Hades/dba_editor/web_login_matrix`);
+		if( web_login_matrix.data.RESULT == -1 ){
+			alert( web_login_matrix.data.ERRORMESSAGE )
+			return -1 ;
+		}
+		let login_id = web_login_matrix.data.DATA.find((ent)=>ent.web_id == cur_user )
+		if( !login_id ){
+			alert(" no this web id for DB login id" );
+			return -1 ;
+		}
+		this.sheet_Permissions_get_matrix( spread, login_id.login_id ); 
+		this.sheet_Permissions_invalidate( spread, 0);
+	}
 	this.sheet_Permissions_invalidate = ( spread, yes = 1 )=>{
 		if( yes ){
 			spread.getSheetFromName('Permissions').visible( false );
@@ -369,7 +466,8 @@ angular.module('jupitor_admin_editor',[])
 						if( args.row == btn_edit_info.row )
 							jupitor_admin_editorService.sheet_Users_editInfo( spread )
 						else if( args.row == btn_view_info.row )
-							jupitor_admin_editorService.sheet_Users_viewInfo( spread ) 
+						//	jupitor_admin_editorService.sheet_Permissions_update_1( spread ) 
+							jupitor_admin_editorService.sheet_Permissions_update_2( spread ) 
 						else if( args.row >= drange.row &&  args.row < ( drange.row + data.length ))
 							jupitor_admin_editorService.sheet_Users_loginSelected( spread, spread.getSheet(1).getValue( args.row, args.col -1 )); 
 						break;
