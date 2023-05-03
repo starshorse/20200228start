@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.slicers.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.print.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<input type='button' id='button1' value='print' />
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+		 <input type="text" id="formulaTextBox" />
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// methods 
+/*
+
+	       PaperKind Enumeration.. 
+	       Member	Description
+		a2	Specifies the paper size is 420 mm * 594 mm.
+		a3	Specifies the paper size is 297 mm * 420 mm.
+		a3Extra	Specifies the paper size is 322 mm * 445 mm.
+		a3ExtraTransverse	Specifies the paper size is 322 mm * 445 mm.
+		a3Rotated	Specifies the paper size is 420 mm * 297 mm.
+		a3Transverse	Specifies the paper size is 297 mm * 420 mm.
+		a4	Specifies the paper size is 210 mm * 297 mm.
+		a4Extra	Specifies the paper size is 236 mm * 322 mm.
+		a4Plus	Specifies the paper size is 210 mm * 330 mm.
+		a4Rotated	Specifies the paper size is 297 mm * 210 mm.
+		a4Small	Specifies the paper size is 210 mm * 297 mm.
+		a4Transverse	Specifies the paper size is 210 mm * 297 mm.
+		a5	Specifies the paper size is 148 mm * 210 mm.
+		a5Extra	Specifies the paper size is 174 mm * 235 mm.
+		a5Rotated	Specifies the paper size is 210 mm * 148 mm.
+		a5Transverse	Specifies the paper size is 148 mm * 210 mm.
+		a6	Specifies the paper size is 105 mm * 148 mm.
+		a6Rotated	Specifies the paper size is 148 mm * 105 mm.
+		aPlus	Specifies the paper size is 227 mm * 356 mm.
+		b4	Specifies the paper size is 250 mm * 353 mm.
+		b4Envelope	Specifies the paper size is 250 mm * 353 mm.
+		b4JisRotated	Specifies the paper size is 364 mm * 257 mm.
+		b5	Specifies the paper size is 176 mm * 250 mm.
+		b5Envelope	Specifies the paper size is 176 mm * 250 mm.
+		b5Extra	Specifies the paper size is 201 mm * 276 mm.
+		b5JisRotated	Specifies the paper size is 257 mm * 182 mm.
+		b5Transverse	Specifies the paper size is 182 mm * 257 mm.
+		b6Envelope	Specifies the paper size is 176 mm * 125 mm.
+		b6Jis	Specifies the paper size is 128 mm * 182 mm.
+		b6JisRotated	Specifies the paper size is 182 mm * 128 mm.
+		bPlus	Specifies the paper size is 305 mm * 487 mm.
+		c3Envelope	Specifies the paper size is 324 mm * 458 mm.
+		c4Envelope	Specifies the paper size is 229 mm * 324 mm.
+		c5Envelope	Specifies the paper size is 162 mm * 229 mm.
+		c65Envelope	Specifies the paper size is 114 mm * 229 mm.
+		c6Envelope	Specifies the paper size is 114 mm * 162 mm.
+		cSheet	Specifies the paper size is 17 in. * 22 in.
+		custom	Specifies the paper size is defined by the user.
+		dlEnvelope	Specifies the paper size is 110 mm * 220 mm.
+		dSheet	Specifies the paper size is 22 in. * 34 in.
+		eSheet	Specifies the paper size is 34 in. * 44 in.
+		executive	Specifies the paper size is 7.25 in. * 10.5 in.
+		folio	Specifies the paper size is 8.5 in. * 13 in.
+		germanLegalFanfold	Specifies the paper size is 8.5 in. * 13 in.
+		germanStandardFanfold	Specifies the paper size is 8.5 in. * 12 in.
+		inviteEnvelope	Specifies the paper size is 220 mm * 220 mm.
+		isoB4	Specifies the paper size is 250 mm * 353 mm.
+		italyEnvelope	Specifies the paper size is 110 mm * 230 mm.
+		japaneseDoublePostcard	Specifies the paper size is 200 mm * 148 mm.
+		japaneseDoublePostcardRotated	Specifies the paper size is 148 mm * 200 mm.
+		japaneseEnvelopeChouNumber3	Specifies the paper size is Japanese Chou #3 envelope, 120 mm * 235 mm.
+		japaneseEnvelopeChouNumber3Rotated	Specifies the paper size is Japanese rotated Chou #3 envelope, 235 mm * 120 mm.
+		japaneseEnvelopeChouNumber4	Specifies the paper size is Japanese Chou #4 envelope, 90 mm * 205 mm.
+		japaneseEnvelopeChouNumber4Rotated	Specifies the paper size is Japanese rotated Chou #4 envelope, 205 mm * 90 mm.
+		japaneseEnvelopeKakuNumber2	Specifies the paper size is Japanese Kaku #2 envelope, 240 mm * 332 mm.
+		japaneseEnvelopeKakuNumber2Rotated	Specifies the paper size is Japanese rotated Kaku #2 envelope, 332 mm * 240 mm.
+		japaneseEnvelopeKakuNumber3	Specifies the paper size is Japanese Kaku #3 envelope, 216 mm * 277 mm.
+		japaneseEnvelopeKakuNumber3Rotated	Specifies the paper size is Japanese rotated Kaku #3 envelope, 277 mm * 216 mm.
+		japaneseEnvelopeYouNumber4	Specifies the paper size is Japanese You #4 envelope, 235 mm * 105 mm.
+		japaneseEnvelopeYouNumber4Rotated	Specifies the paper size is Japanese You #4 rotated envelope, 105 mm * 235 mm.
+		japanesePostcard	Specifies the paper size is 100 mm * 148 mm.
+		japanesePostcardRotated	Specifies the paper size is 148 mm * 100 mm.
+		ledger	Specifies the paper size is 17 in. * 11 in.
+		legal	Specifies the paper size is 8.5 in. * 14 in.
+		legalExtra	Specifies the paper size is legal extra paper (9.275 in. * 15 in.). This value is specific to the PostScript driver and is used only by Linotronic printers in order to conserve paper.
+		letter	Specifies the paper size is 8.5 in. * 11 in.
+		letterExtra	Specifies the paper size is letter extra paper (9.275 in. * 12 in.). This value is specific to the PostScript driver and is used only by Linotronic printers in order to conserve paper.
+		letterExtraTransverse	Specifies the paper size 9.275 in. * 12 in.
+		letterPlus	Specifies the paper size is 8.5 in. * 12.69 in.
+		letterRotated	Specifies the paper size is 11 in. * 8.5 in.
+		letterSmall	Specifies the paper size is 8.5 in. * 11 in.
+		letterTransverse	Specifies the paper size is 8.275 in. * 11 in.
+		monarchEnvelope	Specifies the paper size is 3.875 in. * 7.5 in.
+		note	Specifies the paper size is 8.5 in. * 11 in.
+		number10Envelope	Specifies the paper size is 4.125 in. * 9.5 in.
+		number11Envelope	Specifies the paper size is 4.5 in. * 10.375 in.
+		number12Envelope	Specifies the paper size is 4.75 in. * 11 in.
+		number14Envelope	Specifies the paper size is 5 in. * 11.5 in.
+		number9Envelope	Specifies the paper size is 3.875 in. * 8.875 in.
+		personalEnvelope	Specifies the paper size is 3.625 in. * 6.5 in.
+		prc16K	Specifies the paper size is 146 mm * 215 mm.
+		prc16KRotated	Specifies the paper size is 146 mm * 215 mm.
+		prc32K	Specifies the paper size is 97 mm * 151 mm.
+		prc32KBig	Specifies the paper size is 97 mm * 151 mm.
+		prc32KBigRotated	Specifies the paper size is 97 mm * 151 mm.
+		prc32KRotated	Specifies the paper size is 97 mm * 151 mm.
+		prcEnvelopeNumber1	Specifies the paper size is 102 mm * 165 mm.
+		prcEnvelopeNumber10	Specifies the paper size is 324 mm * 458 mm.
+		prcEnvelopeNumber10Rotated	Specifies the paper size is 458 mm * 324 mm.
+		prcEnvelopeNumber1Rotated	Specifies the paper size is 165 mm * 102 mm.
+		prcEnvelopeNumber2	Specifies the paper size is 102 mm * 176 mm.
+		prcEnvelopeNumber2Rotated	Specifies the paper size is 176 mm * 102 mm.
+		prcEnvelopeNumber3	Specifies the paper size is 125 mm * 176 mm.
+		prcEnvelopeNumber3Rotated	Specifies the paper size is 176 mm * 125 mm.
+		prcEnvelopeNumber4	Specifies the paper size is 110 mm * 208 mm.
+		prcEnvelopeNumber4Rotated	Specifies the paper size is 208 mm * 110 mm.
+		prcEnvelopeNumber5	Specifies the paper size is 110 mm * 220 mm.
+		prcEnvelopeNumber5Rotated	Specifies the paper size is 220 mm * 110 mm.
+		prcEnvelopeNumber6	Specifies the paper size is 120 mm * 230 mm.
+		prcEnvelopeNumber6Rotated	Specifies the paper size is 230 mm * 120 mm.
+		prcEnvelopeNumber7	Specifies the paper size is 160 mm * 230 mm.
+		prcEnvelopeNumber7Rotated	Specifies the paper size is 230 mm * 160 mm.
+		prcEnvelopeNumber8	Specifies the paper size is 120 mm * 309 mm.
+		prcEnvelopeNumber8Rotated	Specifies the paper size is 309 mm * 120 mm.
+		prcEnvelopeNumber9	Specifies the paper size is 229 mm * 324 mm.
+		prcEnvelopeNumber9Rotated	Specifies the paper size is 324 mm * 229 mm.
+		quarto	Specifies the paper size is 215 mm * 275 mm.
+		standard10x11	Specifies the paper size is 10 in. * 11 in.
+		standard10x14	Specifies the paper size is 10 in. * 14 in.
+		standard11x17	Specifies the paper size is 11 in. * 17 in.
+		standard12x11	Specifies the paper size is 12 in. * 11 in.
+		standard15x11	Specifies the paper size is 15 in. * 11 in.
+		standard9x11	Specifies the paper size is 9 in. * 11 in.
+		statement	Specifies the paper size is 5.5 in. * 8.5 in.
+		tabloid	Specifies the paper size is 11 in. * 17 in.
+		tabloidExtra	Specifies the paper size is 11.69 in. * 18 in.
+		usStandardFanfold	Specifies the paper size is 14.875 in. * 11 in.
+
+	       PrintCentering Enumeration.
+	      	Member	Description
+		both	Centers the printed layout both horizontally and vertically on the page.
+		horizontal	Centers the printed layout horizontally on the page.
+		none	Does not center the printed page at all.
+		vertical	Centers the printed layout vertically on the page.
+	      
+	      PrintPageOrder Enumeration.
+	      	Member	Description
+		auto	Automatically determines the best order for printing pages.
+		downThenOver	Prints pages down then across.
+		overThenDown	Prints pages across then down.
+	      PrintPageOrientation Enumeraition. 
+	       	Member	Description
+		landscape	Prints landscape orientation.
+		portrait	Prints portrait orientation.
+	       PrintVisibility Type Enumeration.
+	       	Member	Description
+		hide	Hides the area.
+		inherit	Inherits the setting from the Worksheet class.
+		show	Shows in each page.
+		showOnce	Shows once.
+	       */
+			// 1.getPageSize , height , kind , width .. 
+			const case_num = 4 
+					switch( case_num ){		
+						case 1:			
+							// set data
+							// set allowCopyPasteExcelStyle to true
+							spread.options.allowCopyPasteExcelStyle = true;
+							activeSheet.setArray(0, 0, [1, 2, 3, 4, 5]);
+							var fbx = new GC.Spread.Sheets.FormulaTextBox.FormulaTextBox(document.getElementById("formulaTextBox"));
+							fbx.workbook(spread);		
+							// 1. PaperSize Type.. 		
+							var printInfo = new GC.Spread.Sheets.Print.PrintInfo();
+							printInfo.pageHeaderFooter({
+							     normal: {
+								 header: {
+								     left: "Header Left"
+								 }
+							     }
+							});
+							// 14. paperSize Method.. 		
+							printInfo.paperSize(new GC.Spread.Sheets.Print.PaperSize(GC.Spread.Sheets.Print.PaperKind.a4));
+							printInfo.headerLeft("Header Left");
+							// 15. repeat.. 		
+							printInfo.repeatColumnStart(0);
+							printInfo.repeatColumnEnd(2);
+							printInfo.repeatRowStart(0);
+							printInfo.repeatRowEnd(2);
+							// 16. showBorder
+							printInfo.showBorder(false);		
+							// 17. showColumnHeader
+							printInfo.showColumnHeader(GC.Spread.Sheets.Print.PrintVisibilityType.hide);
+							// 19. showRowHeader..		
+							printInfo.showRowHeader(GC.Spread.Sheets.Print.PrintVisibilityType.hide);		
+							// 18.showGridLine Method.		
+							printInfo.showGridLine(false);		
+							activeSheet.printInfo( printInfo );
+
+							spread.print(0);	
+							break;						
+						case 2:
+							activeSheet.setRowCount(30, GC.Spread.Sheets.SheetArea.viewport);
+							activeSheet.setColumnCount(30, GC.Spread.Sheets.SheetArea.viewport);
+
+							activeSheet.suspendPaint();
+								    //set value
+								    for (var r = 0, rc = activeSheet.getRowCount(); r < rc; r++) {
+									for (var c = 0, cc = activeSheet.getColumnCount(); c < cc; c++) {
+									    activeSheet.setValue(r, c, r + c);
+									}
+								    }
+							activeSheet.resumePaint();
+
+							$("#button1").click(function () {
+							var printInfo = new GC.Spread.Sheets.Print.PrintInfo();
+							
+							//1. bestFitColumns 	
+							printInfo.bestFitColumns(true);
+							// 2. bestFitRows 			
+							printInfo.bestFitRows(true);
+							// 3. blackAndWhite..			
+							printInfo.blackAndWhite(true);			
+							// 10. orientation.. 			
+							printInfo.orientation(GC.Spread.Sheets.Print.PrintPageOrientation.landscape);
+							printInfo.footerCenter("GrapeCity");			
+							printInfo.headerLeft("Header Left");
+							// 5.columnStart, columnEnd			
+							printInfo.columnStart(0);
+							printInfo.columnEnd(12);
+							// 4.centering Method.. 			
+							printInfo.centering(GC.Spread.Sheets.Print.PrintCentering.horizontal);			
+							printInfo.paperSize(new GC.Spread.Sheets.Print.PaperSize(GC.Spread.Sheets.Print.PaperKind.a4));
+							activeSheet.printInfo( printInfo );
+
+							spread.print(0);			
+							   });
+							break;
+						case 3:
+							activeSheet.setRowCount(30, GC.Spread.Sheets.SheetArea.viewport);
+							activeSheet.setColumnCount(30, GC.Spread.Sheets.SheetArea.viewport);
+
+							activeSheet.suspendPaint();
+								    //set value
+								    for (var r = 0, rc = activeSheet.getRowCount(); r < rc; r++) {
+									for (var c = 0, cc = activeSheet.getColumnCount(); c < cc; c++) {
+									    activeSheet.setValue(r, c, r + c);
+									}
+								    }
+							activeSheet.resumePaint();
+
+							$("#button1").click(function () {
+							var printInfo = new GC.Spread.Sheets.Print.PrintInfo();
+							// pageHeaderFooter Method.. 			
+							printInfo.differentFirstPage(true);
+							printInfo.pageHeaderFooter({
+							     first: {
+								 header: {
+								     left: "It is &T.",
+								     center: "&SThis is text.",
+								     right: "&BHeader"
+								 }
+							     }
+							});
+							printInfo.differentOddAndEvenPages(true);
+							printInfo.pageHeaderFooter({
+							     odd: {
+								 header: {
+								     left: "It is &T.",
+								     center: "&SThis is text.",
+								     right: "&BHeader"
+								 }
+							     },
+							     even: {
+								 header: {
+								     left: "It is &T.",
+								     center: "&SThis is text.",
+								     right: "&BHeader"
+								 }
+							     }
+							});			
+							// 1. firstPageNumber .. 
+							printInfo.firstPageNumber(4);
+							// 2. fitPagesTall Method.. 			
+							printInfo.fitPagesTall(1);			
+							// 3. fitPagesWide Method.. 			
+							// printInfo.fitPagesWide(1);
+							// 4. margin.. 
+							printInfo.margin({top:75, bottom:75, left:20, right:20, header:10, footer:20});
+							// 11.pageOrder 		
+							printInfo.pageOrder(GC.Spread.Sheets.Print.PrintPageOrder.auto);			
+							// 12. pageRnage			
+							printInfo.pageRange("1-2");
+							// 15. qualityFactor 			
+							printInfo.qualityFactor(6);			
+							activeSheet.printInfo( printInfo );
+							spread.print(0);			
+							   });
+							break;
+						case 4:			
+							// set data
+							// set allowCopyPasteExcelStyle to true
+							spread.options.allowCopyPasteExcelStyle = true;
+							activeSheet.setArray(0, 0, [1, 2, 3, 4, 5]);
+							var fbx = new GC.Spread.Sheets.FormulaTextBox.FormulaTextBox(document.getElementById("formulaTextBox"));
+							fbx.workbook(spread);		
+							// 1. PaperSize Type.. 		
+							var printInfo = new GC.Spread.Sheets.Print.PrintInfo();
+							printInfo.pageHeaderFooter({
+							     normal: {
+								 header: {
+								     left: "Header Left"
+								 }
+							     }
+							});
+							// 14. paperSize Method.. 		
+							printInfo.paperSize(new GC.Spread.Sheets.Print.PaperSize(GC.Spread.Sheets.Print.PaperKind.a4));
+							printInfo.headerLeft("Header Left");
+							// 15. repeat.. 		
+							printInfo.repeatColumnStart(0);
+							printInfo.repeatColumnEnd(2);
+							printInfo.repeatRowStart(0);
+							printInfo.repeatRowEnd(2);
+
+							// 20. useMax Method.. 
+							printInfo.useMax(false);		
+                                                        printInfo.watermark([{x:0, y:0, width:100, height:100, imageSrc:"./watermark01.png", page:"all"}]);
+
+                                                        // zoomFactor Method.. 
+							printInfo.zoomFactor(2);		
+							activeSheet.printInfo( printInfo );
+
+							spread.print(0);	
+							break;						
+
+
+							}					
+		};
+	</script>
+	
+</html> 
+
+
+
