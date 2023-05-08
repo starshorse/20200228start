@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.slicers.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.print.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+		 <input type="text" id="formulaTextBox" />
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+			// set allowCopyPasteExcelStyle to true
+			spread.options.allowCopyPasteExcelStyle = true;
+			activeSheet.setArray(0, 0, [1, 2, 3, 4, 5, 6,7,8]);
+			var fbx = new GC.Spread.Sheets.FormulaTextBox.FormulaTextBox(document.getElementById("formulaTextBox"));
+			fbx.workbook(spread);		
+			
+                        var shape = sheet.shapes.addCameraShape("shape1", 'Sheet1!A1:A8', 100, 50,100,150  );
+			// 1.doubleClickCommand , Methods 		
+                        shape.doubleClickCommand( null ); 
+			// 2.range , Methods		
+			spread.getSheet(1).setArray(0, 0, [1, 2, 3, 4, 5, 6,7,8]);
+			shape.range('Sheet2!A2:B8');
+			// 3. rotate , Methods		
+			var n = shape.rotate();
+			shape.rotate(n + 30);		
+			// 4. style , Mehtods 		
+			var oldStyle = shape.style();
+			oldStyle.fill.color = "red";
+			oldStyle.fill.transparency = 0.5;
+			oldStyle.line.color = "green";
+			oldStyle.line.lineStyle = GC.Spread.Sheets.Shapes.PresetLineDashStyle.dashDot;
+			oldStyle.line.width = 5;
+			oldStyle.line.capType = GC.Spread.Sheets.Shapes.LineCapStyle.square;
+			oldStyle.line.joinType = GC.Spread.Sheets.Shapes.LineJoinStyle.miter;
+			oldStyle.line.transparency = 0.5;
+			shape.style(oldStyle);		
+
+		};
+	</script>
+	
+</html> 
+
+
+
