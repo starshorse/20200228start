@@ -77,6 +77,7 @@ var app  = angular.module('ezch_tbl_editor_app',[
 	}
 	$scope.init_app = async ( )=>{
 	        await ezch_tbl_editor_appService.sheet2_init( spreadjs_product , spreadJs_factory )
+		$scope.process_events(); 
 	}
 	const updateUserDB = ( user_db )=>{
 		$scope.user_DB = user_db;

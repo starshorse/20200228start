@@ -184,7 +184,8 @@ var spreadsCtrl = function($scope, $injector , restApiServiceDbEdit , spreadJs_s
 // global variable. 	
 	console.log('[parts/spreads] register spreadJs_service.addPost_loadHead_f_lists') 
 	spreadJs_service.addPost_loadHead_f_list( process_events ) 
-	process_events() 
+//1.	process_events() 
+	$scope.process_events = process_events ; 
 	spreadJs_service.set_openTbl( $scope.openTbl ) 
 //1. move to app.js 
 	$scope.init_app(); 
