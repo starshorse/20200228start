@@ -73,6 +73,40 @@ exports.update = function( req, res){
 	result.DATA = JSON.parse( readFileSync( id_path, 'utf-8'))
 	return res.status( 200 ).json( result ) 
 }
+exports.insert_tbl = async function( req, res){
+	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let id = req.headers.id 
+	let user_db = req.headers.db 
+	let seq = req.params.seq 
+	let tbl_name = req.params.tbl_name ;
+	let data = req.body 
+	let headers = { user_db ,id } 
+	
+	let  hades_data 
+	hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${tbl_name}/`, data , headers : headers })
+	result.STATUS = 1 
+	result.RESULT = 'success'
+	result.MESSAGE = '' 
+	result.DATA = hades_data.data.DATA ; 
+	return res.status( 200 ).json( result ) 
+}
+exports.insert_tbl_tr = async function( req, res){
+	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let id = req.headers.id 
+	let user_db = req.headers.db 
+	let seq = req.params.seq 
+	let tbl_name = req.params.tbl_name ;
+	let data = req.body 
+	let headers = { user_db ,id } 
+	
+	let  hades_data 
+	hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${tbl_name}/tr`, data , headers : headers })
+	result.STATUS = 1 
+	result.RESULT = 'success'
+	result.MESSAGE = '' 
+	result.DATA = hades_data.data.tbl_data ; 
+	return res.status( 200 ).json( result ) 
+}
 exports.update_tbl = async function( req, res){
 	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
 	let id = req.headers.id 
@@ -100,6 +134,72 @@ exports.update_tbl = async function( req, res){
                 	console.log( "server", err ) 	
 		}
 	}	
+	return res.status( 200 ).json( result ) 
+}
+exports.update_user_config = async function( req, res){
+	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let id = req.headers.id 
+	let user_db = req.params.db 
+	let data = req.body 
+	let headers = { id } 
+	
+	let  hades_data 
+	hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${ user_db }/user`, data , headers : headers })
+	result.STATUS = 1 
+        result.RESULT = 'success'
+	result.MESSAGE = '' 
+	result.DATA = hades_data.data.DATA ; 
+
+	return res.status( 200 ).json( result ) 
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+//  Router.. GET  
+//////////////////////////////////////////////////////////////////////////////////////////
+exports.get_tbl_list = async function( req, res){
+	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let user_db = req.params.db 
+	let headers = { user_db } 
+		
+	let  hades_data = await axios({ method:"GET", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/`, headers : headers })
+
+	result.STATUS = 1 
+	result.RESULT = 'success'
+	result.MESSAGE = '' 
+	result.DATA = hades_data.data.tbl_data ;  
+	return res.status( 200 ).json( result ) 
+}
+exports.get_tbl_schema = async function( req, res){
+	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let tbl_name = req.params.tbl_name 
+	let user_db = req.headers.user_db 
+	let headers = { user_db } 
+		
+	let  hades_data = await axios({ method:"GET", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${ tbl_name }`, headers : headers })
+
+	result.STATUS = 1 
+	result.RESULT = 'success'
+	result.MESSAGE = '' 
+	result.DATA = hades_data.data.tbl_data ;  
+	return res.status( 200 ).json( result ) 
+}
+exports.get_user_config = async function( req, res){
+	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let user_db = req.params.db 
+	let id = req.headers.id 
+	let headers = { id } 
+		
+	try{
+	let  hades_data = await axios({ method:"GET", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${ user_db }/user`, headers : headers })
+		result.STATUS = 1 
+		result.RESULT = 'success'
+		result.MESSAGE = '' 
+	//1	result.DATA = hades_data.data.tbl_data ;  
+		result.DATA = hades_data.data.DATA ;  
+	}catch(err){
+		result.STATUS = -1
+		result.RESULT = 'failure'
+		result.MESSAGE = err.ERRORMESSAGE
+	}
 	return res.status( 200 ).json( result ) 
 }
 exports.get_tbl = async function( req, res){
