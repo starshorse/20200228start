@@ -24,9 +24,7 @@ const {formatDate} = require("./format-date");
 console.log(formatDate(new Date(2017, 9, 13),
                        "dddd the Do"));
 // → Friday the 13th
-// npm ini parse.. 
-//
-//
-const { parse } = require("ini");
-console.log( parse("x = 10\ny=20"));
+
+const { parse } = require("ini")
+console.log( parse( "x = 10\ny = 20"));
 
