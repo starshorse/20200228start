@@ -1,5 +1,9 @@
 angular.module('myFooter',[])
-.controller('myFooterCtrl',['$scope','restApiServiceDbEdit', function($scope, restApiServiceDbEdit ){
+.controller('myFooterCtrl',['$scope',
+//1 'restApiServiceDbEdit', 
+	function($scope, 
+//1 restApiServiceDbEdit 
+){
 	    $scope.company_name = 'EzChemtech' 
 	    $scope.company_logo_path = '/'
 	    $scope.company_address = '광교법조타운'

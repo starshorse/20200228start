@@ -1,27 +1,21 @@
 var app  = angular.module('ezch_tbl_editor_app',[
 	'ngCookies',
 	'myMainbtn',
-//	'myDbEditCmdInput',
 	'myFooter' ,
 	'mySpreadjs',
-//	'work_space.cmd_input', 
-	'main_buttons',
 	'spread_js',
-	'spreadjs_filters',
 	'spreadjs_events',
 	'gc_spreadjs',
 	'sheetFormat',
-	'sheetCmd',
 	'sheetLock',
 	'async_job',
-	'formulas',
-	'addSheets',
-	'service_ui',
-	'myApp.rest_api',
 	'ezch_tbl_editor_app_service',
 ])
-.controller('ezch_tbl_editor_appCtrl',['$scope', '$injector', 'restApiServiceDbEdit', 
-	function($scope, $injector, restApiServiceDbEdit ){	
+.controller('ezch_tbl_editor_appCtrl',['$scope', '$injector', 
+//1 'restApiServiceDbEdit', 
+	function($scope, $injector, 
+//1 restApiServiceDbEdit 
+){	
 	var spreadjs_product = null
 	if( $injector.has('wijmoSpreadjs_factory')){
 		spreadjs_product = $injector.get('wijmoSpreadjs_factory') 

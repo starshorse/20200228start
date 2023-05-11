@@ -33,8 +33,8 @@ angular.module('ezch_tbl_editor_app_service', [])
 				pos_tblList_data_start: ( old_tbl_editor_flag )? 'A3:A3':'C10:C10'
 			},
 		      },	
-		sheet_TblView_table:{ name: 'Table1', tbl_view: null , data:[]},
-		sheet_TblList_table_tblList :{ name: 'Table2', tbl_view: null , tbl_columns: null , data:[]},
+		sheet_TblView_table:{ name: 'Table1', tbl_view: null, tbl_pos: null , tbl_columns: null,  tbl_data_1: null , data:[]},
+		sheet_TblList_table_tblList :{ name: 'Table2', tbl_view: null , tbl_columns: null , tbl_data:[]},
 		sheet_TblList_table_tblSchema :{ name: 'Table3', tbl_view: null , data:[]},
 		binding_data: { cur_server : null , cur_DB: null, cur_user: null , cur_organization: null ,  cur_login: null , cur_table: null },
 // old part..		
@@ -55,7 +55,7 @@ angular.module('ezch_tbl_editor_app_service', [])
 		headInfos : null , 
 		sheetFormat_service : null,
 //		tblView_table : null, 
-		tblView_tbl : { tbl_pos: null ,  tbl_view : null , tbl_columns: null , tbl_data_1 : null } ,
+//		tblView_tb_ : { tbl_pos: null ,  tbl_view : null , tbl_columns: null , tbl_data_1 : null } ,
 		saved_config_list : { tbl_view: null , tbl_columns: null , tbl_data: [] } ,
 		cellBinding_config_list: { tbl_name : 'TB_admin_1' , mass_enable: false , sql_enable: false , sqlState_where: 'order by seq desc' , cur_config_name: '' }, 
 		table_list : { tbl_view: null , tbl_columns: null, tbl_data:[] }, 
@@ -126,7 +126,7 @@ angular.module('ezch_tbl_editor_app_service', [])
 			for( const [key, value] of Object.entries( updateConfig_data.tblViewConfig )){
 				ezch_tbl_editor_appFactory.cellBinding_config_list[key] = value ; 
 			}		
-			ezch_tbl_editor_appFactory.tblView_tbl.tbl_columns = updateConfig_data.tbl_view.tbl_columns 
+			ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_columns = updateConfig_data.tbl_view.tbl_columns 
 			Object.assign( ezch_tbl_editor_appFactory.sql_state , updateConfig_data.sql_state ) 
 		}	
 		spread.getSheet(0).getRange( ezch_tbl_editor_appFactory.pos.TblView.input_cur_userConfig ).text( updateConfig );
@@ -179,7 +179,7 @@ angular.module('ezch_tbl_editor_app_service', [])
 			TblView_config.tbl_name = ezch_tbl_editor_appFactory.cellBinding_config_list.tbl_name ; 
 			TblView_config.cur_config_name = newConfig
 			tblViewConfig = JSON.parse( JSON.stringify( TblView_config )) ;
-			tbl_view = JSON.parse( JSON.stringify( ezch_tbl_editor_appFactory.tblView_tbl ));
+			tbl_view = JSON.parse( JSON.stringify( ezch_tbl_editor_appFactory.sheet_TblView_table ));
 			tbl_view.tbl_data_1 = null  
 			sql_state = JSON.parse( JSON.stringify( ezch_tbl_editor_appFactory.sql_state ));
 		}
@@ -199,7 +199,7 @@ angular.module('ezch_tbl_editor_app_service', [])
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	this.applyFilter = ( spread, filter_state )=>{
 	      let sheet0 = spread.getSheet(0); 	
-	      let table1 = ezch_tbl_editor_appFactory.tblView_tbl.tbl_view ;
+	      let table1 = ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_view ;
 	      let rowFilter = table1.rowFilter(); 	
 	      let tbl_range = table1.range(); 
 	      if( filter_state )
@@ -239,18 +239,23 @@ angular.module('ezch_tbl_editor_app_service', [])
 			let tbl_data  = await $http({ method:'POST', url:`/tbl_editor/${user_db}/${ tbl_name }/sql`, data: { sql_state: sqlState } })
 			let alert_info_message = { class : ( tbl_data.data.RESULT == 'success' )? 'success': 'warning' , message : tbl_data.data.ERRORMESSAGE } 
 		        ezch_tbl_editor_appFactory.updateAlertInfo( alert_info_message ) 		
+			if( tbl_data.data.STATUS == -1 ){
+				alert( tbl_data.data.MESSAGE )
+				return -1; 
+			}
+
 //1			tbl_data.data = tbl_data.data.tbl_data  
 			tbl_data.data = tbl_data.data.DATA  
 
-			ezch_tbl_editor_appFactory.spreadJs_factory.DbData  = ezch_tbl_editor_appFactory.tblView_tbl.tbl_data_1 =  tbl_data.data 
+			ezch_tbl_editor_appFactory.spreadJs_factory.DbData  = ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_data_1 =  tbl_data.data 
 // 연순 정렬 적용 . i 2023-03-09 
 //1 remove       	Data_1 = tbl_data.data.reverse() 
                         let sheetFormat_service = ezch_tbl_editor_appFactory.sheetFormat_service     
 		        ezch_tbl_editor_appFactory.spreadJs_factory.tbl_name  = ezch_tbl_editor_appFactory.tbl_name  // tbl_name update for real time update. 
 
-			let tbl_info = ezch_tbl_editor_appFactory.tblView_tbl 
-			let table1 = ezch_tbl_editor_appFactory.tblView_tbl.tbl_view 
-			let tbl_pos = ezch_tbl_editor_appFactory.tblView_tbl.tbl_pos 
+			let tbl_info = ezch_tbl_editor_appFactory.sheet_TblView_table 
+			let table1 = ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_view 
+			let tbl_pos = ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_pos 
 			
 			table1.autoGenerateColumns( false ) 
 			sheet0.tables.resize( table1, new GC.Spread.Sheets.Range( tbl_pos.row, tbl_pos.col, tbl_info.tbl_data_1.length + 1, tbl_columns.length ))  	
@@ -559,8 +564,8 @@ angular.module('ezch_tbl_editor_app_service', [])
 		let DataHdr = await $http.get(`/tbl_editor/${ user_DB }/${ tbl_name4url }`, { headers: headers } ) 
 
 
-//1		let  Data_1  = ezch_tbl_editor_appFactory.tblView_tbl.tbl_data_1  = DataHdr.data.tbl_data 
-		let  Data_1  = ezch_tbl_editor_appFactory.tblView_tbl.tbl_data_1  = DataHdr.data.DATA 
+//1		let  Data_1  = ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_data_1  = DataHdr.data.tbl_data 
+		let  Data_1  = ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_data_1  = DataHdr.data.DATA 
 
 // Check boundary condition.. 
 		if( Data_1.length > ezch_tbl_editor_appFactory.max_rowCount ){
@@ -591,7 +596,7 @@ angular.module('ezch_tbl_editor_app_service', [])
 //1. remove _end_ 
 
 		// Add table named as "table1"
-		let table1 = ezch_tbl_editor_appFactory.tblView_tbl.tbl_view ;
+		let table1 = ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_view ;
 
 		table1.expandBoundRows(true);
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -601,9 +606,9 @@ angular.module('ezch_tbl_editor_app_service', [])
 		table1.autoGenerateColumns( false );
 		table1.showResizeHandle(true); 
 		let tableColumns  = this.updateData_columns( spread,  spreadJs_factory.schema_1_data.tbl_schema )
-		ezch_tbl_editor_appFactory.tblView_tbl.tbl_columns = tableColumns
+		ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_columns = tableColumns
 		sheet0.tables.resize( table1, new GC.Spread.Sheets.Range( cell.row, cell.col, ( Data_1.length == 0 )? 4 : Data_1.length  , tableColumns.length )) 
-		table1.bind( tableColumns , 'tbl_data_1' , ezch_tbl_editor_appFactory.tblView_tbl )
+		table1.bind( tableColumns , 'tbl_data_1' , ezch_tbl_editor_appFactory.sheet_TblView_table )
                 spread.setActiveSheetIndex(0) 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Key mapping change.  
@@ -613,7 +618,7 @@ angular.module('ezch_tbl_editor_app_service', [])
 		      function nv_down(){
 			     let s_index =  spread.getActiveSheetIndex()  
 			     if( s_index == 0){
-			     		let end_p = ezch_tbl_editor_appFactory.tblView_tbl.tbl_data_1.length  
+			     		let end_p = ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_data_1.length  
 				        end_p_top = end_p - end_p%20   
 			     		sheet0.showRow( end_p_top , 17 )	 
 				        let activeColIndex = sheet0.getActiveColumnIndex() 
@@ -625,7 +630,7 @@ angular.module('ezch_tbl_editor_app_service', [])
 		      function nv_right(){
 			     let s_index =  spread.getActiveSheetIndex()  
 			     if( s_index == 0){
-			     		let end_p = ezch_tbl_editor_appFactory.tblView_tbl.tbl_columns.length + cell_data_start.col - 1 
+			     		let end_p = ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_columns.length + cell_data_start.col - 1 
 				        let activeRowIndex = sheet0.getActiveRowIndex() 
 					    sheet0.showColumn( end_p , GC.Spread.Sheets.HorizontalPosition.right );
 				        sheet0.setActiveCell( activeRowIndex , end_p ) 
@@ -639,7 +644,7 @@ angular.module('ezch_tbl_editor_app_service', [])
 			     if( s_index == 0 && bl_set_flag ){
 				     let sheet0 = spread.getSheet( s_index )
 				     let selections = sheet0.getSelections(); 
-				     let rowDelta = ( ezch_tbl_editor_appFactory.tblView_tbl.tbl_data_1.length + 17 ) - (selections[0].row + selections[0].rowCount )	
+				     let rowDelta = ( ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_data_1.length + 17 ) - (selections[0].row + selections[0].rowCount )	
 
 				     if( selections[0].row > 15 && rowDelta > 0 )
 				     {	     
@@ -660,7 +665,7 @@ angular.module('ezch_tbl_editor_app_service', [])
 			     if( s_index == 0 && bl_set_flag ){
 				     let sheet0 = spread.getSheet( s_index )
 				     let selections = sheet0.getSelections(); 
-				     let colDelta = ( ezch_tbl_editor_appFactory.tblView_tbl.tbl_columns.length + cell_data_start.col ) - ( selections[0].col + selections[0].colCount ) 	
+				     let colDelta = ( ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_columns.length + cell_data_start.col ) - ( selections[0].col + selections[0].colCount ) 	
 				     if( selections[0].col > 0 && colDelta > 0){ 	 
 				        spread.commandManager().execute({ cmd: "nv_right", sheetName: "TblView" , row: sheet0.getActiveRowIndex() , col: sheet0.getActiveColumnIndex() });  
 				     	sheet0.setSelection( selections[0].row , selections[0].col , selections[0].rowCount, selections[0].colCount + colDelta ); 
@@ -831,11 +836,11 @@ angular.module('ezch_tbl_editor_app_service', [])
 		let table1 
 		if( old_tbl_editor_flag ){
 			sheet0.tables.remove('tableRecords') 
-			table1 = ezch_tbl_editor_appFactory.tblView_tbl.tbl_view = sheet0.tables.add('tableRecords', cell.row, cell.col, 4, 30);
+			table1 = ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_view = sheet0.tables.add('tableRecords', cell.row, cell.col, 4, 30);
 		}else{
-			table1 = ezch_tbl_editor_appFactory.tblView_tbl.tbl_view = sheet0.tables.all()[0] ;
+			table1 = ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_view = sheet0.tables.all()[0] ;
 		}
-		ezch_tbl_editor_appFactory.tblView_tbl.tbl_pos = cell 
+		ezch_tbl_editor_appFactory.sheet_TblView_table.tbl_pos = cell 
 /*		
 // clear  rows ..
 //1 remove _start_		 

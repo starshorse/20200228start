@@ -21,6 +21,7 @@ angular.module('spread_js',[])
 	schema_1_columns: null , 
 	user_col4_sql: null , 
 	view_1_table: null, 
+/*1 	 
 //////////////////////////////////////////////////////////////////////////////////////////
 // herit var..  
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -87,21 +88,25 @@ angular.module('spread_js',[])
 	 setIndex : null ,
 	 setColumnType : null ,
 	 saveTbl : null, 	 
+*/	 
  }
  return spreadJs_var
 }])
 .service('spreadJs_service',['$injector',
 'spreadJs_factory',
-'restApiServiceDbEdit',
-'spreadJs_db_factory',
+//1 'restApiServiceDbEdit',
+//1 'spreadJs_db_factory',
 function( $injector , 
 spreadJs_factory, 
-restApiServiceDbEdit , 
-spreadJs_db_factory 
+//1 restApiServiceDbEdit , 
+//1 spreadJs_db_factory 
 ){
 ///////////////////////////////////////////////////////////////////////////////////////////
 //   optional injection. introduced.. 
 //////////////////////////////////////////////////////////////////////////////////////////	
+var restApiServiceDbEdit = null ;
+var spreadJs_db_factory = null; 
+
 var $http = $injector.get('$http') 
 var spreadjs_product = null
 if( $injector.has('wijmoSpreadjs_factory')){
@@ -132,7 +137,8 @@ var DbData
 //	var sheet0  
 //	var sheet1  
 var id_index 
-var id_index_obj = { index: 26 , key :'seq' } 
+//1. ezch_tbl_editor_app  configuration.. 
+var id_index_obj = { index: 2 , key :'seq' } 
 //	var headInfos 
 var cur_headInfos 
 var freezeCol 
@@ -578,6 +584,7 @@ this.initSpreadjs = async ( sheetCount_ = 4 )=>{
     spreadJs_factory.getSheet1 = this.getSheet1
     spreadJs_factory.setColumnType = this.setColumnType 
 }])
+/*
 //////////////////////////////////////////////////////////////////////////////////////////
 //  spreadJs_db_factory/service.  for MSSQL communication. 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -656,12 +663,6 @@ this.initSpreadjs = async ( sheetCount_ = 4 )=>{
 		 let sheet0 =  spreadJs_db_factory.get_sheet0() 
 		 let Spread =  spreadJs_db_factory.get_Spread() 
 		 sheet0.isProtected = false
-/*		
-		 spreadJs_db_factory.newId_row.unfill_col_nums_info.forEach((ent)=>{
-			let cell = sheet0.getCell( ent.row_num, ent.col_num )
-			cell.backColor( ent.backColor ) 
-		 })
-*/		 
 		 let headInfos_ = spreadJs_db_factory.get_headInfos()  
 		 let newRow_num = spreadJs_db_factory.newId_row.row_num  
 		 let i 
@@ -692,3 +693,4 @@ this.initSpreadjs = async ( sheetCount_ = 4 )=>{
 //ezch_qt_scraping_app		sheet0.showRow( newRow_num , spreadjs_product.VerticalPosition.center ) 
 	}
 }])
+*/
