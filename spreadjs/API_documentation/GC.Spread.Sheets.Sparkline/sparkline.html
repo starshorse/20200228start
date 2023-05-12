@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.slicers.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.print.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container">
+			<div id="ss" class="spread-container"></div> 
+		</div>
+		 <input type="text" id="formulaTextBox" />
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+			// set allowCopyPasteExcelStyle to true
+			spread.options.allowCopyPasteExcelStyle = true;
+			activeSheet.setArray(0, 0, [1, 2, 3, 4, 5]);
+			var fbx = new GC.Spread.Sheets.FormulaTextBox.FormulaTextBox(document.getElementById("formulaTextBox"));
+			fbx.workbook(spread);		
+			activeSheet.suspendPaint();
+			activeSheet.setValue(1, 0, 10);
+			activeSheet.setValue(2, 0, 0);
+			activeSheet.setValue(3, 0, -3);
+			activeSheet.setValue(4, 0, -5);
+			activeSheet.setValue(0, 0, 1);
+			activeSheet.setValue(0, 1, 2);
+			activeSheet.setValue(0, 2, 4);
+			activeSheet.setValue(0, 3, 8);
+			activeSheet.setValue(0, 4, 6);
+			activeSheet.setValue(0, 5, new Date(2014, 1, 1));
+			activeSheet.setValue(1, 5, new Date(2014, 9, 1));
+			activeSheet.setValue(2, 5, new Date(2014, 7, 1));
+			activeSheet.setValue(3, 5, new Date(2014, 5, 1));
+			activeSheet.setValue(4, 5, new Date(2014, 3, 1));
+			var sparkline = activeSheet.setSparkline(5, 0, new GC.Spread.Sheets.Range(0, 0, 5, 5), GC.Spread.Sheets.Sparklines.DataOrientation.horizontal, GC.Spread.Sheets.Sparklines.SparklineType.line, new GC.Spread.Sheets.Sparklines.SparklineSetting(), new GC.Spread.Sheets.Range(0, 5, 5, 1), GC.Spread.Sheets.Sparklines.DataOrientation.vertical);
+			// 1. data Methods 		
+			sparkline.data(new GC.Spread.Sheets.Range(0, 0, 5, 5));
+			sparkline.sparklineType(GC.Spread.Sheets.Sparklines.SparklineType.line);
+			sparkline.setting(new GC.Spread.Sheets.Sparklines.SparklineSetting());
+			// 3. dateAxisData		
+			sparkline.dateAxisData(new GC.Spread.Sheets.Range(0, 5, 5, 1));
+			// 2. dataOrientation Methods 		
+			sparkline.dataOrientation(GC.Spread.Sheets.Sparklines.DataOrientation.vertical);
+			// 4. dateAxisOrientation Method.. 		
+			sparkline.dateAxisOrientation(GC.Spread.Sheets.Sparklines.DataOrientation.vertical);
+			sparkline.row = 5;
+			sparkline.column = 0;
+			// 5. displayDateAxis Method.. 		
+			sparkline.displayDateAxis(true); 
+			activeSheet.resumePaint();		
+
+		};
+	</script>
+	
+</html> 
+
+
+

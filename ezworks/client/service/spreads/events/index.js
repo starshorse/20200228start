@@ -37,7 +37,7 @@ angular.module('spreadjs_events',[])
 		spread.unbind( spreadjs_product.Events.ButtonClicked ) 
 		spread.bind( spreadjs_product.Events.ButtonClicked, ( sender, args )=>{
 			if( preEvent != null ) preEvent() 
-			if( $injector.has('ezch_tbl_editor_eventService')){	
+			if( $injector.has('ezch_tbl_editor_eventsService')){	
 				let sheet_name = args.sheet.name() 
 				switch( sheet_name ){
 					case 'TblList':

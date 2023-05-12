@@ -1,4 +1,5 @@
 angular.module('ezch_tbl_editor',[
+	'ngCookies',
 	'mySpreadjs',
 	'gc_spreadjs',
 	'spreadjs_events',
