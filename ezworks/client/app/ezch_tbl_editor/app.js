@@ -8,6 +8,7 @@ angular.module('ezch_tbl_editor',[
 .controller('ezch_tbl_editorCtrl', ['$scope','$injector', function( $scope, $injector ){
 	var ezch_tbl_editorFactory = $injector.get('ezch_tbl_editorFactory')
 	var ezch_tbl_editorService = $injector.get('ezch_tbl_editorService')
+	var $cookies = $injector.get('$cookies');
 	$scope.user_DB
 	$scope.alert_info_message = { class: 'warning' ,message: 'init' }
 	$scope.cur_config_name = ezch_tbl_editorFactory.config_name 
@@ -32,9 +33,17 @@ angular.module('ezch_tbl_editor',[
 		$scope.cur_config_name = config_name ;
 		if( !$scope.$$phase )$scope.$apply() 
 	}
+	const endPageLoading = async ()=>{
+		let config_name =  $cookies.get('config_name')
+		if( config_name ){
+			await 	$scope.edit_list_click( config_name )
+		    $cookies.remove('config_name'); 	
+		}	
+	}
 	ezch_tbl_editorFactory.update_cur_db = updateUserDB ;	
 	ezch_tbl_editorFactory.updateAlertInfo = updateAlertInfo ; 
 	ezch_tbl_editorFactory.updateConfigName = updateConfigName ; 
+	ezch_tbl_editorFactory.endPageLoading  = endPageLoading ; 
 	document.getElementById('inputGroupSelect01').addEventListener('change', function(e){
 		let  db_name = document.getElementById('inputGroupSelect01').value 
 		let  spread = ezch_tbl_editorFactory.spread ; 
