@@ -3,6 +3,10 @@ angular.module('spreadjs_events',[])
 	var $filter = $injector.get('$filter') 
         var spreadjs_product = $injector.get('gc_spreadjsFactory') 
 //	var ezch_tbl_editor_eventsService = $injector.get('ezch_tbl_editor_eventsService') 
+	var asyncJob_service = null
+	if( $injector.has('asyncJob_service'))
+		asyncJob_service = $injector.get('asyncJob_service') 
+
 	var eventsService = null 
 	if( $injector.has('ezch_tbl_editor_eventsService') ){
 		eventsService = $injector.get('ezch_tbl_editor_eventsService');	
@@ -96,4 +100,64 @@ angular.module('spreadjs_events',[])
 			eventsService.sheet1_selectionChanged( spread , sender, args )
 		})
 	}	
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//       runtime data updata module.  need async_Job_service.. 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+	this.register_sheet0_bind_dragDropBlockCompleted = ( spread , seq_col_index , getTbl_name , getViewData  )=>{
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//  Copy & Paste communication with DataBase.. 
+///////////////////////////////////////////////////////////////////////////////////////////////// 		
+		var sheet0 = spread.getSheet(0); 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//  Block Fill  communication with DataBase.. 
+///////////////////////////////////////////////////////////////////////////////////////////////// 		
+		const save_data = ( rowRange_start, rowRange_end ) =>{
+			if( asyncJob_service == null ){
+				console.log("no asyncJob_service, Error")
+				return -1 ; 
+			}
+// Table start from 17 Data .
+			if( rowRange_start < 17 )return ;
+			let i 
+			let DbData = getViewData() 
+			let tbl_name = getTbl_name() 
+			for( i = rowRange_start ; i < rowRange_end ; i++ ){
+				let index = sheet0.getValue( i, seq_col_index ) 
+				let working_row = DbData.find((ent)=>ent['seq'] == index ) 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//   1.  empty field normalize to '' 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////							
+					for( key of Object.keys( working_row )){
+						if( working_row[key] == 'null' || working_row[key] == null || working_row[key] == 'undefined' )working_row[key] = ''    
+					}
+				let mode = 0  // mode: 0 update 
+				asyncJob_service.enqueue( tbl_name , working_row, mode  ) 
+			}
+		}
+//  let dragDropBlockCompleted =   SpreadJs_product( wijmoSpreadjs_factory ).Events.DragDropBlockCompleted  		
+		sheet0.unbind( spreadjs_product.Events.DragDropBlockCompleted )
+		sheet0.bind( spreadjs_product.Events.DragDropBlockCompleted, ( sender, args )=>{
+			console.log( args ) 
+		})
+//  let dragFillBlockCompleted =   SpreadJs_product( wijmoSpreadjs_factory ).Events.DragFillBlockCompleted  		
+		sheet0.unbind( spreadjs_product.Events.DragFillBlockCompleted )
+		sheet0.bind( spreadjs_product.Events.DragFillBlockCompleted, ( sender, args )=>{
+			console.log( args ) 
+			let start = args.fillRange.row , end = args.fillRange.row + args.fillRange.rowCount 
+			save_data( start , end ) 
+		})
+//  let clipboardPasted =   SpreadJs_product( wijmoSpreadjs_factory ).Events.ClipboardPasted
+		sheet0.unbind( spreadjs_product.Events.ClipboardPasted )
+		sheet0.bind( spreadjs_product.Events.ClipboardPasted, ( sender, args )=>{
+			console.log( args ) 
+			let start = args.cellRange.row , end = args.cellRange.row + args.cellRange.rowCount 
+			save_data( start , end ) 
+		})
+//  let editEnd  =   SpreadJs_product( wijmoSpreadjs_factory ).Events.EditEnd  		
+		sheet0.unbind( spreadjs_product.Events.EditEnd )
+		sheet0.bind( spreadjs_product.Events.EditEnd, ( sender, args )=>{
+			console.log( args ) 
+			setTimeout( save_data , 2000, args.row , args.row + 1 ) 
+		})
+	}
 }])

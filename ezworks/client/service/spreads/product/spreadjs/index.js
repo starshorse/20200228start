@@ -14,6 +14,10 @@ angular.module('gc_spreadjs',[])
 			'CellDoubleClick': GC.Spread.Sheets.Events.CellDoubleClick, 
 			'CellChanged': GC.Spread.Sheets.Events.CellChanged, 
 			'SelectionChanged': GC.Spread.Sheets.Events.SelectionChanged, 
+		        'EditEnd':  GC.Spread.Sheets.Events.EditEnd ,
+		        'DragDropBlockCompleted':  GC.Spread.Sheets.Events.DragDropBlockCompleted ,
+	                'DragFillBlockCompleted':  GC.Spread.Sheets.Events.DragFillBlockCompleted ,
+		        'ClipboardPasted':  GC.Spread.Sheets.Events.ClipboardPasted ,
 		}
 	}
 	return gc_spreadjsFactory 

@@ -21,14 +21,14 @@ angular.module('mySpreadjs',[])
 		var ezch_tbl_editorService = $injector.get('ezch_tbl_editorService') 
 		var spreadjs_eventsService = $injector.get('spreadjs_eventsService') 
 		await ezch_tbl_editorService.initTblList( $scope.spread ) 
-	//	ezch_tbl_editorService.initTblView( $scope.spread ) 
-	//	$scope.edit_lists = ezch_tbl_editorService.getEdit_lists()  
 		ezch_tbl_editorService.setUpdate_editLists( $scope.edit_lists_update )
 		spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
 		spreadjs_eventsService.register_sheet1_bind_cellDoubleClick( $scope.spread ) 
 		spreadjs_eventsService.register_sheet0_bind_cellChanged( $scope.spread ) 
 		spreadjs_eventsService.register_sheet1_bind_cellChanged( $scope.spread ) 
 		spreadjs_eventsService.register_sheet0_bind_selectionChanged( $scope.spread ) 
+		let seq_col_index = ezch_tbl_editorService.getSeq_col_index() 
+	        spreadjs_eventsService.register_sheet0_bind_dragDropBlockCompleted( $scope.spread ,  seq_col_index , ezch_tbl_editorService.getTbl_name , ezch_tbl_editorService.getViewData  )
 	}else if( $injector.has('ezof_log_monitorService')){
 		var ezof_log_monitorService = $injector.get('ezof_log_monitorService') 
 		ezof_log_monitorService.initTblView( $scope.spread ) 
@@ -38,11 +38,6 @@ angular.module('mySpreadjs',[])
 	}else if( $injector.has('ezof_dba_editorService')){
 		var ezof_dba_editorService = $injector.get('ezof_dba_editorService')
 		var spreadjs_eventsService = $injector.get('spreadjs_eventsService') 
-	/*	
-		ezof_dba_editorService.initTblView( $scope.spread )
-		ezof_dba_editorService.initTblList( $scope.spread ) 
-		ezof_dba_editorService.setUpdate_editLists( $scope.edit_lists_update )
-	*/	
 		await ezof_dba_editorService.initWorkbook( $scope.spread );
 		spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
 		spreadjs_eventsService.register_sheet0_bind_cellDoubleClick( $scope.spread ) 

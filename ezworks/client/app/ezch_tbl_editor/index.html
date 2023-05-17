@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html ng-app='ezch_tbl_editor'>
 	<head>
-		<link rel='stylesheet' href='../../lib/bootstrap/dist/css/bootstrap.min.css'>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link rel='stylesheet' href='../../lib/spreadjs/15.2.2/css/gc.spread.sheets.excel2016colorful.15.2.2.css' />
 		<script src='../../lib/jquery/dist/jquery.min.js'></script> 
-		<script src='../../lib/bootstrap/dist/js/bootstrap.bundle.min.js'></script> 
 		<script src='../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js'></script>
 
 	</head>
 	<body>
 		<div ng-controller='ezch_tbl_editorCtrl'>
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a class="navbar-brand" href="#">{{ user_DB }}</a> 	
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggle-icon"></span>
-				</button> 	
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="#">테이블생성기<span class="sr-only">( current )</span></a> 
-						</li> 	
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-								편집리스트
-							</a>	
-							<div class="dropdown-menu">
-							 <a class="dropdown-item" ng-repeat="edit_list in edit_lists" ng-click="edit_list_click( edit_list.configName )">{{ edit_list.configName }}</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">기본편집기</a>  
-							</div>	
-						</li>	
-					</ul>	
-					<form class="form-inline my-2 my-lg-0">
-						<button class='btn  btn-sm btn-outline-secondary btn-block'><a href='javascript:closeWindow()'>Close</a></button>
-					</form>	
-
-			</nav>	
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				  <div class="container-fluid">
+				    <a class="navbar-brand" href="#">EZoffice</a>
+				    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				      <span class="navbar-toggler-icon"></span>
+				    </button>
+				    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+					  <a class="nav-link active" aria-current="page" href="#">Table 편집기</a>
+					</li>
+					<li>
+						<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+						    Side Menus 
+						</a>
+					</li>		
+				      </ul>
+				      <form class="d-flex">
+					<button class='btn  btn-sm btn-outline-secondary btn-block'><a href='javascript:closeWindow()'>Close</a></button>
+				      </form>
+				    </div>
+				  </div>
+				</nav>
 			<div id='content'>
 				<nav class='navbar navbar-expand-lg navbar-light bg-light'>
 					<div class='container-fluid row'>
-						<div class='input-group col-md-2 mx-0 px-0'>
-							  <div class="input-group-prepend">
-							      <label class="input-group-text" for="inputGroupSelect01">DB</label>
-							  </div>
-							  <select class="custom-select" id="inputGroupSelect01" ng-disabled="isDbSelectionDisabled" ng-init="user_DB ='demo'">
+					       <div class='col-md-2'>
+						<div class='input-group  mx-0 px-0'>
+							  <label class="input-group-text" for="inputGroupSelect01">DB</label>
+							  <select class="form-select" id="inputGroupSelect01" ng-disabled="isDbSelectionDisabled" ng-init="user_DB ='demo'">
 							      <option selected>{{ user_DB }}</option>
 							      <option value="demo">demo</option>
 							      <option value="orientpi">orientpi</option>
@@ -51,14 +46,15 @@
 							      <option value="ezchemtech">ezchemtech</option>
 							    </select>
 						</div>
+					       </div> 
 						<div class='col-md-1'>
-							<h5><span class='badge badge-secondary mx-3'>Collection</span>디자인</h5>
+							<h5><span class='badge bg-secondary mx-3'>Collection</span>디자인</h5>
 						</div>
 						<div class='col-md-1'>
-							<h6><span class='badge badge-secondary mx-3'>App</span>Table_editor</h6>
+							<h6><span class='badge bg-secondary mx-3'>App</span>Table_editor</h6>
 						</div>
 						<div class='col-md-2'>
-							<h6><span class='badge badge-secondary mx-3'>Conf</span>{{ cur_config_name }}</h6>
+							<h6><span class='badge bg-secondary mx-3'>Conf</span>{{ cur_config_name }}</h6>
 						</div>
 						<div class='col-md-4'>
 							<div class='alert alert-block' ng-class="{'alert-success': alert_info_message.class == 'success', 'alert-warning': alert_info_message.class == 'warning' }" role='alert' ng-init="alert_info_message.message ='Alert Message'; alert_info_message.class = 'warning'">
@@ -69,12 +65,44 @@
 				</nav>
 				<my-spreadjs></my-spreadjs>
 			</div>	
+			<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+			  <div class="offcanvas-header">
+			    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Hot Link</h5>
+			    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			  </div>
+			  <div class="offcanvas-body">
+			    <div>
+				    아래 바로가기 링크를 사용하세요.
+			    </div>
+			    <div> 
+				<ul>
+					<li><a ui-sref="테이블생성기" ui-sref-active="active">테이블생성기</a></li> 
+					<li><a ui-sref="about">About</a></li>
+					<li ng-repeat="person in $ctrl.people">
+						<a ui-sref="person({ personId: person.id })">{{person.name}}</a>
+					</li>	 
+				</ul>
+			    </div>	
+			    <div class="dropdown mt-3">
+			      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+			         테이블 편집기 즐겨찾기	
+			      </button>
+			      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				 <a class="dropdown-item" ng-repeat="edit_list in edit_lists" ng-click="edit_list_click( edit_list.configName , $event )" data-toggle="tooltip" title="Ctrl 키와 클릭시 새창열기">{{ edit_list.configName }}</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">기본편집기</a>  
+			      </ul>
+			    </div>
+			  </div>
+			</div>				
 		</div>	
 	</body>	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>	
 	<script src='../../lib/angular/angular.min.js'></script>
 	<script src='../../lib/angular-route/angular-route.js'></script> 
 	<script src='../../lib/angular-cookies/angular-cookies.js'></script>
 	<script src='../../parts/spreads/v01/index.js'></script>
+	<script src='../../service/async_job/v01/index.js'></script> 
 	<script src='../../service/spreads/product/spreadjs/index.js'></script> 
 	<script src='../../service/spreads/v01/custom/ezch_tbl_editor/index.js'></script> 
 	<script src='../../service/spreads/events/index.js'></script> 
