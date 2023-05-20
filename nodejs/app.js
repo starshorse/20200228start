@@ -1,6 +1,9 @@
 var	express	=	require('express');
 var	app	=	express();
 const mysql = require('mysql');
+//1
+const path = require('path') 
+const { writeFileSync , existsSync } = require('fs')
 const dbconfig = require('./config/database.js');
 const connection = mysql.createConnection( //{
 	dbconfig
@@ -10,6 +13,7 @@ const connection = mysql.createConnection( //{
 	// database : 'ezWebQt'
 //}
 )
+const equations_jdata = path.join( __dirname , '/public/Resource/equations_jdata.json' )
 
 connection.connect();
 
@@ -75,6 +79,7 @@ app.get('/getajax', function(req, res) {
 	connection.query('SELECT * FROM quotations', function( error, rows, fields ){
 // SargonI 2020-08-18		
 //	var responseData = {'result' : 'ok', 'data' : JSON.stringify( curData ) };
+	writeFileSync( equations_jdata , JSON.stringify( rows ), 'utf-8' )
 	var responseData = {'result' : 'ok', 'data' : rows  };
 	res.json(responseData);
 	});
