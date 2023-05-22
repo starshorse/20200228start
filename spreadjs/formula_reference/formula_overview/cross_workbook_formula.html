@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <script src="http://code.jquery.com/jquery-2.0.2.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.shapes.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.charts.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.pivot.pivottables.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.slicers.15.2.2.min.js"></script>
+		<script type="text/javascript" src="../../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.print.15.2.2.min.js"></script>
+		<link href="../../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" rel="stylesheet" type="text/css" /> 
+		<style>
+		 .spread-container {
+			 height: 550px;
+			 border-style: solid;
+			 border-width :5px;
+			 border-color: black;
+		 }
+		</style>
+	</head>
+	<body>
+		<h1>SpreadJS</h1>
+		<p>This section goes over how to initialize SpreadJs</p>
+		<div class = "sample-container row">
+			<div id="ss1" class="col-md-4 spread-container"></div> 
+			<div id="ss2" class="col-md-4 spread-container"></div> 
+		</div>
+		 <input type="text" id="formulaTextBox" />
+	</body>
+	<script>
+		window.onload = function()
+		{
+			var spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 6 } );
+			var sheet = spread.getSheet(0);
+			var activeSheet = sheet 
+			// set data
+			// set allowCopyPasteExcelStyle to true
+			spread.options.allowCopyPasteExcelStyle = true;
+			activeSheet.setArray(0, 0, [1, 2, 3, 4, 5]);
+			var fbx = new GC.Spread.Sheets.FormulaTextBox.FormulaTextBox(document.getElementById("formulaTextBox"));
+			fbx.workbook(spread);		
+			// example code. 
+			
+                    	var spread1 = new GC.Spread.Sheets.Workbook(document.getElementById('ss1'), { sheetCount: 1 });
+			var spread2 = new GC.Spread.Sheets.Workbook(document.getElementById('ss2'), { sheetCount: 1 });
+				    
+			// set value in cell A1 of Spread1
+			spread1.sheets[0].setValue(0, 0, 5);
+
+			var spread1Task;
+			function updateSpread1() {
+			    if (!spread1Task) {
+				spread1Task = setTimeout(() => {
+				    spread1.updateExternalReference("calc.xlsx", spread2.toJSON());
+				    spread1Task = null;
+				})
+			    }
+			}
+			var spread2Task;
+			function updateSpread2() {
+			    if (!spread2Task) {
+				spread2Task = setTimeout(() => {
+				    spread2.updateExternalReference("result.xlsx", spread1.toJSON());
+				    spread2Task = null;
+				})
+			    }
+			}
+
+			spread1.bind(GC.Spread.Sheets.Events.ValueChanged, updateSpread2)
+			spread1.bind(GC.Spread.Sheets.Events.RangeChanged, updateSpread2)
+			spread2.bind(GC.Spread.Sheets.Events.ValueChanged, updateSpread1)
+			spread2.bind(GC.Spread.Sheets.Events.RangeChanged, updateSpread1)
+
+			// sample
+			spread1.updateExternalReference("calc.xlsx", spread2.toJSON());
+			spread2.updateExternalReference("result.xlsx", spread1.toJSON());
+			spread1.sheets[0].setFormula(1, 0, "='[calc.xlsx]Sheet1'!A1");
+			spread2.sheets[0].setFormula(0, 0, "='[result.xlsx]Sheet1'!A1^2");
+
+
+		};
+	</script>
+	
+</html> 
+
+
+
