@@ -1,22 +1,9 @@
-  <DIV class='justify-content-center' ng-if='isCmdInput_enabled'>                                                                
-	  <!--	<DIV><h3>App-name: {{ tbl_name }} </h3></DIV>                                                    -->
+<DIV class='justify-content-center' ng-if='isCmdInput_enabled'>                                                                
 	<form>                                                                                           
-		    <DIV class='form-group row' ng-if='openFile && !inputFormula '>                                                                     
-					<label for='file' class='text-right col-md-2'>openFile</label>                           
-					<!--					<input type='file' id='file' name='file' class='col-md-2 form-control' enctype='multipart/form-data' onchange='angular.element(this).scope().readFile(this)' ng-show='cmdControlOptions.fileUpload'/> -->
-					<input type='file' id='file' name='file' class='col-md-2 form-control' enctype='multipart/form-data' onchange='angular.element(this).scope().readFile(this)' />
-					<button class='btn btn-info col-md-2 form-control' ng-click='execCancel()'>Cancel</button>  
-         	</DIV> 
-		    <DIV class='form-group row' ng-if='!openFile'>                                                                     
+		    <DIV class='row'>                                                                     
 					<label for='cmdInput' class='text-right col-md-2'>CmdInput</label>                           
 					<input type='TEXT' class='col-md-4 form-control' id='cmdInput' ng-model='cmdInput.txt'>          
 					<button class='btn btn-info col-md-2 form-control' ng-click='execCmd()'>ExecCmd</button>  
-			</DIV>               
-		    <DIV class='form-group row' ng-if='inputFormula'>                                                                     
-					<label for='cmdInput' class='text-right col-md-2'>input formula expression:</label>                           
-					<input type='TEXT' class='col-md-4 form-control' id='cmdInput' ng-model='cmdInput.formula'>          
-					<button class='btn btn-info col-md-2 form-control' ng-click='saveFormula()'>Save</button>  
-					<button class='btn btn-info col-md-2 form-control' ng-click='execCancel()'>Cancel</button>  
-			</DIV>               
+		    </DIV>               
 	</form>                                                                                          
 	</DIV> 

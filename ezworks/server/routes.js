@@ -20,8 +20,21 @@ module.exports = function( app ){
 			pathRewrite:{
 				['^/Hades']:''
 			}
-		}))
+		}))	
 	}	
+	if( process.env.PROXY_JUPITER == 'local' ){
+	}
+	else if( process.env.PROXY_JUPITER == 'on' ){
+	}
+	else{
+               app.use('/Jupiter', createProxyMiddleware({
+		       target: 'http://192.168.0.80:3001' ,
+		       changeOrigin: true ,
+		       pathRewrite:{
+			       ['^/Jupiter']:''
+		       }
+	       }))
+	}
 	app.use('/web_admin_editor', require('./app/web_admin_editor')); 
 	app.use('/log_monitor', require('./app/log_monitor')); 
 	app.use('/mlk_auth', require('./tools/authentication')); 

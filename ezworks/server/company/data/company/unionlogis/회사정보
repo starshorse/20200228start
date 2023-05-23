@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "CorporationName": "unionlogis",
+    "BranchOfficeName": "unionlogis",
+    "사업자등록번호": 123412345,
+    "connectedId": null,
+    "RegDate": null,
+    "UpdateDate": "2021-12-16 20:30:41.720",
+    "id_jpt": 1,
+    "logo_path": "/company/main/resource/unionlogis.png",
+    "address": "충남 서산시 성연면 성연3로 231",
+    "contact_number": "041-354-0911",
+    "contact_email": "ceo@unionlogis.com"
+  }
+]

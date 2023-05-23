@@ -137,23 +137,14 @@ angular.module('myDbEditCmdInput', [])
 			   $scope.setAppStage(0) // new App. 
 		   }
 		   uploadFileCsv_service.uploadFile_csv( obj , cb_f ) 
-/*		
-           const files = obj.files
-           const file = files[0]
-           var reader = new FileReader()
-           reader.onload = function(event) {
-             console.log(event.target.result)
-			 $scope.convData( event.target.result )   
-           }
-           reader.readAsText(file)
-*/		   
       }
 /////////////////////////////////////////////////////////////////////////////////////////////////
 //  post sidebar init  hooking service. 
 ////////////////////////////////////////////////////////////////////////////////////////////////		
 		const process_cmdInput =()=>{
 			  let collectionConfiguration = workSpaceCollections_service.getMyCollectionConfiguration() 
-			  $scope.isCmdInput_enabled = collectionConfiguration.component.cmdInput.enable 
+//1			  $scope.isCmdInput_enabled = collectionConfiguration.component.cmdInput.enable 
+			  $scope.isCmdInput_enabled = true ; 
 //			  $scope.$apply() 
 		}
 		workSpace_service.addPost_initSidebars_f_list( process_cmdInput ) 
@@ -161,7 +152,7 @@ angular.module('myDbEditCmdInput', [])
 .directive('cmdInput', function(){
 	return {
 		restrict: 'E',
-		templateUrl: '/db_edit/parts/cmd_input/cmdinput.html',
+		templateUrl: '/admin/parts/cmd_input/cmdinput.html',
 		controller:'myDbEditCmdInputCtrl'
 	}
 })

@@ -1,0 +1,32 @@
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+	<div class="offcanvas-header">
+		<h5 class="offcanvas-title" id="offcanvasExampleLabel">Hot Link</h5>
+		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
+		<div>
+			아래 바로가기 링크를 사용하세요.
+		</div>
+		<div> 
+			<ul class="list-group">
+				<li class="list-group-item active"><h3><a href='/admin' target='_blank'>Jupiter Admin Editor</a></h3></li> 
+				<li class="list-group-item" ><a ui-sref="about">About</a></li>
+				<li class="list-group-item" ng-repeat="person in $ctrl.people">
+					<a ui-sref="person({ personId: person.id })">{{person.name}}</a>
+				</li>	 
+			</ul>
+		</div>	
+		<div class="dropdown mt-3">
+			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+				Admin configurations[Selections] 	
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" ng-click='openApp_1(app_server_list)' ng-if='cur_server == "ezoffice"'><h4>관리회사</h4></a>
+				<a class="dropdown-item" ng-click='openApp(app_collection_list)'><h3>Collection List</h3></a>
+				<a class="dropdown-item" ng-click='openApp(app_apps_list)'><h4>Apps list</h4></a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">기본편집기</a>  
+			</ul>
+		</div>
+	</div>
+</div>				

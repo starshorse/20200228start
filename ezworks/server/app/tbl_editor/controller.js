@@ -220,12 +220,20 @@ exports.get_tbl = async function( req, res){
 exports.get_tblSql = async function( req, res ){
 	let data = { db_name : req.params.db , sql_state: req.body.sql_state } 
 	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
-	let  hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableMaker/`, data })
-
-	result.STATUS = 1 
-	result.RESULT = 'success'
-	result.MESSAGE = '' 
-	result.DATA = hades_data.data.tbl_data ;  
+	try{
+		let  hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableMaker/`, data })
+		if( hades_data.data.RESULT == 'err'){
+			throw new Error( hades_data.data.ERRORMESSAGE.message );
+		}
+		result.STATUS = 1 
+		result.RESULT = 'success'
+		result.MESSAGE = '' 
+		result.DATA = hades_data.data.tbl_data ;  
+	}catch(err){
+		result.STATUS = -1
+		result.RESULT = 'failure'
+		result.MESSAGE = err.message 
+	}
 	return res.status( 200 ).json( result ) 
 }	
 

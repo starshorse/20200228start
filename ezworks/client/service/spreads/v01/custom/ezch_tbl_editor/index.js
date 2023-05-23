@@ -389,21 +389,116 @@ angular.module('ezch_tbl_editorService',[])
 		table1.bind( tableColumns , 'tbl_data' , ezch_tbl_editorFactory.sheet_TblView_table )
 //1
 		this.sheet_TblView_clear_unlockCells( spread ); 
-
                 spread.setActiveSheetIndex(0)
+		sheet_TblView_table_keyMap_update( spread ) 
+
+	}
+	const sheet_TblView_table_keyMap_init = ( spread )=>{
+	      let sheet0 = spread.getSheet(0);	
+	      let cell_data_start = sheet0.getRange( ezch_tbl_editorFactory.pos.TblView.pos_data_start )
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Key mapping change.
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-	      let cell_data_start = sheet0.getRange('AA18:AA18')
+	// key mapping init..
+	      spread.commandManager().register('nv_up',
+		      function nv_up(){
+			     let s_index =  spread.getActiveSheetIndex()
+			     if( s_index == 0){
+				let sheet0 = spread.getSheet( s_index )
+				let activeColIndex = sheet0.getActiveColumnIndex()
+			     	sheet0.showRow( cell_data_start.row + 1 , activeColIndex )
+				sheet0.setActiveCell( cell_data_start.row + 1 , activeColIndex )
+			     }
+		      }
+	      );
+	      spread.commandManager().register('nv_left',
+		      function nv_left(){
+			     let s_index =  spread.getActiveSheetIndex()
+			     if( s_index == 0){
+				let sheet0 = spread.getSheet( s_index )
+				let activeRowIndex = sheet0.getActiveRowIndex()
+			     	sheet0.showColumn( cell_data_start.col , 1 )
+				sheet0.setActiveCell( activeRowIndex , cell_data_start.col )
+			     }
+		      }
+	      );
+	      spread.commandManager().register('bl_set',
+		      function bl_set(){
+			     let s_index =  spread.getActiveSheetIndex()
+			     if( s_index == 0){
+				let sheet0 = spread.getSheet( s_index )
+				 console.log('bl_set:on')
+				 ezch_tbl_editorFactory.bl_set_flag = 1;
+			     }
+		      }
+	      );
+	      spread.commandManager().register('bl_up',
+		      function bl_up(){
+			     let s_index = spread.getActiveSheetIndex()
+			     let bl_set_flag = ezch_tbl_editorFactory.bl_set_flag
+			     if( s_index == 0 && bl_set_flag ){
+				     let sheet0 = spread.getSheet( s_index )
+				     let selections = sheet0.getSelections();
+				     if( selections[0].row > 16 )
+				     {
+				     	selections[0].rowCount += selections[0].row - 16
+				     	selections[0].row = 16
+				     	sheet0.setSelection( selections[0].row , selections[0].col , selections[0].rowCount, selections[0].colCount );
+				     }
+				     ezch_tbl_editorFactory.bl_set_flag = 0 ;
+
+			     }else{
+				    spread.commandManager().execute({ cmd: "selectionUp", sheetName: "TblView" , row: sheet0.getActiveRowIndex() , col: sheet0.getActiveColumnIndex() });
+			     }
+		      }
+	      );
+	      spread.commandManager().register('bl_left',
+		      function bl_left(){
+			     let s_index = spread.getActiveSheetIndex()
+			     let bl_set_flag = ezch_tbl_editorFactory.bl_set_flag
+			     if( s_index == 0 && bl_set_flag ){
+				     let sheet0 = spread.getSheet( s_index )
+				     let selections = sheet0.getSelections();
+				     selections[0].colCount += selections[0].col - cell_data_start.col
+				     selections[0].col = cell_data_start.col
+				     sheet0.setSelection( selections[0].row , selections[0].col , selections[0].rowCount, selections[0].colCount );
+				     ezch_tbl_editorFactory.bl_set_flag = 0 ;
+
+			     }else{
+				    spread.commandManager().execute({ cmd: "selectionLeft", sheetName: "TblView" , row: sheet0.getActiveRowIndex() , col: sheet0.getActiveColumnIndex() });
+			     }
+		      }
+	      );
+
+	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.up , true , false , false ,false );
+	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.down , true , false , false ,false );
+	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.right , true , false , false ,false );
+	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.left , true , false , false ,false );
+	      spread.commandManager().setShortcutKey('goToSheetBottomRight', GC.Spread.Commands.Key.end , true , true , false ,false );
+	      spread.commandManager().setShortcutKey('nv_up', GC.Spread.Commands.Key.up, true ,false , false ,false );
+	      spread.commandManager().setShortcutKey('nv_left', GC.Spread.Commands.Key.left, true ,false , false ,false );
+	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.end , false , true , false ,false );
+	      spread.commandManager().setShortcutKey('bl_set', GC.Spread.Commands.Key.end, false ,true, false ,false );
+	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.left, false ,true, false ,false );
+	      spread.commandManager().setShortcutKey('bl_left', GC.Spread.Commands.Key.left, false ,true, false ,false );
+	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.up, false ,true, false ,false );
+	      spread.commandManager().setShortcutKey('bl_up', GC.Spread.Commands.Key.up, false ,true, false ,false );
+	}
+	const sheet_TblView_table_keyMap_update = ( spread )=>{
+	      let sheet0 = spread.getSheet(0);
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Key mapping change.
+////////////////////////////////////////////////////////////////////////////////////////////////////
+	      let cell_data_start = sheet0.getRange( ezch_tbl_editorFactory.pos.TblView.pos_data_start )
 	      spread.commandManager().register('nv_down',
 		      function nv_down(){
 			     let s_index =  spread.getActiveSheetIndex()
 			     if( s_index == 0){
-			     		let end_p = ezch_tbl_editorFactory.sheet_TblView_table.tbl_data_1.length
-				        end_p_top = end_p - end_p%20
-			     		sheet0.showRow( end_p_top , 17 )
+			     		let end_p = ezch_tbl_editorFactory.sheet_TblView_table.tbl_data.length
+				        end_p_top = end_p + end_p%20
+			     		sheet0.showRow( end_p_top + cell_data_start.row , cell_data_start.col )
 				        let activeColIndex = sheet0.getActiveColumnIndex()
-				        sheet0.setActiveCell( end_p + 17 - 1  , activeColIndex )
+				        sheet0.setActiveCell( end_p + cell_data_start.row , activeColIndex )
 			     }
 		      }
 	      );
@@ -425,7 +520,7 @@ angular.module('ezch_tbl_editorService',[])
 			     if( s_index == 0 && bl_set_flag ){
 				     let sheet0 = spread.getSheet( s_index )
 				     let selections = sheet0.getSelections();
-				     let rowDelta = ( ezch_tbl_editorFactory.sheet_TblView_table.tbl_data_1.length + 17 ) - (selections[0].row + selections[0].rowCount )
+				     let rowDelta = ( ezch_tbl_editorFactory.sheet_TblView_table.tbl_data.length + cell_data_start.row + 1 ) - (selections[0].row + selections[0].rowCount )
 
 				     if( selections[0].row > 15 && rowDelta > 0 )
 				     {
@@ -500,10 +595,11 @@ angular.module('ezch_tbl_editorService',[])
 	this.sheet_TblView_update_configData = async ( spread )=>{
 	       let updateConfig =  await updateViewConfig( spread ) 
 	        if( updateConfig.tblViewConfig?.sql_enable ){
+			await sheet_TblView_update_basic( spread ); 
 		        ezch_tbl_editorFactory.cellBinding_config_list.sql_enable = true ; 
-			this.sheet_TblView_update_execSql( spread ); 
+			await this.sheet_TblView_update_execSql( spread ); 
 		}else{
-			sheet_TblView_update_basic( spread ); 
+			await sheet_TblView_update_basic( spread ); 
 		        this.sheet_TblView_invalidate_sqlInput( spread, !ezch_tbl_editorFactory.cellBinding_config_list.sql_enable );
 		}
 	}
@@ -535,72 +631,7 @@ angular.module('ezch_tbl_editorService',[])
 	        	this.sheet_TblView_invalidate_sqlInput( spread, !ezch_tbl_editorFactory.cellBinding_config_list.sql_enable );
 		}
 	}
-/*	
-	this.sheet_TblView_update = async(
-	spread,
-	sheetFormat_service,
-	user_db = null,
-	call_source = 1   // call_source:1  tblList, 2:sql_run ..
-
-	)=>{
-	        let sheet1 = spreadJs_factory.spread.getSheetFromName('TblList');
-		let sheet0 = spreadJs_factory.sheet0 =  spread.getSheet(0)
-		let cell = sheet1.getRange( ezch_tbl_editor_appFactory.pos.TblList.curTable , GC.Spread.Sheets.SheetArea.viewport );
-		   if( ezch_tbl_editor_appFactory.async_updates.length !== 0 ){
-			   alert(" 데이터저장 중입니다. 잠시 후 새로고침을 눌러주세요~")
-			   return 0
-		   }
-		   let  checkSql = sheet0.getValue( cell_checkSql.row, cell_checkSql.col )
-
-		   if( ezch_tbl_editor_appFactory.input_sqlState_changed && !checkSql && call_source !== 1 ){
-				let ret_v = confirm("SQL 문을 실햏하시겠습니까?")
-				if( ret_v == true )sheet0.setValue( cell_checkSql.row, cell_checkSql.col, true );
-				ezch_tbl_editor_appFactory.input_sqlState_changed = false ;
-		   }else{
-				ezch_tbl_editor_appFactory.input_sqlState_changed = false ;
-		   }
-		   let sheet_TblView_table = ezch_tbl_editorFactory.sheet_TblView_table	
-		   sheet0.getRange( ezch_tbl_editorFactory.pos.TblView.input_cur_userConfig ).text( sheet_TblView_table.tbl_name  );
-		    ezch_tbl_editor_appFactory.cellBinding_config_list.tbl_name = sheet_TblView_table.tbl_name ;
-		       if( ezch_tbl_editor_appFactory.config_name ){   // call for gen view..
-				    switch( call_source ){
-						case 1:
-						await this.updateViewConfig( spread , ezch_tbl_editor_appFactory.config_name );
-							break;
-						case 2:
-						await this.updateDataSql( spread )
-							break;
-					}
-			   }
-			   else{
-				   switch( call_source ){
-					    case 1:
-						    ezch_tbl_editor_appFactory.cellBinding_config_list.sql_enable = false  ; // reset SQL.
-						await this.updateDataSql( spread )
-						    break;
-					   case 2:
-						await this.updateDataSql( spread )
-						   break;
-				   }
-
-			   }
-				spread.setActiveSheetIndex(0);
-
-		let sql_pos = ezch_tbl_editor_appFactory.sql_state.pos
-		tbl_name = ezch_tbl_editor_appFactory.tbl_name
-		let nameOnly =  ezch_tbl_editor_appFactory.names_sheet0.reduce(( acc, cur )=>{
-			acc.push( cur.Field );
-			return acc ;
-		},[]);
-		let field_list = nameOnly.join(',')
-		let state = `select ${ field_list } from ${tbl_name}`
-		ezch_tbl_editor_appFactory.sql_state.state_1 = state ;
-		if( user_db != null )ezch_tbl_editor_appFactory.cur_db = user_db ;
-	//1
-		this.invalidate_sqlInput( spread, !ezch_tbl_editorFactory.cellBinding_config_list.sql_enable );
-	}
-*/	
-		this.sheet_TblView_init = async( spread )=>{
+	this.sheet_TblView_init = async( spread )=>{
 
 		let sheet0  =  spread.getSheet(0)
 		sheet0.setRowCount( ezch_tbl_editorFactory.sheet_TblView_table.max_rowCount )
@@ -616,6 +647,8 @@ angular.module('ezch_tbl_editorService',[])
 		sheet0.isProtected = false
 
 		sheet0.options.protectionOptions.allowResizeColumns = true ; 
+		sheet0.options.protectionOptions.allowFilter = true; 
+		sheet0.options.protectionOptions.allowSort = true; 
 
 		let cell_massCheck = sheet0.getRange( ezch_tbl_editorFactory.pos.TblView.check_mass ).locked( false )
 		let cell_mass = sheet0.getRange( ezch_tbl_editorFactory.pos.TblView.btn_insert_data )
@@ -650,93 +683,7 @@ angular.module('ezch_tbl_editorService',[])
 		let table1 = ezch_tbl_editorFactory.sheet_TblView_table.tbl_view = sheet0.tables.all()[0] ;
 		ezch_tbl_editorFactory.sheet_TblView_table.tbl_pos = cell
 		this.sheet_TblView_massCheck_toggle( spread , false )
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-//  Key mapping change.
-////////////////////////////////////////////////////////////////////////////////////////////////////
-	// key mapping init..
-	      spread.commandManager().register('nv_up',
-		      function nv_up(){
-			     let s_index =  spread.getActiveSheetIndex()
-			     if( s_index == 0){
-				let sheet0 = spread.getSheet( s_index )
-				let activeColIndex = sheet0.getActiveColumnIndex()
-			     	sheet0.showRow( 17, 18 )
-				sheet0.setActiveCell( 17, activeColIndex )
-			     }
-		      }
-	      );
-	      spread.commandManager().register('nv_left',
-		      function nv_left(){
-			     let s_index =  spread.getActiveSheetIndex()
-			     if( s_index == 0){
-				let sheet0 = spread.getSheet( s_index )
-				let activeRowIndex = sheet0.getActiveRowIndex()
-			     	sheet0.showColumn( cell_data_start.col , 1 )
-				    sheet0.setActiveCell( activeRowIndex , cell_data_start.col )
-			     }
-		      }
-	      );
-	      spread.commandManager().register('bl_set',
-		      function bl_set(){
-			     let s_index =  spread.getActiveSheetIndex()
-			     if( s_index == 0){
-				let sheet0 = spread.getSheet( s_index )
-				 console.log('bl_set:on')
-				 ezch_tbl_editorFactory.bl_set_flag = 1;
-			     }
-		      }
-	      );
-	      spread.commandManager().register('bl_up',
-		      function bl_up(){
-			     let s_index = spread.getActiveSheetIndex()
-			     let bl_set_flag = ezch_tbl_editorFactory.bl_set_flag
-			     if( s_index == 0 && bl_set_flag ){
-				     let sheet0 = spread.getSheet( s_index )
-				     let selections = sheet0.getSelections();
-				     if( selections[0].row > 16 )
-				     {
-				     	selections[0].rowCount += selections[0].row - 16
-				     	selections[0].row = 16
-				     	sheet0.setSelection( selections[0].row , selections[0].col , selections[0].rowCount, selections[0].colCount );
-				     }
-				     ezch_tbl_editorFactory.bl_set_flag = 0 ;
-
-			     }else{
-				    spread.commandManager().execute({ cmd: "selectionUp", sheetName: "TblView" , row: sheet0.getActiveRowIndex() , col: sheet0.getActiveColumnIndex() });
-			     }
-		      }
-	      );
-	      spread.commandManager().register('bl_left',
-		      function bl_left(){
-			     let s_index = spread.getActiveSheetIndex()
-			     let bl_set_flag = ezch_tbl_editorFactory.bl_set_flag
-			     if( s_index == 0 && bl_set_flag ){
-				     let sheet0 = spread.getSheet( s_index )
-				     let selections = sheet0.getSelections();
-				     selections[0].colCount += selections[0].col - cell_data_start.col
-				     selections[0].col = cell_data_start.col
-				     sheet0.setSelection( selections[0].row , selections[0].col , selections[0].rowCount, selections[0].colCount );
-				     ezch_tbl_editorFactory.bl_set_flag = 0 ;
-
-			     }else{
-				    spread.commandManager().execute({ cmd: "selectionLeft", sheetName: "TblView" , row: sheet0.getActiveRowIndex() , col: sheet0.getActiveColumnIndex() });
-			     }
-		      }
-	      );
-
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.up , true , false , false ,false );
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.down , true , false , false ,false );
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.right , true , false , false ,false );
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.left , true , false , false ,false );
-	      spread.commandManager().setShortcutKey('goToSheetBottomRight', GC.Spread.Commands.Key.end , true , true , false ,false );
-	      spread.commandManager().setShortcutKey('nv_up', GC.Spread.Commands.Key.up, true ,false , false ,false );
-	      spread.commandManager().setShortcutKey('nv_left', GC.Spread.Commands.Key.left, true ,false , false ,false );
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.end , false , true , false ,false );
-	      spread.commandManager().setShortcutKey('bl_set', GC.Spread.Commands.Key.end, false ,true, false ,false );
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.left, false ,true, false ,false );
-	      spread.commandManager().setShortcutKey('bl_left', GC.Spread.Commands.Key.left, false ,true, false ,false );
-	      spread.commandManager().setShortcutKey( undefined , GC.Spread.Commands.Key.up, false ,true, false ,false );
-	      spread.commandManager().setShortcutKey('bl_up', GC.Spread.Commands.Key.up, false ,true, false ,false );
+		sheet_TblView_table_keyMap_init( spread ); 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //  check new window with configuration name..
@@ -847,28 +794,6 @@ angular.module('ezch_tbl_editorService',[])
 		await this.updateServerSide()
 
 	}
-/*1	
-	this.updateTblList = async ( spread, user_db , config_name = null )=>{
-	     ezch_tbl_editorFactory.cur_db = user_db ;
-	     let sheet1 = spread.getSheet(1); 
-	     await this.getServerSide() 	
-	     let saved_config_list = ezch_tbl_editorFactory.saved_config_list 
-	     let cell_savedConfig = sheet1.getRange('N2').backColor('#E3EFDA') 
-	     let del_cellButton = new GC.Spread.Sheets.CellTypes.Button() 
-	     del_cellButton.text('Delete') 
-
-	     let tableCol1 = new GC.Spread.Sheets.Tables.TableColumn(1, 'configName', 'Conifg List' ) 
-	     let tableCol2 = new GC.Spread.Sheets.Tables.TableColumn(2, 'delete', 'Del' , null, del_cellButton ) 	
-             
-	     ezch_tbl_editorFactory.saved_config_list.tbl_columns = [ tableCol1, tableCol2 ]
- 
-	     saved_config_list.tbl_view.autoGenerateColumns( false ) 
-	     saved_config_list.tbl_view.bind([ tableCol1 , tableCol2 ]  , 'tbl_data', saved_config_list )		
-		
-	     if( config_name != null )this.updateConfig( spread , config_name ); 	
-		
-	}
-*/
 	this.initTblList = async ( spread , configName = null )=>{
 	     let initDesign = await $http.get('/app/ezch_tbl_editor_app/ezct_tbl_editor.ssjson')
 	      spread.fromJSON( initDesign.data ) 
@@ -962,10 +887,10 @@ angular.module('ezch_tbl_editorService',[])
 			alert(" config format changed no [data] , please re config this !!");
 			return -1
 		}
-//1	   	ezch_tbl_editorFactory.sheet_TblView_table.tbl_name  = config_data.data.tbl_name ; 
                 ezch_tbl_editorFactory.sheet_TblView_table.config_name = config_data.configName  
                 ezch_tbl_editorFactory.sheet_TblView_table.config_data = config_data
 
+	   	ezch_tbl_editorFactory.sheet_TblView_table.tbl_name  = config_data.tblViewSheet.tbl_name ; 
 	   	ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_name  = config_data.tblViewSheet.tbl_name ; 
 		ezch_tbl_editorFactory.schema_add.curTable = config_data.tblViewSheet.tbl_name ;
 		ezch_tbl_editorFactory.updateConfigName( config_data.configName )
