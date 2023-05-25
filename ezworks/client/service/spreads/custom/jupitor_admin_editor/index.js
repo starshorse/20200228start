@@ -81,11 +81,14 @@ angular.module('jupitor_admin_editor',[])
                 let sheet = spread.getSheetFromName('Servers') ;
 		this.sheet_Servers_part_serverInfo_invalidate( spread );
 		this.sheet_Users_invalidate( spread ) ;
-		let Servers_list = await  $http.get('/web_admin_editor/Servers_list');
+//1		let Servers_list = await  $http.get('/web_admin_editor/Servers_list');
+                let Servers_list = await  $http.get('/Jupiter/db_edit/jupiter/server_list'); 
 		if( Servers_list.data.RESULT == -1 ){
 			alert( Servers_list.data.ERRORMESSAGE )
 			return ;
 		}
+		Servers_list.data.DATA = Servers_list.data.DATA.data 
+
 		jupitor_admin_editorFactory.servers_list = Servers_list.data.DATA 
 		jupitor_admin_editorFactory.sheet_Servers_table.data = Servers_list.data.DATA 
 		let table = jupitor_admin_editorFactory.sheet_Servers_table.tbl_view; 
