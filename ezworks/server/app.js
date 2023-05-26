@@ -6,6 +6,7 @@ var express = require('express');
 var config = require('./config/environment');
 var app = express(); 
 var server = require('http').createServer(app);
+app.use( express.json() )
 require('./routes')(app)
 require('./config/express')(app) 
 
