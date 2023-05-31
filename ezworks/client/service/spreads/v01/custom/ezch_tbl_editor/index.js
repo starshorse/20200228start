@@ -61,6 +61,8 @@ angular.module('ezch_tbl_editorService',[])
 		updateAlertInfo: null,
 		updateConfigName : null, 
 		endPageLoading: null,
+// access rights
+		spread_1_db_access: null
 	}
 	return ezch_tbl_editorFactory 
 }])
@@ -99,6 +101,23 @@ angular.module('ezch_tbl_editorService',[])
 		let appDataHdr = await $http.get(`/tbl_editor/${ user_DB }/tbl_list`) 
 		let tbl_list_data  = appDataHdr.data.DATA 
 		let tbl_list = ezch_tbl_editorFactory.sheet_TblList_table_tblList ;
+//1 add access right. 		
+		if( user_id != 'star_horse@naver.com' ){
+			let db_login = await  $http.get(`/Hades/dba_editor/db_login_web/${ user_DB }/${ user_id }`);
+			if( db_login.data.RESULT == -1 ){
+				alert( db_login.data.ERRORMESSAGE )
+				return -1 ;
+			}
+			if( db_login.data.DATA.length == 0 ){
+				alert(`${ user_id } no access right to Database ${ user_DB }`)
+				return -1; 
+			}
+			let db_login_id = db_login.data.DATA[0].login_id
+			let result = await $http.get(`/web_admin_editor/permissions_matrix_login/${ user_DB }/${ db_login_id }`)
+			if( result.data.RESULT == -1 ){ alert( result.data.ERRORMESSAGE ); return; }
+			let access_matrix = ezch_tbl_editorFactory.spread_1_db_access = result.data.DATA.filter((ent)=> ent['VIEW DEFINITION'] ==  true );
+			tbl_list = access_matrix.map(( ent )=>{ return { TABLE_NAME : ent.name }})  
+		}
      	        tbl_list.tbl_data  = tbl_list_data.map( (ent)=>{ return { tbl_name : ent.TABLE_NAME }} ) 
 // Add Sorting. 		
 		tbl_list.tbl_data.sort((a,b)=>{
@@ -288,6 +307,9 @@ angular.module('ezch_tbl_editorService',[])
 
 */
 /////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	this.sheet_TblView_get_access_matrix = ()=>{
+		return ezch_tbl_editorFactory.spread_1_db_access.find((ent)=>ent.name == ezch_tbl_editorFactory.sheet_TblView_table.tbl_name )
+	}
 	this.sheet_TblView_update_dataColumns = ( spread, data4hdr )=>{
 		var tableColumns = [],
 				names = [], 
@@ -391,6 +413,8 @@ angular.module('ezch_tbl_editorService',[])
 		this.sheet_TblView_clear_unlockCells( spread ); 
                 spread.setActiveSheetIndex(0)
 		sheet_TblView_table_keyMap_update( spread ) 
+//1. access apply here.. 
+//1		let access_matrix = sheet_TblView_get_access_matrix(); 
 
 	}
 	const sheet_TblView_table_keyMap_init = ( spread )=>{
@@ -820,11 +844,32 @@ angular.module('ezch_tbl_editorService',[])
 			 user_DB = ezch_tbl_editorFactory.cur_db =  $cookies.get('user_DB')
 	   	ezch_tbl_editorFactory.sheet_TblView_table.db_name  = user_DB ; 
 	   	ezch_tbl_editorFactory.sheet_TblList_table_tblList.db_name  = user_DB ; 
+		ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.db_name = user_DB ;
+
 		if( user_DB )headers['user_DB'] = user_DB
 		if( user_id )headers['user_id'] = user_id
 
 		let appDataHdr = await $http.get(`/tbl_editor/${ user_DB }/tbl_list`)
 		let tbl_list  = appDataHdr.data.DATA
+
+//1 check with db auth .
+		if( user_id != 'star_horse@naver.com' ){
+			let db_login = await  $http.get(`/Hades/dba_editor/db_login_web/${ user_DB }/${ user_id }`);
+			if( db_login.data.RESULT == -1 ){
+				alert( db_login.data.ERRORMESSAGE )
+				return -1 ;
+			}
+			if( db_login.data.DATA.length == 0 ){
+				alert(`${ user_id } no access right to Database ${ user_DB }`)
+				return -1; 
+			}
+			let db_login_id = db_login.data.DATA[0].login_id
+			let result = await $http.get(`/web_admin_editor/permissions_matrix_login/${ user_DB }/${ db_login_id }`)
+			if( result.data.RESULT == -1 ){ alert( result.data.ERRORMESSAGE ); return; }
+			let access_matrix = ezch_tbl_editorFactory.spread_1_db_access = result.data.DATA.filter((ent)=> ent['VIEW DEFINITION'] ==  true );
+			tbl_list = access_matrix.map(( ent )=>{ return { TABLE_NAME : ent.name }})  
+		}
+
 		spread.setActiveSheetIndex(1)
 
 		sheet1.options.isProtected = false
@@ -933,7 +978,8 @@ angular.module('ezch_tbl_editorService',[])
 		
 		let headers = {}
 		let user_DB = ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.db_name 
-		if( user_DB )headers['user_DB'] = user_DB 
+//1		if( user_DB )headers['user_DB'] = user_DB 
+		if( user_DB )headers['user_db'] = user_DB 
 
 		tbl_name_1 = tbl_name.replace('TB_','') 
 
@@ -1099,6 +1145,11 @@ angular.module('ezch_tbl_editorService',[])
 		  }else if( args.row == cell_genTblView.row ){  // row 0 
 			  switch( args.col){
 				  case cell_genTblView.col:
+		                          let access_matrix = ezch_tbl_editorService.sheet_TblView_get_access_matrix(); 
+					  if( access_matrix['SELECT'] == false ){
+						  alert("SELECT not allowed!")
+						  return -1 ;
+					  }	
 					  spread.getSheet(0).visible(true); 
 					  ezch_tbl_editorService.sheet_TblView_update_genTblView( spread ); 
 					  break;
@@ -1144,6 +1195,12 @@ angular.module('ezch_tbl_editorService',[])
 					  break; 
 				  case cell_lock.col:
 	//				  spread.options.isProtected = false 
+		                          let access_matrix = ezch_tbl_editorService.sheet_TblView_get_access_matrix(); 
+					  if( access_matrix['UPDATE'] == false ){
+						  alert("UPDATE not allowed!")
+						  return -1 ;
+					  }	
+
 					  console.time("answer time");
 					  console.timeLog("answer time");
 					  sheet0.options.isProtected = false 
@@ -1180,7 +1237,12 @@ angular.module('ezch_tbl_editorService',[])
 		  }else if( args.row == cell_sqlCheck.row && args.col == cell_sqlCheck.col ){
 		                  ezch_tbl_editorService.sheet_TblView_invalidate_sqlInput( spread, !ezch_tbl_editorFactory.cellBinding_config_list.sql_enable ); 
 		  }else if( args.row == cell_exec.row && args.col == cell_exec.col ){
-				  ezch_tbl_editorService.sheet_TblView_insertData_DB( spread ) 
+			  let access_matrix = ezch_tbl_editorService.sheet_TblView_get_access_matrix(); 
+			  if( access_matrix['INSERT'] == false ){
+				  alert("INSERT not allowed!")
+				  return -1 ;
+			  }	
+			  ezch_tbl_editorService.sheet_TblView_insertData_DB( spread ) 
 		  }else if( args.row == cell_update.row && args.col == cell_update.col ){
 				  ezch_tbl_editorService.sheet_TblView_update_genTblView( spread ); 
 		  }
