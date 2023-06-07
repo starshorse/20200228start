@@ -21,7 +21,7 @@ angular.module('db_administrationService', [])
 		      },	
 		sheet_login_table:{ name: 'Table1', tbl_view: null , data:[]},
 		sheet_login_asLogin: null , 
-		sheet_userRoles_table_roles :{ name: 'Table2', tbl_view: null , data:[]},
+		sheet_userRoles_table_roles :{ name: 'Table2', tbl_view: null , data:[], hideRows:{ start: 0 , end:0 ,count: 100 } },
 		sheet_userRoles_table_userRoles :{ name: 'Table3', tbl_view: null , data:[]},
 		sheet_roleEdit_table_roleEdit :{ name: 'Table4', tbl_view: null , data:[], ch_tbl_list:[]},
 		binding_data: { cur_login : null, cur_role: null, cur_db: null }
@@ -43,10 +43,10 @@ angular.module('db_administrationService', [])
 		if( login_id = $cookies.get('login_id') ){
 			this.loginSelected( spread, login_id ) 
 			let user_id = $cookies.get('user')
-			if( user_id == undefined || user_id != 'star_horse@naver.com' ) 
+			if( user_id != 'star_horse@naver.com' ) 
 				spread.getSheetFromName('Login').visible( false ); 
 
-			$cookies.remove('login_id', { path: '/app/db_administration/'} ); 
+//no			$cookies.remove('login_id', { path: '/app/db_administration/'} ); 
 		}
 	}
 	this.sheet_userRoles_invalidate = ( spread, yes = 1 )=>{
@@ -147,12 +147,12 @@ angular.module('db_administrationService', [])
 				alert(`${ login_id } not assigned `+ db_default.data.ERRORMESSAGE )
 				return -1 
 			}
-                        let db_name = db_default.data.DATA[0].name 
-			let db_list = await  $http.get(`/Hades/db_administration/db_list/${ db_name }/${login_id}`);
+                        let db_name_1 = db_default.data.DATA[0].name 
+			let db_list = await  $http.get(`/Hades/db_administration/db_list/${ db_name_1 }/${login_id}`);
 			if( db_list.data.RESULT == -1 ){ alert( db_list.data.ERRORMESSAGE ); return -1 ; }
 			let db_list_items = []
-			for( db_name of db_list.data.DATA ){
-				db_list_items.push( db_name.name ); 
+			for( db_name_2 of db_list.data.DATA ){
+				db_list_items.push( db_name_2.name ); 
 			}
 //			let cell_dbl = sheet.getRange('C6:C6');
 			let cell_dbl = sheet.getRange( db_administrationFactory.pos.userRoles.dbList );
@@ -165,11 +165,26 @@ angular.module('db_administrationService', [])
 		await this.sheet_userRoles_update_1_userRolesList( spread, db_name , login_id )
 	}
 	this.sheet_userRoles_update_1_rolesList = async ( spread, db_name )=>{
+                let sheet = spread.getSheetFromName('UserRoles') ;
 		let roles_list = await  $http.get(`/Hades/db_administration/roles_list/${db_name}`);
 		if( roles_list.data.RESULT == -1){ alert( roles_list.data.ERRORMESSAGE ); return; }
 		db_administrationFactory.sheet_userRoles_table_roles.data = roles_list.data.DATA 
 		this.sheet_userRoles_update_1_rolesList_tblBinding( spread, db_administrationFactory.sheet_userRoles_table_roles ) 
 		db_administrationFactory.binding_data.cur_db = db_name ; 
+		let dataRange = db_administrationFactory.sheet_userRoles_table_roles.tbl_view.dataRange() 
+		let hideRows = db_administrationFactory.sheet_userRoles_table_roles.hideRows 
+		sheet.suspendPaint() 
+		if( hideRows.start ){
+			for( let i = hideRows.start ; i < hideRows.end ;i++ ){
+				sheet.setRowVisible( i, true );
+			}
+		}
+		hideRows.start = dataRange.row + dataRange.rowCount 
+		hideRows.end = hideRows.start + hideRows.count 
+		for( let i = hideRows.start ; i < hideRows.end ;i++ ){
+			sheet.setRowVisible( i, false );
+		}
+		sheet.resumePaint() 
 	}
 	this.sheet_userRoles_update_1_userRolesList = async ( spread, db_name )=>{
 		let cur_login = db_administrationFactory.binding_data.cur_login 
@@ -185,6 +200,7 @@ angular.module('db_administrationService', [])
 		tableColumn1.name('Role');
 		tableColumn1.dataField('name');
 		table.bind( [tableColumn1] , 'data' , tbl_info ) 
+
 	}
 	this.sheet_userRoles_dbList_changed = async( spread, nw_db )=>{
 		this.sheet_roleEdit_invalidate( spread ) 
