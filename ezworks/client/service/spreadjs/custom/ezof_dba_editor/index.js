@@ -314,7 +314,8 @@ angular.module('ezof_dba_editorService',[])
 		this.sheet_users_part_MLKList_invalidate( spread );
 		this.sheet_users_part_MLKInfo_invalidate( spread );
                 let organization_id  = ezof_dba_editorFactory.binding_data.cur_organization ;
-		let users_list = await  $http.get(`/Hades/dba_editor/users_list/${ organization_id }`);
+//1		let users_list = await  $http.get(`/Hades/dba_editor/users_list/${ organization_id }`);
+		let users_list = await  $http.get(`/Hades/dba_editor/users_list_mlkCount/${ organization_id }`);
 		if( users_list.data.RESULT == -1 ){
 			alert( users_list.data.ERRORMESSAGE )
 			return ;
@@ -325,7 +326,14 @@ angular.module('ezof_dba_editorService',[])
 		let tableColumn1 = new GC.Spread.Sheets.Tables.TableColumn(); 
 		tableColumn1.name('Users');
 		tableColumn1.dataField('user');
-		table.bind( [tableColumn1] , 'data' , ezof_dba_editorFactory.sheet_users_table_users ) 
+//1		
+		let tableColumn2 = new GC.Spread.Sheets.Tables.TableColumn(); 
+		tableColumn2.name('mlkCount');
+		tableColumn2.dataField('mlkCount');
+		let table_curInfo = table.dataRange() 
+		sheet.tables.resize( table.name(), new GC.Spread.Sheets.Range( table_curInfo.row -1 , table_curInfo.col , table_curInfo.rowCount, 2 ));
+
+		table.bind( [tableColumn1, tableColumn2 ] , 'data' , ezof_dba_editorFactory.sheet_users_table_users ) 
 		// await this.sheet_users_binding_data( spread ); 
 
 	}
