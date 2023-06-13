@@ -11,6 +11,8 @@ var sidebarsCtrl = function( $injector, $scope, workSpace_service,
 	$scope.app_cur
 	$scope.app_apps_list = null  
 	$scope.app_collection_list = null   
+	$scope.app_app_list_common = { name:'app_list_common' , sys_table_level: -1  } 
+	$scope.app_collection_list_common = { name:'collection_list_common' , sys_table_level: -1  } 
 	$scope.cmdControlOptions= { 'fileUpload': 0 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //   navbar show/hide 
@@ -37,6 +39,13 @@ var sidebarsCtrl = function( $injector, $scope, workSpace_service,
 	}
 	$scope.openApp = ( item = null )=>{
 		console.log('[parts/sidebars] $scope.openApp _start with item:', item ) 
+		if( item?.sys_table_level < 2 ){
+			$scope.app_cur = item 
+		        workSpace_service.setAppCur_post( $scope.app_cur ) 
+		        $scope.tbl_name = $scope.app_cur.name  
+		        $scope.openTbl( $scope.tbl_name ) 
+			return 
+		}
 //		toggleSidebar_factory.toggleSidebar_flag = 1 
 		let openApp_can 
 		if( item == null ){
@@ -61,7 +70,7 @@ var sidebarsCtrl = function( $injector, $scope, workSpace_service,
 			}
 		}
 		$scope.app_cur = openApp_can 
-	    $scope.dataMode = 0  // 0: spreadjs 1: form 2: jsoneditor. 
+	        $scope.dataMode = 0  // 0: spreadjs 1: form 2: jsoneditor. 
 		workSpace_service.setAppCur_post( $scope.app_cur ) 
 		try{
  			if( $scope.app_cur.stage == 5 ) $scope.cmdControlOptions.fileUpload = 0 
@@ -82,7 +91,7 @@ var sidebarsCtrl = function( $injector, $scope, workSpace_service,
 /* Tue May 24 02:23:20 UTC 2022
 		make call this function available.. 
 */
-			$scope.openTbl( $scope.tbl_name ) 
+		$scope.openTbl( $scope.tbl_name ) 
 	}
 	$scope.newAppByClick= ()=>{
 		$scope.modals[0].callback = ( args , modal )=>{

@@ -22,6 +22,8 @@
 			</button>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				<a class="dropdown-item" ng-click='openApp_1(app_server_list)' ng-if='cur_server == "ezoffice"'><h4>관리회사</h4></a>
+				<a class="dropdown-item" ng-click='openApp(app_collection_list_common)' ng-if='cur_server == "ezoffice"'><h4>Collection List[common]</h4></a>
+				<a class="dropdown-item" ng-click='openApp(app_app_list_common)' ng-if='cur_server == "ezoffice"'><h4>App List[common]</h4></a>
 				<a class="dropdown-item" ng-click='openApp(app_collection_list)'><h3>Collection List</h3></a>
 				<a class="dropdown-item" ng-click='openApp(app_apps_list)'><h4>Apps list</h4></a>
 				<div class="dropdown-divider"></div>

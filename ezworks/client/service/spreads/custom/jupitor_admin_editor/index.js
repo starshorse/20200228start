@@ -168,6 +168,47 @@ angular.module('jupitor_admin_editor',[])
 		sheet.getRange( jupitor_admin_editorFactory.pos.Users.pos_user_info.level ).backColor('#bbb3d1').locked( true ); 
                 sheet.options.isProtected = true ;
 	}
+	this.sheet_Users_addUser = async( spread , id )=>{
+                let org_name  = jupitor_admin_editorFactory.binding_data.cur_server ;
+		let result = await $http.get(`/Hades/dba_editor/user/${id}`)
+		if( result.data?.DATA.length ){
+			let yesno = confirm("DB ID가 존재 합니다. Web ID 생성하시겠습니다?") 
+			if( yesno == false ) 
+				return -1;
+		}else{
+			result = await $http({ method:'POST' , url:'/Hades/dba_editor/user' , data: { org_name, id }} )
+			if( result.data.RESULT == -1 ){
+				alert( result.data.ERRORMESSAGE )
+				return -1; 
+			}
+		}	
+		result = await $http.get(`/Hades/dba_editor/user/${id}`)
+		if( !result.data?.DATA.length ){
+			   alert(" ID 생성 오류 발생") 
+			   return -1;
+        	}
+		let user_info = result.data.DATA[0] 
+		result = await $http.get(`/Hades/dba_editor/web_user/${org_name}/${id}`)
+		if( result.data?.DATA.length ){
+			let yesno = confirm("Web ID가 존재 합니다. 해당 ID로 DB 권한을 원합니까 ?") 
+			if( yesno == false ) 
+				return -1;
+		}else{
+			result = await $http({ method:'POST' , url:`/Hades/dba_editor/web_user/${ org_name}` , data: { id }} )
+			if( result.data.RESULT == -1 ){
+				alert( result.data.ERRORMESSAGE )
+				return -1; 
+			}
+		}	
+		let userSeq = user_info.seq 
+		result = await $http({ method:'POST' , url:`/Hades/dba_editor/web_userSeq/${ org_name }/${ id }` , data: { userSeq }} )
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE )
+			return -1; 
+		}
+		 this.sheet_Users_list_update( spread ) 
+	
+	}
 	this.sheet_users_update = ( spread )=>{
 		this.sheet_Users_list_update( spread );
 		this.sheet_Users_invalidate( spread , 0 ); // active

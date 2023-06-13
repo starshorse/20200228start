@@ -127,21 +127,30 @@ spreadJs_factory,
 		let cur_server = workSpace_factory.cur_server ; 
 		switch( tbl_name_ ){
 	                case 'app_list':
-//1	 			temp_data = await $http.get(`/web_admin_editor/apps_list/${ cur_server }/1`).catch((err)=>{ console.log( err )})	// option 1  
 	 			temp_data = await $http.get(`/Jupiter/db_edit/jupiter/app_list/${ cur_server }`).catch((err)=>{ console.log( err )})	//  proxy middleware.. 
 	 			Data_s[0] = temp_data.data.DATA.data
 				Data_s[1] = temp_data.data.DATA.hdr 
 			        spreadjs_openTbl_cb( Data_s ) 
 				break;
+	                case 'app_list_common':
+	 			temp_data = await $http.get(`/Jupiter/db_edit/jupiter/app_list/`).catch((err)=>{ console.log( err )})	//  proxy middleware.. 
+	 			Data_s[0] = temp_data.data.DATA.data
+				Data_s[1] = temp_data.data.DATA.hdr 
+			        spreadjs_openTbl_cb( Data_s ) 
+				break;
 			case 'collection_list':
-//1	 			temp_data = await $http.get(`/web_admin_editor/collections_list/${ cur_server }/1`).catch((err)=>{ console.log( err )})	// option 1  
 	 			temp_data = await $http.get(`/Jupiter/db_edit/jupiter/collection_list/${ cur_server }`).catch((err)=>{ console.log( err )})	// option 1  
 	 			Data_s[0] = temp_data.data.DATA.data
 				Data_s[1] = temp_data.data.DATA.hdr 
 			        spreadjs_openTbl_cb( Data_s ) 
 				break;
+			case 'collection_list_common':
+	 			temp_data = await $http.get(`/Jupiter/db_edit/jupiter/collection_list/`).catch((err)=>{ console.log( err )})	// option 1  
+	 			Data_s[0] = temp_data.data.DATA.data
+				Data_s[1] = temp_data.data.DATA.hdr 
+			        spreadjs_openTbl_cb( Data_s ) 
+				break;
 			case '관리회사':
-//1	 			temp_data = await $http.get(`/web_admin_editor/servers_list/1`).catch((err)=>{ console.log( err )})	// option 1  
 	 			temp_data = await $http.get(`/Jupiter/db_edit/jupiter/server_list/`).catch((err)=>{ console.log( err )})	// option 1  
 	 			Data_s[0] = temp_data.data.DATA.data
 				Data_s[1] = temp_data.data.DATA.hdr 
@@ -314,15 +323,18 @@ spreadJs_factory,
 			let data = { data: DbData , hdr: spreadJs_factory.headInfos };  
 			switch( tbl_name_ ){
 				case 'app_list':
-//1					temp_data = await $http({ method: 'POST' , url:`/web_admin_editor/apps_list/${ cur_server }/1`, data }).catch((err)=>{ console.log( err )})	// option 1  
 					temp_data = await $http({ method: 'POST' , url:`/Jupiter/db_edit/jupiter/app_list/${ cur_server }`, data }).catch((err)=>{ console.log( err )})	// option 1  
 					break;
+				case 'app_list_common':
+					temp_data = await $http({ method: 'POST' , url:`/Jupiter/db_edit/jupiter/app_list/`, data }).catch((err)=>{ console.log( err )})	// option 1  
+					break;
 				case 'collection_list':
-//1					temp_data = await $http({ method: 'POST', url:`/web_admin_editor/collections_list/${ cur_server }/1`, data }).catch((err)=>{ console.log( err )})	// option 1  
 					temp_data = await $http({ method: 'POST' , url:`/Jupiter/db_edit/jupiter/collection_list/${ cur_server }`, data }).catch((err)=>{ console.log( err )})	// option 1  
 					break;
+				case 'collection_list_common':
+					temp_data = await $http({ method: 'POST' , url:`/Jupiter/db_edit/jupiter/collection_list/`, data }).catch((err)=>{ console.log( err )})	// option 1  
+					break;
 				case '관리회사':
-//1					temp_data = await $http({ method: 'POST', url:`/web_admin_editor/servers_list/1`, data }).catch((err)=>{ console.log( err )})	// option 1  
 					temp_data = await $http({ method: 'POST' , url:`/Jupiter/db_edit/jupiter/server_list/`, data }).catch((err)=>{ console.log( err )})	// option 1  
 					break;
 				default:

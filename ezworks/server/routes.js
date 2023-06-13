@@ -1,11 +1,11 @@
 'use strict'
 
 require('dotenv').config() 
-const { createProxyMiddleware } = require('http-proxy-middleware') 
+// const { createProxyMiddleware } = require('http-proxy-middleware') 
 
 module.exports = function( app ){
 	app.use('/tbl_editor', require('./app/tbl_editor')); 
-	if( process.env.PROXY_HADES == 'on' ){
+	if( process.env.PROXY_HADES == 'indirect' ){
 	        app.use('/Hades/dba_editor', require('./app/dba_editor_hades')); 
 		app.use('/Hades/db_administration', require('./app/db_administration_hades')); 
 	}	
@@ -13,6 +13,7 @@ module.exports = function( app ){
 	        app.use('/Hades/dba_editor', require('./app/dba_editor')); 
 		app.use('/Hades/db_administration', require('./app/db_administration')); 
 	}	
+/*	
 	else{	
 		app.use('/Hades', createProxyMiddleware({
 			target: 'http://192.168.0.80:8000',
@@ -21,11 +22,13 @@ module.exports = function( app ){
 				['^/Hades']:''
 			}
 		}))	
-	}	
-	if( process.env.PROXY_JUPITER == 'local' ){
 	}
-	else if( process.env.PROXY_JUPITER == 'on' ){
+*/	
+	if( process.env.PROXY_JUPITER == 'indirect' ){
 	}
+	else if( process.env.PROXY_JUPITER == 'local' ){
+	}
+/*	
 	else{
                app.use('/Jupiter', createProxyMiddleware({
 		       target: 'http://192.168.0.80:3001' ,
@@ -35,6 +38,7 @@ module.exports = function( app ){
 		       }
 	       }))
 	}
+*/	
 	app.use('/web_admin_editor', require('./app/web_admin_editor')); 
 	app.use('/log_monitor', require('./app/log_monitor')); 
 	app.use('/mlk_auth', require('./tools/authentication')); 
