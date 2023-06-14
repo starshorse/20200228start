@@ -62,6 +62,7 @@ angular.module('mySpreadjs',[])
 		spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
 		spreadjs_eventsService.register_sheet0_bind_cellDoubleClick( $scope.spread ) 
 		spreadjs_eventsService.register_sheet1_bind_cellDoubleClick( $scope.spread ) 
+		spreadjs_eventsService.register_sheet2_bind_cellChanged( $scope.spread ) 
 	}
 
 }])

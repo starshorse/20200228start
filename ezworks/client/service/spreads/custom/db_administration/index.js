@@ -44,6 +44,11 @@ angular.module('db_administrationService', [])
 			this.loginSelected( spread, login_id ) 
 			$cookies.remove('login_id', { path: '/app/db_administration/'} ); 
 		}
+		// 2023-06-14 
+		if( login_db = $cookies.get('login_db') ){
+	                this.sheet_userRoles_update_1( spread , login_db ,login_id )=>{
+			$cookies.remove('login_db', { path: '/app/db_administration/'} ); 
+		}
 	}
 	this.sheet_userRoles_invalidate = ( spread, yes = 1 )=>{
 		if( yes ){

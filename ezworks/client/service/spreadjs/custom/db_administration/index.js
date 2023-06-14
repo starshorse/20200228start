@@ -41,12 +41,16 @@ angular.module('db_administrationService', [])
 		await this.sheet_roleEdit_init( spread ); 
 		this.sheet_roleEdit_invalidate( spread ) ;
 		if( login_id = $cookies.get('login_id') ){
-			this.loginSelected( spread, login_id ) 
+			await this.loginSelected( spread, login_id ) 
 			let user_id = $cookies.get('user')
 			if( user_id != 'star_horse@naver.com' ) 
 				spread.getSheetFromName('Login').visible( false ); 
 
 //no			$cookies.remove('login_id', { path: '/app/db_administration/'} ); 
+		}
+		// 2023-06-14 
+		if( login_db = $cookies.get('login_db') ){
+	                await this.sheet_userRoles_dbList_changed( spread, login_db );
 		}
 	}
 	this.sheet_userRoles_invalidate = ( spread, yes = 1 )=>{
@@ -125,15 +129,17 @@ angular.module('db_administrationService', [])
 	this.sheet_userRoles_init = async ( spread )=>{
                 let sheet = spread.getSheetFromName('UserRoles') ;
 		sheet.options.isProtected = false ;
-//		let tables = sheet.tables.all();
 		let table1 = sheet.tables.findByName( db_administrationFactory.sheet_userRoles_table_roles.name ) 		
 		db_administrationFactory.sheet_userRoles_table_roles.tbl_view = table1; 
 		let table2 = sheet.tables.findByName( db_administrationFactory.sheet_userRoles_table_userRoles.name ) 		
 		db_administrationFactory.sheet_userRoles_table_userRoles.tbl_view = table2; 
 		let binding_data = new GC.Spread.Sheets.Bindings.CellBindingSource( db_administrationFactory.binding_data ); 
-//		let cell_curLogin = sheet.getRange('F6:F6') 
 		let cell_curLogin = sheet.getRange( db_administrationFactory.pos.userRoles.curLogin ) 
 		sheet.setBindingPath( cell_curLogin.row, cell_curLogin.col , "cur_login")
+		// 2023-06-14
+		let cell_curDB = sheet.getRange( db_administrationFactory.pos.userRoles.dbList ) 
+		sheet.setBindingPath( cell_curDB.row, cell_curDB.col , "cur_db")
+
 		sheet.setDataSource( binding_data );
 		sheet.getRange( db_administrationFactory.pos.userRoles.dbList ).locked(false) 
 		sheet.getRange( db_administrationFactory.pos.userRoles.addRole ).locked(false) 

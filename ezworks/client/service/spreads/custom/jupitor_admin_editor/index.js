@@ -31,12 +31,13 @@ angular.module('jupitor_admin_editor',[])
 			Permissions:{
 				curDB:'C6:C6',
 				curLogin: 'E6:E6',
+				btn_rolesEdit:'E3:E3',  //2023-06-14 
 			}
 		      },	
 		sheet_Servers_table:{ name: 'Table1', tbl_view: null , data:[]},
 		sheet_Users_table_users :{ name: 'Table2', tbl_view: null , data:[]},
 		sheet_Users_table_logins :{ name: 'Table3', tbl_view: null , data:[]},
-		sheet_Permissions_table_permissions :{ name: 'Table4', tbl_view: null , data:[]},
+		sheet_Permissions_table_permissions :{ name: 'Table4', tbl_view: null , data:[], login_id: null, login_DB: null },  // 2023-06-14 
 		binding_data: { cur_server : null , cur_DB: null, cur_user: null , cur_organization: null ,  cur_login: null  },
 	}
 	return jupitor_admin_editorFactory 	
@@ -354,6 +355,7 @@ angular.module('jupitor_admin_editor',[])
 		sheet.options.isProtected = false ;
 		let table = sheet.tables.findByName( jupitor_admin_editorFactory.sheet_Permissions_table_permissions.name ) 		
 		jupitor_admin_editorFactory.sheet_Permissions_table_permissions.tbl_view = table; 
+		sheet.getRange( jupitor_admin_editorFactory.pos.Permissions.curDB).locked(false); 
                 sheet.options.isProtected = true ;
 	}
 	this.sheet_Permissions_get_userRolesList = async ( spread, db_name )=>{
@@ -384,38 +386,14 @@ angular.module('jupitor_admin_editor',[])
 		let rowFilter  = table.rowFilter();
 		spread.resumePaint(); 
 	}
-	this.sheet_Permissions_update_1 = async ( spread )=>{
+	this.sheet_Permissions_update_1 = async ( spread, db_name = null )=>{
 		let cur_login = jupitor_admin_editorFactory.binding_data.cur_login 
 		this.sheet_Permissions_get_matrix( spread, cur_login ); 
-/* move to Server for sharing. 		
-		let roles_data = await this.sheet_Permissions_get_userRolesList( spread , db_name ); 
-		let roles_data_collection = []
-		for( role_e of roles_data ){
-			let selected_role = role_e.name ; 
-			let role_data = await  $http.get(`/Hades/db_administration/roles_data/${db_name}/${selected_role}`);
-		        if( role_data.data.RESULT == -1 ){ alert( role_data.data.ERRORMESSAGE ); return; }
-			roles_data_collection.push( role_data.data.DATA )
-		}	
-		let tables_list = await  $http.get(`/Hades/db_administration/tables_list/${db_name}`);
-		if( tables_list.data.RESULT == -1 ){ alert( tables_list.data.ERRORMESSAGE ); return; }
-		spread.suspendPaint();
-		let role_matrix = [] 
-		for( tbl_e of tables_list.data.DATA ){
-			nw_entry ={ name : tbl_e['name'] , SELECT: false , INSERT: false , UPDATE: false , DELETE: false , 'VIEW DEFINITION': false } 
-			role_matrix.push( JSON.parse( JSON.stringify( nw_entry )))
-		}
-		roles_data_collection.forEach(( role_data )=>{
-			for( role_e of role_data ){
-				for( tbl_e_1 of role_matrix ){
-					if( tbl_e_1['name'] == role_e['ObjectName'] )
-						tbl_e_1[ role_e['permission_name']] = true 
-				}	
-			}
-		})
-*/		
 		this.sheet_Permissions_invalidate( spread, 0);
 	}
-	this.sheet_Permissions_update_2 = async( spread )=>{
+	// 2023-06-14
+	this.sheet_Permissions_update_2 = async( spread, db_name = null )=>{
+                let sheet = spread.getSheetFromName('Permissions') ;
 		let cur_user = jupitor_admin_editorFactory.binding_data.cur_user; 
 		let web_login_matrix = await  $http.get(`/Hades/dba_editor/web_login_matrix`);
 		if( web_login_matrix.data.RESULT == -1 ){
@@ -427,8 +405,40 @@ angular.module('jupitor_admin_editor',[])
 			alert(" no this web id for DB login id" );
 			return -1 ;
 		}
+		jupitor_admin_editorFactory.sheet_Permissions_table_permissions.login_id = login_id.login_id 
+		// 2023-06-14
+		if( db_name == null ){
+			let db_list = await  $http.get(`/Hades/db_administration/db_list/ezchemtech/${login_id.login_id}`);
+			if( db_list.data.RESULT == -1 ){ alert( db_list.data.ERRORMESSAGE ); return; }
+			let db_list_items = []
+			for( db_name of db_list.data.DATA ){
+				db_list_items.push( db_name.name ); 
+			}
+			let cell_dbl = sheet.getRange( jupitor_admin_editorFactory.pos.Permissions.curDB );
+			sheet.getCell( cell_dbl.row, cell_dbl.col).cellType().items(db_list_items)
+			sheet.setValue( cell_dbl.row, cell_dbl.col, db_list_items[0] )
+			db_name = db_list_items[0];
+		}
+		jupitor_admin_editorFactory.binding_data.cur_DB = db_name  
 		this.sheet_Permissions_get_matrix( spread, login_id.login_id ); 
 		this.sheet_Permissions_invalidate( spread, 0);
+	}
+	// 2023-06-14 
+	this.sheet_Permissions_goTo_rolesEdit = ( spread )=>{
+		let login_id = jupitor_admin_editorFactory.sheet_Permissions_table_permissions.login_id 
+		let login_db = jupitor_admin_editorFactory.binding_data.cur_DB   
+		if( login_id == null ){
+			alert(" need id for login !")
+			return -1 ; 
+		}
+		$cookies.put( 'login_id' , login_id ,{ path: '/app/db_administration/' } ) 
+		$cookies.put( 'login_db' , login_db ,{ path: '/app/db_administration/' } ) 
+		window.open('/app/db_administration/')
+	}
+	// 2023-06-14 
+	this.sheet_Permissions_curDB_changed = ( spread, db_name )=>{
+		jupitor_admin_editorFactory.binding_data.cur_DB = db_name  
+		this.sheet_Permissions_update_2( spread, db_name ) 
 	}
 	this.sheet_Permissions_invalidate = ( spread, yes = 1 )=>{
 		if( yes ){
@@ -442,6 +452,16 @@ angular.module('jupitor_admin_editor',[])
 .service('jupitor_admin_editor_eventsService', ['$injector', function($injector){
 	var jupitor_admin_editorService = $injector.get('jupitor_admin_editorService') 
 	var jupitor_admin_editorFactory = $injector.get('jupitor_admin_editorFactory') 
+	this.sheet2_cellChanged = ( spread, sender ,args )=>{
+		let sheet2 = spread.getSheet(2)
+		let cell_curDB = sheet2.getRange( jupitor_admin_editorFactory.pos.Permissions.curDB );
+		switch( args.col ){
+			case cell_curDB.col:
+				if( args.row == cell_curDB.row )jupitor_admin_editorService.sheet_Permissions_curDB_changed( spread, sheet2.getValue( args.row, args.col ))
+				break
+			default:
+		}
+	}
 	this.sheet0_cellDoubleClick =( spread, sender, args )=>{
 		// check login list .. 
 		let table = jupitor_admin_editorFactory.sheet_Servers_table.tbl_view 
@@ -521,6 +541,15 @@ angular.module('jupitor_admin_editor',[])
 						break;
 				}
 				break;
+			case 'Permissions':  // 2023-06-14 
+				let btn_rolesEdit = args.sheet.getRange( jupitor_admin_editorFactory.pos.Permissions.btn_rolesEdit ) 
+				switch( args.col ){
+					case btn_rolesEdit.col:
+						if( args.row == btn_rolesEdit.row )
+							jupitor_admin_editorService.sheet_Permissions_goTo_rolesEdit( spread ) 
+						break;
+					default:	
+				}
 		}	
 	}
 }])
