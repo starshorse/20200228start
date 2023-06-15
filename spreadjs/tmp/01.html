@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>	
+	<meta charset = "utf-8"/>  
+	<script src="../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js"></script> 
+	<script src="../lib/spreadjs/15.2.2/scripts/plugins/gc.spread.sheets.tablesheet.15.2.2.min.js"></script> 
+	<link rel="stylesheet" href="../lib/spreadjs/15.2.2/css/gc.spread.sheets.15.2.2.css" />	
+  </head> 
+  <body>
+	<div id="ss"  style="height:800px;" ></div> 
+	<script>
+		window.onload = ()=>{
+			let spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss") , { sheetCount: 2 } )
+			let dataManager = spread.dataManager(); 
+		}			
+	</script>	
+  </body>
+</html> 

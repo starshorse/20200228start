@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="../lib/spreadjs/15.2.2/scripts/GC.Spread.Sheets.all.15.2.2.min.js" ></script>
+		<script src="../lib/spreadjs/15.2.2/scripts/interop/GC.Spread.excelio.15.2.2.min.js"></script> 
+		<link rel="stylesheet" href="../lib/spreadjs/15.2.2/css/GC.Spread.Sheets.15.2.2.css" />
+	</head>
+	<body>
+		<input type="file" onchange="processFileSelected()" id="fileSelector" />
+		<div id="ss" style="height:800px"></div>
+		<script>
+			let spread
+			window.onload = ()=>{
+							spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCout: 2 })			
+						}
+						let excelIO = new GC.Spread.Excel.IO();
+						const importFile  = ( file )=>{
+										let fileName = file.name 
+										let index = fileName.lastIndexOf("."); 
+										let fileExt = fileName.substr( index +1 ).toLowerCase();
+										if( fileExt === "json" || fileExt === "ssjson" ){ importSpreadFromJSON( file ) }
+										else if( fileExt === "xlsx"){ importSpreadFromExcel( file )}			
+									}
+						const processFileSelected = ()=>{
+										let fileSelector = document.getElementById("fileSelector")
+										let file = fileSelector.files[0]
+										if(!file) return false;
+										fileSelector.innerHTML = "";
+										return importFile( file )
+									}
+						const importJSON  = ( spreadJson )=>{
+										spread.fromJSON( spreadJson )
+									}
+						const importSpreadFromExcel = ( file, options )=>{
+										excelIO.open( file, ( json )=>importJSON(json) , (e)=>console.log(e) , options )
+									}
+						const importSpreadFromJSON = ( file )=>{
+										const importSuccessCallback = ( responseText )=>{
+														let spreadJson = JSON.parse( responseText ); 
+														importJSON( spreadJson ) 
+													}
+										var reader = new FileReader() 
+										reader.onload = function(){
+														importSuccessCallback( this.result )
+													}
+										reader.readAsText(file)
+										return true
+									}
+
+										
+
+		</script>	
+	</body>	
+</html>	

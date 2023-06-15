@@ -1,0 +1,43 @@
+<html> 
+	<head><meta charset='utf-8'>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+		<script type="text/javascript" src="../lib/spreadjs/15.2.2/scripts/interop/gc.spread.excelio.15.2.2.min.js"></script>
+	</head> 
+	<body>
+		<button><a href='/'>Editor PAGE</a></button> 
+		<form action='/upload' enctype='multipart/form-data' method='post' >
+			<input type='text' name='title'><br>
+			<input type='file' name='upload' multiple='multiple' onChange='importFile()'><br>
+			<input type='submit' value='Upload' onclick='return btnClick()'>
+		</form>
+		<script type='module'>
+			import { getFileExt } from '../importFile.js'
+			var file 
+                        var excelIO
+			window.onload = ()=>{
+			           excelIO = new GC.Spread.Excel.IO(); 
+			}		
+/*			
+			function getFileExt( fileName ){
+				return fileName.substr( fileName.lastIndexOf('.') +1 , fileName.length )
+			}
+*/			
+			function importFile(){
+			      file = document.querySelector('[name="upload"]').files[0]; 
+			      if( getFileExt( file.name ) == 'xlsx' ){
+					excelIO.open( file , ( json )=>{
+						let fileName = file.name.replace('xlsx','json') 
+						fetch(`/upload/${ fileName }`, { method:'POST', headers:{"Content-Type":"application/json"}, body :JSON.stringify( json )}  );			
+					}, (err)=>console.log(err) )
+			      }
+			}
+			function btnClick(){
+				let fileExt = getFileExt( file.name )
+				if( fileExt == 'ssjson' || fileExt == 'json' )
+					return true; 
+			         alert(" support only .ssjon .json" )
+			         return false;
+			}
+		</script> 	
+	</body>
+</html>

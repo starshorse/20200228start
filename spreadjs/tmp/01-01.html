@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8" />
+		<script src="../lib/spreadjs/15.2.2/scripts/GC.Spread.Sheets.all.15.2.2.min.js"></script> 
+		<script src="../lib/spreadjs/15.2.2/scripts/plugins/GC.Spread.Sheets.tableSheet.15.2.2.min.js"></script> 
+		<link rel="stylesheet" href="../lib/spreadjs/15.2.2/css/GC.Spread.Sheets.15.2.2.css" /> 
+	</head>
+	<body>
+		<h3> YH Expense records</h3>
+		<div id="ss" style="height : 800px"></div>
+		<script> 
+			let spread = new GC.Spread.Sheets.Workbook( document.getElementById("ss"), { sheetCount: 2 })
+			let dataManager = spread.dataManager(); 			
+			let myTable = dataManager.addTable("myTable", {
+						remote:{ read: { url:'http://localhost:3000/Json_data/card_yh.json' }}				
+						})
+			let sheet = spread.addSheetTab( 0 , "TableSheet1", GC.Spread.Sheets.SheetType.tableSheet ); 			
+			myTable.fetch().then( ()=>{
+				let view = myTable.addView("myView" , [
+								{ value: "승인일자", width: 300, caption: "승인일자" },
+								{ value: "카드번호", width: 300, caption: "Card Number" },
+								{ value: "이용금액", width: 300, caption: "이용금액" , style: currencyFormatterStyle },	
+								{ value: "=([@이용금액] + [@이용금액]*0.1)", width: 300, caption: "부가세포함", style: currencyFormatterStyle },
+								]);
+				sheet.setDataView( view ); 			
+			})
+			let currencyFormatterStyle =  new GC.Spread.Sheets.Style(); 
+			currencyFormatterStyle.formatter = "/* ##,###,000원";
+			currencyFormatterStyle.hAlign = GC.Spread.Sheets.HorizontalAlign.right 
+		</script> 				
+	</body>	
+</html>	
