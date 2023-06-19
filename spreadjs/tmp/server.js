@@ -5,6 +5,7 @@ const util = require('util')
 const fs = require('fs')
 const path = require('path') 
 const upload_dir = path.join( __dirname , '/public/upload') 
+const module_dir = path.join( __dirname , '/public/module_file') 
 
 var app = express();
 
@@ -32,7 +33,11 @@ app.post('/upload/:fileName', ( req, res)=>{
 	let fileName = req.params.fileName 
 	let data = req.body 
 	try{
-        	fs.writeFileSync( upload_dir + '/' + fileName , JSON.stringify( data ), 'utf-8' ) 
+        	fs.writeFileSync( upload_dir + '/' + fileName +'.json' , JSON.stringify( data ), 'utf-8' ) 
+		let dir = module_dir+'/' + fileName
+		if( !fs.existsSync( dir )){
+			fs.mkdirSync(dir) 
+		}	
 		result.STATUS = 0 
 		result.RESULT ="success" 
 	}	
