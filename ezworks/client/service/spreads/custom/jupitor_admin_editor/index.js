@@ -29,6 +29,7 @@ angular.module('jupitor_admin_editor',[])
 				btn_user_info_update: 'K16:K16' 
 			},
 			Permissions:{
+				rolesInfo:'B12:B137', 
 				curDB:'C6:C6',
 				curLogin: 'E6:E6',
 				btn_rolesEdit:'E3:E3',  //2023-06-14 
@@ -37,7 +38,7 @@ angular.module('jupitor_admin_editor',[])
 		sheet_Servers_table:{ name: 'Table1', tbl_view: null , data:[]},
 		sheet_Users_table_users :{ name: 'Table2', tbl_view: null , data:[]},
 		sheet_Users_table_logins :{ name: 'Table3', tbl_view: null , data:[]},
-		sheet_Permissions_table_permissions :{ name: 'Table4', tbl_view: null , data:[], login_id: null, login_DB: null },  // 2023-06-14 
+		sheet_Permissions_table_permissions :{ name: 'Table4', tbl_view: null , tbl_columns:[], data:[], login_id: null, login_DB: null },  // 2023-06-14 
 		binding_data: { cur_server : null , cur_DB: null, cur_user: null , cur_organization: null ,  cur_login: null  },
 	}
 	return jupitor_admin_editorFactory 	
@@ -350,6 +351,8 @@ angular.module('jupitor_admin_editor',[])
 	this.sheet_Permissions_init = async ( spread )=>{
                 let sheet = spread.getSheetFromName('Permissions') ;
 		sheet.setColumnCount( 200 );
+		let cell_rolesInfo = sheet.getRange(jupitor_admin_editorFactory.pos.Permissions.rolesInfo) 
+		sheet.setColumnWidth( cell_rolesInfo.col, 30 ) 
 
 		this.sheet_Permissions_binding_data( spread ); 
 		sheet.options.isProtected = false ;
@@ -357,6 +360,14 @@ angular.module('jupitor_admin_editor',[])
 		jupitor_admin_editorFactory.sheet_Permissions_table_permissions.tbl_view = table; 
 		sheet.getRange( jupitor_admin_editorFactory.pos.Permissions.curDB).locked(false); 
                 sheet.options.isProtected = true ;
+//1		
+		['name','SELECT','INSERT','UPDATE','DELETE','VIEW DEFINITION'].forEach((ent)=>{
+			let  tableColumn = new GC.Spread.Sheets.Tables.TableColumn();
+			tableColumn.name(ent) 
+			tableColumn.dataField(ent)
+			jupitor_admin_editorFactory.sheet_Permissions_table_permissions.tbl_columns.push( tableColumn  )
+		})	
+
 	}
 	this.sheet_Permissions_get_userRolesList = async ( spread, db_name )=>{
 		let cur_login = jupitor_admin_editorFactory.binding_data.cur_login 
@@ -368,22 +379,74 @@ angular.module('jupitor_admin_editor',[])
 	this.sheet_Permissions_get_matrix = async( spread , cur_login )=>{
 		let db_name = jupitor_admin_editorFactory.binding_data.cur_DB 
                 let sheet = spread.getSheetFromName('Permissions') ;
+		spread.suspendPaint(); 
 		let result = await $http.get(`/web_admin_editor/permissions_matrix_login/${ db_name }/${ cur_login}`) 
 		if( result.data.RESULT == -1 ){ alert( result.data.ERRORMESSAGE ); return; }
 
 		role_matrix = result.data.DATA;
+//1
+		let cur_dataLength = jupitor_admin_editorFactory.sheet_Permissions_table_permissions.data.length
 
 		jupitor_admin_editorFactory.sheet_Permissions_table_permissions.data = role_matrix  
 		let table  = jupitor_admin_editorFactory.sheet_Permissions_table_permissions.tbl_view 
 		let tbl_info  = jupitor_admin_editorFactory.sheet_Permissions_table_permissions 
 //		table.expandBoundRows( true ); 
-		table.bind( null , 'data' , tbl_info ) 
+//1		
+		table.autoGenerateColumns(false);
+		table.bind( jupitor_admin_editorFactory.sheet_Permissions_table_permissions.tbl_columns , 'data' , tbl_info ) 
+//		table.bind( null , 'data' , tbl_info ) 
+
 		let drange = table.dataRange() 
 		let checkBox = new GC.Spread.Sheets.CellTypes.CheckBox(); 
 		checkBox.caption("Enabled")
 		checkBox.textAlign(GC.Spread.Sheets.CellTypes.CheckBoxTextAlign.right);
 		sheet.getRange( drange.row, drange.col + 1, drange.rowCount, drange.colCount -1 ).cellType( checkBox ); 
-		let rowFilter  = table.rowFilter();
+//		let rowFilter  = table.rowFilter();
+		sheet.options.isProtected = false 
+//1		sheet.getRange( jupitor_admin_editorFactory.pos.Permissions.rolesInfo ).locked(false)
+//1		sheet.options.isProtected = true 
+				
+		let cell_rolesInfo = sheet.getRange(jupitor_admin_editorFactory.pos.Permissions.rolesInfo) 
+		sheet.clear( cell_rolesInfo.row ,1, cell_rolesInfo.row + cur_dataLength, 1 ,GC.Spread.Sheets.SheetArea.viewport , GC.Spread.Sheets.StorageType.style );
+		sheet.getRange( cell_rolesInfo.row ,1, cell_rolesInfo.row + cur_dataLength ,1).text('')
+
+		for( let i = 0 ; i < drange.rowCount ; i++ ){
+		        let dataSource =  tbl_info.data[i].roles_list 
+			if( dataSource.length == 0 )
+				continue ;
+			let colInfos = [
+				{ name: "ROLE_NAME", displayName: "ROLE_NAME", size: "2*"},
+				{ name: "SELECT", size: "*"},
+				{ name: "INSERT", size: "*"},
+				{ name: "UPDATE", size: 100 },
+				{ name: "VIEW DEFINITION", size: 120 }
+			];
+			// Create style
+			var style = new GC.Spread.Sheets.Style();
+			style.cellButtons = [
+				{
+					imageType: GC.Spread.Sheets.ButtonImageType.dropdown,
+					command: "openMultiColumn",
+					useButtonStyle: true,
+				}
+			];
+			style.dropDowns = [
+				{
+					type: GC.Spread.Sheets.DropDownType.multiColumn,
+					option: {
+						width: 600,
+						height: 150,
+						dataSource: dataSource,
+						bindingInfos: colInfos
+					}
+				}
+			];
+			// Set style's formatter
+			style.formatter = '=PROPERTY(@, "NAME")';
+			sheet.setStyle( drange.row + i , drange.col -1 , style )
+//1			sheet.setValue( drange.row + i , drange.col -1 ,  tbl_name ) 
+		}
+		
 		spread.resumePaint(); 
 	}
 	this.sheet_Permissions_update_1 = async ( spread, db_name = null )=>{

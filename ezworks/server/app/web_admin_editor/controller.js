@@ -114,14 +114,24 @@ exports.get_permissions_matrix_login = async( req, res )=>{
 			result.ERRORMESSAGE  =  tables_list.data.ERRORMESSAGE ; return res.status(200).json( result ); }
 	let role_matrix = [] 
 	for( let tbl_e of tables_list.data.DATA ){
-		let nw_entry ={ name : tbl_e['name'] , SELECT: false , INSERT: false , UPDATE: false , DELETE: false , 'VIEW DEFINITION': false } 
+		let nw_entry ={ name : tbl_e['name'] , SELECT: false , INSERT: false , UPDATE: false , DELETE: false , 'VIEW DEFINITION': false, roles_list:[]} 
 		role_matrix.push( JSON.parse( JSON.stringify( nw_entry )))
 	}
 	roles_data_collection.forEach(( role_data )=>{
 		for( let  role_e of role_data ){
 			for( let tbl_e_1 of role_matrix ){
-				if( tbl_e_1['name'] == role_e['ObjectName'] )
+				if( tbl_e_1['name'] == role_e['ObjectName'] ){
 					tbl_e_1[ role_e['permission_name']] = true 
+					let role_data = tbl_e_1.roles_list.find((ent)=>ent.ROLE_NAME == role_e['name'])
+					if( role_data ){
+					        role_data[ role_e['permission_name']] = "O" 
+					}else{
+			                        let nw_entry ={ ROLE_NAME: role_e['name'], SELECT: null , INSERT: null , UPDATE: null , DELETE: null , 'VIEW DEFINITION': null }
+						nw_entry[ role_e['permission_name']] = "O" 
+			                        tbl_e_1.roles_list.push( JSON.parse( JSON.stringify( nw_entry )))
+					}	
+					
+				}
 			}	
 		}
 	})
