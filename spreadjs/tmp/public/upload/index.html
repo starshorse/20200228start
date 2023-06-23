@@ -7,26 +7,28 @@
 		<button><a href='/'>Editor PAGE</a></button> 
 		<form action='/upload' enctype='multipart/form-data' method='post' >
 			<input type='text' name='title'><br>
-			<input type='file' name='upload' multiple='multiple' onChange='importFile()'><br>
-			<input type='submit' value='Upload' onclick='return btnClick()'>
+			<!--	<input type='file' name='upload' multiple='multiple' onChange='importFile()'><br> -->
+			<input type='file' name='upload' multiple='multiple'><br>
+			<!--   <input type='submit' value='Upload' onclick='return btnClick()'> -->
+			<input type='submit' value='Upload' name='submit'>
 		</form>
 		<script type='module'>
-			import { getFileExt } from '../importFile.js'
+			import { getFileExt } from '../module_share/importFile.js'
 			var file 
                         var excelIO
 			window.onload = ()=>{
 			           excelIO = new GC.Spread.Excel.IO(); 
-			}		
-/*			
-			function getFileExt( fileName ){
-				return fileName.substr( fileName.lastIndexOf('.') +1 , fileName.length )
+				   document.querySelector('[name="upload"]').addEventListener('change', importFile )
+				   document.querySelector('[name="submit"]').addEventListener('click', ()=>{
+				   	return btnClick() 
+				   })
 			}
-*/			
 			function importFile(){
 			      file = document.querySelector('[name="upload"]').files[0]; 
 			      if( getFileExt( file.name ) == 'xlsx' ){
 					excelIO.open( file , ( json )=>{
-						let fileName = file.name.replace('xlsx','json') 
+				//server add ext.	let fileName = file.name.replace('xlsx','json') 
+						let fileName = file.name.replace('.xlsx','')       
 						fetch(`/upload/${ fileName }`, { method:'POST', headers:{"Content-Type":"application/json"}, body :JSON.stringify( json )}  );			
 					}, (err)=>console.log(err) )
 			      }

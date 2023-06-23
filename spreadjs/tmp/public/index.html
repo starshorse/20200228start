@@ -6,6 +6,7 @@
 		<title>Main</title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
 		<script src='/lib/spreadjs/15.2.2/scripts/GC.Spread.Sheets.all.15.2.2.min.js'></script> 
+		<script src='/lib/spreadjs/15.2.2/scripts/plugins/GC.Spread.Sheets.Charts.15.2.2.min.js'></script> 
 		<script src="/lib/spreadjs/15.2.2/scripts/interop/GC.Spread.excelio.15.2.2.min.js"></script> 
 		<link rel='stylesheet' href='/lib/spreadjs/15.2.2/css/GC.Spread.Sheets.15.2.2.css' /> 
 	</head>
@@ -20,18 +21,23 @@
 			<ul style="list-style: none" >
 			</ul>
 		</div>
-		<div id='ss' style='width:100%;height:500px'></div> 
+		    <!-- Create a refresh button -->
+		    <input type="button" value="Refresh" onclick="refresh()" />
+		    <!-- Create Save to DB <div> and button -->
+		    <input type="button" id="save_DB" value="Save to DB" />
+		<div id='ss' style='width:100%;height:1000px'></div> 
+		<div class="options-container">
+			<h4> Changes saved to database: </h4>
+			<div id="msg" style="width: 100%; height: 260px; border: 1px solid grey;"></div>
+		</div>
 		<script type='module' charset="utf-8">
 		    import { importJSON, importSpreadFromExcel_text, exportExcelFromSpread, getFileExt } from '../module_share/importFile.js' ;
-//1		    import { loadJS } from './module_share/dynamicLoad_js.js'; 
-//1                 import { generateData , generateBindingColumnInfos } from './module_share/generateData.js'; 
 
 		    var cur_fileName_input   
+		    var cur_fileName 
 		    var spread = null 
 		    window.onload = ()=>{	
 			window.spread = spread = new GC.Spread.Sheets.Workbook( document.getElementById('ss'), { sheetCount: 2 } );
-//1			window.generateData  = generateData 
-//1			window.generateBindingColumnInfos = generateBindingColumnInfos 
 
 		        cur_fileName_input = document.getElementById('file_name');
 			cur_fileName_input.value ='new'
@@ -40,6 +46,7 @@
 			      console.log( e.target.innerText ) 
 
 			      let fileName = e.target.innerText 
+			      cur_fileName = fileName 
 			      let fileExt = fileName.substring( fileName.lastIndexOf('.') +1 ).toLowerCase() 
                               let encodeURI_file_name = encodeURIComponent( fileName )
 			      let data = await fetch(`/file_data?file_name=${ encodeURI_file_name }`) 
@@ -47,6 +54,7 @@
 			      switch( fileExt ){
 			      		case 'ssjson':
 					case 'json':
+					        spread.getSheet(0).reset(); 
 					        importJSON( spread, JSON.parse( data.DATA ) ) ; 
 			                        cur_fileName_input.value = fileName.substring(0,fileName.lastIndexOf('.')) ; 
 			            //1            loadJS(`/module_file/${cur_fileName_input.value}/index.js`, true ); 
@@ -77,6 +85,16 @@
 			       let xlsx_fileName = cur_fileName.replace( getFileExt( cur_fileName ), 'xlsx' )
 			       exportExcelFromSpread( excelIO, spread, xlsx_fileName ) 
 			});
+			document.getElementById('save_DB').addEventListener('click', async(e)=>{
+			    // Store the dirty cells information in the dirtyCells variable
+			    let sheet = spread.getActiveSheet() 
+			    var dirtyCells = sheet.getDirtyCells();
+			    // Get the HTML <div> element "msg" by id, this will be created in Step 2
+			    var div = document.getElementById("msg");
+			    // Display the JSON string in the div element to visualize the changed cell information
+			    div.innerHTML = JSON.stringify(dirtyCells, null, 4);
+			    // Note: Post changes to your database
+			})
 			const update_file_list = function(){
 				fetch('/file_list').then((response)=>{
 				  //    console.log( response ) 
