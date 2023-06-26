@@ -16,7 +16,9 @@ angular.module('db_administrationService', [])
 			roleEdit:{
 				update: 'C2:C2',
 				curDb: 'C6:C6',
-				curRole: 'E6:E6'
+				curRole: 'E6:E6',
+				btn_saveAs_role:'F5:F5',
+				input_saveAs_role:'G5:G5' 
 			}
 		      },	
 		sheet_login_table:{ name: 'Table1', tbl_view: null , data:[]},
@@ -264,6 +266,8 @@ angular.module('db_administrationService', [])
 		sheet.setDataSource( binding_data );
 		let drange = table3.dataRange();
 		sheet.getRange( drange.row  , drange.col + 1, drange.rowCount, drange.colCount -1 ).locked(false);
+		sheet.getRange( db_administrationFactory.pos.roleEdit.btn_saveAs_role ).locked(false);
+		sheet.getRange( db_administrationFactory.pos.roleEdit.input_saveAs_role ).locked(false);
 		sheet.options.isProtected = true ;
 	}		
 	// update from userRoles sheet. 
@@ -326,6 +330,21 @@ angular.module('db_administrationService', [])
 		}
 		if( isNeed_update) 
 			this.sheet_userRoles_role_selected( spread, role_name )
+	}
+//1 	
+	this.sheet_roleEdit_saveAs_role = async( spread )=>{
+		let sheet = spread.getSheetFromName('RoleEdit');
+		let input_saveAs_role = sheet.getRange( db_administrationFactory.pos.roleEdit.input_saveAs_role )
+		let role_name = sheet.getValue( input_saveAs_role.row , input_saveAs_role.col )
+		if( !role_name ){
+			alert("새로만들role 이름이 필요합니다.");
+			return -1 ;
+		}
+		let ynn = confirm(`새로운 Role ${ role_name }오로 만드시겠습니까?`)
+		if( ynn == false )return -1; 
+	        await this.sheet_userRoles_roleNew( spread, role_name);
+		db_administrationFactory.binding_data.cur_role = role_name 
+		await this.sheet_roleEdit_update_2( spread )
 	}
 	
 }])
@@ -438,8 +457,11 @@ angular.module('db_administrationService', [])
 				break;
 			case 'RoleEdit':
 				let cell_update = args.sheet.getRange( db_administrationFactory.pos.roleEdit.update )
+				let btn_saveAs_role = args.sheet.getRange( db_administrationFactory.pos.roleEdit.btn_saveAs_role )
 				if( args.col == cell_update.col && args.row == cell_update.row )
 					db_administrationService.sheet_roleEdit_update_2( spread );
+				if( args.col == btn_saveAs_role.col && args.row == btn_saveAs_role.row )
+					db_administrationService.sheet_roleEdit_saveAs_role( spread );
 				break;
 			default:
 		}
