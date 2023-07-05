@@ -92,6 +92,24 @@ exports.get_organization = async( req, res )=>{
         let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
 	return res.status(200).json(result) 
 }
+exports.get_limit_list = async( req, res )=>{
+	const db_name = 'config'
+	const sql_state = `
+	SELECT 
+	[name]	
+	FROM TB_ServiceLimit
+	`
+        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
+exports.get_limit_orglist = async( req, res )=>{
+	const db_name = 'config'
+	const sql_state = `
+	select a.seq , orgName, [name] from TB_ServiceLimt_Organization a inner join TB_ServiceLimit b on a.limitSeq = b.seq   inner join TB_Organization c on a.orgSeq = c.seq
+	`
+        let result = await sql_exec_get( undefined , undefined, db_name , sql_state );   
+	return res.status(200).json(result) 
+}
 exports.get_permissions_matrix_login = async( req, res )=>{
 	const db_name = req.params.db 
 	const id = req.params.id 

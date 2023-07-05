@@ -4,7 +4,7 @@ angular.module('myFooter',[])
 // 'restApiServiceDbEdit', 
 	function($scope, 
 $injector,		
-restApiServiceDbEdit 
+// restApiServiceDbEdit 
 ){	
 	    $scope.company_name 
 	    $scope.company_logo_path 

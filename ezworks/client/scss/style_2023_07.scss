@@ -1,0 +1,134 @@
+/*
+    ADDITIONAL DEMO STYLE, NOT IMPORTANT TO MAKE THINGS WORK BUT TO MAKE IT A BIT NICER :)
+*/
+
+.wrapper{
+	disply: flex;
+	widows: 100%;
+	align-items: stretch; 
+}
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+#content {
+	width:100%;
+}
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+@media  ( max-width: 768px) {
+    #wbar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+div.offcanvas-body div ul{
+     font-weight:bold;
+     padding: 10px;
+}
+div.offcanvas-body div ul li{
+     border-radius: 5px ;
+     font-weight:bold;
+     padding: 10px; 
+     margin: 5px; 
+/*     color:#D2B4DE ;  */
+     color: $main-color-light1 ;  
+     background:#565656;
+     background:$main-color-dark2 ;
+     text-align: center;
+}
+div.offcanvas-body div ul li:hover{
+     color:white;
+}
+body > div > ui-view > people{
+	display:flex ;
+	justify-content: center; 
+	align-items: center;
+	flex-direction: column;
+	height: 70%;
+/*	background-color:#5BB9B8; */
+	background-color: $main-background ; 
+	padding-top:60px;
+	padding-bottom:60px;
+}
+body > div > ui-view > people > h3{
+	text-align: center ;
+	color: $main-color-light1 ; 
+}
+body > div > ui-view > people > table{
+	flex-grow:1;
+	padding: 20px;
+	margin-top: 40px;
+	width: 50%;
+}
+body > div > ui-view > people > table > tbody > tr > td > select{
+	height: 40px;
+	width: 50%; 
+	  text-decoration: none;
+	  text-align:center; 
+	  border-radius: 5px;
+	  color: #fff;
+/*	  background-color: #54a1a0 ; */
+	  background-color: $main-background ;
+}
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background: #4c93a5;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #4c93a5;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #17a2b8;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #4c93a5;
+}

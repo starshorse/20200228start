@@ -6,6 +6,9 @@ var controller = require('./controller');
 var router = express.Router();
 
 router.get('/servers_list', controller.get_servers_list ) 
+router.get('/service_limit_list/', controller.get_limit_list ) 
+router.get('/service_limit_orglist/', controller.get_limit_orglist ) 
+
 router.get('/servers_list/:opt', controller.get_servers_list_opt ) 
 router.get('/apps_list/:server', controller.get_apps_list )
 router.get('/apps_list/:server/:opt', controller.get_apps_list_opt )
