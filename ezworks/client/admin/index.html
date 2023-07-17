@@ -69,8 +69,8 @@
 				    <div> 
 				    	<ul>
 						<li><a ui-sref="hello" ui-sref-active="active">DB 권한관리</a></li> 
-						<li><a ui-sref="people">서비스설정관리</a></li>
-						<li><a ui-sref="about">서비스권한관리</a></li>
+						<li><a ui-sref="limit_orgList">서비스설정관리</a></li>
+						<li><a ui-sref="service_admin({ viewId:'1' })">서비스권한관리</a></li>
 						<li ng-repeat="person in $ctrl.people">
 							<a ui-sref="person({ personId: person.id })">{{person.name}}</a>
 						</li>	 
@@ -97,6 +97,20 @@
 					window.open('','_parent','');
 					window.close();
 				}
+				function offCanvasListener(offCanvasId) {
+					let myOffCanvas = document.getElementById(offCanvasId);
+					const hideCanvas = () => {
+						let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+						openedCanvas.hide();
+						event.target.removeEventListener('mouseleave', hideCanvas);
+					}
+					const listenToMouseLeave = (event) => {
+						event.target.addEventListener('mouseleave', hideCanvas);
+					}
+					myOffCanvas.addEventListener('shown.bs.offcanvas', listenToMouseLeave);
+				}
+				//function call
+				offCanvasListener('offcanvasExample');
 			</script>				
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>	
 			<script src='/lib/angular/angular.js'></script>               
@@ -106,6 +120,7 @@
 			<script src='../admin/parts/footers/index.js'></script>
 			<script src='../service/spreads/product/spreadjs/index.js'></script> 
 			<script src='../service/spreads/custom/jupitor_admin_editor/index.js'></script> 
+			<script src='../service/spreads/custom/jupitor_service_admin_editor/index.js'></script> 
 			<script src='../service/spreads/events/index.js'></script> 
 			<script src='app.js'></script>                                
 			</body>                                                        

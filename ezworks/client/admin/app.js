@@ -5,7 +5,8 @@
 	'myFooter', 
 	'gc_spreadjs',
 	'spreadjs_events',
-	'jupitor_admin_editor'
+	'jupitor_admin_editor',
+	'jupitor_service_admin_editor'
 ])
 .config(function($stateProvider, $urlRouterProvider ) {
   var helloState = {
@@ -16,105 +17,77 @@
   }
 
   var aboutState = {
-    name: 'about',
-    url: '/about',
-    template: '<h3>Its the UI-Router hello world app!</h3>'
+    name: 'service_admin',
+    url: '/service_admin/:viewId',
+    template: '<my-spreadjs id="viewId"></my-spreadjs>',
+	controller: function($scope, $stateParams ){
+		  $scope.viewId = $stateParams.viewId 
+	}
   }
-  var personState = {
-  name: 'people',
-  url: '/people',
-  component: 'people',
+  var limit_orgListState = {
+  name: 'limit_orgList',
+  url: '/limit_orgList',
+	template: `
+	      <div>
+	      <h3>서비스 권한제한방식설정</h3>
+			<table>
+		  <tr>
+			<th>SEQ</th>
+			<th>ORGANIZATION</th>
+			<th>METHOD</th>
+		  </tr>
+			  <tr ng-repeat="limit_org in limit_orgList">
+			<td>{{ $index + 1 }}</td> 
+			<td>{{ limit_org.organization }}</td> 
+			<td>
+		<select ng-model="limit_orgList[$index].name">
+		   <option ng-repeat="limit in limit_list">{{ limit }}</option> 
+	 <!-- 
+		   <option selected>{{ limit_org.name }}</option>
+	   -->
+		</select>
+		</td> 
+			  </tr>
+		</table>
+	    </div>
+		`,
+  controller:'limit_orgListCtrl' ,
   resolve:{
-	  people: async function( PeopleService ){
-		  return await PeopleService.getAllData()
+	  limit_orgList: async function( limit_orgListService ){
+		  return await limit_orgListService.getAllData()
 	  },
-	  limit_list: async function( PeopleService ){
-		  return await PeopleService.getLimit_list() 
+	  limit_list: async function( limit_orgListService ){
+		  return await limit_orgListService.getLimit_list() 
 	  }
-  }
-/*	  
-  resolve: {
-    person: function(PeopleService, $transition$) {
-      return PeopleService.getPerson($transition$.params().personId);
-    }
-  }
-*/  
+  },
 }	
   $stateProvider.state(helloState);
   $stateProvider.state(aboutState);
-  $stateProvider.state(personState);
+  $stateProvider.state(limit_orgListState);
   $urlRouterProvider.otherwise('/hello'); 
 })
 .component('hello', {
-/*	
-  template:  '<h3>{{$ctrl.greeting}} Solar System!</h3>' +
-             '<button ng-click="$ctrl.toggleGreeting()">toggle greeting</button>',
-*/	     
   template:'<my-spreadjs></my-spreadjs>',
-  controller: function() {
-    this.greeting = 'hello';
-  
-    this.toggleGreeting = function() {
-    this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
-    }
-  }
 })
-.component('people', {
-  bindings: { people: '<' },
-  template: `<h3>서비스 권한제한방식설정</h3>
-            <table>
-	      <tr>
-	      	<th>SEQ</th>
-	      	<th>ORGANIZATION</th>
-	      	<th>METHOD</th>
-	      </tr>
-              <tr ng-repeat="person in $ctrl.people.limit_orgList">
-	      	<td>{{ person.seq }}</td> 
-	      	<td>{{ person.orgName }}</td> 
-	      	<td>
-		<select>
-		   <option ng-repeat="limit in $ctrl.limit_list">{{ limit.name }}</option> 
-		   <option selected>{{ person.name }}</option>
-		</select>
-		</td> 
-              </tr>
-            </table>'
-	    `
-/*	
-  template: '<h3>Some people:</h3>' +
-            '<ul>' +
-            '  <li ng-repeat="person in $ctrl.people">' +
-            '    <a ui-sref="person({ personId: person.id })">' +
-            '      {{person.name}}' +
-            '    </a>' +
-            '  </li>' +
-            '</ul>'
-*/	    
-})
-.service('PeopleService',['$injector',function($injector){
-/*	
-	var org_access_method =[ 
-		{"seq":1 ,"org_name":"ezchemtech","access_method":"MachineKey" },	
-		{"seq":2 ,"org_name":"ezoffice","access_method":"User" },	
-		{"seq":3 ,"org_name":"orientpi","access_method":"User" },	
-		{"seq":4 ,"org_name":"unionlogis","access_method":"Organization" },	
-		{"seq":5 ,"org_name":"asiafni","access_method":"Organization" },	
-		
-	]
-*/	
+.controller('limit_orgListCtrl', ['$scope','limit_orgList','limit_list',function( $scope, limit_orgList, limit_list  ){
+	       $scope.limit_orgList = limit_orgList 
+	       $scope.limit_list = limit_list 
+}]) 
+.service('limit_orgListService',['$injector','$q',function($injector, $q ){
 	var $http = $injector.get('$http') 
 	this.getAllData = async ()=>{
-		let result_1 = await $http.get('/web_admin_editor/service_limit_list') 
-		let result_2 = await $http.get('/web_admin_editor/service_limit_orglist') 
-		let org_access_method = {}
-		org_access_method['limit_list']	= result_1.data.DATA
-		org_access_method['limit_orgList'] = result_2.data.DATA 
+//		let result_2 = await $http.get('/web_admin_editor/service_limit_orglist') 
+		let result_2 = await $http.get('/Hades/service_admin/service_orglist') 
+		let org_access_method = result_2.data.DATA 
 		return org_access_method 
 	}
 	this.getLimit_list = async ()=>{
-		let result = await $http.get('/web_admin_editor/service_limit_list') 
-		let limit_list = result.data.DATA.map((ent)=>ent.name) 
-		return limit_list 
+//		let result = await $http.get('/web_admin_editor/service_limit_list') 
+//		let limit_list = result.data.DATA.map((ent)=>ent.name) 
+		let limit_list = ['Organization','User','MachineKey'] ;
+		let defered = $q.defer();
+        defered.resolve( limit_list ) 
+		return defered.promise ;
 	}
 }])
 .controller('adminWebCtrl', ['$scope', function($scope){

@@ -2241,7 +2241,7 @@ div.offcanvas-body div ul li {
 div.offcanvas-body div ul li:hover {
   color: white; }
 
-body > div > ui-view > people {
+body > div > ui-view > div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2252,17 +2252,17 @@ body > div > ui-view > people {
   padding-top: 60px;
   padding-bottom: 60px; }
 
-body > div > ui-view > people > h3 {
+body > div > ui-view > div > h3 {
   text-align: center;
   color: #D4E6F1; }
 
-body > div > ui-view > people > table {
+body > div > ui-view > div > table {
   flex-grow: 1;
   padding: 20px;
   margin-top: 40px;
   width: 50%; }
 
-body > div > ui-view > people > table > tbody > tr > td > select {
+body > div > ui-view > div > table > tbody > tr > td > select {
   height: 40px;
   width: 50%;
   text-decoration: none;
