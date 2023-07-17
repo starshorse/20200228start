@@ -36,11 +36,6 @@ angular.module('mySpreadjs',[])
 	}else if( $injector.has('ezof_dba_editorService')){
 		var ezof_dba_editorService = $injector.get('ezof_dba_editorService')
 		var spreadjs_eventsService = $injector.get('spreadjs_eventsService') 
-	/*	
-		ezof_dba_editorService.initTblView( $scope.spread )
-		ezof_dba_editorService.initTblList( $scope.spread ) 
-		ezof_dba_editorService.setUpdate_editLists( $scope.edit_lists_update )
-	*/	
 		await ezof_dba_editorService.initWorkbook( $scope.spread );
 		spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
 		spreadjs_eventsService.register_sheet0_bind_cellDoubleClick( $scope.spread ) 
@@ -56,9 +51,22 @@ angular.module('mySpreadjs',[])
 		spreadjs_eventsService.register_sheet1_bind_cellChanged( $scope.spread ) 
 		spreadjs_eventsService.register_sheet2_bind_cellChanged( $scope.spread ) 
 	}else if( $injector.has('jupitor_admin_editorService')){
+		if( $scope.viewId && $scope.viewId == '1'){
+			  alert("we on service admin");
+			var jupitor_service_admin_editorService = $injector.get('jupitor_service_admin_editorService') 	
+			var spreadjs_eventsService = $injector.get('spreadjs_eventsService') 
+			spreadjs_eventsService.change_eventsService('jupitor_service_admin_editor_eventsService') 
+			await jupitor_service_admin_editorService.initWorkbook( $scope.spread )
+			spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
+			spreadjs_eventsService.register_sheet0_bind_cellDoubleClick( $scope.spread ) 
+			spreadjs_eventsService.register_sheet1_bind_cellDoubleClick( $scope.spread ) 
+			spreadjs_eventsService.register_sheet2_bind_cellChanged( $scope.spread ) 
+			  return; 
+        }
 		var jupitor_admin_editorService = $injector.get('jupitor_admin_editorService') 	
-		await jupitor_admin_editorService.initWorkbook( $scope.spread )
 		var spreadjs_eventsService = $injector.get('spreadjs_eventsService') 
+			spreadjs_eventsService.change_eventsService('jupitor_admin_editor_eventsService') 
+		await jupitor_admin_editorService.initWorkbook( $scope.spread )
 		spreadjs_eventsService.register_spread_bind_buttonClicked( $scope.spread ) 
 		spreadjs_eventsService.register_sheet0_bind_cellDoubleClick( $scope.spread ) 
 		spreadjs_eventsService.register_sheet1_bind_cellDoubleClick( $scope.spread ) 

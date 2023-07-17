@@ -17,6 +17,9 @@ angular.module('spreadjs_events',[])
 	}else if( $injector.has('jupitor_admin_editor_eventsService') ){
 		eventsService = $injector.get('jupitor_admin_editor_eventsService');
 	}	
+	this.change_eventsService = ( service_name )=>{
+		eventsService = $injector.get( service_name  );
+	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //      cellDoubleChick 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
