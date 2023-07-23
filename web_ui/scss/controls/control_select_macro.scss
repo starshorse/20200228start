@@ -1,0 +1,33 @@
+$Select_01_b_url:url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat !default;
+$Select_01_op_bc:black !default; 
+$Select_01_op_c:#fff !default; 
+
+/* IE */
+select::-ms-expand { 
+	display: none;
+};
+@mixin select_1 {
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select_01 {
+  @include select_1 ;
+  width: 150px;
+  height: 35px;
+  background:$Select_01_b_url;
+  background-size: 20px;
+  padding: 5px 30px 5px 10px;
+  border-radius: 4px;
+  outline: 0 none;
+}
+.select_01 option {
+  background:$Select_01_op_bc;
+  height: 35px;
+  color:$Select_01_op_c;
+  padding: 3px 0;
+}
+
+

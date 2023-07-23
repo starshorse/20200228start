@@ -1,0 +1,60 @@
+.flx-0 {
+	display: flex;
+}
+.flx-0c {
+	display: flex;
+	justify-content: center;
+}
+.flx-col {
+	display: flex;
+	flex-direction: column;
+}
+.flx-col-btw {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.flx-cl {
+	display: flex;
+	align-items: center;
+}
+.flx-cc {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.flx-icc {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.flx-cr {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.flx-end {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+.flx-cs {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.flx-w {
+	display: flex;
+	flex-wrap: wrap;
+}
+.flx-itm-r {
+	flex: 1;
+	flex-basis: auto;
+}
+.flx-itm-r0 {
+	flex: 1;
+	flex-basis: 0;
+}
+.flx-itm-end {
+	justify-content: flex-end;
+}

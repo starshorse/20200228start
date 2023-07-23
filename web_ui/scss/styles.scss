@@ -1,0 +1,94 @@
+@import 'table_macro.scss';
+@import 'control_select_macro.scss' ;
+@import 'size_mg_pd_ft.scss';
+@import 'button_macro.scss';
+@import 'flex_macro.scss' ;
+$cadetblue: rgb(95, 158, 160);
+$cadetblue_a: rgba(95, 158, 160, 0.5); 
+$side_nav_bk: $cadetblue_a ;  
+$side_nav_a_c: black ;
+@import 'side_nav_macro.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+/* reset_macro.scss */  
+ *{
+	  margin: 0;
+	  padding: 0;
+  }
+  body{
+	  font-family: 'Poppins' ;
+	  font-size: 1rem;
+	  font-weight: 400;
+	  line-height: 1.5;
+  }
+  header{
+	  display: flex;
+	  justify-content: space-around;
+	  align-items: center;
+	  flex-direction: row;
+      position: fixed; 
+	  top: 0;
+	  left:0;
+	  right:0;
+	  background: cadetblue ;
+	  color: #fff;
+  }
+  img.header_logo {
+	  width: 6rem;
+  }
+  ul{
+	  display:flex;
+	  justify-content: space-between;
+	  list-style: none;
+	  padding: 20px;
+  }
+  li{
+	  padding: 0px 20px;
+	  transition: all 0.3s ease 0s;	  
+	  color: black;
+  }
+  li:hover{
+	  color:yellow;
+  }
+  button{
+	  padding: 0 20px ;
+	  height: 3rem;
+	  border-radius: 20px;
+	  border: 0;
+	  background-color: yellow ;	  
+	  color: cadetblue;
+  }
+  footer{
+	  display: flex;
+	  justify-content: space-around;
+	  align-items: center;
+	  position: fixed;
+	  bottom:0;
+	  left:0;
+	  right:0 ;
+	  color: #343a40;
+	  background: cadetblue ;
+	  color: #fff;
+	  height: 6rem;
+  }
+  main{
+	  height: 100vh;
+  }
+  span{
+	  cursor: pointer; 
+  }
+/*  
+  [type ="radio" ]{
+	  vertical-align: middle ; 
+	  appearance: none; 
+	  border : max( 2px, 0.1em ) solid gray; 
+	  border-radius: 50%;
+	  width: 1.25rem ;
+	  height: 1.25rem ;
+	  transition: border 0.5s ease-in-out ;
+  }*/
+  .flx-c{
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+  
+ }

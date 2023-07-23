@@ -1,0 +1,128 @@
+$Header_01_nav_bc:cadetblue !default;
+$header_01_bc:black !default;
+$header_01_btn_bc:rgba( 0, 136,169, 1 ) !default;
+/*
+   header_01 : header style. 
+		<header>
+		<!--	
+			<h1>EZoffice</h1> 	
+		-->
+		<img class='logo' src='../resources/logo.svg' alt=''>
+			<ul class='wrapper'>
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">업무설정</a></li>
+				<li><a href="#">DB업무</a> </li>
+				<li><a href="#">권한설정</a></li>
+				<li><a href="#">최종규</a></li>
+                <li><a href="#">LogOut</a></li> 
+				<li><a href="#">인증 </a></li>
+			</ul>	
+		<a href="" class='cta'><button>Contact</button></a> 
+		</header>
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Do+Hyeon&family=Dongle&family=Gothic+A1&family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Jua&family=Nanum+Gothic&family=Noto+Sans+KR&family=Stylish&family=Sunflower:wght@500&display=swap');
+/* common css 
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	box-sizing:border-box ;
+	background-color: #24252A;
+}
+body{
+	padding-top: 120px ;
+	font-family: "Noto Sans KR", sans-serif;	
+}
+*/
+body{
+	padding-top: 120px;
+}
+.header_01{
+	display:flex ;
+	justify-content: space-between ;
+	align-items: center;
+	position:fixed ;
+	top: 0;
+	left: 0;
+	right: 0;
+	font-family: "Do Hyeon", sans-serif;	
+	background-color:$header_01_bc ;
+	padding: 30px 10%;
+}
+.header_01 .logo{
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+} 
+.header_01 h1{
+	flex-grow:1;
+	padding: 5px 10px;
+}
+.header_01 nav{
+	background:$Header_01_nav_bc ;
+	height: 80px ;
+	padding: 20px ;
+	position: relative ;
+}
+.header_01.wrapper{
+	display:flex ;
+	flex-direction: column ;
+
+}
+.header_01 ul{
+	list-style : none;
+	/*			border: 1px solid; */
+	padding: 0.2em ;
+}
+.header_01 li{
+	/*			flex:1  ;      */
+	display: inline-block;
+	padding: 0px 20px;
+}
+/*		
+a{
+display: block;
+text-align: center;
+margin: 5px;
+padding: 10px 5px;
+text-decoration: none;
+font-weight:bold ;
+color: white ;
+background: teal;
+}
+a:hover {
+background: yellowgreen ;
+}
+ */		
+.header_01 li a{
+	transition: all 0.3s ease 0s;
+	color: white;	
+}
+.header_01 li a:hover{
+	color: #0088a9;
+}
+.header_01 li, 
+.header_01 a, 
+.header_01 button{
+	font-weight: 500;
+	font-size: 16px;
+	color: #edf0f1;				
+	text-decoration: none;
+}
+.header_01 button
+{
+	padding: 9px 25px;
+	background-color: $header_01_btn_bc;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+
+}
+@media only screen and ( min-width: 640px ){
+	.header_01 ul.wrapper{
+		flex-direction: row;
+	}
+}

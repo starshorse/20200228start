@@ -1,0 +1,99 @@
+$action-btn-bc:rgba(255,255,255,.3) !default;
+
+.action-btn {
+	z-index: 1;
+	display: inline-block;
+	position: relative;
+	width: 48px;
+	height: 48px;
+	padding: 5px;
+	cursor: pointer;
+	border-radius: 30px;
+	background-color:$action-btn-bc;
+}
+.action-btn.nobg {
+	background: none;
+}
+.action-btn.act-btn-right {
+	width: 34px;
+	height: 34px;
+	padding: 2px;
+	transform: rotate(-90deg);
+}
+.action-btn .line {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.action-btn .line svg {
+	fill: none;
+	stroke: #F2845C;
+	stroke-linecap: round;
+	stroke-dasharray: 189% 40%;
+	transition-property: stroke-dasharray;
+	transition-duration: .6s;
+	transition-delay: 0s;
+}
+.action-btn-hover {
+	cursor: pointer;
+}
+.action-btn-hover:hover .action-btn .line svg,
+.action-btn:hover .line svg {
+	stroke-dasharray: 209% 0%;
+	transition-delay: .2s;
+}
+.action-btn .stick {
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	width: 6%;
+	height: 64%;
+	margin-left: -3%;
+	border-radius: 100px;
+	background-color: #F2845C;
+	transform-origin: 50% 100%;
+	transition-property: transform;
+	transition-duration: .4s;
+	transition-delay: .3s;
+}
+.action-btn-hover:hover .action-btn .stick,
+.action-btn:hover .stick {
+	transform: scale3d(1,0,0);
+	transition-delay: 0s;
+}
+.action-btn .fig {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -4px;
+	margin-top: -2px;
+	width: 8px;
+	height: 8px;
+	border: 4px solid transparent;
+	border-top: 4px solid #F2845C;
+}
+
+.action-btn.action-btn_color1 .line svg {
+	stroke: #097168;
+}
+.action-btn.action-btn_color1 .stick {
+	background-color: #097168;
+}
+.action-btn.action-btn_color1 .fig {
+	border-top-color: #097168;
+}
+#top-scroll-btn {
+	position: fixed;
+	bottom: 10%;
+	right: 10%;
+	opacity: 0;
+	visibility: hidden;
+	transform: rotate(-180deg) scale3d(0,0,1);
+	transition: .6s;
+}
+#top-scroll-btn.show {
+	opacity: 1;
+	visibility: visible;
+	transform: rotate(180deg) scale3d(1,1,1);
+}
+
