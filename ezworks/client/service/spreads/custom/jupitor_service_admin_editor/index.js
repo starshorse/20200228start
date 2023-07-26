@@ -39,10 +39,20 @@ angular.module('jupitor_service_admin_editor',[])
 //		spread.reset(); 
 		let initDesign = await $http.get('/admin/service_admin_editor.ssjson')
 		spread.fromJSON( initDesign.data ); 
-		this.sheet_Users_invalidate( spread );
-		await this.sheet_Organization_init( spread ); 
-	    await this.sheet_Users_init( spread ); 
-        await this.sheet_MachineKeys_init( spread ); 
+		let server_name = $cookies.get('server_name') 
+		if( server_name == 'ezoffice' ){
+			this.sheet_Users_invalidate( spread );
+			await this.sheet_Organization_init( spread ); 
+			await this.sheet_Users_init( spread ); 
+			await this.sheet_MachineKeys_init( spread ); 
+		}else{
+			let user_DB = $cookies.get('user_DB'); 
+			await this.sheet_Users_init( spread ); 
+			await this.sheet_MachineKeys_init( spread ); 
+			this.sheet_Organization_invalidate( spread );
+	        this.sheet_MachineKeys_invalidate( spread );
+	        await this.sheet_Organization_Organizationelected( spread, user_DB ); 
+		}	
 	}
 	this.sheets_change_list = ( sheet , id_col , drange , ch_tbl_list  )=>{
 			sheet.suspendEvent();
@@ -163,6 +173,14 @@ angular.module('jupitor_service_admin_editor',[])
 			}
 		}	
 	}
+	this.sheet_Organization_invalidate = ( spread, yes = 1 )=>{
+		if( yes ){
+			spread.getSheetFromName('Organization').visible( false );
+		}else{
+			spread.getSheetFromName('Organization').visible( true );
+			spread.setActiveSheet('Organization')
+		}			
+	}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //    Sheet Users  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
@@ -226,13 +244,35 @@ angular.module('jupitor_service_admin_editor',[])
 
 		let drange = table1.dataRange() 
         sheet.getRange( drange.row, drange.col + 1, drange.rowCount , drange.colCount -1  ).locked(true);
+//1 check service_setting for Enable.server_id  
+		let service_setting = await $http.get('/Hades/service_admin/service_setting') 
+		if( service_setting.data.RESULT == -1 ){
+			alert( service_setting.data.ERRORMESSAGE )
+			return -1;
+		}
+		service_setting = service_setting.data.DATA.filter((ent)=>ent.organization == server_id )
+		let tableColumns2 = [] 
+		let tableColumn = new GC.Spread.Sheets.Tables.TableColumn(); 
+		tableColumn.name('user_id');
+		tableColumn.dataField('user_id');
+		for( const [key, value] of Object.entries( service_setting[0] )){
+			if( value == 'User'){
+				let tableColumn = new GC.Spread.Sheets.Tables.TableColumn(); 
+				tableColumns2.push( key ) 
+			}
+		}
 		table1.bind( null , 'data' , jupitor_service_admin_editorFactory.sheet_Users_table_services ) 
 
 		drange = table1.dataRange() 
 		let checkBox = new GC.Spread.Sheets.CellTypes.CheckBox(); 
 		checkBox.caption("Enabled")
 		checkBox.textAlign(GC.Spread.Sheets.CellTypes.CheckBoxTextAlign.right);
-		sheet.getRange( drange.row, drange.col + 1, drange.rowCount, drange.colCount -1 ).cellType( checkBox ).locked( false ); 
+		sheet.getRange( drange.row, drange.col + 1, drange.rowCount, drange.colCount -1 ).backColor('black'); 
+		for( i =  drange.col +1 ;  i <  drange.col + drange.colCount ; i++  ){
+			let key = sheet.getValue( drange.row -1 , i ) 
+			if( tableColumns2.includes(key))
+				sheet.getRange( drange.row, i, drange.rowCount, 1 ).cellType( checkBox ).backColor('lightPink').locked( false ); 
+		}
         sheet.options.isProtected = true ;
 
 	}
@@ -325,14 +365,33 @@ angular.module('jupitor_service_admin_editor',[])
 		sheet.options.isProtected = false ;
 		let drange = table1.dataRange()
         sheet.getRange( drange.row, drange.col + 1, drange.rowCount , drange.colCount -1  ).locked(true);
-
+//1 check service_setting for Enable.server_id  
+        let server_id  = jupitor_service_admin_editorFactory.binding_data.cur_server ;
+		let service_setting = await $http.get('/Hades/service_admin/service_setting') 
+		if( service_setting.data.RESULT == -1 ){
+			alert( service_setting.data.ERRORMESSAGE )
+			return -1;
+		}
+		service_setting = service_setting.data.DATA.filter((ent)=>ent.organization == server_id )
+		let tableColumns2 = [] 
+		for( const  [key, value] of Object.entries( service_setting[0] )){
+			if( value == 'Machinekey'){
+					tableColumns2.push( key ) 
+			}
+		}
+ //       table1.autoGenerateColumns(false )
 		table1.bind( null , 'data' , jupitor_service_admin_editorFactory.sheet_MachineKeys_table_MachineKeys ) 
 
 		drange = table1.dataRange() 
 		let checkBox = new GC.Spread.Sheets.CellTypes.CheckBox(); 
 		checkBox.caption("Enabled")
 		checkBox.textAlign(GC.Spread.Sheets.CellTypes.CheckBoxTextAlign.right);
-		sheet.getRange( drange.row, drange.col + 1, drange.rowCount, drange.colCount -1 ).cellType( checkBox ).locked( false ); 
+		sheet.getRange( drange.row, drange.col + 1, drange.rowCount, drange.colCount -1 ).backColor('black'); 
+		for( i =  drange.col +1 ;  i <  drange.col + drange.colCount ; i++  ){
+			let key = sheet.getValue( drange.row -1 , i ) 
+			if( tableColumns2.includes( key) )
+				sheet.getRange( drange.row, i, drange.rowCount, 1 ).cellType( checkBox ).backColor('lightPink').locked( false ); 
+		}
         sheet.options.isProtected = true ;
 
 	}

@@ -8,7 +8,8 @@
 -->		
 		<link rel='stylesheet' href='/admin/resource/bootstrap_me.css' />
 		<link rel='stylesheet' href='/admin/resource/style_2023_07_serviceLimit.css' />
-		<style>.active { color: red; font-weight: bolder; }</style>
+		<style>
+		</style>
 	</head>                                                                
 		<body>                                                             
 			<div ng-controller='adminWebCtrl'>                             
@@ -69,7 +70,8 @@
 				    <div> 
 				    	<ul>
 						<li><a ui-sref="hello" ui-sref-active="active">DB 권한관리</a></li> 
-						<li><a ui-sref="limit_orgList">서비스설정관리</a></li>
+						<li ng-if="ezoffice_only"><a ui-sref="limit_orgList">서비스설정관리</a></li>
+						<li><a ui-sref="service_report">서비스사항</a></li>
 						<li><a ui-sref="service_admin({ viewId:'1' })">서비스권한관리</a></li>
 						<li ng-repeat="person in $ctrl.people">
 							<a ui-sref="person({ personId: person.id })">{{person.name}}</a>
@@ -116,6 +118,7 @@
 			<script src='/lib/angular/angular.js'></script>               
 	                <script src='/lib/angular-cookies/angular-cookies.js'></script>
 			<script src='/lib/angular-ui-router/angular-ui-router.js'></script>               
+			<script src='/directives/do_modal/index.js'></script>               
 			<script src='../parts/spreadjs/index.js'></script>
 			<script src='../admin/parts/footers/index.js'></script>
 			<script src='../service/spreads/product/spreadjs/index.js'></script> 

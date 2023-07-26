@@ -97,7 +97,8 @@ angular.module('jupitor_admin_editor',[])
 		table.autoGenerateColumns( false )
 		let tableColumn1 = new GC.Spread.Sheets.Tables.TableColumn(); 
 		tableColumn1.name('Servers');
-		tableColumn1.dataField('server_name');
+//1		tableColumn1.dataField('server_name');
+		tableColumn1.dataField('db_name');
 		table.bind( [tableColumn1] , 'data' , jupitor_admin_editorFactory.sheet_Servers_table ) 
 	}
 	this.sheet_Servers_serverSelected = async ( spread, Server_id )=>{
@@ -128,7 +129,8 @@ angular.module('jupitor_admin_editor',[])
 		let sheet = spread.getSheetFromName('Servers');
                 let Server_id  = jupitor_admin_editorFactory.binding_data.cur_server; 
 		
-		let server_info = jupitor_admin_editorFactory.servers_list.find((ent)=>ent.server_name == Server_id );
+//1		let server_info = jupitor_admin_editorFactory.servers_list.find((ent)=>ent.server_name == Server_id );
+		let server_info = jupitor_admin_editorFactory.servers_list.find((ent)=>ent.db_name == Server_id );
 		if( !server_info )return -1 ; 	
 			
 		for( const [ key, value ] of Object.entries( server_info )){

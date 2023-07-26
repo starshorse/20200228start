@@ -1,0 +1,28 @@
+<div>
+	<div class="flex_center">
+		<select class="select_type_1" ng-model="cur_service" ng-change="service_changed(cur_service)">
+			<option ng-repeat="service in service_list">{{ service }}</option> 
+		</select>
+		<h3>서비스 권한제한방식설정</h3>
+	</div>   
+	<table>
+		<tr>
+			<th>SEQ</th>
+			<th>ORGANIZATION</th>
+			<th>METHOD</th>
+		</tr>
+		<tr ng-repeat="limit_org in service_limits">
+			<td>{{ $index + 1 }}</td> 
+			<td>{{ limit_org.orgName }}</td> 
+			<td>
+				<select ng-model="service_limits[$index].permissionType_2" ng-change="service_limit_changed($index)" >
+					<option ng-repeat="limit in limit_list">{{ limit }}</option> 
+				</select>
+			</td> 
+		</tr>
+	</table>
+	<div class="flx-end w50">
+		<button class="button_type_1 w20 mg-t40" ng-click="button_click()">확인</button>
+		<my-domodal modal="modal"></my-domodal> 
+	</div>
+</div>
