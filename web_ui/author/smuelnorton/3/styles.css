@@ -1,0 +1,90 @@
+*{
+	padding:0;
+	margin:0;
+}
+#container {
+	height: 100vh;
+}
+#canvas{
+/*   overflow:hidden; */
+	height: 100%; 
+}
+#nav{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	position: absolute;
+	width:300px;
+	height: 100%;
+	top: 0;
+	left: -300px; 
+	background: indigo;
+	color:white;
+}
+#nav i{
+	margin-right:10px;
+}
+#nav h3{
+	flex: 1;
+	padding-top: 18px; 
+}
+#nav ul{
+	flex: 9; 
+	list-style:none; 
+}
+#nav ul ul{
+	padding-left: 40px ;
+}
+#nav ul li:hover{
+	color: orange;
+}
+#nav ul > li.qt > ul{
+	display:none;
+}
+#nav ul > li.active > ul{
+	display:block;
+}
+#canvas{
+	transform:translateX(0px); 
+}
+#container.display-menu #canvas{
+	transform:translateX(300px);
+}
+#header{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#header .img{
+	flex:1;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#header img{
+	width: 60px;
+}
+#header #bars {
+	flex:1 ;
+	font-size: 20px;
+	margin-left: 30px;
+}
+#header ul{
+	flex: 8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+}
+#header ul li{
+	padding-left: 20px;
+}
+.main img{
+	width: 30%; 
+	position:absolute;
+	left: 10;
+	top:100;
+	filter: drop-shadow(5px 5px 5px #000);
+	
+}

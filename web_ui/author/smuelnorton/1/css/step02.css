@@ -1,0 +1,34 @@
+/*
+ step01 - Start by adding the basic styles. This includes html and body tags, as well as h1, h2, h3 tags.
+ step02 - Next, let’s add styles on our main elements. The container id will hide our canvas and navigation that overflow outside this div.
+*/
+html,
+body{
+background: #f3efe0;
+}
+ 
+h1, h2, h3{
+    text-align: center;
+}
+ 
+h1{
+    font-family: 'Raleway', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    margin-top: 15px;
+    color: #38935f;
+}
+ 
+h3{
+    font-family: 'Raleway', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    margin-top: 15px;
+    color: #918e84;
+}
+#container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}

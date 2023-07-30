@@ -36,6 +36,7 @@
 	</div>
 </div>
 */
+$logo-wrap-bc: indigo !default ;
 #head-area {
 	z-index: 101;
 	position: fixed;
@@ -67,6 +68,8 @@
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	background: $logo-wrap-bc ; 
+	background-image: url('../Ezoffice.svg'); 
 }
 #menu-cont-area {
 	z-index: 5;
@@ -128,6 +131,9 @@
 	bottom: 0;
 	left: 0;
 	width: 100%;
+	padding: 20px ;
+	list-style: none;
+	background: white ;
 	transform-origin: 50% 0;
 	transform: translateY(100%) scale3d(1,0,1);
 	transition: transform .3s;

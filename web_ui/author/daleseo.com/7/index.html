@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+	<HEAD>
+		<style>
+@media ( max-width: 800px ){
+	.small-tomato{
+	    background-color:tomato;
+	}
+}
+@media( min-width: 800px ){
+	.large-tomato{
+		color:tomato;
+	}
+}
+@media( min-width: 1000px ){
+	.mobile {
+		display:none;
+	}
+}
+@media( max-width: 800px ){
+	.desktop{
+		display:none;
+	}	
+}
+        </style>
+	</HEAD>
+	<BODY>
+		<div class="small-tomato">좁은 화면에서는 배경색이 토마토색이 됩니다.</div> 
+		<div class="large-tomato">큰 화면에서는 배경색이 토마토색이 됩니다.</div> 
+		<ul>
+			<li class="desktop">저는 넓은 화면에서만 보입니다.</li>
+			<li>저는 항상 보입니다</li>
+			<li class="mobile">저는 좁은 화면에서만 보입니다.</li> 
+		</ul>	
+	</BODY>
+</html>	

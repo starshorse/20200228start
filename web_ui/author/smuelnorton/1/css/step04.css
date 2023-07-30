@@ -1,0 +1,75 @@
+/*
+ step01 - Start by adding the basic styles. This includes html and body tags, as well as h1, h2, h3 tags.
+ step02 - Next, let’s add styles on our main elements. The container id will hide our canvas and navigation that overflow outside this div.
+ step03 -Note: I used the sizing unit vh (viewport’s height) for the height attribute which is 100/100 of the viewport’s current height or 100% of the height. This means that the size of the element will be relative to the size of the viewport.
+Now let’s style the canvas. Give it a width and a height of 100% and position of relative. Add some transition and transform properties to achieve the off-canvas effect using jQuery (later on).
+ step04 - Now for the nav id, which will have an absolute position with a left value of -300px. We also added some transition and a transform of rotate (-90deg) value to rotate the menu 90 degrees inward creating a smooth and simple 3D effect.
+*/
+
+html,
+body{
+background: #f3efe0;
+}
+ 
+h1, h2, h3{
+    text-align: center;
+}
+ 
+h1{
+    font-family: 'Raleway', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    margin-top: 15px;
+    color: #38935f;
+}
+ 
+h3{
+    font-family: 'Raleway', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    margin-top: 15px;
+    color: #918e84;
+}
+#container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+#canvas {
+    width: 100%;
+    height: 100%;
+    padding: 5.5% 0;
+    position: relative;
+
+    -webkit-transform:translateX(0);
+    -moz-transform:translateX(0);
+    -ms-transform:translateX(0);
+     -o-transform:translateX(0);
+        transform:translateX(0);
+
+    -webkit-transition:.5s ease all;
+    -moz-transition:.5s ease all;
+     -o-transition:.5s ease all;
+        transition:.5s ease all;
+}
+#nav {
+    width: 300px;
+    height: 100%;
+    background: #38935f;
+    position: absolute;
+    left: -300px;
+    top: 0;
+
+    -webkit-transition:.5s ease all;
+    -moz-transition:.5s ease all;
+     -o-transition:.5s ease all;
+        transition:.5s ease all;
+
+/* By default, rotate the menu 90deg inwards */
+    -webkit-transform:rotateY(-90deg);
+    -moz-transform:rotateY(-90deg);
+    -ms-transform:rotateY(-90deg);
+     -o-transform:rotateY(-90deg);
+        transform:rotateY(-90deg);
+}

@@ -800,6 +800,77 @@ background: yellowgreen ;
   .header_01 ul.wrapper {
     flex-direction: row; } }
 
+/*
+<div class="top-area bg-clr-1 mx1000">
+	<div class="logo-wrap">
+		<div>
+			<a href="/">
+				<div id="logo-area-top" class="pd-l20">
+					<div class="logo wh">
+					</div>
+				</div>
+			</a>
+			<div class="pd-s40 pd-b5">
+				<a href="#" target="_blank" class="ft4 ft-st ft-wh">이전 웹사이트 방문</a>
+			</div>
+		</div>
+	</div>
+	<div id="menu-cont-area" class="head-part">
+		<ul id="menu-cont">
+			<li id="menu-main" class="menu-item list0 page-link" data-category="main" data-url="./_sub/_main/main">
+				<span class="item bg-clr-2-after">홈</span>
+			</li>
+			<li id="menu-about" class="menu-item list1">
+				<span class="item bg-clr-2-after page-link" data-category="about">회사소개</span>
+				<ul class="sub-menu-list flx-0 pd-s20 bg-clr-wh m-flx-col">
+					<li id="sub-menu-about" class="sub-menu-item page-link" data-category="about">회사이념</li>
+					<li id="sub-menu-history" class="sub-menu-item page-link" data-category="history">회사연혁</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="menu-area" class="head-part bg-clr-wh">
+		<ul id="menu-icon">
+			<li class="line line1"></li>
+			<li class="line line2"></li>
+			<li class="line line3"></li>
+		</ul>
+	</div>
+</div>
+*/
+#head-area {
+  z-index: 101;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+#head-area .head-part {
+  transition: opacity 1.8s; }
+
+#head-area.on .head-part {
+  opacity: 1; }
+
+#head-area .top-area {
+  display: flex;
+  /*align-items: center;*/
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.1);
+  transform: translateX(-50%); }
+
+#head-area .logo-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: indigo;
+  background-image: url("../Ezoffice.svg"); }
+
 #menu-cont-area {
   z-index: 5;
   display: flex;
@@ -860,6 +931,9 @@ background: yellowgreen ;
   bottom: 0;
   left: 0;
   width: 100%;
+  padding: 20px;
+  list-style: none;
+  background: white;
   transform-origin: 50% 0;
   transform: translateY(100%) scale3d(1, 0, 1);
   transition: transform .3s; }

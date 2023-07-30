@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<!--
+CSS 상속  -
+-->
+<html>
+	<HEAD>
+		<style>
+.wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh; 
+}
+.wrapper_in{
+}
+section{
+	width: min( 70%, 1000px);
+	color:blue ;
+	border: blue solid ; 
+}
+a{
+	color: inherit ;
+}
+        </style> 
+	</HEAD>
+	<BODY>
+		<div class="wrapper">
+		<section>
+			Login:
+			<div class='wrapper'>
+			<lable for 'id'>ID</lable> 
+			<input type='text' name='id' />
+			</div>
+			<div class='wrapper'>
+			<lable for 'id'>PASSWORD</lable> 
+			<input type='password' name='pasword' />
+			</div> 
+			<p><strong>홍길동 </strong>님, 안녕하세요</p>
+			<p><a href='#'>shely</a>님 , 여기요</p>
+		</section>	
+		</div> 
+		여기서 섹션 태그에 컬러 속성을 설정하는 스타일 적용하면 어떻게 될까요?
+	</BODY>	
+</html>	
+
+
+
+
+

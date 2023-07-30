@@ -1,0 +1,85 @@
+/*********************************************/
+/*              NAVBAR CSS                  "/
+/*********************************************/
+ 
+.nav-item .nav-link {
+  text-decoration: none;
+  display: inline-block;
+  color: #343a40;
+}
+.navbar-kleo {
+  margin-bottom: 0px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-color: transparent;
+  padding: 14px 0px;
+  width: 100%;
+  border-radius: 0px;
+  z-index: 999;
+}
+.navbar-brand {
+  cursor: pointer;
+}
+.navbar-kleo .navbar-nav li a {
+  line-height: 26px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  font-weight: 600;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: transparent !important;
+  padding: 6px 0;
+  margin: 0 20px;
+}
+.navbar-kleo .navbar-nav li .nav-link {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.navbar-kleo .navbar-toggles {
+  font-size: 18px;
+  background: 0 0;
+  border: 1px solid transparent;
+  color: #ffffff;
+  outline: 0;
+  padding: .26rem .76rem;
+}
+.navbar-kleo .navbar-nav li.active a, .navbar-kleo .navbar-nav li a:hover, .navbar-kleo .navbar-nav li a:active {
+  color: #ffffff !important;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+  background-color: transparent;
+  border-color: #6C55A3;
+}
+.navbar-toggler {
+  font-size: 24px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  color: #000;
+}
+.fas.fa-bars {
+  color: #6C55A3 !important;
+}
+.sticky-nav.navbar-kleo .navbar-toggles {
+  border: 1px solid transparent;
+  padding: .26rem .76rem;
+  outline: 0;
+}
+.sticky-nav.navbar-kleo {
+  margin-top: 0px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06);
+  color: #000000 !important;
+}
+.sticky-nav.navbar-kleo .navbar-nav {
+  margin-top: 0px;
+}
+.sticky-nav.navbar-kleo .navbar-nav li a {
+  color: #8a8aa0 !important;
+}
+.sticky-nav.navbar-kleo .navbar-nav li.active a, .sticky-nav.navbar-kleo .navbar-nav li a:hover, .sticky-nav.navbar-kleo .navbar-nav li a:active {
+  color: #6C55A3 !important;
+}
+.navbar-toggler:focus {
+  outline: none;
+}

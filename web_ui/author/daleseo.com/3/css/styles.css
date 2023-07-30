@@ -1,0 +1,32 @@
+figure {
+	position: relative;
+}
+figcaption {
+  background: rgba(55, 55, 55, 0.5);
+  color: white;
+  padding: 1em;
+  position:absolute;
+  left:0;
+  right:0;
+/*  
+  bottom:0 ;
+*/  
+  top:0;
+/*  width: 100%; */
+/* bottom */  
+}
+
+img {
+  display: block;
+}
+
+/* Alignment styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body, html {
+  height: 100%;
+}

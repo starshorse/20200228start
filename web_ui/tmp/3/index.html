@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Illiad</title>
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet"  href="../../resources/css/styles.css" /> 
+<style>
+</style>
+</head>
+<body>
+    <header>
+		<img class="header_logo" src="./ez-main.png" alt="">
+		<span onclick="openNav()"><i class="bx bx-sidebar"></i></span>
+		<ul>
+    		<li>Home</li>
+    		<li>Company</li>
+    		<li>Price policy</li>
+    		<li>Member Service</li>
+    	</ul>
+    	<button>Contact</button>
+    </header>	
+	<main class="flx-c flx-col">
+	<div>
+		<label>
+		<input type="radio" name="service" value="EMAIL_" />
+		<span>EMAIL</span> 
+		</label>
+		<label>
+		<input type="radio" name="service" value="SMS_" />
+		<span>SMS</span> 
+		</label>
+		<label>
+		<input type="radio" name="service" value="WEBHOOK_JANDI" />
+		<span>WEBHOOK JANDI</span> 
+		</label>
+		<label>
+		<input type="radio" name="service" value="WEBHOOK_TELEGRAM" />
+		<span>WEBHOOK TELEGRAM</span> 
+		</label>
+	</div>	
+	<table class="w50 txt-center sec_table">
+		<tr>
+			<th>
+				SEQ 
+			</th>	
+			<th>
+				 Organization
+			</th>	
+			<th>
+				Service Limits
+			</th>	
+		</tr>
+		<tr>
+			<td>1</td><td>ezoffice</td><td>
+				<select class="select">
+					<option>Organization</option> 
+					<option>User</option> 
+					<option>MachineKey</option> 
+				</select>	
+			</td>	
+		</tr>	
+		<tr>
+			<td>2</td><td>ezChemtech</td><td>
+				<select class="select">
+					<option>Organization</option> 
+					<option>User</option> 
+					<option>MachineKey</option> 
+				</select>	
+			</td>	
+		</tr>	
+		<tr>
+			<td>3</td><td>orientpi</td><td>
+				<select class="select">
+					<option>Organization</option> 
+					<option>User</option> 
+					<option>MachineKey</option> 
+				</select>	
+			</td>	
+		</tr>	
+	</table>	
+	<div>
+		<button class="active-btn">확인</button>
+	</div>	
+	</main>
+	<div id="mySidenav" class="sidenav pd-t120">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="#">About</a>
+	  <a href="#">DB권한설정</a>
+	  <a href="#">서비스제한설정관리</a>
+	  <a href="#">서비스제한리포트</a>
+	</div>
+	<footer>
+		<h3> Illiad@copyright </h3>
+	</footer>
+    <script>
+		function openNav() {
+		  document.getElementById("mySidenav").style.width = "250px";
+		}
+		function closeNav() {
+		  document.getElementById("mySidenav").style.width = "0";
+		}
+	</script> 	
+</body>
+</html>

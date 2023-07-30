@@ -1,0 +1,58 @@
+// Break Point
+$tablet: 768px;
+$laptop: 1020px;
+$desktop: 1400px;
+
+// Mixins
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+ 
+@mixin laptop {
+  @media (min-width: #{$laptop}) {
+    @content;
+  }
+}
+ 
+ 
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+/*
+     Pixel => em 
+*/
+$browser-font-size: 16; 
+@function em($pixels, $context: $browser-font-size) {
+  @return #{$pixels/$context}em;
+}
+ 
+.title {
+  font-size: em(32); // 32/16 = 2em;
+}
+
+// SCSS
+ 
+.logo {
+  width: 20px;
+ 
+  @include desktop {
+    width: 40px;
+  }
+}
+
+/*
+.title {
+  font-size: 40px;
+}
+ 
+@media (max-width: 600px) {
+  .title {
+    font-size: 20px;
+  }
+}
+*/

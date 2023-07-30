@@ -1,0 +1,23 @@
+.parent {
+  border: 2px solid blue;
+  color: blue;
+  background: lightskyblue;
+  padding: 1rem;
+  position:relative;
+}
+
+.child {
+  border: 2px dotted red;
+  color: red;
+  background: lightpink;
+  padding: 1rem;
+}
+.abs {
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+   top: 0;
+  left: 10px;
+}

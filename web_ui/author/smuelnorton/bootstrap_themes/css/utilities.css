@@ -1,0 +1,69 @@
+/*********************************************/
+/*              UTILITY CSS                  "/
+/*********************************************/
+ 
+.text-sub {
+  color: #9b9bae !important;
+}
+.bg-grey {
+  background-color: #F8F6FA !important;
+}
+.title {
+  color: #343a40;
+}
+.header-colorize {
+  font-weight: 700;
+  color: #6C55A3;
+}
+.section {
+  padding: 120px 0px 120px 0px;
+  position: relative;
+}
+.size-14 {
+  font-size: 14px;
+}
+.size-15 {
+  font-size: 15px;
+}
+.size-18 {
+  font-size: 18px;
+}
+.right-icon {
+  line-height: 0;
+  font-size: 19px;
+}
+.learn-more {
+  color: #6C55A3;
+  font-weight: 700;
+}
+.highlight {
+  background: rgba(122, 96, 183, 0.1);
+  -webkit-box-shadow: 0 1px 2px rgba(122, 96, 183, 0.5);
+  box-shadow: 0 1px 2px rgba(122, 96, 183, 0.5);
+  color: #6c55a3;
+  border-radius: 13px;
+  display: inline-block;
+  padding: .25em .4em;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.header-bg {
+  padding: 170px 0 140px;
+  background-image: url('../images/header-background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+.header-bg .header-small-title {
+  letter-spacing: 2px;
+}
+.header-bg .main-title {
+  font-size: 2.8rem;
+  line-height: 1.35;
+  color: #6C55A3;
+}
