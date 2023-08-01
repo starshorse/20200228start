@@ -45,14 +45,17 @@
 							  <div class="input-group-prepend">
 							      <label class="input-group-text" for="inputGroupSelect01">DB</label>
 							  </div>
-							    <select class="custom-select" id="inputGroupSelect01" ng-disabled="isDbSelectionDisabled">
+							    <select class="custom-select" id="inputGroupSelect01" ng-disabled="isDbSelectionDisabled" ng-model="user_DB">
+								 <option ng-repeat="db in user_DBs">{{ db.name }}<option>      	
+<!--									
 							      <option selected>{{ user_DB }}</option>
 							      <option value="common">Common</option>
 							      <option value="config">Config</option>
 							      <option value="ezoffice">ezoffice</option>
 							      <option value="ezchemtech">ezchemtech</option>
 							      <option value="orientpi">orientpi</option>
-							      <option value="demo">demo</option>
+	     					      <option value="demo">demo</option>
+-->								  
 							    </select>
 						</div>
 						<div class='col-md-2'>
