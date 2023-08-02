@@ -1,0 +1,29 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	list-style:none;
+}
+li{
+	padding: 0  20px;
+}
+a{
+	text-decoration: none; 
+}
+.flex_center{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.flex_around{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.flex_direction_column{
+	flex-direction: column ;
+}
+.h_100vh{
+	height: 100vh; 
+}

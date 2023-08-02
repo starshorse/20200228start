@@ -1,0 +1,50 @@
+<!--
+	디렉티브로 전달 되는 변수에 낙타형 형 금지 확인  _ viewId ( X ) 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="/lib/angular/angular.min.js"></script> 
+</head>
+<body ng-app="myApp"> 
+	<div ng-controller="myAppCtrl">
+		<h2>Movie: {{movie}}</h2>
+		<h2>ViewId: {{ viewid }}</h2>
+		<!--		Change Movie Title : <input type='text' ng-model='movie'/> -->
+		<movie-directive movie="movie"   viewid="viewid"></movie-directive>
+		<my-view2 viewId="viewid"></my-view2> 
+	</div> 	
+	<script>
+		angular.module('myApp',[])
+        .controller('myAppCtrl',['$scope', function( $scope ){
+			$scope.movie= 3456;
+			$scope.viewid = 1345;
+		}])
+        .directive("myView2", function(){
+			return {
+				restrict: "E",
+				scope: { viewid: '=' },
+/*				scope: true,
+				controller: function( $scope ){
+					console.log( $scope.viewId )
+				}, */
+				template: "<h3>data: {{ viewid }}</h3>"  
+			}
+		})
+		.directive("movieDirective", function(){
+			return {
+				restrict: "E",
+				scope: {
+					movie: '=', viewId: '=' 
+				},
+				template: "<div>Movie title : {{movie}}</div>"+
+				"Type a new movie title : <input type='text' ng-model='movie' />"
+			};
+
+		});
+
+	</script>	
+</body>
+</html>

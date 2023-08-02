@@ -1,0 +1,64 @@
+{
+  "_from": "angular-mocks@1.8.0",
+  "_id": "angular-mocks@1.8.0",
+  "_inBundle": false,
+  "_integrity": "sha512-oFKJIqR6zcsW6V9UQMuUYCXIcTy+n7oYExXxZkvU57hwJQdU1nuNZcSMQA9URiEAPyo7v3bqm0eOP3Ezi7Bigg==",
+  "_location": "/angular-mocks",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "angular-mocks@1.8.0",
+    "name": "angular-mocks",
+    "escapedName": "angular-mocks",
+    "rawSpec": "1.8.0",
+    "saveSpec": null,
+    "fetchSpec": "1.8.0"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-mocks/-/angular-mocks-1.8.0.tgz",
+  "_shasum": "9d161fe2102e47e46ff78a4226e4dfec27c060c4",
+  "_spec": "angular-mocks@1.8.0",
+  "_where": "/home/rrr/workdir/tmp/angular-phonecat",
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "AngularJS mocks for testing",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-mocks": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "mocks",
+    "testing",
+    "client-side"
+  ],
+  "license": "MIT",
+  "main": "angular-mocks.js",
+  "name": "angular-mocks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.8.0"
+}

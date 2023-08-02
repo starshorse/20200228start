@@ -1,0 +1,34 @@
+<img ng-src="{{$ctrl.phone.images[0]}}" class="phone" />
+<h1>{{$ctrl.phone.name}}</h1>
+<h3>{{$ctrl.phoneId}}</h3> 
+<p>{{$ctrl.phone.description}}</p>
+<ul class="phone-thumbs">
+<!--	
+  <li ng-repeat="img in $ctrl.phone.images">
+    <img ng-src="{{img}}" ng-click="$ctrl.setImage(img)" />
+  </li>
+-->
+<img ng-src="{{img}}" class="phone"
+      ng-class="{selected: img === $ctrl.mainImageUrl}"
+      ng-repeat="img in $ctrl.phone.images" />
+</ul>
+<ul class="specs">
+  <li>
+    <span>Availability and Networks</span>
+    <dl>
+      <dt>Availability</dt>
+      <dd ng-repeat="availability in $ctrl.phone.availability">{{availability}}</dd>
+    </dl>
+  </li>
+  ...
+  <li>
+    <span>Additional Features</span>
+    <dd>{{$ctrl.phone.additionalFeatures}}</dd>
+  </li>
+</ul>
+<dl>
+  <dt>Infrared</dt>
+  <dd>{{$ctrl.phone.connectivity.infrared | checkmark}}</dd>
+  <dt>GPS</dt>
+  <dd>{{$ctrl.phone.connectivity.gps | checkmark}}</dd>
+</dl>

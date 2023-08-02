@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+      *{
+		  padding: 0 ;
+		  margin: 0
+	  }
+	  body{
+		  display:flex;
+		  justify-content: center;
+		  flex-direction: column; 	  
+		  width: 70%;
+		  margin: auto;
+	  }
+	  select.style_1{
+		  height: 40px;
+		  border:0;
+		  color: darkorchid;
+		  width: 50%;
+		  background-color: cornsilk;
+		  margin: 50px;
+		  font-size: 1.2rem;
+		  text-align: center;
+	  }
+	  table.style_table{
+		  background-color: cornsilk;
+		  color: black;
+		  text-align: center; 
+	  }
+	  table.style_table tr:nth-child(1){
+		  background-color: gold;
+	  }
+	  table.style_table tr:nth-child(even){
+		  background-color: white;
+	  }
+    </style> 
+</head>
+<body ng-controller="myAppCtrl">
+	<select class="style_1" ng-model="selected_db"  ng-init="selected_db='ezchemtech'">
+		<option ng-repeat="db_name in user_DBs">{{ db_name }}</option> 
+	</select>	
+	<table class="style_table">
+		<tr>
+			<th>EMAIL</th>
+			<th>NAME</th>
+			<th>PASSWORD</th>
+			<th>USERSEQ</th>
+	    </tr>
+		<tr ng-repeat="user in web_users | filter: { db_name : selected_db }">
+			<td>{{ user.email }}</td> 
+			<td>{{ user.name }}</td> 
+			<td>{{ user.password }}</td> 
+			<td>{{ user.userSeq }}</td> 
+		</tr>	
+	</table>	
+	<script src="/lib/angular/angular.min.js"></script>
+	<script src="/lib/underscore/underscore-umd-min.js"></script>
+	<script>
+		angular.module('myApp',[])
+        .controller('myAppCtrl',function($scope, $injector ){
+			$scope.web_users 
+			$scope.user_DBs 
+			var $http = $injector.get('$http')
+			$http.get('http://localhost:9000/Hades/dba_editor/web_users').then((response)=>{
+				console.log( response.data )
+				$scope.web_users = response.data.DATA 
+//				$scope.user_DBs =  _.uniq( $scope.web_users, user=> user.db_name )
+				$scope.user_DBs = Object.keys( _.countBy( $scope.web_users, "db_name" ))
+			})
+		})
+	</script>	
+</body>
+</html>

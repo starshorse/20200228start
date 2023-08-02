@@ -1,0 +1,27 @@
+<nav id='sidebar' class='active'>
+	<br>
+	<div class='Sidebar-header'>
+	</div>
+	<div>
+		<ul class='list-unstyled components'> 
+			<li>	
+			</li>	
+			<li class='' ng-repeat='p_item in collections_list track by $index'>
+<!--				
+				<a ng-href="{{ '#homeSubmenu'+ p_item.name }}" ng-click='openParent(p_item.name)' data-toggle='collapse' aria-expanded='false' class='dropdown-toogle'>{{ p_item.title }}</a> 
+				<ul class='collapse list-unstyled' id='homeSubmenu' ng-attr-id="{{ 'homeSubmenu' + p_item.name }}" > 
+					<li ng-repeat='item in apps_list track by $index'>
+						<a  ng-click='openApp(item.name)' ng-show='p_item.name == item.collection' >{{ item.title }}</a> 
+					</li>	 
+				</ul>
+-->				
+				<a ng-click='openParent(p_item.name)'>{{ p_item.title }}</a> 
+				<ul> 
+					<li ng-repeat='item in apps_list track by $index'>
+						<a ng-click='openApp(item.name)' ng-show='p_item.name == item.collection' >{{ item.title }}</a> 
+					</li>	 
+				</ul>
+			</li>	 
+		</ul> 
+	</div>
+</nav> 	

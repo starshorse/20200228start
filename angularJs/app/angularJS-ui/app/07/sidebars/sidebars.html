@@ -1,0 +1,12 @@
+<nav id='sidebar' class='active'>
+	<br>
+	<div class='Sidebar-header'>
+	</div>
+    <div>
+		<ul class='list-unstyled components'> 
+		 <li class='active' ng-repeat='item in apps_list track by $index'>
+			 <a href='#homeSubmenu' data-toggle='collapse' aria-expanded='false' class='dropdown-toogle' ng-click='openApp( item )'>{{ item.title }}</a> 
+		 </li>	 
+		</ul> 
+	 </div>
+</nav> 	
