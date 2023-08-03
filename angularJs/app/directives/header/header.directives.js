@@ -2,12 +2,11 @@
 		    <my-header header="header"></my-header> 
 	        $scope.header = { isHeaderEnabled: 1 , companyNmae: 'ezchemtech' ,  header_list: [] , changeSpace: null  } 	
 */			
-angular.module('myHeader',['ngCookies'])
-.controller('myWorkspaceHeaderCtrl',['$scope','$cookies',
-	function($scope,$cookies ){
+angular.module('myHeader',[])
+.controller('myWorkspaceHeaderCtrl',['$scope',
+	function($scope ){
     $scope.changeState = ( item )=>{
 		console.log('chageState', item );
-//		$scope.changeSpace({ collection: item }) ;
 		$scope.header.changeSpace( item );
 	}
 }])

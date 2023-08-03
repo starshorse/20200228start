@@ -1,13 +1,32 @@
 angular.module('myApp',[
 'ui.router',
+// directives 	
+'myHeader',
 'toggle_sidebar',
-'mySidebar'
+'mySidebar',
+// controllers. 	
+'myControllers',	
+// services.
+// 'work_space'	
 ])
 .config( function( $urlRouterProvider, $stateProvider){
+	var collectionMain ={
+		name: 'collectionMain',
+		url: '/collectionMain/:cur_collection', 
+		template:`
+		    <my-header header="header" changeSpace="changeSpace( collection )"></my-header> 
+		    <p>Collections main</P> 
+		    <div class="container">
+		    <my-sidebar appslist="appparts"></my-sidebar> 
+			<toggle-sidebar></toggle-sidebar>
+		`,
+		controller: 'collectionMainCtrl', 
+	}
 	var appMain ={
 		name:"appMain",
 		url:"/appMain/:appName",
 		template:`
+		    <my-header header="header" changeSpace="changeSpace( collection )"></my-header> 
 		    <h3>{{ appName }}</h3> 
 		    <div class="container">
 		    <my-sidebar appslist="appparts"></my-sidebar> 
@@ -20,7 +39,8 @@ angular.module('myApp',[
 		name:"collections_list",
 		url:"/collections_list",
 		template:`
-		    <h3>{{ appName }}</h3> 
+		    <my-header header="header" changeSpace="changeSpace( collection )"></my-header> 
+		    <h3>collections List for Edit</h3> 
 		    <div class="container">
 		    <my-sidebar2level collectionslist="collections_list"></my-sidebar2level>
 			<toggle-sidebar></toggle-sidebar>
@@ -28,50 +48,8 @@ angular.module('myApp',[
 		`,
 		controller:'myCollections_listCtrl'  
 	}
-	$urlRouterProvider.otherwise('/appMain/example'); 
-//    $urlRouterProvider.otherwise('/collections_list'); 
+	$urlRouterProvider.otherwise('/collectionMain/home'); 
 	$stateProvider.state( appMain ); 
+	$stateProvider.state( collectionMain ); 
 	$stateProvider.state( collections_list ); 
-/*	
-	$stateProvider.state('root', {
-				url:"/",
-		        redirectTo: "collections_list" }); 
-*/				
-})
-.controller('myAppCtrl', function($scope, $stateParams ){
-	$scope.appName = $stateParams.appName 
-	let appparts = [
-		{ title: 'Info', name:'Info' },
-		{ title: 'Data', name:'Data' },
-		{ title: 'Chart' , name: 'Chart' },
-		{ title: 'Report' , name: 'Report' }
-	]
-	$scope.openApp = ( title )=>{
-		console.log( title )
-	}
-	$scope.appparts = { list : appparts , openApp : $scope.openApp  }
-})
-.controller('myCollections_listCtrl', function($scope , $state ){
-	let collections = [
-		{ title: 'Info', name:'Info' },
-		{ title: 'Data', name:'Data' },
-		{ title: 'Chart' , name: 'Chart' },
-		{ title: 'Report' , name: 'Report' }
-	]
-    let apps = [
-		{ title: 'Info.A', collection: 'Info', name:'A' }, 
-		{ title: 'Data.B', collection: 'Data', name:'B' }
-	]
-	$scope.openApp = ( name )=>{
-		console.log( name )
-		$state.go('appMain',{ appName: name }) 
-		throw new Error('state changed') 
-	}
-	$scope.openParent = ( title )=>{
-		console.log( title )
-	}
-	$scope.collections_list = { collections_list : collections , apps_list: apps ,  
-		openApp : $scope.openApp,
-		openParent : $scope.openParent,
-	}
 })
