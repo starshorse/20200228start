@@ -1,27 +1,33 @@
 {
-  "_from": "angular-animate@1.8.x",
+  "_args": [
+    [
+      "angular-animate@1.8.3",
+      "/home/rrr/workdir/tmp/angularJs"
+    ]
+  ],
+  "_development": true,
+  "_from": "angular-animate@1.8.3",
   "_id": "angular-animate@1.8.3",
   "_inBundle": false,
   "_integrity": "sha512-/LtTKvy5sD6MZbV0v+nHgOIpnFF0mrUp+j5WIxVprVhcrJriYpuCZf4S7Owj1o76De/J0eRzANUozNJ6hVepnQ==",
   "_location": "/angular-animate",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "angular-animate@1.8.x",
+    "raw": "angular-animate@1.8.3",
     "name": "angular-animate",
     "escapedName": "angular-animate",
-    "rawSpec": "1.8.x",
+    "rawSpec": "1.8.3",
     "saveSpec": null,
-    "fetchSpec": "1.8.x"
+    "fetchSpec": "1.8.3"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
   "_resolved": "https://registry.npmjs.org/angular-animate/-/angular-animate-1.8.3.tgz",
-  "_shasum": "f88db37325de256f9144d1242ce3158134a9d72a",
-  "_spec": "angular-animate@1.8.x",
-  "_where": "/home/rrr/workdir/tmp/angular/angularJs",
+  "_spec": "1.8.3",
+  "_where": "/home/rrr/workdir/tmp/angularJs",
   "author": {
     "name": "Angular Core Team",
     "email": "angular-core+npm@google.com"
@@ -29,8 +35,6 @@
   "bugs": {
     "url": "https://github.com/angular/angular.js/issues"
   },
-  "bundleDependencies": false,
-  "deprecated": "For the actively supported Angular, see https://www.npmjs.com/package/@angular/core. AngularJS support has officially ended. For extended AngularJS support options, see https://goo.gle/angularjs-path-forward.",
   "description": "AngularJS module for animations",
   "homepage": "http://angularjs.org",
   "jspm": {

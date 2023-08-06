@@ -18,7 +18,7 @@ angular.module('mySidebar',[])
 		scope: {
 			appslist: '=',
 		},
-		templateUrl:'/angularJS-ui/app/07/sidebars/sidebars.html',
+		templateUrl:'/directives/sidebars/sidebars.html',
 		controller:'mySidebarCtrl'
 	}
 })
@@ -28,7 +28,7 @@ angular.module('mySidebar',[])
 		scope:{
 			collectionslist:'=',
 		},
-		templateUrl:'/angularJS-ui/app/07/sidebars/sidebars_appEdit.html',
+		templateUrl:'/directives/sidebars/sidebars_appEdit.html',
 		controller:'mySidebar2levelCtrl'
 	}
 })

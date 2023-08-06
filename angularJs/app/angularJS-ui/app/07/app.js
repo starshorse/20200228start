@@ -15,7 +15,6 @@ angular.module('myApp',[
 		url: '/collectionMain/:cur_collection', 
 		template:`
 		    <my-header header="header" changeSpace="changeSpace( collection )"></my-header> 
-		    <p>Collections main</P> 
 		    <div class="container">
 		    <my-sidebar appslist="appparts"></my-sidebar> 
 			<toggle-sidebar></toggle-sidebar>

@@ -31,13 +31,10 @@ angular.module('toggle_sidebar',[])
 		controller:'toggle_sidebarCtrl',
 		template:`
                   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-				  <button type="button" id="sidebarCollapse" class="myButton btn btn-lg btn-info mx-1 px-1" ng-click="toggleSlide()">
-		                     <box-icon name="rocket"></box-icon>
-							<span>S</span>
+				  <button type="button" id="sidebarCollapse" class="" ng-click="toggleSlide()">
+		                  <i class="bx bx-sidebar"></i> 
 				  </button>
-		          <button type="button" id="fullScreen_toggle" class="myButton btn btn-lg btn-info mx-1 px-1" ng-click="toggleFullScreen()">
-		                     <box-icon name="rocket"></box-icon>
-							<!-- <span>F</span> -->
+		          <button type="button" id="fullScreen_toggle" class="" ng-click="toggleFullScreen()">
 				  </button>`
 	}
 })

@@ -12,8 +12,8 @@ angular.module('myApp',[
 	var login ={
 		name: 'login',
 		url:'/login',
-		template:`<h1>Hello {{ name }}</h1>
-		<my-login login="login"></my-login> 
+		template:`
+		<my-loginnobts login="login"></my-loginnobts> 
 		`,
 		controller: function( $scope,$injector ){
 			var admin_app = $injector.get('adminApp_service'); 
@@ -24,6 +24,7 @@ angular.module('myApp',[
 			function login(){
 				vm.dataLoading = true;
 				const cb_f = ( response )=>{
+					debugger;
 					if( response.success )
 						$state.go('work_space', { cur_collection: 'home' } )
 				    else

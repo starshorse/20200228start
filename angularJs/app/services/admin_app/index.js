@@ -54,8 +54,11 @@ angular.module('admin_app',[
 	    adminApp_factory.cur_user_info.cookie_orgName = $cookies.get('org_name') 
 	    adminApp_factory.cur_user_info.cookie_user_DB = $cookies.get('user_DB') 
      	if( cur_id == undefined ){
+/*			
 			$window.location.href ='/' 
 	        throw new Error('Forward to back !'); 
+*/			
+			alert("please set cookie 'user' 'user_DB' 'org_name'" );
 		}
     	console.log( cur_id ) 
 		return adminApp_factory.cur_user_info
