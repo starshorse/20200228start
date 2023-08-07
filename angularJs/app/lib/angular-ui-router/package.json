@@ -1,36 +1,32 @@
 {
-  "_args": [
-    [
-      "angular-ui-router@1.0.30",
-      "/home/rrr/workdir/tmp/angularJs"
-    ]
-  ],
-  "_development": true,
-  "_from": "angular-ui-router@1.0.30",
+  "_from": "angular-ui-router",
   "_id": "angular-ui-router@1.0.30",
   "_inBundle": false,
   "_integrity": "sha512-8xMpxbOtCJbRnGR1fhbyZ5BhFXr3zs1L2ytXQiBACTJjot309QNFFCaWx0lDM2eVXp8qte4idigU9gwWdspmtQ==",
   "_location": "/angular-ui-router",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "tag",
     "registry": true,
-    "raw": "angular-ui-router@1.0.30",
+    "raw": "angular-ui-router",
     "name": "angular-ui-router",
     "escapedName": "angular-ui-router",
-    "rawSpec": "1.0.30",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "1.0.30"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
-    "#DEV:/"
+    "#DEV:/",
+    "#USER"
   ],
   "_resolved": "https://registry.npmjs.org/angular-ui-router/-/angular-ui-router-1.0.30.tgz",
-  "_spec": "1.0.30",
-  "_where": "/home/rrr/workdir/tmp/angularJs",
+  "_shasum": "de8a07fa1620fc5a979ee8448d0ded159792436f",
+  "_spec": "angular-ui-router",
+  "_where": "/home/rrr/workdir/tmp/angular/angularJs",
   "bugs": {
     "url": "https://github.com/angular-ui/ui-router/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Nate Abele",
@@ -53,6 +49,7 @@
   "dependencies": {
     "@uirouter/core": "6.0.8"
   },
+  "deprecated": false,
   "description": "State-based routing for AngularJS 1.x",
   "devDependencies": {
     "@types/angular": "1.6.57",

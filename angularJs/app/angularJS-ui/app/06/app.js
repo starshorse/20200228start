@@ -18,6 +18,7 @@ angular.module('myApp',[
 		controller: function( $scope,$injector ){
 			var admin_app = $injector.get('adminApp_service'); 
 		    var $state = $injector.get('$state'); 	
+			var $window = $injector.get('$window'); 
 			var vm = this;
 			vm.login = login;
 			admin_app.ClearCredentials();
@@ -26,7 +27,8 @@ angular.module('myApp',[
 				const cb_f = ( response )=>{
 					debugger;
 					if( response.success )
-						$state.go('work_space', { cur_collection: 'home' } )
+			//			$state.go('work_space', { cur_collection: 'home' } )
+						$window.location.href = 'http://localhost:8000/angularJS-ui/app/07/';
 				    else
 						vm.dataLoading = false;
 				}

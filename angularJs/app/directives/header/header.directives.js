@@ -1,6 +1,6 @@
 /*
 		    <my-header header="header"></my-header> 
-	        $scope.header = { isHeaderEnabled: 1 , companyNmae: 'ezchemtech' ,  header_list: [] , changeSpace: null  } 	
+	        $scope.header = { isHeaderEnabled: 1 , companyNmae: 'ezchemtech' ,  header_list: [] , changeSpace: null , cur_collection:'home' } 	
 */			
 angular.module('myHeader',[])
 .controller('myWorkspaceHeaderCtrl',['$scope',

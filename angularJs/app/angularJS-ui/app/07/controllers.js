@@ -3,12 +3,15 @@ angular.module('myControllers', ['work_space'])
 			var workSpace_service = $injector.get('workSpace_service') 
 			var $state = $injector.get('$state')  
 			var $stateRegistry = $injector.get('$stateRegistry'); 
+	        var $window = $injector.get('$window') 
+	        var cur_collection = $stateParams.cur_collection ;
 // my-header part.. 			
-	        $scope.header = { isHeaderEnabled: 1 , companyNmae: 'ezchemtech' ,  header_list: [] , changeSpace: null  } 	
+	        $scope.header = { isHeaderEnabled: 1 , companyNmae: 'ezchemtech' ,  header_list: [] , changeSpace: null, cur_collection  } 	
 			$scope.changeSpace =( collection )=>{
 				switch( collection ){
 					case 'logout':
-						$state.go('login')
+// 						$state.go('login')
+		                $window.location.href ='http://localhost:8000/angularJS-ui/app/06/'
 						break;
 					case 'allEdit':
 						$state.go('collections_list') 
@@ -34,13 +37,15 @@ angular.module('myControllers', ['work_space'])
 			$scope.appparts = { list : appparts , openApp : $scope.openApp  }
 		}
 )	
-.controller('myAppCtrl', function($scope, $stateParams, $state ){
+.controller('myAppCtrl', function($scope, $stateParams, $state, $injector ){
 // my-header part.. 			
+	    var $window = $injector.get('$window') 
 		$scope.header = { isHeaderEnabled: 1 , companyNmae: 'ezchemtech' ,  header_list: [] , changeSpace: null  } 	
 		$scope.changeSpace =( collection )=>{
 			switch( collection ){
 				case 'logout':
-					$state.go('login')
+//					$state.go('login')
+		            $window.location.href ='http://localhost:8000/angularJS-ui/app/06/'
 					break;
 				case 'home':	
 				default:	
@@ -63,13 +68,15 @@ angular.module('myControllers', ['work_space'])
 		}
 		$scope.appparts = { list : appparts , openApp : $scope.openApp  }
 })
-.controller('myCollections_listCtrl', function($scope , $state ){
+.controller('myCollections_listCtrl', function($scope , $state, $injector ){
+	   var $window = $injector.get('$window') 
 // my-header part.. 			
-		$scope.header = { isHeaderEnabled: 1 , companyNmae: 'ezchemtech' ,  header_list: [] , changeSpace: null  } 	
+		$scope.header = { isHeaderEnabled: 1 , companyNmae: 'ezchemtech' ,  header_list: [] , changeSpace: null , cur_collection:'app메뉴편집'  } 	
 		$scope.changeSpace =( collection )=>{
 			switch( collection ){
 				case 'logout':
-					$state.go('login')
+//					$state.go('login')
+		            $window.location.href ='http://localhost:8000/angularJS-ui/app/06/'
 					break;
 				case 'home':	
 				default:	
@@ -96,6 +103,7 @@ angular.module('myControllers', ['work_space'])
 	}
 	$scope.openParent = ( title )=>{
 		console.log( title )
+		$window.location.href =`http://localhost:8000/angularJS-ui/app/08/#!/collectionEditMain/${ title }`
 	}
 	$scope.collections_list = { collections_list : collections , apps_list: apps ,  
 		openApp : $scope.openApp,

@@ -2,7 +2,7 @@
 <nav id="header-area" class="" ng-if='header.isHeaderEnabled'>
 	<a class="">EZoffice</a>
 	<div id="menu-cont-area" class="">
-		<a class="">collection_name</a>
+		<a class=""  style='color:indigo'>{{ header.cur_collection }}</a>
 			<ul id="menu-cont"class="">
 				<li class="menu-item" ng-repeat='item in header.header_list'>
                     <a class="item" ng-click="changeState( item )" >{{ item }}</a>

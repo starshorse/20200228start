@@ -1,33 +1,27 @@
 {
-  "_args": [
-    [
-      "angular-mocks@1.8.3",
-      "/home/rrr/workdir/tmp/angularJs"
-    ]
-  ],
-  "_development": true,
-  "_from": "angular-mocks@1.8.3",
+  "_from": "angular-mocks@1.8.x",
   "_id": "angular-mocks@1.8.3",
   "_inBundle": false,
   "_integrity": "sha512-vqsT6zwu80cZ8RY7qRQBZuy6Fq5X7/N5hkV9LzNT0c8b546rw4ErGK6muW1u2JnDKYa7+jJuaGM702bWir4HGw==",
   "_location": "/angular-mocks",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "angular-mocks@1.8.3",
+    "raw": "angular-mocks@1.8.x",
     "name": "angular-mocks",
     "escapedName": "angular-mocks",
-    "rawSpec": "1.8.3",
+    "rawSpec": "1.8.x",
     "saveSpec": null,
-    "fetchSpec": "1.8.3"
+    "fetchSpec": "1.8.x"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
   "_resolved": "https://registry.npmjs.org/angular-mocks/-/angular-mocks-1.8.3.tgz",
-  "_spec": "1.8.3",
-  "_where": "/home/rrr/workdir/tmp/angularJs",
+  "_shasum": "c0dd05e5c3fc014e07af6289b23f0e817d7a4724",
+  "_spec": "angular-mocks@1.8.x",
+  "_where": "/home/rrr/workdir/tmp/angular/angularJs",
   "author": {
     "name": "Angular Core Team",
     "email": "angular-core+npm@google.com"
@@ -35,6 +29,8 @@
   "bugs": {
     "url": "https://github.com/angular/angular.js/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "AngularJS mocks for testing",
   "homepage": "http://angularjs.org",
   "jspm": {

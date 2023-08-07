@@ -1,32 +1,27 @@
 {
-  "_args": [
-    [
-      "angular@1.8.3",
-      "/home/rrr/workdir/tmp/angularJs"
-    ]
-  ],
-  "_from": "angular@1.8.3",
+  "_from": "angular@1.8.x",
   "_id": "angular@1.8.3",
   "_inBundle": false,
   "_integrity": "sha512-5qjkWIQQVsHj4Sb5TcEs4WZWpFeVFHXwxEBHUhrny41D8UrBAd6T/6nPPAsLngJCReIOqi95W3mxdveveutpZw==",
   "_location": "/angular",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "angular@1.8.3",
+    "raw": "angular@1.8.x",
     "name": "angular",
     "escapedName": "angular",
-    "rawSpec": "1.8.3",
+    "rawSpec": "1.8.x",
     "saveSpec": null,
-    "fetchSpec": "1.8.3"
+    "fetchSpec": "1.8.x"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/angular/-/angular-1.8.3.tgz",
-  "_spec": "1.8.3",
-  "_where": "/home/rrr/workdir/tmp/angularJs",
+  "_shasum": "851ad75d5163c105a7e329555ef70c90aa706894",
+  "_spec": "angular@1.8.x",
+  "_where": "/home/rrr/workdir/tmp/angular/angularJs",
   "author": {
     "name": "Angular Core Team",
     "email": "angular-core+npm@google.com"
@@ -34,6 +29,8 @@
   "bugs": {
     "url": "https://github.com/angular/angular.js/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": "For the actively supported Angular, see https://www.npmjs.com/package/@angular/core. AngularJS support has officially ended. For extended AngularJS support options, see https://goo.gle/angularjs-path-forward.",
   "description": "HTML enhanced for web apps",
   "homepage": "http://angularjs.org",
   "keywords": [

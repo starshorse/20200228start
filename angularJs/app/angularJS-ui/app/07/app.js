@@ -39,7 +39,6 @@ angular.module('myApp',[
 		url:"/collections_list",
 		template:`
 		    <my-header header="header" changeSpace="changeSpace( collection )"></my-header> 
-		    <h3>collections List for Edit</h3> 
 		    <div class="container">
 		    <my-sidebar2level collectionslist="collections_list"></my-sidebar2level>
 			<toggle-sidebar></toggle-sidebar>
