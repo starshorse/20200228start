@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Collection Edit</title>
+	<link rel="stylesheet" href="/resource/css/test_controls.css">
+</head>
+<body>
+	<main ng-controller='myAppCtrl'>
+	   <form class="flx-cl flx-col">
+	     <label>
+			Collection 이름: <input type="text" ng-model="collectionTitle" />
+	     </label>		 
+	     <label>
+			권한 Level: <input type="number" ng-model="collectionLevel" min="-1" max="5" step="1" />
+	     </label>		 
+		 <div class="flx-cc">
+			 <label>
+				 Header 편집: <input type="CHECKBOX" ng-model="header_edit_enable" />
+			 </label>		 
+			 <div class="flx-cc">
+				 <div ng-if="header_edit_enable">
+					 <i class="box box-question"></i><input type="text" ng-model="collectionSearch" />
+					 <button ng-click="header_collection_add()">추가</button>
+					 <select class="select_02" ng-model="collectionSelected" multiple size="10">
+						 <option ng-repeat="collection in collections_list | filter: collectionSearch ">{{ collection }}</option>
+					 </select>	
+				 </div>
+				 <div>
+					 <i class="box box-question"></i><input type="text" ng-model="curCollectionSearch" />
+					 <button ng-click="header_collection_remove()">삭제</button>
+					 <select class="select_02" ng-model="curCollectionSelected" multiple size="10" >
+						 <option ng-repeat="collection in curCollections_list | filter: curCollectionSearch ">{{ collection }}</option>
+					 </select>	
+				 </div>	 
+			 </div>
+				 <label>
+					 App 리스트 편집: <input type="CHECKBOX" ng-model="apps_list_edit_enable" />
+				 </label>		 
+				 <div class="flx-cc">
+					 <div ng-if="apps_list_edit_enable">
+						 <i class="box box-question"></i><input type="text" ng-model="appSearch" />
+						 <button>추가</button>
+						 <select class="select_02" ng-model="appSelected" multiple size="10">
+							 <option ng-repeat="app in apps_list | filter: appSearch ">{{ app }}</option>
+						 </select>	
+					 </div>	 
+					 <div>
+						 <i class="box box-question"></i><input type="text" ng-model="curAppSearch" />
+						 <button>삭제</button>
+						 <select class="select_02" ng-model="curApps" multiple size="10" >
+							 <option ng-repeat="app in curApps_list | filter: curAppSearch ">{{ app }}</option>
+						 </select>	
+					 </div>	 
+			 </div>
+		 </div>
+	     <label>
+			 외부Link<input type="CHECKBOX" ng-model="extrn_enable" />
+			 <div ng-if="extrn_enable">
+				 <input type="text" ng-model="extrn_url" />
+				 <select class="select_01">
+					 <option>_self</option>
+					 <option>_blank</option> 
+				 </select> 	 
+			 </div>
+	     </label>		 
+		 <button>저장</button> 
+	   </form>  	   
+	</main>
+<script src="/lib/angular/angular.min.js"></script>
+<script>
+	 angular.module('myApp',[])
+     .controller('myAppCtrl', function($scope){
+		$scope.collectionTitle = 'main' ;
+		$scope.header_edit_enable = false; 
+		$scope.apps_list_edit_enable = false; 
+		$scope.extrn_enable = false;  
+	    $scope.header_collection_add =()=>{
+			alert( $scope.collectionSelected )
+			let collections = $scope.collectionSelected
+            $scope.curCollections_list = [...new Set($scope.curCollections_list.concat( collections ))]; 
+		}
+	    $scope.header_collection_remove =()=>{
+            let collections = $scope.curCollectionSelected 
+			$scope.curCollections_list = $scope.curCollections_list.filter((el) =>!collections.includes(el));
+		}
+		$scope.collections_list =[
+			'main',
+			'default',
+			'expense',
+			'workspace',
+			'home',
+			'DbEdit',
+			'dashBoard',
+			'logOut',
+			'logIn',
+			'workspace2',
+			'AppEdit',
+			'toHomepage',
+			'infoTables',
+			'workStatus',
+			'collectionIntro',
+			'mainGate',
+			'asiafni_cl1',
+			'serverMonitor',
+			'newApp',
+			'authentication',
+			'DB_admin	',
+		]
+		$scope.curCollections_list =[
+			'main',
+			'default',
+			'expense',
+		]	
+		 $scope.curApps_list = [
+			'admin_1',
+			'임직원명부',
+			'Internal',
+			'Default',
+		 ]
+		 $scope.apps_list = [
+			'admin_1',
+			'임직원명부',
+			'Internal',
+			'Default',
+			'발주처',
+			'담당자',
+			'수입제한',
+			'재고관리',
+			'해외명단',
+			'환율',
+			'trello_majorissues_members',
+			'log_data',
+			'operation',
+			'도시락기본메뉴',
+			'도시락메뉴',
+			'도시락주문',
+			'사내소독체크',
+			'직원체온체크',
+			'안전교육관리대장',
+			'tb_bs_차량기본정보',
+			'사무실이전준비_2021',
+			'finance_import',
+			'법인카드명세서',
+			'법인카드사용내역',
+			'외화계좌거래내역_bio',
+			'외화계좌거래내역_chem',
+			'해외송금기록',
+			'전자어음_개요',
+			'전자어음_할인내역',
+			'분할송금',
+			'분할_납품및세금계산서발행',
+			'매입전자세금계산서',
+			'매출전자세금계산서',
+			'finance',
+			'rpa',
+			'RPA운용현황',
+			'mro',
+			'quote',
+			'견적관리',
+			'견적분석',
+			'SKBP통관대행',
+			'Maker_Stock',
+			'Maker_Stock_d',
+			'Maker_Stock_test',
+			'OC_Config_Qt',
+			'OC_EZct',
+			'OC_Supplier',
+			'date_table',
+			'eztable',
+			'inv_summary',
+			'mail_invoice',
+			'quote_vendor_price',
+			'quote_vendor_product',
+			'trello_majorissues_comments',
+			'trello_majorissues_cards',
+			'trello_majorissues_lists',
+			'계좌거래내역_bio',
+			'계좌거래내역_chem',
+			'고액송금스케줄',
+			'고액송금총괄',
+			'국가명관리',
+			'배송안내메일',
+			'선물환table',
+			'선물환사용table',
+			'수입면장메일',
+			'수입신고내역',
+			'업무진행관리',
+			'자료보호물질',
+			'진행상태알림',
+			'통관기록',
+			'환율_월평균',
+			'new1',
+			'newApp',
+			'new2',
+			'new3',
+			'expense',
+			'카드승인내역',
+			'테스트app',
+			'app_list',
+			'config_codeFApi',
+			'회사정보',
+			'CodeF_카드정보',
+			'카드승인내역_PUBLIC',
+			'CodeF_기관정보',
+			'Ezworks',
+			'importData',
+			'Stock',
+			'버그Fix',
+			'테스트app2',
+			'저PBR.csv',
+			'collection_list',
+			'휴가일수관리',
+			'근태관리',
+			'vid관리',
+		 ]
+	 })
+</script> 	
+</body>
+</html>
