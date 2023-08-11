@@ -9,10 +9,10 @@
 	<main ng-controller='myAppCtrl'>
 	   <form class="flx-cl flx-col">
 	     <label>
-			App/Group 이름: <input type="text" ng-model="collectionTitle" />
+			App/Group 이름: <input type="text" ng-model="appTitle" />
 	     </label>		 
 	     <label>
-			권한 Level: <input type="number" ng-model="collectionLevel" min="-1" max="5" step="1" />
+			권한 Level: <input type="number" ng-model="appLevel" min="-1" max="5" step="1" />
 	     </label>		 
 		 <label>
 				 App 여부:<input type="CHECKBOX" ng-model="is_app" />
@@ -33,15 +33,15 @@
 				 <div class="flx-cc">
 					 <div ng-if="app_share_enable">
 						 <i class="box box-question"></i><input type="text" ng-model="idSearch" />
-						 <button>추가</button>
-						 <select class="select_02" ng-model="appSelected" multiple size="10">
+						 <button ng-click="share_id_add()">추가</button>
+						 <select class="select_02" ng-model="ids.idSelected" multiple size="10">
 							 <option ng-repeat="id in ids_list | filter: idSearch ">{{ id }}</option>
 						 </select>	
 					 </div>	 
 					 <div>
 						 <i class="box box-question"></i><input type="text" ng-model="curIdSearch" />
-						 <button>삭제</button>
-						 <select class="select_02" ng-model="curApps" multiple size="10" >
+						 <button ng-click="share_id_remove()">삭제</button>
+						 <select class="select_02" ng-model="ids.curIdSelected" multiple size="10" >
 							 <option ng-repeat="id in curIds_list | filter: curIdSearch ">{{ id }}</option>
 						 </select>	
 					 </div>	 
@@ -61,136 +61,86 @@
 	   </form>  	   
 	</main>
 <script src="/lib/angular/angular.min.js"></script>
+<script src="/lib/angular-cookies/angular-cookies.min.js"></script>
 <script>
-	 angular.module('myApp',[])
-     .controller('myAppCtrl', function($scope){
-		$scope.collectionTitle = 'main' ;
+	angular.module('myApp',['ngCookies'])
+    .config( function($httpProvider){
+		$httpProvider.defaults.headers.delete = { "Content-Type": "application/json;charset=utf-8" };
+	})
+	.controller('myAppCtrl', function($scope, $http, $cookies ){
+		$scope.appTitle =  'main' ;
 		$scope.is_app = true; 
-		$scope.app_shre_enable = false; 
+		$scope.app_share_enable = false; 
 		$scope.extrn_enable = false;  
-	    $scope.share_id_add =()=>{
-			alert( $scope.collectionSelected )
-			let collections = $scope.collectionSelected
-            $scope.curCollections_list = [...new Set($scope.curCollections_list.concat( collections ))]; 
+		$scope.ids =  { idSelected : null , curIdSelected : null } ;
+		let user_DB = $cookies.get('user_DB');  
+		let appName = 'ezct_account' ;
+		let appInfo 
+		$http.get(`http://localhost/hades/app/info/${ user_DB }/${ appName }`).then((response)=>{
+			appInfo = response.data.DATA 
+			$scope.appTitle = appInfo.title 
+			$scope.groupSelected = appInfo.group_name;
+			$scope.appLevel = appInfo.level ;
+			if( appInfo.url != null )$scope.extrn_enable = true;
+		})
+		$scope.share_id_add = async ()=>{
+			alert( $scope.ids.idSelected )
+			for( id of $scope.ids.idSelected ){
+				if( !$scope.curIds_list.includes( id )){
+					await $http({ method:'POST' , url:`http://localhost/hades/app/assign/${ user_DB }` , data: { appName , user_id: id  }})
+					$scope.curIds_list.push( id )
+				}
+			}
+		   $scope.$apply() 
 		}
-	    $scope.share_id_remove =()=>{
-            let collections = $scope.curCollectionSelected 
-			$scope.curCollections_list = $scope.curCollections_list.filter((el) =>!collections.includes(el));
+		$scope.share_id_remove = async ()=>{
+			alert( $scope.ids.curIdSelected )
+			for( id of $scope.ids.curIdSelected ){
+					await $http({ method:'DELETE' , url:`http://localhost/hades/app/assign/${ user_DB }` , data: { appName , user_id: id  }})
+			}
+			$scope.curIds_list = $scope.curIds_list.filter((el) =>!$scope.ids.curIdSelected.includes(el));
+			$scope.$apply() 			
 		}
-		$scope.groups_list =[
-			'main',
-			'default',
-			'expense',
-			'mainGate',
-			'serverMonitor',
-			'newApp',
-			'authentication',
-			'DB_admin',
-		]
-		$scope.groupSelected = 'main';
-		$scope.curIds_list = [
-			'admin_1',
-			'임직원명부',
-			'Internal',
-			'Default',
-		 ]
-		 $scope.ids_list = [
-			'admin_1',
-			'임직원명부',
-			'Internal',
-			'Default',
-			'발주처',
-			'담당자',
-			'수입제한',
-			'재고관리',
-			'해외명단',
-			'환율',
-			'trello_majorissues_members',
-			'log_data',
-			'operation',
-			'도시락기본메뉴',
-			'도시락메뉴',
-			'도시락주문',
-			'사내소독체크',
-			'직원체온체크',
-			'안전교육관리대장',
-			'tb_bs_차량기본정보',
-			'사무실이전준비_2021',
-			'finance_import',
-			'법인카드명세서',
-			'법인카드사용내역',
-			'외화계좌거래내역_bio',
-			'외화계좌거래내역_chem',
-			'해외송금기록',
-			'전자어음_개요',
-			'전자어음_할인내역',
-			'분할송금',
-			'분할_납품및세금계산서발행',
-			'매입전자세금계산서',
-			'매출전자세금계산서',
-			'finance',
-			'rpa',
-			'RPA운용현황',
-			'mro',
-			'quote',
-			'견적관리',
-			'견적분석',
-			'SKBP통관대행',
-			'Maker_Stock',
-			'Maker_Stock_d',
-			'Maker_Stock_test',
-			'OC_Config_Qt',
-			'OC_EZct',
-			'OC_Supplier',
-			'date_table',
-			'eztable',
-			'inv_summary',
-			'mail_invoice',
-			'quote_vendor_price',
-			'quote_vendor_product',
-			'trello_majorissues_comments',
-			'trello_majorissues_cards',
-			'trello_majorissues_lists',
-			'계좌거래내역_bio',
-			'계좌거래내역_chem',
-			'고액송금스케줄',
-			'고액송금총괄',
-			'국가명관리',
-			'배송안내메일',
-			'선물환table',
-			'선물환사용table',
-			'수입면장메일',
-			'수입신고내역',
-			'업무진행관리',
-			'자료보호물질',
-			'진행상태알림',
-			'통관기록',
-			'환율_월평균',
-			'new1',
-			'newApp',
-			'new2',
-			'new3',
-			'expense',
-			'카드승인내역',
-			'테스트app',
-			'app_list',
-			'config_codeFApi',
-			'회사정보',
-			'CodeF_카드정보',
-			'카드승인내역_PUBLIC',
-			'CodeF_기관정보',
-			'Ezworks',
-			'importData',
-			'Stock',
-			'버그Fix',
-			'테스트app2',
-			'저PBR.csv',
-			'collection_list',
-			'휴가일수관리',
-			'근태관리',
-			'vid관리',
-		 ]
-	 })
+		// $cookies : user_DB , user , org_name  
+		// server_name/org_name/user_id    
+		$http.get(`http://localhost/hades/app/group_list/${ user_DB }`).then(( response )=>{ 
+			if( response.data.STATUS == -1 ){
+				alert( response.data.ERRORMESSAGE )
+				return -1;
+			}
+			$scope.groups_list = response.data.DATA 
+		}).catch(( err)=>{
+			console.log( err );
+			$scope.groups_list =[
+				'default',
+			]
+		})
+		$http.get(`http://localhost/hades/app/assign/${ user_DB }/${ appName }`).then(( response )=>{ 
+			if( response.data.STATUS == -1 ){
+				alert( response.data.ERRORMESSAGE )
+				return -1;
+			}
+			$scope.curIds_list = response.data.DATA 
+
+		}).catch(( err)=>{
+			$scope.curIds_list = [
+			]
+		})
+		//		 $http({ method: 'GET',url:'http://127.0.0.1/hades/ids_list',  withCredentials: true }).then(( response )=>{ 
+		$http({ method: 'GET',url:`http://127.0.0.1/hades/ids_list/${ user_DB }`}).then(( response )=>{ 
+			if( response.data.STATUS == -1 ){
+				alert( response.data.ERRORMESSAGE )
+				return -1;
+			}
+			$scope.ids_list = response.data.DATA 
+
+		}).catch(( err)=>{
+			$scope.ids_list = [
+				'error@error.com',
+				'hades@problem.com' 
+			]
+		})
+})
 </script> 	
 </body>
 </html>
