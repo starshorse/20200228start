@@ -4,51 +4,94 @@
 	<meta charset="UTF-8">
 	<title>Collection Edit</title>
 	<link rel="stylesheet" href="/resource/css/test_controls.css">
+	<style>
+       main{
+		   height: 100vh;
+	   }
+	   form *{
+		   margin: 3px;
+	   }
+	   form label{
+		   display: inline-block;
+		   width: 100%;
+	   }
+	   form input[type='text'], form button{
+		   float: right;
+		   height: 1.8rem;
+		   border: 0;
+		   outline: none;
+		   background-color: indigo;
+		   color: white;
+	   }
+	   form input[type='text']{
+		   background-color: lavender;
+		   color: indigo;
+		   text-align: right;
+	   }
+	   form select{
+		   width: 100%;
+	   }
+	   .w100{
+		   width: 100%;
+	   }
+	   .w50{
+		   width: 50%;
+	   }
+	   .w30{
+		   width: 30%;
+	   }
+	   .fl-r{
+		   float: right;
+	   }
+    </style>
 </head>
 <body>
-	<main ng-controller='myAppCtrl'>
-	   <form class="flx-cl flx-col">
+	<main ng-controller='myAppCtrl' class="flx-cc">
+	   <form class="flx-cl flx-col w30">
 	     <label>
-			Collection 이름: <input type="text" ng-model="collectionTitle" />
+			Collection 이름: <input type="text" class="w50" ng-model="collectionTitle" />
 	     </label>		 
 	     <label>
 			권한 Level: <input type="number" ng-model="collectionLevel" min="-1" max="5" step="1" />
 	     </label>		 
-		 <div class="flx-cc">
-			 <label>
-				 Header 편집: <input type="CHECKBOX" ng-model="header_edit_enable" />
-			 </label>		 
+		 <div class="flx-cc w100">
+		 <label>
+				 Header 편집:<input type="CHECKBOX" ng-model="header_edit_enable" ng-disabled="apps_list_edit_enable" />
+		 </label>		 
+		 <label>
+				 Apps 편집:<input type="CHECKBOX" ng-model="apps_list_edit_enable"
+ng-disabled="header_edit_enable"/>
+		 </label>		 
+		 </div>
+		 <div class="flx-cc w100">
 			 <div class="flx-cc">
-				 <div ng-if="header_edit_enable">
-					 <i class="box box-question"></i><input type="text" ng-model="collectionSearch" />
+				 <div ng-if="header_edit_enable" class="flx-col w100">
+					 <i class="box box-question"></i><input type="text" ng-model="collectionSearch" placeholder="collections list"/>
 					 <button ng-click="header_collection_add()">추가</button>
-					 <select class="select_02" ng-model="collectionSelected" multiple size="10">
+					 <select class="select_02 w100" ng-model="collectionSelected" multiple size="10">
 						 <option ng-repeat="collection in collections_list | filter: collectionSearch ">{{ collection }}</option>
 					 </select>	
 				 </div>
-				 <div>
-					 <i class="box box-question"></i><input type="text" ng-model="curCollectionSearch" />
+				 <div class="flx-col w100" ng-if="!apps_list_edit_enable">
+					 <i class="box box-question"></i><input type="text" ng-model="curCollectionSearch" placeholder="cur heads[collections]"/>
 					 <button ng-click="header_collection_remove()">삭제</button>
-					 <select class="select_02" ng-model="curCollectionSelected" multiple size="10" >
+					 <select class="select_02 w100" ng-model="curCollectionSelected" multiple size="10" >
 						 <option ng-repeat="collection in curCollections_list | filter: curCollectionSearch ">{{ collection }}</option>
 					 </select>	
 				 </div>	 
 			 </div>
-				 <label>
-					 App 리스트 편집: <input type="CHECKBOX" ng-model="apps_list_edit_enable" />
-				 </label>		 
 				 <div class="flx-cc">
-					 <div ng-if="apps_list_edit_enable">
-						 <i class="box box-question"></i><input type="text" ng-model="appSearch" />
+					 <div ng-if="apps_list_edit_enable" class="flx-col w100">
+						 <i class="box box-question"></i><input type="text" ng-model="appSearch" placeholder="apps list" />
 						 <button>추가</button>
-						 <select class="select_02" ng-model="appSelected" multiple size="10">
+						 <select class="select_02 w100" ng-model="appSelected" multiple size="10">
 							 <option ng-repeat="app in apps_list | filter: appSearch ">{{ app }}</option>
 						 </select>	
 					 </div>	 
-					 <div>
-						 <i class="box box-question"></i><input type="text" ng-model="curAppSearch" />
+					 <div class="flx-col w100" ng-if="!header_edit_enable">
+						 <i class="box box-question"></i><input type="text" ng-model="curAppSearch" placeholder="cur apps"/>
 						 <button>삭제</button>
-						 <select class="select_02" ng-model="curApps" multiple size="10" >
+						 <select class="select_02 w100" ng-model="curApps" multiple size="10" >
 							 <option ng-repeat="app in curApps_list | filter: curAppSearch ">{{ app }}</option>
 						 </select>	
 					 </div>	 
@@ -64,7 +107,7 @@
 				 </select> 	 
 			 </div>
 	     </label>		 
-		 <button>저장</button> 
+		 <button class="w30">저장</button> 
 	   </form>  	   
 	</main>
 <script src="/lib/angular/angular.min.js"></script>
