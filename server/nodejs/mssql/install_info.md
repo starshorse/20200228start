@@ -1,2 +1,2 @@
 ##node-mssql 
-npm install tedius , mssql 
+npm install tedious , mssql 

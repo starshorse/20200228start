@@ -18,20 +18,34 @@
 	}
   },
   {
-    "script": "node ./server/app/02_hades/index.js",
+    "script": "node --inspect=9030 ./server/app/02_hades/index.js",
     "watch": ".",
     "name": "DBInf_srv",
 	"env":{
 		"SERVER_NAME":"hades",
 		"SERVER_PORT":"8001",
-		"DB_SERVER_LIST":".server/database/sqlserver.json"
+		"DB_SERVER_LIST":"./server/database/sqlserver.json"
 	}
   },
   {
-    "script": "./service-worker/",
+    "script": "./server/service-worker/index.js",
     "watch": [
-      "./service-worker"
-    ]
+      "."
+    ],
+	"name":"service_srv",
+	"env":{
+		"SERVER_PORT":"4201"
+	}
+  },
+  {
+    "script": "./server/app/03_ezq/app.js",
+    "watch": [
+      "."
+    ],
+	"name":"ezq_srv",
+	"env":{
+		"SERVER_PORT":"4202"
+	}
   }
 ]
 
