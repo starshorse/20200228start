@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tmp 51</title>
+	<link rel="stylesheet" href="/lib/bootstrap-4/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+	<style>
+          @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+	  body{
+		  font-family: 'Noto Sans KR', sans-serif;
+	  }
+          .section{
+		height: 80vh;
+		position: relative;
+	  }
+	  .head-bg{
+                background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+	/*	background-attchment: fixed; */
+		background-image: linear-gradient( rgba( 120, 20, 140, 1), rgba( 240,40, 255, 0.5 )) , url('../../resource/image/bg-1.jpg') ;
+	  }
+	  .head-text-title{
+		display: none;
+		position: absolute;
+		top: 10%;
+		left: 50%;
+		font-weight: 400;
+		color: orange; 
+	  }
+	  .head-text-sub{
+		 position: absolute;
+		 top: 20%;
+		 left: 48%;
+		 color: lavender;
+	  }
+	  .head-text-content{
+		 position: absolute;
+		 width: 200px;
+		 top: 40%;
+		 left: 54%;
+		 font-size: 20px;
+	  }
+	  .ellipsis{
+		  width: 200px;
+		  white-space: nowrap;
+		  overflow: hidden ;
+		  text-overflow: ellipsis;
+		  
+	  }
+	  #modal-wrap{
+		  z-index: 3;
+		  position: absolute;
+		  top:0;left:0;
+		  width: 100%; height:100%;
+		  padding-top:70px;
+		  pointer-events: none;
+
+	  }
+	  #modal-area{
+/*		  z-index: 101; */
+		  position: fixed; 
+		  top: 50%;
+		  left: 50%;
+		  width: 90%;
+		  height: 98%;
+		  margin: auto;
+		  opacity:0 ;
+		  visibility: hidden ;
+		  color: lavender; 
+		  background-color: rgba( 60,10,70, 0.8 );
+	  }
+	  #modal-area.on{
+		  opacity: 1;
+		  visibility: visible; 
+		  pointer-events: auto; 
+		  transform: translate3d( -50%, -50% , 0 ) scale3d(1,1,1) ;
+	  }
+	  .btn-secondary{
+		  background-color: indigo;
+		  border-color: lavender;
+		  width: 120px;
+	  }
+	  .btn-secondary:is(:hover,:focus) {
+		  background-color: lavender;
+		  color: orange;
+		  font-size: 20px;
+	  }
+	  .chat-icon{
+		  color: indigo;
+		  position: absolute;
+		  right: 20%; 
+	  }
+	  @media screen and ( min-width : 768px ){
+		  .head-text-title{
+			  display:block;
+		  }
+		  .ellipsis{
+			  width: 500px;
+			  white-space: wrap;
+		  }
+	  }
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg text-uppercase" >
+		<div class="container">
+			<button type='button' class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" >MENU<i class="fa fa-bars"></i></button>
+			<div id="navbarResponsive" class="collapse navbar-collapse">
+			<a class="navbar-brand" href="">EZoffice</a>
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link" href="../51/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="">DB업무</a></li>
+					<li class="nav-item"><a class="nav-link" href="">권한</a></li>
+					<li class="nav-item"><a class="nav-link" href="../52/">최종규</a></li>
+					<button class="nav-item dropdown btn-secondary"  data-toggle="dropdown"><a>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g id="feBar0" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g id="feBar1" fill="currentColor"><path id="feBar2" d="M3 16h18v2H3v-2Zm0-5h18v2H3v-2Zm0-5h18v2H3V6Z"/></g></g></svg>
+						</a> 
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="">Home</a>
+							<a class="dropdown-item" href="">Download</a>
+							<a class="dropdown-item" href="">Price</a>
+							<div class="dropdown-divider"></div>
+						</div>
+					</button>		
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="section head-bg">
+		<h1 class="h1 head-text-title">𝔈ℨ𝔬𝔣𝔣𝔦𝔠𝔢 🅴🆉🅾🅵🅵🅸🅲🅴</h1> 
+		<h1 class="h3 head-text-sub">평안이 너의 깊숙히</h1> 
+		<p class="head-text-content text-white ellipsis">
+		     마하반야밀다심경 관자제 보살이 깊은 수행중에 오온이 공한 것을 알고 색즉시공공즉시식 색공불이 마상행상 미촉법도 같은 것을 알았다.
+		</p>
+	</div>	
+	<div><a  class="chat-icon" href="">
+		<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 12 12"><path fill="currentColor" d="M1 6a5 5 0 1 1 2.59 4.382l-1.944.592a.5.5 0 0 1-.624-.624l.592-1.947A4.98 4.98 0 0 1 1 6Zm3-.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5ZM4.5 7a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2Z"/></svg>
+	     </a>
+	</div>
+	<div id="modal-wrap">
+		<div id="modal-area" class="on d-flex flex-column align-items-center justify-content-center">
+			<h1>공지사항</h1>
+			<button id="confirm-btn" class="btn btn-lg btn-secondary">확인</button> 
+	        </div>		
+	</div>	
+	<script src="/lib/bootstrap-4/js/bootstrap.bundle.min.js"></script>
+	<script>
+		$( function(){
+			$("#confirm-btn").click((e)=>{
+				$("#modal-area").removeClass("on");
+			})
+		})
+        </script>
+</body>
+</html>

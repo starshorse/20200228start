@@ -1,0 +1,32 @@
+/*********************************************/
+/*                FORMS CSS                  "/
+/*********************************************/
+ 
+.form-control:focus {
+  background-color: #fbfbfb;
+  border-color: #6C55A3;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.form-control {
+  background-color: rgba(52, 58, 64, 0.01);
+  border: 1px solid rgba(155, 155, 174, 0.3);
+  padding: 9px 11px;
+  font-size: 14px;
+}
+.form-control::-webkit-input-placeholder {
+  font-size: 15px;
+  color: #9b9bae;
+}
+.form-control:-ms-input-placeholder {
+  color: #9b9bae;
+  font-size: 15px;
+}
+.form-control::-ms-input-placeholder {
+  font-size: 15px;
+  color: #9b9bae;
+}
+.form-control::placeholder {
+  color: #9b9bae;
+  font-size: 15px;
+}

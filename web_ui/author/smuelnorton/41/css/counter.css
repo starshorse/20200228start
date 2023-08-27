@@ -1,0 +1,23 @@
+/********************************************************************/
+/*               ACCOMPLISHED PROJECTS COUNTER CSS                  "/
+/*******************************************************************/
+ 
+.accomplished-counter-icon {
+  font-size: 52px;
+}
+.accomplished-counter-bg .accomplished-counter-box {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.accomplished-accomplished-counter-bg {
+  background: #6C55A3;
+}
+.accomplished-counter-bg .accomplished-counter-bg {
+  background-color: #6C55A3;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}

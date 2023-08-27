@@ -1,0 +1,55 @@
+/*********************************************/
+/*              RESPONSIVE CSS               "/
+/*********************************************/
+ 
+@media (min-width: 200px) and (max-width: 768px) {
+  .navbar-kleo {
+    background-color: #ffffff !important;
+    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    margin-top: 0px;
+    color: #ffffff !important;
+  }
+  .navbar-toggler {
+    margin-bottom: 0px;
+    font-size: 24px;
+    margin-top: 0px;
+    color: #343a40;
+  }
+  .navbar-kleo .navbar-nav {
+    margin-top: 0px;
+  }
+  .navbar-kleo .navbar-nav li a {
+    margin: 0px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    color: #9b9bae !important;
+  }
+  .navbar-kleo>.container {
+    width: 90%;
+  }
+  .navbar-collapse {
+    padding: 0 20px;
+  }
+  .navbar-kleo .navbar-nav li.active a {
+    border-color: transparent;
+  }
+  .navbar-kleo .navbar-nav li.active a, .navbar-kleo .navbar-nav li a:hover, .navbar-kleo .navbar-nav li a:active {
+    color: #6C55A3 !important;
+  }
+}
+@media (max-width: 425px) {
+  .header-bg .main-title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .header-bg {
+    padding: 120px 0;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-bg {
+    background: none !important;
+  }
+}
