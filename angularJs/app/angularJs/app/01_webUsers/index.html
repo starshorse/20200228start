@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
-	<base href="/angularJs/app/01/">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
@@ -58,49 +57,19 @@
 		</tr>	
 	</table>	
 	<script src="/lib/angular/angular.min.js"></script>
-	<script src="/lib/angular-route/angular-route.min.js"></script>
-	<!-- Or use TAG number for specific version. New versions are auto deployed -->
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/restangular/1.5.1/restangular.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/restangular/1.5.1/restangular.min.js"></script>
 	<script src="/lib/underscore/underscore-umd-min.js"></script>
 	<script>
-		angular.module('myApp',[
-			'ngRoute',
-			'restangular'
-		])
-        .config( function($routeProvider, $locationProvider ){
-			 $locationProvider.html5Mode( true );
-			 $routeProvider.when('/users',{
-				 resolve: {
-					 resolveVal : function($q){
-						 users = [{'email':'peter@peter'}]
-					//	 return  $q.when( users ); 
-						 return  users; 
-					 }
-				 },
-				 controller: function( resolveVal ){
-					 console.log('this'+ resolveVal ) 
-				 }
-			 })
-		})	
-        .controller('myAppCtrl',function($scope, $injector, Restangular ){
+		angular.module('myApp',[])
+        .controller('myAppCtrl',function($scope, $injector ){
 			$scope.web_users 
 			$scope.user_DBs 
 			var $http = $injector.get('$http')
-
-            Restangular.all('/angularJs/app/01/#!users').getList().then( function( users){
-				console.log( users )
-			})
-
-//			$http.get('http://localhost:9000/Hades/dba_editor/web_users').then((response)=>{
-/*			
-			$http.get('/angularJs/app/01/users').then((response)=>{
+			$http.get('http://localhost:9000/Hades/dba_editor/web_users').then((response)=>{
 				console.log( response.data )
 				$scope.web_users = response.data.DATA 
 //				$scope.user_DBs =  _.uniq( $scope.web_users, user=> user.db_name )
 				$scope.user_DBs = Object.keys( _.countBy( $scope.web_users, "db_name" ))
 			})
-*/			
 		})
 	</script>	
 </body>

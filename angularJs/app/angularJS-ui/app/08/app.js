@@ -1,9 +1,12 @@
 angular.module('myApp',[
 'ui.router',
+'ngCookies',	
 // directives 	
 'myHeader',
 'toggle_sidebar',
 'mySidebar',
+'collection_editor',
+'app_editor', 
 // controllers. 	
 'myControllers',	
 // services.
@@ -14,9 +17,10 @@ angular.module('myApp',[
 		url: '/collectionEditMain/:cur_collection', 
 		template:`
 		    <my-header header="header" changeSpace="changeSpace( collection )"></my-header> 
-		    <div class="container">
+		    <div class="container w100">
 		    <my-sidebar appslist="appparts"></my-sidebar> 
 			<toggle-sidebar></toggle-sidebar>
+	        <collection_editor class="flx-cc hv100 flx-1" collectioninfo="collectioninfo" ></collection_editor>
             <ui-view></ui-view> 
 		    </div> 
 		`,
@@ -36,10 +40,10 @@ angular.module('myApp',[
 		url:"/appEditMain/:appName",
 		template:`
 		    <my-header header="header" changeSpace="changeSpace( collection )"></my-header> 
-		    <h3>{{ appName }}</h3> 
-		    <div class="container">
+		    <div class="container w100">
 		    <my-sidebar appslist="appparts"></my-sidebar> 
 			<toggle-sidebar></toggle-sidebar>
+	        <app-editor class='flx-cc hv100 flx-1' appinfo='appinfo'></app-editor>
 		    </div>
 		`,
 		controller:'appEditMainCtrl'  

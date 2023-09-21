@@ -1,5 +1,6 @@
 angular.module('myApp',[
 'ui.router',
+'ngCookies',	
 // directives 	
 'myHeader',
 'toggle_sidebar',

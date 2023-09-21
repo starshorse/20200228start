@@ -4,8 +4,13 @@
 	</div>
 	<div>
 		<ul class='list-unstyled components'> 
-			<li>	
+			<li><h3><strong>생성<strong></h3> 
+				<ul>
+					<li><a ng-click="create_collection()">Collection</a></li>
+					<li><a ng-click="create_app()">App</a></li>
+                </ul> 
 			</li>	
+			<hr> 
 			<li class='' ng-repeat='p_item in collections_list track by $index'>
 				<a ng-click='openParent(p_item.name)'>{{ p_item.title }}</a> 
 				<ul> 

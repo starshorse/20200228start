@@ -34,8 +34,8 @@
 	   .w100{
 		   width: 100%;
 	   }
-	   .w50{
-		   width: 50%;
+	   .w50w
+		   idth: 50%;
 	   }
 	   .w30{
 		   width: 30%;
@@ -46,7 +46,7 @@
     </style>
 </head>
 <body>
-	<main ng-controller='myAppCtrl' class="flx-cc">
+	<main ng-controller="myAppCtrl" class="flx-cc">
 	   <form class="flx-cl flx-col w30">
 	     <label>
 			Collection 이름: <input type="text" class="w50" ng-model="collectionTitle" />
@@ -68,14 +68,14 @@ ng-disabled="header_edit_enable"/>
 				 <div ng-if="header_edit_enable" class="flx-col w100">
 					 <i class="box box-question"></i><input type="text" ng-model="collectionSearch" placeholder="collections list"/>
 					 <button ng-click="header_collection_add()">추가</button>
-					 <select class="select_02 w100" ng-model="collections.collectionSelected" multiple size="10">
+					 <select class="select_02 w100" ng-model="collectionSelected" multiple size="10">
 						 <option ng-repeat="collection in collections_list | filter: collectionSearch ">{{ collection }}</option>
 					 </select>	
 				 </div>
 				 <div class="flx-col w100" ng-if="!apps_list_edit_enable">
 					 <i class="box box-question"></i><input type="text" ng-model="curCollectionSearch" placeholder="cur heads[collections]"/>
 					 <button ng-click="header_collection_remove()">삭제</button>
-					 <select class="select_02 w100" ng-model="collections.curCollectionSelected" multiple size="10" >
+					 <select class="select_02 w100" ng-model="curCollectionSelected" multiple size="10" >
 						 <option ng-repeat="collection in curCollections_list | filter: curCollectionSearch ">{{ collection }}</option>
 					 </select>	
 				 </div>	 
@@ -83,15 +83,15 @@ ng-disabled="header_edit_enable"/>
 				 <div class="flx-cc">
 					 <div ng-if="apps_list_edit_enable" class="flx-col w100">
 						 <i class="box box-question"></i><input type="text" ng-model="appSearch" placeholder="apps list" />
-						 <button ng-click="apps_add()">추가</button>
-						 <select class="select_02 w100" ng-model="apps.appSelected" multiple size="10">
+						 <button>추가</button>
+						 <select class="select_02 w100" ng-model="appSelected" multiple size="10">
 							 <option ng-repeat="app in apps_list | filter: appSearch ">{{ app }}</option>
 						 </select>	
 					 </div>	 
 					 <div class="flx-col w100" ng-if="!header_edit_enable">
 						 <i class="box box-question"></i><input type="text" ng-model="curAppSearch" placeholder="cur apps"/>
-						 <button ng-click="apps_remove()">삭제</button>
-						 <select class="select_02 w100" ng-model="apps.curApps" multiple size="10" >
+						 <button>삭제</button>
+						 <select class="select_02 w100" ng-model="curApps" multiple size="10" >
 							 <option ng-repeat="app in curApps_list | filter: curAppSearch ">{{ app }}</option>
 						 </select>	
 					 </div>	 
@@ -107,13 +107,15 @@ ng-disabled="header_edit_enable"/>
 				 </select> 	 
 			 </div>
 	     </label>		 
-		 <button class="w30" ng-click="save_update()">저장</button> 
+		 <button class="w30">저장</button> 
 	   </form>  	   
 	</main>
 <script src="/lib/angular/angular.min.js"></script>
 <script src="/lib/angular-cookies/angular-cookies.min.js"></script>
 <script>
-	 angular.module('myApp',['ngCookies'])
+	 angular.module('myApp',[
+		 'ngCookies',
+	 ])
     .config( function($httpProvider){
 		$httpProvider.defaults.headers.delete = { "Content-Type": "application/json;charset=utf-8" };
 	})
@@ -122,8 +124,6 @@ ng-disabled="header_edit_enable"/>
 		$scope.header_edit_enable = false; 
 		$scope.apps_list_edit_enable = false; 
 		$scope.extrn_enable = false;  
-		$scope.collections = { collectionSelected: null , curCollectionSelected: null };
-		$scope.apps = { appSelected: null,  curApps: null };
 		let user_DB = $cookies.get('user_DB');  
 		let collectionName = 'newApp' ;
 		let collectionInfo 
@@ -135,22 +135,13 @@ ng-disabled="header_edit_enable"/>
 			if( collectionInfo.url != null )$scope.extrn_enable = true;
 		})
 	    $scope.header_collection_add =()=>{
-			alert( $scope.collections.collectionSelected )
-			let collections = $scope.collections.collectionSelected
+			alert( $scope.collectionSelected )
+			let collections = $scope.collectionSelected
             $scope.curCollections_list = [...new Set($scope.curCollections_list.concat( collections ))]; 
 		}
 	    $scope.header_collection_remove =()=>{
-            let collections = $scope.collections.curCollectionSelected 
+            let collections = $scope.curCollectionSelected 
 			$scope.curCollections_list = $scope.curCollections_list.filter((el) =>!collections.includes(el));
-		}
-	    $scope.apps_add =()=>{
-			alert( $scope.apps.appSelected )
-			let apps = $scope.apps.appSelected
-            $scope.curApps_list = [...new Set($scope.curApps_list.concat( apps ))]; 
-		}
-	    $scope.apps_remove =()=>{
-            let apps = $scope.apps.curApps 
-			$scope.curApps_list = $scope.curApps_list.filter((el) =>!apps.includes(el));
 		}
 		let collections_link = await $http.get(`http://localhost/hades/collection/assign/${ user_DB }/${ collectionName }`);
 		$scope.curCollections_list = collections_link.data.DATA	
@@ -160,18 +151,6 @@ ng-disabled="header_edit_enable"/>
 		$scope.curApps_list = app_assign.data.DATA  
 		let apps_list = await $http.get(`http://localhost/hades/apps/${ user_DB }`);
 	    $scope.apps_list = apps_list.data.DATA 
-		$scope.save_update = async ()=>{
-			let collections_list = $scope.curCollections_list ;
-			let apps_list = $scope.curApps_list ;
-		    let Result = await $http({ method:'POST', url: `http://localhost/hades/collection/assign/${ user_DB }/${ collectionName }`, data:{ collections_list } });
-			if( Result.data.STATUS == -1 ){
-				alert( Result.data.ERRORMESSAGE );
-			}
-		    Result = await $http({ method:'POST', url: `http://localhost/hades/collection/app_assign/${ user_DB }/${ collectionName }`, data:{ apps_list } });
-			if( Result.data.STATUS == -1 ){
-				alert( Result.data.ERRORMESSAGE );
-			}
-		}
 	 })
 </script> 	
 </body>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+      *{
+		  padding: 0 ;
+		  margin: 0
+	  }
+	  body{
+		  display:flex;
+		  justify-content: center;
+		  flex-direction: column; 	  
+		  width: 70%;
+		  margin: auto;
+	  }
+	  select.style_1{
+		  height: 40px;
+		  border:0;
+		  color: darkorchid;
+		  width: 50%;
+		  background-color: cornsilk;
+		  margin: 50px;
+		  font-size: 1.2rem;
+		  text-align: center;
+	  }
+	  table.style_table{
+		  background-color: cornsilk;
+		  color: black;
+		  text-align: center; 
+	  }
+	  table.style_table tr:nth-child(1){
+		  background-color: gold;
+	  }
+	  table.style_table tr:nth-child(even){
+		  background-color: white;
+	   }
+	  input[type="text"]{
+		  background-color: lavender;
+		  height: 30px;
+		  border: none;
+		  outline: none;
+	  }
+	  input.ng-invalid-one-to-ten{
+		  background-color: indigo;
+		  color: white;
+	  }
+    </style> 
+</head>
+<body>
+	<main>
+	<div ng-controller="ExampleController">
+		<input ng-model="title" aria-label="title"> <br/>
+		<textarea ng-model="text" aria-label="text"></textarea> <br/>
+		<pane>
+		<pane-title><a ng-href="{{link}}">{{title}}</a></pane-title>
+		<pane-body><p>{{text}}</p></pane-body>
+		</pane>
+	</div>
+	</main>
+	<script src="/lib/angular/angular.min.js"></script>
+	<script src="/lib/underscore/underscore-umd-min.js"></script>
+	<script>
+	angular.module('myApp',[])
+	.directive('pane', function() {
+		return {
+			restrict: 'E',
+			transclude: {
+				'title': '?paneTitle',
+				'body': 'paneBody',
+				'footer': '?paneFooter'
+			},
+			template: '<div style="border: 1px solid black;">' +
+			'<div class="title" ng-transclude="title">Fallback Title</div>' +
+			'<div ng-transclude="body"></div>' +
+			'<div class="footer" ng-transclude="footer">Fallback Footer</div>' +
+			'</div>'
+		};
+	})
+	.controller('ExampleController', ['$scope', function($scope) {
+		$scope.title = 'Lorem Ipsum';
+		$scope.link = 'https://google.com';
+		$scope.text = 'Neque porro quisquam est qui dolorem ipsum quia dolor...';
+	}]);
+	</script>	
+</body>
+</html>

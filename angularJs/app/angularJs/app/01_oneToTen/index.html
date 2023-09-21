@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+      *{
+		  padding: 0 ;
+		  margin: 0
+	  }
+	  body{
+		  display:flex;
+		  justify-content: center;
+		  flex-direction: column; 	  
+		  width: 70%;
+		  margin: auto;
+	  }
+	  select.style_1{
+		  height: 40px;
+		  border:0;
+		  color: darkorchid;
+		  width: 50%;
+		  background-color: cornsilk;
+		  margin: 50px;
+		  font-size: 1.2rem;
+		  text-align: center;
+	  }
+	  table.style_table{
+		  background-color: cornsilk;
+		  color: black;
+		  text-align: center; 
+	  }
+	  table.style_table tr:nth-child(1){
+		  background-color: gold;
+	  }
+	  table.style_table tr:nth-child(even){
+		  background-color: white;
+	   }
+	  input[type="text"]{
+		  background-color: lavender;
+		  height: 30px;
+		  border: none;
+		  outline: none;
+	  }
+	  input.ng-invalid-one-to-ten{
+		  background-color: indigo;
+		  color: white;
+	  }
+    </style> 
+</head>
+<body ng-controller="myAppCtrl">
+	<main>
+	    <form name='myForm'>
+		<label for 'oneToTen'>Number Input:
+         <input type="TEXT" name='oneToTen' one-to-ten ng-model='oneToTen' /> 
+		</label> 
+		 <p ng-show='myForm.oneToTen.$invalid'> 1부터 10까지만 입력가능합니다. </p>
+		</form> 
+	</main>
+	<script src="/lib/angular/angular.min.js"></script>
+	<script src="/lib/underscore/underscore-umd-min.js"></script>
+	<script>
+		angular.module('myApp',[])
+        .controller('myAppCtrl',function($scope, $injector ){
+			$scope.oneToTen = 1 ;
+		})
+        .directive('oneToTen', function(){
+			return{
+				require:'?ngModel',
+				link: function( scope, ele, attrs, ngModel ){
+					if(!ngModel)return;
+					ngModel.$parsers.unshift(
+						function( viewValue ){
+							var i = parseInt( viewValue );
+								if( i >= 0 && i < 10){
+									ngModel.$setValidity('oneToTen', true );
+									return viewValue;
+								}else{
+									ngModel.$setValidity('oneToTen', false );
+									return undefined 
+								}
+						})
+				}
+			}
+		})
+	</script>	
+</body>
+</html>

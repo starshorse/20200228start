@@ -70,6 +70,10 @@ angular.module('myControllers', ['work_space'])
 })
 .controller('myCollections_listCtrl', function($scope , $state, $injector ){
 	   var $window = $injector.get('$window') 
+	   var $http = $injector.get('$http') 
+	   var $cookies = $injector.get('$cookies')
+	   let id = $cookies.get('user')
+	   let user_DB = $cookies.get('user_DB')  
 // my-header part.. 			
 		$scope.header = { isHeaderEnabled: 1 , companyNmae: 'ezchemtech' ,  header_list: [] , changeSpace: null , cur_collection:'app메뉴편집'  } 	
 		$scope.changeSpace =( collection )=>{
@@ -96,18 +100,63 @@ angular.module('myControllers', ['work_space'])
 		{ title: 'Info.A', collection: 'Info', name:'A' }, 
 		{ title: 'Data.B', collection: 'Data', name:'B' }
 	]
+	let objects_list  
+	const update_collections_list = async ()=>{
+		    let data  = await $http.get(`http://localhost/hades/collections/${ user_DB }/${ id }` );
+		    collections = data.data.DATA ; 
+			apps = objects_list.map( (ent)=>{ return { title: ent.appTitle, collection: ent.collectionName , name: ent.appName }});
+			$scope.collections_list.collections_list = collections ;
+			$scope.collections_list.apps_list = apps ;	
+			$scope.$apply();
+			$scope.$broadcast('updateRequest', $scope.collections_list); 	
+	}
+
+	$http.get(`http://localhost/hades/all_objects/${ user_DB }/${ id }`).then( async (response)=>{
+			objects_list  = response.data.DATA 
+		    console.log( objects_list )
+	/*	
+		    let data  = await $http.get(`http://localhost/hades/collections/${ user_DB }/${ id }` );
+		    collections = data.data.DATA ; 
+			apps = objects_list.map( (ent)=>{ return { title: ent.appTitle, collection: ent.collectionName , name: ent.appName }});
+			$scope.collections_list.collections_list = collections ;
+			$scope.collections_list.apps_list = apps ;	
+			$scope.$apply();
+			$scope.$broadcast('updateRequest', $scope.collections_list); 	
+	*/		
+		    update_collections_list(); 
+    })
+
 	$scope.openApp = ( name )=>{
 		console.log( name )
-		$state.go('appMain',{ appName: name }) 
+//		$state.go('appMain',{ appName: name }) 
+		$window.location.href =`http://localhost:8000/angularJS-ui/app/08/#!/appEditMain/${ name }`
 		throw new Error('state changed') 
 	}
 	$scope.openParent = ( title )=>{
 		console.log( title )
 		$window.location.href =`http://localhost:8000/angularJS-ui/app/08/#!/collectionEditMain/${ title }`
+	} 
+    $scope.create_collection = async()=>{
+		let collectionName = prompt("새로운 Collection 이름을 입력하세요"); 
+		if(!collectionName == '' ){
+			let data  = await $http({ method: 'POST' , url: `http://localhost/hades/collection/${ user_DB }/${ collectionName }/${ id }`});
+            if( data.data.STATUS == -1 )return -1;
+		}
+		update_collections_list(); 
+	}
+    $scope.create_app = async ()=>{
+		let appName = prompt("새로운 App 이름을 입력하세요"); 
+		if(!appName == '' ){
+			let data  = await $http({ method: 'POST' , url: `http://localhost/hades/app/${ user_DB }/${ appName }/${ id }`});
+            if( data.data.STATUS == -1 )return -1;
+		}
+		update_apps_list(); 
 	}
 	$scope.collections_list = { collections_list : collections , apps_list: apps ,  
 		openApp : $scope.openApp,
 		openParent : $scope.openParent,
+		create_collection : $scope.create_collection,
+		create_app: $scope.create_app 
 	}
 })
 

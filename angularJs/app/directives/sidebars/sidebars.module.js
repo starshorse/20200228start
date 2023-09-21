@@ -11,6 +11,13 @@ angular.module('mySidebar',[])
 	$scope.apps_list = $scope.collectionslist.apps_list 
 	$scope.openApp = $scope.collectionslist.openApp 
 	$scope.openParent = $scope.collectionslist.openParent 
+	$scope.create_collection = $scope.collectionslist.create_collection 
+	$scope.create_app = $scope.collectionslist.create_app 
+	$scope.$on('updateRequest', function( event, data ){
+		$scope.collections_list = $scope.collectionslist.collections_list 
+		$scope.apps_list = $scope.collectionslist.apps_list 
+		$scope.$apply(); 
+	})
 }])
 .directive('mySidebar', function(){
 	return {

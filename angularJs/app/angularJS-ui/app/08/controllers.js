@@ -4,6 +4,7 @@ angular.module('myControllers', ['work_space'])
 			var $state = $injector.get('$state')  
 			var $stateRegistry = $injector.get('$stateRegistry'); 
 	        var $window = $injector.get('$window') 
+	        var collection_id = $stateParams.cur_collection ; 
 // my-header part.. 			
 	        $scope.header = { isHeaderEnabled: 1 , companyNmae: 'ezchemtech' ,  header_list: [] , changeSpace: null  } 	
 			$scope.changeSpace =( collection )=>{
@@ -37,13 +38,15 @@ angular.module('myControllers', ['work_space'])
 				{ title: 'Report' , name: 'collectionEditMain.report' }
 			]
 			$scope.appparts = { list : appparts , openApp : $scope.openApp  }
+		    $scope.collectioninfo = { name: collection_id }  
 		}
 )	
 .controller('collectionEditInfoCtrl',function( $scope, $stateParams, $injector  ){
 })
-.controller('appEditMainCtrl', function($scope, $stateParams, $statei, $injector ){
+.controller('appEditMainCtrl', function($scope, $stateParams, $state, $injector ){
 // my-header part.. 			
 	    var $window = $injector.get('$window') 
+	    var app_id = $stateParams.appName ; 
 		$scope.header = { isHeaderEnabled: 1 , companyNmae: 'ezchemtech' ,  header_list: [] , changeSpace: null  } 	
 		$scope.changeSpace =( collection )=>{
 			switch( collection ){
@@ -63,6 +66,7 @@ angular.module('myControllers', ['work_space'])
 		}
 
 		$scope.header.header_list = ['home','delete','logout'] 
+		$scope.header.header_list.push('allEdit')			
 		$scope.header.changeSpace = $scope.changeSpace ; 
 //  my-sidebar part.. 	
 		$scope.appName = $stateParams.appName 
@@ -77,4 +81,5 @@ angular.module('myControllers', ['work_space'])
 			$state.go( collection.name ) 
 		}
 		$scope.appparts = { list : appparts , openApp : $scope.openApp  }
+		$scope.appinfo ={ name: app_id } 
 })

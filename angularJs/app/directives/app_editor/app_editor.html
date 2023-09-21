@@ -1,0 +1,50 @@
+<form class="flx-cl flx-col w30">
+	<label>
+		App/Group 이름: <input type="text" class="w50" ng-model="appTitle" />
+	</label>		 
+	<label>
+		권한 Level: <input type="number" ng-model="appLevel" min="-1" max="5" step="1" />
+	</label>		 
+	<label>
+		App 여부:<input type="CHECKBOX" ng-model="is_app" />
+	</label>		 
+	<div class="flx-cc flx-col w100" ng-if="is_app">
+		<div class="flx-cc w100">
+			<label class="w100">Group 선택 :
+				<select class="select_01 fl-r w50" ng-model="groupSelected" size="1">
+					<option ng-repeat="group in groups_list">{{ group }}</option>
+				</select>	
+			</label>
+		</div>
+		<label>
+			Share ID 리스트 편집: <input type="CHECKBOX" ng-model="app_share_enable" />
+		</label>		 
+		<div class="flx-cc">
+			<div ng-if="app_share_enable" class="flx-col w100">
+				<i class="box box-question"></i><input type="text" ng-model="idSearch" />
+				<button ng-click="share_id_add()">추가</button>
+				<select class="select_02 w100" ng-model="ids.idSelected" multiple size="10">
+					<option ng-repeat="id in ids_list | filter: idSearch ">{{ id }}</option>
+				</select>	
+			</div>	 
+			<div class="flx-col w100">
+				<i class="box box-question"></i><input type="text" ng-model="curIdSearch" />
+				<button ng-click="share_id_remove()">삭제</button>
+				<select class="select_02 w100" ng-model="ids.curIdSelected" multiple size="10" >
+					<option ng-repeat="id in curIds_list | filter: curIdSearch ">{{ id }}</option>
+				</select>	
+			</div>	 
+		</div>
+		<label>
+			외부Link<input type="CHECKBOX" ng-model="extrn_enable" />
+			<div ng-if="extrn_enable">
+				<input class="w50" ype="text" ng-model="extrn_url" placeholder="http://%host%/herems/ezof_editor"/>
+				<select class="select_01">
+					<option>_self</option>
+					<option>_blank</option> 
+				</select> 	 
+			</div>
+		</label>		 
+	</div>
+	<button class="w30">저장</button> 
+</form>  	   

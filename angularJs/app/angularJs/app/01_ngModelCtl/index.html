@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+      *{
+		  padding: 0 ;
+		  margin: 0
+	  }
+	  body{
+		  display:flex;
+		  justify-content: center;
+		  flex-direction: column; 	  
+		  width: 70%;
+		  margin: auto;
+	  }
+	  select.style_1{
+		  height: 40px;
+		  border:0;
+		  color: darkorchid;
+		  width: 50%;
+		  background-color: cornsilk;
+		  margin: 50px;
+		  font-size: 1.2rem;
+		  text-align: center;
+	  }
+	  table.style_table{
+		  background-color: cornsilk;
+		  color: black;
+		  text-align: center; 
+	  }
+	  table.style_table tr:nth-child(1){
+		  background-color: gold;
+	  }
+	  table.style_table tr:nth-child(even){
+		  background-color: white;
+	   }
+	  input[type="text"]{
+		  background-color: lavender;
+		  height: 30px;
+		  border: none;
+		  outline: none;
+	  }
+	  input.ng-invalid-one-to-ten{
+		  background-color: indigo;
+		  color: white;
+	  }
+    </style> 
+</head>
+<body>
+	<main>
+	<div>
+		Data:
+		<input type="text" dir ng-model="test_dt"></dir>
+	    <input type="text" ng-model="client.phoneNumber" phone-number>
+        <button ng-click="client.phoneNumber='1111111111'">Change phone number</button>
+	</div>
+	</main>
+	<script src="/lib/angular/angular.min.js"></script>
+	<script src="/lib/underscore/underscore-umd-min.js"></script>
+	<script>
+	angular.module('myApp',[])
+	.controller('myAppCtrl',function($scope, $injector, $element, $transclude ){
+//		$scope.test_dt = "hello";
+		console.log( $element );
+		$transclude( function( clone ){
+			console.log( clone );
+		})
+		$scope.form = {
+			userContent: 'initial content' 
+		}
+	})
+	.directive('dir', function(){
+	  return {
+	  restrict: 'EA',
+	  require: '?ngModel',
+	  transclude: true, 
+	  priority: 1,
+	  template: '<div><div ng-transclude >{{ test_dt }}</div></div>',
+	  controller: 'myAppCtrl',
+      link: function (scope, elem, attrs, ngModel, transclude) {
+		  console.log( ngModel.$viewValue )
+		  ngModel.$setViewValue('Iam');
+		  ngModel.$render()
+		  elem.bind('click',function(e){
+               elem[0].value = "Changed";   
+		  })
+		 ngModel.$render = function(){
+			   element.html(
+				   ngModel.$viewValue() || 'NONE' 
+			   )
+		 }
+/*		  
+        transclude(function (content) {
+          elem.append('<div>a</div>');
+          elem.append(content);
+        }, null, 'a');
+        transclude(function (content) {
+          elem.append('<div>b</div>');
+          elem.append(content);
+        }, null, 'b');
+*/		
+      }
+    }
+	})
+  .directive("phoneNumber", function() {
+  return {
+    restrict: 'A',
+    require: 'ngModel',
+    priority: 1,
+    link: function(scope, element, attrs, ngModel) {
+      ngModel.$render = function() {
+        alert('rendering');
+      };
+    } 
+  };
+});
+	</script>	
+</body>
+</html>

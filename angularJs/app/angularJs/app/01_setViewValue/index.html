@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+      *{
+		  padding: 0 ;
+		  margin: 0
+	  }
+	  body{
+		  display:flex;
+		  justify-content: center;
+		  flex-direction: column; 	  
+		  width: 70%;
+		  margin: auto;
+	  }
+	  select.style_1{
+		  height: 40px;
+		  border:0;
+		  color: darkorchid;
+		  width: 50%;
+		  background-color: cornsilk;
+		  margin: 50px;
+		  font-size: 1.2rem;
+		  text-align: center;
+	  }
+	  table.style_table{
+		  background-color: cornsilk;
+		  color: black;
+		  text-align: center; 
+	  }
+	  table.style_table tr:nth-child(1){
+		  background-color: gold;
+	  }
+	  table.style_table tr:nth-child(even){
+		  background-color: white;
+	   }
+	  input[type="text"]{
+		  background-color: lavender;
+		  height: 30px;
+		  border: none;
+		  outline: none;
+	  }
+	  input.ng-invalid-one-to-ten{
+		  background-color: indigo;
+		  color: white;
+	  }
+    </style> 
+</head>
+<body>
+	<main>
+	<form name="myForm" ng-app="App" ng-controller="myAppCtrl" class="form">
+		Text: {{form.userContent}}
+		<hr />
+		If you remove the text, "Required!" will be displayed.<br/>
+		If you change the input value, the text will update.<br/>
+		If you blur, the text will update, but the (visible) input value not.
+		<hr />
+		<input class="input" type="text" ng-model="form.userContent" name="userContent" reset-on-blur required></textarea>
+	<span ng-show="myForm.userContent.$error.required">Required!</span>
+	</form>
+	</main>
+	<script src="/lib/angular/angular.min.js"></script>
+	<script src="/lib/underscore/underscore-umd-min.js"></script>
+	<script>
+	angular.module('myApp',[])
+	.controller('myAppCtrl',function($scope, $injector ){
+		$scope.form = {
+			userContent: 'initial content' 
+		}
+	})
+	.directive('resetOnBlur', function(){
+		return {
+			restrict: 'A',
+			require: 'ngModel',
+			link: function (scope, element, attrs, ngModel) {
+				element.bind('blur', function () {
+					console.log(ngModel);
+					scope.$apply(setAnotherValue);
+				});
+				function setAnotherValue() {
+					ngModel.$setViewValue("I'm a new value of the model. I've been set using the setViewValue method");
+					ngModel.$render();
+				}
+			}
+		};
+	})
+	</script>	
+</body>
+</html>
