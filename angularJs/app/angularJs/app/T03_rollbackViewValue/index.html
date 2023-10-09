@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div ng-controller='myAppCtrl'>
+		<form action="" name="myForm">
+			<input type="" ng-model="model.value2" name="value2" ng-keydown="setEmpty($event,'value2',true)" ng-model-options="{ updateOn: 'submit' }" >
+			value1:"{{ model.value2 }}"
+			<button type="submit">Save</button>
+		</form>
+	</div>	
+	<script src="/lib/angular/angular.min.js"></script>
+	<script>
+		angular.module('myApp',[])
+        .controller('myAppCtrl', function( $scope){
+			$scope.setEmpty = function( e, value, rollback ){
+				if( e.keyCode === 27 ){
+					e.preventDefault();
+					if(rollback ){
+						console.log( $scope.myForm[value] )
+					//	$scope.myForm[value].$rollbackViewValue()
+						$scope.myForm.$rollbackViewValue()
+						console.log( $scope.myForm[value] )
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

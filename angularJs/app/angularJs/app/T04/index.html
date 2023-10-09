@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>T04</title>
+</head>
+<body>
+	<ng-view></ng-view> 
+	<script src="/lib/angular/angular.min.js"></script>
+	<script src="/lib/angular-route/angular-route.min.js"></script>
+	<script src="/lib/angular-cookies/angular-cookies.min.js"></script>
+	<script>
+		angular.module('myApp',[
+			'ngCookies',
+			'ngRoute'
+			])
+        .config( function( $routeProvider , $locationProvider ){
+		    localStorage.setItem('users',JSON.stringify( [{ name: "RICHARD", email:"star_horse@naver.com", password:"1234" }])) 
+			$routeProvider
+				.when('/',{
+					template:'<h3>Hello !</h3>',
+					controller:['$location','$cookies', function($location, $cookies ){
+						$cookies.remove('user')
+						let _user = $cookies.getObject('user') 
+						if ( !_user )
+							  $location.path('/login') 
+					}]
+				})
+			    .when('/login', {
+					constroller: function( $cookies ){
+						$cookies.putObject('user',{ name: "RICHARD", email:"star_horse@naver.com" }) 
+					},
+					template:'<h3>Login</h3><my-login></my-login>' 
+				})
+				.otherwise({ redirectTo:'/login' })
+		})
+
+
+	</script>
+</body>
+</html>

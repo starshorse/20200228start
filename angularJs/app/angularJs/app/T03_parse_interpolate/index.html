@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>T03</title>
+</head>
+<body>
+	<div ng-controller="myAppCtrl">
+		<label for 'user'>USER
+		<input type='text' name='user' ng-model='user' >
+		</label>
+		[[ name ]] 
+		<textarea cols='5' style="width:70%"  ng-model='emailBody'>
+		</textarea>	
+		[[ preView ]]
+	</div>
+	<script src="/lib/angular/angular.min.js"></script>
+	<script>
+		angular.module('myApp',[])
+        .config(['$interpolateProvider', function( $interpolateProvider ){
+			$interpolateProvider.startSymbol('[[');
+			$interpolateProvider.endSymbol(']]');
+		}])
+        .controller('myAppCtrl', function( $scope , $parse, $interpolate ){
+           $scope.person ={ 'name':'RICHARD CHOI' }
+		   let name = $parse( 'person.name');
+		   console.log( name($scope) );
+		   $scope.name = name($scope) ;
+		   $scope.preView 	
+		   $scope.$watch('emailBody', function( body ){
+			   if(body){
+				   let template = $interpolate( body) 
+				   $scope.preView = template( { to: $scope.user }) 
+			   }
+		   })
+
+		})
+	</script>
+</body>
+</html>

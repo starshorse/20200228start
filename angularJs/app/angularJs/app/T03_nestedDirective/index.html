@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div ng-controller='myAppCtrl'>
+		 <h3>Nested directive</h3> 
+	     <cd-parent option='color'></cd-parent> 
+	</div>
+	<script src="/lib/angular/angular.min.js"></script>
+	<script>
+	angular.module('myApp',[])
+    .controller('myAppCtrl', function($scope){
+		$scope.color ='red';
+	})
+    .directive('cdParent', function(){
+		return{
+			restrict: "AE",
+			scope:{
+				option:"="
+			},
+			controller:function($scope){
+                this.addTab = function( tab ){
+					console.log( tab )
+				}
+			},
+			template:"<div cd-child option='option' text='text' >",
+			link: function( scope, elem , attrs ){
+				console.log('in parent option' + scope.option ) 
+				scope.text = 'Hello World';
+			}
+		}
+	})
+    .directive('cdChild', function(){
+		return{
+			restrict: "AE",
+			require: "^?cdParent",
+			template:"<pre style='color: {{ option }}'/> {{ text }}( {{ option }})</pre>" ,
+			scope:{
+                     option:"=",
+				     text:"=" 
+				 },
+				 link: function( scope, elem, attris, ctrl ){	 
+				       console.log('in child  option' + scope.option ) 
+					   console.log( ctrl );
+	             }
+			}
+	})
+	
+	
+	</script>
+</body>
+</html>

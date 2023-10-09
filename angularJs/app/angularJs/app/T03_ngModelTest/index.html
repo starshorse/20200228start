@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>T03</title>
+</head>
+<body>
+	<div ng-controller='myAppCtrl'>
+	<input ng-model="code" my-directive>
+	<my-directive2 ng-model='code'></my-directive2>
+	</div>
+	<script src="/lib/angular/angular.min.js"></script>
+	<script>
+		angular.module('myApp',[])
+        .controller('myAppCtrl', function($scope){
+			$scope.code ='Init code'
+		})
+        .directive('myDirective', function(){
+			return{
+				restict: 'EA',
+				require: '^ngModel',
+/*				
+				scope:{
+					ngModel:"="
+				},
+*/				
+				// template:'<div>{{ myController.name }}</div>',
+				controller: function($scope){
+					 console.log( $scope.ngModel )
+					 this.name = 'myController';
+				},
+				controllerAs: 'myController',
+				link: function( scope , elem , attrs , ctrl ){
+					console.log( scope.ngModel );
+					ctrl.$viewValue = scope.ngModel 
+					ctrl.$parsers.push( function(value){
+						console.log( value );
+					})
+					ctrl.$render = function(){
+						console.log('render');
+					}
+				}
+			}
+		})
+        .directive('myDirective2', function(){
+			return{
+				restrict: 'EA',
+				require:'ngModel',
+				template:"<div><input name='d2' ng-model='d2_model' /></div>",
+				link: function( scope , elem , atrrs , ngModel ){
+					d2_model = angular.element( elem ).controller('ngModel');
+					d2_model.$parsers.push( function(value){
+						console.log( value )
+					})
+					ngModel.$parsers.push( function( value ){
+						d2_model.$setViewValue( value )
+					})
+				}
+
+			}
+		})
+	</script>
+</body>
+</html>

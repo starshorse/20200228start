@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div ng-controller="myAppCtrl">
+		{{ $root.myData }}
+	</div>
+	<script src="/lib/angular/angular.min.js"></script>
+	<script>
+		angular.module('myApp',[])
+        .controller('myAppCtrl', function($rootScope, $controller){
+		 	$rootScope.myData = 'myAppCtrl='
+			$controller('myApp2Ctrl', { $scope : $rootScope })
+		})
+        .controller('myApp2Ctrl', function($scope){
+			$scope.myData ='myApp2Ctrl='
+			console.log('ctrl2')
+		})
+        var $injector = angular.injector(['ng','myApp']) 
+        var $controller = $injector.get('$controller')
+        var $rootScope = $injector.get('$rootScope') 
+        $controller('myApp2Ctrl', { $scope: $rootScope })
+	</script>
+</body>
+</html>
