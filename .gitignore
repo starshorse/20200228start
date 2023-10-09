@@ -6,4 +6,6 @@
 /test_automation/mocha/node_modules
 /bootstrap_ex/node_modules
 /learn-sequelize/node_modules
+/server/nodejs.ext1/node_modules
+/server/nodejs.ext1/.env
 .env

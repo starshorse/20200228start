@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>T01</title>
+	<style>
+      .container{
+		  display: grid; 
+		  grid-template-rows: 1fr 1fr 1fr;	  
+	  }
+	</style>
+</head>
+<body>
+    <form action="/login" method="post" class="container">
+		<label for="email">Email:<input type="email" name="email"></label>
+		<label for="password">Password:<input type="password" name="password"></label>
+		<button type="submit">SUBMIT</button>
+	</form>
+</body>
+</html>
