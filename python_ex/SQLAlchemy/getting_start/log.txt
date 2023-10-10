@@ -1,0 +1,137 @@
+34.64.60.213
+2023-09-22 13:44:37,270 INFO sqlalchemy.engine.Engine select @@version
+2023-09-22 13:44:37,270 INFO sqlalchemy.engine.Engine [raw sql] {}
+2023-09-22 13:44:37,276 INFO sqlalchemy.engine.Engine SELECT schema_name()
+2023-09-22 13:44:37,276 INFO sqlalchemy.engine.Engine [generated in 0.00019s] {}
+2023-09-22 13:44:37,294 INFO sqlalchemy.engine.Engine SELECT CAST('test max support' AS NVARCHAR(max))
+2023-09-22 13:44:37,295 INFO sqlalchemy.engine.Engine [generated in 0.00026s] {}
+2023-09-22 13:44:37,380 INFO sqlalchemy.engine.Engine SELECT [INFORMATION_SCHEMA].[TABLES].[TABLE_NAME] 
+FROM [INFORMATION_SCHEMA].[TABLES] 
+WHERE [INFORMATION_SCHEMA].[TABLES].[TABLE_SCHEMA] = CAST(%(table_schema_1)s AS NVARCHAR(max)) AND [INFORMATION_SCHEMA].[TABLES].[TABLE_TYPE] = CAST(%(table_type_1)s AS NVARCHAR(max)) ORDER BY [INFORMATION_SCHEMA].[TABLES].[TABLE_NAME]
+2023-09-22 13:44:37,380 INFO sqlalchemy.engine.Engine [generated in 0.00014s] {'table_schema_1': 'dbo', 'table_type_1': 'BASE TABLE'}
+['TB_구미_기아자동차_검수합격통보서', 'TB_구미_현대자동차_검수합격통보서', 'TB_다모기업', 'TB_트랜시스1203_DCT강건화_검수실적', 'TB_admin_1', 'TB_app_list', 'TB_apps', 'TB_ChannelManager', 'TB_ChannelUser', 'TB_ChannelUserChat', 'TB_collection_apps', 'TB_collection_list', 'TB_collections', 'TB_collections_link', 'TB_CRM_CompanyInfo', 'TB_CRM_CounselHistory', 'TB_CRM_CustomerInfo', 'TB_Customer', 'TB_Customer_Contact', 'TB_ezct_계좌거래내역_codeFApi', 'TB_ezct_계좌목록_codeFApi', 'TB_Log', 'TB_Log_Collector', 'TB_Mail_Result', 'TB_Messages_Channel', 'TB_Messages_Telegram', 'TB_Msg_Forward_Result', 'TB_PhoneMessage_Result', 'TB_SMS_Result', 'TB_TaxInvoice_Issue', 'TB_TaxInvoice_NTS', 'TB_TaxInvoice_Result', 'TB_TEST', 'TB_test_1', 'TB_Webhook_Result_Jandi', 'TB_Webhook_Result_Telegram']
+2023-09-22 13:44:37,400 INFO sqlalchemy.engine.Engine select * from TB_ezct_계좌목록_codeFApi
+2023-09-22 13:44:37,400 INFO sqlalchemy.engine.Engine [generated in 0.00013s] {}
+(1, '0004', '63230104134613', Decimal('123240955.0000'), 11, 'TEST', 20130405, '', '사업자응원통장-보통예금', '632301-04-134613', 'KRW', '', '1', 'KB 우수기술기업 TCB신용대출', '0', '20210611', '20240610')
+(2, '0004', '649715187088501', Decimal('100000000.0000'), 12, '', 20221122, '20231122', '국민수퍼고정금리형-만기일시지급식', '649715-187088501', 'KRW', '', '0', '', '', '', '')
+(3, '0004', '649715188807301', Decimal('100000000.0000'), 12, '', 20230523, '20231123', '국민수퍼고정금리형-만기일시지급식', '649715-188807301', 'KRW', '', '0', '', '', '', '')
+2023-09-22 13:44:37,414 INFO sqlalchemy.engine.Engine select * from TB_ezct_계좌목록_codeFApi
+2023-09-22 13:44:37,414 INFO sqlalchemy.engine.Engine [raw sql] {}
+   seq  기관코드       resAccount  ...  resLoanBalance  resLoanStartDate resLoanEndDate
+0    1  0004   63230104134613  ...               0          20210611       20240610
+1    2  0004  649715187088501  ...                                                 
+2    3  0004  649715188807301  ...                                                 
+
+[3 rows x 17 columns]
+2023-09-22 13:44:37,451 INFO sqlalchemy.engine.Engine SELECT [INFORMATION_SCHEMA].[COLUMNS].[TABLE_SCHEMA], [INFORMATION_SCHEMA].[COLUMNS].[TABLE_NAME], [INFORMATION_SCHEMA].[COLUMNS].[COLUMN_NAME], [INFORMATION_SCHEMA].[COLUMNS].[IS_NULLABLE], [INFORMATION_SCHEMA].[COLUMNS].[DATA_TYPE], [INFORMATION_SCHEMA].[COLUMNS].[ORDINAL_POSITION], [INFORMATION_SCHEMA].[COLUMNS].[CHARACTER_MAXIMUM_LENGTH], [INFORMATION_SCHEMA].[COLUMNS].[NUMERIC_PRECISION], [INFORMATION_SCHEMA].[COLUMNS].[NUMERIC_SCALE], [INFORMATION_SCHEMA].[COLUMNS].[COLUMN_DEFAULT], [INFORMATION_SCHEMA].[COLUMNS].[COLLATION_NAME], sys.computed_columns.definition, sys.computed_columns.is_persisted, sys.identity_columns.is_identity, CAST(sys.identity_columns.seed_value AS NUMERIC) AS seed_value, CAST(sys.identity_columns.increment_value AS NUMERIC) AS increment_value 
+FROM [INFORMATION_SCHEMA].[COLUMNS] LEFT OUTER JOIN sys.computed_columns ON sys.computed_columns.object_id = object_id([INFORMATION_SCHEMA].[COLUMNS].[TABLE_SCHEMA] + CAST(%(table_schema_1)s AS NVARCHAR(max)) + [INFORMATION_SCHEMA].[COLUMNS].[TABLE_NAME]) AND sys.computed_columns.name = [INFORMATION_SCHEMA].[COLUMNS].[COLUMN_NAME] LEFT OUTER JOIN sys.identity_columns ON sys.identity_columns.object_id = object_id([INFORMATION_SCHEMA].[COLUMNS].[TABLE_SCHEMA] + CAST(%(table_schema_1)s AS NVARCHAR(max)) + [INFORMATION_SCHEMA].[COLUMNS].[TABLE_NAME]) AND sys.identity_columns.name = [INFORMATION_SCHEMA].[COLUMNS].[COLUMN_NAME] 
+WHERE [INFORMATION_SCHEMA].[COLUMNS].[TABLE_NAME] = CAST(%(table_name_1)s AS NVARCHAR(max)) AND [INFORMATION_SCHEMA].[COLUMNS].[TABLE_SCHEMA] = CAST(%(table_schema_2)s AS NVARCHAR(max)) ORDER BY [INFORMATION_SCHEMA].[COLUMNS].[ORDINAL_POSITION]
+2023-09-22 13:44:37,451 INFO sqlalchemy.engine.Engine [generated in 0.00017s] {'table_schema_1': '.', 'table_name_1': 'TB_ezct_계좌목록_codeFApi', 'table_schema_2': 'dbo'}
+2023-09-22 13:44:37,465 INFO sqlalchemy.engine.Engine SELECT [C].[COLUMN_NAME], [INFORMATION_SCHEMA].[TABLE_CONSTRAINTS].[CONSTRAINT_TYPE], [C].[CONSTRAINT_NAME] 
+FROM [INFORMATION_SCHEMA].[KEY_COLUMN_USAGE] AS [C], [INFORMATION_SCHEMA].[TABLE_CONSTRAINTS] 
+WHERE [INFORMATION_SCHEMA].[TABLE_CONSTRAINTS].[CONSTRAINT_NAME] = [C].[CONSTRAINT_NAME] AND [INFORMATION_SCHEMA].[TABLE_CONSTRAINTS].[TABLE_SCHEMA] = [C].[TABLE_SCHEMA] AND [C].[TABLE_NAME] = CAST(%(table_name_1)s AS NVARCHAR(max)) AND [C].[TABLE_SCHEMA] = CAST(%(table_schema_1)s AS NVARCHAR(max)) ORDER BY [INFORMATION_SCHEMA].[TABLE_CONSTRAINTS].[CONSTRAINT_NAME], [C].[ORDINAL_POSITION]
+2023-09-22 13:44:37,466 INFO sqlalchemy.engine.Engine [generated in 0.00010s] {'table_name_1': 'TB_ezct_계좌목록_codeFApi', 'table_schema_1': 'dbo'}
+2023-09-22 13:44:37,475 INFO sqlalchemy.engine.Engine WITH fk_info AS (
+    SELECT
+        ischema_ref_con.constraint_schema,
+        ischema_ref_con.constraint_name,
+        ischema_key_col.ordinal_position,
+        ischema_key_col.table_schema,
+        ischema_key_col.table_name,
+        ischema_ref_con.unique_constraint_schema,
+        ischema_ref_con.unique_constraint_name,
+        ischema_ref_con.match_option,
+        ischema_ref_con.update_rule,
+        ischema_ref_con.delete_rule,
+        ischema_key_col.column_name AS constrained_column
+    FROM
+        INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS ischema_ref_con
+        INNER JOIN
+        INFORMATION_SCHEMA.KEY_COLUMN_USAGE ischema_key_col ON
+            ischema_key_col.table_schema = ischema_ref_con.constraint_schema
+            AND ischema_key_col.constraint_name =
+            ischema_ref_con.constraint_name
+    WHERE ischema_key_col.table_name = CAST(%(tablename)s AS NVARCHAR(max))
+        AND ischema_key_col.table_schema = CAST(%(owner)s AS NVARCHAR(max))
+),
+constraint_info AS (
+    SELECT
+        ischema_key_col.constraint_schema,
+        ischema_key_col.constraint_name,
+        ischema_key_col.ordinal_position,
+        ischema_key_col.table_schema,
+        ischema_key_col.table_name,
+        ischema_key_col.column_name
+    FROM
+        INFORMATION_SCHEMA.KEY_COLUMN_USAGE ischema_key_col
+),
+index_info AS (
+    SELECT
+        sys.schemas.name AS index_schema,
+        sys.indexes.name AS index_name,
+        sys.index_columns.key_ordinal AS ordinal_position,
+        sys.schemas.name AS table_schema,
+        sys.objects.name AS table_name,
+        sys.columns.name AS column_name
+    FROM
+        sys.indexes
+        INNER JOIN
+        sys.objects ON
+            sys.objects.object_id = sys.indexes.object_id
+        INNER JOIN
+        sys.schemas ON
+            sys.schemas.schema_id = sys.objects.schema_id
+        INNER JOIN
+        sys.index_columns ON
+            sys.index_columns.object_id = sys.objects.object_id
+            AND sys.index_columns.index_id = sys.indexes.index_id
+        INNER JOIN
+        sys.columns ON
+            sys.columns.object_id = sys.indexes.object_id
+            AND sys.columns.column_id = sys.index_columns.column_id
+)
+    SELECT
+        fk_info.constraint_schema,
+        fk_info.constraint_name,
+        fk_info.ordinal_position,
+        fk_info.constrained_column,
+        constraint_info.table_schema AS referred_table_schema,
+        constraint_info.table_name AS referred_table_name,
+        constraint_info.column_name AS referred_column,
+        fk_info.match_option,
+        fk_info.update_rule,
+        fk_info.delete_rule
+    FROM
+        fk_info INNER JOIN constraint_info ON
+            constraint_info.constraint_schema =
+                fk_info.unique_constraint_schema
+            AND constraint_info.constraint_name =
+                fk_info.unique_constraint_name
+            AND constraint_info.ordinal_position = fk_info.ordinal_position
+    UNION
+    SELECT
+        fk_info.constraint_schema,
+        fk_info.constraint_name,
+        fk_info.ordinal_position,
+        fk_info.constrained_column,
+        index_info.table_schema AS referred_table_schema,
+        index_info.table_name AS referred_table_name,
+        index_info.column_name AS referred_column,
+        fk_info.match_option,
+        fk_info.update_rule,
+        fk_info.delete_rule
+    FROM
+        fk_info INNER JOIN index_info ON
+            index_info.index_schema = fk_info.unique_constraint_schema
+            AND index_info.index_name = fk_info.unique_constraint_name
+            AND index_info.ordinal_position = fk_info.ordinal_position
+
+    ORDER BY constraint_schema, constraint_name, ordinal_position
+
+2023-09-22 13:44:37,476 INFO sqlalchemy.engine.Engine [generated in 0.00010s] {'tablename': 'TB_ezct_계좌목록_codeFApi', 'owner': 'dbo'}
+2023-09-22 13:44:37,491 INFO sqlalchemy.engine.Engine select ind.index_id, ind.is_unique, ind.name, ind.filter_definition from sys.indexes as ind join sys.tables as tab on ind.object_id=tab.object_id join sys.schemas as sch on sch.schema_id=tab.schema_id where tab.name = CAST(%(tabname)s AS NVARCHAR(max)) and sch.name=CAST(%(schname)s AS NVARCHAR(max)) and ind.is_primary_key=0 and ind.type != 0
+2023-09-22 13:44:37,491 INFO sqlalchemy.engine.Engine [generated in 0.00010s] {'tabname': 'TB_ezct_계좌목록_codeFApi', 'schname': 'dbo'}
+2023-09-22 13:44:37,500 INFO sqlalchemy.engine.Engine select ind_col.index_id, ind_col.object_id, col.name, ind_col.is_included_column from sys.columns as col join sys.tables as tab on tab.object_id=col.object_id join sys.index_columns as ind_col on (ind_col.column_id=col.column_id and ind_col.object_id=tab.object_id) join sys.schemas as sch on sch.schema_id=tab.schema_id where tab.name=CAST(%(tabname)s AS NVARCHAR(max)) and sch.name=CAST(%(schname)s AS NVARCHAR(max))
+2023-09-22 13:44:37,500 INFO sqlalchemy.engine.Engine [generated in 0.00014s] {'tabname': 'TB_ezct_계좌목록_codeFApi', 'schname': 'dbo'}
+Table('TB_ezct_계좌목록_codeFApi', MetaData(), Column('seq', INTEGER(), table=<TB_ezct_계좌목록_codeFApi>, primary_key=True, nullable=False, server_default=Identity(start=1, increment=1)), Column('기관코드', VARCHAR(length=20, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), Column('resAccount', NVARCHAR(length=512), table=<TB_ezct_계좌목록_codeFApi>), Column('resAccountBalance', MONEY(), table=<TB_ezct_계좌목록_codeFApi>), Column('resAccountDeposit', INTEGER(), table=<TB_ezct_계좌목록_codeFApi>), Column('resAccountNickName', VARCHAR(length=512, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), Column('resAccountStartDate', INTEGER(), table=<TB_ezct_계좌목록_codeFApi>), Column('resAccountEndDate', VARCHAR(length=512, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), Column('resAccountName', VARCHAR(length=512, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), Column('resAccountDisplay', VARCHAR(length=512, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), Column('resAccountCurrency', VARCHAR(length=512, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), Column('resLastTranDate', VARCHAR(length=512, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), Column('resOverdraftAcctYN', VARCHAR(length=512, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), Column('resLoanKind', VARCHAR(length=512, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), Column('resLoanBalance', VARCHAR(length=512, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), Column('resLoanStartDate', VARCHAR(length=512, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), Column('resLoanEndDate', VARCHAR(length=512, collation='Korean_Wansung_CI_AS'), table=<TB_ezct_계좌목록_codeFApi>), schema=None)
+['seq', '기관코드', 'resAccount', 'resAccountBalance', 'resAccountDeposit', 'resAccountNickName', 'resAccountStartDate', 'resAccountEndDate', 'resAccountName', 'resAccountDisplay', 'resAccountCurrency', 'resLastTranDate', 'resOverdraftAcctYN', 'resLoanKind', 'resLoanBalance', 'resLoanStartDate', 'resLoanEndDate']
