@@ -2,12 +2,16 @@
 require('dotenv').config() 
 const { createProxyMiddleware } = require('http-proxy-middleware') 
 
+const cors = require('cors')
+
 process.env.NODE_ENV = process.env.NODE_ENV || 'development' ;
 
 var express = require('express');
 var config = require('./config/environment');
 var app = express(); 
 var server = require('http').createServer(app);
+
+app.use( cors() ) 
 
 if( process.env.PROXY_HADES == 'direct' ){
 	app.use('/Hades', createProxyMiddleware({

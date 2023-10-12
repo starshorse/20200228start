@@ -473,7 +473,8 @@ angular.module('jupitor_admin_editor',[])
 		jupitor_admin_editorFactory.sheet_Permissions_table_permissions.login_id = login_id.login_id 
 		// 2023-06-14
 		if( db_name == null ){
-			let db_list = await  $http.get(`/Hades/db_administration/db_list/ezchemtech/${login_id.login_id}`);
+			db_name = jupitor_admin_editorFactory.binding_data.cur_server 
+			let db_list = await  $http.get(`/Hades/db_administration/db_list/${ db_name }/${login_id.login_id}`);
 			if( db_list.data.RESULT == -1 ){ alert( db_list.data.ERRORMESSAGE ); return; }
 			let db_list_items = []
 			for( db_name of db_list.data.DATA ){

@@ -33,6 +33,36 @@ a[data-toggle="collapse"] {
     right: 20px;
     transform: translateY(-50%);
 }
+.active { color: red; font-weight: bolder; }
+.flex_center{
+	 width: 30%;
+	 display: flex ;
+	 justify-content: space-around ;
+	 align-items: center ;
+}
+.select_type_1{
+	height: 40px;
+	width: 50%; 
+	  text-decoration: none;
+	  text-align:center; 
+	  border-radius: 5px;
+	  color: #fff;
+/*	  background-color: #54a1a0 ; */
+	  background-color: $main-background ;
+}
+.button_type_1{
+	height: 40px;
+	width: 50%; 
+	  text-decoration: none;
+	  text-align:center; 
+	  border-radius: 5px;
+	  border: 0;
+	  outline: 0; 
+	  box-shadow: 5px 5px 5px 5px orange; 
+	  color: #fff;
+/*	  background-color: #54a1a0 ; */
+	  background-color: $main-background ;
+}
 @media  ( max-width: 768px) {
     #wbar {
         margin-left: -250px;
@@ -59,7 +89,7 @@ div.offcanvas-body div ul li{
 div.offcanvas-body div ul li:hover{
      color:white;
 }
-body > div > ui-view > people{
+body > div > ui-view >div {
 	display:flex ;
 	justify-content: center; 
 	align-items: center;
@@ -70,17 +100,17 @@ body > div > ui-view > people{
 	padding-top:60px;
 	padding-bottom:60px;
 }
-body > div > ui-view > people > h3{
+body > div > ui-view >div> h3{
 	text-align: center ;
 	color: $main-color-light1 ; 
 }
-body > div > ui-view > people > table{
+body > div > ui-view> div > table{
 	flex-grow:1;
 	padding: 20px;
 	margin-top: 40px;
 	width: 50%;
 }
-body > div > ui-view > people > table > tbody > tr > td > select{
+body > div > ui-view > div > table > tbody > tr > td > select{
 	height: 40px;
 	width: 50%; 
 	  text-decoration: none;

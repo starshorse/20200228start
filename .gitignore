@@ -1,5 +1,5 @@
-/angularJs/node_modules
 /node_modules
+/angularJs/node_modules
 /mean-self/node_modules
 /nodejs/node_modules
 /test_automation/zombie/node_modules
@@ -7,5 +7,7 @@
 /bootstrap_ex/node_modules
 /learn-sequelize/node_modules
 /server/nodejs.ext1/node_modules
+/ezworks/node_modules
 /server/nodejs.ext1/.env
+/ezworks/.env
 .env
