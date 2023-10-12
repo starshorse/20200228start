@@ -354,7 +354,7 @@ def post_process_accountTransaction_1( db_name ='ezchemtech'):
     [resAfterTranBalance] as 잔액,
     concat([resAccountDesc1],' ',[resAccountDesc2],' ',[resAccountDesc3], ' ',[resAccountDesc4] ) as 적요
     from [TB_{ db_name }_계좌거래내역_codeFApi] a left join [TB_bk_기관코드]  b on a.기관코드 = b.기관코드
-    where [resAccount] in ( select [resAccount] from [TB_ezct_계좌목록_codeFApi] where [resAccountDeposit] = '11' ) and cast([resAccountTrDate] as date) > dateadd( day , -7 , getdate() )
+    where [resAccount] in ( select [resAccount] from [TB_{ db_name }_계좌목록_codeFApi] where [resAccountDeposit] = '11' ) and cast([resAccountTrDate] as date) > dateadd( day , -7 , getdate() )
     ) as S
     on T.거래일시 = S.거래일시 and T.계좌번호 = S.계좌번호 and T.잔액 = S.잔액
     when not matched  then
@@ -374,8 +374,8 @@ def post_process_accountTransaction_foreign( db_name='ezchemtech' ):
     [resAccountOut] as 출금액,
     [resAfterTranBalance] as 잔액,
     concat([resAccountDesc1],' ',[resAccountDesc2],' ',[resAccountDesc3], ' ',[resAccountDesc4] ) as 적요
-    from [TB_{ db_name }_계좌거래내역_codeFApi] a left join [TB_bk_기관코드]  b on a.기관코드 = b.기관코드 left join TB_ezct_계좌목록_codeFApi c on c.resAccount = a.resAccount
-    where a.[resAccount] in ( select [resAccount] from [TB_ezct_계좌목록_codeFApi] where [resAccountDeposit] = '20' ) and cast([resAccountTrDate] as date) > dateadd( day , -7 , getdate() )
+    from [TB_{ db_name }_계좌거래내역_codeFApi] a left join [TB_bk_기관코드]  b on a.기관코드 = b.기관코드 left join TB_{ db_name }_계좌목록_codeFApi c on c.resAccount = a.resAccount
+    where a.[resAccount] in ( select [resAccount] from [TB_{ db_name }_계좌목록_codeFApi] where [resAccountDeposit] = '20' ) and cast([resAccountTrDate] as date) > dateadd( day , -7 , getdate() )
     ) as S 
     on T.거래일시 = S.거래일시 and T.계좌번호 = S.계좌번호 and T.잔액 = S.잔액 
     when not matched  then 
