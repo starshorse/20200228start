@@ -1,31 +1,42 @@
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color:lavender">
 	<div class="offcanvas-header">
-		<h5 class="offcanvas-title" id="offcanvasExampleLabel">Hot Link</h5>
+		<h5 class="offcanvas-title" id="offcanvasExampleLabel">Side Menu</h5>
 		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 	</div>
 	<div class="offcanvas-body">
 		<div>
-			아래 바로가기 링크를 사용하세요.
 		</div>
 		<div> 
 			<ul class="list-group">
-				<li class="list-group-item active"><h3><a href='/admin' target='_blank'>Jupiter Admin Editor</a></h3></li> 
-				<li class="list-group-item" ><a ui-sref="about">About</a></li>
+				<li class="list-group-item btn-secondary"><h6><a class="text-white"  href='/admin' target='_blank'>Jupitor Web Admin</a></h6></li> 
+				<li class="list-group-item btn-secondary"><h6><a class="text-white"  href='/app/ezof_dba_editor' target='_blank'>EZoffice DB Admin</a></h6></li> 
 				<li class="list-group-item" ng-repeat="person in $ctrl.people">
 					<a ui-sref="person({ personId: person.id })">{{person.name}}</a>
 				</li>	 
 			</ul>
 		</div>	
 		<div class="dropdown mt-3">
-			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" style="width:80%">
 				Admin configurations[Selections] 	
 			</button>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" ng-click='openApp_1(app_server_list)' ng-if='cur_server == "ezoffice"'><h4>관리회사</h4></a>
-				<a class="dropdown-item" ng-click='openApp(app_collection_list_common)' ng-if='cur_server == "ezoffice"'><h4>Collection List[common]</h4></a>
-				<a class="dropdown-item" ng-click='openApp(app_app_list_common)' ng-if='cur_server == "ezoffice"'><h4>App List[common]</h4></a>
-				<a class="dropdown-item" ng-click='openApp(app_collection_list)'><h3>Collection List</h3></a>
-				<a class="dropdown-item" ng-click='openApp(app_apps_list)'><h4>Apps list</h4></a>
+				<a class="dropdown-item" ng-click='openApp_1(app_server_list)' ng-if='cur_server == "ezoffice"'><h6>관리회사</h6></a>
+				<a class="dropdown-item" ng-click='openApp(app_collection_list_common)' ng-if='cur_server == "ezoffice"'><h6>Collection List[common]</h6></a>
+				<a class="dropdown-item" ng-click='openApp(app_app_list_common)' ng-if='cur_server == "ezoffice"'><h6>App List[common]</h6></a>
+				<a class="dropdown-item" ng-click='openApp(app_collection_list)'><h6>Collection List</h6></a>
+				<a class="dropdown-item" ng-click='openApp(app_apps_list)'><h6>Apps list</h6></a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">기본편집기</a>  
+			</ul>
+		</div>
+		<div class="dropdown mt-3" >
+			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton_1" data-bs-toggle="dropdown" style="width:80%">
+				고객CodeFApi 서비스 설정 [Selections] 	
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton_1">
+				<a class="dropdown-item" ng-click='' ng-if='cur_server == "ezoffice"'><h6>계좌거래내역수집</h6></a>
+				<a class="dropdown-item" ng-click='' ng-if='cur_server == "ezoffice"'><h6>카드거래내역수집</h6></a>
+				<a class="dropdown-item" ng-click='' ng-if='cur_server == "ezoffice"'><h6>전자세금계산서수집</h6></a>
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="#">기본편집기</a>  
 			</ul>

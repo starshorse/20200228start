@@ -1,6 +1,7 @@
 angular.module('ezof_dba_editor',[
 	'ngCookies',
 	'mySpreadjs',
+	'myFooter',
 	'gc_spreadjs',
 	'spreadjs_events',
 	'ezof_dba_editorService'

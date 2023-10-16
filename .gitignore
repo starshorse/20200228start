@@ -11,3 +11,4 @@
 /server/nodejs.ext1/.env
 /ezworks/.env
 .env
+*.swap 

@@ -58,7 +58,6 @@ adminApp_service,
 	workSpace_service.set_f_serverList_update( serverList_update ); 	
 	workSpace_service.update_curServer( $scope.cur_server )
 
-
 	var $location = $injector.get('$location')  
 	let host = $location.host() 
 	if( host != 'localhost' &&  host != 'ezoffice365.com' ){
@@ -67,7 +66,6 @@ adminApp_service,
 		console.log('host:port/url', host, port, url ) 
 		window.location.href = `http://ezoffice365.com:${port}/db_edit/exists${ url }`
 	}
-	
 // Wed Mar  2 14:37:01 KST 2022
 	angular.extend(this, new appCtrl( $scope, $injector, 
 workSpace_service , 

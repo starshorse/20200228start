@@ -1,6 +1,7 @@
 angular.module('db_administration',[
 	'ngCookies',
 	'mySpreadjs',
+	'myFooter',
 	'gc_spreadjs',
 	'spreadjs_events',
 	'db_administrationService'

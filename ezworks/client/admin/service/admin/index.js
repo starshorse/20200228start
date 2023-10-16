@@ -33,24 +33,6 @@ angular.module('admin_app',['ngCookies'])
     	console.log( cur_id ) 
 		return cur_id 
 	}
-/*1		
-	this.promise_getAdminData = ()=>{
-		return new Promise(( resolve, reject )=>{
-			restApiServiceDbEdit.getData( adminApp, ( Data_)=>{
-				resolve( Data_ ) }, { db_mode :'mssql'} )
-	})}	
-	this.authenticateCollection = ( my_collection_ ) =>{
-		 if( my_collection_.name == 'main')return 
-         if( cur_user_info.level == 0 )return 
-		 if( !cur_user_configuration.access.collectionList.includes( my_collection_.name ) 
-			 &&  cur_user_info.level >  my_collection_.level ){
-//				 alert(" no collection access-right!") 
-				 console.log(" no collection access-right!", cur_user_info.name) 
-//				 $window.history.back() 
-			     this.goBack() 
-		 }		 
-	}
-*/	
 	this.authenticateApp = ( my_app_ )=>{
          if( cur_user_info.level < 1  )return 0  // sucess 
 		 if( !cur_user_configuration?.access?.appList.includes( my_app_.name ) 

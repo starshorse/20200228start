@@ -2,7 +2,49 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<style>
+body {
+	font-family:'Noto Sans KR', 'Raleway', sans-serif;
+	}
+	.r-2{
+	  position: absolute ;
+	  right: 35%;
+	  top: 0;
+	}
+	/* override  .login-form padding-bottom */
+	.login-form {
+		padding-bottom: 200px ;
+	}
+	.btn-secondary{
+	   background-color: rgba( 120, 20 , 140, 1 );
+	   border-color: rgba( 60,10,70,1 );
+	}
+	.btn-secondary:hover .btn-secondary:focus{
+	   background-color: rgba( 230, 140 , 255, 1 );
+	}
+	.fit_size{
+	   pointer-events: none;
+	   width: 120px;
+	   transform: scale(9) translateY(11px);
+	}
+	.nav-link:hover{
+	   font-size: 18px;
+	   color: orange;
+	}
+	.pointer_events_none{
+	   pointer-events: none;
+	}
+    </style>
+    <title>EZ Office</title>
 </head>
 <body ng-app="ezworks">
 	<div ng-controller ="ezworksCtrl"> 
@@ -14,5 +56,8 @@
 	<script src='/lib/angular-cookies/angular-cookies.min.js'></script>
 	<script src='/lib/angular-ui-router/angular-ui-router.min.js'></script>
 	<script src='/app.js'></script> 
+	<script src='/directives/login/login.directives.js'></script>
+	<script src='/directives/register/register.directives.js'></script>
+	<script src='/directives/header/main_header.directives.js'></script>
 </body>
 </html>

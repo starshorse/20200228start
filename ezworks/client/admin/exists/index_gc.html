@@ -3,34 +3,60 @@
 		<script data-require='jquery@*' data-semver='2.1.1' src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>                          
 		<link rel='stylesheet' href='/lib/spreadjs/15.0.6/css/gc.spread.sheets.excel2016colorful.15.0.6.css' /> 
 		<script src='/lib/spreadjs/15.0.6/scripts/gc.spread.sheets.all.15.0.6.min.js'></script> 
-
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>	
+	     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>	
 		<link rel='stylesheet' href='/resource/css/db_edit_style.css' />
+		<link rel='stylesheet' href='/admin/resource/style_2023_07_serviceLimit.css' />
 		<base href="/admin/exists/">
+		<style>
+               .btn-secondary{
+				   background-color: rgba( 120, 20 , 140, 1 );
+				   border-color: rgba( 60,10,70,1 );
+			   }
+			   .btn-secondary:hover, .btn-secondary:focus{
+				   background-color: rgba( 230, 140 , 255, 1 );
+			   }
+			   .fit_size{
+				   pointer-events: none;
+				   width: 120px;
+				   transform: scale(9) translateY(11px);
+			   }
+			   .nav-link:hover{
+				   font-size: 18px;
+				   color: orange;
+			   }
+			   .pointer_events_none{
+				   pointer-events: none;
+			   }
+        </style> 
+		<title>Jupiter Server Config </title> 
 	</head>                                                                
 		<body>                                                             
  		<div ng-controller='myDbEditExistsCtrl'>                             
 			<div ng-controller='myDbEditSidebarCtrl'>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			  <div class="container-fluid">
-			    <a class="navbar-brand" href="#">EZoffice</a>
+			  <div class="container">
+			    <a class="navbar-brand" href="#">
+					<img class="fit_size" src="/resource/homepage/img/EZoffice_title.svg" />
+				</a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			      <span class="navbar-toggler-icon"></span>
 			    </button>
 			    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item">
-				  <a class="nav-link active" aria-current="page" href="#">Jupiter Admin</a>
-				</li>
 				<li>
-					<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-					    Side Menus 
+					<a class="btn btn-secondary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg>
 					</a>
 				</li>		
+				<li class="nav-item">
+				  <a class="nav-link active" aria-current="page" href="#">Jupitor Server Admin</a>
+				</li>
 			      </ul>
 			      <form class="d-flex">
-				<button class='btn  btn-sm btn-outline-secondary btn-block'><a href='javascript:closeWindow()'>Close</a></button>
+				<button class='btn  btn-sm btn-secondary btn-block'><a class="text-white"  href='javascript:closeWindow()'>
+						<svg  class="pointer_events_none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path fill="currentColor" d="M469.3 469.3H42.7V42.7H256L298.7 0h-256C19.1 0 0 19.1 0 42.7v426.7C0 492.9 19.1 512 42.7 512h426.7c23.6 0 42.7-19.1 42.7-42.7V320l-42.7 42.7v106.6zm-384-42.6C149.1 255.7 234.7 256 362.7 256v85.3L512 192L362.7 42.7V128C85.3 128 85.1 341.1 85.3 426.7z"/></svg>
+					</a></button>
 			      </form>
 			    </div>
 			  </div>
@@ -98,7 +124,7 @@
 			 <SCRIPT src='/admin/parts/spreadjs/sheet1/index.js'></script>                           
 			 <script src='/admin/parts/spreadjs/addSheets/sh_add_opts.js'></script> 
 
-		         <script src='/admin/service/admin/index.js'></script> 
+		     <script src='/admin/service/admin/index.js'></script> 
 			 <SCRIPT src='/admin/service/work_space/v01/index.js'></script>                           
 			 <SCRIPT src='/admin/service/spreadjs/index.js'></script> 
 			 <SCRIPT src='/admin/service/spreadjs/sheetFormat/index.js'></script>
