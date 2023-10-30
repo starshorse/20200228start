@@ -4,6 +4,8 @@ var sidebarsCtrl = function( $injector, $scope, workSpace_service,
 	toggleSidebar_factory
 ){
 	var $location = $injector.get('$location') 
+	var $rootScope = $injector.get('$rootScope') 
+	$scope.is_jupitorConfig = 1 ;		
 //	console.log( routeParams ) 
 /*
 	followings need for sidebars html binding . controll.
@@ -36,6 +38,9 @@ var sidebarsCtrl = function( $injector, $scope, workSpace_service,
 	}
 	$scope.openParent = ( item = null )=>{
 		toggleSidebar_factory.toggleSidebar_flag = 1 
+	}
+	$scope.set_spreadCreate_flag = ( value = 0 )=>{
+		spreadJs_service.set_spreadCreate_flag( value ); 
 	}
 	$scope.openApp = ( item = null )=>{
 		console.log('[parts/sidebars] $scope.openApp _start with item:', item ) 
@@ -91,7 +96,8 @@ var sidebarsCtrl = function( $injector, $scope, workSpace_service,
 /* Tue May 24 02:23:20 UTC 2022
 		make call this function available.. 
 */
-		$scope.openTbl( $scope.tbl_name ) 
+//		$scope.openTbl( $scope.tbl_name ) 
+		$rootScope.openTbl( $scope.tbl_name ) 
 	}
 	$scope.newAppByClick= ()=>{
 		$scope.modals[0].callback = ( args , modal )=>{

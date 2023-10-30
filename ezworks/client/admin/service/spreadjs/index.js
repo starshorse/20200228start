@@ -21,6 +21,7 @@ angular.module('spread_js',[])
 		headInfos : null , 
 		affected_recordsId: [],
 		hook_initHead : { 'pre': [] , 'post':[] }, 
+		spreadCreate_flag: 0, 
 //////////////////////////////////////////////////////////////////////////////////////////
 // spreadJs  en list decoration functions.  
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -165,8 +166,14 @@ spreadJs_factory,
 		post_loadHead_f_list.forEach(( ent_f )=>{ ent_f() }) 
 		return 0 
 	}		
+    this.set_spreadCreate_flag = ( value )=>{
+		spreadJs_factory.spreadCreate_flag = value ;
+	}
 	this.initSpreadjs = ( sheetCount_ = 2 )=>{
+//1 force every time  init spread.. 		
+//		let exist_sperad = spreadjs_product.getSpread();
 		if( !spreadJs_factory.spreadCreate_flag ){ 
+//		if( !exist_sperad ){ 
 //			$('#ss').wijspread({ sheetCount: sheetCount_ }) 
 			spreadjs_product.create_spread( sheetCount_ ) 
 			spreadJs_factory.spreadCreate_flag = 1 

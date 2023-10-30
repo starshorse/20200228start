@@ -6,6 +6,7 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>	
 		<link rel='stylesheet' href='/resource/css/db_edit_style.css' />
+		<link rel='stylesheet' href='/admin/resource/bootstrap_me.css' />
 		<link rel='stylesheet' href='/admin/resource/style_2023_07_serviceLimit.css' />
 		<base href="/admin/exists/">
 		<style>
@@ -28,13 +29,67 @@
 			   .pointer_events_none{
 				   pointer-events: none;
 			   }
+			   .float_full_icon{
+				   z-index: 104;
+				   position: absolute;
+				   top: 5%;
+				   left: 10%;
+			   }
+			   table{
+					flex-grow: 1;
+					padding: 20px;
+					margin-top: 40px;
+					width: 100%;
+			   }
+			   th{
+				   height: 40px;
+				   background-color: indigo;
+			   }
+			   td, input{
+				    height: 40px;
+					background-color: lavender;
+					color:black;
+					border: 1px solid;
+					border-color: rgba( 60, 10, 70, 1)  ;
+			   }
+			   select{
+				    height: 40px;
+					width: 50%;
+					text-decoration: none;
+					text-align: center;
+					border-radius: 5px;
+					color: #fff;
+					/* background-color: #54a1a0; */
+					background-color: #9a89c6;
+					background-color: indigo;
+			   }
+			   .service_wrapper{
+				   width: 100%;
+				   margin: auto;
+				   margin-bottom: 50;
+			   }
+			   .flex_center {
+					width: 100%;
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+				}
+			   .w-50{
+				   width: 100%;
+			   }
+			   .w70{
+				   width: 70%
+			   }
         </style> 
 		<title>Jupiter Server Config </title> 
 	</head>                                                                
 		<body>                                                             
  		<div ng-controller='myDbEditExistsCtrl'>                             
 			<div ng-controller='myDbEditSidebarCtrl'>
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="float_full_icon btn btn-secondary" ng-click="header_show =( header_show +1 )%2">
+		         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 13.6V21H3.6a.6.6 0 0 1-.6-.6V13h7.4a.6.6 0 0 1 .6.6Zm0 7.4h3M3 13v-3m3-7H3.6a.6.6 0 0 0-.6.6V6m11-3h-4m11 7v4M18 3h2.4a.6.6 0 0 1 .6.6V6m-3 15h2.4a.6.6 0 0 0 .6-.6V18m-10-8h3v3"/></svg>	
+			</div>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light" ng-show="header_show" ng-init="header_show = 1">
 			  <div class="container">
 			    <a class="navbar-brand" href="#">
 					<img class="fit_size" src="/resource/homepage/img/EZoffice_title.svg" />
@@ -66,7 +121,7 @@
 			<ng-include src="'/admin/parts/sidebars/sidebars.html'"></ng-include> 
 			<!-- Page Content -->
 			<div id='content'>
-				<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+				<nav class='navbar navbar-expand-lg navbar-light bg-light' ng-show='is_jupitorConfig'>
 					<div class='container-fluid row'>
 					       <div class='col-md-2'>
 						<div class='input-group  mx-0 px-0'>
@@ -92,14 +147,8 @@
 						</div> 	
 					</div>	
 				</nav>
-				<div id='appWrapper' class='mx-2 px-2'>
-					<my-indicate></my-indicate> 
-					<ng-view></ng-view>
-					    <cmd-input></cmd-input>                                    
-						<my-spreadjs></my-spreadjs>                                
-						<my-events></my-events>
-						<my-sheet1></my-sheet1>
-						<my-addopts></my-addopts>
+				<div class="service_wrapper" ng-class="{ w70 : !is_jupitorConfig }">
+				<ng-view style="width:100%"></ng-view>
 				</div>
 			  </div>
 			  </div>
@@ -134,5 +183,6 @@
 			 <SCRIPT src='/admin/service/spreadjs/events/index.js'></script>
 			 <SCRIPT src='/admin/service/spreadjs/filters/index.js'></script>
 			 <SCRIPT src='/service/spreadjs/product/spreadjs/index.js'></script>
+			<script src='/directives/do_modal/index.js'></script>               
 			</body>                                                        
 	</html>

@@ -31,6 +31,7 @@ print( client_secret )
 pubKey = os.environ['CF_PUBLIC_KEY'] 
 
 
+rtn_result = {'STATUS': {'SELLIN': -1 , 'SELLOUT': -1 }}
 result = get_serviceList_codeFApi() 
 for u in result: 
     # Get from DB. 
@@ -93,12 +94,16 @@ for u in result:
     }
     # First sell in 
     result = tax_list( token['TOKEN'], codef_tax_list_body ) 
-    insert_sellIn_taxList( result['DATA'], company ) 
-    merge_sellIn_taxList( db_name ) 
-
+    if result['STATUS'] == 0:
+        insert_sellIn_taxList( result['DATA'], company ) 
+        merge_sellIn_taxList( db_name ) 
+        rtn_result['STATUS']['SELLIN'] = 0 
     # Second sell out 
     codef_tax_list_body['transeType'] = '01' 
     result = tax_list( token['TOKEN'], codef_tax_list_body ) 
-    insert_sellOut_taxList( result['DATA'], company )
-    merge_sellOut_taxList( db_name )
+    if result['STATUS'] == 0: 
+        insert_sellOut_taxList( result['DATA'], company )
+        merge_sellOut_taxList( db_name )
+        rtn_result['STATUS']['SELLOUT'] = 0 
+    print( rtn_result );    
 

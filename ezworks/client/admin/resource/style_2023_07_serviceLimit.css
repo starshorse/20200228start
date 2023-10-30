@@ -2260,7 +2260,7 @@ div.offcanvas-body div ul {
   font-weight: bold;
   padding: 10px; }
 
-div.offcanvas-body div ul li {
+div.offcanvas-body div ul>li {
   border-radius: 5px;
   font-weight: bold;
   padding: 10px;
@@ -2269,6 +2269,7 @@ div.offcanvas-body div ul li {
   color: #D4E6F1;
   background: #565656;
   background: #1B4F72;
+  background: indigo;
   text-align: center; }
 
 div.offcanvas-body div ul li:hover {

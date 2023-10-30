@@ -87,13 +87,15 @@ codef_account_list_body = {
     'connectedId':connectedIdList[0]
 }
 result = account_list( token['TOKEN'], codef_account_list_body );
-print( result['DATA']['accountList']);
-accountList =  result['DATA']['accountList'];
+if result['STATUS'] == 0:
+    print( result['DATA']['accountList']);
+    accountList =  result['DATA']['accountList'];
 
 def update_accountList( token, db_name='ezchemtech' ):
     # bk account info.. 
     # BodyData
     #for [bk,code] in org_codes.items():
+    result = {'STATUS': -1 } 
     for bk_name in ezct_accountList:
         print(bk_name);
         body = {
@@ -101,6 +103,9 @@ def update_accountList( token, db_name='ezchemtech' ):
             'organization': org_codes[bk_name]  
         }
         result = transaction_t2( token['TOKEN'], body )
+        if result['STATUS'] == -1:
+                break; 
+        print( result )
         print( result['DATA']['resDepositTrust'] );
         print( result['DATA']['resForeignCurrency'] );
         delete_accountList( org_codes[bk_name] );
@@ -112,8 +117,11 @@ def update_accountList( token, db_name='ezchemtech' ):
         if len( ezct_accountList_code ) == 0:
             continue;
         insert_accountList( org_codes[bk_name] , ezct_accountList_code, db_name=db_name );   
+    return result 
+
 
 def update_accountTransaction_foreign( token, db_name='ezhemtech' ):
+    result = {'STATUS': -1 } 
     account_id = {'KM':'63230104134613', 'WORI':'1005503989853'}
     today = datetime.today() 
     print( today.month ) 
@@ -138,6 +146,8 @@ def update_accountTransaction_foreign( token, db_name='ezhemtech' ):
             }
             #result = transaction_t1( token['TOKEN'], body );
             result = transaction_t1_foreign( token['TOKEN'], body );
+            if result['STATUS'] == -1:
+                    break; 
             accountTransaction_data =  result['DATA']['resTrHistoryList']
             #print( result['DATA']['resTrHistoryList'])
             accountTransaction_data = list( accountTransaction_data ); 
@@ -150,8 +160,10 @@ def update_accountTransaction_foreign( token, db_name='ezhemtech' ):
             print( accountTransaction_data );    
             # pdb.set_trace();
             insert_accountTransaction( accountTransaction_data, db_name=db_name )      
+    return result         
 
 def update_accountTransaction( token, db_name='ezchemtech' ):
+    result = {'STATUS': -1 } 
     account_id = {'KM':'63230104134613', 'WORI':'1005503989853'}
     today = datetime.today() 
     print( today.month ) 
@@ -175,6 +187,8 @@ def update_accountTransaction( token, db_name='ezchemtech' ):
                 #'currency': u._mapping['resAccountCurrency'] 
             }
             result = transaction_t1( token['TOKEN'], body );
+            if result['STATUS'] == -1:
+                    break; 
             #result = transaction_t1_foreign( token['TOKEN'], body );
             accountTransaction_data =  result['DATA']['resTrHistoryList']
             #print( result['DATA']['resTrHistoryList'])
@@ -188,8 +202,10 @@ def update_accountTransaction( token, db_name='ezchemtech' ):
             print( accountTransaction_data );    
             # pdb.set_trace();
             insert_accountTransaction( accountTransaction_data, db_name=db_name )      
+    return result        
 
 if __name__=='__main__':
+    rtn_result = {'STATUS': {'UPDATE_ACCOUNT': -1 , 'UPDATE_TR_KR': -1 , 'UPDATE_TR_FOR': -1 }}
     result = get_serviceList_codeFApi('계좌거래목록') 
     for u in result: 
         # Get from DB. 
@@ -201,10 +217,17 @@ if __name__=='__main__':
         company = u._mapping['org_name'] 
         db_name = u._mapping['db_name'] 
         u_date  = u._mapping['인증년월'] 
+        result = update_accountList( token,db_name = db_name );
+        if result['STATUS'] == 0:
+            delete_accountTransaction_m(db_name =db_name); 
+            rtn_result['STATUS']['UPDATE_ACCOUNT'] = 0 
+        result =  update_accountTransaction( token, db_name = db_name );
+        if result['STATUS'] == 0:
+            merge_accountTr_kr( db_name = db_name ); 
+            rtn_result['STATUS']['UPDATE_TR_KR'] = 0 
+        result = update_accountTransaction_foreign( token,db_name = db_name );
+        if result['STATUS'] == 0:
+            merge_accountTr_foreign( db_name =db_name ); 
+            rtn_result['STATUS']['UPDATE_TR_FOR'] = 0 
+    print( rtn_result ); 
 
-        update_accountList( token,db_name = db_name );
-        delete_accountTransaction_m(db_name =db_name); 
-        update_accountTransaction( token, db_name = db_name );
-        update_accountTransaction_foreign( token,db_name = db_name );
-        merge_accountTr_kr( db_name = db_name ); 
-        merge_accountTr_foreign( db_name =db_name ); 

@@ -1,0 +1,25 @@
+<div>
+	<div class="flex_center">
+		<h3>수집 계좌 선택 설정</h3>
+	</div>   
+	<table>
+		<tr>
+			<th>계좌명칭</th>
+			<th>계좌번호</th>
+			<th>계좌명</th>
+			<th>Enabled</th>
+		</tr>
+		<tr ng-repeat="account in account_list">
+			<td>{{ account['계좌명칭'] }}</td> 
+			<td>{{ account['계좌번호'] }}</td> 
+			<td>{{ account['계좌명'] }}</td> 
+			<td>
+				<input type="CHECKBOX" ng-checked="account['enabled']" ng-model="account['enabled']" />  
+			</td>
+		</tr>
+	</table>
+	<div class="flx-end w50">
+		<button class="button_type_1 w20 mg-t40" ng-click="button_click()">확인</button>
+		<my-domodal modal="modal"></my-domodal> 
+	</div>
+</div>

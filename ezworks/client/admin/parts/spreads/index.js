@@ -21,6 +21,8 @@ spreadJs_factory
 			spreadjs_product = $injector.get('gcSpreadjs_factory') 
 			spreadjs_product['cur_product'] =  'gc' 
 		}
+	    
+	   var $rootScope = $injector.get('$rootScope') 
 	   
 // openTbl is init function from External.. 	
 // let change $scope.openTbl to promise.. 
@@ -46,11 +48,11 @@ spreadJs_factory
 
 		console.log('[parts/spreads] set $scope.spread = spreadJs_service.getSpread() ') 
 	}
-	$scope.openTbl = async( tbl_name  )=>{
+	$rootScope.openTbl = async( tbl_name  )=>{
 	    console.log('[parts/spreads] spreadsCtrl  $scope.openTbl _start_ ', tbl_name ) 
 	    console.log('[parts/spreads] spreadsCtrl  spreadJs_service.openTbl _call_ ', tbl_name ) 
 
-		$scope.spreadJs_enable = 0 
+//1		$scope.spreadJs_enable = 0 
 		if( !$scope.$$phase )$scope.$apply() 
 		await spreadJs_service.openTbl_appEdit( tbl_name, initSpreadjs_openTbl, spreadjs_openTbl_cb ) 
 	        console.log('$$$[parts/spreads] spreadsCtrl if( !$scope.$$phase ) ') 
@@ -165,7 +167,8 @@ spreadJs_factory,
 .directive('mySpreadjs', function(){
     return {
 		restrict :'E' ,
-		template :`<div id='ss' style='width:100%; height:800px;border:1px solid gray;' ng-show='spreadJs_enable'></div>`,
+//		template :`<div id='ss' style='width:100%; height:800px;border:1px solid gray;' ng-show='spreadJs_enable'></div>`,
+		template :`<div id='ss' style='width:100%; height:800px;border:1px solid gray;'></div>`,
 		controller :'mySpreadjsCtrl'
 	}
 })
