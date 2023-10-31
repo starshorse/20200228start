@@ -1,5 +1,6 @@
 /node_modules
 /angular/angularJs/node_modules
+/react.js/my-react-app/node_modules
 /mean-self/node_modules
 /nodejs/node_modules
 /test_automation/zombie/node_modules
@@ -7,8 +8,11 @@
 /bootstrap_ex/node_modules
 /learn-sequelize/node_modules
 /server/nodejs.ext1/node_modules
-/ezworks/node_modules
+/server/nodejs/node_modules
+/server/keystone/my-app/node_modules
+/server/linux/ubuntu18.04/Koa/node_modules
 /server/nodejs.ext1/.env
+/ezworks/node_modules
 /ezworks/.env
 /ezworks/server/python/app/codeFApi/NPKI
 .env

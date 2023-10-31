@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>passive load angularJS bootstrap</title>
+</head>
+<body>
+     <script src="/lib/angular/angular.min.js"></script>
+     <script src="/lib/angular-animate/angular-animate.min.js"></script>
+     <script src="/lib/angular-route/angular-route.min.js"></script>
+	 <script>
+	 var mainApplicationModuleName = 'myApp'
+     var mainApplicationModule = angular.module( mainApplicationModuleName, 
+		 [   'ngAnimate', 
+			 'ngRoute'
+		 ]
+	 );
+     mainApplicationModule.config(function( $routeProvider, $locationProvider ){
+	 })
+
+     angular.element( document ).ready( function(){
+		 angular.bootstrap( document, [ mainApplicationModuleName ])
+	 })
+
+	 </script>
+</body>
+</html>
