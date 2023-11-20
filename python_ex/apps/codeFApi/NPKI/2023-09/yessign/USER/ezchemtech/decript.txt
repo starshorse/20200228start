@@ -1,2 +1,0 @@
-openssl x509 -inform DER -outform PEM -text -in signCert.der -out certificate.pem
-penssl pkcs8 -inform der -in signPri.key.org -out certificate_key.pem -passin pass:ez##0xxxx

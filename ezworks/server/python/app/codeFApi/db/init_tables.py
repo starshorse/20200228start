@@ -4,6 +4,7 @@ pip install sqlalchemy
 from dotenv import load_dotenv
 from pathlib import Path 
 import os 
+import pdb 
 from sqlalchemy import create_engine,text 
 import sqlalchemy as db 
 import pandas as pd 
@@ -12,7 +13,8 @@ from codeFApi.db.sql_list import (set_dbName ,create_table_sellIn_tax_codeFApi, 
 create_table_sellOut_tax_codeFApi, create_table_sellOut_tax, post_process_sellOut_init ,
 create_table_accountList_codeFApi as  create_table_accountList , create_table_transactions_codeFApi as create_table_transactions,
 create_table_account_krTransaction , create_table_account_foreignTransaction,
-insert_service_logSql , update_service_logSql
+insert_service_logSql , update_service_logSql,
+update_table_service_info as update_table_service_infoSql  
 )
 
 dotenv_path = Path('../../../../.env')
@@ -34,6 +36,11 @@ def get_serviceList_codeFApi( service = '전자세금계산서목록' ):
     serviceList  = db.Table('TB_고객서비스_codeFApi', metadata, autoload=True, autoload_with=engine ) 
     query = serviceList.select().where( serviceList.columns.서비스명 ==  service )
     result = conn.execute( query )
+    return result 
+
+def update_table_service_info( org_name , auth_id , auth_y_M , auth_pass , buz_num ):
+    query = update_table_service_infoSql( org_name , auth_id , auth_y_M , auth_pass , buz_num )
+    result = engine.execute(text( query).execution_options( autocommit = True ))  
     return result 
 
 def init_taxService():
@@ -77,13 +84,13 @@ def init_accountTrService():
             query = create_table_account_foreignTransaction( db_name )
             conn.execute( query )
 
-async def insert_service_log( service_name , org_name , comment ):
+def insert_service_log( service_name , org_name , comment ):
     query = insert_service_logSql( service_name, org_name , comment )
     result = ''
     with conn.begin() as transaction:
     #result = conn.execute(text( query ).execution_options( autocommit=True )).fetchall() 
-        result = await conn.execute(text( query )).fetchall() 
-        await transaction.commit() 
+        result = conn.execute(text( query )).fetchall() 
+        transaction.commit() 
     return result 
 
 def update_service_log( seq , comment ):

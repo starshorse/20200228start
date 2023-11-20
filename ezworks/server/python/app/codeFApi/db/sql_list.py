@@ -7,6 +7,35 @@ def set_dbName( dbName ):
 create_table_service_info = f'''
 create table TB_고객서비스_codeFApi( seq int identity primary key , 서비스명 nvarchar(128) not null , org_name nvarchar(128 ) , db_name nvarchar(128) not null , enabled  int default 0 , 인증년월  nvarchar(10) not null , 인증분류코드 nvarchar(10) )
 '''
+
+def update_table_service_info( org_name , auth_id , auth_y_M , auth_pass , buz_num ):
+    update_table_service_info = f'''
+    declare @org_name nvarchar(50) , @auth_y_M nvarchar(50) , @auth_id  nvarchar(10) , @auth_pass nvarchar(200) , @buz_num nvarchar(50) 
+    set @org_name = '{ org_name }'
+    set @auth_y_M = '{ auth_y_M }' 
+    set @auth_id = '{ auth_id }'
+    set @buz_num = '{ buz_num }'
+    set @auth_pass = '{ auth_pass }'
+    merge [ezoffice].[dbo].[TB_고객서비스_codeFApi] T
+    using (
+       select case when @auth_id = '001' then 
+                  '계좌거래목록' 
+                   when @auth_id = '002' then 
+                  '전자세금계산서목록' 
+             end  as 서비스명,  org_name = @org_name , db_name = @org_name, 
+             인증년월 = @auth_y_M , 인증분류코드 = @auth_id,  
+             사업자번호 = @buz_num , 인증비번 =  @auth_pass 
+    )S on T.org_name = S.org_name  and T.인증분류코드 = S.인증분류코드 
+    when matched  then 
+          update set 
+            T.서비스명 = S.서비스명 ,  T.인증년월 = S.인증년월, 
+            T.사업자번호 = S.사업자번호, T.인증비번 = S.인증비번 
+    when not matched by target then 
+        insert( 서비스명, org_name , db_name , 인증년월 , 인증분류코드 , 사업자번호 , 인증비번 )
+        values( S.서비스명, S.org_name, S.db_name, S.인증년월, S.인증분류코드, S.사업자번호, S.인증비번 ); 
+    ''' 
+    return update_table_service_info
+
 def create_table_accountList_codeFApi( db_name = 'ezchemtech' ):
     create_table_accountList = f'''
     CREATE TABLE [dbo].[TB_{ db_name }_계좌목록_codeFApi](

@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;30000;500;700;900&display=swap" rel="stylesheet">
-</head>
 	<style>
 		body{ 
 			font-family: 'Noto Sans KR', sans-serif;
@@ -28,13 +27,35 @@
 		  border-color: indigo !important;
 		  color: white !important;	  
 	  }
+	  .btn-secondary {
+		  background-color: rgba( 120,20,140,1 );
+		  border-color: indigo ;
+		  color: white;	  
+	  }
+	  .btn-secondary:hover, .btn-secondary:focus {
+	      background-color: rgba( 230, 140 , 255, 1 );
+	  }
+	  .list-group-item{
+		  text-decoration: none;
+	  }
+	  @media(min-width: 992px ){
+		  .navbar-expand-lg{
+			  flex-wrap: nowrap ;
+			  justify-content: flex-end;
+		  }
+	  }
+	  .navbar-collapse{
+		  flex-basis: 100%;
+		  flex-grow: 0;
+		  align-items: center;
+	  }
     </style>
 </head>
 <body>
 	<div class="nav flex-end">
 			<input type="checkbox" id="nav-check">
 			<div class="nav-header">
-				<div class="nav-title">
+				<div class="h3 mt-3">
 					{{ companyName }}  
 				</div>
 			</div>
@@ -46,6 +67,7 @@
 				</label>
 			</div>
 			<div class="nav-links">
+				<a href="{{ url_for('bootstrap') }}"> 인증서 등록 </a>
 				<a href="javascript:closeWindow()">
 					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07zM11.4 10l2.83-2.83l-1.41-1.41L10 8.59L7.17 5.76L5.76 7.17L8.59 10l-2.83 2.83l1.41 1.41L10 11.41l2.83 2.83l1.41-1.41L11.41 10z"/></svg>		</a>
 				<a href="javascript:history.back()" target="_self">

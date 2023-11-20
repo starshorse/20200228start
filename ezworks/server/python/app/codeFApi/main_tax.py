@@ -32,7 +32,7 @@ print( client_secret )
 pubKey = os.environ['CF_PUBLIC_KEY'] 
 
 
-async def main_tax():
+def main_tax():
     rtn_result = {'STATUS': -1 , 'STATUS_1': {'SELLIN': -1 , 'SELLOUT': -1 }}
     result = get_serviceList_codeFApi() 
     for u in result: 
@@ -46,9 +46,8 @@ async def main_tax():
         company = u._mapping['org_name'] 
         db_name = u._mapping['db_name'] 
         u_date  = u._mapping['인증년월'] 
-        log_result = await insert_service_log('전자세금계산서목록', company , '실패')
+        log_result = insert_service_log('전자세금계산서목록', company , '실패')
         print( log_result )
-        pdb.set_trace();
         # Seq. 
         insertedSeq = log_result[0][0]
         rtn_result['STATUS'] = -1 

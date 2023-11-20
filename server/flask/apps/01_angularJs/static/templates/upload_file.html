@@ -1,0 +1,31 @@
+<div class="d-flex flex-column justify-content-center align-items-center vh-100">
+	<h1 class="h4 text-center mb-3">{a cert_title a} 인증서 업로드</h1>
+<form class="w-75" method="post" enctype="multipart/form-data" action="/upload_file" name="uploadForm" >
+	<div class="input-group mb-3">
+		<span class="input-group-text" id="basic-addon1">사업자등록번호</span>
+		<input type="text" class="form-control" placeholder="- 없이 넣어 주세요" name="buz_num" aria-label="Username" aria-describedby="basic-addon1" required>
+	</div>
+	<div class="input-group mb-3">
+		<span class="input-group-text" id="basic-addon1">인증서패스워드</span>
+		<input type="text" class="form-control" placeholder="password" name="password" aria-label="Username" aria-describedby="basic-addon1" required>
+	</div>
+	<fieldset class="upload_dropZone text-center mb-3 p-4">
+		<legend class="visually-hidden">Image uploader</legend>
+		<svg class="upload_svg" width="60" height="60" aria-hidden="true">
+			<use href="#icon-imageUpload"></use>
+		</svg>
+		<p class="small my-2">인증서 파일을 드래그 드랍 하세요<br><i>아니면</i></p>
+        <input type="file" name="file[]" id="upload_file" multiple>
+		<label class="btn btn-upload mb-3" for="upload_file">파일선택</label>
+        <input type="submit" value="Upload" id="upload_submit" class="position-absolute invisible">
+		<label class="btn btn-upload mb-3" for="upload_submit">업로드</label>
+	</fieldset>
+</form>
+<svg style="display:none">
+	<defs>
+	<symbol id="icon-imageUpload" clip-rule="evenodd" viewBox="0 0 96 96">
+	<path d="M47 6a21 21 0 0 0-12.3 3.8c-2.7 2.1-4.4 5-4.7 7.1-5.8 1.2-10.3 5.6-10.3 10.6 0 6 5.8 11 13 11h12.6V22.7l-7.1 6.8c-.4.3-.9.5-1.4.5-1 0-2-.8-2-1.7 0-.4.3-.9.6-1.2l10.3-8.8c.3-.4.8-.6 1.3-.6.6 0 1 .2 1.4.6l10.2 8.8c.4.3.6.8.6 1.2 0 1-.9 1.7-2 1.7-.5 0-1-.2-1.3-.5l-7.2-6.8v15.6h14.4c6.1 0 11.2-4.1 11.2-9.4 0-5-4-8.8-9.5-9.4C63.8 11.8 56 5.8 47 6Zm-1.7 42.7V38.4h3.4v10.3c0 .8-.7 1.5-1.7 1.5s-1.7-.7-1.7-1.5Z M27 49c-4 0-7 2-7 6v29c0 3 3 6 6 6h42c3 0 6-3 6-6V55c0-4-3-6-7-6H28Zm41 3c1 0 3 1 3 3v19l-13-6a2 2 0 0 0-2 0L44 79l-10-5a2 2 0 0 0-2 0l-9 7V55c0-2 2-3 4-3h41Z M40 62c0 2-2 4-5 4s-5-2-5-4 2-4 5-4 5 2 5 4Z"/>
+	</symbol>
+	</defs>
+</svg>
+</div>

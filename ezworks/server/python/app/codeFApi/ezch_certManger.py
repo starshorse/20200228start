@@ -23,8 +23,8 @@ def fileToBase64(filepath):
 BASE_DIR = os.path.dirname( os.path.abspath(__file__))
 
 def cert_manager( u_date = '2023-09', company ='ezchemtech' , id ='001'):
-    TARGET_DIR_CERT = os.path.join( BASE_DIR, f'NPKI/{ u_date }/yessign/USER/{ company }/{ id }/signCert.der' )
-    TARGET_DIR_KEY = os.path.join( BASE_DIR, f'NPKI/{ u_date }/yessign/USER/{ company }/{ id }/signPri.key' )
+    TARGET_DIR_CERT = os.path.join( BASE_DIR, f'NPKI/{ company }/{ id }/{ u_date }/signCert.der' )
+    TARGET_DIR_KEY = os.path.join( BASE_DIR, f'NPKI/{ company }/{ id }/{ u_date }/signPri.key' )
     """
     derFileB64 = fileToBase64('/Users/skcrackers/Documents/cobweb/Modules/modules/certification/ssk/signCert.der')
     keyFileB64 = fileToBase64('/Users/skcrackers/Documents/cobweb/Modules/modules/certification/ssk/signPri.key')

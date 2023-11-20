@@ -1,0 +1,178 @@
+{
+	"local_ezChemtech": {
+	"server": "192.168.0.39",
+	"user": "sa",
+	"password": "!@34qwer",
+	"database": "ezworks",
+	"options": {
+		"encrypt": false,
+		"useUTC": false
+	}
+},
+"ezchemtech": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "ezChemtech",
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"ezparts": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "ezparts",
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"ezoffice": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "ezoffice",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"config": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "config",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"common": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "common",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"ezoffice_test": {
+	"server": "34.64.60.213",
+	"user": "ezoffice_test",
+	"password": "!@34qwertest",
+	"database": "ezoffice_test",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"demo": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "demo",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"orientpi": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "orientpi",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"dhyoo": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "dhyoo",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"unionlogis": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "unionlogis",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"asiafni": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "asiafni",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"shmlucy": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "shmlucy",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"knu_osl": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "knu_osl",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+},
+"js_crm": {
+	"server": "34.64.60.213",
+	"user": "sqlserver",
+	"password": "!csdlwlof#1286",
+	"database": "js_crm",
+	"port": 1433,
+	"options": {
+		"encrypt": false,
+		"trustServerCertificate": true,
+		"useUTC": false
+	}
+}
+																																																																																																																																																																																																																				  }

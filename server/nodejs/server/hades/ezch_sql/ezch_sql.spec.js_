@@ -1,0 +1,105 @@
+'use strict';
+
+const chai = require('chai') 
+const chaiHttp = require('chai-http')
+let  should = chai.should() 
+const server = require('../../../app_hades') 
+
+chai.use( chaiHttp) 
+
+describe('POST request ezch_sql API /ezch_sql/ ', ()=>{
+	it(' RPA_SHOW_COLUMNS should return correct Info' , ( done )=>{
+		let params = {
+			query: 'TB_심규정',
+			"hostname": "PCNAME", 
+			"filepath": "C:/OneDrive/EZworkKJ/Neo_MSSQL/테이블편집기.xlsm"
+		}
+		chai.request( server ) 
+		.post('/api/RPA_SHOW_COLUMNS')
+		.send( params ) 
+		.end( (err, res)=>{
+			res.should.have.status(200) 
+			should.exist( res.body )
+//			console.log( res.body )
+			res.body.RESULT.should.equal('success')
+			done() 
+		})
+	})
+	it(' RPA_SELECT should return correct Info' , ( done )=>{
+		let params = {
+			query: 'SELECT TOP 1 * FROM TB_심규정',
+			"hostname": "PCNAME", 
+			"filepath": "C:/OneDrive/EZworkKJ/Neo_MSSQL/테이블편집기.xlsm"
+		}
+		chai.request( server ) 
+		.post('/api/RPA_SELECT')
+		.send( params ) 
+		.end( (err, res)=>{
+			res.should.have.status(200) 
+			should.exist( res.body )
+//			console.log( res.body )
+			res.body.RESULT.should.equal('success')
+			done() 
+		})
+	})
+	it(' RPA_UPDATE_V2 should return correct out with correct input' , ( done )=>{
+		let params = {
+			queryList:[
+				{ 	
+					rownum: 11,
+					query : "UPDATE TB_심규정 SET _nvarchar = \"test4\" , UPDATEDATE = DBO.GETDATE() WHERE [seq] = 61 ;"  
+				},
+				{ 	
+					rownum: 12,
+					query : "UPDATE TB_심규정 SET _nvarchar = \"test3\" , UPDATEDATE = DBO.GETDATE() WHERE [seq] = 62 ;"  
+				},
+				{ 	
+					rownum: 13,
+					query : "INSERT INTO TB_심규정 (_nvarchar) VALUES (\"test5\");"  
+				},
+			],
+			"hostname": "PCNAME", 
+			"filepath": "C:/OneDrive/EZworkKJ/Neo_MSSQL/테이블편집기.xlsm"
+		}
+		chai.request( server ) 
+		.post('/api/RPA_UPDATE_V2')
+		.send( params ) 
+		.end( (err, res)=>{
+			res.should.have.status(200) 
+			should.exist( res.body )
+//			console.log( res.body )
+			res.body.RESULT.should.equal('success')
+			done() 
+		})
+	})
+	it(' RPA_UPDATE_V2 should return error out with incorrect input' , ( done )=>{
+		let params = {
+			queryList:[
+				{ 	
+					rownum: 11,
+					query : "UPDATE TB_심규정 SET _nvarchar = \"test4\" , UPDATEDATE = DBO.GETDATE() WHERE [seq] = 61 ;"  
+				},
+				{ 	
+					rownum: 12,
+					query : "UPDATE TB_심규정 SET _nvarchar = \"test3\" , UPDATEDATE = DBO.GETDATE() WHERE [seq] = 62 ;"  
+				},
+				{ 	
+					rownum: 13,
+					query : "INSERT INTO TB_심규정 (_nvarchar2) VALUES (\"test5\");"  
+				},
+			],
+			"hostname": "PCNAME", 
+			"filepath": "C:/OneDrive/EZworkKJ/Neo_MSSQL/테이블편집기.xlsm"
+		}
+		chai.request( server ) 
+		.post('/api/RPA_UPDATE_V2')
+		.send( params ) 
+		.end( (err, res)=>{
+			res.should.have.status(200) 
+			should.exist( res.body )
+//			console.log( res.body )
+			res.body.RESULT.should.equal('error')
+			done() 
+		})
+	})
+})

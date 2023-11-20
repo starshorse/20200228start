@@ -1,0 +1,55 @@
+{% extends "bootstrap/base.html" %}
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" src="{{  url_for('static', filename='angular.min.js') }}"></script>
+<script type="text/javascript" src="{{  url_for('static', filename='app.js') }}"></script>
+{% endblock %}
+{% block title %}Flask{% endblock %}
+{% block head %}
+	<style>
+		body{ 
+			font-family: 'Noto Sans KR', sans-serif;
+			background: lavender;
+		}
+	  .flex-end {
+		  display: flex;
+		  justify-content: end;
+	  }
+	  .btn-primary {
+		  width: 250px ;
+		  background-color: indigo !important;
+		  border-color: indigo !important;
+		  color: white !important;	  
+	  }
+    </style>
+{% endblock %}
+{% block html_attribs %} ng-app="myApp"{% endblock %}
+{% block body_attribs %} ng-controller="myAppCtrl"{% endblock %}
+{% block body %}
+<div class="nav flex-end">
+			<input type="checkbox" id="nav-check">
+			<div class="nav-header">
+				<div class="nav-title">
+					{a companyName a}  
+				</div>
+			</div>
+			<div class="nav-btn">
+				<label for="nav-check">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+			</div>
+			<div class="nav-links">
+				<a href="#"> 인증서 등록 </a>
+				<a href="javascript:closeWindow()">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07zM11.4 10l2.83-2.83l-1.41-1.41L10 8.59L7.17 5.76L5.76 7.17L8.59 10l-2.83 2.83l1.41 1.41L10 11.41l2.83 2.83l1.41-1.41L11.41 10z"/></svg>		</a>
+				<a href="javascript:history.back()" target="_self">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M5 12H3l9-9l9 9h-2M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/><path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6"/></g></svg>
+				</a>
+			</div>
+	</div>
+<h1>{a name a} welcome.!</h1>
+<script type="text/javascript" src="{{  url_for('static', filename='angular.min.js') }}"></script>
+<script type="text/javascript" src="{{  url_for('static', filename='app.js') }}"></script>
+{% endblock %}
