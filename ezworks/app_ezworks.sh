@@ -1,0 +1,7 @@
+kill -9 $( lsof -t -i:5000 )                                                                                                                                                                                 
+kill -9 $( lsof -t -i:5001 )
+kill -9 $( lsof -t -i:5010 )
+kill -9 $( lsof -t -i:8080 )
+kill -9 $( lsof -t -i:9010 )
+sudo kill -9 $( lsof -t -i:80 )
+npm start & ( cd ./server/python/app/ && gunicorn app:app --workers 1 --threads 4 --timeout 0 -t 75 -b 0.0.0.0:5010 )

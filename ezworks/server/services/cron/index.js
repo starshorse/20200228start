@@ -14,7 +14,7 @@ const create_hours_cron = ( period_hours = 6 )=>{
 		   await axios.get(`http://localhost:${ flask_server_port }/service/전자세금계산서목록`);
 		   await axios.get(`http://localhost:${ flask_server_port }/service/계좌거래목록`);
 	}
-	cb_job( period_opt ); 
+//	cb_job( period_opt ); 
 	return new CronJob( period_opt ,()=>{
 		cb_job( period_opt ); 
 	}, null , true, 'Asia/Seoul')

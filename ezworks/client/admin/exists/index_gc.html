@@ -1,3 +1,8 @@
+<!--
+	codeFApi : admin/exists/app_codeFApi.js 
+	           admin/parts/sidebars/sub_sidebars.html 
+			   admin/resource/web_codeFApi.css  
+-->
 <html ng-app='myDbEditExists'> 
 	<head>               
 		<script data-require='jquery@*' data-semver='2.1.1' src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>                          
@@ -8,6 +13,7 @@
 		<link rel='stylesheet' href='/resource/css/db_edit_style.css' />
 		<link rel='stylesheet' href='/admin/resource/bootstrap_me.css' />
 		<link rel='stylesheet' href='/admin/resource/style_2023_07_serviceLimit.css' />
+		<link rel='stylesheet' href='/admin/resource/web_codeFApi.css' />
 		<base href="/admin/exists/">
 		<style>
                .btn-secondary{
@@ -28,57 +34,6 @@
 			   }
 			   .pointer_events_none{
 				   pointer-events: none;
-			   }
-			   .float_full_icon{
-				   z-index: 104;
-				   position: absolute;
-				   top: 5%;
-				   left: 10%;
-			   }
-			   table{
-					flex-grow: 1;
-					padding: 20px;
-					margin-top: 40px;
-					width: 100%;
-			   }
-			   th{
-				   height: 40px;
-				   background-color: indigo;
-			   }
-			   td, input{
-				    height: 40px;
-					background-color: lavender;
-					color:black;
-					border: 1px solid;
-					border-color: rgba( 60, 10, 70, 1)  ;
-			   }
-			   select{
-				    height: 40px;
-					width: 50%;
-					text-decoration: none;
-					text-align: center;
-					border-radius: 5px;
-					color: #fff;
-					/* background-color: #54a1a0; */
-					background-color: #9a89c6;
-					background-color: indigo;
-			   }
-			   .service_wrapper{
-				   width: 100%;
-				   margin: auto;
-				   margin-bottom: 50;
-			   }
-			   .flex_center {
-					width: 100%;
-					display: flex;
-					justify-content: space-around;
-					align-items: center;
-				}
-			   .w-50{
-				   width: 100%;
-			   }
-			   .w70{
-				   width: 70%
 			   }
         </style> 
 		<title>Jupiter Server Config </title> 
@@ -162,6 +117,7 @@
 		     	 <script src='/lib/angular-cookies/angular-cookies.js'></script> 
 		     	<script src='/lib/angular-route/angular-route.js'></script> 
 			 <script src='app.js'></script>                                
+			 <script src='app_codeFApi.js'></script>                                
 			 <script src='/admin/parts/app/index.js'></script>                                
 			 <SCRIPT src='/admin/parts/app/status_indicate/index.js'></script>                           
 			 <SCRIPT src='/admin/parts/cmd_input/v01/index.js'></script>                           
