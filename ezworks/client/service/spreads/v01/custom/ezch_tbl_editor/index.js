@@ -13,6 +13,7 @@ angular.module('ezch_tbl_editorService',[])
 				btn_filter_selected: 'E6:E6',
 				btn_unlock : 'D6:D6',
 				btn_exec_sql :'H4:H4',
+			    btn_mass_upload:'G6:G6',
 				btn_update :'C3:C3',
 				btn_save_userConfig :'I6:I6',
 			        input_sqlState: 'G4:G4',
@@ -35,7 +36,7 @@ angular.module('ezch_tbl_editorService',[])
 			},
 		      },	
 		sheet_TblView_table:{ name: 'Table1', user_id: null , db_name: null , tbl_name: null , config_name: null, config_data: null,
-			tbl_view: null, tbl_pos: null , tbl_columns: null,  tbl_data: null , data:[], max_rowCount: 21000 , max_columnCount: 100 },
+			tbl_view: null, tbl_pos: null , tbl_columns: null, tbl_columnWidth: null , tbl_data: null , data:[], max_rowCount: 21000 , max_columnCount: 100 },
 		sheet_TblList_table_tblList :{ name: 'Table1', user_id: null,  db_name : null , tbl_view: null , tbl_columns: null , tbl_data:[]},
 		sheet_TblList_table_tblSchema :{ name: 'Table2', db_name: null,  tbl_name: null , tbl_view: null , data:[]},
 		binding_data: { cur_server : null , cur_DB: null, cur_user: null , cur_organization: null ,  cur_login: null , cur_table: null },
@@ -61,6 +62,7 @@ angular.module('ezch_tbl_editorService',[])
 		updateAlertInfo: null,
 		updateConfigName : null, 
 		endPageLoading: null,
+		toMass_upload: null, 
 // access rights
 		spread_1_db_access: null
 	}
@@ -178,6 +180,23 @@ angular.module('ezch_tbl_editorService',[])
 //  TblView : DB Service.     
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*		
+	this.sheet_upload_insertData_DB = async ( spread , data_array  )=>{
+		  let sheet_TblView_table = ezch_tbl_editorFactory.sheet_TblView_table 
+		  let headers = {}
+		  let user_DB = sheet_TblView_table.db_name ; 
+		  if( user_DB )headers['db'] = user_DB 
+// checking mass insert 
+		  let tbl_name = sheet_TblView_table.tbl_name 
+		  url_ = `/tbl_editor/${ tbl_name }/Tr`
+     	  let result  = await $http({ method:'POST', url: url_ ,  data: data_array , headers: headers })
+		  if( result.data.STATUS == -1 )
+		  	alert('DataBase UPLOAD Failed!',  result.data.ERRORMESSAGE ); 
+		  else 
+			alert('DataBase UPLOAD Done!' ); 
+//	  this.sheet_TblView_update_genTblView( spread ) 			  
+	}
+	*/	
 	this.sheet_TblView_insertData_DB = ( spread )=>{
 		 if( ezch_tbl_editorFactory.hide_null_check.hide_null_flag ){
 			 let hide_null_list = ezch_tbl_editorFactory.hide_null_check.null_list.join(',');
@@ -308,6 +327,9 @@ angular.module('ezch_tbl_editorService',[])
 */
 /////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	this.sheet_TblView_get_access_matrix = ()=>{
+        // test purpose 
+		if( ezch_tbl_editorFactory.spread_1_db_access == null )
+			return { 'SELECT' : true , 'INSERT': true , 'UPDATE': true , 'VIEW DEFINITION': true }
 		return ezch_tbl_editorFactory.spread_1_db_access.find((ent)=>ent.name == ezch_tbl_editorFactory.sheet_TblView_table.tbl_name )
 	}
 	this.sheet_TblView_update_dataColumns = ( spread, data4hdr )=>{
@@ -751,13 +773,14 @@ angular.module('ezch_tbl_editorService',[])
 			for( const [key, value] of Object.entries( updateConfig_data.tblViewConfig )){
 				ezch_tbl_editorFactory.cellBinding_config_list[key] = value ; 
 			}		
-//1			ezch_tbl_editorFactory.sheet_TblView_table.tbl_columns = updateConfig_data.tbl_view.tbl_columns 
 			ezch_tbl_editorFactory.sheet_TblView_table.tbl_columns = updateConfig_data.tblViewSheet.tbl_columns 
 			Object.assign( ezch_tbl_editorFactory.sql_state , updateConfig_data.sql_state ) 
 		}	
 		spread.getSheet(0).getRange( ezch_tbl_editorFactory.pos.TblView.input_cur_userConfig ).text( updateConfig_data.configName );
-//1		ezch_tbl_editorFactory.tbl_name  = updateConfig_data.data.tbl_name ; 
-//1	        await this.updateDataSql( spread )
+		updateConfig_data.tblViewSheet.tbl_columnWidth?.forEach((ent)=>{
+			spread.getSheet(0).setColumnWidth( ent.col_index , ent.col_width ); 
+		})
+
 		spread.getSheet(0).visible(true); 
 		spread.setActiveSheetIndex(0); 
 		return updateConfig_data 
@@ -789,6 +812,20 @@ angular.module('ezch_tbl_editorService',[])
 		this.updateServerSide()
 
 	}
+//1	
+	const save_columnWidth = ( spread , sheet_TblView_table )=>{
+		let sheet = spread.getSheet(0)
+		let tbl_posCol = sheet_TblView_table.tbl_pos 
+		let tbl_columnWidth = [] 
+		for( i = 0 ; i < sheet_TblView_table.tbl_columns.length ; i++ ){
+			let columnWidth = {}
+			columnWidth['col_name'] = sheet_TblView_table.tbl_view.getColumnName( i ) 
+			columnWidth['col_width'] = sheet.getColumnWidth( tbl_posCol.col + i ) 
+			columnWidth['col_index'] = tbl_posCol.col + i 
+		    tbl_columnWidth.push( columnWidth )
+		}
+		return tbl_columnWidth; 
+	}
 	this.addConfig = async ( spread, newConfig )=>{
 		if( newConfig == null || newConfig == '' ){
 			alert("타이틀이 필요합니다.")
@@ -808,6 +845,7 @@ angular.module('ezch_tbl_editorService',[])
 
 		TblView_config.cur_config_name = newConfig 
 		let tblViewConfig = JSON.parse( JSON.stringify( TblView_config )) 
+		sheet_TblView_table.tbl_columnWidth = save_columnWidth( spread , sheet_TblView_table ); 
 		let tblViewSheet = JSON.parse( JSON.stringify( sheet_TblView_table )) 
 		let tblListSchemaSheet = JSON.parse( JSON.stringify( sheet_TblList_table_tblSchema )) 
 		tblViewSheet['config_name'] = newConfig 
@@ -1182,6 +1220,7 @@ angular.module('ezch_tbl_editorService',[])
 		  let cell_updateSql = sheet0.getRange( ezch_tbl_editorFactory.pos.TblView.btn_exec_sql ) 
 		  let cell_savedConfig = sheet0.getRange( ezch_tbl_editorFactory.pos.TblView.btn_save_userConfig ) 
 		  let cell_filterCells = sheet0.getRange(  ezch_tbl_editorFactory.pos.TblView.btn_filter_selected )
+		  let cell_mass_upload = sheet0.getRange(  ezch_tbl_editorFactory.pos.TblView.btn_mass_upload )
 
 		  if( args.row == cell_lock.row ){
 			  console.log( ezch_tbl_editorFactory.lastSelections ) 
@@ -1228,6 +1267,10 @@ angular.module('ezch_tbl_editorService',[])
 				   case cell_savedConfig.col:
 					  let newConfig = sheet0.getRange( ezch_tbl_editorFactory.pos.TblView.input_cur_userConfig ).text();
 					  ezch_tbl_editorService.addConfig( spread , newConfig );  // call soruce 2 : tblView. 
+					  break;
+				   case cell_mass_upload.col:
+//1					  
+					  ezch_tbl_editorFactory.toMass_upload(); 
 					  break;
 				  default:	  
 			  }

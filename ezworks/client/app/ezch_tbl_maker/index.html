@@ -6,38 +6,69 @@
 		<script src='../../lib/jquery/dist/jquery.min.js'></script> 
 		<script src='../../lib/bootstrap/dist/js/bootstrap.bundle.min.js'></script> 
 		<script src='../../lib/spreadjs/15.2.2/scripts/gc.spread.sheets.all.15.2.2.min.js'></script>
-
+		<style>
+				.btn-secondary{
+					background-color: rgba( 120, 20 , 140, 1 );
+					border-color: rgba( 60,10,70,1 );
+				}
+			   .btn-secondary:hover, .btn-secondary:focus{
+				   background-color: rgba( 230, 140 , 255, 1 );
+			   }
+			   .float_full_icon{
+				   z-index: 104;
+				   position: absolute;
+				   top: 5%;
+				   left: 10%;
+			   }
+			   .fit_size{
+				   pointer-events: none;
+				   width: 120px;
+				   transform: scale(9) translateY(11px);
+			   }
+			   .nav-link:hover{
+				   font-size: 18px;
+				   color: orange;
+			   }
+			   .pointer_events_none{
+				   pointer-events: none;
+			   }
+		</style> 
 	</head>
 	<body>
 		<div ng-controller='ezch_tbl_makerCtrl'>
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a class="navbar-brand" href="#">EZoffice</a> 	
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggle-icon"></span>
-				</button> 	
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="#">Log Collector<span class="sr-only">( current )</span></a> 
-						</li> 	
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-								저장리스트
-							</a>	
-							<div class="dropdown-menu">
-								<div ng-repeat="edit_list in edit_lists">
-									<a class="dropdown-item" ng-href="{{ edit_list_click( edit_list )}}">{{ edit_list.configName }}</a> 
-								</div>		
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">기본생성</a>  
-							</div>	
-						</li>	
-					</ul>	
-					<form class="form-inline my-2 my-lg-0">
-						<button class='btn  btn-sm btn-outline-secondary btn-block'><a href='javascript:closeWindow()'>Close</a></button>
-					</form>	
-
-			</nav>	
+			<div class="float_full_icon btn btn-secondary" ng-click="header_show =( header_show +1 )%2">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 13.6V21H3.6a.6.6 0 0 1-.6-.6V13h7.4a.6.6 0 0 1 .6.6Zm0 7.4h3M3 13v-3m3-7H3.6a.6.6 0 0 0-.6.6V6m11-3h-4m11 7v4M18 3h2.4a.6.6 0 0 1 .6.6V6m-3 15h2.4a.6.6 0 0 0 .6-.6V18m-10-8h3v3"/></svg>
+			</div>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light" ng-show="header_show" ng-init="header_show = 1">
+				<div class="container">
+					<a class="navbar-brand" href="#">
+						<img class="fit_size" src="/resource/homepage/img/EZoffice_title.svg" />
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<a class="btn btn-secondary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg>
+					</a>
+					<div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+						<ul class="navbar-nav mb-2 mb-lg-0 d-flex">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" ng-href='{{ hrefs.tbl_editor }}'>Table 편집기</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" aria-current="page">Table 생성기</a>
+							</li>
+							<li>
+							</li>
+						</ul>
+						<form class="d-flex">
+							<button class='btn  btn-secondary btn-outline-secondary btn-block text-white'><a class="text-white" href='javascript:closeWindow()'>
+									<svg  class="pointer_events_none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path fill="currentColor" d="M469.3 469.3H42.7V42.7H256L298.7 0h-256C19.1 0 0 19.1 0 42.7v426.7C0 492.9 19.1 512 42.7 512h426.7c23.6 0 42.7-19.1 42.7-42.7V320l-42.7 42.7v106.6zm-384-42.6C149.1 255.7 234.7 256 362.7 256v85.3L512 192L362.7 42.7V128C85.3 128 85.1 341.1 85.3 426.7z"/></svg>
+								</a></button>
+						</form>
+					</div>
+				</div>
+			</nav>
 			<div id='content'>
 				<nav class='navbar navbar-expand-lg navbar-light bg-light'>
 					<div class='container-fluid row'>

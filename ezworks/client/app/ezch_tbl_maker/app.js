@@ -15,6 +15,7 @@ angular.module('ezch_tbl_maker',[
 	let db_name = $cookies.get('user_DB') 
 	$scope.user_DBs    
 	$scope.user_DB
+	$scope.hrefs = { tbl_editor: '/app/ezch_tbl_editor' }
 
 	$http.get(`/Hades/dba_editor/db_login_web/${ db_name }/${ user_id }`).then( async (respnose)=>{
 		  if( respnose.data.STATUS == -1 ){

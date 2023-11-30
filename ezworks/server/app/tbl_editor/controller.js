@@ -91,7 +91,7 @@ exports.insert_tbl = async function( req, res){
 	return res.status( 200 ).json( result ) 
 }
 exports.insert_tbl_tr = async function( req, res){
-	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let result = { STATUS: -1 , RESULT :'fail', ERRORMESSAGE:'', MESSAGE :'error:', DATA: null } 
 	let id = req.headers.id 
 	let user_db = req.headers.db 
 	let seq = req.params.seq 
@@ -101,9 +101,10 @@ exports.insert_tbl_tr = async function( req, res){
 	
 	let  hades_data 
 	hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${tbl_name}/tr`, data , headers : headers })
-	result.STATUS = 1 
-	result.RESULT = 'success'
-	result.MESSAGE = '' 
+	result.STATUS = hades_data.data.RESULT.STATUS  
+	result.RESULT = hades_data.data.RESULT.RESULT
+	if( result.STATUS == -1 )
+		result.ERRORMESSAGE = hades_data.data.RESULT.ERRORMESSAGE  
 	result.DATA = hades_data.data.tbl_data ; 
 	return res.status( 200 ).json( result ) 
 }

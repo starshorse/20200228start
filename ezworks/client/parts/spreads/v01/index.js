@@ -9,7 +9,9 @@ angular.module('mySpreadjs',[])
 .controller('mySpreadjsCtrl',['$scope','$injector',async function( $scope, $injector){
         var spread_product = $injector.get('gc_spreadjsFactory') 
 	var $http = $injector.get('$http');
+	var $rootScope = $injector.get('$rootScope') 
 	$scope.spread = spread_product.create_spread( 3 ); 
+	$rootScope.spread = $scope.spread; 
 	$scope.edit_lists = null 
 	$scope.edit_lists_update = ( edit_lists )=>{
 		$scope.edit_lists = edit_lists 
