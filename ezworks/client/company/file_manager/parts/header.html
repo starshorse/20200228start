@@ -4,13 +4,11 @@
 <nav id='' class="navbar navbar-expand-lg navbar-light bg-light justify-content-end" >
     <h5>{{ companyName | ezC_name }}</h5> 
 <ul class="navbar-nav">
-	<li class='nav-item active'><a href='#' class="nav-link" >{{ Home }}
+	<li class='nav-item active'><a href='' class="nav-link" >{{ Home }}
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M5 12H3l9-9l9 9h-2M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/><path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6"/></g></svg>
 	   </a></li>
-   <li class='nav-item' ng-if='is_ezoffice'><a ng-href='{{ hrefs.work_config }}' target="_blank" class="nav-link">업무설정</a></li>
-   <li class='nav-item'><a ng-href='{{ hrefs.db_work }}' target="_blank" class="nav-link">DB업무</a></li>
-   <li class='nav-item'><a ng-href='{{ hrefs.upload_file }}' target="_blank" class="nav-link">파일업로드</a></li>
-   <li class='nav-item'><a ng-href='{{ hrefs.emPower }}' target="_blank" class="nav-link">권한</a></li>
+   <li class='nav-item'><a ng-href='{{ hrefs.upload }}' target="_self" class="nav-link">파일업로드</a></li>
+   <li class='nav-item'><a ng-href='{{ hrefs.download }}' target="_blank" class="nav-link">파일다운로드</a></li>
    <li class='nav-item'><a ng-href='{{ hrefs.authentication }}' target="_blank" class="nav-link">인증
 		   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M8 11A5 5 0 1 0 8 1a5 5 0 0 0 0 10Zm5.023 2.023C11.772 11.76 10.013 11 8 11c-4 0-7 3-7 7v5h7m2-3.5a2.5 2.5 0 1 0 5.002-.002A2.5 2.5 0 0 0 10 19.5ZM23 15l-3-3l-6 6m3.5-3.5l3 3l-3-3Z"/></svg>
 	   </a></li>

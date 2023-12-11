@@ -26,10 +26,15 @@ angular.module('ezch_tbl_editorCtrl',[])
 	$scope.edit_list_click = async ( config_name, event )=>{
 //1		let  spread = ezch_tbl_editorFactory.spread ; 
 		console.log( config_name ); 
+		$scope.modal = { title: 'Config 적용 ' , content: `${ config_name }  적용중입니다. 잠시만 기다려 주세요` , callback : async function(){} , flags: { is_infoModal: 1 } }
+//		$scope.$broadcast('doModal');
+		const modal = document.getElementById('modalWrap')
+		modal.style.display = 'block'
 		document.title = config_name ;   // Title Change.
 		if( !event ){ // call by manual .. 
 				$cookies.remove('config_name')
 				await  ezch_tbl_editorService.updateConfig( $scope.spread , config_name ) 
+	            $scope.$broadcast('hideModal' ); 	
 			    return ;
 		}else {  // mouse click.. 
 			if( event.ctrlKey ){
@@ -40,6 +45,21 @@ angular.module('ezch_tbl_editorCtrl',[])
 				await  ezch_tbl_editorService.updateConfig( $scope.spread , config_name ) 
 	  		 }		
 		}	
+//	    $scope.$broadcast('hideModal' ); 	
+		modal.style.display = 'none'
+	}
+	$scope.edit_item_remove_click = async( config_name, event )=>{
+		$scope.modal = { title: 'Config 삭제' , content: `${ config_name }항목를 삭제하시겠습니까?` , params : [config_name], callback : async function( params ){
+			let config_name = params[0] 
+			let cur_config_name = $cookies.get('config_name') 
+			await ezch_tbl_editorService.removeConfig( config_name )
+			if( config_name == cur_config_name ){
+				$state.go('home')
+			}
+			$scope.$apply() 
+		}}
+		$scope.$broadcast('doModal') ;
+			
 	}
 	const updateUserDB = ( user_db )=>{
 		$scope.user_DB = user_db;

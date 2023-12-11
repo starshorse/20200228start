@@ -38,6 +38,53 @@
 			   .pointer_events_none{
 				   pointer-events: none;
 			   }
+				#modalWrap {
+				  display: none ;
+				  position: fixed ; /* Stay in place */
+				  z-index: 1; /* Sit on top */
+				  padding-top: 500px; /*  Location of the box */
+				  left: 50%;
+				  top: 50%;
+				  transform: translate( -50%, -50% );	  
+				  width: 100%; /* Full width */
+				  height: 100%; /* Full height */
+				  overflow: auto; /* Enable scroll if needed */
+				  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+				}
+				#modalBody {
+				  width: 500px;
+				  height: 300px;
+				  padding: 30px 30px;
+				  margin: 0 auto;
+				  border: 1px solid #777;
+				  color : #fff ;
+				  background-color: lavender;
+				}
+				#closeBtn {
+				  float:right;
+				  font-weight: bold;
+				  color: #777;
+				  font-size:25px;
+				  cursor: pointer;
+				}
+				.loader {
+					width: 48px;
+					height: 48px;
+					border: 5px solid #FFF;
+					border-bottom-color: #FF3D00;
+					border-radius: 50%;
+					display: inline-block;
+					box-sizing: border-box;
+					animation: rotation 1s linear infinite;
+				}
+				@keyframes rotation {
+					0% {
+						transform: rotate(0deg);
+					}
+					100% {
+						transform: rotate(360deg);
+					}
+				}
 		</style> 
 
 	</head>
@@ -94,5 +141,6 @@
 	<script src='../../service/spreads/events/index.js'></script> 
 	<script src='./controllers/tbl_editor.controller.js'></script> 
 	<script src='./controllers/tbl_mass_uplaod.controller.js'></script> 
+	<script src='/directives/do_modal/index.js'></script> 
 	<script src='app.js'></script> 
 </html>

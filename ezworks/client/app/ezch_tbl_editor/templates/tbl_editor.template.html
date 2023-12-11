@@ -51,10 +51,29 @@
 			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
 				테이블 편집기 즐겨찾기	
 			</button>
-			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" ng-repeat="edit_list in edit_lists" ng-click="edit_list_click( edit_list.configName , $event )" data-toggle="tooltip" title="Ctrl 키와 클릭시 새창열기">{{ edit_list.configName }}</a>
+			<ul class="dropdown-menu list-group" aria-labelledby="dropdownMenuButton">
+				<li class="dropdown-item"  ng-repeat="edit_list in edit_lists">
+				   <span ng-click="edit_item_remove_click( edit_list.configName, $event )" >
+				   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4c-4.419 0-8 3.582-8 8s3.581 8 8 8s8-3.582 8-8s-3.581-8-8-8zm3.707 10.293a.999.999 0 1 1-1.414 1.414L12 13.414l-2.293 2.293a.997.997 0 0 1-1.414 0a.999.999 0 0 1 0-1.414L10.586 12L8.293 9.707a.999.999 0 1 1 1.414-1.414L12 10.586l2.293-2.293a.999.999 0 1 1 1.414 1.414L13.414 12l2.293 2.293z"/></svg>
+				   </span> 
+				   <a ng-click="edit_list_click( edit_list.configName , $event )" data-toggle="tooltip" title="Ctrl 키와 클릭시 새창열기">{{ edit_list.configName }}</a>
+				</li>  
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="#">기본편집기</a>  
 			</ul>
 		</div>
+	</div>
+	<my-domodal modal='modal'></my-domodal> 
+	<div id="modalWrap">
+	  <div id="modalContent">
+		<div id="modalBody">
+		<!--	
+		  <span id="closeBtn">&times;</span> 
+		--> 
+		  <p>{{ modal.content }}</p> 
+		  <div style="margin: 0 auto">
+	    	<span class="loader"></span> 
+		  </div>	
+		</div>
+	  </div>
 	</div>

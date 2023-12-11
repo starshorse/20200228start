@@ -13,6 +13,7 @@ angular.module('ezch_tbl_editor',[
 	'async_job',
 // Spreadjs 	
 	'mySpreadjs',
+	'myDomodal',
 	'gc_spreadjs',
 	'spreadjs_events',
 	'ezch_tbl_editorService',

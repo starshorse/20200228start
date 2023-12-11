@@ -5,15 +5,23 @@
 angular.module('myDomodal',[])
 .controller('myDomodalCtrl',['$scope','myDomodal_service', 
 	function( $scope, myDoModal_service ){
+		var myModal = new bootstrap.Modal( document.getElementById('exampleModalCenter'),{ static: false , keyboard: false } )
 	$scope.$on('doModal', ()=>{
-		$('#exampleModalCenter').modal('show') 
+//		$('#exampleModalCenter').modal('show') 
+		myModal.show() 
+	})
+	$scope.$on('hideModal',()=>{
+//		$('#exampleModalCenter').modal('hide') 
+		myModal.hide()
 	})
 	$scope.modalDispatch = ( modal )=>{
-		modal.callback(); 
-		$('#exampleModalCenter').modal('hide') 
+		modal.callback( modal.params ); 
+//		$('#exampleModalCenter').modal('hide') 
+		myModal.hide()
 	}
     $scope.modalCancel = ( modal )=>{
-		$('#exampleModalCenter').modal('hide') 
+//		$('#exampleModalCenter').modal('hide') 
+		myModal.hide() 
 	}
 
 }])

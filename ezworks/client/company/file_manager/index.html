@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app='myMain_0'>
+	<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script data-require='jquery@*' data-semver='2.1.1' src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>                          
+		<link rel='stylesheet' href='/lib/spreadjs/15.0.6/css/gc.spread.sheets.15.0.6.css' />
+		<script src='/lib/spreadjs/15.0.6/scripts/gc.spread.sheets.all.15.0.6.min.js'></script> 
+		<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css' integrity='sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l' crossorigin='anonymous'>   
+		<script src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js' integrity='sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns' crossorigin='anonymous'></script>  
+        <link rel="stylesheet" href="/admin/user/login/style.css">
+        <link rel="stylesheet" href="/resource/css/test_parts.css">
+<!--		
+        <base href="/company/file_manager/" > 
+-->		
+		<style>
+                  body{
+					  background-color: lavender;
+					  padding-top: 0;
+				  }
+                  a {color:#fff}
+				  a.hover { color:#ff0 } 
+				  .container {
+					  padding-bottom: 150px ;
+				  }
+				  .btn-info{
+					  display: inline-block;
+					  outline: 0;
+					  border: none;
+					  cursor: pointer;
+					  font-weight: 600;
+					  border-radius: 4px;
+					  font-size: 13px;
+					  height: 40px;
+					  background-color: #9147ff;
+					  color: white;
+					  padding: 0 20px;
+						  :hover {
+							  background-color: #772ce8;
+						  }
+				  }
+				  .container {
+					  max-width: 70%;
+					  margin: 60px auto;
+				  }
+				  .container h1 {
+					  text-align: center;
+					  color: orange;
+				  }
+				  form {
+					  background-color: white;
+					  padding: 30px;
+				  }
+				  form .input-group {
+					  margin-bottom: 15px;
+				  }
+				  form label {
+					  display: block;
+					  margin-bottom: 10px;
+				  }
+				  form input {
+					  padding: 12px 20px;
+					  width: 100%;
+					  border: 1px solid #ccc;
+				  }
+				  .submit-btn {
+					  width: 100%;
+					  border: none;
+					  background: indigo;
+					  font-size: 18px;
+					  color: orange;
+					  border-radius: 3px;
+					  padding: 10px;
+					  text-align: center;
+				  }
+        </style>
+		<base href="/company/file_manager/">
+	</head>
+	<body class='text-center'>
+		<div ng-controller='myMain_0Ctrl'>
+			<my-header></my-header>
+			<!--
+			 <ng-include src="'/company/file_manager/company/'  +  server_name +  '/main.html'"></ng-include>
+			-->
+			 <ng-view></ng-view>
+		</div>	
+<!--		
+		<div id="ww_82291ee2fa9ab" v='1.3' loc='id' a='{"t":"responsive","lang":"ko","sl_lpl":1,"ids":["wl2279"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>Weather Data Source: <a href="https://wetterlabs.de/wetter_suwon/woche/" id="ww_82291ee2fa9ab_u" target="_blank">wettervorhersage 7 tage</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_82291ee2fa9ab"></script>
+		-->
+		<script src='/lib/angular/angular.js'></script> 
+		<script src='/lib/angular-route/angular-route.js'></script> 
+		<script src='/lib/angular-cookies/angular-cookies.js'></script> 
+		<script src='/lib/socket.io/client-dist/socket.io.js'></script> 
+		<script src='app.js'></script>
+		<script src='/company/file_manager/parts/app/index.js'></script>
+		<script src='/company/file_manager/parts/header.js'></script> 
+		<script src='/service/admin/index.js'></script> 
+		<script src='/service/work_space/index.js'></script> 
+		<script src='/service/work_space/collections/index.js'></script> 
+		<script src='/service/work_space/templates/index.js'></script> 
+		<script src='/company/workspace/service/hot_lnk/index.js'></script> 
+		<script src='/company/workspace/service/rest_api/index.js'></script> 
+		<script src='/company/workspace/service/form_control/index.js'></script> 
+		<script src='/company/workspace/service/encode_64/index.js'></script> 
+		<script src='/service/ui/index.js'></script> 
+		<script src='/company/workspace/service/spreadjs/filters/index.js'></script> 
+		<script src='/company/workspace/service/spreadjs/events/index.js'></script> 
+		<script src='/service/rest_api/index.js'></script> 
+		<script src='/parts/footers/index.js'></script> 
+	</body>	
+</html>

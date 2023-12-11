@@ -8,13 +8,14 @@ angular.module('myMain_0Header',[])
 	if( server_name == 'ezoffice')
 		$scope.is_ezoffice = true ; 
 	$scope.hrefs = { 
-		work_config :`http://${ $scope.host }:9000/admin/exists/index_gc.html`,
-		logOut:`/#!login`, 
-		db_work:`http://${ $scope.host }:9000/app/ezch_tbl_editor/`, 
-	    upload_file:`http://${ $scope.host }:9000/company/file_manager/`,
-		emPower:`http://${ $scope.host }:9000/admin/`, 
+		work_config :`https://${ $scope.host }:3004/admin/jupiter_web/`,
+		logOut:'/#!/main_page', 
+		db_work:`https://${ $scope.host }:5000/apps/ezch_tbl_maker_app/`, 
+		emPower:`https://${ $scope.host }:3004/admin/jupiter_db/`, 
 		authentication:`http://${ $scope.host }:5010/ui?company=${ user_DB }`, 
 		work_space :`https://${ $scope.host }:3004/company/workspace/?my_collection=collectionIntro`, 
+		upload:'/company/file_manager/' ,
+		download:'/company/file_manager/#!download' 
 	} 
 	let curUser_info = await $http.get(`/Hades/dba_editor/web_user/${ user_DB }/${ user }`);
     $scope.cur_user_info = curUser_info.data.DATA[0] 
@@ -24,7 +25,7 @@ angular.module('myMain_0Header',[])
 .directive('myHeader',function(){
 	return{
 		restrict:'E',
-		templateUrl:'/directives/header/main_header.directives.html',
+		templateUrl:'/company/file_manager/parts/header.html',
 		controller:'myMain_0HeaderCtrl'
 	}
 })
