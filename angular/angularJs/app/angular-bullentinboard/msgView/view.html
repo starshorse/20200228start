@@ -1,0 +1,26 @@
+<h5>{{userMsg.title}}</h5>
+<textarea readonly  class="form-control" rows="15">{{userMsg.contents}}</textarea>
+<br> 
+<video controls preload=auto autoplay width="100%" ng-src="{{ userMsg.video_url | trustUrl }}">
+	<!--
+		<source src="../mov/file_example_MP4_1280_10MG.mp4" type="video/mp4" />
+		<a href="../mov/file_example_MP4_1280_10MG.mp4">MP4</a>
+	<source src="{{ userMsg.video_url | trustUrl }}" type="video/mp4" />
+	-->
+		<a ng-href="{{ userMsg.video_url }}">MP4</a>
+</video>
+<br>
+<button class="btn btn-secondary btn-lg" ng-click="GoToPage()">
+    <span class="glyphicon  glyphicon-th-list"></span>Back
+</button>
+<button class="btn btn-secondary btn-lg" ng-click="editMsg()">
+    <span class="glyphicon  glyphicon-pencil"></span>Edit
+</button>
+
+<button class="btn btn-secondary btn-lg" ng-click="deleteMsg()">
+    <span class="glyphicon glyphicon-remove"></span>Delete
+</button>
+
+
+
+

@@ -2,7 +2,7 @@
   "_args": [
     [
       "angular-ui-router@1.0.30",
-      "/home/rrr/workdir/tmp/angularJs"
+      "/home/rrr/workdir/gitdn/20200228start/angular/angularJs"
     ]
   ],
   "_development": true,
@@ -27,7 +27,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/angular-ui-router/-/angular-ui-router-1.0.30.tgz",
   "_spec": "1.0.30",
-  "_where": "/home/rrr/workdir/tmp/angularJs",
+  "_where": "/home/rrr/workdir/gitdn/20200228start/angular/angularJs",
   "bugs": {
     "url": "https://github.com/angular-ui/ui-router/issues"
   },

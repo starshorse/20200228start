@@ -2,6 +2,11 @@
 
 require('dotenv').config() 
 // const { createProxyMiddleware } = require('http-proxy-middleware') 
+//---------------------------------------------------
+var routing_for_angluarjs = require('./routes/route_for_angularjs');
+var routing_for_apis = require('./routes/route_for_apis');
+
+//---------------------------------------------------
 
 module.exports = function( app ){
 	app.use('/tbl_editor', require('./app/tbl_editor')); 
@@ -43,4 +48,7 @@ module.exports = function( app ){
 	app.use('/log_monitor', require('./app/log_monitor')); 
 	app.use('/mlk_auth', require('./tools/authentication')); 
 	app.use('/cron', require('./services/cron')(app));
+//1	
+	app.use('/apis', routing_for_apis);
+	app.use('/', routing_for_angluarjs);
 }
