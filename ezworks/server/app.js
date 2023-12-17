@@ -6,6 +6,12 @@ const cors = require('cors')
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development' ;
 
+console.log( process.env )
+
+var proxy_hades_address = process.env.HADES_ADDRESS 
+var proxy_jupitor_address = process.env.JUPITOR_ADDRESS 
+
+
 var express = require('express');
 var config = require('./config/environment');
 var app = express(); 
@@ -21,7 +27,8 @@ app.use( cors() )
 
 if( process.env.PROXY_HADES == 'direct' ){
 	app.use('/Hades', createProxyMiddleware({
-		target: 'http://192.168.0.80:8000',
+//		target: 'http://192.168.0.80:8000',
+		target: `http://${ proxy_hades_address }`,
 		changeOrigin: true ,
 		pathRewrite:{
 			['^/Hades']:''
@@ -30,7 +37,8 @@ if( process.env.PROXY_HADES == 'direct' ){
 }
 if( process.env.PROXY_JUPITER == 'direct' ){
 	app.use('/Jupiter', createProxyMiddleware({
-		target: 'http://192.168.0.80:3001' ,
+//		target: 'http://192.168.0.80:3001' ,
+		target: `http://${ proxy_jupitor_address }` ,
 		changeOrigin: true ,
 		pathRewrite:{
 			['^/Jupiter']:''

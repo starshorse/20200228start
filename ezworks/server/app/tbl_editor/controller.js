@@ -1,7 +1,16 @@
 'use strict'
+/*
+	.env  add 
+	HERMES_ADDESS=${ proxy_hermes_address }  192.168.0.80:5001
+ */
 const { readFileSync , writeFileSync,  statSync } = require('fs') 
 const path = require('path') 
 const axios = require('axios') 
+
+require('dotenv').config() 
+
+var proxy_hermes_address = process.env.HERMES_ADDRESS 
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 //  Axios timeout added.. 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -83,7 +92,7 @@ exports.insert_tbl = async function( req, res){
 	let headers = { user_db ,id } 
 	
 	let  hades_data 
-	hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${tbl_name}/`, data , headers : headers })
+	hades_data = await axios({ method:"POST", url:`http://${ proxy_hermes_address }/ezchemtech/TableEditor/${tbl_name}/`, data , headers : headers })
 	result.STATUS = 1 
 	result.RESULT = 'success'
 	result.MESSAGE = '' 
@@ -100,7 +109,7 @@ exports.insert_tbl_tr = async function( req, res){
 	let headers = { user_db ,id } 
 	
 	let  hades_data 
-	hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${tbl_name}/tr`, data , headers : headers })
+	hades_data = await axios({ method:"POST", url:`http://${ proxy_hermes_address }/ezchemtech/TableEditor/${tbl_name}/tr`, data , headers : headers })
 	result.STATUS = hades_data.data.RESULT.STATUS  
 	result.RESULT = hades_data.data.RESULT.RESULT
 	if( result.STATUS == -1 )
@@ -119,14 +128,14 @@ exports.update_tbl = async function( req, res){
 	
 	let  hades_data 
 	try{
-		hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${tbl_name}/${seq}`, data , headers : headers, timeout: 2000 })
+		hades_data = await axios({ method:"POST", url:`http://${ proxy_hermes_address }/ezchemtech/TableEditor/${tbl_name}/${seq}`, data , headers : headers, timeout: 2000 })
 		result.STATUS = 1 
 		result.RESULT = 'success'
 		result.MESSAGE = '' 
 		result.DATA = hades_data.data.tbl_data ; 
 	}catch(err){
 		try{
-			hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${tbl_name}/${seq}`, data , headers : headers, timeout: 2000 })
+			hades_data = await axios({ method:"POST", url:`http://${ proxy_hermes_address }/ezchemtech/TableEditor/${tbl_name}/${seq}`, data , headers : headers, timeout: 2000 })
 			result.STATUS = 1 
 			result.RESULT = 'success'
 			result.MESSAGE = '' 
@@ -145,7 +154,7 @@ exports.update_user_config = async function( req, res){
 	let headers = { id } 
 	
 	let  hades_data 
-	hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${ user_db }/user`, data , headers : headers })
+	hades_data = await axios({ method:"POST", url:`http://${ proxy_hermes_address }/ezchemtech/TableEditor/${ user_db }/user`, data , headers : headers })
 	result.STATUS = 1 
         result.RESULT = 'success'
 	result.MESSAGE = '' 
@@ -161,7 +170,7 @@ exports.get_tbl_list = async function( req, res){
 	let user_db = req.params.db 
 	let headers = { user_db } 
 		
-	let  hades_data = await axios({ method:"GET", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/`, headers : headers })
+	let  hades_data = await axios({ method:"GET", url:`http://${ proxy_hermes_address }/ezchemtech/TableEditor/`, headers : headers })
 
 	result.STATUS = 1 
 	result.RESULT = 'success'
@@ -175,7 +184,7 @@ exports.get_tbl_schema = async function( req, res){
 	let user_db = req.headers.user_db 
 	let headers = { user_db } 
 		
-	let  hades_data = await axios({ method:"GET", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${ tbl_name }`, headers : headers })
+	let  hades_data = await axios({ method:"GET", url:`http://${ proxy_hermes_address }/ezchemtech/TableEditor/${ tbl_name }`, headers : headers })
 
 	result.STATUS = 1 
 	result.RESULT = 'success'
@@ -190,7 +199,7 @@ exports.get_user_config = async function( req, res){
 	let headers = { id } 
 		
 	try{
-	let  hades_data = await axios({ method:"GET", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/${ user_db }/user`, headers : headers })
+	let  hades_data = await axios({ method:"GET", url:`http://${ proxy_hermes_address }/ezchemtech/TableEditor/${ user_db }/user`, headers : headers })
 		result.STATUS = 1 
 		result.RESULT = 'success'
 		result.MESSAGE = '' 
@@ -210,7 +219,7 @@ exports.get_tbl = async function( req, res){
 	let tbl_name = req.params.tbl_name ;
 	let headers = { user_db } 
 		
-	let  hades_data = await axios({ method:"GET", url:`http://192.168.0.80:5001/ezchemtech/TableEditor/Data/${tbl_name}`, headers : headers })
+	let  hades_data = await axios({ method:"GET", url:`http://${ proxy_hermes_address }/ezchemtech/TableEditor/Data/${tbl_name}`, headers : headers })
 
 	result.STATUS = 1 
 	result.RESULT = 'success'
@@ -222,7 +231,7 @@ exports.get_tblSql = async function( req, res ){
 	let data = { db_name : req.params.db , sql_state: req.body.sql_state } 
 	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
 	try{
-		let  hades_data = await axios({ method:"POST", url:`http://192.168.0.80:5001/ezchemtech/TableMaker/`, data })
+		let  hades_data = await axios({ method:"POST", url:`http://${ proxy_hermes_address }/ezchemtech/TableMaker/`, data })
 		if( hades_data.data.RESULT == 'err'){
 			throw new Error( hades_data.data.ERRORMESSAGE.message );
 		}
