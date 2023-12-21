@@ -21,6 +21,7 @@
     "memorystore": "^1.6.7",
     "mssql": "^9.1.3",
     "mysql": "^2.18.1",
+    "mysql2": "^3.6.5",
     "sequelize": "^6.34.0",
     "sequelize-auto": "^0.8.8",
     "serve-favicon": "^2.5.0",
@@ -31,7 +32,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webQt": "node ./server/webQt/app.js",
-    "hades": "node --inspect=9050 ./server/hades/app_hades.js"
+    "hades": "node --inspect=9050 ./server/hades/app_hades.js",
+    "learn-sequelize": "node  ./learn-sequelize/app.js"
   },
   "author": "",
   "license": "ISC"

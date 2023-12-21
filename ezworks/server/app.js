@@ -16,14 +16,6 @@ var express = require('express');
 var config = require('./config/environment');
 var app = express(); 
 var server = require('http').createServer(app);
-app.use( express.json({
-	limit: "50mb"
-}) )
-app.use( express.urlencoded({
-	limit:"50mb",
-	extended: false 
-}))
-app.use( cors() ) 
 
 if( process.env.PROXY_HADES == 'direct' ){
 	app.use('/Hades', createProxyMiddleware({
@@ -45,6 +37,15 @@ if( process.env.PROXY_JUPITER == 'direct' ){
 		}
 	}))
 }
+
+app.use( express.json({
+	limit: "50mb"
+}) )
+app.use( express.urlencoded({
+	limit:"50mb",
+	extended: false 
+}))
+app.use( cors() ) 
 require('./routes')(app)
 require('./config/express')(app) 
 

@@ -1,0 +1,32 @@
+{
+  "development": {
+    "username": "User_WebQt",
+    "password": "test!@3582",
+    "database": "ezWebQt",
+    "host": "35.189.159.65",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "sa",
+    "password": "!csdlwlof#1286",
+    "database": "madang",
+    "host": "192.168.0.88",
+    "port":"1433",
+    "dialect": "mssql"
+  },
+  "ezoffice": {
+    "username": "sqlserver",
+    "password": "!csdlwlof#1286",
+    "database": "ezoffice",
+    "host": "34.64.60.213",
+    "port":"1433",
+    "dialect": "mssql"
+  },
+  "production": {
+    "username": "starshorse",
+    "password": "1234",
+    "database": "starshorse",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

@@ -1,9 +1,12 @@
 angular.module('ezworks',[
 	'ui.router',
+//	'ui.bootstrap',
 	'ngCookies',
 	'myLogin.login',
 	'myLogin.register',
-	'myMain_0Header'
+	'myMain_0Header',
+	'myDomodal',
+	'login_ctrl'
 ])
 .config( function( $stateProvider, $urlRouterProvider){
 	var login ={
@@ -35,55 +38,69 @@ angular.module('ezworks',[
 		templateUrl:'/parts/mainPage/main/main.parts.html',
 	    controller:'main_pageCtrl'
 	}
+	var main_sub0 = {
+		name: 'main_page.sub0',
+		url:'/sub0',
+		templateUrl:'/parts/mainPage/main/sub0.parts.html',
+	    controller:'main_sub0Ctrl'
+	}
+	var main_sub1 = {
+		name: 'main_page.sub1',
+		url:'/sub1',
+		templateUrl:'/parts/mainPage/main/sub1.parts.html',
+	    controller:'main_sub1Ctrl'
+	}
 	$stateProvider.state(login) 
 	$stateProvider.state(companies_list ) 
-	$stateProvider.state(main_page )
+	$stateProvider.state(main_page ).state( main_sub0 ).state( main_sub1 ) 
 	$urlRouterProvider.otherwise('/login') 
 })
 .controller('ezworksCtrl', ['$scope', function($scope){
-
+	   $scope.click=( modal_info )=>{
+		   $scope.modal = modal_info  
+		   $scope.$broadcast('doModal')
+	   }
 }])
 .controller('main_pageCtrl',['$scope','$injector','$stateParams',function( $scope, $injector, $stateParams  ){
+	 var $state = $injector.get('$state')
+	 $state.go('main_page.sub0') 
 }])
-.controller('companies_listCtrl',['$scope','$injector','$stateParams',function( $scope, $injector, $stateParams  ){
-	    var $Cookies = $injector.get('$cookies') 
-		var $state = $injector.get('$state') 
-        $scope.login_companies = $stateParams.myParam 
-	    $scope.go = ( company )=>{
-               $Cookies.put('user_DB' , company.db_name , { path: '/' })
-			   $Cookies.put('org_name', company.name  , { path: '/ ' }) 
-			   $Cookies.put('server_name', company.server_name , { path: '/ ' }) 
-//			   window.location.href ='http://localhost:9000/admin'
-			   $state.go('main_page') 
-			   
-		}
+.controller('main_sub0Ctrl',['$scope','$injector', function( $scope, $injector ){
 }])
-.controller('loginCtrl',['$scope','$injector','users','companies', function( $scope, $injector, users, companies ){
-		var $state = $injector.get('$state') 
-		var $Cookies = $injector.get('$cookies') 
-		$scope.user_id 
-		$scope.password 
-		$scope.users = users
-		$scope.login = users  
-		$scope.companies = companies.data 
-		$scope.login_companies = companies.data 
-		$scope.cur_view = 'login' 
-		$scope.isCurView = ( curView )=>curView == $scope.cur_view 
-		$scope.setCurView = ( curView )=>$scope.cur_view = curView 
-	    $scope.getLogin = ( user_id, password )=>{
-			$scope.login = $scope.users.filter((ent)=> ent.email == user_id && ent.password == password );  
-			$scope.login_companies = [] 
-			for( login of $scope.login ){
-                  let company = $scope.companies.find((ent)=>ent.db_name == login.db_name )
-				 if( company ) 
-					$scope.login_companies.push(company) 
-			}
-			if( $scope.login_companies.length ==  0){
-				alert(" no company avaiable" );
-				return -1 ;
-			}
-			console.log( user_id );
-            $Cookies.put('user', user_id, { path: '/' })  
-			$state.go("companies_list",{ myParam: $scope.login_companies } )
+.controller('main_sub1Ctrl',['$scope','$injector', function( $scope, $injector ){
+	var $state = $injector.get('$state')
+	var $controller = $injector.get('$controller') 
+	var $cookies = $injector.get('$cookies') 
+	var $http = $injector.get('$http') 
+	$scope.password = { new: "", confirm:"" }
+	const err_01 = { title:'입력오류', content:'새로운 패스워드를 입력하세요', callback:()=>{} }
+	const err_02 = { title:'입력오류', content:'확인된 패스워드가 일치하지 않습니다.', callback:()=>{} }
+	const err_03 = { title:'Session만료', content:'새로 로그인 하세요 !', callback:()=>{} }
+	let err_04 = { title:'Database오류', content:'Error !', callback:()=>{} }
+
+	$scope.modal ={ title:'변경 완료되었습니다.', content:' 새로운 패스워드로 로그인 하세요' , callback: ()=>{} }
+//	var ModalDemoCtrl = $controller('ModalDemoCtrl', { $scope: $scope }) 
+    $scope.changePw = async ()=>{
+		let user = $cookies.get('user') 
+		if( user == undefined ){
+			$scope.click( err_03 );
+		    return 
 		}
+		if( $scope.password.new == "" ){
+			$scope.click( err_01 );
+		    return 
+		}	
+		if( $scope.password.new !== $scope.password.confirm ){
+			$scope.click( err_02 );
+		    return 
+		}	
+		let result = await $http({ method:'POST', data:{ passcode: $scope.password.new } , url:`/Hades/dba_editor/admin_changePasscode/${ user }` }) 
+		if( result.data.STATUS == -1 ){
+			err_04.content = result.data.ERRORMESSAGE 
+			$scope.click( err_04 );
+			return 
+		}
+
+		$scope.click( $scope.modal ); 
+	}
 }])

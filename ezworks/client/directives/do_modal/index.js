@@ -1,6 +1,6 @@
 /*
 	bootstrap modal directive.. 
-	$broadcast('doModl') 
+	$scope.$broadcast('doModal') 
 */
 angular.module('myDomodal',[])
 .controller('myDomodalCtrl',['$scope','myDomodal_service', 
