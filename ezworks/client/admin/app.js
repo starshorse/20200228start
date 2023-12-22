@@ -132,8 +132,15 @@
 }])
 .controller('adminWebCtrl',['$scope','$injector',function($scope, $injector ){
 	    var $cookies = $injector.get('$cookies') 
+	    var jupitor_admin_editorFactory = $injector.get('jupitor_admin_editorFactory')
 	    let org_name = $cookies.get('org_name')
 	    let server_name = $cookies.get('server_name') 
+//1	
+		$scope.click=( modal_info )=>{
+			   $scope.modal = modal_info  
+			   $scope.$broadcast('doModal')
+		}	
+		jupitor_admin_editorFactory.do_modal = $scope.click 
 	    $scope.ezoffice_only = false ;
 	    if( server_name == 'ezoffice')
 		     $scope.ezoffice_only = true;

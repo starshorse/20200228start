@@ -26,6 +26,7 @@ angular.module('jupitor_admin_editor',[])
 				btn_view_info:'G8:G8',
 				btn_select_start :'G12:G12',
 				pos_user_info:{ name : 'J11:J11', password : 'J12:J12', position :'J13:J13', level:'J14:J14' },
+				btn_user_password_reset: 'K12:K12', 
 				btn_user_info_update: 'K16:K16' 
 			},
 			Permissions:{
@@ -40,6 +41,9 @@ angular.module('jupitor_admin_editor',[])
 		sheet_Users_table_logins :{ name: 'Table3', tbl_view: null , data:[]},
 		sheet_Permissions_table_permissions :{ name: 'Table4', tbl_view: null , tbl_columns:[], data:[], login_id: null, login_DB: null },  // 2023-06-14 
 		binding_data: { cur_server : null , cur_DB: null, cur_user: null , cur_organization: null ,  cur_login: null  },
+// $scope functions 
+		do_modal: null 
+
 	}
 	return jupitor_admin_editorFactory 	
 })
@@ -331,7 +335,26 @@ angular.module('jupitor_admin_editor',[])
 				alert( users_list.data.ERRORMESSAGE )
 			}
 		}
-		alert("Data update Done!"); 
+//		alert("Data update Done!"); 
+			let modal_info  = { title: 'User Info update' , content:'성공적으로 수행되었습니다' , callback: ()=>{} } 
+			jupitor_admin_editorFactory.do_modal( modal_info ) 
+	}
+//1	
+	this.sheet_users_part_userPassword_reset = async ( spread )=>{
+        let sheet = spread.getSheetFromName('Users') ;
+	    let password =  sheet.getRange( jupitor_admin_editorFactory.pos.Users.pos_user_info.password ).text() ; 
+		let cur_user = jupitor_admin_editorFactory.binding_data.cur_user ; 
+		let result  = await $http({ method:'POST', url: `/Hades/dba_editor/admin_resetPasscode/${ cur_user }` , data: { password }}).catch((err)=>console.log(err));
+		if( result.data.RESULT == -1 ){
+		//	alert( result.data.ERRORMESSAGE )
+			let modal_info  = { title: 'user Password reset: Error' , content: result.data.ERRORMESSAGE , callback: ()=>{} } 
+			jupitor_admin_editorFactory.do_modal( modal_info ) 
+			
+		}else{
+	    //	alert("Password reset Done!"); 
+			let modal_info  = { title: 'Password reset' , content:'성공적으로 수행되었습니다' , callback: ()=>{} } 
+			jupitor_admin_editorFactory.do_modal( modal_info ) 
+		}
 	}
 	this.sheet_Users_part_userInfo_invalidate = ( spread , yes= 1 )=>{
                 let sheet = spread.getSheetFromName('Users') ;
@@ -582,6 +605,7 @@ angular.module('jupitor_admin_editor',[])
 				let btn_view_info = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_view_info ) 
 				let btn_select_start = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_select_start ) 
 				let btn_user_info_update = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_user_info_update ) 
+				let btn_user_password_reset = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_user_password_reset ) 
 				let cell_add_user = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.addUser ) 
 				// check click login list .. 
 				let table = jupitor_admin_editorFactory.sheet_Users_table_logins.tbl_view 
@@ -604,6 +628,8 @@ angular.module('jupitor_admin_editor',[])
 					case btn_user_info_update.col:
 						if( args.row == btn_user_info_update.row )
 							jupitor_admin_editorService.sheet_users_part_userInfo_update( spread );
+						if( args.row == btn_user_password_reset.row )
+							jupitor_admin_editorService.sheet_users_part_userPassword_reset( spread );
 						break;
 				}
 				break;
