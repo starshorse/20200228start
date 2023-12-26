@@ -11,9 +11,13 @@ angular.module('myMain_0Header',[])
 		work_config :`http://${ $scope.host }:9000/admin/exists/index_gc.html`,
 		logOut:`/#!login`, 
 		db_work:`http://${ $scope.host }:9000/app/ezch_tbl_editor/`, 
+			tbl_editor:`http://${ $scope.host }:9000/app/ezch_tbl_editor/`, 
+			tbl_maker:`http://${ $scope.host }:9000/app/ezch_tbl_maker/`, 
 	    upload_file:`http://${ $scope.host }:9000/company/file_manager/`,
 		emPower:`http://${ $scope.host }:9000/admin/`, 
 		authentication:`http://${ $scope.host }:5010/ui?company=${ user_DB }`, 
+			auth_esr:`http://${ $scope.host }:5010/ui?company=${ user_DB }`, 
+			auth_cert:`http://${ $scope.host }:5010/bootstrap`, 
 		work_space :`https://${ $scope.host }:3004/company/workspace/?my_collection=collectionIntro`, 
 	} 
 	let curUser_info = await $http.get(`/Hades/dba_editor/web_user/${ user_DB }/${ user }`);

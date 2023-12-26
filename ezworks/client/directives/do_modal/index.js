@@ -7,7 +7,7 @@ angular.module('myDomodal',[])
 	function( $scope, myDoModal_service ){
 //		var myModal = new bootstrap.Modal( document.getElementById('exampleModalCenter'),{ static: false , keyboard: false } )
 	$scope.$on('doModal', ()=>{
-		$scope.$apply();
+		if( !$scope.$root.$$phase )$scope.$apply();
 		$('#exampleModalCenter').modal('show') 
 //		myModal.show() 
 	})
