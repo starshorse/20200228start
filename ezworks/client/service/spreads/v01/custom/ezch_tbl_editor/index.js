@@ -64,6 +64,8 @@ angular.module('ezch_tbl_editorService',[])
 		updateConfigName : null, 
 		endPageLoading: null,
 		toMass_upload: null, 
+		do_modalStart: null, 
+		do_modalEnd: null, 
 // access rights
 		spread_1_db_access: null
 	}
@@ -648,6 +650,9 @@ angular.module('ezch_tbl_editorService',[])
 		ezch_tbl_editorFactory.sql_state.state_1 = state ;
 	}
 	this.sheet_TblView_update_genTblView = async ( spread )=>{
+		let modal = { title: 'View 생성', content: '데이터 뷰를 생성중입니다. 잠시만 기다려 주세요' } 
+        ezch_tbl_editorFactory.do_modalStart( modal ); 
+		
 		// invalidate  configuration.. 
 		ezch_tbl_editorFactory.sheet_TblView_table.config_name = null ;  
 		ezch_tbl_editorFactory.sheet_TblView_table.config_data = null ;  
@@ -662,6 +667,7 @@ angular.module('ezch_tbl_editorService',[])
 			await sheet_TblView_update_basic( spread ); 
 	        	this.sheet_TblView_invalidate_sqlInput( spread, !ezch_tbl_editorFactory.cellBinding_config_list.sql_enable );
 		}
+		ezch_tbl_editorFactory.do_modalEnd();
 	}
 	this.sheet_TblView_init = async( spread )=>{
 

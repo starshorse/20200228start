@@ -12,23 +12,27 @@
 				</select>
 			</div>
 		</div> 
-		<div class='col-md-1'>
+		<div class='col-md-3'>
 			<h5><span class='badge bg-secondary mx-3'>Collection</span>디자인</h5>
 		</div>
-		<div class='col-md-1'>
+		<div class='col-md-2'>
 			<h6><span class='badge bg-secondary mx-3'>App</span>Table_editor</h6>
 		</div>
-		<div class='col-md-2'>
+		<div class='col-md-3'>
 			<h6><span class='badge bg-secondary mx-3'>Conf</span>{{ cur_config_name }}</h6>
 		</div>
+<!--		
 		<div class='col-md-4'>
 			<div class='alert alert-block' ng-class="{'alert-success': alert_info_message.class == 'success', 'alert-warning': alert_info_message.class == 'warning' }" role='alert' ng-init="alert_info_message.message ='Alert Message'; alert_info_message.class = 'warning'">
 				{{ alert_info_message.message }}
 			</div>
 		</div> 	
+-->		
 	</div>	
 </nav>
 <my-spreadjs id="viewId"></my-spreadjs>
+	<my-domodal modal='modal'></my-domodal> 
+	<a ng-click="click_doModal()">do Modal</a> 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
 	<div class="offcanvas-header">
 		<h5 class="offcanvas-title" id="offcanvasExampleLabel">Hot Link</h5>
@@ -71,7 +75,7 @@
 		  <span id="closeBtn">&times;</span> 
 		--> 
 		  <p>{{ modal.content }}</p> 
-		  <div style="margin: 0 auto">
+		  <div style="">
 	    	<span class="loader"></span> 
 		  </div>	
 		</div>

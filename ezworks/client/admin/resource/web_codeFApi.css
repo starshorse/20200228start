@@ -1,10 +1,5 @@
-.float_full_icon{
-   z-index: 104;
-   position: absolute;
-   top: 5%;
-   left: 10%;
-}
-table{
+/*
+table{	
 	flex-grow: 1;
 	padding: 20px;
 	margin-top: 40px;
@@ -28,9 +23,15 @@ select{
 	text-align: center;
 	border-radius: 5px;
 	color: #fff;
-	/* background-color: #54a1a0; */
+	/* background-color: #54a1a0; *//*
 	background-color: #9a89c6;
 	background-color: indigo;
+} */
+.float_full_icon{
+   z-index: 104;
+   position: absolute;
+   top: 5%;
+   left: 10%;
 }
 .service_wrapper{
    width: 100%;

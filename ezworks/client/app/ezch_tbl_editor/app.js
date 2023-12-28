@@ -50,4 +50,7 @@ angular.module('ezch_tbl_editor',[
 })
 .controller('ezch_tbl_mainCtrl', ['$scope','$injector', function( $scope, $injector ){
 	$scope.hrefs = { tbl_maker: '/app/ezch_tbl_maker' }
+	$scope.click_doModal = ()=>{
+		$scope.$broadcast('doModal') 
+	}
 }])

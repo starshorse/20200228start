@@ -6,7 +6,9 @@ angular.module('spreadjs_events', [])
 		  bind_errMessage_ft : ( message_ft_ )=>{
 			   spreadjsEvents_factory.message_ft = message_ft_
 		  },
-                  sell_cell : { 'col_sel': null , 'row_sel': null } 
+          sell_cell : { 'col_sel': null , 'row_sel': null },
+		  owned_sheet0_cellClick: null , 
+		  owned_sheet0_doubleCellClick: null, 
 	}
 	return spreadjsEvents_factory
 })
@@ -36,8 +38,9 @@ spreadJs_factory,
 	let sheet0 = spreadJs_service.getSheet0() 
 	sheet0.unbind( spreadjs_product.Events.CellClick )
 	sheet0.bind( spreadjs_product.Events.CellClick, ( sender, args )=>{
-		                spreadjsEvents_factory.sell_cell.col_sel = args.col
-		                spreadjsEvents_factory.sell_cell.row_sel = args.row
+		        spreadjsEvents_factory.sell_cell.col_sel = args.col
+		        spreadjsEvents_factory.sell_cell.row_sel = args.row
+		        spreadjsEvents_factory.owned_sheet0_cellClick( sender, args );  
 				post_cellClick_f_list.forEach((ent)=>ent( )) 
 		})
 	}
@@ -56,6 +59,7 @@ spreadJs_factory,
 			let spread_data = spreadJs_service.getDbData() 
 		    sheet0.unbind( spreadjs_product.Events.CellDoubleClick )
 		    sheet0.bind( spreadjs_product.Events.CellDoubleClick, ( sender, args )=>{
+				spreadjsEvents_factory.owned_sheet0_doubleCellClick( sender, args ); 
 				postEvent_ft( dataMode ) 
     	})
 	}	

@@ -6,28 +6,6 @@
 	$locationProvider.html5Mode({ enabled:true , requireBase: false} )
 	$routeProvider.when('/',{ 
 	})
-	.when('/jupitor_config/:config_name',{
-		template:`
-		<div id='appWrapper' class='mx-2 px-2'>
-			<my-indicate></my-indicate> 
-			<cmd-input></cmd-input>                                    
-			<my-spreadjs></my-spreadjs>                                
-			<my-events></my-events>
-			<my-sheet1></my-sheet1>
-			<my-addopts></my-addopts>
-		</div>
-		`,
-		controller: function($scope, $routeParams,$location ){
-			$scope.$parent.is_jupitorConfig = 1 ;
-			let config_name =  $routeParams.config_name 
-			if( config_name != 'first' ){
-				let config_obj = $scope.$parent[config_name]
-				$scope.$parent.set_spreadCreate_flag(0) // request create spread. 
-				$scope.$parent.openApp( config_obj ) 
-			}
-		}
-
-	})
 	.when('/codeFApi/:service_name', {
 		templateUrl: '/admin/templates/limit_codeFApiService.html' ,
 		controller:'limit_codeFApiCtrl' ,
@@ -53,7 +31,8 @@
 			}
 		},
 	})
-	.otherwise( { redirectTo :'/jupitor_config/first' } ) 
+//	.otherwise( { redirectTo :'/jupitor_config/first' } ) 
+//	.otherwise( { redirectTo :'/jupitor_appConfig' } ) 
 })
 .controller('limit_codeFApiCtrl', ['$scope',
 '$routeParams',

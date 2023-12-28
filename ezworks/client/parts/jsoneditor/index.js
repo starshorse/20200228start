@@ -13,33 +13,24 @@ angular.module('jsoneditor',[])
      // create the editor
 	const container = document.getElementById("jsoneditor")
 	jsonEditor_service.initEditor( container ) 
+	jsonEditor_service.updateData( $scope.jeditor.data  ) 
+
 	$scope.jsonApply = ()=>{
-		jsonEditor_service.setJSONData() 
+		if( $scope.jeditor.cb_apply )
+                $scope.jeditor.cb_apply(); 
+//		jsonEditor_service.setJSONData() 
 		$scope.dataMode = 0 
 	}
 	$scope.jsonCancel = ()=>{
+		if( $scope.jeditor.cb_cancel )
+			    $scope.jeditor.cb_cancel(); 
 		$scope.dataMode = 0 
 	}
-/*	
-	const options = {}
-	const editor = new JSONEditor(container, options)
-	// set json
-	const initialJson = {
-					"Array": [1, 2, 3],
-					"Boolean": true,
-					"Null": null,
-					"Number": 123,
-					"Object": {"a": "b", "c": "d"},
-					"String": "Hello World"
-				}
-	editor.set(initialJson)
-	// get json
-	const updatedJson = editor.get()
-*/
 }]) 
 .directive('jsonEditor', function(){
       return {
 		restrict:'E',
+		scope: { jeditor:'='} ,
 		templateUrl:'/parts/jsoneditor/jsoneditor.html', 
         controller:'jsoneditorCtrl'
 	  }

@@ -128,7 +128,8 @@ spreadJs_factory,
 		let cur_server = workSpace_factory.cur_server ; 
 		switch( tbl_name_ ){
 	                case 'app_list':
-	 			temp_data = await $http.get(`/Jupiter/db_edit/jupiter/app_list/${ cur_server }`).catch((err)=>{ console.log( err )})	//  proxy middleware.. 
+	// 			temp_data = await $http.get(`/Jupiter/db_edit/jupiter/app_list/${ cur_server }`).catch((err)=>{ console.log( err )})	//  proxy middleware.. 
+	 			temp_data = await $http.get(`/Jupiter/db_edit/jupiter_db/app_list/${ cur_server }`).catch((err)=>{ console.log( err )})	//  proxy middleware.. 
 	 			Data_s[0] = temp_data.data.DATA.data
 				Data_s[1] = temp_data.data.DATA.hdr 
 			        spreadjs_openTbl_cb( Data_s ) 

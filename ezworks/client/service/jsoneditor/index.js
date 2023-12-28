@@ -38,6 +38,13 @@ angular.module('jsoneditor')
         this.initEditor = ( container_ )=>{
 			editor = new JSONEditor( container_ , options ) 
 		}
+//1	
+	    this.updateData = ( data_ )=>{
+			editor.set( data_ )
+		}
+	    this.outData = ()=>{
+			return JSON.stringify( editor.get() ); 
+		}
 // Mon Jun 20 16:04:31 KST 2022
 	    this.changeJSONEditor_btn = ( jsonData_ , appName_ , saveFt_ )=>{
 			this.saveFt = saveFt_ 

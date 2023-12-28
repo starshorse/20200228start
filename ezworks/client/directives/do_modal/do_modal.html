@@ -1,5 +1,27 @@
 <!--
 	modal { title , content , { input_1: { label }} 
+	Spanner.. 
+				.loader {
+					position: relative;
+					left: 50% ;
+					transform: translateX(-30%);
+					width: 48px;
+					height: 48px;
+					border: 5px solid #FFF;
+					border-bottom-color: #FF3D00;
+					border-radius: 50%;
+					display: inline-block;
+					box-sizing: border-box;
+					animation: rotation 1s linear infinite;
+				}
+				@keyframes rotation {
+					0% {
+						transform: rotate(0deg);
+					}
+					100% {
+						transform: rotate(360deg);
+					}
+				}
 -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
@@ -16,6 +38,9 @@
 	<!--			
 				<ui-view></ui-view> 
 	 -->			
+	        <div class="bg-light">
+	    	<span class="loader"></span> 
+			</div> 
 			<div class="form-group row" ng-show='modal.input_1.enable'>
 				<label for 'app_name' class='col-md-4 col-form-label text-md-right'>{{ modal.input_1.label }}</label>
 				<div class='col-md-6'>

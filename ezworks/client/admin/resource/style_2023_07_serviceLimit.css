@@ -54,6 +54,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 */
+/*
 body {
   font-family: 'Arita','Poppins', sans-serif;
   background: #fafafa;
@@ -62,7 +63,7 @@ body {
   height: 100%;
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
-  /*overflow-x: hidden;*/ }
+  /*overflow-x: hidden;*//* }
 
 html {
   font-family: Arita, Raleway, Youth;
@@ -90,17 +91,17 @@ th {
   text-align: center;
   font-weight: 700;
   font-size: 20px;
-  /*  background-color: #2C3845; */
+  /*  background-color: #2C3845; *//*
   background-color: #1B4F72;
   color: #fff;
   border: 1px solid #9a89c6; }
 
 tr:nth-child(even) {
-  /*  background-color: #2C3845; */
+  /*  background-color: #2C3845; *//*
   background-color: #1F618D; }
 
 tr:nth-child(odd) {
-  /*  background-color: #242E39; */
+  /*  background-color: #242E39; *//*
   background-color: #1B4F72; }
 
 td {
@@ -128,6 +129,43 @@ input, textarea {
   background: #fa482e;
   color: #fff;
   text-shadow: none; }
+
+body > div > ui-view > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70%;
+  /*	background-color:#5BB9B8; *//*
+  background-color: #9a89c6;
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
+body > div > ui-view > div > h3 {
+  text-align: center;
+  color: #D4E6F1; }
+
+body > div > ui-view > div > table {
+  flex-grow: 1;
+  padding: 20px;
+  margin-top: 40px;
+  width: 50%; }
+
+body > div > ui-view > div > table > tbody > tr > td > select {
+  height: 40px;
+  width: 50%;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  /*	  background-color: #54a1a0 ; *//*
+  background-color: #9a89c6; }
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #4c93a5; }
+*/
 
 #loadingSVGarea {
   text-align: center;
@@ -2275,37 +2313,6 @@ div.offcanvas-body div ul>li {
 div.offcanvas-body div ul li:hover {
   color: white; }
 
-body > div > ui-view > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 70%;
-  /*	background-color:#5BB9B8; */
-  background-color: #9a89c6;
-  padding-top: 60px;
-  padding-bottom: 60px; }
-
-body > div > ui-view > div > h3 {
-  text-align: center;
-  color: #D4E6F1; }
-
-body > div > ui-view > div > table {
-  flex-grow: 1;
-  padding: 20px;
-  margin-top: 40px;
-  width: 50%; }
-
-body > div > ui-view > div > table > tbody > tr > td > select {
-  height: 40px;
-  width: 50%;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 5px;
-  color: #fff;
-  /*	  background-color: #54a1a0 ; */
-  background-color: #9a89c6; }
-
 #sidebar {
   /* don't forget to add all the previously mentioned styles here too */
   background: #4c93a5;
@@ -2337,7 +2344,3 @@ body > div > ui-view > div > table > tbody > tr > td > select {
   color: #fff;
   background: #17a2b8; }
 
-ul ul a {
-  font-size: 0.9em !important;
-  padding-left: 30px !important;
-  background: #4c93a5; }

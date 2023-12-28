@@ -88,7 +88,8 @@ Thu May 19 08:04:14 UTC 2022
 // Fri Mar  4 11:09:36 KST 2022
 		if( spreadjsEvents_service ){
 	    		console.log('[parts/spreads] process_events Line :84  $scope.$$phase double $apply error. example. ') 
-                        spreadjsEvents_service.register_sheet0_bind_cellClick() 
+                    spreadjsEvents_service.register_sheet0_bind_cellClick() 
+                    spreadjsEvents_service.register_sheet0_bind_cellDoubleclick() 
             		spreadjsEvents_service.register_sheet1_bind_cellClick() 
 	    		spreadjsEvents_service.register_spread_bind_activeSheetChanging() 
 		}

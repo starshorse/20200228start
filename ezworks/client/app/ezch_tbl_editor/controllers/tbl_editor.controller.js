@@ -61,6 +61,16 @@ angular.module('ezch_tbl_editorCtrl',[])
 		$scope.$broadcast('doModal') ;
 			
 	}
+	$scope.click_doModal = async ( modal = null )=>{
+		if( modal == null ){
+		      modal = { title: 'Modal Test' , content: 'Modal Test합니다.' , callback : async function(){} }
+		}
+		$scope.modal = modal ;
+		$scope.$broadcast('doModal') ;
+	}
+	$scope.hideModal = async ()=>{
+	    $scope.$broadcast('hideModal'); 	
+	}
 	const updateUserDB = ( user_db )=>{
 		$scope.user_DB = user_db;
 		if( !$scope.$$phase )$scope.$apply() 
@@ -93,6 +103,8 @@ angular.module('ezch_tbl_editorCtrl',[])
 	ezch_tbl_editorFactory.endPageLoading  = endPageLoading ; 
 	ezch_tbl_editorFactory.update_editLists =  $scope.edit_lists_update ;
 	ezch_tbl_editorFactory.toMass_upload =  toMass_upload ; 
+	ezch_tbl_editorFactory.do_modalStart = $scope.click_doModal   ; 
+	ezch_tbl_editorFactory.do_modalEnd = $scope.hideModal   ; 
 
 	document.getElementById('inputGroupSelect01').addEventListener('change', function(e){
 		let  db_name = document.getElementById('inputGroupSelect01').value 
