@@ -66,10 +66,10 @@ angular.module('ezch_tbl_editorCtrl',[])
 		      modal = { title: 'Modal Test' , content: 'Modal Test합니다.' , callback : async function(){} }
 		}
 		$scope.modal = modal ;
-		$scope.$broadcast('doModal') ;
+		$scope.$broadcast('doModalImmediate') ;
 	}
 	$scope.hideModal = async ()=>{
-	    $scope.$broadcast('hideModal'); 	
+	    $scope.$broadcast('hideModalImmediate'); 	
 	}
 	const updateUserDB = ( user_db )=>{
 		$scope.user_DB = user_db;

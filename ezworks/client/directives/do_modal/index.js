@@ -24,6 +24,37 @@ angular.module('myDomodal',[])
 		$('#exampleModalCenter').modal('hide') 
 //		myModal.hide() 
 	}
+// modal('show') after a modal('hide' doesn't work  workaround. 
+	var hideInProgress = false;
+	var showModalId = '';
+	function showModal(elementId) {
+		if (hideInProgress) {
+			showModalId = elementId;
+		} else {
+			$("#" + elementId).modal("show");
+		}
+	};
+	function hideModal(elementId) {
+		hideInProgress = true;
+		$("#" + elementId).on('hidden.bs.modal', hideCompleted);
+		$("#" + elementId).modal("hide");
+		function hideCompleted() {
+			hideInProgress = false;
+			if (showModalId) {
+				showModal(showModalId);
+			}
+			showModalId = '';
+			$("#" + elementId).off('hidden.bs.modal');
+		}
+	};
+		$scope.$on('doModalImmediate',()=>{
+			showModal('exampleModalCenter')
+			}
+		) 
+		$scope.$on('hideModalImmediate',()=>{
+			hideModal('exampleModalCenter') 
+			}
+		)
 
 }])
 .service('myDomodal_service', function(){
