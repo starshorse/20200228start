@@ -24,8 +24,11 @@ angular.module('ezch_tbl_editorService',[])
 			},
 			TblList :{
 				curTable : 'C5:C5' ,
-			        btn_addColumn : 'P8:P8' ,
+			    btn_addColumn : 'P8:P8' ,
 				btn_get_tblView : 'P4:P4',
+				btn_all_invisible : 'N6:N6',
+				btn_all_visible : 'N5:N5',
+				btn_notnull_visible : 'N4:N4',
 				addColumn_info: 'E9:N9',
 				tbl_schema_order_info:'E11:E111',
 				tbl_schema_edit_info: 'M11:N111' ,
@@ -47,8 +50,10 @@ angular.module('ezch_tbl_editorService',[])
 		sql_state: { pos: null , state_1 :  'select ', state_2:'order by seq desc' },
 		bl_set_flag: 0,
 		async_updates:[],
+		schema_order_disableTag : 666, 
+		limitTbl_columnCount: 30 , 
 // tblView( sheet0 ) runtime lock.. 
-	        lock_style: null,
+	    lock_style: null,
 		unlock_style: null, 
 		lastSelections: [],
 		currentSelections: [],
@@ -318,26 +323,18 @@ angular.module('ezch_tbl_editorService',[])
 			return { 'SELECT' : true , 'INSERT': true , 'UPDATE': true , 'VIEW DEFINITION': true }
 		return ezch_tbl_editorFactory.spread_1_db_access.find((ent)=>ent.name == ezch_tbl_editorFactory.sheet_TblView_table.tbl_name )
 	}
-	this.sheet_TblView_update_dataColumns = ( spread, data4hdr )=>{
-		var tableColumns = [],
-				names = [], 
-				labels = [];
-		
-		let userHdr  =  data4hdr 
-		console.log( userHdr ) 
-		ezch_tbl_editorFactory.names_sheet0_notNull = [] ;
-		ezch_tbl_editorFactory.hide_null_check.hide_null_flag = 0 ;
-		ezch_tbl_editorFactory.hide_null_check.null_list = [] ;
+	this.sheet_TblView_get_dataColumns = ( spread, userHdr )=>{
+		var tableColumns = [],names = [], labels = [], names_sheet0_notNull= [], hide_null_check = { hide_null_flag: 0, null_list: [] } ;
 		let i = 0 
-		ezch_tbl_editorFactory.names_sheet0 = names = labels = userHdr.reduce(( acc , cur )=>{
+		names = labels = userHdr.reduce(( acc , cur )=>{
 			  if( cur.visible == true ){
 			    	acc.push( { Field: cur.Field , Formatter: cur.Formatter } )
-				    if( cur.Null == false )ezch_tbl_editorFactory.names_sheet0_notNull.push(i)
+				    if( cur.Null == false )names_sheet0_notNull.push(i)
 				    i++ 
 			  }else{
 				  if( cur.Null == false ){
-					  ezch_tbl_editorFactory.hide_null_check.hide_null_flag = 1 ;
-					  ezch_tbl_editorFactory.hide_null_check.null_list.push( cur.Field ) 
+					  hide_null_check.hide_null_flag = 1 ;
+					  hide_null_check.null_list.push( cur.Field ) 
 				  }
 			  }
 			   return acc 
@@ -349,6 +346,14 @@ angular.module('ezch_tbl_editorService',[])
 			tableColumn.formatter( name.Formatter ); 
 			tableColumns.push( tableColumn ); 
 		});
+		return { tableColumns, names_sheet0_notNull , hide_null_check }
+	}
+	this.sheet_TblView_update_dataColumns = ( spread, data4hdr )=>{
+		const { tableColumns, names_sheet0_notNull , hide_null_check } = this.sheet_TblView_get_dataColumns( spread, data4hdr ) 
+
+		ezch_tbl_editorFactory.names_sheet0_notNull = names_sheet0_notNull ;
+		ezch_tbl_editorFactory.hide_null_check.hide_null_flag = hide_null_check.hide_null_flag ;
+		ezch_tbl_editorFactory.hide_null_check.null_list = hide_null_check.null_list ;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // update insert block..
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
@@ -359,12 +364,12 @@ angular.module('ezch_tbl_editorService',[])
 		 sheet0.clear( cell_block.row, cell_block.col, 5, 100 , GC.Spread.Sheets.SheetArea.viewport , GC.Spread.Sheets.StorageType.style ) 
 
 		sheet0.getRange( cell_block.row , cell_block.col , 5 , 1 ).borderLeft( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium)) 
-		sheet0.getRange( cell_block.row , cell_block.col+ names.length -1 , 5 , 1 ).borderRight( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium)) 
-		sheet0.getRange( cell_block.row , cell_block.col , 1 , names.length ).borderTop( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium)) 
-		sheet0.getRange( cell_block.row , cell_block.col , 1 , names.length ).borderBottom( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium)) 
-		sheet0.getRange( cell_block.row + 4 , cell_block.col , 1 , names.length ).borderBottom( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium)) 
-		sheet0.getRange( cell_block.row , cell_block.col, 5 , names.length ).value('') 
-		sheet0.getRange( cell_block.row , cell_block.col, 5 , names.length ).locked( false )
+		sheet0.getRange( cell_block.row , cell_block.col+ tableColumns.length -1 , 5 , 1 ).borderRight( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium)) 
+		sheet0.getRange( cell_block.row , cell_block.col , 1 , tableColumns.length ).borderTop( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium)) 
+		sheet0.getRange( cell_block.row , cell_block.col , 1 , tableColumns.length ).borderBottom( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium)) 
+		sheet0.getRange( cell_block.row + 4 , cell_block.col , 1 , tableColumns.length ).borderBottom( new GC.Spread.Sheets.LineBorder('#777777', GC.Spread.Sheets.LineStyle.medium)) 
+		sheet0.getRange( cell_block.row , cell_block.col, 5 , tableColumns.length ).value('') 
+		sheet0.getRange( cell_block.row , cell_block.col, 5 , tableColumns.length ).locked( false )
 		
 		ezch_tbl_editorFactory.names_sheet0_notNull.forEach(( ent )=>{
 			sheet0.getRange( cell_block.row  , cell_block.col + parseInt( ent ) , 5, 1 ).backColor('#E3EFDA') 
@@ -650,6 +655,14 @@ angular.module('ezch_tbl_editorService',[])
 		ezch_tbl_editorFactory.sql_state.state_1 = state ;
 	}
 	this.sheet_TblView_update_genTblView = async ( spread )=>{
+		// First check tableColumn info
+	    const { tableColumns }  = this.sheet_TblView_get_dataColumns( spread, ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data )
+		if( tableColumns.length > ezch_tbl_editorFactory.limitTbl_columnCount ){
+			let modal = { title: 'Columns수 초과', content: 'Columns수를 줄여주세요' } 
+			ezch_tbl_editorFactory.do_modalStart( modal ); 
+			return -1 ;
+		}
+
 		let modal = { title: 'View 생성', content: '데이터 뷰를 생성중입니다. 잠시만 기다려 주세요' } 
         ezch_tbl_editorFactory.do_modalStart( modal ); 
 		
@@ -660,12 +673,12 @@ angular.module('ezch_tbl_editorService',[])
 		 ezch_tbl_editorFactory.cellBinding_config_list.cur_config_name = ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_name 
 		}	
 
-	        if( ezch_tbl_editorFactory.cellBinding_config_list.sql_enable ){
+		if( ezch_tbl_editorFactory.cellBinding_config_list.sql_enable ){
 			if( ezch_tbl_editorFactory.sql_state.state_1 == null ){ alert("need columns data for SQL"); return -1  };
 			await this.sheet_TblView_update_execSql( spread ); 
 		}else{
 			await sheet_TblView_update_basic( spread ); 
-	        	this.sheet_TblView_invalidate_sqlInput( spread, !ezch_tbl_editorFactory.cellBinding_config_list.sql_enable );
+			this.sheet_TblView_invalidate_sqlInput( spread, !ezch_tbl_editorFactory.cellBinding_config_list.sql_enable );
 		}
 		ezch_tbl_editorFactory.do_modalEnd();
 	}
@@ -1061,6 +1074,14 @@ angular.module('ezch_tbl_editorService',[])
 		sheet1.getRange( ezch_tbl_editorFactory.pos.TblList.tbl_schema_order_info ).locked( false ).backColor('LemonChiffon')
 		sheet1.getRange( ezch_tbl_editorFactory.pos.TblList.tbl_schema_edit_info ).locked( false ).backColor('LemonChiffon')
 		sheet1.options.isProtected = true 
+// boundary check Table column count 
+		if( schema_tbl.tbl_data.length > ezch_tbl_editorFactory.limitTbl_columnCount ){
+		//	alert(" Column수가 많아 NOT NULL column만 우선visble 설정되었습니다.")
+			let modal = { title: 'Column초과', content: 'Column수가 많아 NOT NULL column만 우선 visible 설정되었습니다' } 
+			ezch_tbl_editorFactory.do_modalStart( modal ); 
+			this.sheet_TblList_tableSchema_change_to_visible_notnull( spread ) 
+		}
+
 //		this.updateTable_name( spreadjs_product , spreadJs_factory , tbl_name )
 // clear configName. 
                 ezch_tbl_editorFactory.sheet_TblView_table.config_name = null 
@@ -1068,16 +1089,56 @@ angular.module('ezch_tbl_editorService',[])
 		ezch_tbl_editorFactory.cellBinding_config_list.cur_config_name = null  
 		ezch_tbl_editorFactory.updateConfigName( 'no configuration mode')
 	}
+	 this.sheet_TblList_tableSchema_change_to_invisible_all = ( spread )=>{
+		let sheet1  =  spread.getSheet(1)
+		let cell_visible  = sheet1.getRange( ezch_tbl_editorFactory.pos.TblList.pos_yesno_start , GC.Spread.Sheets.SheetArea.viewport ); 
+		let schema_tbl = ezch_tbl_editorFactory.sheet_TblList_table_tblSchema 
+		let data_range = schema_tbl.tbl_view.dataRange(); 
+		let cur_row = data_range.row + data_range.rowCount -1  
+		for( ; cur_row > data_range.row ; cur_row-- ){
+//			 this.sheet_TblList_tableSchema_change_visible_status( spread, cur_row, ezch_tbl_editorFactory.schema_order_disableTag );
+			 sheet1.setValue( cur_row, cell_visible.col, false ); 
+		 }
+	 }
+	 this.sheet_TblList_tableSchema_change_to_visible_all = ( spread )=>{
+		let sheet1  =  spread.getSheet(1)
+		let cell_visible  = sheet1.getRange( ezch_tbl_editorFactory.pos.TblList.pos_yesno_start , GC.Spread.Sheets.SheetArea.viewport ); 
+		let schema_tbl = ezch_tbl_editorFactory.sheet_TblList_table_tblSchema 
+		let data_range = schema_tbl.tbl_view.dataRange(); 
+		let cur_row = data_range.row -1  
+		for( ; cur_row < data_range.row + data_range.rowCount ; cur_row++ ){
+//			 this.sheet_TblList_tableSchema_change_visible_status( spread, cur_row, ezch_tbl_editorFactory.schema_order_disableTag );
+			 sheet1.setValue( cur_row, cell_visible.col, true ); 
+		 }
+	 }
+	 this.sheet_TblList_tableSchema_change_to_visible_notnull = ( spread )=>{
+		spread.isPaintSuspended( true ) 
+		let sheet1 = spread.getSheet(1)
+		 sheet1.suspendPaint()
+		 this.sheet_TblList_tableSchema_change_to_invisible_all( spread ) 
+		let schema_tbl = ezch_tbl_editorFactory.sheet_TblList_table_tblSchema 
+		let data_range = schema_tbl.tbl_view.dataRange(); 
+		let new_index = 0
+		schema_tbl.tbl_data.forEach((ent, index )=>{
+			if( ent.Null == false ){
+				ent.visible = true 
+				ent.No = ++new_index  
+			}
+		})
+		ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data.sort((a,b)=>{ return ( a.No - b.No )})
+		spread.isPaintSuspended( false )
+		sheet1.resumePaint()
+	 }
 	 this.sheet_TblList_tableSchema_change_visible_status = ( spread ,current_index , value )=>{
 		spread.isPaintSuspended( true ) 
-		 if( value != 99 ){
+		 if( value != ezch_tbl_editorFactory.schema_order_disableTag ){
 				ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data[current_index -1].No = ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data.length + 2 
 		 }else{
-				ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data[current_index -1].No = 99 
+				ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data[current_index -1].No = ezch_tbl_editorFactory.schema_order_disableTag 
 		 }
 		ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data.sort((a,b)=>{ return ( a.No - b.No )})
 		ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data.forEach(( ent, indx )=>{
-			if( ent.No != 99 )ent.No = indx + 1   
+			if( ent.No != ezch_tbl_editorFactory.schema_order_disableTag )ent.No = indx + 1   
 		}) 
 		spread.isPaintSuspended( false ) 
 	 }
@@ -1094,7 +1155,7 @@ angular.module('ezch_tbl_editorService',[])
 		ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data[current_index -1].No =  insert_index  
 		ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data.sort((a,b)=>{ return ( a.No - b.No )})
 		ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data.forEach(( ent, indx )=>{
-			if( ent.No != 99 )ent.No = indx + 1   
+			if( ent.No != ezch_tbl_editorFactory.schema_order_disableTag )ent.No = indx + 1   
 		}) 
 		spread.isPaintSuspended( false ) 
 	}
@@ -1136,7 +1197,7 @@ angular.module('ezch_tbl_editorService',[])
 							break;
 						case false:
 						case "FALSE":	
-							ezch_tbl_editorService.sheet_TblList_tableSchema_change_visible_status( spread , args.row - cell_visible.row +1 ,  99 );
+							ezch_tbl_editorService.sheet_TblList_tableSchema_change_visible_status( spread , args.row - cell_visible.row +1 ,  ezch_tbl_editorFactory.schema_order_disableTag );
 							break; 
 						default:
 				}
@@ -1162,6 +1223,9 @@ angular.module('ezch_tbl_editorService',[])
 		  let sheet1 = spread.getSheetFromName('TblList'); 
 		  let cell_genTblView = sheet1.getRange( ezch_tbl_editorFactory.pos.TblList.btn_get_tblView )
 		  let cell_addCol  = sheet1.getRange( ezch_tbl_editorFactory.pos.TblList.btn_addColumn ) 
+		  let cell_all_invisible  = sheet1.getRange( ezch_tbl_editorFactory.pos.TblList.btn_all_invisible ) 
+		  let cell_all_visible  = sheet1.getRange( ezch_tbl_editorFactory.pos.TblList.btn_all_visible ) 
+		  let cell_notnull_visible  = sheet1.getRange( ezch_tbl_editorFactory.pos.TblList.btn_notnull_visible ) 
 		  console.log( ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data ); 
 		  if( args.row == cell_addCol.row ){
 			  switch( args.col ){
@@ -1170,7 +1234,7 @@ angular.module('ezch_tbl_editorService',[])
 					ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data.push( new_column )	
 					ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data.sort((a,b)=>{ return ( a.No - b.No )})
 					ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_data.forEach(( ent, indx )=>{
-						if( ent.No != 99 )ent.No = indx + 1   
+						if( ent.No != ezch_tbl_editorFactory.schema_order_disableTag )ent.No = indx + 1   
 					}) 
 					let table = ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_view  
 					table.autoGenerateColumns( false ) 
@@ -1199,6 +1263,21 @@ angular.module('ezch_tbl_editorService',[])
 				  default:
 			  }
 		  }
+// all visible , invisible , notnull check.. 
+		if( args.col == cell_all_invisible.col ){
+			switch( args.row ){
+				case cell_all_invisible.row:
+					ezch_tbl_editorService.sheet_TblList_tableSchema_change_to_invisible_all( spread );  
+					break;  
+				case cell_all_visible.row:
+					ezch_tbl_editorService.sheet_TblList_tableSchema_change_to_visible_all( spread ); 
+					break; 
+				case cell_notnull_visible.row:	
+					ezch_tbl_editorService.sheet_TblList_tableSchema_change_to_visible_notnull( spread ); 
+					break; 
+				default:
+			}
+		}
 	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
