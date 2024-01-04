@@ -51,16 +51,37 @@
 				</li>	 
 			</ul>
 		</div>	
+		<div class="">
+			<button class="btn btn-secondary" type="button" id="dropdownMenuButton0">				
+				테이블 편집기 즐겨찾기 Favorites
+			</button>
+			<ul class="list-group" aria-labelledby="">
+				<li class="list-group-item"  ng-repeat="edit_list in edit_favorite_lists">
+	<!--				
+					<span ng-click="edit_item_remove_click( edit_list.configName, $event )" >		
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4c-4.419 0-8 3.582-8 8s3.581 8 8 8s8-3.582 8-8s-3.581-8-8-8zm3.707 10.293a.999.999 0 1 1-1.414 1.414L12 13.414l-2.293 2.293a.997.997 0 0 1-1.414 0a.999.999 0 0 1 0-1.414L10.586 12L8.293 9.707a.999.999 0 1 1 1.414-1.414L12 10.586l2.293-2.293a.999.999 0 1 1 1.414 1.414L13.414 12l2.293 2.293z"/></svg>
+					</span> 
+	-->				
+					<a ng-click="edit_list_click( edit_list.configName , $event )" data-toggle="tooltip" title="Ctrl 키와 클릭시 새창열기">{{ edit_list.configName }}</a>
+					<span ng-click="edit_item_favorite_remove_click( edit_list.configName, $event )" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m20.8 22.7l-2.9-2.9l.3 1.2l-6.2-3.7L5.8 21l1.6-7L2 9.2l4.9-.4L1.1 3l1.3-1.3l19.7 19.7zM22 9.2l-7.2-.6L12 2l-2 4.8l6.9 6.9z"/></svg>
+					</span> 
+				</li>  
+			</ul>
+		</div>
 		<div class="dropdown mt-3">
 			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
 				테이블 편집기 즐겨찾기	
 			</button>
 			<ul class="dropdown-menu list-group" aria-labelledby="dropdownMenuButton">
 				<li class="dropdown-item"  ng-repeat="edit_list in edit_lists">
-				   <span ng-click="edit_item_remove_click( edit_list.configName, $event )" >
-				   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4c-4.419 0-8 3.582-8 8s3.581 8 8 8s8-3.582 8-8s-3.581-8-8-8zm3.707 10.293a.999.999 0 1 1-1.414 1.414L12 13.414l-2.293 2.293a.997.997 0 0 1-1.414 0a.999.999 0 0 1 0-1.414L10.586 12L8.293 9.707a.999.999 0 1 1 1.414-1.414L12 10.586l2.293-2.293a.999.999 0 1 1 1.414 1.414L13.414 12l2.293 2.293z"/></svg>
-				   </span> 
-				   <a ng-click="edit_list_click( edit_list.configName , $event )" data-toggle="tooltip" title="Ctrl 키와 클릭시 새창열기">{{ edit_list.configName }}</a>
+					<span ng-click="edit_item_remove_click( edit_list.configName, $event )" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4c-4.419 0-8 3.582-8 8s3.581 8 8 8s8-3.582 8-8s-3.581-8-8-8zm3.707 10.293a.999.999 0 1 1-1.414 1.414L12 13.414l-2.293 2.293a.997.997 0 0 1-1.414 0a.999.999 0 0 1 0-1.414L10.586 12L8.293 9.707a.999.999 0 1 1 1.414-1.414L12 10.586l2.293-2.293a.999.999 0 1 1 1.414 1.414L13.414 12l2.293 2.293z"/></svg>
+					</span> 
+					<a ng-click="edit_list_click( edit_list.configName , $event )" data-toggle="tooltip" title="Ctrl 키와 클릭시 새창열기">{{ edit_list.configName }}</a>
+					<span ng-click="edit_item_favorite_click( edit_list.configName, $event )" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22.1 21.5L2.4 1.7L1.1 3l5.8 5.8l-4.9.4L7.5 14l-1.6 7l6.2-3.7l6.2 3.7l-.3-1.2l2.9 2.9zm-6.3-3.8L12 15.4l-3.8 2.3l1-4.3l-3.3-2.9l2.5-.2zM11.2 8L10 6.8L12 2l2.8 6.6l7.2.6l-5.1 4.4l-1.1-1.1l2.4-2l-4.4-.4l-1.7-4z"/></svg>
+					</span> 
 				</li>  
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="#">기본편집기</a>  

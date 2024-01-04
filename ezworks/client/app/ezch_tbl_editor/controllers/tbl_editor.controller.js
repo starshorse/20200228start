@@ -17,8 +17,20 @@ angular.module('ezch_tbl_editorCtrl',[])
 	if( user == 'star_horse@naver.com' )$scope.isDbSelectionDisabled = false 
 
 	$scope.edit_lists = null
+	$scope.edit_favorite_lists = []
+	$scope.edit_item_favorite_click = async( configName, event )=>{
+		await ezch_tbl_editorService.updateConfig_favorites($scope.spread , configName, true ) 
+//		$scope.edit_favorite_lists.push( { configName } );  // new set([...array])  
+		$scope.edit_favorite_lists = $scope.edit_lists.filter((ent)=>ent.inFavorite_list == true )
+	}
+	$scope.edit_item_favorite_remove_click = async( configName, event )=>{
+		await ezch_tbl_editorService.updateConfig_favorites($scope.spread , configName, false ) 
+		let rm_index = $scope.edit_favorite_lists.findIndex((ent)=>ent.configName == configName ); 
+		$scope.edit_favorite_lists.splice( rm_index , 1 ) 
+	}
 	$scope.edit_lists_update = ( edit_lists )=>{
 		$scope.edit_lists = edit_lists
+		$scope.edit_favorite_lists = edit_lists.filter((ent)=>ent.inFavorite_list == true )
 		if(!$scope.$$phase){
 			$scope.$apply();
 		}
