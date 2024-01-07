@@ -2,14 +2,16 @@
 # coding: utf-8
 import sys, os
 import pdb
+import openpyxl 
 
-sys.path.append('/home/rrr/workdir/tmp/python_ex/modules' ) 
+modues_dir = os.path.join( os.getcwd() , 'modules' ) 
+sys.path.append( modues_dir ) 
 import  my_pandas  as pandas 
 
-df = pandas.read_excel('data_3608_20220912.xlsx')
+df = pandas.read_excel('./resource/xlsx/data_3608_20220912.xlsx')
+pdb.set_trace() 
 # df.info()
 print( df );
-#pdb.set_trace() 
 
 df.loc[2470]['종목명']
 df['종목명'] = pandas.strip_string( df['종목명'] )

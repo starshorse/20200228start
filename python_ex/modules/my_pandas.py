@@ -48,9 +48,11 @@ def merge_left( df_1 , df_2, left_on, right_on ):
 def pivot_table( df, field , index_array , aggfunc ):
     return df.pivot_table( field, index_array, aggfunc = aggfunc )     
 
+"""
+    xslx file read ..  engine='openpyxl' 
+"""
 def read_excel( file_name ):
-    return pd.read_excel( file_name )
-
+    return pd.read_excel( file_name, engine='openpyxl')
 def read_json( file_name ):
     return pd.read_json( file_name )
 
