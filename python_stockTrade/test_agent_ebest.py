@@ -17,3 +17,6 @@ class TestEbest(unittest.TestCase):
 
     def tearDown(self):
         self.ebest.logout()     
+
+if __name__ == '__main__':
+    unittest.main()
