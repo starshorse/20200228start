@@ -88,7 +88,7 @@ def index(name):
     return '<h1>Service %s Start</h1>' % name 
 
 if __name__=='__main__':
-    main_tax()
+    #main_tax()
     """
     #asyncio.run( main_tax() );
     loop = asyncio.get_event_loop()

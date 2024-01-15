@@ -1,9 +1,10 @@
 import sys, os 
 from dotenv import load_dotenv
 from pathlib import Path 
-dotenv_path = Path('../../../.env')
+# python_ex/.env
+dotenv_path = Path('../../.env')
 load_dotenv( dotenv_path = dotenv_path ) 
-sys.path.append('/home/rrr/workdir/tmp/python_ex/modules' ) 
+sys.path.append('/home/rrr/workdir/gitdn/20200228start/python_ex/modules' ) 
 import period_run_sql as prs 
 
 sqlserver_host = os.environ.get('SQLSERVER_HOST')

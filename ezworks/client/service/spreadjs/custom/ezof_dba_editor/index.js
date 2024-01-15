@@ -6,6 +6,7 @@ angular.module('ezof_dba_editorService',[])
 			        addOrg: 'C8:C8',
 			        curOrg_info: 'G11:G16',
 			        org_info:'F3:H21',
+				btn_org_delete:'H4:H4',
 				btn_org_members:'H5:H5',
 				btn_org_info_update:'H20:H20',
 			        btn_key_info :'H6:H6',
@@ -22,6 +23,7 @@ angular.module('ezof_dba_editorService',[])
 				addMLK: 'F8:F8',
 				btn_add_user:'D8:D8', 
 				btn_add_MLK:'G8:G8',
+				btn_user_delete:'G4:G4',
 				btn_edit_role:'G5:G5',
 				btn_mlk_info_update:'K16:K16',
 			        curUser: 'F5:F5',
@@ -50,6 +52,8 @@ angular.module('ezof_dba_editorService',[])
 		update_editLists : null,		
 		update_cur_db: null ,
 		updateAlertInfo: null,
+		doModalStart: null ,
+		doModalEnd: null 
 	}
 	return ezof_dba_editorFactory 
 }])
@@ -121,8 +125,8 @@ angular.module('ezof_dba_editorService',[])
 			alert(" orgName can't null or '' ");
 			return ; 
 		}
-		let nw_e = { mainDB: 'TBD' , orgName: nw_orgId , orgCommonName: 'TBD' , orgFullName : 'TBD' , orgType: '법인', orgBRN: 'TBD' } 
-	        let result = await  $http({ method:'POST',
+		let nw_e = { mainDB: nw_orgId , orgName: nw_orgId , orgCommonName: 'TBD' , orgFullName : 'TBD' , orgType: '법인', orgBRN: 'TBD' } 
+	    let result = await  $http({ method:'POST',
 					    url: '/Hades/dba_editor/organization',
 					    data: nw_e 
 					});
@@ -130,6 +134,25 @@ angular.module('ezof_dba_editorService',[])
 			alert( result.data.ERRORMESSAGE );
 			return ;
 		}
+// Create DB ..
+		result = await $http( { method:'POST', url:`/Hades/dba_editor/database/${ nw_orgId }`, data: nw_e }); 
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return ;
+		}
+// initDB TB_admin_1 
+		result = await $http( { method:'POST', url:`/Hades/dba_editor/init_database/${ nw_orgId }`, data: nw_e }); 
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return ;
+		}
+// Create Serer 
+		result = await $http( { method:'POST', url:`/Hades/dba_editor/server/`, data: { server_name: nw_orgId }}); 
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return ;
+		}
+
 		this.sheet_organization_list_update( spread )	
 		this.sheet_organization_organizationSelected( spread, nw_orgId );
 	}
@@ -182,6 +205,30 @@ angular.module('ezof_dba_editorService',[])
 		}
 		alert("DB Update Done!"); 
 
+	}
+	this.sheet_organization_part_orgInfo_delete = async( spread, cur_organization )=>{
+	    let result = await  $http({ method:'DELETE',
+					    url: `/Hades/dba_editor/organization/${ cur_organization }`
+					});
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return ;
+		}
+	    result = await  $http({ method:'DELETE',
+					    url: `/Hades/dba_editor/server/${ cur_organization }`
+					});
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return ;
+		}
+	    result = await  $http({ method:'DELETE',
+					    url: `/Hades/dba_editor/database/${ cur_organization }`
+					});
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return ;
+		}
+		this.sheet_organization_list_update( spread )	
 	}
 	const setColumnVisible =  ( sheet , yes , cells_area )=>{
 		if( yes ){
@@ -347,6 +394,16 @@ angular.module('ezof_dba_editorService',[])
 	this.sheet_users_goEditRole = async ( spread )=>{
 		$cookies.put( 'login_id' , ezof_dba_editorFactory.binding_data.cur_user,{ path: '/app/db_administration/' } ) 
 		window.open('/app/db_administration/')
+	}
+    this.sheet_users_userDelete = async( spread, cur_user )=>{
+	    let result = await  $http({ method:'DELETE',
+					    url: `/Hades/dba_editor/user/${ cur_user }`
+					});
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE );
+			return ;
+		}
+		this.sheet_users_list_update( spread );
 	}
 	this.sheet_users_addMLK = async ( spread , machInfo )=>{
                 let user_id  = ezof_dba_editorFactory.binding_data.cur_user;
@@ -681,6 +738,7 @@ angular.module('ezof_dba_editorService',[])
 				let btn_org_info_update = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.btn_org_info_update ) 
 				let btn_org_auth_info_update = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.btn_org_auth_info_update ) 
 				let btn_key_info = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.btn_key_info ) 
+				let btn_org_delete = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.btn_org_delete ) 
 				let btn_org_members = args.sheet.getRange( ezof_dba_editorFactory.pos.organization.btn_org_members ) 
 				switch( args.col ){
 					case (cell_addOrg.col + 1):
@@ -691,6 +749,12 @@ angular.module('ezof_dba_editorService',[])
 							ezof_dba_editorService.sheet_organization_part_orgInfo_DB_update( spread );
 						else if( args.row == btn_key_info.row )
 							ezof_dba_editorService.sheet_organization_part_orgMLKInfo_update( spread );
+						else if( args.row == btn_org_delete.row ){
+							let modal = { title: 'Organization Delete' , content: `정말 ${ ezof_dba_editorFactory.binding_data.cur_organization }를 삭제하시겠습니까?` , callback :()=>{
+								ezof_dba_editorService.sheet_organization_part_orgInfo_delete( spread, ezof_dba_editorFactory.binding_data.cur_organization ); 
+							} }
+							ezof_dba_editorFactory.doModalStart( modal ); 
+						}
 						else if( args.row == btn_org_members.row )
 							ezof_dba_editorService.sheet_users_update( spread ); 
 						break;
@@ -705,17 +769,29 @@ angular.module('ezof_dba_editorService',[])
 				let btn_add_user = args.sheet.getRange( ezof_dba_editorFactory.pos.users.btn_add_user ) 
 				let btn_add_MLK = args.sheet.getRange( ezof_dba_editorFactory.pos.users.btn_add_MLK ) 
 				let btn_edit_role = args.sheet.getRange( ezof_dba_editorFactory.pos.users.btn_edit_role ) 
+				let btn_user_delete = args.sheet.getRange( ezof_dba_editorFactory.pos.users.btn_user_delete ) 
 				let btn_MLK_info_update = args.sheet.getRange( ezof_dba_editorFactory.pos.users.btn_mlk_info_update ) 
 				let cell_add_user = args.sheet.getRange( ezof_dba_editorFactory.pos.users.addUser ) 
 				let cell_add_MLK = args.sheet.getRange( ezof_dba_editorFactory.pos.users.addMLK ) 
 				switch( args.col ){
 					case btn_add_user.col:
-						if( args.row == btn_add_user.row )
-							ezof_dba_editorService.sheet_users_addUser( spread , args.sheet.getValue( cell_add_user.row, cell_add_user.col ))
+						if( args.row == btn_add_user.row ){
+							let modal = { title: 'Wrong Path' , content: `이메뉴는 사용되지 않습니다.web admininstartion 의 add user를 사용하세요  ` , callback :()=>{
+							} }
+							ezof_dba_editorFactory.doModalStart( modal ); 
+						//    break;
+						//	ezof_dba_editorService.sheet_users_addUser( spread , args.sheet.getValue( cell_add_user.row, cell_add_user.col ))
+						}
 						break;
 					case btn_add_MLK.col:
 						if( args.row == btn_add_MLK.row )
 							ezof_dba_editorService.sheet_users_addMLK( spread , args.sheet.getValue( cell_add_MLK.row, cell_add_MLK.col ))
+						else if( args.row == btn_user_delete.row ){
+							let modal = { title: 'User Delete' , content: `정말 ${ ezof_dba_editorFactory.binding_data.cur_user }를 삭제하시겠습니까?` , callback :()=>{
+								ezof_dba_editorService.sheet_users_userDelete( spread, ezof_dba_editorFactory.binding_data.cur_user ); 
+							} }
+							ezof_dba_editorFactory.doModalStart( modal ); 
+						}
 						else if( args.row == btn_edit_role.row )
 							ezof_dba_editorService.sheet_users_goEditRole( spread ) 
 						break;

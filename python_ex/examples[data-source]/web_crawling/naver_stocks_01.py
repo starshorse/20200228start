@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import sys
 
-sys.path.append('/home/rrr/workdir/tmp/python_ex/modules' ) 
+sys.path.append('/home/rrr/workdir/gitdn/20200228start/python_ex/modules' ) 
 import  my_pandas  as pandas 
 #import korsp_106_pykrx as mykrx 
 

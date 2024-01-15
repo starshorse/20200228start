@@ -21,7 +21,8 @@ angular.module('myMain_0Header',[])
 		work_space :`https://${ $scope.host }:3004/company/workspace/?my_collection=collectionIntro`, 
 	} 
 	let curUser_info = await $http.get(`/Hades/dba_editor/web_user/${ user_DB }/${ user }`);
-    $scope.cur_user_info = curUser_info.data.DATA[0] 
+//1    $scope.cur_user_info = curUser_info.data.DATA[0] 
+    $scope.cur_user_info = curUser_info.data.DATA 
 	$scope.$apply();
 
 }])

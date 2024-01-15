@@ -1,5 +1,5 @@
 import sys, os 
-sys.path.append('/home/rrr/workdir/tmp/python_ex/modules' ) 
+sys.path.append('/home/rrr/workdir/gitdn/20200228start/python_ex/modules' ) 
 import my_pandas as pandas
 import my_schedule as schedule 
 import pdb

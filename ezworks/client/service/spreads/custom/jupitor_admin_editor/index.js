@@ -22,6 +22,7 @@ angular.module('jupitor_admin_editor',[])
 				user_info:'I3:K17',
 				login_info:'F1:G110',
 				btn_add_user:'D8:D8', 
+				btn_delete_user:'G4:G4',
 				btn_edit_info:'G5:G5',
 				btn_view_info:'G8:G8',
 				btn_select_start :'G12:G12',
@@ -88,12 +89,13 @@ angular.module('jupitor_admin_editor',[])
 		this.sheet_Servers_part_serverInfo_invalidate( spread );
 		this.sheet_Users_invalidate( spread ) ;
 //1		let Servers_list = await  $http.get('/web_admin_editor/Servers_list');
-                let Servers_list = await  $http.get('/Jupiter/db_edit/jupiter/server_list'); 
+//1                let Servers_list = await  $http.get('/Jupiter/db_edit/jupiter/server_list'); 
+        let Servers_list = await  $http.get('/Hades/dba_editor/server_list'); 
 		if( Servers_list.data.RESULT == -1 ){
 			alert( Servers_list.data.ERRORMESSAGE )
 			return ;
 		}
-		Servers_list.data.DATA = Servers_list.data.DATA.data 
+//1		Servers_list.data.DATA = Servers_list.data.DATA.data 
 
 		jupitor_admin_editorFactory.servers_list = Servers_list.data.DATA 
 		jupitor_admin_editorFactory.sheet_Servers_table.data = Servers_list.data.DATA 
@@ -104,6 +106,31 @@ angular.module('jupitor_admin_editor',[])
 //1		tableColumn1.dataField('server_name');
 		tableColumn1.dataField('db_name');
 		table.bind( [tableColumn1] , 'data' , jupitor_admin_editorFactory.sheet_Servers_table ) 
+	}
+	this.sheet_Servers_addServer = async( spread, Server_id )=>{
+		let modal_info  = { title: '소멸된 기능 ' , content:'add Org기능으로 통합 되었습니다. List를 확인하게세요 ' , callback: ()=>{} } 
+		jupitor_admin_editorFactory.do_modal( modal_info ) 
+		return -1 ;
+		if( Server_id == '' || Server_id == null ){
+			alert("영문 이름이 필요합니다.");
+			return -1;
+		}
+// ServerListdptj Duplicate 확인 
+		if( jupitor_admin_editorFactory.servers_list.find((ent)=> ent.name == Server_id )){
+			alert("동일한 이름이 존재합니다");
+			return -1; 
+		}
+		let result = await $http({ method:'POST', url:`/Jupiter/db_edit/jupiter_db/add_server/${ Server_id }` }) 
+		if( result.data.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE ) 
+			return -1 ;
+		}
+		result = await $http({ method:'POST', url:'/Jupiter/db_edit/jupiter/add_server', data:{ name: Server_id, db_name: Server_id }} )
+		if( result.date.RESULT == -1 ){
+			alert( result.data.ERRORMESSAGE )
+			return -1 
+		}
+		await this.sheet_Servers_list_update( spread )
 	}
 	this.sheet_Servers_serverSelected = async ( spread, Server_id )=>{
                 jupitor_admin_editorFactory.binding_data.cur_server = Server_id; 
@@ -177,7 +204,7 @@ angular.module('jupitor_admin_editor',[])
                 sheet.options.isProtected = true ;
 	}
 	this.sheet_Users_addUser = async( spread , id )=>{
-                let org_name  = jupitor_admin_editorFactory.binding_data.cur_server ;
+        let org_name  = jupitor_admin_editorFactory.binding_data.cur_server ;
 		let result = await $http.get(`/Hades/dba_editor/user/${id}`)
 		if( result.data?.DATA.length ){
 			let yesno = confirm("DB ID가 존재 합니다. Web ID 생성하시겠습니다?") 
@@ -197,7 +224,7 @@ angular.module('jupitor_admin_editor',[])
         	}
 		let user_info = result.data.DATA[0] 
 		result = await $http.get(`/Hades/dba_editor/web_user/${org_name}/${id}`)
-		if( result.data?.DATA.length ){
+		if( result.data?.DATA != null && result.data?.DATA.length ){
 			let yesno = confirm("Web ID가 존재 합니다. 해당 ID로 DB 권한을 원합니까 ?") 
 			if( yesno == false ) 
 				return -1;
@@ -232,7 +259,8 @@ angular.module('jupitor_admin_editor',[])
 			return ;
 		}
 		jupitor_admin_editorFactory.web_users = users_list.data.DATA 
-		let web_users_server = jupitor_admin_editorFactory.web_users.filter((ent)=>ent.db_name == server_id )
+		let web_users_server = jupitor_admin_editorFactory.web_users.filter((ent)=>ent.dbName == server_id )
+//		let web_users_server = jupitor_admin_editorFactory.web_users.filter((ent)=>ent.db_name == server_id )
 //		jupitor_admin_editorFactory.sheet_Users_table_users.data = users_list.data.DATA 
 		jupitor_admin_editorFactory.sheet_Users_table_users.data = web_users_server; 
 		let table = jupitor_admin_editorFactory.sheet_Users_table_users.tbl_view; 
@@ -297,6 +325,25 @@ angular.module('jupitor_admin_editor',[])
 		}
 		this.sheet_Users_part_userInfo_invalidate( spread, 0 );
 	}
+	this.sheet_Users_deleteUser = async( spread )=>{
+		let user_id  = jupitor_admin_editorFactory.binding_data.cur_user ; 
+		let cur_DB = jupitor_admin_editorFactory.binding_data.cur_DB
+		let result = await $http.get(`/Hades/dba_editor/web_admin/${ user_id }`).catch(err=>console.log(err)); 
+		if( result.data.RESULT == -1 ){
+			alert( users_list.data.ERRORMESSAGE )
+		}
+		if( result.data.DATA.length == 1 ){
+			result  = await $http({ method:'DELETE', url: `/Hades/dba_editor/user/${ user_id }` }).catch((err)=>console.log(err));
+		}else if( result.data.DATA.length > 1 ){
+			let del_item = result.data.DATA.find( ent=>ent.dbName == cur_DB )
+			result  = await $http({ method:'DELETE', url: `/Hades/dba_editor/admin_user/${ del_item.seq }` }).catch((err)=>console.log(err));
+		}
+		if( result.data.RESULT == -1 ){
+			alert( users_list.data.ERRORMESSAGE )
+		}
+		this.sheet_users_update( spread ) 
+
+	}
 	this.sheet_Users_invalidate = ( spread, yes = 1 )=>{
 		if( yes ){
 			spread.getSheetFromName('Users').visible( false );
@@ -328,7 +375,8 @@ angular.module('jupitor_admin_editor',[])
 		let cur_user_rec = jupitor_admin_editorFactory.web_users.filter((ent)=>ent.email == cur_user );
 		console.log( cur_user_rec  )
 		for( user_ent of cur_user_rec ){
-			let db_name = user_ent.db_name 
+//			let db_name = user_ent.db_name 
+			let db_name = user_ent.dbName 
 			let id = user_ent.email 
 			let result  = await $http({ method:'POST', url: `/Hades/dba_editor/web_user/${ db_name }/${ id }` , data: update_e }).catch((err)=>console.log(err));
 			if( result.data.RESULT == -1 ){
@@ -601,6 +649,7 @@ angular.module('jupitor_admin_editor',[])
 				break;
 			case 'Users':
 				let btn_add_user = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_add_user ) 
+				let btn_delete_user = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_delete_user ) 
 				let btn_edit_info = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_edit_info ) 
 				let btn_view_info = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_view_info ) 
 				let btn_select_start = args.sheet.getRange( jupitor_admin_editorFactory.pos.Users.btn_select_start ) 
@@ -619,6 +668,8 @@ angular.module('jupitor_admin_editor',[])
 					case btn_edit_info.col:
 						if( args.row == btn_edit_info.row )
 							jupitor_admin_editorService.sheet_Users_editInfo( spread )
+						else if( args.row == btn_delete_user.row )
+							jupitor_admin_editorService.sheet_Users_deleteUser( spread )
 						else if( args.row == btn_view_info.row )
 						//	jupitor_admin_editorService.sheet_Permissions_update_1( spread ) 
 							jupitor_admin_editorService.sheet_Permissions_update_2( spread ) 

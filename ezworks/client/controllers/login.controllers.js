@@ -20,8 +20,10 @@ angular.module('login_ctrl',[])
 		$scope.password 
 		$scope.users = users
 		$scope.login = users  
-		$scope.companies = companies.data 
-		$scope.login_companies = companies.data 
+//		$scope.companies = companies.data 
+//		$scope.login_companies = companies.data 
+		$scope.companies = companies 
+		$scope.login_companies = companies 
 		$scope.cur_view = 'login' 
 		$scope.isCurView = ( curView )=>curView == $scope.cur_view 
 		$scope.setCurView = ( curView )=>$scope.cur_view = curView 

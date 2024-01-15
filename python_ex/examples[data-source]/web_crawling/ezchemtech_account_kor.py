@@ -2,9 +2,9 @@ import sys, os
 from dotenv import load_dotenv
 from pathlib import Path 
 import datetime 
-dotenv_path = Path('/home/rrr/workdir/tmp/.env')
+dotenv_path = Path('/home/rrr/workdir/gitdn/20200228start/python_ex/.env')
 load_dotenv( dotenv_path = dotenv_path ) 
-sys.path.append('/home/rrr/workdir/tmp/python_ex/modules' ) 
+sys.path.append('/home/rrr/workdir/gitdn/20200228start/python_ex/modules' ) 
 import my_pymssql as pymssql  
 import my_pandas as pandas
 import my_schedule as schedule 

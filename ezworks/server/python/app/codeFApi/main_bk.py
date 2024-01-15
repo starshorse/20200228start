@@ -53,12 +53,6 @@ client_secret = os.environ['CF_CLIENT_SECRET']
 print( client_secret ) 
 pubKey = os.environ['CF_PUBLIC_KEY'] 
 
-token = request_token( client_id , client_secret )
-print( token['TOKEN'] ) 
-result = connected_id_list( token['TOKEN'] ) 
-print( result['DATA']['connectedIdList']);
-connectedIdList =  result['DATA']['connectedIdList'];
-
 cerPw =  os.environ['EZCT_BK_CER_PW']
 cert_data = cert_manager(); 
 print( cerPw )
@@ -66,30 +60,34 @@ print( cerPw )
 KM_ORG_CODE = org_codes['국민은행'] 
 WORI_ORG_CODE = org_codes['우리은행']
 
-for bk_name in ezct_accountList:
-    codef_account_add_body = {
-                'connectedId': connectedIdList[0] ,    # connected_id
-                'accountList':[
-                    {
-                        'countryCode':'KR',
-                        'businessType':'BK',
-                        'clientType':'B',
-                        'organization': org_codes[bk_name],
-                        'loginType':'0',
-                        'password':publicEncRSA(pubKey, cerPw ),    # 인증서 비밀번호 입력
-                        'derFile': cert_data['derFileB64'] ,                        # 인증서 인증서 DerFile
-                        'keyFile': cert_data['keyFileB64']                         # 인증서 인증서 KeyFile
-                    }
-                ]
+def init_service():
+    token = request_token( client_id , client_secret )
+    print( token['TOKEN'] ) 
+    result = connected_id_list( token['TOKEN'] ) 
+    print( result['DATA']['connectedIdList']);
+    connectedIdList =  result['DATA']['connectedIdList'];
+    for bk_name in ezct_accountList:
+        codef_account_add_body = {
+                    'connectedId': connectedIdList[0] ,    # connected_id
+                    'accountList':[
+                        {
+                            'countryCode':'KR',
+                            'businessType':'BK',
+                            'clientType':'B',
+                            'organization': org_codes[bk_name],
+                            'loginType':'0',
+                            'password':publicEncRSA(pubKey, cerPw ),    # 인증서 비밀번호 입력
+                            'derFile': cert_data['derFileB64'] ,                        # 인증서 인증서 DerFile
+                            'keyFile': cert_data['keyFileB64']                         # 인증서 인증서 KeyFile
+                        }
+                    ]
+        }
+    codef_account_list_body = {
+        'connectedId':connectedIdList[0]
     }
-    #temp  account_add( token['TOKEN'] , codef_account_add_body );
-
-codef_account_list_body = {
-    'connectedId':connectedIdList[0]
-}
-result = account_list( token['TOKEN'], codef_account_list_body );
-print( result['DATA']['accountList']);
-accountList =  result['DATA']['accountList'];
+    result = account_list( token['TOKEN'], codef_account_list_body );
+    print( result['DATA']['accountList']);
+    accountList =  result['DATA']['accountList'];
 
 def update_accountList( token, db_name='ezchemtech' ):
     # bk account info.. 
@@ -204,6 +202,7 @@ def update_accountTransaction( token, db_name='ezchemtech' ):
             
 def main_bk():
     rtn_result = {'STATUS': -1 , 'STATUS_1': {'UPDATE_ACCOUNT': -1 , 'UPDATE_TR_KR': -1 , 'UPDATE_TR_FOR': -1 }}
+    init_service();
     result = get_serviceList_codeFApi('계좌거래목록') 
     for u in result: 
         # Get from DB. 

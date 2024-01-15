@@ -1,6 +1,7 @@
 angular.module('ezof_dba_editor',[
 	'ngCookies',
 	'mySpreadjs',
+	'myDomodal',
 	'myFooter',
 	'gc_spreadjs',
 	'spreadjs_events',
@@ -20,8 +21,21 @@ angular.module('ezof_dba_editor',[
 		$scope.alert_info_message = alert_info_message; 	
 		if( !$scope.$$phase )$scope.$apply() 
 	}
+	$scope.click_doModal = async ( modal = null )=>{
+		if( modal == null ){
+		      modal = { title: 'Modal Test' , content: 'Modal Test합니다.' , callback : async function(){} }
+		}
+		$scope.modal = modal ;
+//		$scope.$broadcast('doModalImmediate') ;
+		$scope.$broadcast('doModal') ;
+	}
+	$scope.hideModal = async ()=>{
+	    $scope.$broadcast('hideModalImmediate'); 	
+	}
 	ezof_dba_editorFactory.update_cur_db = updateUserDB ;	
 	ezof_dba_editorFactory.updateAlertInfo = updateAlertInfo ; 
+	ezof_dba_editorFactory.doModalStart = $scope.click_doModal ;
+	ezof_dba_editorFactory.doModalEnd = $scope.hideModal ;
 /*	
 	document.getElementById('inputGroupSelect01').addEventListener('change', async function(e){
 		let  db_name = document.getElementById('inputGroupSelect01').value 

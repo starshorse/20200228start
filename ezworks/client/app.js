@@ -19,7 +19,8 @@ angular.module('ezworks',[
 	        	return users.data.DATA  		
 			},
 			companies: async function($http){
-                let companies = await  $http.get('/Jupiter/db_edit/jupiter/server_list'); 
+//                let companies = await  $http.get('/Jupiter/db_edit/jupiter/server_list'); 
+                let companies = await  $http.get('/Hades/dba_editor/server_list'); 
 				return companies.data.DATA 
 			}
 		},
