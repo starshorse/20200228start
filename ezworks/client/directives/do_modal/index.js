@@ -5,7 +5,7 @@
 angular.module('myDomodal',[])
 .controller('myDomodalCtrl',['$scope','myDomodal_service', 
 	function( $scope, myDoModal_service ){
-//		var myModal = new bootstrap.Modal( document.getElementById('exampleModalCenter'),{ static: false , keyboard: false } )
+//	var  myModal = new bootstrap.Modal( document.getElementById('exampleModalCenter'),{ static: false , keyboard: false } )
 	$scope.$on('doModal', ()=>{
 		if( !$scope.$root.$$phase )$scope.$apply();
 		$('#exampleModalCenter').modal('show') 
@@ -13,6 +13,7 @@ angular.module('myDomodal',[])
 	})
 	$scope.$on('hideModal',()=>{
 		$('#exampleModalCenter').modal('hide') 
+		if( !$scope.$root.$$phase )$scope.$apply();
 //		myModal.hide()
 	})
 	$scope.modalDispatch = ( modal )=>{

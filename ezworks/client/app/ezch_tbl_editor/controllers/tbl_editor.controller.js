@@ -39,9 +39,9 @@ angular.module('ezch_tbl_editorCtrl',[])
 //1		let  spread = ezch_tbl_editorFactory.spread ; 
 		console.log( config_name ); 
 		$scope.modal = { title: 'Config 적용 ' , content: `${ config_name }  적용중입니다. 잠시만 기다려 주세요` , callback : async function(){} , flags: { is_infoModal: 1 } }
-//		$scope.$broadcast('doModal');
-		const modal = document.getElementById('modalWrap')
-		modal.style.display = 'block'
+		$scope.$broadcast('doModal');
+//1		const modal = document.getElementById('modalWrap')
+//1		modal.style.display = 'block'
 		document.title = config_name ;   // Title Change.
 		if( !event ){ // call by manual .. 
 				$cookies.remove('config_name')
@@ -57,8 +57,9 @@ angular.module('ezch_tbl_editorCtrl',[])
 				await  ezch_tbl_editorService.updateConfig( $scope.spread , config_name ) 
 	  		 }		
 		}	
-//	    $scope.$broadcast('hideModal' ); 	
-		modal.style.display = 'none'
+	    $scope.$broadcast('hideModal' ); 	
+//1		modal.style.display = 'none'
+
 	}
 	$scope.edit_item_remove_click = async( config_name, event )=>{
 		$scope.modal = { title: 'Config 삭제' , content: `${ config_name }항목를 삭제하시겠습니까?` , params : [config_name], callback : async function( params ){
@@ -78,10 +79,12 @@ angular.module('ezch_tbl_editorCtrl',[])
 		      modal = { title: 'Modal Test' , content: 'Modal Test합니다.' , callback : async function(){} }
 		}
 		$scope.modal = modal ;
-		$scope.$broadcast('doModalImmediate') ;
+		$scope.$broadcast('doModal') ;
+//		$scope.$broadcast('doModalImmediate') ;
 	}
 	$scope.hideModal = async ()=>{
-	    $scope.$broadcast('hideModalImmediate'); 	
+//	    $scope.$broadcast('hideModalImmediate'); 	
+	    $scope.$broadcast('hideModal'); 	
 	}
 	const updateUserDB = ( user_db )=>{
 		$scope.user_DB = user_db;

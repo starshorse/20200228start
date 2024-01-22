@@ -606,6 +606,9 @@ angular.module('ezch_tbl_editorService',[])
 		}
 		let sheet0 = spread.getSheet(0); 
 //1		
+		let modal = { title: 'SQL Exec', content:'SQL  수행중입니다. 잠시만 기다려주세요',  callback : ()=>{} } 
+		ezch_tbl_editorFactory.do_modalStart( modal ) 
+
 		sheet_TblView_update_sqlState( spread ) 
 		let sqlState = ezch_tbl_editorFactory.sql_state.state_1 + ' ' + ezch_tbl_editorFactory.cellBinding_config_list.sqlState_where ;
 		let tbl_columns = ezch_tbl_editorFactory.sheet_TblView_table.tbl_columns ;  
@@ -628,7 +631,8 @@ angular.module('ezch_tbl_editorService',[])
 		table1.autoGenerateColumns( false ) 
 		sheet0.tables.resize( table1, new GC.Spread.Sheets.Range( tbl_pos.row, tbl_pos.col, tbl_info.tbl_data.length + 1, tbl_columns.length ))  	
 		await table1.bind( tbl_columns , 'tbl_data', tbl_info ) 	
-                spread.setActiveSheetIndex(0)
+        spread.setActiveSheetIndex(0)
+		ezch_tbl_editorFactory.do_modalEnd()
 	}
 	this.sheet_TblView_update_configData = async ( spread )=>{
 		 let sheet0 = spread.getSheet(0); 
@@ -1038,7 +1042,7 @@ angular.module('ezch_tbl_editorService',[])
 	    let sheet1 = spread.getSheetFromName('TblList'); 
 // invalidate current configure ... 2023-03-09  sqlState_where also. 		
 		this.invalid_tblView( spread );
-		ezch_tbl_editorFactory.cellBinding_config_list.sqlState_where = 'order by seq desc'  
+		ezch_tbl_editorFactory.cellBinding_config_list.sqlState_where = 'order by seq desc offset 0 rows fetch next 20000 rows only'  
 		ezch_tbl_editorFactory.cellBinding_config_list.sql_enable = false 
 		
 		let headers = {}

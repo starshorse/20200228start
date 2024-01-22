@@ -47,7 +47,7 @@ module.exports = function( app ){
 	app.use('/web_admin_editor', require('./app/web_admin_editor')); 
 	app.use('/log_monitor', require('./app/log_monitor')); 
 	app.use('/mlk_auth', require('./tools/authentication')); 
-	app.use('/cron', require('./services/cron')(app));
+//1 temp	app.use('/cron', require('./services/cron')(app));
 //1	
 	app.use('/apis', routing_for_apis);
 	app.use('/', routing_for_angluarjs);
