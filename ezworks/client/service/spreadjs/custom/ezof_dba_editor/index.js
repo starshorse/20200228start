@@ -140,14 +140,14 @@ angular.module('ezof_dba_editorService',[])
 			alert( result.data.ERRORMESSAGE );
 			return ;
 		}
-// initDB TB_admin_1 
-		result = await $http( { method:'POST', url:`/Hades/dba_editor/init_database/${ nw_orgId }`, data: nw_e }); 
+// Create Serer 
+		result = await $http( { method:'POST', url:`/Hades/dba_editor/server/`, data: { server_name: nw_orgId }}); 
 		if( result.data.RESULT == -1 ){
 			alert( result.data.ERRORMESSAGE );
 			return ;
 		}
-// Create Serer 
-		result = await $http( { method:'POST', url:`/Hades/dba_editor/server/`, data: { server_name: nw_orgId }}); 
+// initDB TB_Log /TB_Log_Collector  
+		result = await $http( { method:'POST', url:`/Hades/dba_editor/init_database/${ nw_orgId }`, data: nw_e }); 
 		if( result.data.RESULT == -1 ){
 			alert( result.data.ERRORMESSAGE );
 			return ;

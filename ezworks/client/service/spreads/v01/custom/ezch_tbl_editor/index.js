@@ -108,8 +108,10 @@ angular.module('ezch_tbl_editorService',[])
 		if( user_DB )headers['user_DB'] = user_DB 
 		if( user_id )headers['user_id'] = user_id 
 		
-		let appDataHdr = await $http.get(`/tbl_editor/${ user_DB }/tbl_list`) 
-		let tbl_list_data  = appDataHdr.data.DATA 
+//1		let appDataHdr = await $http.get(`/tbl_editor/${ user_DB }/tbl_list`) 
+		let appDataHdr = await $http.get(`/Hades/restapi/${ user_DB }`) 
+//1		let tbl_list_data  = appDataHdr.data.DATA 
+		let tbl_list_data  = appDataHdr.data.ROWS  
 		let tbl_list = ezch_tbl_editorFactory.sheet_TblList_table_tblList ;
 //1 add access right. 		
 		if( user_id != 'star_horse@naver.com' ){
@@ -207,10 +209,12 @@ angular.module('ezch_tbl_editorService',[])
 		  let tbl_name = sheet_TblView_table.tbl_name 
 		  if( isChecked == true ){
 		     emp = get_insertDataTr( spread ) 
-		     url_ = `/tbl_editor/${ tbl_name }/Tr`
+//1		     url_ = `/tbl_editor/${ tbl_name }/Tr`
+		     url_ = `/Hades/restapi/data/${ user_DB }/${ tbl_name }/Tr`
 		  }else{
 			  emp = get_insertData( spread ) 
-			  url_ = `/tbl_editor/${ tbl_name }`
+//1			  url_ = `/tbl_editor/${ tbl_name }`
+		     url_ = `/Hades/restapi/data/${ user_DB }/${ tbl_name }`
 			  delete emp.seq ;	
 		  }	  
 		  $http({ method:'POST', url: url_ ,  data: emp , headers: headers }).then((res_)=>{
@@ -251,6 +255,7 @@ angular.module('ezch_tbl_editorService',[])
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         this.test_asyncUpdates = async ()=>{
+		let user_DB = ezch_tbl_editorFactory.cur_db 
 		let headers = { user_db: ezch_tbl_editorFactory.cur_db } 
 		let tbl_name = ezch_tbl_editorFactory.tbl_name.replace('TB_',''); 
 		try{
@@ -260,7 +265,8 @@ angular.module('ezch_tbl_editorService',[])
 				let seq = updateRow['seq']; 
 				ezch_tbl_editorFactory.async_updates.push( seq )	
 	//			setTimeout( ()=>{
-					$http({ method:'POST', url:`/tbl_editor/${tbl_name}/${seq}`, data:updateRow , headers }).then((resp)=>{
+//1					$http({ method:'POST', url:`/tbl_editor/${tbl_name}/${seq}`, data:updateRow , headers }).then((resp)=>{
+					$http({ method:'POST', url:`/Hades/restapi/data/${ user_DB }/${tbl_name}/${seq}`, data:updateRow , headers }).then((resp)=>{
 						let seq =  resp.config.data.seq; 
 						let seq_index = ezch_tbl_editorFactory.async_updates.indexOf(seq) 	
 						ezch_tbl_editorFactory.async_updates.splice( seq_index , 1 ) 
@@ -400,8 +406,11 @@ angular.module('ezch_tbl_editorService',[])
  	        let user_DB = sheet_TblView_table.db_name ;  
 		if( user_DB )headers['user_DB'] = user_DB
 
-		let DataHdr = await $http.get(`/tbl_editor/${ user_DB }/${ tbl_name4url }`, { headers: headers } )
-		let  Data_1  = sheet_TblView_table.tbl_data = DataHdr.data.DATA
+//1		let DataHdr = await $http.get(`/tbl_editor/${ user_DB }/${ tbl_name4url }`, { headers: headers } )
+//1		let  Data_1  = sheet_TblView_table.tbl_data = DataHdr.data.DATA
+		let DataHdr = await $http.get(`/Hades/restapi/data/${ user_DB }/${ tbl_name4url }`, { headers: headers } )
+		let  Data_1  = sheet_TblView_table.tbl_data = DataHdr.data.ROWS
+
 // 연순 정렬 적용 .
 //1		Data_1 = Data_1.reverse()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -614,14 +623,16 @@ angular.module('ezch_tbl_editorService',[])
 		let tbl_columns = ezch_tbl_editorFactory.sheet_TblView_table.tbl_columns ;  
 		let user_db = ezch_tbl_editorFactory.sheet_TblView_table.db_name ;  
 		let tbl_name = ezch_tbl_editorFactory.sheet_TblView_table.tbl_name 
-		let tbl_data  = await $http({ method:'POST', url:`/tbl_editor/${user_db}/${ tbl_name }/sql`, data: { sql_state: sqlState } })
+//1		let tbl_data  = await $http({ method:'POST', url:`/tbl_editor/${user_db}/${ tbl_name }/sql`, data: { sql_state: sqlState } })
+		let tbl_data  = await $http({ method:'POST', url:`/Hades/restapi/data/${user_db}/${ tbl_name }/GET_HOOK_SQL`, data: { sql_state: sqlState } })
 		let alert_info_message = { class : ( tbl_data.data.RESULT == 'success' )? 'success': 'warning' , message : tbl_data.data.ERRORMESSAGE } 
 		ezch_tbl_editorFactory.updateAlertInfo( alert_info_message ) 		
 		if( tbl_data.data.STATUS == -1 ){
 			alert( tbl_data.data.MESSAGE )
 			return -1; 
 		}
-		tbl_data.data = tbl_data.data.DATA  
+//1		tbl_data.data = tbl_data.data.DATA  
+		tbl_data.data = tbl_data.data.ROWS  
 		ezch_tbl_editorFactory.sheet_TblView_table.tbl_data  = tbl_data.data 
 
 		let tbl_info = ezch_tbl_editorFactory.sheet_TblView_table 
@@ -914,8 +925,10 @@ angular.module('ezch_tbl_editorService',[])
 		if( user_DB )headers['user_DB'] = user_DB
 		if( user_id )headers['user_id'] = user_id
 
-		let appDataHdr = await $http.get(`/tbl_editor/${ user_DB }/tbl_list`)
-		let tbl_list  = appDataHdr.data.DATA
+//1		let appDataHdr = await $http.get(`/tbl_editor/${ user_DB }/tbl_list`)
+		let appDataHdr = await $http.get(`/Hades/restapi/${ user_DB }`)
+//1		let tbl_list  = appDataHdr.data.DATA
+		let tbl_list  = appDataHdr.data.ROWS
 
 //1 check with db auth .
 		if( user_id != 'star_horse@naver.com' ){
@@ -1052,8 +1065,11 @@ angular.module('ezch_tbl_editorService',[])
 
 		tbl_name_1 = tbl_name.replace('TB_','') 
 
-		let schemaDataHdr = await $http.get(`/tbl_editor/${ tbl_name_1 }`, { headers: headers } ) 
-		let schema_data = schemaDataHdr.data.DATA  
+//1		let schemaDataHdr = await $http.get(`/tbl_editor/${ tbl_name_1 }`, { headers: headers } ) 
+//1		let schema_data = schemaDataHdr.data.DATA  
+		let schemaDataHdr = await $http.get(`/Hades/sequelize/${ user_DB }/${ tbl_name_1 }`, { headers: headers } ) 
+		let schema_data = schemaDataHdr.data.ROWS  
+
 		ezch_tbl_editorFactory.sheet_TblList_table_tblSchema.tbl_name  = tbl_name
 		ezch_tbl_editorFactory.sheet_TblView_table.tbl_name  = tbl_name
 		ezch_tbl_editorFactory.schema_add.curTable = tbl_name ; 

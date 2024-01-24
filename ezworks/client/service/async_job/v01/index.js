@@ -40,7 +40,8 @@ angular.module( 'async_job', [])
 						  let seq = emp.seq 
 						  asyncJob_factory.async_updates.push( seq ) 
 //1						  url_ = `/ezchemtech/TableEditor/${ tbl_name }/${seq }`
-						  url_ = `/tbl_editor/${ tbl_name }/${seq }`
+//1						  url_ = `/tbl_editor/${ tbl_name }/${seq }`
+						  url_ = `/Hades/restapi/data/${ user_DB }/${ tbl_name }/${seq }`
 						  delete emp.tbl_name , delete emp.seq ;	
 // force update Date input .. 
 						  emp['UpdateDate'] = new Date() 

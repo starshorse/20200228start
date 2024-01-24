@@ -58,10 +58,12 @@ angular.module('jupitor_admin_editor',[])
 	this.initWorkbook = async ( spread )=>{
 		let initDesign = await $http.get('/admin/jupitor_web_admin_editor.ssjson')
 		spread.fromJSON( initDesign.data ); 
+		spread.suspendPaint();
 		this.sheet_Users_invalidate( spread ) ;
 		await this.sheet_Servers_init( spread ); 
-	        await this.sheet_Users_init( spread ); 
-	        await this.sheet_Permissions_init( spread ); 
+        await this.sheet_Users_init( spread ); 
+        await this.sheet_Permissions_init( spread ); 
+		spread.resumePaint();
 	}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //    Sheet Servers  
@@ -111,6 +113,7 @@ angular.module('jupitor_admin_editor',[])
 		let modal_info  = { title: '소멸된 기능 ' , content:'add Org기능으로 통합 되었습니다. List를 확인하게세요 ' , callback: ()=>{} } 
 		jupitor_admin_editorFactory.do_modal( modal_info ) 
 		return -1 ;
+/*		
 		if( Server_id == '' || Server_id == null ){
 			alert("영문 이름이 필요합니다.");
 			return -1;
@@ -120,7 +123,7 @@ angular.module('jupitor_admin_editor',[])
 			alert("동일한 이름이 존재합니다");
 			return -1; 
 		}
-		let result = await $http({ method:'POST', url:`/Jupiter/db_edit/jupiter_db/add_server/${ Server_id }` }) 
+		let result = await $http({ method:'POST', url:`/Jupiter/db_edit/jupiter_db/add_server/${ Server_id }` }) // TB_관리회사  
 		if( result.data.RESULT == -1 ){
 			alert( result.data.ERRORMESSAGE ) 
 			return -1 ;
@@ -131,6 +134,7 @@ angular.module('jupitor_admin_editor',[])
 			return -1 
 		}
 		await this.sheet_Servers_list_update( spread )
+		*/		
 	}
 	this.sheet_Servers_serverSelected = async ( spread, Server_id )=>{
                 jupitor_admin_editorFactory.binding_data.cur_server = Server_id; 
@@ -321,7 +325,10 @@ angular.module('jupitor_admin_editor',[])
                 let user_id  = jupitor_admin_editorFactory.binding_data.cur_user ; 
 		let cur_user_rec = jupitor_admin_editorFactory.web_users.filter((ent)=>ent.email == user_id );
 		for( const [ key, value ] of Object.entries( cur_user_rec[0] )){
-			sheet.getRange( jupitor_admin_editorFactory.pos.Users.pos_user_info[key] ).text( value ).wordWrap(true);
+		    let cell = jupitor_admin_editorFactory.pos.Users.pos_user_info[key] 
+			if( cell ){
+				sheet.getRange( cell ).text( String( value )).wordWrap(true);
+			}
 		}
 		this.sheet_Users_part_userInfo_invalidate( spread, 0 );
 	}
@@ -384,6 +391,8 @@ angular.module('jupitor_admin_editor',[])
 			}
 		}
 //		alert("Data update Done!"); 
+
+		    this.sheet_Users_list_update( spread ); 
 			let modal_info  = { title: 'User Info update' , content:'성공적으로 수행되었습니다' , callback: ()=>{} } 
 			jupitor_admin_editorFactory.do_modal( modal_info ) 
 	}
@@ -536,11 +545,15 @@ angular.module('jupitor_admin_editor',[])
 			alert( web_login_matrix.data.ERRORMESSAGE )
 			return -1 ;
 		}
-		let login_id = web_login_matrix.data.DATA.find((ent)=>ent.web_id == cur_user )
+	//	let login_id = web_login_matrix.data.DATA.find((ent)=>ent.web_id == cur_user )
+		let login_id = web_login_matrix.data.DATA.find((ent)=>ent.email == cur_user )
+
+
 		if( !login_id ){
 			alert(" no this web id for DB login id" );
 			return -1 ;
 		}
+		login_id['login_id'] = login_id.email 
 		jupitor_admin_editorFactory.sheet_Permissions_table_permissions.login_id = login_id.login_id 
 		// 2023-06-14
 		if( db_name == null ){

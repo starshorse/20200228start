@@ -17,6 +17,20 @@ var config = require('./config/environment');
 var app = express(); 
 var server = require('http').createServer(app);
 
+
+function relayRequestHeaders( proxyReq, req ){
+	Object.keys( req.headers).forEach( function(key){
+		proxyReq.setHeader( key, req.headers[key]); 
+	});
+	proxyReq.setHeader('authentication', `bearer ${ process.env.JUPITER_TOKEN }` ); 
+}
+function replayResponseHeaders( proxyRes, req, res ){
+	Object.keys( proxyRes.headers ).forEach( function( key ){
+		res.append( key, proxyRes.headers[key]); 
+	})
+}
+
+
 if( process.env.PROXY_HADES == 'direct' ){
 	app.use('/Hades', createProxyMiddleware({
 //		target: 'http://192.168.0.80:8000',
@@ -24,7 +38,9 @@ if( process.env.PROXY_HADES == 'direct' ){
 		changeOrigin: true ,
 		pathRewrite:{
 			['^/Hades']:''
-		}
+		},
+		onProxyReq: relayRequestHeaders , 
+		onProxyRes: replayResponseHeaders 
 	}))	
 }
 if( process.env.PROXY_JUPITER == 'direct' ){
