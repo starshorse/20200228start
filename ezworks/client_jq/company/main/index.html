@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/resource/css/sidebars.css"> 
+    <!-- Bootstrap CSS -->
+	<!--
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src='/lib/jquery/dist/jquery.min.js'></script> 
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<style>
+body {
+	font-family:'Noto Sans KR', 'Raleway', sans-serif;
+	}
+	.r-2{
+	  position: absolute ;
+	  right: 35%;
+	  top: 0;
+	}
+	/* override  .login-form padding-bottom */
+	.login-form {
+		padding-bottom: 200px ;
+	}
+	.btn-secondary{
+	   background-color: rgba( 120, 20 , 140, 1 );
+	   border-color: rgba( 60,10,70,1 );
+	}
+	.btn-secondary:hover .btn-secondary:focus{
+	   background-color: rgba( 230, 140 , 255, 1 );
+	}
+	.nav-pills .nav-link.active{
+	   background-color: rgba( 120, 20 , 140, 1 );
+	}
+	.fit_size{
+	   pointer-events: none;
+	   width: 120px;
+	   transform: scale(9) translateY(11px);
+	}
+	.nav-link:hover{
+	   font-size: 18px;
+	   color: orange;
+	}
+	.pointer_events_none{
+	   pointer-events: none;
+	}
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+    </style>
+    <title>EZ Office</title>
+</head>
+<body>
+	<div class="vh-100"> 
+		<!--	
+	  <link rel="stylesheet" href="/resource/css/header-styles.css">
+		-->
+		<nav id='' class="navbar navbar-expand-lg navbar-light bg-light justify-content-end px-5" >
+			<div class="">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+					<h5 id="org_name">Organization Name</h5> 
+					<ul class="navbar-nav">
+						<li class='nav-item active'><a href='#' class="nav-link" >
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M5 12H3l9-9l9 9h-2M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/><path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6"/></g></svg>
+							</a></li>
+							<li class='nav-item' ng-if='is_ezoffice'><a ng-href='{{ hrefs.work_config }}' target="_blank" class="nav-link">업무설정</a></li>
+							<!--				
+		   <li class='nav-item'><a ng-href='{{ hrefs.db_work }}' target="_blank" class="nav-link">DB업무</a></li>
+							-->				
+							<li class="dropdown">
+								<a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">
+									DB업무 	
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+									<li><a class="dropdown-item" ng-href="{{ hrefs.tbl_maker }}" target="_blank">테이블생성기</a></li>
+									<li><a class="dropdown-item" ng-href="{{ hrefs.tbl_editor }}" target="_blank">테이블편집기</a></li>
+									<li><a class="dropdown-item" ng-href="{{ hrefs.sql_editor }}">SQL편집기</a></li>
+								</ul>
+							</li>
+							<li class='nav-item'><a ng-href='{{ hrefs.upload_file }}' target="_blank" class="nav-link">파일업로드</a></li>
+							<li class='nav-item'><a ng-href='{{ hrefs.emPower }}' target="_blank" class="nav-link">권한</a></li>
+							<!--				
+		   <li class='nav-item'><a ng-href='{{ hrefs.authentication }}' target="_blank" class="nav-link">
+							-->				
+							<li class="dropdown">
+								<a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false">
+									인증
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M8 11A5 5 0 1 0 8 1a5 5 0 0 0 0 10Zm5.023 2.023C11.772 11.76 10.013 11 8 11c-4 0-7 3-7 7v5h7m2-3.5a2.5 2.5 0 1 0 5.002-.002A2.5 2.5 0 0 0 10 19.5ZM23 15l-3-3l-6 6m3.5-3.5l3 3l-3-3Z"/></svg>
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+									<li><a class="dropdown-item" ng-href="{{ hrefs.auth_esr }}">ESR 인증</a></li>
+									<li><a class="dropdown-item" ng-href="{{ hrefs.auth_cert }}">공인인증서 인증</a></li>
+								</ul>
+							</li>
+							<li class='nav-item'><a class="nav-link bg-light text-black" ui-sref="main_page.sub1">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a5 5 0 1 0 5 5a5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3a3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"/></svg>	   
+									 <span id="user_name"></span> </a></li> 
+							<li class='nav-item'><a href='/admin/logout' class="nav-link">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M16 13v-2H7V8l-5 4l5 4v-3z"/><path fill="currentColor" d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"/></svg> 
+								</a>
+							</li> 
+							<li class='nav-item' ng-if='is_ezoffice'><a ng-href='{{ hrefs.work_space }}' target="_blank" class="nav-link">WORKSPACE</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav> 
+<main>
+  <h1 class="visually-hidden">Sidebars examples</h1>
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4">개인정보</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#!/main_page/sub1" class="nav-link active" aria-current="page">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+           기본정보 
+        </a>
+      </li>
+<!--	  
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+           휴가정보  
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+          법인카드 사용
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+        연말 정산
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+        메신저 
+        </a>
+      </li>
+-->	  
+    </ul>
+    <hr>
+<!--	
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://github.com/mdo.png" alt" width="32" height="32" class="rounded-circle me-2">
+        <strong>mdo</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div>
+-->
+  </div>
+  <div class="b-example-divider"></div>
+  <div class="d-flex justify-content-center bg-light" style="width: 100%" >
+	  <div class="d-flex flex-column flex-shrink-0 p-3 px-5 bg-light" style="width:45%;">
+		  <label><h3>개인정보</h3></label> 
+		  <div class="mb-3 row">
+			  <label for="staticEmail" class="col-sm-2 col-form-label">이름</label>
+			  <div class="col-sm-10">
+				  <input type="text" readonly class="form-control-plaintext" id="staticEmail" ng-value="cur_user_info.name">
+			  </div>
+		  </div>
+		  <div class="mb-3 row">
+			  <label for="staticEmail" class="col-sm-2 col-form-label">부서</label>
+			  <div class="col-sm-10">
+				  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="IT">
+			  </div>
+		  </div>
+	  </div>
+	  <div class="d-flex flex-column flex-shrink-0 p-3 px-5 bg-light" style="width:45%;">
+		  <form>
+			  <label><h3>패스워드 변경</h3></label> 
+			  <div class="mb-3 row">
+				  <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+				  <div class="col-sm-10">
+					  <input type="text" readonly class="form-control-plaintext" id="staticEmail" ng-value="cur_user_info.email">
+				  </div>
+			  </div>
+			  <div class="mb-3 row">
+				  <label for="inputPassword" class="col-sm-2 col-form-label">new Password</label>
+				  <div class="col-sm-10">
+					  <input type="password" class="form-control" id="inputPassword" ng-model="password.new">
+				  </div>
+			  </div>
+			  <div class="mb-3 row">
+				  <label for="inputPassword" class="col-sm-2 col-form-label">confirm Password</label>
+				  <div class="col-sm-10">
+					  <input type="password" class="form-control" id="inputPassword" ng-model="password.confirm">
+				  </div>
+			  </div>
+			  <button class="btn btn-lg btn-secondary" ng-click="changePw()">확인</button> 
+		  </form> 
+	  </div>
+  </div>
+</main>
+		<a ng-click="click()">ClickMe</a> 
+	</div>
+	<script src='app.js'></script> 
+</body>
+</html>

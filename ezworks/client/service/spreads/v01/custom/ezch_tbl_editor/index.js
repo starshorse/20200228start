@@ -125,7 +125,8 @@ angular.module('ezch_tbl_editorService',[])
 				return -1; 
 			}
 			let db_login_id = db_login.data.DATA[0].login_id
-			let result = await $http.get(`/web_admin_editor/permissions_matrix_login/${ user_DB }/${ db_login_id }`)
+//1			let result = await $http.get(`/web_admin_editor/permissions_matrix_login/${ user_DB }/${ db_login_id }`)
+			let result = await $http.get(`/Hades/db_administration/permission_matrix_login/${ user_DB }/${ db_login_id }`)
 			if( result.data.RESULT == -1 ){ alert( result.data.ERRORMESSAGE ); return; }
 			let access_matrix = ezch_tbl_editorFactory.spread_1_db_access = result.data.DATA.filter((ent)=> ent['VIEW DEFINITION'] ==  true );
 			tbl_list = access_matrix.map(( ent )=>{ return { TABLE_NAME : ent.name }})  
@@ -942,7 +943,8 @@ angular.module('ezch_tbl_editorService',[])
 				return -1; 
 			}
 			let db_login_id = db_login.data.DATA[0].login_id
-			let result = await $http.get(`/web_admin_editor/permissions_matrix_login/${ user_DB }/${ db_login_id }`)
+//			let result = await $http.get(`/web_admin_editor/permissions_matrix_login/${ user_DB }/${ db_login_id }`)
+			let result = await $http.get(`/Hades/db_administration/permission_matrix_login/${ user_DB }/${ db_login_id }`)
 			if( result.data.RESULT == -1 ){ alert( result.data.ERRORMESSAGE ); return; }
 			let access_matrix = ezch_tbl_editorFactory.spread_1_db_access = result.data.DATA.filter((ent)=> ent['VIEW DEFINITION'] ==  true );
 			tbl_list = access_matrix.map(( ent )=>{ return { TABLE_NAME : ent.name }})  

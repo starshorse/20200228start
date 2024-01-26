@@ -3,7 +3,7 @@
 	.env  add 
 	HERMES_ADDESS=${ proxy_hermes_address }  192.168.0.80:5001
  */
-const { readFileSync , writeFileSync,  statSync } = require('fs') 
+const { readFileSync , writeFileSync,  statSync, existsSync , mkdirSync } = require('fs') 
 const path = require('path') 
 const axios = require('axios') 
 
@@ -55,9 +55,14 @@ exports.index = function( req, res){
 	if( id == undefined )return res.status( 500 ).json( result )
 
 	let  id_path = path.join( __dirname , `../../company/data/${ db }/user/${id}.json` )
+	let  userDir_path = path.join( __dirname , `../../company/data/${ db }/user` )
 	try{
 		statSync(id_path)
 	}catch(error){
+//		let dir = `../../company/data/${ db }/user` 
+		if( !existsSync(userDir_path)){
+			mkdirSync( userDir_path, { recursive: true });
+		}
 		let data = JSON.stringify( {id})
 		writeFileSync( id_path, data , 'utf-8')  
 	}

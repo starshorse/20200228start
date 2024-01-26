@@ -1,6 +1,10 @@
 'use strict';
 require('dotenv').config() 
 const { createProxyMiddleware } = require('http-proxy-middleware') 
+const cookieParser = require('cookie-parser') 
+const session = require('express-session'); 
+const flash = require('express-flash'); 
+const FileStore = require('session-file-store')(session) 
 
 const cors = require('cors')
 
@@ -17,6 +21,16 @@ var config = require('./config/environment');
 var app = express(); 
 var server = require('http').createServer(app);
 
+const maxAge = 1000*60*60*24   // 24 hourse 
+const sessionObj ={
+	secret: 'ez-office.co.kr',
+	resave: false, 
+	saveUninitialized: true, 
+	store: new FileStore({ checkPeriod: maxAge }),
+	cookie:{
+		maxAge
+	},
+}
 
 function relayRequestHeaders( proxyReq, req ){
 	Object.keys( req.headers).forEach( function(key){
@@ -53,7 +67,7 @@ if( process.env.PROXY_JUPITER == 'direct' ){
 		}
 	}))
 }
-
+app.use( cookieParser())
 app.use( express.json({
 	limit: "50mb"
 }) )
@@ -61,9 +75,12 @@ app.use( express.urlencoded({
 	limit:"50mb",
 	extended: false 
 }))
+app.use( session( sessionObj )); 
+app.use( flash()) 
 app.use( cors() ) 
 require('./routes')(app)
-require('./config/express')(app) 
+var client_tar = process.env.CLIENT_TAR
+require('./config/express')(app, client_tar ) 
 
 server.listen( config.port, config.ip, function(){
 	console.log('Express serer listening on %d,in %s mode', config.port, app.get('env')); 

@@ -462,7 +462,8 @@ angular.module('jupitor_admin_editor',[])
 		let db_name = jupitor_admin_editorFactory.binding_data.cur_DB 
                 let sheet = spread.getSheetFromName('Permissions') ;
 		spread.suspendPaint(); 
-		let result = await $http.get(`/web_admin_editor/permissions_matrix_login/${ db_name }/${ cur_login}`) 
+//1		let result = await $http.get(`/web_admin_editor/permissions_matrix_login/${ db_name }/${ cur_login}`) 
+		let result = await $http.get(`/Hades/db_administration/permission_matrix_login/${ db_name }/${ cur_login}`) 
 		if( result.data.RESULT == -1 ){ alert( result.data.ERRORMESSAGE ); return; }
 
 		role_matrix = result.data.DATA;
