@@ -1,6 +1,8 @@
 'use strict'
 
 require('dotenv').config() 
+var hades_address = process.env.HADES_ADDRESS 
+var client_tar = process.env.CLIENT_TAR 
 // const { createProxyMiddleware } = require('http-proxy-middleware') 
 //---------------------------------------------------
 var routing_for_angluarjs = require('./routes/route_for_angularjs');
@@ -9,6 +11,9 @@ var routing_for_apis = require('./routes/route_for_apis');
 //---------------------------------------------------
 
 module.exports = function( app ){
+	app.get('/info', (req ,res )=>{
+		res.status(200).json( { hades_address,  client_tar } ) 
+	})
 	app.use('/admin', require('./admin')); 
 	app.use('/tbl_editor', require('./app/tbl_editor')); 
 	if( process.env.PROXY_HADES == 'indirect' ){
