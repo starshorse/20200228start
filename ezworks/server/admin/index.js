@@ -8,7 +8,7 @@ route.get('/login/info', async( req, res )=>{
 	let user = req.cookies['user'] 
 	let user_DB = req.cookies['user_DB'] 
 	let user_name =  '심규정' 
-	res.status(200).json({ org_name , user_name })
+	res.status(200).json({ org_name , user_name, user })
 })
 route.get('/flash/login_failure', async( req, res )=>{
 	let message =  { isMessage: false , message : null } 

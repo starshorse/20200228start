@@ -48,10 +48,12 @@ res => {
 ///////////////////////////////////////////////////////////////////////////////////////////
 //  Router..  
 //////////////////////////////////////////////////////////////////////////////////////////
-exports.index = function( req, res){
+exports.get_config = function( req, res){
 	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
-	let id = req.headers.id 
-	let db = req.params.db 
+//1	let id = req.headers.id 
+//1	let db = req.params.db 
+	let id = req.cookies.user  
+	let db = req.cookies.org_name  
 	if( id == undefined )return res.status( 500 ).json( result )
 
 	let  id_path = path.join( __dirname , `../../company/data/${ db }/user/${id}.json` )
@@ -72,13 +74,52 @@ exports.index = function( req, res){
 	result.DATA = JSON.parse( readFileSync( id_path, 'utf-8'))
 	return res.status( 200 ).json( result ) 
 }
-exports.update = function( req, res){
+exports.get_config_tree = function( req, res){
+	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let id = req.cookies.user  
+	let db = req.cookies.org_name  
+	if( id == undefined )return res.status( 500 ).json( result )
+
+	let  id_path = path.join( __dirname , `../../company/data/${ db }/user/tbl_editor/${id}.json` )
+	let  userDir_path = path.join( __dirname , `../../company/data/${ db }/user/tbl_editor` )
+	try{
+		statSync(id_path)
+	}catch(error){
+		if( !existsSync(userDir_path)){
+			mkdirSync( userDir_path, { recursive: true });
+		}
+		let data = JSON.stringify( {id})
+		writeFileSync( id_path, data , 'utf-8')  
+	}
+	result.STATUS = 1 
+	result.RESULT = 'success'
+	result.MESSAGE = id_path 
+	result.DATA = JSON.parse( readFileSync( id_path, 'utf-8'))
+	return res.status( 200 ).json( result ) 
+}
+exports.update_config = function( req, res){
 	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
 	let id = req.headers.id 
 	let db = req.params.db 
         let data = JSON.stringify( req.body ) 
 	if( id == undefined  || data == undefined )return res.status( 500 ).json( result )
 	let  id_path = path.join( __dirname , `../../company/data/${ db }/user/${id}.json` )
+	
+	writeFileSync( id_path, data , 'utf-8' )
+	result.STATUS = 1 
+	result.RESULT = 'success'
+	result.MESSAGE = id_path 
+	result.DATA = JSON.parse( readFileSync( id_path, 'utf-8'))
+	return res.status( 200 ).json( result ) 
+}
+exports.update_config_tree = function( req, res){
+	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let id = req.cookies.user 
+	let db = req.cookies.org_name 
+// use session cookie .. 	
+	let data = req.body.data 
+	if( id == undefined  || data == undefined )return res.status( 500 ).json( result )
+	let  id_path = path.join( __dirname , `../../company/data/${ db }/user/tbl_editor/${id}.json` )
 	
 	writeFileSync( id_path, data , 'utf-8' )
 	result.STATUS = 1 

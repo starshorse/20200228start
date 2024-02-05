@@ -1,0 +1,14 @@
+#child {
+	padding: 20px 0 40px;
+    border-bottom: 1px solid #388f9e;
+}
+#sub-bottom {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.item-box-area.v1 .item .cont {
+	max-width: 700px
+}
+.item-box-area .cont h1 {
+	text-align: left;
+}
