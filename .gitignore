@@ -14,6 +14,7 @@
 /server/nodejs.ext1/.env
 /ezworks/node_modules
 /ezworks/.env
+/ezworks/ecosystem.config.js
 /ezworks/server/python/app/codeFApi/NPKI
 .env
 *.swap 

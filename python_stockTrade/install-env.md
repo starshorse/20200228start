@@ -38,3 +38,7 @@ Win32com 을 사용하여 엑셀을 제어하면 실행상태를 바로 볼 수 
 2. 설치방법
 pip install pywin32
 pip install --upgrade pywin32==225
+
+
+
+venv  Py310_32 activate.bat 후 다시 Py380_32  두번 activate.bat 해준다. 
