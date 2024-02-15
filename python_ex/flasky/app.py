@@ -12,7 +12,7 @@
 #    pip install flask-socketio
 
 from flask import Flask 
-from flask_scoketio import SocketIO
+from flask_socketio import SocketIO
 
 app = Flask( __name__ ) 
 app.config['SECRET_KEY'] = 'ez-office.co.kr' 
