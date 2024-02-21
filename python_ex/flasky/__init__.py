@@ -2,14 +2,14 @@ from flask import Flask, render_template
 from flask_bootstrap import Bootstrap 
 from flask_mail import Mail
 from flask_moment import Moment 
-from flask_sqlalchemy import SQLAlchemy 
+#from flask_sqlalchemy import SQLAlchemy 
 from flask_login import LoginManager 
 from flask_pagedown import PageDown 
 # from config import config 
 from flask_sslify import SSLify 
 from .simple_page import simple_page as simple_page_blueprint 
 
-def create_app( config_name):
+def create_app( config_name = 'default'):
     app = Flask(__name__)
     bootstrap.init_app(app)
 
