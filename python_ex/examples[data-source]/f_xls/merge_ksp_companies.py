@@ -1,5 +1,5 @@
 """
-    현재 주식 매수 일지 시트를  일어와서 정리해서 다시 Sheet로 정리한다. 
+    현재 주식 매수 일지 시트를  읽어와서 정리해서 다시 Sheet로 정리한다. 
     loading from a file. 
     from openpyxl import load_workbook 
     wb = load_workbook( filename = 'empty_book.xlsx' )

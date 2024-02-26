@@ -1,8 +1,14 @@
 """
 move to modules/selenium 
 """
-from modules import selenium
-from modules import openpyxl 
+import sys, os 
+# If os is ubuntu.. 
+#sys.path.append('/home/rrr/workdir/gitdn/20200228start/python_ex/modules' ) 
+sys.path.append("C:\\workdir\\gitdn\\20200228start\\python_ex\\modules") 
+print( sys.path )
+#from modules import selenium
+import my_selenium as selenium 
+import my_openpyxl as openpyxl 
 from os import listdir 
 # from openpyxl import load_workbook , Workbook 
 from time import sleep 
