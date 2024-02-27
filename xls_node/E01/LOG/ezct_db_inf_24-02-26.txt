@@ -1,0 +1,47 @@
+2024-02-26 09:39:53.50 > LogFile Creates
+2024-02-26 09:39:53.50 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://192.168.0.99:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezchemtech].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [ezchemtech].[dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [ezchemtech].[dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf.xlsm"}
+------------------------------------------------
+2024-02-26 09:39:55.56 > ErrNumber:-2147012866
+2024-02-26 09:39:55.57 > ErrSource:WinHttp.WinHttpRequest
+2024-02-26 09:39:55.57 > ErrDesc:서버와의 연결이 비정상적으로 종료되었습니다.
+
+2024-02-26 09:39:55.57 > [Elapsed Time] pullFromDB() : 2.082sec(s)
+2024-02-26 09:41:00.41 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://192.168.0.99:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezchemtech].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [ezchemtech].[dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [ezchemtech].[dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf.xlsm"}
+------------------------------------------------
+2024-02-26 09:41:02.46 > ErrNumber:-2147012866
+2024-02-26 09:41:02.46 > ErrSource:WinHttp.WinHttpRequest
+2024-02-26 09:41:02.46 > ErrDesc:서버와의 연결이 비정상적으로 종료되었습니다.
+
+2024-02-26 09:41:02.47 > [Elapsed Time] pullFromDB() : 2.063sec(s)
+2024-02-26 09:42:57.23 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezchemtech].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [ezchemtech].[dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [ezchemtech].[dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf.xlsm"}
+------------------------------------------------
+2024-02-26 09:42:57.36 > requestToApiServer: Response
+Status: 403
+ResponseText: 
+{"STATUS":-1,"RESULT":"error","ERRORMESSAGE":"authentication error"}
+------------------------------------------------
+2024-02-26 09:42:57.37 > ErrNumber:-65000
+2024-02-26 09:42:57.37 > ErrSource:requestToApiServer(RPA_SELECT)
+2024-02-26 09:42:57.37 > ErrDesc:Status:403
+{"STATUS":-1,"RESULT":"error","ERRORMESSAGE":"authentication error"}
+2024-02-26 09:42:57.37 > [Elapsed Time] pullFromDB() : 0.145sec(s)
+2024-02-26 09:54:43.55 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://192.168.0.99:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezchemtech].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [ezchemtech].[dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [ezchemtech].[dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf.xlsm"}
+------------------------------------------------
+2024-02-26 09:54:43.70 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":1,"drafterName":"김현선","priority":"일반","requestType":"test","requestTitle":"test","requestDesc":"테스트입니다.","signatoryNameList":"김연희","LineFirst":null,"LineSecond":null,"LineThird":null,"submitStatus":"Y","RegDate":"2022-09-08 11:10:22.743","processDesc":"결재 완료(승인)","resultLatest":"승인","opinion":""},{"seq":2,"drafterName":"김연희","priority":"일반","requestType":"인사","requestTitle":"유연근무제","requestDesc":"김신영주임 근무시간 조정요청 ( 기존: 8시30분~5시30분 변경희망: 8시~5시) ","signatoryNameList":"최성철,황인국","LineFirst":null,"LineSecond":null,"LineThird":null,"subm...
+------------------------------------------------
+2024-02-26 09:54:43.72 > [Elapsed Time] pullFromDB() : 0.188sec(s)

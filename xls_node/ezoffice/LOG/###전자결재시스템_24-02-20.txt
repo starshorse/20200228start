@@ -1,0 +1,91 @@
+2024-02-20 12:47:07.35 > LogFile Creates
+2024-02-20 12:47:07.35 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2024-02-20 12:47:07.41 > ErrNumber:430
+2024-02-20 12:47:07.41 > ErrSource:VBAProject
+2024-02-20 12:47:07.41 > ErrDesc:클래스가 자동화를 지원하지 않거나 예상되는 인퍼페이스를 지원하지 않습니다
+2024-02-20 12:47:07.42 > [Elapsed Time] pullFromDB() : 0.074sec(s)
+2024-02-20 12:47:07.43 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT 회사명, 직위, 성명, 기본메일주소 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL ORDER BY 회사명","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2024-02-20 12:47:07.44 > ErrNumber:430
+2024-02-20 12:47:07.44 > ErrSource:VBAProject
+2024-02-20 12:47:07.44 > ErrDesc:클래스가 자동화를 지원하지 않거나 예상되는 인퍼페이스를 지원하지 않습니다
+2024-02-20 12:47:07.44 > [Elapsed Time] pullFromDB() : 0.012sec(s)
+2024-02-20 12:47:07.45 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT DISTINCT 성명 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL AND 직위 <> '주임' AND 직위 <> '매니저' ORDER BY 성명","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2024-02-20 12:47:07.45 > ErrNumber:430
+2024-02-20 12:47:07.45 > ErrSource:VBAProject
+2024-02-20 12:47:07.45 > ErrDesc:클래스가 자동화를 지원하지 않거나 예상되는 인퍼페이스를 지원하지 않습니다
+2024-02-20 12:47:07.45 > [Elapsed Time] pullFromDB() : 0.008sec(s)
+2024-02-20 12:47:17.78 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2024-02-20 12:47:17.80 > ErrNumber:430
+2024-02-20 12:47:17.80 > ErrSource:VBAProject
+2024-02-20 12:47:17.80 > ErrDesc:클래스가 자동화를 지원하지 않거나 예상되는 인퍼페이스를 지원하지 않습니다
+2024-02-20 12:47:17.81 > [Elapsed Time] pullFromDB() : 0.039sec(s)
+2024-02-20 12:47:17.81 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT 회사명, 직위, 성명, 기본메일주소 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL ORDER BY 회사명","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2024-02-20 12:47:17.81 > ErrNumber:430
+2024-02-20 12:47:17.81 > ErrSource:VBAProject
+2024-02-20 12:47:17.82 > ErrDesc:클래스가 자동화를 지원하지 않거나 예상되는 인퍼페이스를 지원하지 않습니다
+2024-02-20 12:47:17.82 > [Elapsed Time] pullFromDB() : 0.008sec(s)
+2024-02-20 12:47:17.82 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT DISTINCT 성명 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL AND 직위 <> '주임' AND 직위 <> '매니저' ORDER BY 성명","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2024-02-20 12:47:17.82 > ErrNumber:430
+2024-02-20 12:47:17.82 > ErrSource:VBAProject
+2024-02-20 12:47:17.82 > ErrDesc:클래스가 자동화를 지원하지 않거나 예상되는 인퍼페이스를 지원하지 않습니다
+2024-02-20 12:47:17.82 > [Elapsed Time] pullFromDB() : 0.008sec(s)
+2024-02-20 12:47:38.91 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezoffice_test].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [ezoffice_test].[dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [ezoffice_test].[dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2024-02-20 12:47:38.92 > ErrNumber:430
+2024-02-20 12:47:38.92 > ErrSource:VBAProject
+2024-02-20 12:47:38.92 > ErrDesc:클래스가 자동화를 지원하지 않거나 예상되는 인퍼페이스를 지원하지 않습니다
+2024-02-20 12:47:38.92 > [Elapsed Time] pullFromDB() : 0.012sec(s)
+2024-02-20 12:49:34.28 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT url FROM [ezchemtech].[dbo].[TB_webhook_url] WHERE purpose ='TeamIncomingWebhook'","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2024-02-20 12:49:34.29 > ErrNumber:430
+2024-02-20 12:49:34.29 > ErrSource:VBAProject
+2024-02-20 12:49:34.29 > ErrDesc:클래스가 자동화를 지원하지 않거나 예상되는 인퍼페이스를 지원하지 않습니다
+2024-02-20 12:49:34.29 > [Elapsed Time] pullFromDB() : 0.02sec(s)
+2024-02-20 12:49:34.30 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT 회사명, 직위, 성명, 기본메일주소 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL ORDER BY 회사명","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2024-02-20 12:49:34.30 > ErrNumber:430
+2024-02-20 12:49:34.30 > ErrSource:VBAProject
+2024-02-20 12:49:34.30 > ErrDesc:클래스가 자동화를 지원하지 않거나 예상되는 인퍼페이스를 지원하지 않습니다
+2024-02-20 12:49:34.31 > [Elapsed Time] pullFromDB() : 0.016sec(s)
+2024-02-20 12:49:34.32 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT DISTINCT 성명 FROM [ezchemtech].[dbo].[TB_임직원명부] WHERE 퇴사일 IS NULL AND 직위 <> '주임' AND 직위 <> '매니저' ORDER BY 성명","hostname":"DESKTOP-JC987LD","filepath":"F:\\gitdn\\20200228start\\xls_node\\ezoffice\\###전자결재시스템.xlsm"}
+------------------------------------------------
+2024-02-20 12:49:34.32 > ErrNumber:430
+2024-02-20 12:49:34.32 > ErrSource:VBAProject
+2024-02-20 12:49:34.32 > ErrDesc:클래스가 자동화를 지원하지 않거나 예상되는 인퍼페이스를 지원하지 않습니다
+2024-02-20 12:49:34.33 > [Elapsed Time] pullFromDB() : 0.016sec(s)
