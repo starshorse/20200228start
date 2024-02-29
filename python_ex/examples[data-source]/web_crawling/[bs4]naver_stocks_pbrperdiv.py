@@ -11,10 +11,14 @@ sys.path.append('/home/rrr/workdir/gitdn/20200228start/python_ex/modules' )
 sys.path.append("C:\\workdir\\gitdn\\20200228start\\python_ex\\modules") 
 #import  my_pandas  as pandas 
 #import korsp_106_pykrx as mykrx 
+import os
+dir_path = os.path.dirname(os.path.realpath(__file__))
+file_naver_kospi_pbrperdiv = os.path.join( dir_path, 'naver_kospi_pbrperdiv.json' )
+file_naver_kospi_pbrperdiv_esr = os.path.join( dir_path, 'naver_kospi_pbrperdiv_esr.json' )
 
 def getKSP_stock_data():
     df = pd.DataFrame([{'id':'star_horse@naver.com'}])
-    df.to_json( 'naver_kospi_pbrperdiv.json', orient = 'records' )
+    df.to_json( file_naver_kospi_pbrperdiv , orient = 'records' )
     # 오늘날 코스피에 상장되어 있는 주식의 이름과 티커 수집 
     today = datetime.today().strftime("%Y%m%d")
     ticker_list = stock.get_market_ticker_list(date = today, market="KOSPI")
@@ -77,7 +81,7 @@ def getKSP_stock_data():
     df = pd.DataFrame({'CODE': ticker_list , 'NAME': stock_name, 'PBR' : pbrs , 'PER': pers, 'DIV': dividend_yields }) 
     print(df.head(10))
     #pandas.to_json( df , 'naver_kospi_pbrperdiv.json' )
-    df.to_json( 'naver_kospi_pbrperdiv.json', orient = 'records' )
+    df.to_json( file_naver_kospi_pbrperdiv, orient = 'records' )
 
 def read_jsonFile( file_name ):
     with open( file_name, 'r' ) as f:
@@ -89,16 +93,19 @@ def write_jsonFile( file_name , data ):
     with open( file_name, 'w') as make_file:
         json.dump( data, make_file, indent='\t' )
 
-
-if __name__ == "__main__":
-    #getKSP_stock_data();
-    json_data  = read_jsonFile( 'naver_kospi_pbrperdiv.json' )
+def main():
+    getKSP_stock_data();
+    json_data  = read_jsonFile( file_naver_kospi_pbrperdiv )
     esr_f = dict() 
     esr_f['STATUS'] = 1 ;
     esr_f['DATETIME'] = datetime.now().strftime("%Y%m%d");
     esr_f['ROWS'] = json_data 
-    write_jsonFile( 'naver_kospi_pbrperdiv_esr.json', esr_f )
-    json_data  = read_jsonFile( 'naver_kospi_pbrperdiv_esr.json' )
+    write_jsonFile( file_naver_kospi_pbrperdiv_esr , esr_f )
+    json_data  = read_jsonFile( file_naver_kospi_pbrperdiv_esr )
+
+
+if __name__ == "__main__":
+    main();
 
 
 
