@@ -1,0 +1,48 @@
+{
+	"STATUS": 1,
+	"DATETIME": "20240303",
+	"ROWS": [
+		{
+			"CODE": "092460",
+			"NAME": "\ud55c\ub77cIMS",
+			"PBR": 0.62,
+			"PER": 1.51,
+			"DIV": 5.06
+		},
+		{
+			"CODE": "138070",
+			"NAME": "\uc2e0\uc9c4\uc5d0\uc2a4\uc5e0",
+			"PBR": 0.6,
+			"PER": 16.62,
+			"DIV": 1.84
+		},
+		{
+			"CODE": "001810",
+			"NAME": "\ubb34\ub9bcSP",
+			"PBR": 0.21,
+			"PER": null,
+			"DIV": 0.78
+		},
+		{
+			"CODE": "007770",
+			"NAME": "\ud55c\uc77c\ud654\ud559",
+			"PBR": 0.49,
+			"PER": null,
+			"DIV": 0.32
+		},
+		{
+			"CODE": "014470",
+			"NAME": "\ubd80\ubc29",
+			"PBR": 0.72,
+			"PER": 4.72,
+			"DIV": null
+		},
+		{
+			"CODE": "053350",
+			"NAME": "\uc774\ub2c8\ud14d",
+			"PBR": 0.51,
+			"PER": 297.73,
+			"DIV": null
+		}
+	]
+}

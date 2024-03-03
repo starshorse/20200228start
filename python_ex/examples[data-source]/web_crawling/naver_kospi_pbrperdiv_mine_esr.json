@@ -1,0 +1,181 @@
+{
+	"STATUS": 1,
+	"DATETIME": "20240303",
+	"ROWS": [
+		{
+			"CODE": "282690",
+			"NAME": "\ub3d9\uc544\ud0c0\uc774\uc5b4",
+			"PBR": 0.44,
+			"PER": 9.9,
+			"DIV": 8.21
+		},
+		{
+			"CODE": "003120",
+			"NAME": "\uc77c\uc131\uc2e0\uc57d",
+			"PBR": 0.37,
+			"PER": 15.11,
+			"DIV": 6.51
+		},
+		{
+			"CODE": "078000",
+			"NAME": "\ud154\ucf54\uc6e8\uc5b4",
+			"PBR": 0.53,
+			"PER": 10.37,
+			"DIV": 6.11
+		},
+		{
+			"CODE": "000390",
+			"NAME": "\uc0bc\ud654\ud398\uc778\ud2b8",
+			"PBR": 0.51,
+			"PER": 18.93,
+			"DIV": 5.95
+		},
+		{
+			"CODE": "009680",
+			"NAME": "\ubaa8\ud1a0\ub2c9",
+			"PBR": 0.41,
+			"PER": 11.47,
+			"DIV": 5.45
+		},
+		{
+			"CODE": "016360",
+			"NAME": "\uc0bc\uc131\uc99d\uad8c",
+			"PBR": 0.56,
+			"PER": 6.56,
+			"DIV": 5.3
+		},
+		{
+			"CODE": "055550",
+			"NAME": "\uc2e0\ud55c\uc9c0\uc8fc",
+			"PBR": 0.42,
+			"PER": 5.5,
+			"DIV": 4.82
+		},
+		{
+			"CODE": "007590",
+			"NAME": "\ub3d9\ubc29\uc544\uadf8\ub85c",
+			"PBR": 0.48,
+			"PER": 5.74,
+			"DIV": 4.71
+		},
+		{
+			"CODE": "033920",
+			"NAME": "\ubb34\ud559",
+			"PBR": 0.26,
+			"PER": 1.62,
+			"DIV": 4.52
+		},
+		{
+			"CODE": "003410",
+			"NAME": "\uc30d\uc6a9C&E",
+			"PBR": 2.19,
+			"PER": 15.11,
+			"DIV": 4.01
+		},
+		{
+			"CODE": "058860",
+			"NAME": "KTis",
+			"PBR": 0.46,
+			"PER": 8.27,
+			"DIV": 3.89
+		},
+		{
+			"CODE": "010060",
+			"NAME": "OCI\ud640\ub529\uc2a4",
+			"PBR": 0.48,
+			"PER": 1.81,
+			"DIV": 3.51
+		},
+		{
+			"CODE": "001740",
+			"NAME": "SK\ub124\ud2b8\uc6cd\uc2a4",
+			"PBR": 0.61,
+			"PER": 30.61,
+			"DIV": 3.05
+		},
+		{
+			"CODE": "456040",
+			"NAME": "OCI",
+			"PBR": 0.64,
+			"PER": null,
+			"DIV": 2.37
+		},
+		{
+			"CODE": "005490",
+			"NAME": "POSCO\ud640\ub529\uc2a4",
+			"PBR": 0.6,
+			"PER": 29.47,
+			"DIV": 2.32
+		},
+		{
+			"CODE": "010950",
+			"NAME": "S-Oil",
+			"PBR": 1.0,
+			"PER": 8.76,
+			"DIV": 2.22
+		},
+		{
+			"CODE": "032560",
+			"NAME": "\ud669\uae08\uc5d0\uc2a4\ud2f0",
+			"PBR": 0.34,
+			"PER": 3.58,
+			"DIV": 2.13
+		},
+		{
+			"CODE": "003610",
+			"NAME": "\ubc29\ub9bc",
+			"PBR": 0.41,
+			"PER": null,
+			"DIV": 1.78
+		},
+		{
+			"CODE": "000720",
+			"NAME": "\ud604\ub300\uac74\uc124",
+			"PBR": 0.47,
+			"PER": 11.89,
+			"DIV": 1.73
+		},
+		{
+			"CODE": "001560",
+			"NAME": "\uc81c\uc77c\uc5f0\ub9c8",
+			"PBR": 0.61,
+			"PER": 8.12,
+			"DIV": null
+		},
+		{
+			"CODE": "001780",
+			"NAME": "\uc54c\ub8e8\ucf54",
+			"PBR": 1.12,
+			"PER": 17.9,
+			"DIV": null
+		},
+		{
+			"CODE": "005820",
+			"NAME": "\uc6d0\ub9bc",
+			"PBR": 0.32,
+			"PER": 5.71,
+			"DIV": null
+		},
+		{
+			"CODE": "005940",
+			"NAME": "NH\ud22c\uc790\uc99d\uad8c",
+			"PBR": 0.54,
+			"PER": 7.67,
+			"DIV": null
+		},
+		{
+			"CODE": "034220",
+			"NAME": "LG\ub514\uc2a4\ud50c\ub808\uc774",
+			"PBR": 0.56,
+			"PER": null,
+			"DIV": null
+		},
+		{
+			"CODE": "035250",
+			"NAME": "\uac15\uc6d0\ub79c\ub4dc",
+			"PBR": 0.97,
+			"PER": 13.45,
+			"DIV": null
+		}
+	]
+}

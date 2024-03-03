@@ -6,22 +6,47 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import sys
 import json 
+import os
+import pdb
+dir_path = os.path.dirname(os.path.realpath(__file__))
+module_dir = os.path.join( dir_path ,'../modules')
+pykrxApi_dir = os.path.join( dir_path ,'../pykrx_api')
 
 sys.path.append('/home/rrr/workdir/gitdn/20200228start/python_ex/modules' ) 
-sys.path.append("C:\\workdir\\gitdn\\20200228start\\python_ex\\modules") 
+#sys.path.append("C:\\workdir\\gitdn\\20200228start\\python_ex\\modules") 
+sys.path.append(module_dir) 
+sys.path.append(pykrxApi_dir) 
 #import  my_pandas  as pandas 
 #import korsp_106_pykrx as mykrx 
-import os
-dir_path = os.path.dirname(os.path.realpath(__file__))
+import common_util 
+import stocks_mine
+
 file_naver_kospi_pbrperdiv = os.path.join( dir_path, 'naver_kospi_pbrperdiv.json' )
 file_naver_kospi_pbrperdiv_esr = os.path.join( dir_path, 'naver_kospi_pbrperdiv_esr.json' )
+file_naver_kospi_pbrperdiv_mine = os.path.join( dir_path, 'naver_kospi_pbrperdiv_mine.json' )
+file_naver_kospi_pbrperdiv_mine_esr = os.path.join( dir_path, 'naver_kospi_pbrperdiv_mine_esr.json' )
+file_naver_kosdaq_pbrperdiv = os.path.join( dir_path, 'naver_kosdaq_pbrperdiv.json' )
+file_naver_kosdaq_pbrperdiv_esr = os.path.join( dir_path, 'naver_kosdaq_pbrperdiv_esr.json' )
+file_naver_kosdaq_pbrperdiv_mine = os.path.join( dir_path, 'naver_kosdaq_pbrperdiv_mine.json' )
+file_naver_kosdaq_pbrperdiv_mine_esr = os.path.join( dir_path, 'naver_kosdaq_pbrperdiv_mine_esr.json' )
 
-def getKSP_stock_data():
+def getKSP_stock_data( market_name = "KOSPI" ):
+    if( market_name == 'KOSPI' ):
+        file_naver_pbrperdiv = file_naver_kospi_pbrperdiv 
+        file_naver_pbrperdiv_esr = file_naver_kospi_pbrperdiv_esr 
+    elif( market_name == 'KOSDAQ' ):
+        file_naver_pbrperdiv = file_naver_kosdaq_pbrperdiv 
+        file_naver_pbrperdiv_esr = file_naver_kosdaq_pbrperdiv_esr 
+    else:
+        print('NOT SUPPORTED market')
+        print( market_name );
+        return 
+
     df = pd.DataFrame([{'id':'star_horse@naver.com'}])
-    df.to_json( file_naver_kospi_pbrperdiv , orient = 'records' )
+    df.to_json( file_naver_pbrperdiv , orient = 'records' )
     # 오늘날 코스피에 상장되어 있는 주식의 이름과 티커 수집 
     today = datetime.today().strftime("%Y%m%d")
-    ticker_list = stock.get_market_ticker_list(date = today, market="KOSPI")
+    ticker_list = stock.get_market_ticker_list(date = today, market= market_name )
 
     per_selector = "#_per"
     pbr_selector = "#_pbr"
@@ -81,7 +106,7 @@ def getKSP_stock_data():
     df = pd.DataFrame({'CODE': ticker_list , 'NAME': stock_name, 'PBR' : pbrs , 'PER': pers, 'DIV': dividend_yields }) 
     print(df.head(10))
     #pandas.to_json( df , 'naver_kospi_pbrperdiv.json' )
-    df.to_json( file_naver_kospi_pbrperdiv, orient = 'records' )
+    df.to_json( file_naver_pbrperdiv, orient = 'records' )
 
 def read_jsonFile( file_name ):
     with open( file_name, 'r' ) as f:
@@ -93,19 +118,73 @@ def write_jsonFile( file_name , data ):
     with open( file_name, 'w') as make_file:
         json.dump( data, make_file, indent='\t' )
 
-def main():
-    getKSP_stock_data();
-    json_data  = read_jsonFile( file_naver_kospi_pbrperdiv )
+def main( market_name ):
+    if( market_name == 'KOSPI' ):
+        file_naver_pbrperdiv = file_naver_kospi_pbrperdiv 
+        file_naver_pbrperdiv_esr = file_naver_kospi_pbrperdiv_esr 
+    elif( market_name == 'KOSDAQ' ):
+        file_naver_pbrperdiv = file_naver_kosdaq_pbrperdiv 
+        file_naver_pbrperdiv_esr = file_naver_kosdaq_pbrperdiv_esr 
+    else:
+        print('NOT SUPPORTED market')
+        print( market_name );
+        return 
+
+    getKSP_stock_data( market_name );
+    json_data  = read_jsonFile( file_naver_pbrperdiv )
+    df_naver = pd.DataFrame( json_data ); 
+    #df_naver = df_naver.drop( columns = ['종목명','종목코드'])
+    df = common_util.get_market_fundamental_limit_name()
+    df = df[['종목코드','종목명']].sort_values(by='종목명', ascending = False );
+    #pdb.set_trace();
+    df = df.merge( df_naver , how='inner' , left_on ='종목코드', right_on ='CODE' ).sort_values( by='DIV', ascending = False )
+    df = df.drop( columns = ['종목명','종목코드'])
+    print( df )
+    df.to_json( file_naver_pbrperdiv, orient = 'records' )
+    json_data  = read_jsonFile( file_naver_pbrperdiv )
+
     esr_f = dict() 
     esr_f['STATUS'] = 1 ;
     esr_f['DATETIME'] = datetime.now().strftime("%Y%m%d");
     esr_f['ROWS'] = json_data 
-    write_jsonFile( file_naver_kospi_pbrperdiv_esr , esr_f )
-    json_data  = read_jsonFile( file_naver_kospi_pbrperdiv_esr )
+    write_jsonFile( file_naver_pbrperdiv_esr , esr_f )
+    json_data  = read_jsonFile( file_naver_pbrperdiv_esr )
+
+def update_myStocks( market_name ):    
+    if( market_name == 'KOSPI' ):
+        file_naver_pbrperdiv = file_naver_kospi_pbrperdiv 
+        file_naver_pbrperdiv_mine_esr = file_naver_kospi_pbrperdiv_mine_esr 
+    elif( market_name == 'KOSDAQ' ):
+        file_naver_pbrperdiv = file_naver_kosdaq_pbrperdiv 
+        file_naver_pbrperdiv_mine_esr = file_naver_kosdaq_pbrperdiv_mine_esr 
+    else:
+        print('NOT SUPPORTED market')
+        print( market_name );
+        return 
+    getKSP_stock_data( market_name );
+    json_data  = read_jsonFile( file_naver_pbrperdiv )
+    df_naver = pd.DataFrame( json_data ); 
+    df = stocks_mine.get_myStocks()  
+    print( df )
+    #pdb.set_trace();
+    df = df.merge( df_naver , how='inner' , left_on ='종목코드', right_on ='CODE' ).sort_values( by='DIV', ascending = False )
+    df = df.drop( columns = ['종목코드'])
+    print( df )
+    df.to_json( file_naver_pbrperdiv_mine_esr, orient = 'records' )
+    json_data  = read_jsonFile( file_naver_pbrperdiv_mine_esr )
+
+    esr_f = dict() 
+    esr_f['STATUS'] = 1 ;
+    esr_f['DATETIME'] = datetime.now().strftime("%Y%m%d");
+    esr_f['ROWS'] = json_data 
+    write_jsonFile( file_naver_pbrperdiv_mine_esr , esr_f )
+    json_data  = read_jsonFile( file_naver_pbrperdiv_mine_esr )
 
 
 if __name__ == "__main__":
-    main();
+    #main('KOSPI');
+    update_myStocks('KOSPI')
+    update_myStocks('KOSDAQ')
 
 
 

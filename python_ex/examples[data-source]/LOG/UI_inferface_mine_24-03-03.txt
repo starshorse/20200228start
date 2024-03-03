@@ -1,0 +1,13 @@
+2024-03-03 10:47:31.37 > LogFile Creates
+2024-03-03 10:47:31.37 > [Elapsed Time] getRows() : 0.016sec(s)
+2024-03-03 10:47:31.40 > [Elapsed Time] pullFromFile() : 0.082sec(s)
+2024-03-03 10:47:31.43 > [Elapsed Time] getRows() : 0.004sec(s)
+2024-03-03 10:47:31.45 > [Elapsed Time] pullFromFile() : 0.012sec(s)
+2024-03-03 11:11:39.72 > [Elapsed Time] getRows() : 0.109sec(s)
+2024-03-03 11:11:39.77 > [Elapsed Time] pullFromFile() : 0.184sec(s)
+2024-03-03 11:11:39.85 > [Elapsed Time] getRows() : 0.02sec(s)
+2024-03-03 11:11:39.87 > [Elapsed Time] pullFromFile() : 0.051sec(s)
+2024-03-03 11:16:52.30 > [Elapsed Time] getRows() : 0.195sec(s)
+2024-03-03 11:16:52.32 > [Elapsed Time] pullFromFile() : 0.211sec(s)
+2024-03-03 11:16:52.41 > [Elapsed Time] getRows() : 0.027sec(s)
+2024-03-03 11:16:52.43 > [Elapsed Time] pullFromFile() : 0.031sec(s)

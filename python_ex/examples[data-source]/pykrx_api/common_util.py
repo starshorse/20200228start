@@ -44,7 +44,8 @@ def get_symbols_code_konex():
 def get_market_fundamental( market = "KOSPI" ):
     today = datetime.today()
     # get latest busniess day.. 
-    last_Bday = ( today - BDay(1)) .strftime("%Y%m%d")
+    # korea holiday.. 
+    last_Bday = ( today - BDay(2)) .strftime("%Y%m%d")
     df = stock.get_market_fundamental( last_Bday , market = market ); 
     #tabulate_print( df );
     return df 
@@ -62,7 +63,7 @@ def get_market_fundamental_limit_name():
     df_market = df_market[ ( df_market['DIV'] > limit_div ) ]
     #df_market =  df_market[['종목명','PER','PBR','DIV']].sort_values(by='PBR')
     df = df_market.merge( df_symbols , how='left' , left_on = '티커', right_on = '종목코드' )
-    tabulate_print( df[['종목명','PER','PBR','DIV']].sort_values(by='DIV', ascending = False ) );
+    tabulate_print( df[['종목코드','종목명','PER','PBR','DIV']].sort_values(by='DIV', ascending = False ) );
     return df 
 
 if __name__=="__main__":

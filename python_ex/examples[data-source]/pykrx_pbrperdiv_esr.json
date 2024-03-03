@@ -1,0 +1,1749 @@
+{
+	"STATUS": 1,
+	"DATETIME": "20240303",
+	"ROWS": [
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "006740",
+			"\uc885\ubaa9\uba85": "\uc601\ud48d\uc81c\uc9c0",
+			"PER": 10.67,
+			"PBR": 0.62,
+			"DIV": 37.63
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003120",
+			"\uc885\ubaa9\uba85": "\uc77c\uc131\uc2e0\uc57d",
+			"PER": 1.63,
+			"PBR": 0.38,
+			"DIV": 17.38
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "012700",
+			"\uc885\ubaa9\uba85": "\ub9ac\ub4dc\ucf54\ud504",
+			"PER": 4.76,
+			"PBR": 0.36,
+			"DIV": 13.45
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "377740",
+			"\uc885\ubaa9\uba85": "\ubc14\uc774\uc624\ub178\ud2b8",
+			"PER": 1.36,
+			"PBR": 0.28,
+			"DIV": 10.99
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "001120",
+			"\uc885\ubaa9\uba85": "LX\uc778\ud130\ub0b4\uc154\ub110",
+			"PER": 1.92,
+			"PBR": 0.44,
+			"DIV": 10.93
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "002990",
+			"\uc885\ubaa9\uba85": "\uae08\ud638\uac74\uc124",
+			"PER": 8.55,
+			"PBR": 0.33,
+			"DIV": 9.96
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "072870",
+			"\uc885\ubaa9\uba85": "\uba54\uac00\uc2a4\ud130\ub514",
+			"PER": 6.7,
+			"PBR": 0.41,
+			"DIV": 9.58
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "005960",
+			"\uc885\ubaa9\uba85": "\ub3d9\ubd80\uac74\uc124",
+			"PER": 3.01,
+			"PBR": 0.2,
+			"DIV": 9.56
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "352700",
+			"\uc885\ubaa9\uba85": "\uc528\uc564\ud22c\uc2a4",
+			"PER": 3.94,
+			"PBR": 0.45,
+			"DIV": 9.45
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "009410",
+			"\uc885\ubaa9\uba85": "\ud0dc\uc601\uac74\uc124",
+			"PER": 1.52,
+			"PBR": 0.13,
+			"DIV": 9.18
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "016250",
+			"\uc885\ubaa9\uba85": "SGC\uc774\ud14c\ud06c\uac74\uc124",
+			"PER": 1.08,
+			"PBR": 0.22,
+			"DIV": 8.49
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "034830",
+			"\uc885\ubaa9\uba85": "\ud55c\uad6d\ud1a0\uc9c0\uc2e0\ud0c1",
+			"PER": 10.14,
+			"PBR": 0.24,
+			"DIV": 8.37
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "138930",
+			"\uc885\ubaa9\uba85": "BNK\uae08\uc735\uc9c0\uc8fc",
+			"PER": 3.12,
+			"PBR": 0.25,
+			"DIV": 8.33
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "031330",
+			"\uc885\ubaa9\uba85": "\uc5d0\uc2a4\uc5d0\uc774\uc5e0\ud2f0",
+			"PER": 4.69,
+			"PBR": 0.75,
+			"DIV": 8.32
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "282690",
+			"\uc885\ubaa9\uba85": "\ub3d9\uc544\ud0c0\uc774\uc5b4",
+			"PER": 6.97,
+			"PBR": 0.44,
+			"DIV": 8.21
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "006360",
+			"\uc885\ubaa9\uba85": "GS\uac74\uc124",
+			"PER": 3.99,
+			"PBR": 0.28,
+			"DIV": 8.15
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "024090",
+			"\uc885\ubaa9\uba85": "\ub514\uc528\uc5e0",
+			"PER": 2.73,
+			"PBR": 0.39,
+			"DIV": 8.04
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "137310",
+			"\uc885\ubaa9\uba85": "\uc5d0\uc2a4\ub514\ubc14\uc774\uc624\uc13c\uc11c",
+			"PER": 1.39,
+			"PBR": 0.44,
+			"DIV": 7.89
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "009270",
+			"\uc885\ubaa9\uba85": "\uc2e0\uc6d0",
+			"PER": 5.71,
+			"PBR": 0.45,
+			"DIV": 7.81
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "001750",
+			"\uc885\ubaa9\uba85": "\ud55c\uc591\uc99d\uad8c",
+			"PER": 5.61,
+			"PBR": 0.29,
+			"DIV": 7.68
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "316140",
+			"\uc885\ubaa9\uba85": "\uc6b0\ub9ac\uae08\uc735\uc9c0\uc8fc",
+			"PER": 3.56,
+			"PBR": 0.38,
+			"DIV": 7.58
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "000850",
+			"\uc885\ubaa9\uba85": "\ud654\ucc9c\uae30\uacf5",
+			"PER": 1.94,
+			"PBR": 0.21,
+			"DIV": 7.56
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "085910",
+			"\uc885\ubaa9\uba85": "\ub124\uc624\ud2f0\uc2a4",
+			"PER": 8.31,
+			"PBR": 0.78,
+			"DIV": 7.43
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "004000",
+			"\uc885\ubaa9\uba85": "\ub86f\ub370\uc815\ubc00\ud654\ud559",
+			"PER": 8.28,
+			"PBR": 0.53,
+			"DIV": 7.37
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "139130",
+			"\uc885\ubaa9\uba85": "DGB\uae08\uc735\uc9c0\uc8fc",
+			"PER": 3.91,
+			"PBR": 0.28,
+			"DIV": 7.34
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "005090",
+			"\uc885\ubaa9\uba85": "SGC\uc5d0\ub108\uc9c0",
+			"PER": 2.86,
+			"PBR": 0.48,
+			"DIV": 7.34
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "093190",
+			"\uc885\ubaa9\uba85": "\ube45\uc194\ub860",
+			"PER": 8.1,
+			"PBR": 0.5,
+			"DIV": 7.33
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003540",
+			"\uc885\ubaa9\uba85": "\ub300\uc2e0\uc99d\uad8c",
+			"PER": 9.39,
+			"PBR": 0.4,
+			"DIV": 7.3
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "000480",
+			"\uc885\ubaa9\uba85": "CR\ud640\ub529\uc2a4",
+			"PER": 4.84,
+			"PBR": 0.29,
+			"DIV": 7.27
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "019440",
+			"\uc885\ubaa9\uba85": "\uc138\uc544\ud2b9\uc218\uac15",
+			"PER": 6.3,
+			"PBR": 0.34,
+			"DIV": 7.26
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "005010",
+			"\uc885\ubaa9\uba85": "\ud734\uc2a4\ud2f8",
+			"PER": 0.87,
+			"PBR": 0.3,
+			"DIV": 7.12
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "037710",
+			"\uc885\ubaa9\uba85": "\uad11\uc8fc\uc2e0\uc138\uacc4",
+			"PER": 4.35,
+			"PBR": 0.31,
+			"DIV": 7.07
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "000700",
+			"\uc885\ubaa9\uba85": "\uc720\uc218\ud640\ub529\uc2a4",
+			"PER": 4.7,
+			"PBR": 0.42,
+			"DIV": 6.99
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "093920",
+			"\uc885\ubaa9\uba85": "\uc11c\uc6d0\uc778\ud14d",
+			"PER": 4.64,
+			"PBR": 0.54,
+			"DIV": 6.98
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "122900",
+			"\uc885\ubaa9\uba85": "\uc544\uc774\ub9c8\ucf13\ucf54\ub9ac\uc544",
+			"PER": 12.28,
+			"PBR": 0.76,
+			"DIV": 6.92
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "024110",
+			"\uc885\ubaa9\uba85": "\uae30\uc5c5\uc740\ud589",
+			"PER": 4.22,
+			"PBR": 0.39,
+			"DIV": 6.86
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "067990",
+			"\uc885\ubaa9\uba85": "\ub3c4\uc774\uce58\ubaa8\ud130\uc2a4",
+			"PER": 4.35,
+			"PBR": 0.46,
+			"DIV": 6.82
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "007330",
+			"\uc885\ubaa9\uba85": "\ud478\ub978\uc800\ucd95\uc740\ud589",
+			"PER": 5.68,
+			"PBR": 0.37,
+			"DIV": 6.78
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "029780",
+			"\uc885\ubaa9\uba85": "\uc0bc\uc131\uce74\ub4dc",
+			"PER": 6.44,
+			"PBR": 0.51,
+			"DIV": 6.66
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "011200",
+			"\uc885\ubaa9\uba85": "HMM",
+			"PER": 0.89,
+			"PBR": 0.43,
+			"DIV": 6.57
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "123890",
+			"\uc885\ubaa9\uba85": "\ud55c\uad6d\uc790\uc0b0\uc2e0\ud0c1",
+			"PER": 3.8,
+			"PBR": 0.44,
+			"DIV": 6.54
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "267250",
+			"\uc885\ubaa9\uba85": "HD\ud604\ub300",
+			"PER": 3.55,
+			"PBR": 0.67,
+			"DIV": 6.51
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "213500",
+			"\uc885\ubaa9\uba85": "\ud55c\uc194\uc81c\uc9c0",
+			"PER": 3.47,
+			"PBR": 0.34,
+			"DIV": 6.51
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "317400",
+			"\uc885\ubaa9\uba85": "\uc790\uc774\uc5d0\uc2a4\uc564\ub514",
+			"PER": 1.89,
+			"PBR": 0.36,
+			"DIV": 6.5
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "004890",
+			"\uc885\ubaa9\uba85": "\ub3d9\uc77c\uc0b0\uc5c5",
+			"PER": 4.59,
+			"PBR": 0.24,
+			"DIV": 6.49
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "035000",
+			"\uc885\ubaa9\uba85": "HS\uc560\ub4dc",
+			"PER": 5.82,
+			"PBR": 0.58,
+			"DIV": 6.38
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "175330",
+			"\uc885\ubaa9\uba85": "JB\uae08\uc735\uc9c0\uc8fc",
+			"PER": 4.39,
+			"PBR": 0.56,
+			"DIV": 6.34
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "032640",
+			"\uc885\ubaa9\uba85": "LG\uc720\ud50c\ub7ec\uc2a4",
+			"PER": 6.69,
+			"PBR": 0.54,
+			"DIV": 6.3
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "053210",
+			"\uc885\ubaa9\uba85": "\uc2a4\uce74\uc774\ub77c\uc774\ud504",
+			"PER": 11.83,
+			"PBR": 0.32,
+			"DIV": 6.29
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "011040",
+			"\uc885\ubaa9\uba85": "\uacbd\ub3d9\uc81c\uc57d",
+			"PER": 14.3,
+			"PBR": 0.67,
+			"DIV": 6.26
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "001450",
+			"\uc885\ubaa9\uba85": "\ud604\ub300\ud574\uc0c1",
+			"PER": 4.44,
+			"PBR": 0.58,
+			"DIV": 6.24
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "100250",
+			"\uc885\ubaa9\uba85": "\uc9c4\uc591\ud640\ub529\uc2a4",
+			"PER": 7.15,
+			"PBR": 0.52,
+			"DIV": 6.19
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003300",
+			"\uc885\ubaa9\uba85": "\ud55c\uc77c\ud640\ub529\uc2a4",
+			"PER": 4.47,
+			"PBR": 0.28,
+			"DIV": 6.17
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "017480",
+			"\uc885\ubaa9\uba85": "\uc0bc\ud604\ucca0\uac15",
+			"PER": 4.7,
+			"PBR": 0.4,
+			"DIV": 6.16
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "306040",
+			"\uc885\ubaa9\uba85": "\uc5d0\uc2a4\uc81c\uc774\uadf8\ub8f9",
+			"PER": 2.73,
+			"PBR": 0.62,
+			"DIV": 6.15
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "000970",
+			"\uc885\ubaa9\uba85": "\ud55c\uad6d\uc8fc\ucca0\uad00",
+			"PER": 11.72,
+			"PBR": 0.41,
+			"DIV": 6.11
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "008060",
+			"\uc885\ubaa9\uba85": "\ub300\ub355",
+			"PER": 11.95,
+			"PBR": 0.37,
+			"DIV": 6.1
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "001720",
+			"\uc885\ubaa9\uba85": "\uc2e0\uc601\uc99d\uad8c",
+			"PER": 5.56,
+			"PBR": 0.35,
+			"DIV": 6.05
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "171120",
+			"\uc885\ubaa9\uba85": "\ub77c\uc774\uc628\ucf10\ud14d",
+			"PER": 13.46,
+			"PBR": 0.97,
+			"DIV": 6.02
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "025000",
+			"\uc885\ubaa9\uba85": "KPX\ucf00\ubbf8\uce7c",
+			"PER": 7.61,
+			"PBR": 0.37,
+			"DIV": 6.0
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "001230",
+			"\uc885\ubaa9\uba85": "\ub3d9\uad6d\ud640\ub529\uc2a4",
+			"PER": 1.87,
+			"PBR": 0.24,
+			"DIV": 5.97
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "005940",
+			"\uc885\ubaa9\uba85": "NH\ud22c\uc790\uc99d\uad8c",
+			"PER": 13.33,
+			"PBR": 0.54,
+			"DIV": 5.96
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "001500",
+			"\uc885\ubaa9\uba85": "\ud604\ub300\ucc28\uc99d\uad8c",
+			"PER": 3.49,
+			"PBR": 0.24,
+			"DIV": 5.95
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "086790",
+			"\uc885\ubaa9\uba85": "\ud558\ub098\uae08\uc735\uc9c0\uc8fc",
+			"PER": 4.8,
+			"PBR": 0.45,
+			"DIV": 5.92
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "140520",
+			"\uc885\ubaa9\uba85": "\ub300\ucc3d\uc2a4\ud2f8",
+			"PER": 0.97,
+			"PBR": 0.35,
+			"DIV": 5.87
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "344820",
+			"\uc885\ubaa9\uba85": "KCC\uae00\ub77c\uc2a4",
+			"PER": 6.96,
+			"PBR": 0.45,
+			"DIV": 5.85
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "084010",
+			"\uc885\ubaa9\uba85": "\ub300\ud55c\uc81c\uac15",
+			"PER": 2.02,
+			"PBR": 0.35,
+			"DIV": 5.84
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "010960",
+			"\uc885\ubaa9\uba85": "\uc0bc\ud638\uac1c\ubc1c",
+			"PER": 12.36,
+			"PBR": 0.33,
+			"DIV": 5.8
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "007680",
+			"\uc885\ubaa9\uba85": "\ub300\uc6d0",
+			"PER": 3.55,
+			"PBR": 0.2,
+			"DIV": 5.8
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "038390",
+			"\uc885\ubaa9\uba85": "\ub808\ub4dc\ucea1\ud22c\uc5b4",
+			"PER": 6.01,
+			"PBR": 0.66,
+			"DIV": 5.79
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "011370",
+			"\uc885\ubaa9\uba85": "\uc11c\ud55c",
+			"PER": 2.23,
+			"PBR": 0.22,
+			"DIV": 5.75
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "078000",
+			"\uc885\ubaa9\uba85": "\ud154\ucf54\uc6e8\uc5b4",
+			"PER": 15.22,
+			"PBR": 0.53,
+			"DIV": 5.73
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "290120",
+			"\uc885\ubaa9\uba85": "DH\uc624\ud1a0\ub9ac\ub4dc",
+			"PER": 1.7,
+			"PBR": 0.47,
+			"DIV": 5.69
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "001270",
+			"\uc885\ubaa9\uba85": "\ubd80\uad6d\uc99d\uad8c",
+			"PER": 5.6,
+			"PBR": 0.23,
+			"DIV": 5.66
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "002900",
+			"\uc885\ubaa9\uba85": "TYM",
+			"PER": 2.34,
+			"PBR": 0.68,
+			"DIV": 5.66
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "033290",
+			"\uc885\ubaa9\uba85": "\ucf54\uc6f0\ud328\uc158",
+			"PER": 4.61,
+			"PBR": 0.58,
+			"DIV": 5.65
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "011560",
+			"\uc885\ubaa9\uba85": "\uc138\ubcf4\uc5e0\uc774\uc528",
+			"PER": 3.77,
+			"PBR": 0.49,
+			"DIV": 5.62
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "004970",
+			"\uc885\ubaa9\uba85": "\uc2e0\ub77c\uad50\uc5ed",
+			"PER": 9.91,
+			"PBR": 0.25,
+			"DIV": 5.61
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "039570",
+			"\uc885\ubaa9\uba85": "HDC\ub7a9\uc2a4",
+			"PER": 14.96,
+			"PBR": 0.71,
+			"DIV": 5.59
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "057050",
+			"\uc885\ubaa9\uba85": "\ud604\ub300\ud648\uc1fc\ud551",
+			"PER": 6.21,
+			"PBR": 0.27,
+			"DIV": 5.55
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "000140",
+			"\uc885\ubaa9\uba85": "\ud558\uc774\ud2b8\uc9c4\ub85c\ud640\ub529\uc2a4",
+			"PER": 6.31,
+			"PBR": 0.34,
+			"DIV": 5.55
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "016090",
+			"\uc885\ubaa9\uba85": "\ub300\ud604",
+			"PER": 3.48,
+			"PBR": 0.36,
+			"DIV": 5.5
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "017940",
+			"\uc885\ubaa9\uba85": "E1",
+			"PER": 2.69,
+			"PBR": 0.26,
+			"DIV": 5.46
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003200",
+			"\uc885\ubaa9\uba85": "\uc77c\uc2e0\ubc29\uc9c1",
+			"PER": 1.83,
+			"PBR": 0.24,
+			"DIV": 5.41
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003690",
+			"\uc885\ubaa9\uba85": "\ucf54\ub9ac\uc548\ub9ac",
+			"PER": 8.33,
+			"PBR": 0.41,
+			"DIV": 5.35
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "093050",
+			"\uc885\ubaa9\uba85": "LF",
+			"PER": 2.44,
+			"PBR": 0.25,
+			"DIV": 5.35
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "016450",
+			"\uc885\ubaa9\uba85": "\ud55c\uc138\uc608\uc2a424\ud640\ub529\uc2a4",
+			"PER": 8.61,
+			"PBR": 0.44,
+			"DIV": 5.35
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "013120",
+			"\uc885\ubaa9\uba85": "\ub3d9\uc6d0\uac1c\ubc1c",
+			"PER": 3.31,
+			"PBR": 0.27,
+			"DIV": 5.34
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "037460",
+			"\uc885\ubaa9\uba85": "\uc0bc\uc9c0\uc804\uc790",
+			"PER": 2.73,
+			"PBR": 0.42,
+			"DIV": 5.26
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "006200",
+			"\uc885\ubaa9\uba85": "\ud55c\uad6d\uc804\uc790\ud640\ub529\uc2a4",
+			"PER": 2.6,
+			"PBR": 0.3,
+			"DIV": 5.21
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "078930",
+			"\uc885\ubaa9\uba85": "GS",
+			"PER": 2.12,
+			"PBR": 0.36,
+			"DIV": 5.2
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "098660",
+			"\uc885\ubaa9\uba85": "\uc5d0\uc2a4\ud2f0\uc624",
+			"PER": 16.1,
+			"PBR": 0.86,
+			"DIV": 5.18
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "014530",
+			"\uc885\ubaa9\uba85": "\uadf9\ub3d9\uc720\ud654",
+			"PER": 6.61,
+			"PBR": 0.67,
+			"DIV": 5.1
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003800",
+			"\uc885\ubaa9\uba85": "\uc5d0\uc774\uc2a4\uce68\ub300",
+			"PER": 4.98,
+			"PBR": 0.45,
+			"DIV": 5.05
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "129260",
+			"\uc885\ubaa9\uba85": "\uc778\ud130\uc9c0\uc2a4",
+			"PER": 2.19,
+			"PBR": 0.27,
+			"DIV": 5.02
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "111710",
+			"\uc885\ubaa9\uba85": "\ub0a8\ud654\uc0b0\uc5c5",
+			"PER": 5.96,
+			"PBR": 0.73,
+			"DIV": 5.02
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "030200",
+			"\uc885\ubaa9\uba85": "KT",
+			"PER": 7.51,
+			"PBR": 0.6,
+			"DIV": 5.01
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "241770",
+			"\uc885\ubaa9\uba85": "\uba54\uce74\ub85c",
+			"PER": 2.04,
+			"PBR": 0.47,
+			"DIV": 5.0
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "096770",
+			"\uc885\ubaa9\uba85": "SK\uc774\ub178\ubca0\uc774\uc158",
+			"PER": 6.43,
+			"PBR": 0.51,
+			"DIV": 4.99
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "004990",
+			"\uc885\ubaa9\uba85": "\ub86f\ub370\uc9c0\uc8fc",
+			"PER": 12.65,
+			"PBR": 0.3,
+			"DIV": 4.97
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "005440",
+			"\uc885\ubaa9\uba85": "\ud604\ub300\uc9c0\uc5d0\ud504\ud640\ub529\uc2a4",
+			"PER": 6.62,
+			"PBR": 0.2,
+			"DIV": 4.96
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "244920",
+			"\uc885\ubaa9\uba85": "\uc5d0\uc774\ud50c\ub7ec\uc2a4\uc5d0\uc14b",
+			"PER": 1.81,
+			"PBR": 0.63,
+			"DIV": 4.95
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "015890",
+			"\uc885\ubaa9\uba85": "\ud0dc\uacbd\uc0b0\uc5c5",
+			"PER": 5.26,
+			"PBR": 0.6,
+			"DIV": 4.94
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "155650",
+			"\uc885\ubaa9\uba85": "\uc640\uc774\uc5e0\uc528",
+			"PER": 4.87,
+			"PBR": 0.86,
+			"DIV": 4.93
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "034590",
+			"\uc885\ubaa9\uba85": "\uc778\ucc9c\ub3c4\uc2dc\uac00\uc2a4",
+			"PER": 8.58,
+			"PBR": 0.52,
+			"DIV": 4.93
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "036190",
+			"\uc885\ubaa9\uba85": "\uae08\ud654\ud53c\uc5d0\uc2a4\uc2dc",
+			"PER": 5.62,
+			"PBR": 0.53,
+			"DIV": 4.91
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "001800",
+			"\uc885\ubaa9\uba85": "\uc624\ub9ac\uc628\ud640\ub529\uc2a4",
+			"PER": 8.35,
+			"PBR": 0.4,
+			"DIV": 4.9
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "194370",
+			"\uc885\ubaa9\uba85": "\uc81c\uc774\uc5d0\uc2a4\ucf54\ud37c\ub808\uc774\uc158",
+			"PER": 3.4,
+			"PBR": 0.86,
+			"DIV": 4.89
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "192400",
+			"\uc885\ubaa9\uba85": "\ucfe0\ucfe0\ud640\ub529\uc2a4",
+			"PER": 4.37,
+			"PBR": 0.53,
+			"DIV": 4.88
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "019210",
+			"\uc885\ubaa9\uba85": "\uc640\uc774\uc9c0-\uc6d0",
+			"PER": 6.03,
+			"PBR": 0.57,
+			"DIV": 4.85
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "009680",
+			"\uc885\ubaa9\uba85": "\ubaa8\ud1a0\ub2c9",
+			"PER": 8.36,
+			"PBR": 0.41,
+			"DIV": 4.84
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "009580",
+			"\uc885\ubaa9\uba85": "\ubb34\ub9bcP&P",
+			"PER": 4.31,
+			"PBR": 0.3,
+			"DIV": 4.83
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "000070",
+			"\uc885\ubaa9\uba85": "\uc0bc\uc591\ud640\ub529\uc2a4",
+			"PER": 7.94,
+			"PBR": 0.3,
+			"DIV": 4.81
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "300720",
+			"\uc885\ubaa9\uba85": "\ud55c\uc77c\uc2dc\uba58\ud2b8",
+			"PER": 10.67,
+			"PBR": 0.58,
+			"DIV": 4.78
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "008370",
+			"\uc885\ubaa9\uba85": "\uc6d0\ud48d",
+			"PER": 5.69,
+			"PBR": 0.56,
+			"DIV": 4.76
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "009160",
+			"\uc885\ubaa9\uba85": "SIMPAC",
+			"PER": 3.05,
+			"PBR": 0.38,
+			"DIV": 4.75
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "055550",
+			"\uc885\ubaa9\uba85": "\uc2e0\ud55c\uc9c0\uc8fc",
+			"PER": 5.15,
+			"PBR": 0.46,
+			"DIV": 4.74
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003080",
+			"\uc885\ubaa9\uba85": "\uc131\ubcf4\ud654\ud559",
+			"PER": 14.22,
+			"PBR": 0.41,
+			"DIV": 4.66
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "001430",
+			"\uc885\ubaa9\uba85": "\uc138\uc544\ubca0\uc2a4\ud2f8\uc9c0\uc8fc",
+			"PER": 10.03,
+			"PBR": 0.49,
+			"DIV": 4.65
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "105560",
+			"\uc885\ubaa9\uba85": "KB\uae08\uc735",
+			"PER": 5.8,
+			"PBR": 0.51,
+			"DIV": 4.65
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "002460",
+			"\uc885\ubaa9\uba85": "\ud654\uc131\uc0b0\uc5c5",
+			"PER": 4.84,
+			"PBR": 0.28,
+			"DIV": 4.64
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "021080",
+			"\uc885\ubaa9\uba85": "\uc5d0\uc774\ud2f0\ub118\uc778\ubca0\uc2a4\ud2b8",
+			"PER": 5.48,
+			"PBR": 0.93,
+			"DIV": 4.56
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "267290",
+			"\uc885\ubaa9\uba85": "\uacbd\ub3d9\ub3c4\uc2dc\uac00\uc2a4",
+			"PER": 4.73,
+			"PBR": 0.29,
+			"DIV": 4.51
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "204610",
+			"\uc885\ubaa9\uba85": "\ud2f0\uc4f0\ub9ac",
+			"PER": 6.06,
+			"PBR": 0.89,
+			"DIV": 4.5
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "227840",
+			"\uc885\ubaa9\uba85": "\ud604\ub300\ucf54\ud37c\ub808\uc774\uc158\ud640\ub529\uc2a4",
+			"PER": 2.92,
+			"PBR": 0.44,
+			"DIV": 4.49
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "383800",
+			"\uc885\ubaa9\uba85": "LX\ud640\ub529\uc2a4",
+			"PER": 3.16,
+			"PBR": 0.33,
+			"DIV": 4.48
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "010130",
+			"\uc885\ubaa9\uba85": "\uace0\ub824\uc544\uc5f0",
+			"PER": 10.41,
+			"PBR": 0.98,
+			"DIV": 4.47
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "306200",
+			"\uc885\ubaa9\uba85": "\uc138\uc544\uc81c\uac15",
+			"PER": 2.37,
+			"PBR": 0.45,
+			"DIV": 4.46
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "023410",
+			"\uc885\ubaa9\uba85": "\uc720\uc9c4\uae30\uc5c5",
+			"PER": 9.4,
+			"PBR": 0.3,
+			"DIV": 4.44
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "000950",
+			"\uc885\ubaa9\uba85": "\uc804\ubc29",
+			"PER": 0.38,
+			"PBR": 0.12,
+			"DIV": 4.42
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "147830",
+			"\uc885\ubaa9\uba85": "\uc81c\ub8e1\uc0b0\uc5c5",
+			"PER": 7.45,
+			"PBR": 0.91,
+			"DIV": 4.41
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "004590",
+			"\uc885\ubaa9\uba85": "\ud55c\uad6d\uac00\uad6c",
+			"PER": 5.06,
+			"PBR": 0.36,
+			"DIV": 4.4
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "023760",
+			"\uc885\ubaa9\uba85": "\ud55c\uad6d\uce90\ud53c\ud0c8",
+			"PER": 3.21,
+			"PBR": 0.44,
+			"DIV": 4.36
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "102260",
+			"\uc885\ubaa9\uba85": "\ub3d9\uc131\ucf00\ubbf8\uceec",
+			"PER": 6.43,
+			"PBR": 0.59,
+			"DIV": 4.36
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "124560",
+			"\uc885\ubaa9\uba85": "\ud0dc\uc6c5\ub85c\uc9c1\uc2a4",
+			"PER": 1.38,
+			"PBR": 0.61,
+			"DIV": 4.35
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "002810",
+			"\uc885\ubaa9\uba85": "\uc0bc\uc601\ubb34\uc5ed",
+			"PER": 4.56,
+			"PBR": 0.53,
+			"DIV": 4.31
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "039240",
+			"\uc885\ubaa9\uba85": "\uacbd\ub0a8\uc2a4\ud2f8",
+			"PER": 8.44,
+			"PBR": 0.79,
+			"DIV": 4.3
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "030210",
+			"\uc885\ubaa9\uba85": "\ub2e4\uc62c\ud22c\uc790\uc99d\uad8c",
+			"PER": 3.45,
+			"PBR": 0.31,
+			"DIV": 4.27
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "109860",
+			"\uc885\ubaa9\uba85": "\ub3d9\uc77c\uae08\uc18d",
+			"PER": 5.71,
+			"PBR": 0.52,
+			"DIV": 4.26
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "053620",
+			"\uc885\ubaa9\uba85": "\ud0dc\uc591",
+			"PER": 8.63,
+			"PBR": 0.33,
+			"DIV": 4.2
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "104700",
+			"\uc885\ubaa9\uba85": "\ud55c\uad6d\ucca0\uac15",
+			"PER": 3.48,
+			"PBR": 0.35,
+			"DIV": 4.19
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "079000",
+			"\uc885\ubaa9\uba85": "\uc640\ud1a0\uc2a4\ucf54\ub9ac\uc544",
+			"PER": 6.5,
+			"PBR": 0.44,
+			"DIV": 4.17
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003070",
+			"\uc885\ubaa9\uba85": "\ucf54\uc624\ub871\uae00\ub85c\ubc8c",
+			"PER": 1.69,
+			"PBR": 0.43,
+			"DIV": 4.15
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "004960",
+			"\uc885\ubaa9\uba85": "\ud55c\uc2e0\uacf5\uc601",
+			"PER": 1.84,
+			"PBR": 0.11,
+			"DIV": 4.15
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "000320",
+			"\uc885\ubaa9\uba85": "\ub178\ub8e8\ud640\ub529\uc2a4",
+			"PER": 5.05,
+			"PBR": 0.31,
+			"DIV": 4.14
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "002450",
+			"\uc885\ubaa9\uba85": "\uc0bc\uc775\uc545\uae30",
+			"PER": 6.52,
+			"PBR": 0.38,
+			"DIV": 4.13
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "121440",
+			"\uc885\ubaa9\uba85": "\uace8\ud504\uc874\ub274\ub518\ud640\ub529\uc2a4",
+			"PER": 1.95,
+			"PBR": 0.25,
+			"DIV": 4.11
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "002920",
+			"\uc885\ubaa9\uba85": "\uc720\uc131\uae30\uc5c5",
+			"PER": 3.94,
+			"PBR": 0.26,
+			"DIV": 4.11
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "111110",
+			"\uc885\ubaa9\uba85": "\ud638\uc804\uc2e4\uc5c5",
+			"PER": 2.49,
+			"PBR": 0.5,
+			"DIV": 4.11
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003470",
+			"\uc885\ubaa9\uba85": "\uc720\uc548\ud0c0\uc99d\uad8c",
+			"PER": 12.85,
+			"PBR": 0.33,
+			"DIV": 4.1
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "018670",
+			"\uc885\ubaa9\uba85": "SK\uac00\uc2a4",
+			"PER": 5.53,
+			"PBR": 0.61,
+			"DIV": 4.1
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "092220",
+			"\uc885\ubaa9\uba85": "KEC",
+			"PER": 10.46,
+			"PBR": 0.77,
+			"DIV": 4.1
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "016360",
+			"\uc885\ubaa9\uba85": "\uc0bc\uc131\uc99d\uad8c",
+			"PER": 8.78,
+			"PBR": 0.6,
+			"DIV": 4.09
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "001680",
+			"\uc885\ubaa9\uba85": "\ub300\uc0c1",
+			"PER": 8.52,
+			"PBR": 0.52,
+			"DIV": 4.07
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "034120",
+			"\uc885\ubaa9\uba85": "SBS",
+			"PER": 2.86,
+			"PBR": 0.53,
+			"DIV": 4.06
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "161000",
+			"\uc885\ubaa9\uba85": "\uc560\uacbd\ucf00\ubbf8\uce7c",
+			"PER": 10.87,
+			"PBR": 0.9,
+			"DIV": 4.05
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "332370",
+			"\uc885\ubaa9\uba85": "\uc544\uc774\ub514\ud53c",
+			"PER": 4.78,
+			"PBR": 0.97,
+			"DIV": 4.04
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "115310",
+			"\uc885\ubaa9\uba85": "\uc778\ud3ec\ubc14\uc778",
+			"PER": 7.93,
+			"PBR": 0.47,
+			"DIV": 4.04
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "004150",
+			"\uc885\ubaa9\uba85": "\ud55c\uc194\ud640\ub529\uc2a4",
+			"PER": 2.61,
+			"PBR": 0.22,
+			"DIV": 4.01
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "002100",
+			"\uc885\ubaa9\uba85": "\uacbd\ub18d",
+			"PER": 6.65,
+			"PBR": 0.77,
+			"DIV": 4.0
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "035510",
+			"\uc885\ubaa9\uba85": "\uc2e0\uc138\uacc4 I&C",
+			"PER": 1.96,
+			"PBR": 0.45,
+			"DIV": 4.0
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "055490",
+			"\uc885\ubaa9\uba85": "\ud14c\uc774\ud329\uc2a4",
+			"PER": 5.63,
+			"PBR": 0.72,
+			"DIV": 3.98
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "051390",
+			"\uc885\ubaa9\uba85": "YW",
+			"PER": 10.75,
+			"PBR": 0.43,
+			"DIV": 3.96
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "006390",
+			"\uc885\ubaa9\uba85": "\ud55c\uc77c\ud604\ub300\uc2dc\uba58\ud2b8",
+			"PER": 7.7,
+			"PBR": 0.81,
+			"DIV": 3.95
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "363280",
+			"\uc885\ubaa9\uba85": "\ud2f0\uc640\uc774\ud640\ub529\uc2a4",
+			"PER": 1.47,
+			"PBR": 0.09,
+			"DIV": 3.95
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "044450",
+			"\uc885\ubaa9\uba85": "KSS\ud574\uc6b4",
+			"PER": 4.41,
+			"PBR": 0.49,
+			"DIV": 3.94
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "007590",
+			"\uc885\ubaa9\uba85": "\ub3d9\ubc29\uc544\uadf8\ub85c",
+			"PER": 11.67,
+			"PBR": 0.53,
+			"DIV": 3.92
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "020000",
+			"\uc885\ubaa9\uba85": "\ud55c\uc12c",
+			"PER": 3.41,
+			"PBR": 0.31,
+			"DIV": 3.92
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "136540",
+			"\uc885\ubaa9\uba85": "\uc708\uc2a4",
+			"PER": 8.33,
+			"PBR": 0.93,
+			"DIV": 3.91
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "029530",
+			"\uc885\ubaa9\uba85": "\uc2e0\ub3c4\ub9ac\ucf54",
+			"PER": 7.68,
+			"PBR": 0.35,
+			"DIV": 3.9
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "046440",
+			"\uc885\ubaa9\uba85": "KG\ubaa8\ube4c\ub9ac\uc5b8\uc2a4",
+			"PER": 7.48,
+			"PBR": 0.68,
+			"DIV": 3.9
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "005500",
+			"\uc885\ubaa9\uba85": "\uc0bc\uc9c4\uc81c\uc57d",
+			"PER": 11.86,
+			"PBR": 0.99,
+			"DIV": 3.9
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "058860",
+			"\uc885\ubaa9\uba85": "KTis",
+			"PER": 6.16,
+			"PBR": 0.48,
+			"DIV": 3.89
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "006120",
+			"\uc885\ubaa9\uba85": "SK\ub514\uc2a4\ucee4\ubc84\ub9ac",
+			"PER": 2.02,
+			"PBR": 0.29,
+			"DIV": 3.89
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "002600",
+			"\uc885\ubaa9\uba85": "\uc870\ud765",
+			"PER": 9.06,
+			"PBR": 0.65,
+			"DIV": 3.87
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "091700",
+			"\uc885\ubaa9\uba85": "\ud30c\ud2b8\ub860",
+			"PER": 11.23,
+			"PBR": 0.9,
+			"DIV": 3.82
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "000240",
+			"\uc885\ubaa9\uba85": "\ud55c\uad6d\uc564\ucef4\ud37c\ub2c8",
+			"PER": 9.73,
+			"PBR": 0.42,
+			"DIV": 3.82
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "023150",
+			"\uc885\ubaa9\uba85": "MH\uc5d0\ud0c4\uc62c",
+			"PER": 8.58,
+			"PBR": 0.64,
+			"DIV": 3.81
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "010240",
+			"\uc885\ubaa9\uba85": "\ud765\uad6d",
+			"PER": 7.81,
+			"PBR": 0.73,
+			"DIV": 3.81
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "208140",
+			"\uc885\ubaa9\uba85": "\uc815\ub2e4\uc6b4",
+			"PER": 5.61,
+			"PBR": 0.92,
+			"DIV": 3.8
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "030610",
+			"\uc885\ubaa9\uba85": "\uad50\ubcf4\uc99d\uad8c",
+			"PER": 7.74,
+			"PBR": 0.21,
+			"DIV": 3.8
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "036640",
+			"\uc885\ubaa9\uba85": "HRS",
+			"PER": 8.47,
+			"PBR": 0.8,
+			"DIV": 3.76
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "101240",
+			"\uc885\ubaa9\uba85": "\uc528\ud050\ube0c",
+			"PER": 8.15,
+			"PBR": 0.68,
+			"DIV": 3.74
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "072710",
+			"\uc885\ubaa9\uba85": "\ub18d\uc2ec\ud640\ub529\uc2a4",
+			"PER": 9.11,
+			"PBR": 0.29,
+			"DIV": 3.73
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "293480",
+			"\uc885\ubaa9\uba85": "\ud558\ub098\uc81c\uc57d",
+			"PER": 9.74,
+			"PBR": 0.88,
+			"DIV": 3.73
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "030720",
+			"\uc885\ubaa9\uba85": "\ub3d9\uc6d0\uc218\uc0b0",
+			"PER": 5.06,
+			"PBR": 0.5,
+			"DIV": 3.72
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "001790",
+			"\uc885\ubaa9\uba85": "\ub300\ud55c\uc81c\ub2f9",
+			"PER": 11.78,
+			"PBR": 0.54,
+			"DIV": 3.69
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "138070",
+			"\uc885\ubaa9\uba85": "\uc2e0\uc9c4\uc5d0\uc2a4\uc5e0",
+			"PER": 10.69,
+			"PBR": 0.61,
+			"DIV": 3.67
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "011780",
+			"\uc885\ubaa9\uba85": "\uae08\ud638\uc11d\uc720",
+			"PER": 3.97,
+			"PBR": 0.63,
+			"DIV": 3.65
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "131180",
+			"\uc885\ubaa9\uba85": "\ub51c\ub9ac",
+			"PER": 11.7,
+			"PBR": 0.52,
+			"DIV": 3.64
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "058650",
+			"\uc885\ubaa9\uba85": "\uc138\uc544\ud640\ub529\uc2a4",
+			"PER": 3.49,
+			"PBR": 0.21,
+			"DIV": 3.63
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "049960",
+			"\uc885\ubaa9\uba85": "\uc38c\ubc14\uc774\uc624\ud14d",
+			"PER": 10.33,
+			"PBR": 0.79,
+			"DIV": 3.63
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "054040",
+			"\uc885\ubaa9\uba85": "\ud55c\uad6d\ucef4\ud4e8\ud130",
+			"PER": 6.24,
+			"PBR": 0.81,
+			"DIV": 3.63
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "045100",
+			"\uc885\ubaa9\uba85": "\ud55c\uc591\uc774\uc5d4\uc9c0",
+			"PER": 4.1,
+			"PBR": 0.6,
+			"DIV": 3.61
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "064960",
+			"\uc885\ubaa9\uba85": "SNT\ubaa8\ud2f0\ube0c",
+			"PER": 6.87,
+			"PBR": 0.67,
+			"DIV": 3.6
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "037760",
+			"\uc885\ubaa9\uba85": "\uc384\ub2c8\ud2b8",
+			"PER": 5.11,
+			"PBR": 0.48,
+			"DIV": 3.6
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "263770",
+			"\uc885\ubaa9\uba85": "\uc720\uc5d0\uc2a4\ud2f0",
+			"PER": 5.23,
+			"PBR": 0.94,
+			"DIV": 3.59
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "023000",
+			"\uc885\ubaa9\uba85": "\uc0bc\uc6d0\uac15\uc7ac",
+			"PER": 9.02,
+			"PBR": 0.51,
+			"DIV": 3.56
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "015860",
+			"\uc885\ubaa9\uba85": "\uc77c\uc9c4\ud640\ub529\uc2a4",
+			"PER": 10.53,
+			"PBR": 0.45,
+			"DIV": 3.56
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "013890",
+			"\uc885\ubaa9\uba85": "\uc9c0\ub204\uc2a4",
+			"PER": 9.84,
+			"PBR": 0.48,
+			"DIV": 3.56
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "007690",
+			"\uc885\ubaa9\uba85": "\uad6d\ub3c4\ud654\ud559",
+			"PER": 4.59,
+			"PBR": 0.4,
+			"DIV": 3.54
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "052330",
+			"\uc885\ubaa9\uba85": "\ucf54\ud14d",
+			"PER": 3.57,
+			"PBR": 0.31,
+			"DIV": 3.54
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "035890",
+			"\uc885\ubaa9\uba85": "\uc11c\ud76c\uac74\uc124",
+			"PER": 2.81,
+			"PBR": 0.38,
+			"DIV": 3.53
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "100840",
+			"\uc885\ubaa9\uba85": "SNT\uc5d0\ub108\uc9c0",
+			"PER": 9.9,
+			"PBR": 0.59,
+			"DIV": 3.52
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "069510",
+			"\uc885\ubaa9\uba85": "\uc5d0\uc2a4\ud14d",
+			"PER": 7.57,
+			"PBR": 0.52,
+			"DIV": 3.5
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "056190",
+			"\uc885\ubaa9\uba85": "\uc5d0\uc2a4\uc5d0\ud504\uc5d0\uc774",
+			"PER": 11.27,
+			"PBR": 0.78,
+			"DIV": 3.49
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "284740",
+			"\uc885\ubaa9\uba85": "\ucfe0\ucfe0\ud648\uc2dc\uc2a4",
+			"PER": 3.92,
+			"PBR": 0.64,
+			"DIV": 3.49
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "093380",
+			"\uc885\ubaa9\uba85": "\ud48d\uac15",
+			"PER": 8.42,
+			"PBR": 0.52,
+			"DIV": 3.48
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "111770",
+			"\uc885\ubaa9\uba85": "\uc601\uc6d0\ubb34\uc5ed",
+			"PER": 2.86,
+			"PBR": 0.69,
+			"DIV": 3.48
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "015230",
+			"\uc885\ubaa9\uba85": "\ub300\ucc3d\ub2e8\uc870",
+			"PER": 4.06,
+			"PBR": 0.63,
+			"DIV": 3.48
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "221980",
+			"\uc885\ubaa9\uba85": "\ucf00\uc774\ub514\ucf10",
+			"PER": 5.81,
+			"PBR": 0.49,
+			"DIV": 3.47
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "002290",
+			"\uc885\ubaa9\uba85": "\uc0bc\uc77c\uae30\uc5c5\uacf5\uc0ac",
+			"PER": 18.08,
+			"PBR": 0.72,
+			"DIV": 3.44
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "122450",
+			"\uc885\ubaa9\uba85": "KX",
+			"PER": 10.07,
+			"PBR": 0.82,
+			"DIV": 3.39
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "073560",
+			"\uc885\ubaa9\uba85": "\uc6b0\ub9ac\uc190\uc5d0\ud504\uc564\uc9c0",
+			"PER": 4.09,
+			"PBR": 0.4,
+			"DIV": 3.39
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "013580",
+			"\uc885\ubaa9\uba85": "\uacc4\ub8e1\uac74\uc124",
+			"PER": 2.17,
+			"PBR": 0.18,
+			"DIV": 3.38
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "091590",
+			"\uc885\ubaa9\uba85": "\ub0a8\ud654\ud1a0\uac74",
+			"PER": 3.47,
+			"PBR": 0.42,
+			"DIV": 3.36
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "036670",
+			"\uc885\ubaa9\uba85": "KCI",
+			"PER": 4.49,
+			"PBR": 0.82,
+			"DIV": 3.36
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "120110",
+			"\uc885\ubaa9\uba85": "\ucf54\uc624\ub871\uc778\ub354",
+			"PER": 6.53,
+			"PBR": 0.41,
+			"DIV": 3.35
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "009970",
+			"\uc885\ubaa9\uba85": "\uc601\uc6d0\ubb34\uc5ed\ud640\ub529\uc2a4",
+			"PER": 2.4,
+			"PBR": 0.52,
+			"DIV": 3.34
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "089860",
+			"\uc885\ubaa9\uba85": "\ub86f\ub370\ub80c\ud0c8",
+			"PER": 10.48,
+			"PBR": 0.76,
+			"DIV": 3.33
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "110790",
+			"\uc885\ubaa9\uba85": "\ud06c\ub9ac\uc2a4\uc5d0\ud504\uc564\uc528",
+			"PER": 6.12,
+			"PBR": 0.51,
+			"DIV": 3.33
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "088790",
+			"\uc885\ubaa9\uba85": "\uc9c4\ub3c4",
+			"PER": 5.78,
+			"PBR": 0.25,
+			"DIV": 3.3
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "228850",
+			"\uc885\ubaa9\uba85": "\ub808\uc774\uc5b8\uc2a4",
+			"PER": 6.53,
+			"PBR": 0.64,
+			"DIV": 3.28
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "004430",
+			"\uc885\ubaa9\uba85": "\uc1a1\uc6d0\uc0b0\uc5c5",
+			"PER": 2.77,
+			"PBR": 0.54,
+			"DIV": 3.28
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003490",
+			"\uc885\ubaa9\uba85": "\ub300\ud55c\ud56d\uacf5",
+			"PER": 4.8,
+			"PBR": 0.94,
+			"DIV": 3.26
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "036530",
+			"\uc885\ubaa9\uba85": "SNT\ud640\ub529\uc2a4",
+			"PER": 6.05,
+			"PBR": 0.32,
+			"DIV": 3.26
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "267270",
+			"\uc885\ubaa9\uba85": "HD\ud604\ub300\uac74\uc124\uae30\uacc4",
+			"PER": 8.8,
+			"PBR": 0.67,
+			"DIV": 3.25
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "210980",
+			"\uc885\ubaa9\uba85": "SK\ub514\uc564\ub514",
+			"PER": 8.01,
+			"PBR": 0.79,
+			"DIV": 3.24
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "071050",
+			"\uc885\ubaa9\uba85": "\ud55c\uad6d\uae08\uc735\uc9c0\uc8fc",
+			"PER": 6.51,
+			"PBR": 0.49,
+			"DIV": 3.24
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "036560",
+			"\uc885\ubaa9\uba85": "\uc601\ud48d\uc815\ubc00",
+			"PER": 12.66,
+			"PBR": 0.58,
+			"DIV": 3.21
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "002020",
+			"\uc885\ubaa9\uba85": "\ucf54\uc624\ub871",
+			"PER": 1.71,
+			"PBR": 0.22,
+			"DIV": 3.21
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "067010",
+			"\uc885\ubaa9\uba85": "\uc774\uc528\uc5d0\uc2a4",
+			"PER": 9.91,
+			"PBR": 0.83,
+			"DIV": 3.2
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003550",
+			"\uc885\ubaa9\uba85": "LG",
+			"PER": 7.54,
+			"PBR": 0.57,
+			"DIV": 3.2
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "036890",
+			"\uc885\ubaa9\uba85": "\uc9c4\uc131\ud2f0\uc774\uc528",
+			"PER": 4.13,
+			"PBR": 0.89,
+			"DIV": 3.19
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "034310",
+			"\uc885\ubaa9\uba85": "NICE",
+			"PER": 12.69,
+			"PBR": 0.6,
+			"DIV": 3.19
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "011760",
+			"\uc885\ubaa9\uba85": "\ud604\ub300\ucf54\ud37c\ub808\uc774\uc158",
+			"PER": 2.87,
+			"PBR": 0.52,
+			"DIV": 3.19
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "270870",
+			"\uc885\ubaa9\uba85": "\ub274\ud2b8\ub9ac",
+			"PER": 14.96,
+			"PBR": 0.73,
+			"DIV": 3.16
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "005680",
+			"\uc885\ubaa9\uba85": "\uc0bc\uc601\uc804\uc790",
+			"PER": 10.63,
+			"PBR": 0.37,
+			"DIV": 3.11
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003650",
+			"\uc885\ubaa9\uba85": "\ubbf8\ucc3d\uc11d\uc720",
+			"PER": 5.21,
+			"PBR": 0.38,
+			"DIV": 3.11
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "032830",
+			"\uc885\ubaa9\uba85": "\uc0bc\uc131\uc0dd\uba85",
+			"PER": 10.99,
+			"PBR": 0.78,
+			"DIV": 3.1
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "028670",
+			"\uc885\ubaa9\uba85": "\ud32c\uc624\uc158",
+			"PER": 3.84,
+			"PBR": 0.58,
+			"DIV": 3.08
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "058850",
+			"\uc885\ubaa9\uba85": "KTcs",
+			"PER": 8.99,
+			"PBR": 0.81,
+			"DIV": 3.06
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "078340",
+			"\uc885\ubaa9\uba85": "\ucef4\ud22c\uc2a4",
+			"PER": 15.18,
+			"PBR": 0.44,
+			"DIV": 3.05
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "264900",
+			"\uc885\ubaa9\uba85": "\ud06c\ub77c\uc6b4\uc81c\uacfc",
+			"PER": 3.88,
+			"PBR": 0.51,
+			"DIV": 3.04
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "003480",
+			"\uc885\ubaa9\uba85": "\ud55c\uc9c4\uc911\uacf5\uc5c5\ud640\ub529\uc2a4",
+			"PER": 5.84,
+			"PBR": 0.25,
+			"DIV": 3.04
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "035600",
+			"\uc885\ubaa9\uba85": "KG\uc774\ub2c8\uc2dc\uc2a4",
+			"PER": 6.11,
+			"PBR": 0.87,
+			"DIV": 3.04
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "031430",
+			"\uc885\ubaa9\uba85": "\uc2e0\uc138\uacc4\uc778\ud130\ub0b4\uc154\ub0a0",
+			"PER": 4.98,
+			"PBR": 0.71,
+			"DIV": 3.03
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "005810",
+			"\uc885\ubaa9\uba85": "\ud48d\uc0b0\ud640\ub529\uc2a4",
+			"PER": 5.64,
+			"PBR": 0.43,
+			"DIV": 3.03
+		},
+		{
+			"\uc885\ubaa9\ucf54\ub4dc": "007340",
+			"\uc885\ubaa9\uba85": "DN\uc624\ud1a0\ubaa8\ud2f0\ube0c",
+			"PER": 3.94,
+			"PBR": 0.81,
+			"DIV": 3.02
+		}
+	]
+}

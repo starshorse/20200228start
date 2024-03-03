@@ -1,0 +1,559 @@
+{
+	"STATUS": 1,
+	"DATETIME": "20240302",
+	"ROWS": [
+		{
+			"CODE": "031330",
+			"NAME": "\uc5d0\uc2a4\uc5d0\uc774\uc5e0\ud2f0",
+			"PBR": 0.74,
+			"PER": 8.59,
+			"DIV": 7.23
+		},
+		{
+			"CODE": "067990",
+			"NAME": "\ub3c4\uc774\uce58\ubaa8\ud130\uc2a4",
+			"PBR": 0.47,
+			"PER": 14.12,
+			"DIV": 7.01
+		},
+		{
+			"CODE": "093920",
+			"NAME": "\uc11c\uc6d0\uc778\ud14d",
+			"PBR": 0.52,
+			"PER": 8.05,
+			"DIV": 6.98
+		},
+		{
+			"CODE": "007330",
+			"NAME": "\ud478\ub978\uc800\ucd95\uc740\ud589",
+			"PBR": 0.36,
+			"PER": 8.67,
+			"DIV": 6.78
+		},
+		{
+			"CODE": "011040",
+			"NAME": "\uacbd\ub3d9\uc81c\uc57d",
+			"PBR": 0.71,
+			"PER": 28.78,
+			"DIV": 6.26
+		},
+		{
+			"CODE": "011560",
+			"NAME": "\uc138\ubcf4\uc5e0\uc774\uc528",
+			"PBR": 0.45,
+			"PER": 3.47,
+			"DIV": 6.18
+		},
+		{
+			"CODE": "017480",
+			"NAME": "\uc0bc\ud604\ucca0\uac15",
+			"PBR": 0.39,
+			"PER": 6.2,
+			"DIV": 6.16
+		},
+		{
+			"CODE": "078340",
+			"NAME": "\ucef4\ud22c\uc2a4",
+			"PBR": 0.43,
+			"PER": 13.19,
+			"DIV": 6.1
+		},
+		{
+			"CODE": "085910",
+			"NAME": "\ub124\uc624\ud2f0\uc2a4",
+			"PBR": 0.89,
+			"PER": null,
+			"DIV": 5.94
+		},
+		{
+			"CODE": "140520",
+			"NAME": "\ub300\ucc3d\uc2a4\ud2f8",
+			"PBR": 0.35,
+			"PER": 7.38,
+			"DIV": 5.87
+		},
+		{
+			"CODE": "147830",
+			"NAME": "\uc81c\ub8e1\uc0b0\uc5c5",
+			"PBR": 0.87,
+			"PER": 7.21,
+			"DIV": 5.87
+		},
+		{
+			"CODE": "069510",
+			"NAME": "\uc5d0\uc2a4\ud14d",
+			"PBR": 0.45,
+			"PER": 4.14,
+			"DIV": 5.83
+		},
+		{
+			"CODE": "038390",
+			"NAME": "\ub808\ub4dc\ucea1\ud22c\uc5b4",
+			"PBR": 0.65,
+			"PER": 8.14,
+			"DIV": 5.79
+		},
+		{
+			"CODE": "093380",
+			"NAME": "\ud48d\uac15",
+			"PBR": 0.5,
+			"PER": 12.18,
+			"DIV": 5.35
+		},
+		{
+			"CODE": "003800",
+			"NAME": "\uc5d0\uc774\uc2a4\uce68\ub300",
+			"PBR": 0.44,
+			"PER": 6.11,
+			"DIV": 5.31
+		},
+		{
+			"CODE": "051390",
+			"NAME": "YW",
+			"PBR": 0.41,
+			"PER": 7.92,
+			"DIV": 5.28
+		},
+		{
+			"CODE": "037460",
+			"NAME": "\uc0bc\uc9c0\uc804\uc790",
+			"PBR": 0.39,
+			"PER": 2.69,
+			"DIV": 5.26
+		},
+		{
+			"CODE": "008370",
+			"NAME": "\uc6d0\ud48d",
+			"PBR": 0.54,
+			"PER": 10.75,
+			"DIV": 5.23
+		},
+		{
+			"CODE": "098660",
+			"NAME": "\uc5d0\uc2a4\ud2f0\uc624",
+			"PBR": 0.89,
+			"PER": 24.15,
+			"DIV": 5.18
+		},
+		{
+			"CODE": "036190",
+			"NAME": "\uae08\ud654\ud53c\uc5d0\uc2a4\uc2dc",
+			"PBR": 0.49,
+			"PER": 5.01,
+			"DIV": 4.91
+		},
+		{
+			"CODE": "033290",
+			"NAME": "\ucf54\uc6f0\ud328\uc158",
+			"PBR": 0.57,
+			"PER": 6.11,
+			"DIV": 4.76
+		},
+		{
+			"CODE": "019210",
+			"NAME": "\uc640\uc774\uc9c0-\uc6d0",
+			"PBR": 0.6,
+			"PER": 9.32,
+			"DIV": 4.52
+		},
+		{
+			"CODE": "023410",
+			"NAME": "\uc720\uc9c4\uae30\uc5c5",
+			"PBR": 0.26,
+			"PER": 3.15,
+			"DIV": 4.44
+		},
+		{
+			"CODE": "004590",
+			"NAME": "\ud55c\uad6d\uac00\uad6c",
+			"PBR": 0.35,
+			"PER": 5.39,
+			"DIV": 4.4
+		},
+		{
+			"CODE": "054040",
+			"NAME": "\ud55c\uad6d\ucef4\ud4e8\ud130",
+			"PBR": 0.71,
+			"PER": 6.06,
+			"DIV": 4.36
+		},
+		{
+			"CODE": "079000",
+			"NAME": "\uc640\ud1a0\uc2a4\ucf54\ub9ac\uc544",
+			"PBR": 0.45,
+			"PER": 13.56,
+			"DIV": 4.17
+		},
+		{
+			"CODE": "122450",
+			"NAME": "KX",
+			"PBR": 0.8,
+			"PER": 8.73,
+			"DIV": 4.06
+		},
+		{
+			"CODE": "039240",
+			"NAME": "\uacbd\ub0a8\uc2a4\ud2f8",
+			"PBR": 0.76,
+			"PER": 9.53,
+			"DIV": 3.97
+		},
+		{
+			"CODE": "155650",
+			"NAME": "\uc640\uc774\uc5e0\uc528",
+			"PBR": 0.8,
+			"PER": 4.89,
+			"DIV": 3.94
+		},
+		{
+			"CODE": "136540",
+			"NAME": "\uc708\uc2a4",
+			"PBR": 0.89,
+			"PER": 7.85,
+			"DIV": 3.91
+		},
+		{
+			"CODE": "046440",
+			"NAME": "KG\ubaa8\ube4c\ub9ac\uc5b8\uc2a4",
+			"PBR": 0.66,
+			"PER": 10.11,
+			"DIV": 3.9
+		},
+		{
+			"CODE": "010240",
+			"NAME": "\ud765\uad6d",
+			"PBR": 0.65,
+			"PER": 6.0,
+			"DIV": 3.81
+		},
+		{
+			"CODE": "036640",
+			"NAME": "HRS",
+			"PBR": 0.76,
+			"PER": 8.09,
+			"DIV": 3.76
+		},
+		{
+			"CODE": "093190",
+			"NAME": "\ube45\uc194\ub860",
+			"PBR": 0.49,
+			"PER": 66.59,
+			"DIV": 3.66
+		},
+		{
+			"CODE": "021080",
+			"NAME": "\uc5d0\uc774\ud2f0\ub118\uc778\ubca0\uc2a4\ud2b8",
+			"PBR": 0.91,
+			"PER": 33.23,
+			"DIV": 3.65
+		},
+		{
+			"CODE": "049960",
+			"NAME": "\uc38c\ubc14\uc774\uc624\ud14d",
+			"PBR": 0.78,
+			"PER": 689.44,
+			"DIV": 3.63
+		},
+		{
+			"CODE": "045100",
+			"NAME": "\ud55c\uc591\uc774\uc5d4\uc9c0",
+			"PBR": 0.55,
+			"PER": 4.72,
+			"DIV": 3.61
+		},
+		{
+			"CODE": "035890",
+			"NAME": "\uc11c\ud76c\uac74\uc124",
+			"PBR": 0.32,
+			"PER": 2.62,
+			"DIV": 3.53
+		},
+		{
+			"CODE": "036670",
+			"NAME": "KCI",
+			"PBR": 0.77,
+			"PER": 6.99,
+			"DIV": 3.36
+		},
+		{
+			"CODE": "111710",
+			"NAME": "\ub0a8\ud654\uc0b0\uc5c5",
+			"PBR": 0.71,
+			"PER": 7.07,
+			"DIV": 3.34
+		},
+		{
+			"CODE": "110790",
+			"NAME": "\ud06c\ub9ac\uc2a4\uc5d0\ud504\uc564\uc528",
+			"PBR": 0.41,
+			"PER": 3.83,
+			"DIV": 3.33
+		},
+		{
+			"CODE": "332370",
+			"NAME": "\uc544\uc774\ub514\ud53c",
+			"PBR": 0.91,
+			"PER": 7.57,
+			"DIV": 3.23
+		},
+		{
+			"CODE": "036560",
+			"NAME": "\uc601\ud48d\uc815\ubc00",
+			"PBR": 0.58,
+			"PER": 7.14,
+			"DIV": 3.21
+		},
+		{
+			"CODE": "067010",
+			"NAME": "\uc774\uc528\uc5d0\uc2a4",
+			"PBR": 0.8,
+			"PER": 10.49,
+			"DIV": 3.2
+		},
+		{
+			"CODE": "035600",
+			"NAME": "KG\uc774\ub2c8\uc2dc\uc2a4",
+			"PBR": 0.77,
+			"PER": 5.15,
+			"DIV": 3.19
+		},
+		{
+			"CODE": "091700",
+			"NAME": "\ud30c\ud2b8\ub860",
+			"PBR": 0.87,
+			"PER": 15.6,
+			"DIV": 3.18
+		},
+		{
+			"CODE": "306040",
+			"NAME": "\uc5d0\uc2a4\uc81c\uc774\uadf8\ub8f9",
+			"PBR": 0.59,
+			"PER": 4.8,
+			"DIV": 3.08
+		},
+		{
+			"CODE": "171120",
+			"NAME": "\ub77c\uc774\uc628\ucf10\ud14d",
+			"PBR": 0.91,
+			"PER": 20.78,
+			"DIV": 3.01
+		},
+		{
+			"CODE": "052330",
+			"NAME": "\ucf54\ud14d",
+			"PBR": 0.3,
+			"PER": 13.2,
+			"DIV": 2.83
+		},
+		{
+			"CODE": "013120",
+			"NAME": "\ub3d9\uc6d0\uac1c\ubc1c",
+			"PBR": 0.26,
+			"PER": 3.78,
+			"DIV": 2.67
+		},
+		{
+			"CODE": "124560",
+			"NAME": "\ud0dc\uc6c5\ub85c\uc9c1\uc2a4",
+			"PBR": 0.68,
+			"PER": 6.35,
+			"DIV": 2.03
+		},
+		{
+			"CODE": "138070",
+			"NAME": "\uc2e0\uc9c4\uc5d0\uc2a4\uc5e0",
+			"PBR": 0.6,
+			"PER": 16.62,
+			"DIV": 1.84
+		},
+		{
+			"CODE": "056190",
+			"NAME": "\uc5d0\uc2a4\uc5d0\ud504\uc5d0\uc774",
+			"PBR": 0.8,
+			"PER": 19.98,
+			"DIV": 1.12
+		},
+		{
+			"CODE": "091590",
+			"NAME": "\ub0a8\ud654\ud1a0\uac74",
+			"PBR": 0.39,
+			"PER": 2.79,
+			"DIV": 0.84
+		},
+		{
+			"CODE": "023760",
+			"NAME": "\ud55c\uad6d\uce90\ud53c\ud0c8",
+			"PBR": 0.4,
+			"PER": 3.59,
+			"DIV": null
+		},
+		{
+			"CODE": "204610",
+			"NAME": "\ud2f0\uc4f0\ub9ac",
+			"PBR": 0.85,
+			"PER": 6.06,
+			"DIV": null
+		},
+		{
+			"CODE": "053620",
+			"NAME": "\ud0dc\uc591",
+			"PBR": 0.32,
+			"PER": 12.14,
+			"DIV": null
+		},
+		{
+			"CODE": "221980",
+			"NAME": "\ucf00\uc774\ub514\ucf10",
+			"PBR": 0.47,
+			"PER": 6.83,
+			"DIV": null
+		},
+		{
+			"CODE": "036890",
+			"NAME": "\uc9c4\uc131\ud2f0\uc774\uc528",
+			"PBR": 0.82,
+			"PER": 7.04,
+			"DIV": null
+		},
+		{
+			"CODE": "208140",
+			"NAME": "\uc815\ub2e4\uc6b4",
+			"PBR": 0.75,
+			"PER": 3.18,
+			"DIV": null
+		},
+		{
+			"CODE": "115310",
+			"NAME": "\uc778\ud3ec\ubc14\uc778",
+			"PBR": 0.45,
+			"PER": 9.69,
+			"DIV": null
+		},
+		{
+			"CODE": "263770",
+			"NAME": "\uc720\uc5d0\uc2a4\ud2f0",
+			"PBR": 0.86,
+			"PER": 5.31,
+			"DIV": null
+		},
+		{
+			"CODE": "073560",
+			"NAME": "\uc6b0\ub9ac\uc190\uc5d0\ud504\uc564\uc9c0",
+			"PBR": 0.4,
+			"PER": 17.56,
+			"DIV": null
+		},
+		{
+			"CODE": "101240",
+			"NAME": "\uc528\ud050\ube0c",
+			"PBR": 0.64,
+			"PER": 24.29,
+			"DIV": null
+		},
+		{
+			"CODE": "352700",
+			"NAME": "\uc528\uc564\ud22c\uc2a4",
+			"PBR": 0.45,
+			"PER": 62.5,
+			"DIV": null
+		},
+		{
+			"CODE": "037760",
+			"NAME": "\uc384\ub2c8\ud2b8",
+			"PBR": 0.48,
+			"PER": 10.22,
+			"DIV": null
+		},
+		{
+			"CODE": "011370",
+			"NAME": "\uc11c\ud55c",
+			"PBR": 0.22,
+			"PER": 3.67,
+			"DIV": null
+		},
+		{
+			"CODE": "002290",
+			"NAME": "\uc0bc\uc77c\uae30\uc5c5\uacf5\uc0ac",
+			"PBR": 0.7,
+			"PER": 10.24,
+			"DIV": null
+		},
+		{
+			"CODE": "241770",
+			"NAME": "\uba54\uce74\ub85c",
+			"PBR": 0.48,
+			"PER": 2.3,
+			"DIV": null
+		},
+		{
+			"CODE": "072870",
+			"NAME": "\uba54\uac00\uc2a4\ud130\ub514",
+			"PBR": 0.41,
+			"PER": 6.28,
+			"DIV": null
+		},
+		{
+			"CODE": "012700",
+			"NAME": "\ub9ac\ub4dc\ucf54\ud504",
+			"PBR": 0.37,
+			"PER": 30.51,
+			"DIV": null
+		},
+		{
+			"CODE": "228850",
+			"NAME": "\ub808\uc774\uc5b8\uc2a4",
+			"PBR": 0.6,
+			"PER": 7.19,
+			"DIV": null
+		},
+		{
+			"CODE": "131180",
+			"NAME": "\ub51c\ub9ac",
+			"PBR": 0.53,
+			"PER": null,
+			"DIV": null
+		},
+		{
+			"CODE": "109860",
+			"NAME": "\ub3d9\uc77c\uae08\uc18d",
+			"PBR": 0.53,
+			"PER": 93.07,
+			"DIV": null
+		},
+		{
+			"CODE": "007680",
+			"NAME": "\ub300\uc6d0",
+			"PBR": 0.21,
+			"PER": null,
+			"DIV": null
+		},
+		{
+			"CODE": "270870",
+			"NAME": "\ub274\ud2b8\ub9ac",
+			"PBR": 0.73,
+			"PER": null,
+			"DIV": null
+		},
+		{
+			"CODE": "121440",
+			"NAME": "\uace8\ud504\uc874\ub274\ub518\ud640\ub529\uc2a4",
+			"PBR": 0.23,
+			"PER": 3.22,
+			"DIV": null
+		},
+		{
+			"CODE": "016250",
+			"NAME": "SGC\uc774\ud14c\ud06c\uac74\uc124",
+			"PBR": 0.23,
+			"PER": null,
+			"DIV": null
+		},
+		{
+			"CODE": "290120",
+			"NAME": "DH\uc624\ud1a0\ub9ac\ub4dc",
+			"PBR": 0.47,
+			"PER": 4.52,
+			"DIV": null
+		}
+	]
+}
