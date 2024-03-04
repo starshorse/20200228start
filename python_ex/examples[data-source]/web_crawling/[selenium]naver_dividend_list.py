@@ -12,7 +12,9 @@ from time import sleep
 import pdb
 
 driver = selenium.getDriver()
-selenium.get('https://finance.naver.com/sise/dividend_list.naver')
+selenium.get(
+        'https://finance.naver.com/sise/dividend_list.naver'
+        )
 
 html = driver.page_source 
 soup = BeautifulSoup( html ) 
