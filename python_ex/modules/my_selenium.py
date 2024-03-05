@@ -1,12 +1,26 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep 
+from selenium.webdriver.chrome.options import Options
+import chromedriver_autoinstaller as chromedriver
 
-driver = webdriver.Chrome()
+chromedriver.install()
+
+
+chrome_options = Options()
+chrome_options.add_experimental_option("detach", True)
+# 불필요한 에러 메시지 없애기
+chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
+# 브라우저 생성
+# --start-maximized 
+chrome_options.add_argument("--start-maximized")
+driver = webdriver.Chrome(options=chrome_options)
+#driver = webdriver.Chrome()
 
 def get( url ):
     driver.get(url );
     sleep(3)
+    return driver 
 
 def getDriver():
     global driver
