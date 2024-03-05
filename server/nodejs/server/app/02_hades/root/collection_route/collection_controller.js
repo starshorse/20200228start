@@ -7,9 +7,9 @@ exports.get_collectionInfo = async ( req, res )=>{
     let collectionName = req.params.collectionName ; 
 	let user_DB = req.params.db_name; 
 	let sql_state = `
-		select a.seq , a.name, a.title, a.level, c.url from TB_collections a  inner join TB_extrn_urls c on a.extrn_urlSeq = c.seq where a.name = '${ collectionName }'
+		select a.seq , a.name, a.title, a.level, c.url from TB_collections a  left join TB_collection_extrn_urls c on a.extrn_urlSeq = c.seq where a.name = '${ collectionName }' and a.dbName = '${ user_DB }' 
 	`
-	let response = await DB_Inf.get_sql( user_DB, sql_state )
+	let response = await DB_Inf.get_sql( 'ezoffice' , sql_state )
 	console.log( response )
 	result.DATA = response.recordset[0] 
 	return res.status(200).json( result ) 
@@ -20,11 +20,10 @@ exports.get_collectionAssign = async ( req, res )=>{
 	let user_DB = req.params.db_name; 
 	let sql_state = `
 		declare @collectionSeq int
-		select  @collectionSeq  = seq from  TB_collections  where name = '${ collectionName }'
+		select  @collectionSeq  = seq from  TB_collections  where name = '${ collectionName }' and dbName = '${ user_DB }'
 		select  distinct b.name   from TB_collections_link a inner join TB_collections b on a.collection_assignSeq_S = b.seq where a.collection_assignSeq_T = @collectionSeq
-
 	`
-	let response = await DB_Inf.get_sql( user_DB, sql_state )
+	let response = await DB_Inf.get_sql( 'ezoffice' , sql_state )
 	result.DATA = _.pluck( response.recordset, 'name' ) 
 	return res.status(200).json( result ) 
 }
@@ -34,16 +33,29 @@ exports.get_appAssign = async ( req, res )=>{
 	let user_DB = req.params.db_name; 
 	let sql_state = `
 	declare @collectionSeq int
-	select  @collectionSeq  = seq from  TB_collections  where name = '${ collectionName }'
+	select  @collectionSeq  = seq from  TB_collections  where name = '${ collectionName }' and dbName = '${ user_DB }'
 	select  b.name  from TB_collection_apps a inner join TB_apps b on a.app_assignSeq = b.seq where a.collection_assignSeq = @collectionSeq
 	`
-	let response = await DB_Inf.get_sql( user_DB, sql_state )
+	let response = await DB_Inf.get_sql( 'ezoffice', sql_state )
 	result.DATA = _.pluck( response.recordset, 'name' ) 
 	return res.status(200).json( result ) 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 //     POST ..
 /////////////////////////////////////////////////////////////////////////////////////////
+exports.create = async ( req, res )=>{
+	let result = { STATUS: 0 , RESULT:'success' , ERRORMESSAGE:'' , DATA: null }; 
+    let collectionName = req.params.collectionName ; 
+	let user_DB = req.params.db_name; 
+	let id = req.params.id 
+	let sql_state = `
+	insert [ezoffice].[dbo].[TB_collections]( [name], [title], ownerSeq , dbName )
+	select [name] = '${ collectionName }' , [title] = '${ collectionName }',  seq , dbName 
+	from [config].[dbo].[TB_Admin] where  email = '${ id }' and dbName = '${ user_DB }' 
+	`
+	let response = await DB_Inf.get_sql( user_DB, sql_state )
+	return res.status(200).json( result ) 
+}
 exports.update_collectionAssign = async ( req, res )=>{
 	let result = { STATUS: 0 , RESULT:'success' , ERRORMESSAGE:'' , DATA: null }; 
     let collectionName = req.params.collectionName ; 
@@ -55,7 +67,7 @@ exports.update_collectionAssign = async ( req, res )=>{
 	--- collection Link query Merge
 	declare @collectionSeq_t int
 	declare @collectionSeq_s table( assignSeq_T int not null , assignSeq_S int not null) ;
-	select  @collectionSeq_t  = seq from  TB_collections  where name = '${ collectionName }' ;
+	select  @collectionSeq_t  = seq from  TB_collections  where name = '${ collectionName }' and dbName = '${ user_DB }' ;
 	insert into @collectionSeq_s select assignSeq_T = @collectionSeq_t , seq from  TB_collections  where name in (${ collections_list } ) ;
 	merge TB_collections_link  T
 	-- using  ( select assignSeq_T = @collectionSeq_t , assignSeq_S = @collectionSeq_s ) S on  T.collection_assignSeq_T = S.assignSeq_T and T.collection_assignSeq_S = S.assignSeq_S
@@ -66,7 +78,7 @@ exports.update_collectionAssign = async ( req, res )=>{
 		delete;
 	select * from  TB_collections_link
 	`
-	let response = await DB_Inf.get_sql( user_DB, sql_state )
+	let response = await DB_Inf.get_sql( 'ezoffice', sql_state )
 //	result.DATA = _.pluck( response.recordset, 'name' ) 
 	result.DATA = response.recordset ; 
 	return res.status(200).json( result ) 
@@ -81,7 +93,7 @@ exports.update_appAssign = async ( req, res )=>{
 	let sql_state = `
 	declare @collectionAppSeq_t int
 	declare @collectionAppSeq_s table( collectionSeq_T int not null , assignAppSeq_S int not null) ;
-	select  @collectionAppSeq_t  = seq from  TB_collections  where name = '${ collectionName }' ;
+	select  @collectionAppSeq_t  = seq from  TB_collections  where name = '${ collectionName }' and dbName ='${ user_DB }' ;
 	insert into @collectionAppSeq_s select collectionSeq_T = @collectionAppSeq_t , seq from  TB_apps  where name in (${ apps_list } ) ;
 	select * from @collectionAppSeq_s
 	merge TB_collection_apps  T
@@ -95,7 +107,7 @@ exports.update_appAssign = async ( req, res )=>{
 	delete;
 	select * from  TB_collection_apps
 	`
-	let response = await DB_Inf.get_sql( user_DB, sql_state )
+	let response = await DB_Inf.get_sql( 'ezoffice', sql_state )
 //	result.DATA = _.pluck( response.recordset, 'name' ) 
 	result.DATA = response.recordset ; 
 	return res.status(200).json( result ) 

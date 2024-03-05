@@ -2,10 +2,11 @@ import sys
 import pandas as pd
 import requests
 
-#code = sys.argv[1]
 
 if len( sys.argv ) != 2:
     code = '005930'
+else:
+    code = sys.argv[1]
 
 def get_codeFinance( code ):
     URL = f"https://finance.naver.com/item/main.nhn?code={code}"
@@ -22,6 +23,6 @@ def get_codeFinance( code ):
 
 
 if __name__=='__main__':
-    get_codeFinance('005930')
+    get_codeFinance(code)
 
 

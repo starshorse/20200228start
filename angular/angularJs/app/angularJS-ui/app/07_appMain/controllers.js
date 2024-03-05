@@ -11,7 +11,7 @@ angular.module('myControllers', ['work_space'])
 				switch( collection ){
 					case 'logout':
 // 						$state.go('login')
-		                $window.location.href ='http://localhost:8000/angularJS-ui/app/06/'
+		                $window.location.href ='http://localhost:8000/angularJS-ui/app/06_login/'
 						break;
 					case 'allEdit':
 						$state.go('collections_list') 
@@ -45,7 +45,7 @@ angular.module('myControllers', ['work_space'])
 			switch( collection ){
 				case 'logout':
 //					$state.go('login')
-		            $window.location.href ='http://localhost:8000/angularJS-ui/app/06/'
+		            $window.location.href ='http://localhost:8000/angularJS-ui/app/06_login/'
 					break;
 				case 'home':	
 				default:	
@@ -71,6 +71,9 @@ angular.module('myControllers', ['work_space'])
 .controller('myCollections_listCtrl', function($scope , $state, $injector ){
 	   var $window = $injector.get('$window') 
 	   var $http = $injector.get('$http') 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  User Infomation 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////		
 	   var $cookies = $injector.get('$cookies')
 	   let id = $cookies.get('user')
 	   let user_DB = $cookies.get('user_DB')  
@@ -80,7 +83,7 @@ angular.module('myControllers', ['work_space'])
 			switch( collection ){
 				case 'logout':
 //					$state.go('login')
-		            $window.location.href ='http://localhost:8000/angularJS-ui/app/06/'
+		            $window.location.href ='http://localhost:8000/angularJS-ui/app/06_login/'
 					break;
 				case 'home':	
 				default:	
@@ -102,7 +105,7 @@ angular.module('myControllers', ['work_space'])
 	]
 	let objects_list  
 	const update_collections_list = async ()=>{
-		    let data  = await $http.get(`http://localhost/hades/collections/${ user_DB }/${ id }` );
+		let data  = await $http.get(`http://localhost/hades/collections/${ user_DB }/${ id }` ).catch((err)=>console.log(err));
 		    collections = data.data.DATA ; 
 			apps = objects_list.map( (ent)=>{ return { title: ent.appTitle, collection: ent.collectionName , name: ent.appName }});
 			$scope.collections_list.collections_list = collections ;
@@ -129,17 +132,17 @@ angular.module('myControllers', ['work_space'])
 	$scope.openApp = ( name )=>{
 		console.log( name )
 //		$state.go('appMain',{ appName: name }) 
-		$window.location.href =`http://localhost:8000/angularJS-ui/app/08/#!/appEditMain/${ name }`
+		$window.location.href =`http://localhost:8000/angularJS-ui/app/08_appControl/#!/appEditMain/${ name }`
 		throw new Error('state changed') 
 	}
 	$scope.openParent = ( title )=>{
 		console.log( title )
-		$window.location.href =`http://localhost:8000/angularJS-ui/app/08/#!/collectionEditMain/${ title }`
+		$window.location.href =`http://localhost:8000/angularJS-ui/app/08_appControl/#!/collectionEditMain/${ title }`
 	} 
     $scope.create_collection = async()=>{
 		let collectionName = prompt("새로운 Collection 이름을 입력하세요"); 
 		if(!collectionName == '' ){
-			let data  = await $http({ method: 'POST' , url: `http://localhost/hades/collection/${ user_DB }/${ collectionName }/${ id }`});
+			let data  = await $http({ method: 'POST' , url: `http://localhost/hades/collection/${ user_DB }/${ collectionName }/${ id }`}).catch((err)=>console.log(err));
             if( data.data.STATUS == -1 )return -1;
 		}
 		update_collections_list(); 
@@ -147,7 +150,7 @@ angular.module('myControllers', ['work_space'])
     $scope.create_app = async ()=>{
 		let appName = prompt("새로운 App 이름을 입력하세요"); 
 		if(!appName == '' ){
-			let data  = await $http({ method: 'POST' , url: `http://localhost/hades/app/${ user_DB }/${ appName }/${ id }`});
+			let data  = await $http({ method: 'POST' , url: `http://localhost/hades/app/${ user_DB }/${ appName }/${ id }`}).catch((err)=>console.log(err));
             if( data.data.STATUS == -1 )return -1;
 		}
 		update_apps_list(); 

@@ -24,14 +24,15 @@ angular.module('collection_editor',['ngCookies'])
             let collections = $scope.curCollectionSelected 
 			$scope.curCollections_list = $scope.curCollections_list.filter((el) =>!collections.includes(el));
 		}
-		let collections_link = await $http.get(`http://localhost/hades/collection/assign/${ user_DB }/${ collectionName }`);
-		$scope.curCollections_list = collections_link.data.DATA	
 		let collections_list = await $http.get(`http://localhost/hades/collections/${ user_DB }`);
 		$scope.collections_list = collections_list.data.DATA  
-		let app_assign  = await $http.get(`http://localhost/hades/collection/app_assign/${ user_DB }/${ collectionName }`);
-		$scope.curApps_list = app_assign.data.DATA  
 		let apps_list = await $http.get(`http://localhost/hades/apps/${ user_DB }`);
 	    $scope.apps_list = apps_list.data.DATA 
+
+		let collections_link = await $http.get(`http://localhost/hades/collection/assign/${ user_DB }/${ collectionName }`);
+		$scope.curCollections_list = collections_link.data.DATA	
+		let app_assign  = await $http.get(`http://localhost/hades/collection/app_assign/${ user_DB }/${ collectionName }`);
+		$scope.curApps_list = app_assign.data.DATA  
 })
 .directive('collectionEditor', function(){
 	return {

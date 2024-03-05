@@ -28,7 +28,7 @@ angular.module('myApp',[
 					debugger;
 					if( response.success )
 			//			$state.go('work_space', { cur_collection: 'home' } )
-						$window.location.href = 'http://localhost:8000/angularJS-ui/app/07/';
+						$window.location.href = 'http://localhost:8000/angularJS-ui/app/07_appMain/';
 				    else
 						vm.dataLoading = false;
 				}

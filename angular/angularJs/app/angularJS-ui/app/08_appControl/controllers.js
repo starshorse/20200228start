@@ -11,12 +11,12 @@ angular.module('myControllers', ['work_space'])
 				switch( collection ){
 					case 'logout':
 //						$state.go('login')
-		                $window.location.href ='http://localhost:8000/angularJS-ui/app/06/'
+		                $window.location.href ='http://localhost:8000/angularJS-ui/app/06_login/'
 						break;
 				    case 'delete':								
 					case 'allEdit':	
 //						$state.go('collections_list') 
-		                $window.location.href ='http://localhost:8000/angularJS-ui/app/07/#!/collections_list'
+		                $window.location.href ='http://localhost:8000/angularJS-ui/app/07_appMain/#!/collections_list'
 						break; 
 					case 'home':	
 					default:	
@@ -52,12 +52,12 @@ angular.module('myControllers', ['work_space'])
 			switch( collection ){
 				case 'logout':
 //					$state.go('login')
-		            $window.location.href ='http://localhost:8000/angularJS-ui/app/06/'
+		            $window.location.href ='http://localhost:8000/angularJS-ui/app/06_login/'
 					break;
 				case 'delete':								
 				case 'allEdit':	
 //						$state.go('collections_list') 
-					$window.location.href ='http://localhost:8000/angularJS-ui/app/07/#!/collections_list'
+					$window.location.href ='http://localhost:8000/angularJS-ui/app/07_appMain/#!/collections_list'
 					break; 
 				case 'home':	
 				default:	

@@ -18,7 +18,7 @@
 	}
   },
   {
-    "script": "node --inspect=9030 ./server/app/02_hades/index.js",
+    "script": "node --inspect=9040 ./server/app/02_hades/index.js",
     "watch": ".",
     "name": "DBInf_srv",
 	"env":{

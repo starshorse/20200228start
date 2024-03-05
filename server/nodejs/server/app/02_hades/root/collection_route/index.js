@@ -8,6 +8,7 @@ route.get('/app_assign/:db_name/:collectionName', collection_controller.get_appA
 /*
 route.get('/app_assign/:db_name/:collectionName', collection_controller.get_appAssign ); 
 */
+route.post('/:db_name/:collectionName/:id',  collection_controller.create ); 
 route.post('/assign/:db_name/:collectionName', collection_controller.update_collectionAssign ); 
 route.post('/app_assign/:db_name/:collectionName', collection_controller.update_appAssign ); 
 /*
