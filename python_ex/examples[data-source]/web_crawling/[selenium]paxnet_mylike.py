@@ -9,10 +9,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+module_dir = os.path.normpath( os.path.join( dir_path ,'..\\..\\modules') )
+
+sys.path.append( module_dir )
 # If os is ubuntu.. 
 #sys.path.append('/home/rrr/workdir/gitdn/20200228start/python_ex/modules' ) 
 #sys.path.append("C:\\workdir\\gitdn\\20200228start\\python_ex\\modules") 
-sys.path.append("F:\\gitdn\\20200228start\\python_ex\\modules") 
+#sys.path.append("F:\\gitdn\\20200228start\\python_ex\\modules") 
+
 print( sys.path )
 #from modules import selenium
 import my_selenium as selenium 
@@ -56,4 +61,14 @@ soup = BeautifulSoup( html )
 table = pd.read_html(str(soup), flavor="bs4")
 print(table[0]);
 print(table[1]);
+
+element = browser.find_element(by=By.XPATH,value='//*[contains(text(), "보유종목[중소형]")]')                                                                                                            
+element.click()
+html = browser.page_source 
+soup = BeautifulSoup( html ) 
+
+table = pd.read_html(str(soup), flavor="bs4")
+print(table[0]);
+print(table[1]);
+
 browser.close()
