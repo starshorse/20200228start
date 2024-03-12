@@ -1,47 +1,47 @@
 {
 	"STATUS": 1,
-	"DATETIME": "20240303",
+	"DATETIME": "20240311",
 	"ROWS": [
 		{
 			"CODE": "092460",
 			"NAME": "\ud55c\ub77cIMS",
-			"PBR": 0.62,
-			"PER": 1.51,
-			"DIV": 5.06
+			"PBR": 0.6,
+			"PER": 1.48,
+			"DIV": 5.16
 		},
 		{
 			"CODE": "138070",
 			"NAME": "\uc2e0\uc9c4\uc5d0\uc2a4\uc5e0",
-			"PBR": 0.6,
-			"PER": 16.62,
-			"DIV": 1.84
+			"PBR": 0.65,
+			"PER": 17.93,
+			"DIV": 1.7
 		},
 		{
 			"CODE": "001810",
 			"NAME": "\ubb34\ub9bcSP",
-			"PBR": 0.21,
+			"PBR": 0.2,
 			"PER": null,
-			"DIV": 0.78
+			"DIV": 0.56
 		},
 		{
 			"CODE": "007770",
 			"NAME": "\ud55c\uc77c\ud654\ud559",
-			"PBR": 0.49,
+			"PBR": 0.46,
 			"PER": null,
-			"DIV": 0.32
+			"DIV": 0.35
 		},
 		{
 			"CODE": "014470",
 			"NAME": "\ubd80\ubc29",
-			"PBR": 0.72,
-			"PER": 4.72,
+			"PBR": 0.75,
+			"PER": 4.94,
 			"DIV": null
 		},
 		{
 			"CODE": "053350",
 			"NAME": "\uc774\ub2c8\ud14d",
-			"PBR": 0.51,
-			"PER": 297.73,
+			"PBR": 0.5,
+			"PER": 293.18,
 			"DIV": null
 		}
 	]
