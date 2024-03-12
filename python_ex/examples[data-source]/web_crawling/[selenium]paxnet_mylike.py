@@ -7,6 +7,8 @@ import pdb
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 import time
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -62,8 +64,21 @@ table = pd.read_html(str(soup), flavor="bs4")
 print(table[0]);
 print(table[1]);
 
-element = browser.find_element(by=By.XPATH,value='//*[contains(text(), "보유종목[중소형]")]')                                                                                                            
-element.click()
+"""
+WebDriverWait(driver, 10).until(EC.frame_to_be_available_and_switch_to_it((By.XPATH,"//iframe[contains(@src, 'historical_data_feed')]")))
+driver.execute_script("return arguments[0].scrollIntoView(true);", WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, "//li[text()='Indices (CFD)']"))))
+WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//div[text()='Tick']"))).click()
+WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//div[text()='Day']"))).click()
+"""
+#WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH,'//*[@id="contents"]/div[1]/div[3]/span/div/button'))).click();
+browser.find_element(by=By.XPATH,value='//*[@id="contents"]/div[1]/div[3]/span/div/button').click()                                                                                                           
+
+#//*[@id="contents"]/div[1]/div[3]/span/div/div/ul
+#//*[@id="contents"]/div[1]/div[3]/span/div/button
+#element = browser.find_element(by=By.XPATH,value='//span[contains(text(), "보유종목[중소형]")]')                                                                                                           
+#/html/body/div[2]/div[4]/form/div/div[1]/div[3]/span/div/button
+#//*[@id="contents"]/div[1]/div[3]/span/div/button
+#element.click()
 html = browser.page_source 
 soup = BeautifulSoup( html ) 
 
