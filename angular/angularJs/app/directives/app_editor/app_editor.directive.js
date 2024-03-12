@@ -1,6 +1,6 @@
 angular.module('app_editor',['ngCookies'])
-.controller('app_editorCtrl', function( $scope, $http, $cookies ){
-		$scope.appTitle =  'main' ;
+.controller('app_editorCtrl',async function( $scope, $http, $cookies ){
+//		$scope.appTitle =  'main' ;
 		$scope.is_app = true; 
 		$scope.app_share_enable = false; 
 		$scope.extrn_enable = false;  
@@ -8,14 +8,13 @@ angular.module('app_editor',['ngCookies'])
 		let user_DB = $cookies.get('user_DB');  
 //		let appName = 'ezct_account' ;
 	    let appName = $scope.appinfo.name ; 
-		let appInfo 
-		$http.get(`http://localhost/hades/app/info/${ user_DB }/${ appName }`).then((response)=>{
-			appInfo = response.data.DATA 
-			$scope.appTitle = appInfo.title 
-			$scope.groupSelected = appInfo.group_name;
-			$scope.appLevel = appInfo.level ;
-			if( appInfo.url != null )$scope.extrn_enable = true;
-		})
+	    let response 
+		response = await $http.get(`http://localhost/hades/app/info/${ user_DB }/${ appName }`).catch((err)=>console.log(err) );
+		let	appInfo = response.data.DATA 
+		$scope.appTitle = appInfo.title 
+		$scope.groupSelected = appInfo.group_name;
+		$scope.appLevel = appInfo.level ;
+		if( appInfo.url != null )$scope.extrn_enable = true;
 		$scope.share_id_add = async ()=>{
 			alert( $scope.ids.idSelected )
 			for( id of $scope.ids.idSelected ){
@@ -36,6 +35,7 @@ angular.module('app_editor',['ngCookies'])
 		}
 		// $cookies : user_DB , user , org_name  
 		// server_name/org_name/user_id    
+/*	
 		$http.get(`http://localhost/hades/app/group_list/${ user_DB }`).then(( response )=>{ 
 			if( response.data.STATUS == -1 ){
 				alert( response.data.ERRORMESSAGE )
@@ -73,6 +73,8 @@ angular.module('app_editor',['ngCookies'])
 				'hades@problem.com' 
 			]
 		})
+		*/		
+		$scope.$apply() 			
 
 })
 .directive('appEditor',function(){

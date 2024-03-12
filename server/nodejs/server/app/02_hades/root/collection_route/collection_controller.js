@@ -56,6 +56,17 @@ exports.create = async ( req, res )=>{
 	let response = await DB_Inf.get_sql( user_DB, sql_state )
 	return res.status(200).json( result ) 
 }
+exports.delete_collection = async ( req, res )=>{
+	let result = { STATUS: 0 , RESULT:'success' , ERRORMESSAGE:'' , DATA: null }; 
+    let collectionName = req.params.collectionName ; 
+	let user_DB = req.params.db_name; 
+	let sql_state = `
+	delete from TB_collections where name = '${ collectionName }' and dbName = '${ user_DB }' 
+	`
+	let response = await DB_Inf.get_sql( 'ezoffice', sql_state )
+	result.DATA = response.recordset ; 
+	return res.status(200).json( result ) 
+}
 exports.update_collectionAssign = async ( req, res )=>{
 	let result = { STATUS: 0 , RESULT:'success' , ERRORMESSAGE:'' , DATA: null }; 
     let collectionName = req.params.collectionName ; 

@@ -7,6 +7,7 @@ route.get('/info/:db_name/:appName', app_controller.get_appInfo );
 route.get('/assign/:db_name/:appName', app_controller.get_appAssign ); 
 
 route.post('/assign/:db_name', app_controller.add_assign ); 
+route.post('/:db_name/:app_name/:id', app_controller.create_app ); 
 route.delete('/assign/:db_name', app_controller.del_assign ); 
 
 module.exports = route; 

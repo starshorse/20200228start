@@ -68,6 +68,18 @@ route.get('/collections/:db_name/:id', async function( req, res ){
 	result.DATA = response.recordset
 	return res.status(200).json(result) ;
 })
+route.get('/apps/:db_name/:id', async function( req, res ){
+	let result = { STATUS: 0 , RESULT:'success' , ERRORMESSAGE:'' , DATA: null }; 
+	let user_DB = req.params.db_name ; 
+	let user_id = req.params.id ;
+    let sql_state = `
+	select d.email, a.name as name, a.title as title from TB_apps a  left join  [config].[dbo].[TB_Admin] d  on a.ownerSeq = d.seq  where d.email = '${ user_id }' and d.dbName = '${ user_DB }'
+	`; 
+	let response = await DB_Inf.get_sql( 'ezoffice' , sql_state )
+	console.log(response) 
+	result.DATA = response.recordset
+	return res.status(200).json(result) ;
+})
 route.get('/apps/:db_name', async function( req, res ){
 	let result = { STATUS: 0 , RESULT:'success' , ERRORMESSAGE:'' , DATA: null }; 
 	let user_DB = req.params.db_name ; 

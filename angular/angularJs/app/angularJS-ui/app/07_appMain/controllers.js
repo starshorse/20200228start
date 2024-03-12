@@ -152,8 +152,9 @@ angular.module('myControllers', ['work_space'])
 		if(!appName == '' ){
 			let data  = await $http({ method: 'POST' , url: `http://localhost/hades/app/${ user_DB }/${ appName }/${ id }`}).catch((err)=>console.log(err));
             if( data.data.STATUS == -1 )return -1;
+		    update_collections_list(); 
 		}
-		update_apps_list(); 
+	//	update_apps_list(); 
 	}
 	$scope.collections_list = { collections_list : collections , apps_list: apps ,  
 		openApp : $scope.openApp,
