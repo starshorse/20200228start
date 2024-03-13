@@ -4,6 +4,7 @@ const DB_Inf = require('../DB_Inf')
 const _ = require('underscore');  
 const app_route = require('./app_route') 
 const collection_route = require('./collection_route') 
+const cluster_config = require('../cluster_config') 
 
 route.get('/',function( req, res ){
 	console.log("root")
@@ -12,6 +13,7 @@ route.get('/',function( req, res ){
 })
 route.use('/app', app_route );
 route.use('/collection', collection_route );
+route.use('/cluster_config', cluster_config );
 route.get('/ids_list', async function( req, res ){
 	let result = { STATUS: 0 , RESULT:'success' , ERRORMESSAGE:'' , DATA: null }; 
 /* we changed Hades  interface.. 

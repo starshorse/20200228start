@@ -97,10 +97,10 @@ angular.module('myApp',[
 		template:`
 		<ul class="nav nav-pills nav-fill">
 		  <li class="nav-item">
-			<a class="nav-link active" aria-current="page" href="#">INFO</a>
+			<a class="nav-link" ng-class='{ active : current_tab == "INFO" }'  aria-current="page" ng-click='enter_info()'>INFO</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="#">DATA</a>
+			<a class="nav-link" ng-class='{ active : current_tab == "DATA" }' ng-click='enter_data()'>DATA</a>
 		  </li>
 		  <li class="nav-item">
 			<a class="nav-link" href="#">CHART</a>
@@ -110,13 +110,63 @@ angular.module('myApp',[
 		  </li>
 		</ul>
 		<div class="w100">
-		<app-editor class='flx-cc hv100 flx-1' appinfo='appinfo'></app-editor>
+			<ui-view></ui-view>
 		</div>
 		`,
 		controller:'appEditMainCtrl'  
 	}
+	var appEditInfo ={
+		name: 'appEditMain.info',
+		url: '/info', 
+//		parent: 'appEditMain',
+		template:`
+		<app-editor class='flx-cc hv100 flx-1' appinfo='appinfo'></app-editor>
+		`,
+		controller: 'appEditInfoCtrl', 
+	}
+	var appEditData ={
+		name: 'appEditMain.data',
+		url: '/data', 
+//		parent: 'appEditMain',
+		template:`
+		<div class="d-flex align-items-center justify-content-center my-5">
+			<h3> Column Information </h3> 
+		</div> 
+		<div class="row mx-5 hv100">
+			<div class="col-md-8">
+				<div class="accordion" id="accordionExample">
+				  <div class="accordion-item" ng-repeat="column in tbl_columns">
+					<h2 class="accordion-header" id="headingOne">
+					  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}" aria-expanded="true" aria-controls="collapse{{ $index }}">
+						{{ column.name }} 
+					  </button>
+					</h2>
+					<div id="collapse{{ $index }}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+					  <div class="accordion-body">
+					   <h6>FORMAT:[ {{ column.formatter }}]</h6>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<textarea class="form-control w100 h-125" rows = "20" disabled>
+				 {{ collections_list.cur_app.sql_state.state_1 }}
+				</textarea> 
+			</div>
+		</div>
+		<div class="row mx-5 my-5">
+			<div class="col-md-4">
+				<button class="btn btn-lg btn-secondary w100">Save</button> 
+			</div>
+		</div>
+		`,
+		controller: 'appEditDataCtrl', 
+	}
 	$urlRouterProvider.otherwise('/collectionEditMain/home'); 
 	$stateProvider.state( appEditMain ); 
+	$stateProvider.state( appEditInfo ); 
+	$stateProvider.state( appEditData ); 
 	$stateProvider.state( collectionEditMain ); 
 	$stateProvider.state( collectionEditInfo ); 
 	$stateProvider.state( collectionEditData ); 

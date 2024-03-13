@@ -34,8 +34,8 @@ angular.module('myControllers', ['work_space'])
 		const update_collections_list = async ()=>{
 			let data  = await $http.get(`http://localhost/hades/collections/${ user_DB }/${ id }` ).catch((err)=>console.log(err));
 			$scope.collections_list.collections_list = data.data.DATA;
-			data  = await $http.get(`http://localhost/hades/apps/${ user_DB }/${ id }` ).catch((err)=>console.log(err));
-			$scope.collections_list.apps_list = data.data.DATA ;	
+			data  = await $http.get(`http://localhost/hades/cluster_config/user_config_cluster/${ user_DB }/${ id }` ).catch((err)=>console.log(err));
+			$scope.collections_list.apps_list = data.data.DATA.config_list ;	
 			$scope.$apply();
 		}
 		let response  =  await  $http.get(`http://localhost/hades/all_objects/${ user_DB }/${ id }`).then( async (response)=>{
@@ -44,15 +44,16 @@ angular.module('myControllers', ['work_space'])
 		await update_collections_list(); 
 		})
 	})();	
-	$scope.collections_list = { collections_list: [] , apps_list: [] } 
+	$scope.collections_list = { collections_list: [] , apps_list: [], cur_app: null } 
 	$scope.cur_selection =  null ;
     $scope.enter_collection = ( collection )=>{
 		$scope.cur_selection = collection.name ; 
 		$state.go('collectionEditMain', { cur_collection : collection.name } ) 
 	}
     $scope.enter_app = ( app )=>{
-		$scope.cur_selection = app.name
-		$state.go('appEditMain', { appName : app.name } ) 
+		$scope.cur_selection = app.configName ;
+		$scope.collections_list.cur_app = app ; 
+		$state.go('appEditMain.info', { appName : app.configName } ) 
 	}
 })
 .controller('collectionEditMainCtrl',function( $scope, $stateParams, $injector  ){
@@ -61,17 +62,10 @@ angular.module('myControllers', ['work_space'])
 			var $stateRegistry = $injector.get('$stateRegistry'); 
 	        var collection_id = $stateParams.cur_collection ; 
 //			const apps = workSpace_service.promise_getAppsListData( $stateParams.cur_collection ) 
-	        const appparts = [
-				{ title: 'Info' , name: 'collectionEditMain.info' },
-				{ title: 'Data' , name: 'collectionEditMain.data' },
-				{ title: 'Chart' , name: 'collectionEditMain.chart' },
-				{ title: 'Report' , name: 'collectionEditMain.report' }
-			]
 			$scope.openApp = ( item )=>{
 					// my-sider part
 					$state.go( item.name ) 
 			}
-			$scope.appparts = { list : appparts , openApp : $scope.openApp  }
 		    $scope.collectioninfo = { name: collection_id }  
 	        $scope.current_tab = 'INFO' ;
 	        $state.go('collectionEditMain.info') 
@@ -87,22 +81,32 @@ angular.module('myControllers', ['work_space'])
 .controller('collectionEditInfoCtrl',function( $scope, $stateParams, $injector  ){
 	// name , createDate ..
 })
+.controller('appEditInfoCtrl',function( $scope, $stateParams, $injector  ){
+	// name , createDate ..
+})
+.controller('appEditDataCtrl',function( $scope, $stateParams, $injector  ){
+	   console.log( $scope.collections_list.cur_app ) 
+	   $scope.tbl_columns = $scope.collections_list.cur_app.tblViewSheet.tbl_columns 
+})
 .controller('appEditMainCtrl', function($scope, $stateParams, $state, $injector ){
 // my-header part.. 			
 	    var $window = $injector.get('$window') 
 	    var app_id = $stateParams.appName ; 
 //  my-sidebar part.. 	
 		$scope.appName = $stateParams.appName 
-		let appparts = [
-			{ title: 'Info', name:'app_Info' },
-			{ title: 'Data', name:'app_Data' },
-			{ title: 'Chart' , name: 'app_Chart' },
-			{ title: 'Report' , name: 'app_Report' }
-		]
 		$scope.openApp = ( item )=>{
 			console.log( item.title )
 			$state.go( collection.name ) 
 		}
-		$scope.appparts = { list : appparts , openApp : $scope.openApp  }
 		$scope.appinfo ={ name: app_id } 
+		$scope.current_tab = 'INFO' ;
+		$state.go('appEditMain.info') 
+		$scope.enter_info =  ()=>{
+			$scope.current_tab = 'INFO' ;
+			$state.go('appEditMain.info' )
+		}
+		$scope.enter_data =  ()=>{
+			$scope.current_tab = 'DATA' ;
+			$state.go('appEditMain.data' )
+		}
 })

@@ -90,8 +90,8 @@
 				Apps 
 				<ul class="nav nav-pills flex-column mb-auto">
 					<li class="nav-item mb-1" ng-repeat="app in collections_list.apps_list">
-						<a class="nav-link"  ng-class='{ active : cur_selection == app.name }'  aria-current="page" ng-click="enter_app( app )">
-							{{ app.name }} 
+						<a class="nav-link"  ng-class='{ active : cur_selection == app.configName }'  aria-current="page" ng-click="enter_app( app )">
+							{{ app.configName }} 
 						</a>
 					</li>
 				</ul>

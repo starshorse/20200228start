@@ -1,0 +1,27 @@
+{
+  "id": "richard.choi@ez-office.co.kr",
+  "config_list": [
+    {
+      "configName": "TB_admin_1테스트",
+      "delete": false,
+      "tblViewConfig": {
+        "tbl_name": "TB_admin_1",
+        "mass_enable": false,
+        "sql_enable": false,
+        "sqlState_where": "where level = 5 order by seq desc",
+        "cur_config_name": "TB_admin_1테스트"
+      }
+    },
+    {
+      "configName": "TB_admin_1테스트2",
+      "delete": false,
+      "tblViewConfig": {
+        "tbl_name": "TB_admin_1",
+        "mass_enable": false,
+        "sql_enable": true,
+        "sqlState_where": "where level = 5 order by seq desc",
+        "cur_config_name": "TB_admin_1테스트2"
+      }
+    }
+  ]
+}
