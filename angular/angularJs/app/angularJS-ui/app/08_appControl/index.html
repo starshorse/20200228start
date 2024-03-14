@@ -27,6 +27,7 @@
 		   display: inline-block;
 		   width: 100%;
 	   }
+/*	   
 	   form input[type='text'], form button{
 		   float: right;
 		   height: 1.8rem;
@@ -43,6 +44,7 @@
 	   form select{
 		   width: 100%;
 	   }
+*/	   
 	   .w100{
 		   width: 100%;
 	   }
@@ -68,20 +70,25 @@
 </head>
 <body ng-controller="pageCtrl">
     <my-header header="header" changeSpace="changeSpace( collection )"></my-header> 
-	<main>
+<!--	
+<main> -->
+<div class="d-flex">
 	<div class="w15">
 		<ul class="nav nav-pills flex-column mb-auto">
 			<li class="nav-item">
 				<a href="#!/main_page/sub1" class="nav-link active" aria-current="page">
-					New Collection
+					New Collection &nbsp
+					<svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h5.175q.4 0 .763.15t.637.425L12 6h8q.825 0 1.413.588T22 8v10q0 .825-.587 1.413T20 20zm10-6v1q0 .425.288.713T15 16q.425 0 .713-.288T16 15v-1h1q.425 0 .713-.288T18 13q0-.425-.288-.712T17 12h-1v-1q0-.425-.288-.712T15 10q-.425 0-.712.288T14 11v1h-1q-.425 0-.712.288T12 13q0 .425.288.713T13 14z"/></svg>
 				</a>
 			</li>
 			<li class="nav-item">
 				Collections 
 				<ul class="nav nav-pills flex-column mb-auto">
 					<li class="nav-item mb-1" ng-repeat="collection in collections_list.collections_list">
-						<a class="nav-link"   ng-class= '{ active : cur_selection == collection.name }' aria-current="page" ng-click="enter_collection( collection )">
-							{{ collection.name }} 
+					<a class="nav-link"   ng-class= '{ active : cur_selection == collection.name }' aria-current="page" ng-click="enter_collection( collection )">
+							{{ collection.name }}<span> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M15.038 8H18l-4-4v2.962q0 .44.299.739q.3.299.74.299M18 18.79l-1.765 1.74q-.14.141-.332.134q-.191-.006-.338-.152q-.14-.14-.14-.345t.14-.344l1.747-1.746l-1.766-1.765q-.14-.14-.13-.345q.009-.204.15-.344q.14-.14.344-.14t.344.14L18 17.388l1.765-1.765q.14-.14.342-.134q.2.007.347.153q.14.14.14.335t-.14.335l-1.74 1.765l1.74 1.765q.14.14.133.342q-.006.2-.152.347q-.14.14-.335.14t-.335-.14zM6.615 21q-.69 0-1.152-.462Q5 20.075 5 19.385V4.615q0-.69.463-1.152Q5.925 3 6.615 3h7.214q.323 0 .628.13q.305.132.522.349L18.52 7.02q.217.217.348.522q.131.305.131.628v3.552q0 .242-.18.389q-.18.146-.422.128q-1.283-.094-2.463.322q-1.181.415-2.108 1.342q-.8.8-1.256 1.859q-.456 1.058-.456 2.289q0 .475.089.998q.088.523.265 1q.13.348-.052.65q-.18.3-.529.3z"/></svg>
+						</span>
 						</a>
 					</li>
 				</ul>
@@ -102,7 +109,9 @@
 	<div class="w100">
 		<ui-view></ui-view> 	
 	</div>
-	</main>
+</div>	
+<!--	
+</main> -->
 	<script src="/lib/angular/angular.min.js"></script>
 	<script src="/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<script src="/lib/angular-cookies/angular-cookies.min.js"></script>

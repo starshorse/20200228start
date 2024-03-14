@@ -41,7 +41,7 @@ angular.module('myApp',[
 		url: '/info', 
 //		parent: 'collectionEditMain',
 		template:`
-		<collection_editor class="flx-cc hv100 flx-1" collectioninfo="collectioninfo" ></collection_editor>
+		<collection_editor class="flx-cc  flx-1 my-5" collectioninfo="collectioninfo" ></collection_editor>
 		`,
 		controller: 'collectionEditInfoCtrl', 
 	}
@@ -120,7 +120,7 @@ angular.module('myApp',[
 		url: '/info', 
 //		parent: 'appEditMain',
 		template:`
-		<app-editor class='flx-cc hv100 flx-1' appinfo='appinfo'></app-editor>
+		<app-editor class='flx-cc flx-1' appinfo='appinfo'></app-editor>
 		`,
 		controller: 'appEditInfoCtrl', 
 	}
@@ -132,7 +132,7 @@ angular.module('myApp',[
 		<div class="d-flex align-items-center justify-content-center my-5">
 			<h3> Column Information </h3> 
 		</div> 
-		<div class="row mx-5 hv100">
+		<div class="row mx-5">
 			<div class="col-md-8">
 				<div class="accordion" id="accordionExample">
 				  <div class="accordion-item" ng-repeat="column in tbl_columns">
@@ -142,8 +142,14 @@ angular.module('myApp',[
 					  </button>
 					</h2>
 					<div id="collapse{{ $index }}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-					  <div class="accordion-body">
-					   <h6>FORMAT:[ {{ column.formatter }}]</h6>
+					  <div class="accordion-body row">
+					   <div class="col-md-4">
+					   	 	<h6>FORMAT:[ {{ column.formatter }}]</h6>
+					   </div>
+					   <div class="col-md-4"></div>
+					   <div class="col-md-4">
+					   	<button class="btn btn-secondary w100" ng-click="edit_column( column.name )">EDIT</button> 
+					   </div>
 					  </div>
 					</div>
 				  </div>

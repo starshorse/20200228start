@@ -1,10 +1,22 @@
-<form class="flx-cl flx-col w30">
-	<label>
-		App/Group 이름: <input type="text" class="form-control w50" ng-model="appTitle" />
-	</label>		 
-	<label>
-		권한 Level: <input type="number" class="form-control"  ng-model="appLevel" min="-1" max="5" step="1" />
-	</label>		 
+<form class="w80 my-5">
+	<div class="row">
+		<div class="col-md-2">
+			<label class="text-end">
+				App/Group 이름: 
+			</label>		 
+		</div>	
+		<div class="col-md-3">
+			<input type="text" class="form-control w50" ng-model="appTitle" />
+		</div>	
+		<div class="col-md-2">
+			<label class="text-end">
+				권한 Level: 
+			</label>		 
+		</div>	
+		<div class="col-md-3">
+			<input type="number" class="form-control"  ng-model="appLevel" min="-1" max="5" step="1" />
+		</div>	
+	</div>	
 	<label>
 		App 여부:<input type="CHECKBOX"  class="form-control" ng-model="is_app" />
 	</label>		 
@@ -22,14 +34,14 @@
 		<div class="flx-cc">
 			<div ng-if="app_share_enable" class="flx-col w100">
 				<i class="box box-question"></i><input type="text" ng-model="idSearch" />
-				<button ng-click="share_id_add()">추가</button>
+				<button class="btn btn-secondary" ng-click="share_id_add()">추가</button>
 				<select class="form-control select_02 w100" ng-model="ids.idSelected" multiple size="10">
 					<option ng-repeat="id in ids_list | filter: idSearch ">{{ id }}</option>
 				</select>	
 			</div>	 
 			<div class="flx-col w100">
 				<i class="box box-question"></i><input type="text" ng-model="curIdSearch" />
-				<button ng-click="share_id_remove()">삭제</button>
+				<button class="btn btn-secondary" ng-click="share_id_remove()">삭제</button>
 				<select class="form-control select_02 w100" ng-model="ids.curIdSelected" multiple size="10" >
 					<option ng-repeat="id in curIds_list | filter: curIdSearch ">{{ id }}</option>
 				</select>	
@@ -46,5 +58,5 @@
 			</div>
 		</label>		 
 	</div>
-	<button class="w30">저장</button> 
+	<button class="btn btn-secondary w30">저장</button> 
 </form>  	   
