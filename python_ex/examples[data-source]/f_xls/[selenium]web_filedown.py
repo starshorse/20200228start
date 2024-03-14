@@ -12,6 +12,9 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import time
+import chromedriver_autoinstaller as chromedriver
+
+chromedriver.install()
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 module_dir = os.path.normpath( os.path.join( dir_path ,'..\\..\\modules') )
@@ -24,9 +27,20 @@ print( sys.path )
 
 #driver = selenium.getDriver()
 chrome_options = Options()
+"""
 #prefs = {'download.default_directory' : '/path/to/dir'}
 prefs = {'download.default_directory' : dir_path }
 chrome_options.add_experimental_option('prefs', prefs)
+"""
+chrome_options.add_argument("--window-size=1920,1080")
+chrome_options.add_argument("--allow-running-insecure-content")  # Allow insecure content
+chrome_options.add_argument("--unsafely-treat-insecure-origin-as-secure=http://data.krx.co.kr")  # Replace example.com with your site's domain
+chrome_options.add_experimental_option("prefs", {
+    "download.default_directory": dir_path,
+    "download.prompt_for_download": False,
+    "download.directory_upgrade": True,
+    "safebrowsing.enabled": True
+})
 driver = webdriver.Chrome(options=chrome_options)
 
 browser = driver.get(
@@ -34,11 +48,13 @@ browser = driver.get(
         )
 time.sleep(5)
 driver.find_element(By.CSS_SELECTOR, ".CI-MDI-UNIT-DOWNLOAD > img").click()
+time.sleep(5)
 driver.find_element(By.LINK_TEXT, "Excel").click()
 element = driver.find_element(By.LINK_TEXT, "Excel")
 actions = ActionChains(driver)
 actions.move_to_element(element).perform()
 
+time.sleep(10)
 """
 # Keyboard & Text Inputs 
 email_input = browser.find_element( By.ID, 'custId' );
