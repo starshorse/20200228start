@@ -6,14 +6,13 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLongTitle">{{ modal.title }}</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="modalCancel(modal)">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
 				<span ng-bind-html='trustedHtml'></span> 
 				{{ modal.content }} 
-				<ui-view></ui-view> 
 			<div class="form-group row" ng-show='modal.input_1.enable'>
 				<label for 'app_name' class='col-md-4 col-form-label text-md-right'>{{ modal.input_1.label }}</label>
 				<div class='col-md-6'>

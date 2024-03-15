@@ -23,7 +23,7 @@ angular.module('myControllers', ['work_space'])
 					break; 
 				case 'Home':	
 				default:	
-					$state.go('collectionEditMain', { cur_collection: collection } ) 
+					$state.go('collectionEditMain.info', { cur_collection: collection } ) 
 			}	
 	}
 	$scope.header.header_list = ['Home','Logout'] 
@@ -46,9 +46,50 @@ angular.module('myControllers', ['work_space'])
 	})();	
 	$scope.collections_list = { collections_list: [] , apps_list: [], cur_app: null } 
 	$scope.cur_selection =  null ;
+	const create_collection = async ( collection_name )=>{
+		 let result = { STATUS : -1 , ERRORMESSAGE: null , DATA: null } 
+		if( $scope.collections_list.collections_list.find((ent)=>ent.name == collection_name )){
+			result.ERRORMESSAGE = '같은 이름이 존재합니다'
+			return result 
+		}
+		let db_result = await $http({ method: 'POST', url: `http://localhost/hades/collection/${ user_DB }/${ collection_name }/${ id }`}).catch((err)=>console.log(err)); 
+		let data  = await $http.get(`http://localhost/hades/collections/${ user_DB }/${ id }` ).catch((err)=>console.log(err));
+		$scope.collections_list.collections_list = data.data.DATA;
+		$scope.$apply();
+		result.STATUS = 0 
+		return result ;
+	}
+	const delete_collection = async ( collection_name )=>{
+		let result = { STATUS : -1 , ERRORMESSAGE: null , DATA: null } 
+		let db_result = await $http({ method: 'DELETE', url: `http://localhost/hades/collection/${ user_DB }/${ collection_name }/${ id }`}).catch((err)=>console.log(err)); 
+		let data  = await $http.get(`http://localhost/hades/collections/${ user_DB }/${ id }` ).catch((err)=>console.log(err));
+		$scope.collections_list.collections_list = data.data.DATA;
+		$scope.$apply();
+		result.STATUS = 0 
+		return result ;
+	}
+	$scope.new_collection = ()=>{
+		$scope.modal = { title: 'NEW COLLECTION', content: '아래 이름으로 생성합니다.', input_1: { enable: true , text: '' , label:'NAME' } , callback: async ( modal)=>{
+			let result  = create_collection( modal.input_1.text )
+			if( result.STATUS == -1 )
+				modal.content = result.ERRORMESSAGE 
+			return result 
+		}}
+		$scope.$broadcast('doModal') 
+	}
+	$scope.delete_collection = ( collection_name, $event  )=>{
+		$event.stopPropagation(); 
+		$scope.modal = { title: 'DELETE COLLECTION', content: `[${ collection_name }]을 삭제합니다.`, input_1: { enable: false , text: '' , label:'NAME' } , callback: async ( modal)=>{
+			let result  = delete_collection( collection_name )
+			if( result.STATUS == -1 )
+				modal.content = result.ERRORMESSAGE 
+			return result 
+		}}
+		$scope.$broadcast('doModal') 
+	}
     $scope.enter_collection = ( collection )=>{
 		$scope.cur_selection = collection.name ; 
-		$state.go('collectionEditMain', { cur_collection : collection.name } ) 
+		$state.go('collectionEditMain.info', { cur_collection : collection.name } ) 
 	}
     $scope.enter_app = ( app )=>{
 		$scope.cur_selection = app.configName ;

@@ -19,9 +19,9 @@ exports.get_appInfo = async ( req, res )=>{
 	let user_DB = req.params.db_name; 
 	let sql_state = `
 	 	-- select a.seq , a.name, a.title, a.level, b.name as group_name , c.url from TB_apps a  inner join TB_apps b on a.parentSeq = b.seq  inner join TB_extrn_urls c on a.extrn_urlSeq = c.seq where a.name = '${ appName }'
-		select  seq , name , title , level , extrn_urlSeq from TB_apps where name = '${ appName }'
+		select  seq , name , title , level , extrn_urlSeq from TB_apps where name = '${ appName }' and dbName = '${ user_DB }'
 	`
-	let response = await DB_Inf.get_sql( user_DB, sql_state )
+	let response = await DB_Inf.get_sql( 'ezoffice', sql_state )
 	console.log( response )
 	result.DATA = response.recordset[0] 
 	return res.status(200).json( result ) 

@@ -1,37 +1,40 @@
 <form class="w80 my-5">
 	<div class="row">
 		<div class="col-md-2">
+			<label class="form-check-label">
+				App 여부
+			<input type="CHECKBOX"  class="form-check-input" ng-model="is_app" disabled />
+			</label>		 
+		</div>
+		<div class="col-md-2">
 			<label class="text-end">
 				App/Group 이름: 
 			</label>		 
 		</div>	
 		<div class="col-md-3">
-			<input type="text" class="form-control w50" ng-model="appTitle" />
+			<input type="text" class="form-control w100 text-center" ng-model="appTitle" disabled />
 		</div>	
 		<div class="col-md-2">
 			<label class="text-end">
 				권한 Level: 
 			</label>		 
 		</div>	
-		<div class="col-md-3">
-			<input type="number" class="form-control"  ng-model="appLevel" min="-1" max="5" step="1" />
+		<div class="col-md-2">
+			<input type="number" class="form-control text-center"  ng-model="appLevel" min="-1" max="5" step="1" />
 		</div>	
 	</div>	
-	<label>
-		App 여부:<input type="CHECKBOX"  class="form-control" ng-model="is_app" />
-	</label>		 
 	<div class="flx-cc flx-col w100" ng-if="is_app">
 		<div class="flx-cc w100">
-			<label class="w100">Group 선택 :
+			<label class="w100 form-check-label">Group 선택 :
 				<select class="form-control select_01 fl-r w50" ng-model="groupSelected" size="1">
 					<option ng-repeat="group in groups_list">{{ group }}</option>
 				</select>	
 			</label>
 		</div>
-		<label>
-			Share ID 리스트 편집: <input type="CHECKBOX" class="form-control" ng-model="app_share_enable" />
+		<label class="form-check-label">
+			Share ID 리스트 편집<input type="CHECKBOX" class="form-check-input" ng-model="app_share_enable" />
 		</label>		 
-		<div class="flx-cc">
+		<div class="flx-cc w100">
 			<div ng-if="app_share_enable" class="flx-col w100">
 				<i class="box box-question"></i><input type="text" ng-model="idSearch" />
 				<button class="btn btn-secondary" ng-click="share_id_add()">추가</button>

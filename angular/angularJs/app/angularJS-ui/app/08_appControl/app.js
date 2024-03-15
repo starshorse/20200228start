@@ -3,6 +3,7 @@ angular.module('myApp',[
 'ngCookies',	
 // directives 	
 'myHeader',
+'myDomodal',
 'toggle_sidebar',
 'mySidebar',
 'collection_editor',

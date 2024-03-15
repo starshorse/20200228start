@@ -41,7 +41,7 @@ exports.get_appAssign = async ( req, res )=>{
 	return res.status(200).json( result ) 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-//     POST ..
+//     post ..
 /////////////////////////////////////////////////////////////////////////////////////////
 exports.create = async ( req, res )=>{
 	let result = { STATUS: 0 , RESULT:'success' , ERRORMESSAGE:'' , DATA: null }; 
@@ -53,7 +53,7 @@ exports.create = async ( req, res )=>{
 	select [name] = '${ collectionName }' , [title] = '${ collectionName }',  seq , dbName 
 	from [config].[dbo].[TB_Admin] where  email = '${ id }' and dbName = '${ user_DB }' 
 	`
-	let response = await DB_Inf.get_sql( user_DB, sql_state )
+	let response = await DB_Inf.get_sql( 'ezoffice' , sql_state )
 	return res.status(200).json( result ) 
 }
 exports.delete_collection = async ( req, res )=>{
@@ -121,6 +121,22 @@ exports.update_appAssign = async ( req, res )=>{
 	let response = await DB_Inf.get_sql( 'ezoffice', sql_state )
 //	result.DATA = _.pluck( response.recordset, 'name' ) 
 	result.DATA = response.recordset ; 
+	return res.status(200).json( result ) 
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+//     Delete ..
+/////////////////////////////////////////////////////////////////////////////////////////
+exports.delete = async ( req , res )=>{
+	let result = { STATUS: 0 , RESULT:'success' , ERRORMESSAGE:'' , DATA: null }; 
+    let collectionName = req.params.collectionName ; 
+	let user_DB = req.params.db_name; 
+	let id = req.params.id 
+	let sql_state = `
+	delete from [ezoffice].[dbo].[TB_collections] where ownerSeq = 
+	( select seq from [config].[dbo].[TB_Admin] where email = '${ id }' and dbName = '${ user_DB }' )
+	and name = '${ collectionName }' 
+	`
+	let response = await DB_Inf.get_sql( 'ezoffice' , sql_state )
 	return res.status(200).json( result ) 
 }
 
