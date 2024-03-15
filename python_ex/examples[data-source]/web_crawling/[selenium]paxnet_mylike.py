@@ -71,7 +71,9 @@ WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//div[text
 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,"//div[text()='Day']"))).click()
 """
 #WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.XPATH,'//*[@id="contents"]/div[1]/div[3]/span/div/button'))).click();
-browser.find_element(by=By.XPATH,value='//*[@id="contents"]/div[1]/div[3]/span/div/button').click()                                                                                                           
+#browser.find_element(by=By.XPATH,value='//*[@id="contents"]/div[1]/div[3]/span/div/button').click()                                                                                                           
+dropdown = browser.find_element(By.ID, "groupCode")
+dropdown.find_element(By.XPATH, "//option[. = '보유종목[중소형]']").click()
 
 #//*[@id="contents"]/div[1]/div[3]/span/div/div/ul
 #//*[@id="contents"]/div[1]/div[3]/span/div/button
