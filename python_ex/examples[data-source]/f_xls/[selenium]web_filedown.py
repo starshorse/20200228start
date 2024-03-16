@@ -18,6 +18,7 @@ chromedriver.install()
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 module_dir = os.path.normpath( os.path.join( dir_path ,'..\\..\\modules') )
+data_krx_path = os.path.normpath( os.path.join( dir_path, 'data_krx' )) 
 
 sys.path.append( module_dir )
 
@@ -36,7 +37,7 @@ chrome_options.add_argument("--window-size=1920,1080")
 chrome_options.add_argument("--allow-running-insecure-content")  # Allow insecure content
 chrome_options.add_argument("--unsafely-treat-insecure-origin-as-secure=http://data.krx.co.kr")  # Replace example.com with your site's domain
 chrome_options.add_experimental_option("prefs", {
-    "download.default_directory": dir_path,
+    "download.default_directory": data_krx_path,
     "download.prompt_for_download": False,
     "download.directory_upgrade": True,
     "safebrowsing.enabled": True
