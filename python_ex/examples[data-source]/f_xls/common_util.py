@@ -16,6 +16,8 @@ import pdb, os
 from os import listdir 
 from os.path import isfile, join 
 import re
+from bs4 import BeautifulSoup
+import pandas as pd
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -46,12 +48,28 @@ def data_krx_last():
     sorted_list.reverse() 
     print( sorted_list[-1] )
     last_file_path = os.path.normpath( os.path.join( data_krx_path , sorted_list[-1] ))
-    return last_file_path
-    
-if __name__=='__main__':
-    last_file = data_krx_last()
-    df = load_f_xlsx( last_file,'Sheet1') 
+    df = load_f_xlsx( last_file_path,'Sheet1') 
     df = df.sort_values(by='배당수익률', ascending= False )
+    return df 
+
+def fnguide_last():
+    last_file_path = os.path.normpath( os.path.join( dir_path , 'IdxRank_Excel.xls' ))
+    df = load_f_xlsx( last_file_path,'IdxRank_Excel') 
+    df = df.sort_values(by='부채비율', ascending= False )
+    return df 
+    
+
+def fnguide_html_file():
+    table = BeautifulSoup(open('./IdxRank_Excel.html','r').read()).find('table')
+    df = pd.read_html(table) #I think it accepts BeatifulSoup object
+                             #otherwise try str(table) as input
+    return df                          
+
+
+if __name__=='__main__':
+    #df = data_krx_last();
+    #df = fnguide_last(); 
+    df = fnguide_html_file();
     print( df.head(100) )
 
 
