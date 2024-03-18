@@ -569,9 +569,11 @@ select::-ms-expand {
 
 .select_02 option {
   background: #fceed1;
-  height: 15px;
+  background: lavender;
+  height: 35px;
   color: #a28089;
-  padding: 3px 0; }
+  color: indigo;
+  padding: 5px ; }
 * {
   font-family: 'Open Sans', sans-serif; }
 

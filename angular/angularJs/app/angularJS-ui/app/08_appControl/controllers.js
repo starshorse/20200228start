@@ -44,7 +44,7 @@ angular.module('myControllers', ['work_space'])
 		await update_collections_list(); 
 		})
 	})();	
-	$scope.collections_list = { collections_list: [] , apps_list: [], cur_app: null } 
+	$scope.collections_list = { collections_list: [] , apps_list: [], cur_app: null, cur_collection: null } 
 	$scope.cur_selection =  null ;
 	const create_collection = async ( collection_name )=>{
 		 let result = { STATUS : -1 , ERRORMESSAGE: null , DATA: null } 
@@ -89,6 +89,20 @@ angular.module('myControllers', ['work_space'])
 	}
     $scope.enter_collection = ( collection )=>{
 		$scope.cur_selection = collection.name ; 
+		$scope.collections_list.cur_collection = collection 
+		if( collection['apps_list'] == undefined ){
+			$scope.collections_list.cur_collection['apps_list'] = [] 
+			$scope.collections_list.apps_list.forEach((ent)=>{
+				ent.tblViewSheet.tbl_columns.forEach((ent0)=>{
+					if( ent0.oVisible == undefined ){
+						ent0['oVisible'] = { visible : true , isDisabled: false } 
+						if( ent0.name == 'seq' )
+							ent0.oVisible.isDisabled = true 
+					}
+				})
+				$scope.collections_list.cur_collection['apps_list'].push(JSON.parse( JSON.stringify( { name: ent.configName , columns: ent.tblViewSheet.tbl_columns })));
+			})
+		}
 		$state.go('collectionEditMain.info', { cur_collection : collection.name } ) 
 	}
     $scope.enter_app = ( app )=>{
@@ -101,7 +115,25 @@ angular.module('myControllers', ['work_space'])
 			var workSpace_service = $injector.get('workSpace_service') 
 			var $state = $injector.get('$state')  
 			var $stateRegistry = $injector.get('$stateRegistry'); 
-	        var collection_id = $stateParams.cur_collection ; 
+	        let collection_id = $stateParams.cur_collection ; 
+	        let collection = $scope.collections_list.collections_list.find((ent)=>ent.name == collection_id )
+
+	        if( collection ){
+				$scope.collections_list.cur_collection = collection 
+				if( collection['apps_list'] == undefined ){
+					$scope.collections_list.cur_collection['apps_list'] = [] 
+					$scope.collections_list.apps_list.forEach((ent)=>{
+						ent.tblViewSheet.tbl_columns.forEach((ent0)=>{
+							if( ent0.oVisible == undefined ){
+								ent0['oVisible'] = { visible : true , isDisabled: false } 
+								if( ent0.name == 'seq' )
+									ent0.oVisible.isDisabled = true 
+							}
+						})
+						$scope.collections_list.cur_collection['apps_list'].push(JSON.parse( JSON.stringify( { name: ent.configName , columns: ent.tblViewSheet.tbl_columns })));
+					})
+				}
+			}
 //			const apps = workSpace_service.promise_getAppsListData( $stateParams.cur_collection ) 
 			$scope.openApp = ( item )=>{
 					// my-sider part
@@ -121,6 +153,11 @@ angular.module('myControllers', ['work_space'])
 })	
 .controller('collectionEditInfoCtrl',function( $scope, $stateParams, $injector  ){
 	// name , createDate ..
+
+})
+.controller('collectionEditDataCtrl',function( $scope, $stateParams, $injector  ){
+	// name , createDate ..
+	$scope.cluster = $scope.collections_list.cur_collection.apps_list  
 })
 .controller('appEditInfoCtrl',function( $scope, $stateParams, $injector  ){
 	// name , createDate ..

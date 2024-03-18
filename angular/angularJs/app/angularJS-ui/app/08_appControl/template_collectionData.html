@@ -1,0 +1,58 @@
+<div class="d-flex align-items-center justify-content-center my-5">
+	<h3> Cluster Information </h3> 
+</div> 
+<div class="row mx-5">
+	<div class="col-md-8">
+		<div class="accordion" id="cluser_1">
+			<div class="accordion-item" ng-repeat="app in cluster">
+				<h2 class="accordion-header row" id="heading{{ $index }}">
+					<div class="col-md-4">
+						<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_p{{ $index }}" aria-expanded="true" aria-controls="collapse_p{{ $index }}">
+							{{ app.name }} 
+						</button>
+					</div>
+					<div class="col-md-4">
+						<select class="form-select" aria-label="Default select example">
+							<option selected>Open this select menu</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</div>
+				</h2>
+				<div id="collapse_p{{ $index }}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#cluster_1">
+					<div class="accordion" id="accordionExample">
+						<div class="accordion-item ms-5" ng-repeat="column in tbl_columns">
+							<h2 class="accordion-header" id="headingOne">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}" aria-expanded="true" aria-controls="collapse{{ $index }}">
+									{{ column.name }} 
+								</button>
+							</h2>
+							<div id="collapse{{ $index }}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+								<div class="accordion-body row">
+									<div class="col-md-4">
+										<h6>FORMAT:[ {{ column.formatter }}]</h6>
+									</div>
+									<div class="col-md-4"></div>
+									<div class="col-md-4">
+										<button class="btn btn-secondary w100" ng-click="edit_column( column.name )">EDIT</button> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<textarea class="form-control w100 h-125" rows = "20" disabled>
+			{{ collections_list.cur_app.sql_state.state_1 }}
+		</textarea> 
+	</div>
+</div>
+<div class="row mx-5 my-5">
+	<div class="col-md-4">
+		<button class="btn btn-lg btn-secondary w100">Save</button> 
+	</div>
+</div>

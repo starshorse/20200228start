@@ -1,0 +1,66 @@
+<div class="d-flex align-items-center justify-content-center my-5">
+	<h3> Cluster Information </h3> 
+</div> 
+<div class="row mx-5">
+	<div class="col-md-8">
+		<div class="accordion" id="cluser_1">
+			<div class="accordion-item" ng-repeat="app in cluster">
+				<h2 class="accordion-header row" id="heading{{ $index }}">
+					<div class="col-md-8">
+						<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_p{{ $index }}" aria-expanded="true" aria-controls="collapse_p{{ $index }}">
+							{{ app.name }} 
+						</button>
+					</div>
+					<div class="col-md-4 d-flex justify-content-center align-items-center">
+						<select class="form-select me-2" aria-label="Default select example">
+							<option selected>Join할 Column을 선택하세요( default seq )</option>
+							<option ng-value="column.name" ng-repeat="column in tbl_columns">{{ column.name }}</option>
+						</select>
+					</div>
+				</h2>
+				<div id="collapse_p{{ $index }}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#cluster_1">
+					<div class="accordion" id="accordionExample">
+						<div class="accordion-item ms-5" ng-repeat="column in tbl_columns">
+							<h6 class="accordion-header row" id="headingOne">
+								<div class="col-md-8">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}" aria-expanded="true" aria-controls="collapse{{ $index }}">
+										{{ column.name }} 
+									</button>
+								</div>
+								<div class="col-md-4 d-flex justify-content-center align-items-center">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" ng-model="column.oVisible.visible" ng-disabled="column.oVisible.isDisabled" >
+										<label class="form-check-label" for="flexCheckChecked">
+											Visible
+										</label>
+									</div>
+								</div>	
+							</h6>
+							<div id="collapse{{ $index }}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+								<div class="accordion-body row">
+									<div class="col-md-4">
+										<h6>FORMAT:[ {{ column.formatter }}]</h6>
+									</div>
+									<div class="col-md-4"></div>
+									<div class="col-md-4">
+										<button class="btn btn-secondary w100" ng-click="edit_column( column.name )">EDIT</button> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<textarea class="form-control w100 h-125" rows = "20" disabled>
+			{{ collections_list.cur_app.sql_state.state_1 }}
+		</textarea> 
+	</div>
+</div>
+<div class="row mx-5 my-5">
+	<div class="col-md-4">
+		<button class="btn btn-lg btn-secondary w100">Save</button> 
+	</div>
+</div>
