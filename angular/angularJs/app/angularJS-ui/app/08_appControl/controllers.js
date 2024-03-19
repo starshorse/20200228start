@@ -44,7 +44,7 @@ angular.module('myControllers', ['work_space'])
 		await update_collections_list(); 
 		})
 	})();	
-	$scope.collections_list = { collections_list: [] , apps_list: [], cur_app: null, cur_collection: null } 
+	$scope.collections_list = { collections_list: [] , apps_list: [], cur_app: null, cur_collection: {} } 
 	$scope.cur_selection =  null ;
 	const create_collection = async ( collection_name )=>{
 		 let result = { STATUS : -1 , ERRORMESSAGE: null , DATA: null } 
@@ -92,6 +92,7 @@ angular.module('myControllers', ['work_space'])
 		$scope.collections_list.cur_collection = collection 
 		if( collection['apps_list'] == undefined ){
 			$scope.collections_list.cur_collection['apps_list'] = [] 
+/*			
 			$scope.collections_list.apps_list.forEach((ent)=>{
 				ent.tblViewSheet.tbl_columns.forEach((ent0)=>{
 					if( ent0.oVisible == undefined ){
@@ -102,6 +103,7 @@ angular.module('myControllers', ['work_space'])
 				})
 				$scope.collections_list.cur_collection['apps_list'].push(JSON.parse( JSON.stringify( { name: ent.configName , columns: ent.tblViewSheet.tbl_columns })));
 			})
+			*/			
 		}
 		$state.go('collectionEditMain.info', { cur_collection : collection.name } ) 
 	}
@@ -120,20 +122,8 @@ angular.module('myControllers', ['work_space'])
 
 	        if( collection ){
 				$scope.collections_list.cur_collection = collection 
-				if( collection['apps_list'] == undefined ){
-					$scope.collections_list.cur_collection['apps_list'] = [] 
-					$scope.collections_list.apps_list.forEach((ent)=>{
-						ent.tblViewSheet.tbl_columns.forEach((ent0)=>{
-							if( ent0.oVisible == undefined ){
-								ent0['oVisible'] = { visible : true , isDisabled: false } 
-								if( ent0.name == 'seq' )
-									ent0.oVisible.isDisabled = true 
-							}
-						})
-						$scope.collections_list.cur_collection['apps_list'].push(JSON.parse( JSON.stringify( { name: ent.configName , columns: ent.tblViewSheet.tbl_columns })));
-					})
-				}
 			}
+			$scope.collections_list.cur_collection['apps_list'] = [] 
 //			const apps = workSpace_service.promise_getAppsListData( $stateParams.cur_collection ) 
 			$scope.openApp = ( item )=>{
 					// my-sider part
@@ -153,11 +143,45 @@ angular.module('myControllers', ['work_space'])
 })	
 .controller('collectionEditInfoCtrl',function( $scope, $stateParams, $injector  ){
 	// name , createDate ..
-
+    $scope.addApp = ( appName )=>{
+		    $scope.collections_list.cur_collection['apps_list'] = []; // reset list.. 
+			$scope.collections_list.apps_list.forEach((ent)=>{
+				if( appName.includes( ent.configName ) ){
+					ent.tblViewSheet.tbl_columns.forEach((ent0)=>{
+						if( ent0.oVisible == undefined ){
+							ent0['oVisible'] = { visible : true , isDisabled: false } 
+							if( ent0.name == 'seq' )
+								ent0.oVisible.isDisabled = true 
+						}
+					})
+					$scope.collections_list.cur_collection['apps_list'].push(JSON.parse( JSON.stringify( { name: ent.configName , columns: ent.tblViewSheet.tbl_columns })));
+				}
+			})
+		   $scope.collectioninfo['appList'] = appName ; // array.
+	}
+	$scope.deleteApp = ( appName )=>{
+/*		
+		let del_index = $scope.collections_list.cur_collection['apps_list'].findindexOf((ent)=> ent.name == appName );
+		$scope.collections_list.cur_collection['apps_list'] = $scope.collections_list.cur_collection['apps_list'].splice( del_index , 1 );  
+		*/
+		$scope.addApp( appName ); 
+	}
+	$scope.collectioninfo = Object.assign( $scope.collectioninfo , { addApp : $scope.addApp , deleteApp : $scope.deleteApp } );
 })
 .controller('collectionEditDataCtrl',function( $scope, $stateParams, $injector  ){
 	// name , createDate ..
 	$scope.cluster = $scope.collections_list.cur_collection.apps_list  
+	$scope.joinColumn = new Array(5); 
+	$scope.setJoinColumn =( index )=>{
+		console.log( $scope.joinColumn[ index ] )
+		$scope.cluster[index].columns.forEach(( ent, i )=>{
+			ent.oVisible.isDisabled = false 
+			if( ent.name == 'seq' || ent.name == $scope.joinColumn[index] ){
+				ent.oVisible.isDisabled = true 
+			}
+		})
+//		$scope.$apply();
+	}
 })
 .controller('appEditInfoCtrl',function( $scope, $stateParams, $injector  ){
 	// name , createDate ..

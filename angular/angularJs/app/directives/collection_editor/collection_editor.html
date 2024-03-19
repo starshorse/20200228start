@@ -61,8 +61,8 @@
 			<div class="col-md-2">
 			<div ng-if="apps_list_edit_enable" class="flx-col w100">
 				<i class="box box-question"></i><input type="text" ng-model="appSearch" placeholder="apps list" />
-				<button class="btn btn-secondary">추가</button>
-				<select class="select_02 w100" ng-model="appSelected" multiple size="10">
+				<button class="btn btn-secondary" ng-click="add_app()">추가</button>
+				<select class="select_02 w100" ng-model="oSelected.apps" multiple size="10" ng-multiple="true" ng-change="changeSelectedAdd()">
 					<option ng-repeat="app in apps_list | filter: appSearch ">{{ app }}</option>
 				</select>	
 			</div>	 
@@ -70,8 +70,8 @@
 			<div class="col-md-2">
 			<div class="flx-col w100" ng-if="!header_edit_enable">
 				<i class="box box-question"></i><input type="text" ng-model="curAppSearch" placeholder="cur apps"/>
-				<button class="btn btn-secondary">삭제</button>
-				<select class="select_02 w100" ng-model="curApps" multiple size="10" >
+				<button class="btn btn-secondary" ng-click="delete_app()">삭제</button>
+				<select class="select_02 w100" ng-model="oCurrent.apps" multiple size="10" ng-multiple="true" ng-change="changeSelectedDelete()">
 					<option ng-repeat="app in curApps_list | filter: curAppSearch ">{{ app }}</option>
 				</select>	
 			</div>	 

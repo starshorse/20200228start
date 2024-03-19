@@ -12,15 +12,15 @@
 						</button>
 					</div>
 					<div class="col-md-4 d-flex justify-content-center align-items-center">
-						<select class="form-select me-2" aria-label="Default select example">
+						<select class="form-select me-2" aria-label="Default select example" ng-model="joinColumn[$index]"  ng-change ="setJoinColumn($index)">
 							<option selected>Join할 Column을 선택하세요( default seq )</option>
-							<option ng-value="column.name" ng-repeat="column in tbl_columns">{{ column.name }}</option>
+							<option ng-value="column.name" ng-repeat="column in cluster[$index].columns">{{ column.name }}</option>
 						</select>
 					</div>
 				</h2>
 				<div id="collapse_p{{ $index }}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#cluster_1">
 					<div class="accordion" id="accordionExample">
-						<div class="accordion-item ms-5" ng-repeat="column in tbl_columns">
+						<div class="accordion-item ms-5" ng-repeat="column in cluster[$index].columns">
 							<h6 class="accordion-header row" id="headingOne">
 								<div class="col-md-8">
 									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}" aria-expanded="true" aria-controls="collapse{{ $index }}">
