@@ -1,0 +1,63 @@
+2024-03-20 05:40:13.10 > LogFile Creates
+2024-03-20 05:40:13.10 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT I.[seq], I.[drafterName], I.[priority], I.[requestType], I.[requestTitle], I.[requestDesc], [signatoryNameList], NULL AS LineFirst, NULL AS LineSecond, NULL AS LineThird, [submitStatus], R.[RegDate], R.[processDesc], [resultLatest], [opinion] FROM [ezchemtech].[dbo].[TB_e_approval_item] AS I LEFT JOIN (select seqItem, RegDate, processDesc FROM [ezchemtech].[dbo].[TB_e_approval_request] where seq in (select Max(seq) as seq FROM [ezchemtech].[dbo].[TB_e_approval_request] group by seqItem)) AS R ON I.[seq] = R.[seqItem] ORDER BY I.[seq] ;","hostname":"DESKTOP-EV0KFOH","filepath":"C:\\workdir\\gitdn\\20200228start\\python_ex\\examples[data-source]\\UI_inferface .xlsm"}
+------------------------------------------------
+2024-03-20 05:40:13.26 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":1,"drafterName":"김현선","priority":"일반","requestType":"test","requestTitle":"test","requestDesc":"테스트입니다.","signatoryNameList":"김연희","LineFirst":null,"LineSecond":null,"LineThird":null,"submitStatus":"Y","RegDate":"2022-09-08 11:10:22.743","processDesc":"결재 완료(승인)","resultLatest":"승인","opinion":""},{"seq":2,"drafterName":"김연희","priority":"일반","requestType":"인사","requestTitle":"유연근무제","requestDesc":"김신영주임 근무시간 조정요청 ( 기존: 8시30분~5시30분 변경희망: 8시~5시) ","signatoryNameList":"최성철,황인국","LineFirst":null,"LineSecond":null,"LineThird":null,"subm...
+------------------------------------------------
+2024-03-20 05:40:13.32 > [Elapsed Time] getRows() : 0.033sec(s)
+2024-03-20 05:40:13.33 > [Elapsed Time] pullFromDB() : 0.258sec(s)
+2024-03-20 05:40:13.90 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [order_year]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월견적추이];","hostname":"DESKTOP-EV0KFOH","filepath":"C:\\workdir\\gitdn\\20200228start\\python_ex\\examples[data-source]\\UI_inferface .xlsm"}
+------------------------------------------------
+2024-03-20 05:40:14.00 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"order_year":2013,"Jan":null,"Feb":null,"Mar":75,"Apr":70,"May":112,"Jun":38,"Jul":47,"Aug":48,"Sep":38,"Oct":52,"Nom":49,"Dec":42},{"order_year":2014,"Jan":41,"Feb":48,"Mar":49,"Apr":96,"May":78,"Jun":107,"Jul":98,"Aug":71,"Sep":71,"Oct":115,"Nom":122,"Dec":155},{"order_year":2015,"Jan":141,"Feb":121,"Mar":150,"Apr":161,"May":328,"Jun":167,"Jul":198,"Aug":134,"Sep":157,"Oct":202,"Nom":228,"Dec":179},{"order_year":2016,"Jan":214,"Feb":180,"Mar":340,"Apr":297,"May":295,"Jun":256,"Jul":314,"Aug":264,"Sep":264,"Oct":227,"Nom":332,"Dec":303...
+------------------------------------------------
+2024-03-20 05:40:14.07 > [Elapsed Time] getRows() : 0.055sec(s)
+2024-03-20 05:40:14.08 > [Elapsed Time] pullFromDB() : 0.178sec(s)
+2024-03-20 05:40:14.11 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [YEAR]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월판매액추이];","hostname":"DESKTOP-EV0KFOH","filepath":"C:\\workdir\\gitdn\\20200228start\\python_ex\\examples[data-source]\\UI_inferface .xlsm"}
+------------------------------------------------
+2024-03-20 05:40:14.31 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"YEAR":2015,"Jan":null,"Feb":99664100,"Mar":null,"Apr":null,"May":null,"Jun":null,"Jul":null,"Aug":null,"Sep":null,"Oct":null,"Nom":null,"Dec":null},{"YEAR":2016,"Jan":116253646,"Feb":98907123,"Mar":209399418,"Apr":176681545,"May":233242620,"Jun":312517260,"Jul":349692334,"Aug":268068870,"Sep":180947609,"Oct":147922391,"Nom":310478637,"Dec":206165748},{"YEAR":2017,"Jan":440131410,"Feb":302405711,"Mar":730146702,"Apr":237578190,"May":177395775,"Jun":251228057,"Jul":446075729,"Aug":275607046,"Sep":318648613,"Oct":235130473,"Nom":420412209...
+------------------------------------------------
+2024-03-20 05:40:14.38 > [Elapsed Time] getRows() : 0.049sec(s)
+2024-03-20 05:40:14.39 > [Elapsed Time] pullFromDB() : 0.283sec(s)
+2024-03-20 05:40:14.41 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [YEAR]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월출금액추이];","hostname":"DESKTOP-EV0KFOH","filepath":"C:\\workdir\\gitdn\\20200228start\\python_ex\\examples[data-source]\\UI_inferface .xlsm"}
+------------------------------------------------
+2024-03-20 05:40:14.46 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"YEAR":2019,"Jan":"2,347,150","Feb":"1,306,565","Mar":"1,222,000","Apr":"260,000,000","May":"2,530,229","Jun":"687,515,946","Jul":"1,048,377,395","Aug":"416,782,392","Sep":"366,871,960","Oct":"211,667,352","Nom":"225,403,269","Dec":"434,971,342"},{"YEAR":2020,"Jan":"430,673,360","Feb":"513,793,930","Mar":"333,778,640","Apr":"584,108,720","May":"343,731,089","Jun":"256,989,772","Jul":"548,869,048","Aug":"594,226,074","Sep":"250,345,810","Oct":"374,272,899","Nom":"311,858,755","Dec":"1,116,476,374"},{"YEAR":2021,"Jan":"152,976,252","Feb":...
+------------------------------------------------
+2024-03-20 05:40:14.49 > [Elapsed Time] getRows() : 0.018sec(s)
+2024-03-20 05:40:14.51 > [Elapsed Time] pullFromDB() : 0.09sec(s)
+2024-03-20 05:40:15.06 > [Elapsed Time] getRows() : 0.289sec(s)
+2024-03-20 05:40:15.08 > [Elapsed Time] pullFromFile() : 0.336sec(s)
+2024-03-20 05:40:15.29 > [Elapsed Time] getRows() : 0.178sec(s)
+2024-03-20 05:40:15.31 > [Elapsed Time] pullFromFile() : 0.199sec(s)
+2024-03-20 05:40:15.88 > [Elapsed Time] getRows() : 0.398sec(s)
+2024-03-20 05:40:15.89 > [Elapsed Time] pullFromFile() : 0.486sec(s)
+2024-03-20 05:40:16.45 > [Elapsed Time] getRows() : 0.256sec(s)
+2024-03-20 05:40:16.47 > [Elapsed Time] pullFromFile() : 0.297sec(s)
+2024-03-20 05:40:22.14 > [Elapsed Time] getRows() : 4.594sec(s)
+2024-03-20 05:40:22.16 > [Elapsed Time] pullFromFile() : 5.393sec(s)
+2024-03-20 05:51:51.48 > [Elapsed Time] getRows() : 0.547sec(s)
+2024-03-20 05:51:51.50 > [Elapsed Time] pullFromFile() : 0.621sec(s)
+2024-03-20 05:51:53.45 > [Elapsed Time] getRows() : 1.531sec(s)
+2024-03-20 05:51:53.46 > [Elapsed Time] pullFromFile() : 1.941sec(s)
