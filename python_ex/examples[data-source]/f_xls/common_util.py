@@ -61,7 +61,7 @@ def fnguide_last():
 
 def fnguide_html_file():
     table = BeautifulSoup(open('./IdxRank_Excel.html','r').read()).find('table')
-    df = pd.read_html(table) #I think it accepts BeatifulSoup object
+    df = pd.read_html(str(table)) #I think it accepts BeatifulSoup object
                              #otherwise try str(table) as input
     return df                          
 
@@ -69,8 +69,9 @@ def fnguide_html_file():
 if __name__=='__main__':
     #df = data_krx_last();
     #df = fnguide_last(); 
-    df = fnguide_html_file();
-    print( df.head(100) )
+    df_list = fnguide_html_file();
+    df = df_list[0].sort_values( by = '부채비율', ascending = True ) 
+    print( df )
 
 
 
