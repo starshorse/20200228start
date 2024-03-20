@@ -46,7 +46,7 @@
 			</div>
 			</div>
 			<div class="col-md-2">
-			<div class="flx-col w100">
+			<div class="flx-col w100" ng-show="!apps_list_edit_enable">
 				<i class="box box-question"></i><input type="text" ng-model="curCollectionSearch" placeholder="cur heads[collections]"/>
 				<button class="btn btn-secondary" ng-click="header_collection_remove()">삭제</button>
 				<select class="select_02 w100" ng-model="curCollectionSelected" multiple size="10" >
@@ -68,10 +68,13 @@
 			</div>	 
 			</div>	 
 			<div class="col-md-2">
-			<div class="flx-col w100">
+			<div class="flx-col w100" ng-show="!header_edit_enable">
 				<i class="box box-question"></i><input type="text" ng-model="curAppSearch" placeholder="cur apps"/>
 				<button class="btn btn-secondary" ng-click="delete_app()">삭제</button>
+				<!--
 				<select class="select_02 w100" ng-model="oCurrent.apps" multiple size="10" ng-multiple="true" ng-change="changeSelectedDelete()">
+				-->
+				<select class="select_02 w100" multiple size="10" ng-multiple="true">
 					<option ng-repeat="app in curApps_list | filter: curAppSearch ">{{ app }}</option>
 				</select>	
 			</div>	 

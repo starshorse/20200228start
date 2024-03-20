@@ -144,26 +144,29 @@ angular.module('myControllers', ['work_space'])
 .controller('collectionEditInfoCtrl',function( $scope, $stateParams, $injector  ){
 	// name , createDate ..
     $scope.addApp = ( appName )=>{
+            if( appName.length > 2 ){
+				alert("현재 Join 2개까지 지원!");
+				return ; 
+			}
 		    $scope.collections_list.cur_collection['apps_list'] = []; // reset list.. 
 			$scope.collections_list.apps_list.forEach((ent)=>{
 				if( appName.includes( ent.configName ) ){
-					ent.tblViewSheet.tbl_columns.forEach((ent0)=>{
+					let newEntry =  JSON.parse( JSON.stringify( { name: ent.configName , columns: ent.tblViewSheet.tbl_columns, tbl_name: ent.tblViewSheet.tbl_name }));
+					newEntry.columns.forEach((ent0 )=>{
 						if( ent0.oVisible == undefined ){
 							ent0['oVisible'] = { visible : true , isDisabled: false } 
 							if( ent0.name == 'seq' )
 								ent0.oVisible.isDisabled = true 
+							if( ent0.name == 'seq' && $scope.collections_list.cur_collection['apps_list'].length != 0 )
+								ent0.oVisible.visible = false 
 						}
 					})
-					$scope.collections_list.cur_collection['apps_list'].push(JSON.parse( JSON.stringify( { name: ent.configName , columns: ent.tblViewSheet.tbl_columns })));
+					$scope.collections_list.cur_collection['apps_list'].push( newEntry );
 				}
 			})
 		   $scope.collectioninfo['appList'] = appName ; // array.
 	}
 	$scope.deleteApp = ( appName )=>{
-/*		
-		let del_index = $scope.collections_list.cur_collection['apps_list'].findindexOf((ent)=> ent.name == appName );
-		$scope.collections_list.cur_collection['apps_list'] = $scope.collections_list.cur_collection['apps_list'].splice( del_index , 1 );  
-		*/
 		$scope.addApp( appName ); 
 	}
 	$scope.collectioninfo = Object.assign( $scope.collectioninfo , { addApp : $scope.addApp , deleteApp : $scope.deleteApp } );
@@ -171,17 +174,63 @@ angular.module('myControllers', ['work_space'])
 .controller('collectionEditDataCtrl',function( $scope, $stateParams, $injector  ){
 	// name , createDate ..
 	$scope.cluster = $scope.collections_list.cur_collection.apps_list  
+	if( $scope.collections_list.cur_collection['tblViewSheet'] == undefined ){
+		$scope.collections_list.cur_collection['tblViewSheet'] = { tbl_columns : [] , tbl_name: $scope.collections_list.cur_collection.name }          
+	}
 	$scope.joinColumn = new Array(5); 
+	$scope.joinType = new Array(5); 
+	let alias = ['a','b','c','d','e'] ;
+	const genSQL = ()=>{
+		let sqlState_select = 'SELECT ' 
+		let sqlState_select_sp = []
+		let sqlState_from ='\n FROM '
+        $scope.collections_list.cur_collection['tblViewSheet'].tbl_columns =  []          
+		$scope.cluster.forEach((ent , i )=>{
+			let as = alias[i] 
+			let column_nameList = ent.columns.reduce(( acc, ent0)=>{
+					if( ent0.oVisible.visible == true ){
+						acc.push( `${as}.[${ent0.name}]`)
+						$scope.collections_list.cur_collection['tblViewSheet'].tbl_columns.push( ent0 ); 
+					}
+					return acc ;
+				}
+			,[])
+			sqlState_select_sp.push(  column_nameList.join(',') )
+		})
+		sqlState_select += sqlState_select_sp.join(',');
+		sqlState_from += `${ $scope.cluster[0].tbl_name } ${ alias[0] } ${ $scope.joinType[0] || 'LEFT' } join ${ $scope.cluster[1].tbl_name } ${ alias[1] } on ${ alias[0]}.[${ $scope.joinColumn[0] || 'seq' }] = ${ alias[1] }.[${ $scope.joinColumn[1] || 'seq' }]`
+		let sqlState = `${ sqlState_select }${ sqlState_from }`
+		return sqlState ;
+	}
+    $scope.cluster['sql_state'] = genSQL(); 
+	$scope.setVisibleCheck = ( index )=>{
+          $scope.cluster['sql_state'] = genSQL(); 
+	}
 	$scope.setJoinColumn =( index )=>{
 		console.log( $scope.joinColumn[ index ] )
 		$scope.cluster[index].columns.forEach(( ent, i )=>{
 			ent.oVisible.isDisabled = false 
-			if( ent.name == 'seq' || ent.name == $scope.joinColumn[index] ){
+			if( ent.name == $scope.joinColumn[index] ){
+				ent.oVisible.visible = true 
 				ent.oVisible.isDisabled = true 
 			}
+			if( ent.name == 'seq' ){
+				ent.oVisible.isDisabled = true 
+			    ent.oVisible.visible = false  
+				if( index == 0 ){
+				   ent.oVisible.visible = true 
+				}
+			}
 		})
+		$scope.cluster[index]['joinColumn'] = $scope.joinColumn[ index ]
+        $scope.cluster['sql_state'] = genSQL(); 
 //		$scope.$apply();
 	}
+	$scope.setJoinType = ( index )=>{ 
+		$scope.cluster[index]['joinType'] = $scope.joinType[ index ]
+        $scope.cluster['sql_state'] = genSQL(); 
+	    console.log( $scope.cluster ); 
+   }
 })
 .controller('appEditInfoCtrl',function( $scope, $stateParams, $injector  ){
 	// name , createDate ..
