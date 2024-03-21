@@ -9,7 +9,7 @@ angular.module('collection_editor',['ngCookies'])
 		$scope.extrn_enable = false;  
 	    $scope.oSelected = { apps : null } ;
 	    $scope.oCurrent = { apps : null } ;
-	    $scope.curApps_list =  $scope.collectioninfo.appList || []; 
+	    $scope.curApps_list =  $scope.collectioninfo.apps_list.map((ent)=>ent.name) || []; 
 		let user_DB = $cookies.get('user_DB');  
 //		let collectionName = 'newApp' ;
 		let collectionName = $scope.collectioninfo.name;

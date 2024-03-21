@@ -12,12 +12,15 @@
 						</button>
 					</div>
 					<div class="col-md-1 d-flex justify-content-center align-items-center">
-						<select class="form-select" aria-label="Default select example" ng-model="joinType[$index]"  ng-change ="setJoinType($index)" ng-init="joinType[$index] = 'LEFT'" ng-if="$index == 0">
+						<select class="form-select" aria-label="Default select example" ng-model="joinType[$index]"  ng-change ="setJoinType($index)" ng-if="$index == 0">
 							<option ng-value="type_title" ng-repeat="type_title in ['LEFT','INNER','OUTTER']">{{ type_title }}</option>
 						</select>
 					</div>
 					<div class="col-md-3 d-flex justify-content-center align-items-center">
+						<!--
 						<select class="form-select me-2" aria-label="Default select example" ng-model="joinColumn[$index]"  ng-change ="setJoinColumn($index)" ng-init="joinColumn[$index] = 'seq'">
+						-->
+						<select class="form-select me-2" aria-label="Default select example" ng-model="joinColumn[$index]"  ng-change ="setJoinColumn($index)">
 							<option ng-value="column.name" ng-repeat="column in cluster[$index].columns">{{ column.name }}</option>
 						</select>
 					</div>
@@ -65,6 +68,12 @@
 </div>
 <div class="row mx-5 my-5">
 	<div class="col-md-4">
-		<button class="btn btn-lg btn-secondary w100">Save</button> 
+		<button class="btn btn-lg btn-secondary w100" ng-click="collection_save()">Save</button> 
+	</div>
+	<div class="col-md-4">
+		<button class="btn btn-lg btn-secondary w100">Gen App</button> 
+	</div>
+	<div class="col-md-4">
+		<button class="btn btn-lg btn-secondary w100">Gen View</button> 
 	</div>
 </div>
