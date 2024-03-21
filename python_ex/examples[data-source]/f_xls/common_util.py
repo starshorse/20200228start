@@ -22,6 +22,7 @@ import pandas as pd
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 data_krx_path = os.path.normpath( os.path.join( dir_path, 'data_krx' )) 
+data_companyguide_path = os.path.normpath( os.path.join( dir_path, 'data_companyguide', '20240320' )) 
 
 def files_list( target_dir_path  ):
     onlyfiles = [ f for f in listdir( target_dir_path) if isfile( join( target_dir_path , f ))]
@@ -63,14 +64,22 @@ def fnguide_html_file():
     table = BeautifulSoup(open('./IdxRank_Excel.html','r').read()).find('table')
     df = pd.read_html(str(table)) #I think it accepts BeatifulSoup object
                              #otherwise try str(table) as input
+    df = df[0].sort_values( by = '부채비율', ascending = True ) 
+    return df                          
+
+def data_companyguide_last():
+    last_file_path = os.path.normpath( os.path.join( data_companyguide_path , 'IdxRank_Excel.html' ))
+    table = BeautifulSoup(open( last_file_path ,'r').read()).find('table')
+    df = pd.read_html(str(table)) #I think it accepts BeatifulSoup object
+                             #otherwise try str(table) as input
+    df = df[0].sort_values( by = '부채비율', ascending = True ) 
     return df                          
 
 
 if __name__=='__main__':
     #df = data_krx_last();
     #df = fnguide_last(); 
-    df_list = fnguide_html_file();
-    df = df_list[0].sort_values( by = '부채비율', ascending = True ) 
+    df = data_companyguide_last();
     print( df )
 
 
