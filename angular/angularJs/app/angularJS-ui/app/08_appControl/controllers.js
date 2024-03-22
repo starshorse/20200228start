@@ -60,21 +60,26 @@ angular.module('myControllers', ['work_space'])
 			result.ERRORMESSAGE = '같은 이름이 존재합니다'
 			return result 
 		}
-		// let db_result = await $http({ method: 'POST', url: `http://localhost/hades/collection/${ user_DB }/${ collection_name }/${ id }`}).catch((err)=>console.log(err)); 
+		let db_result = await $http({ method: 'POST', url: `http://localhost/hades/collection/${ user_DB }/${ collection_name }/${ id }`}).catch((err)=>console.log(err)); 
 		oCluster.config_list.push( { name: collection_name }) 
-		let db_result = await $http({ method: 'POST', url: `http://localhost/hades/cluster_config/user_config_cluster/${ user_DB }/${ id }`, data: oCluster }).catch((err)=>console.log(err)); 
-		//let data  = await $http.get(`http://localhost/hades/collections/${ user_DB }/${ id }` ).catch((err)=>console.log(err));
+		db_result = await $http({ method: 'POST', url: `http://localhost/hades/cluster_config/user_config_cluster/${ user_DB }/${ id }`, data: oCluster }).catch((err)=>console.log(err)); 
 		//$scope.collections_list.collections_list = data.data.DATA;
 		let data  = await $http.get(`http://localhost/hades/cluster_config/user_config_cluster/${ user_DB }/${ id }` ).catch((err)=>console.log(err));
 		$scope.collections_list.user_collections =  data.data.DATA 
-//1		$scope.collections_list.collections_list = data.data.DATA.config_list;
 		$scope.$apply();
 		result.STATUS = 0 
 		return result ;
 	}
 	const delete_collection = async ( collection_name )=>{
 		let result = { STATUS : -1 , ERRORMESSAGE: null , DATA: null } 
-		let db_result = await $http({ method: 'DELETE', url: `http://localhost/hades/collection/${ user_DB }/${ collection_name }/${ id }`}).catch((err)=>console.log(err)); 
+		let collection_index = $scope.collections_list.user_collections.config_list.findIndex((ent)=>ent.name == collection_name )
+		let db_result 
+		if( collection_index != -1 ){
+			let user_collections = $scope.collections_list.user_collections.config_list
+			user_collections.splice( collection_index , 1 ) 
+			db_result = await $http({ method: 'POST', url: `http://localhost/hades/cluster_config/user_config_cluster/${ user_DB }/${ id }`, data: user_collections }).catch((err)=>console.log(err)); 
+		}
+		db_result = await $http({ method: 'DELETE', url: `http://localhost/hades/collection/${ user_DB }/${ collection_name }/${ id }`}).catch((err)=>console.log(err)); 
 		let data  = await $http.get(`http://localhost/hades/collections/${ user_DB }/${ id }` ).catch((err)=>console.log(err));
 		$scope.collections_list.collections_list = data.data.DATA;
 		$scope.$apply();
@@ -98,6 +103,10 @@ angular.module('myControllers', ['work_space'])
 				modal.content = result.ERRORMESSAGE 
 			return result 
 		}}
+		$scope.$broadcast('doModal') 
+	}
+	$scope.popup_modal = ( modal )=>{
+		$scope.modal = modal 
 		$scope.$broadcast('doModal') 
 	}
     $scope.enter_collection = ( collection )=>{
@@ -172,7 +181,7 @@ angular.module('myControllers', ['work_space'])
 		$scope.addApp( appName ); 
 	}
     $scope.collectioninfo = $scope.collections_list.cur_collection ;  
-	$scope.collectioninfo = Object.assign( $scope.collectioninfo , { addApp : $scope.addApp , deleteApp : $scope.deleteApp } );
+	$scope.collectioninfo = Object.assign( $scope.collectioninfo , { addApp : $scope.addApp , deleteApp : $scope.deleteApp, all_appsList: $scope.collections_list.apps_list  } );
 })
 .controller('collectionEditDataCtrl',function( $scope, $stateParams, $injector  ){
 	var $http = $injector.get('$http') 
@@ -181,14 +190,16 @@ angular.module('myControllers', ['work_space'])
 	let user_DB = $cookies.get('user_DB')  
 	// name , createDate ..
 	$scope.cluster = $scope.collections_list.cur_collection.apps_list  
+	$scope.collections_list.cur_collection['sql_state'] = { pos: null , state_1: '' , state_2: '' } 
 	if( $scope.collections_list.cur_collection['tblViewSheet'] == undefined ){
 		$scope.collections_list.cur_collection['tblViewSheet'] = { tbl_columns : [] , tbl_name: $scope.collections_list.cur_collection.name }          
 	}
 	$scope.joinColumn = new Array(5); 
 	$scope.joinType = new Array(5); 
-	$scope.joinColumn[0] = $scope.collections_list.cur_collection.apps_list[0].joinColumn 
-	$scope.joinColumn[1] = $scope.collections_list.cur_collection.apps_list[1].joinColumn 
-	$scope.joinType[0] = $scope.collections_list.cur_collection.apps_list[0].joinType 
+	$scope.collections_list.cur_collection.apps_list.forEach((ent, i )=>{
+		$scope.joinColumn[i] = ent.joinColumn 
+		$scope.joinType[i] = ent.joinType 
+	})
 	let alias = ['a','b','c','d','e'] ;
 	const genSQL = ()=>{
 		let sqlState_select = 'SELECT ' 
@@ -208,13 +219,22 @@ angular.module('myControllers', ['work_space'])
 			sqlState_select_sp.push(  column_nameList.join(',') )
 		})
 		sqlState_select += sqlState_select_sp.join(',');
-		sqlState_from += `${ $scope.cluster[0].tbl_name } ${ alias[0] } ${ $scope.joinType[0] || 'LEFT' } join ${ $scope.cluster[1].tbl_name } ${ alias[1] } on ${ alias[0]}.[${ $scope.joinColumn[0] || 'seq' }] = ${ alias[1] }.[${ $scope.joinColumn[1] || 'seq' }]`
+		if( $scope.cluster.length == 2 ){
+			sqlState_from += `${ $scope.cluster[0].tbl_name } ${ alias[0] } ${ $scope.joinType[0] || 'LEFT' } join ${ $scope.cluster[1].tbl_name } ${ alias[1] } on ${ alias[0]}.[${ $scope.joinColumn[0] || 'seq' }] = ${ alias[1] }.[${ $scope.joinColumn[1] || 'seq' }]`
+		}else if( $scope.cluster.length == 1 ){
+			sqlState_from += `${ $scope.cluster[0].tbl_name } ${ alias[0] }`
+		}else{
+			alert("Error: max 2 tables")
+			return 
+		}
 		let sqlState = `${ sqlState_select }${ sqlState_from }`
+		$scope.collections_list.cur_collection['sql_state'].state_1  =  sqlState 
+		$scope.cluster['sql_state'] = sqlState 
 		return sqlState ;
 	}
-    $scope.cluster['sql_state'] = genSQL(); 
+    genSQL(); 
 	$scope.setVisibleCheck = ( index )=>{
-          $scope.cluster['sql_state'] = genSQL(); 
+        genSQL(); 
 	}
 	$scope.setJoinColumn =( index )=>{
 		console.log( $scope.joinColumn[ index ] )
@@ -233,20 +253,39 @@ angular.module('myControllers', ['work_space'])
 			}
 		})
 		$scope.cluster[index]['joinColumn'] = $scope.joinColumn[ index ]
-        $scope.cluster['sql_state'] = genSQL(); 
+        genSQL(); 
 //		$scope.$apply();
 	}
 	$scope.setJoinType = ( index )=>{ 
 		$scope.cluster[index]['joinType'] = $scope.joinType[ index ]
-        $scope.cluster['sql_state'] = genSQL(); 
-	    console.log( $scope.cluster ); 
+        genSQL(); 
+	    console.log( $scope.collections_list ); 
    }
    $scope.collection_save = async ()=>{
        console.log(  $scope.collections_list.user_collections );
 	    let data = $scope.collections_list.user_collections
 		let db_result = await $http({ method: 'POST', url: `http://localhost/hades/cluster_config/user_config_cluster/${ user_DB }/${ id }`, data }).catch((err)=>console.log(err)); 
    }
+   const create_app = ( app_name )=>{
+	   let result = { STATUS: -1 , DATAi: null , ROWS: null , ERRORMESSAGE: ''  }
+	   console.log( $scope.collections_list );
+	   let new_app_fromCollection = { isVirtual: true }
+	   new_app_fromCollection['configName'] = app_name 
+	   new_app_fromCollection['tblViewSheet'] = $scope.collections_list.cur_collection['tblViewSheet']
+	   new_app_fromCollection['sql_state'] = $scope.collections_list.cur_collection['sql_state']
+	   $scope.collections_list.apps_list.push( new_app_fromCollection );
+	   result.STATUS = 0 
+	   return result 
+
+   }
    $scope.gen_app = ()=>{
+		$scope.modal = { title: 'NEW APPLICATION', content: '아래 이름으로 생성합니다.', input_1: { enable: true , text: '' , label:'NAME' } , callback: async ( modal)=>{
+		let result  = create_app( modal.input_1.text )
+			if( result.STATUS == -1 )
+				modal.content = result.ERRORMESSAGE 
+			return result 
+		}}
+	    $scope.popup_modal( $scope.modal ); 
    }
    $scope.gen_view = ()=>{
    }

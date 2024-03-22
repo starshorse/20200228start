@@ -27,8 +27,12 @@ angular.module('collection_editor',['ngCookies'])
 	//		$scope.$apply();
 			let collections_list = await $http.get(`http://localhost/hades/collections/${ user_DB }`);
 			$scope.collections_list = collections_list.data.DATA  
+	/*	   
+    Temp use form cluster apps 
 			let apps_list = await $http.get(`http://localhost/hades/apps/${ user_DB }`);
 			$scope.apps_list = apps_list.data.DATA || [];
+			*/		
+		   $scope.apps_list = $scope.collectioninfo.all_appsList.map((ent)=>ent.configName ); 
 
 			let collections_link = await $http.get(`http://localhost/hades/collection/assign/${ user_DB }/${ collectionName }`);
 			$scope.curCollections_list = collections_link.data.DATA	

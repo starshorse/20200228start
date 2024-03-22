@@ -12,9 +12,10 @@ router.get('/user_config_tree/', controller.get_config_tree ) // local GET user_
 router.get('/user_config/:db_name/:id', controller.get_config_cors ) // GET CORS 
 router.get('/user_config_cluster/:db_name/:id', controller.get_config_cluster ) // local GET user_config_cluster  
 router.get('/flash_config_name/', controller.get_configFlash )  
-router.post('/:db/user_config/', controller.update_config ) // local PUT user_config 
-router.post('/user_config_tree/', controller.update_config_tree ) // local PUT user_config 
-router.post('/flash_config_name/', controller.set_configFlash )  
+// router.post('/:db/user_config/', controller.update_config ) // local PUT user_config 
+// router.post('/user_config_tree/', controller.update_config_tree ) // local PUT user_config 
+// router.post('/flash_config_name/', controller.set_configFlash )  
 router.post('/user_config_cluster/:db_name/:id', controller.update_config_cluster ) // local PUT user_config_cluster  
+// router.delete('/user_config_cluster/:db_name/:id/:collection_name', controller.delete_config_cluster ) // local PUT user_config_cluster  
 
 module.exports = router; 

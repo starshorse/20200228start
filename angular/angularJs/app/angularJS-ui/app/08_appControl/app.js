@@ -127,6 +127,9 @@ angular.module('myApp',[
 			<div class="col-md-4">
 				<button class="btn btn-lg btn-secondary w100">Save</button> 
 			</div>
+			<div class="col-md-4">
+				<button class="btn btn-lg btn-secondary w100">Gen View</button> 
+			</div>
 		</div>
 		`,
 		controller: 'appEditDataCtrl', 
