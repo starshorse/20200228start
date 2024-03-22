@@ -76,6 +76,29 @@ exports.get_config = function( req, res){
 	result.DATA = JSON.parse( readFileSync( id_path, 'utf-8'))
 	return res.status( 200 ).json( result ) 
 }
+exports.get_config_cors = function( req, res){
+	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let id = req.params.id   
+	let db = req.params.db_name  
+	if( id == undefined )return res.status( 500 ).json( result )
+
+	let  id_path = path.join( __dirname , `../company/data/${ db }/user/${id}.json` )
+	let  userDir_path = path.join( __dirname , `../company/data/${ db }/user` )
+	try{
+		statSync(id_path)
+	}catch(error){
+		if( !existsSync(userDir_path)){
+			mkdirSync( userDir_path, { recursive: true });
+		}
+		let data = JSON.stringify( {id})
+		writeFileSync( id_path, data , 'utf-8')  
+	}
+	result.STATUS = 1 
+	result.RESULT = 'success'
+	result.MESSAGE = id_path 
+	result.DATA = JSON.parse( readFileSync( id_path, 'utf-8'))
+	return res.status( 200 ).json( result ) 
+}
 exports.get_config_tree = function( req, res){
 	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
 	let id = req.cookies.user  
@@ -101,9 +124,7 @@ exports.get_config_tree = function( req, res){
 }
 exports.get_config_cluster = function( req, res){
 	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
-//	let id = req.cookies.user  
-//	let db = req.cookies.org_name  
-	let db = req.params.db_name 
+	let db = req.params.db_name  
 	let id = req.params.id 
 	if( id == undefined )return res.status( 500 ).json( result )
 
@@ -115,7 +136,7 @@ exports.get_config_cluster = function( req, res){
 		if( !existsSync(userDir_path)){
 			mkdirSync( userDir_path, { recursive: true });
 		}
-		let data = JSON.stringify( {id})
+		let data = JSON.stringify( {id, config_list:[]})
 		writeFileSync( id_path, data , 'utf-8')  
 	}
 	result.STATUS = 1 
@@ -135,6 +156,21 @@ exports.update_config = function( req, res){
 	writeFileSync( id_path, data , 'utf-8' )
 //1 sync to tree_view 
 	config_sync.sync_tblEdtior_configName( db ,  id , 'tree_view' );
+	result.STATUS = 1 
+	result.RESULT = 'success'
+	result.MESSAGE = id_path 
+	result.DATA = JSON.parse( readFileSync( id_path, 'utf-8'))
+	return res.status( 200 ).json( result ) 
+}
+exports.update_config_cluster = function( req, res){
+	let result = { STATUS: -1 , RESULT :'fail', MESSAGE :'error:', DATA: null } 
+	let id = req.params.id 
+	let db = req.params.db_name 
+        let data = JSON.stringify( req.body ) 
+	if( id == undefined  || data == undefined )return res.status( 500 ).json( result )
+	let  id_path = path.join( __dirname , `../company/data/${ db }/user/cluster_editor/${id}.json` )
+	
+	writeFileSync( id_path, data , 'utf-8' )
 	result.STATUS = 1 
 	result.RESULT = 'success'
 	result.MESSAGE = id_path 

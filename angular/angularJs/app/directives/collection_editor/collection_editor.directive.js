@@ -9,7 +9,7 @@ angular.module('collection_editor',['ngCookies'])
 		$scope.extrn_enable = false;  
 	    $scope.oSelected = { apps : null } ;
 	    $scope.oCurrent = { apps : null } ;
-	    $scope.curApps_list =  $scope.collectioninfo.appList  
+	    $scope.curApps_list =  $scope.collectioninfo.apps_list.map((ent)=>ent.name) || []; 
 		let user_DB = $cookies.get('user_DB');  
 //		let collectionName = 'newApp' ;
 		let collectionName = $scope.collectioninfo.name;
@@ -32,8 +32,10 @@ angular.module('collection_editor',['ngCookies'])
 
 			let collections_link = await $http.get(`http://localhost/hades/collection/assign/${ user_DB }/${ collectionName }`);
 			$scope.curCollections_list = collections_link.data.DATA	
+		  /* 
 			let app_assign  = await $http.get(`http://localhost/hades/collection/app_assign/${ user_DB }/${ collectionName }`);
 			$scope.curApps_list = app_assign.data.DATA  || [];
+			*/
 	   })(); 
 		$scope.header_collection_add =()=>{
 			alert( $scope.collectionSelected )
@@ -42,6 +44,10 @@ angular.module('collection_editor',['ngCookies'])
 		}
 	    $scope.add_app = ()=>{
 			alert( $scope.oSelected.apps )
+			if( $scope.oSelected.apps.includes(null)){
+				alert(' null not allow ');
+			}
+
 			let apps = $scope.oSelected.apps
 			$scope.curApps_list = [...new Set($scope.curApps_list.concat( apps ))]; 
 			$scope.collectioninfo.addApp( $scope.curApps_list ); 
