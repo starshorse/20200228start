@@ -66,6 +66,9 @@ if __name__=='__main__':
     df = df.reset_index().rename( columns={"index":"date"})
     df['year'] = df['date'].dt.year 
     df['month'] = df['date'].dt.month 
+    #df['ext price'] =  df['ext price'].apply( lambda x: "${:.1f}k".format(( x/1000 )))
+    df['ext price'] =  df['ext price'].apply( lambda x: "{:,.0f}".format( x ))
     df = df.pivot( index='year', columns='month', values='ext price' )
     print( df )
+    print( df.to_html() )
     #pdb.set_trace();
