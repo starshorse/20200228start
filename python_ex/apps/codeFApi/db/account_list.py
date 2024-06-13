@@ -21,6 +21,7 @@ print( sqlserver_host );
 engine = create_engine(f'mssql+pymssql://{ sqlserver_id }:{ sqlserver_password}@{ sqlserver_host }/ezoffice', echo=True)
 
 conn = engine.connect() 
+# sqlalchemy 2.0 호환성 확인 필요.. 
 print( engine.table_names()) 
 
 """
