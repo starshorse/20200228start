@@ -1,0 +1,452 @@
+2024-05-24 09:31:05.85 > LogFile Creates
+2024-05-24 09:31:05.85 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"select a.계좌번호, b.잔액, a.거래일시, b.적요 FROM ( select Max(seq) as seq, 계좌번호, Max(거래일시) as 거래일시  FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] group by 계좌번호  )  a  left join [ezchemtech].[dbo].[TB_계좌거래내역_chem] b on  a.seq = b.seq;","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:31:05.97 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"계좌번호":"93300246921001","잔액":"100000000","거래일시":"2023-08-28 11:21:00.000","적요":"복리맞춤채권(원단위)"},{"계좌번호":"63230104134613","잔액":"83219432","거래일시":"2024-05-23 14:26:00.000","적요":"주식회사 한국이러닝 | 법정의무교육(면세)//수지 (인터넷출금이체)"},{"계좌번호":"3010186198661","잔액":"492848","거래일시":"2023-12-24 13:49:36.000","적요":"농협001629 (예금이자)"},{"계좌번호":"33789004537804","잔액":"144929373","거래일시":"2024-05-23 11:16:00.000","적요":"코리아이플랫폼(주)//과천금융센터 (채권입금)"},{"계좌번호":"100028877450","잔액":"31656586","거래일시":"2024-05-23 11:29:00.000","적요":"KG모빌카드//(하나) (타행IB)"},{"계좌번호":"18191000790504"...
+------------------------------------------------
+2024-05-24 09:31:06.05 > [Elapsed Time] pullFromDB() : 0.203sec(s)
+2024-05-24 09:31:06.07 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '63230104134613' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:31:06.21 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16783,"거래일시":"2024-05-23 14:26:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"340000","잔액":"83219432","적요":"주식회사 한국이러닝 | 법정의무교육(면세)//수지 (인터넷출금이체)"},{"seq":16778,"거래일시":"2024-05-23 11:08:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"20000","잔액":"83559432","적요":"한국경제 구독료 | 한국경제신문대금//수지 (인터넷출금이체)"},{"seq":16777,"거래일시":"2024-05-23 11:05:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"2340048","잔액":"83579432","적요":"대일관리시스템 주식 | 용현관리비_5월//수지 (인터넷출금이체)"},{"seq":16776,"거...
+------------------------------------------------
+2024-05-24 09:31:07.99 > [Elapsed Time] pullFromDB() : 1.922sec(s)
+2024-05-24 09:31:08.00 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '93300246901019' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:31:08.07 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16784,"거래일시":"2024-05-23 14:58:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"2450800","출금액":"0","잔액":"81311949","적요":"SK바이오텍(주)//신한은행 (타행이체)"},{"seq":16782,"거래일시":"2024-05-23 13:30:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"465300","출금액":"0","잔액":"78861149","적요":"(주)메디진//하나은행 (타행이체)"},{"seq":16771,"거래일시":"2024-05-22 10:32:00.000","거래일자":"2024-05-22 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"880837","잔액":"78395849","적요":"퇴직금예약이체//(대체)"},{"seq":16768,"거래일시":"2024-05-22 09:07:00.000","거래일자":"2024-05-22 ...
+------------------------------------------------
+2024-05-24 09:31:08.54 > [Elapsed Time] pullFromDB() : 0.531sec(s)
+2024-05-24 09:31:08.54 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"with fromNow([만기일],[발행액]) as( select [만기일],[발행액]  from [ezchemtech].[dbo].[TB_전자어음_개요] where [만기일] > getDate() ) select  datepart(MONTH, 만기일) as [MONTH] , sum([발행액]) as 월별액  FROM fromNow group by datepart(MONTH, 만기일) order by [MONTH]","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:31:08.63 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"MONTH":5,"월별액":63653710},{"MONTH":6,"월별액":169942186},{"MONTH":7,"월별액":102669600}],"COLUMNS":["MONTH","월별액"]}
+------------------------------------------------
+2024-05-24 09:31:08.63 > [Elapsed Time] pullFromDB() : 0.094sec(s)
+2024-05-24 09:31:11.75 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"select a.계좌번호, b.잔액, a.거래일시, b.적요 FROM ( select Max(seq) as seq, 계좌번호, Max(거래일시) as 거래일시  FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] group by 계좌번호  )  a  left join [ezchemtech].[dbo].[TB_계좌거래내역_chem] b on  a.seq = b.seq;","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:31:11.89 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"계좌번호":"93300246921001","잔액":"100000000","거래일시":"2023-08-28 11:21:00.000","적요":"복리맞춤채권(원단위)"},{"계좌번호":"63230104134613","잔액":"83219432","거래일시":"2024-05-23 14:26:00.000","적요":"주식회사 한국이러닝 | 법정의무교육(면세)//수지 (인터넷출금이체)"},{"계좌번호":"3010186198661","잔액":"492848","거래일시":"2023-12-24 13:49:36.000","적요":"농협001629 (예금이자)"},{"계좌번호":"33789004537804","잔액":"144929373","거래일시":"2024-05-23 11:16:00.000","적요":"코리아이플랫폼(주)//과천금융센터 (채권입금)"},{"계좌번호":"100028877450","잔액":"31656586","거래일시":"2024-05-23 11:29:00.000","적요":"KG모빌카드//(하나) (타행IB)"},{"계좌번호":"18191000790504"...
+------------------------------------------------
+2024-05-24 09:31:11.91 > [Elapsed Time] pullFromDB() : 0.156sec(s)
+2024-05-24 09:31:11.93 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '63230104134613' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:31:12.08 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16783,"거래일시":"2024-05-23 14:26:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"340000","잔액":"83219432","적요":"주식회사 한국이러닝 | 법정의무교육(면세)//수지 (인터넷출금이체)"},{"seq":16778,"거래일시":"2024-05-23 11:08:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"20000","잔액":"83559432","적요":"한국경제 구독료 | 한국경제신문대금//수지 (인터넷출금이체)"},{"seq":16777,"거래일시":"2024-05-23 11:05:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"2340048","잔액":"83579432","적요":"대일관리시스템 주식 | 용현관리비_5월//수지 (인터넷출금이체)"},{"seq":16776,"거...
+------------------------------------------------
+2024-05-24 09:31:13.93 > [Elapsed Time] pullFromDB() : 2.00sec(s)
+2024-05-24 09:31:13.96 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '93300246901019' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:31:14.00 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16784,"거래일시":"2024-05-23 14:58:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"2450800","출금액":"0","잔액":"81311949","적요":"SK바이오텍(주)//신한은행 (타행이체)"},{"seq":16782,"거래일시":"2024-05-23 13:30:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"465300","출금액":"0","잔액":"78861149","적요":"(주)메디진//하나은행 (타행이체)"},{"seq":16771,"거래일시":"2024-05-22 10:32:00.000","거래일자":"2024-05-22 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"880837","잔액":"78395849","적요":"퇴직금예약이체//(대체)"},{"seq":16768,"거래일시":"2024-05-22 09:07:00.000","거래일자":"2024-05-22 ...
+------------------------------------------------
+2024-05-24 09:31:14.46 > [Elapsed Time] pullFromDB() : 0.516sec(s)
+2024-05-24 09:31:14.46 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"with fromNow([만기일],[발행액]) as( select [만기일],[발행액]  from [ezchemtech].[dbo].[TB_전자어음_개요] where [만기일] > getDate() ) select  datepart(MONTH, 만기일) as [MONTH] , sum([발행액]) as 월별액  FROM fromNow group by datepart(MONTH, 만기일) order by [MONTH]","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:31:14.55 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"MONTH":5,"월별액":63653710},{"MONTH":6,"월별액":169942186},{"MONTH":7,"월별액":102669600}],"COLUMNS":["MONTH","월별액"]}
+------------------------------------------------
+2024-05-24 09:31:14.55 > [Elapsed Time] pullFromDB() : 0.094sec(s)
+2024-05-24 09:42:33.27 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"select a.계좌번호, b.잔액, a.거래일시, b.적요 FROM ( select Max(seq) as seq, 계좌번호, Max(거래일시) as 거래일시  FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] group by 계좌번호  )  a  left join [ezchemtech].[dbo].[TB_계좌거래내역_chem] b on  a.seq = b.seq;","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:42:33.35 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"계좌번호":"93300246921001","잔액":"100000000","거래일시":"2023-08-28 11:21:00.000","적요":"복리맞춤채권(원단위)"},{"계좌번호":"63230104134613","잔액":"83219432","거래일시":"2024-05-23 14:26:00.000","적요":"주식회사 한국이러닝 | 법정의무교육(면세)//수지 (인터넷출금이체)"},{"계좌번호":"3010186198661","잔액":"492848","거래일시":"2023-12-24 13:49:36.000","적요":"농협001629 (예금이자)"},{"계좌번호":"33789004537804","잔액":"144929373","거래일시":"2024-05-23 11:16:00.000","적요":"코리아이플랫폼(주)//과천금융센터 (채권입금)"},{"계좌번호":"100028877450","잔액":"31656586","거래일시":"2024-05-23 11:29:00.000","적요":"KG모빌카드//(하나) (타행IB)"},{"계좌번호":"18191000790504"...
+------------------------------------------------
+2024-05-24 09:42:33.38 > [Elapsed Time] pullFromDB() : 0.109sec(s)
+2024-05-24 09:42:33.39 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '63230104134613' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:42:33.55 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16783,"거래일시":"2024-05-23 14:26:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"340000","잔액":"83219432","적요":"주식회사 한국이러닝 | 법정의무교육(면세)//수지 (인터넷출금이체)"},{"seq":16778,"거래일시":"2024-05-23 11:08:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"20000","잔액":"83559432","적요":"한국경제 구독료 | 한국경제신문대금//수지 (인터넷출금이체)"},{"seq":16777,"거래일시":"2024-05-23 11:05:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"2340048","잔액":"83579432","적요":"대일관리시스템 주식 | 용현관리비_5월//수지 (인터넷출금이체)"},{"seq":16776,"거...
+------------------------------------------------
+2024-05-24 09:42:35.38 > [Elapsed Time] pullFromDB() : 1.984sec(s)
+2024-05-24 09:42:35.39 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '93300246901019' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:42:35.57 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16784,"거래일시":"2024-05-23 14:58:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"2450800","출금액":"0","잔액":"81311949","적요":"SK바이오텍(주)//신한은행 (타행이체)"},{"seq":16782,"거래일시":"2024-05-23 13:30:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"465300","출금액":"0","잔액":"78861149","적요":"(주)메디진//하나은행 (타행이체)"},{"seq":16771,"거래일시":"2024-05-22 10:32:00.000","거래일자":"2024-05-22 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"880837","잔액":"78395849","적요":"퇴직금예약이체//(대체)"},{"seq":16768,"거래일시":"2024-05-22 09:07:00.000","거래일자":"2024-05-22 ...
+------------------------------------------------
+2024-05-24 09:42:36.08 > [Elapsed Time] pullFromDB() : 0.688sec(s)
+2024-05-24 09:42:36.08 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"with fromNow([만기일],[발행액]) as( select [만기일],[발행액]  from [ezchemtech].[dbo].[TB_전자어음_개요] where [만기일] > getDate() ) select  datepart(MONTH, 만기일) as [MONTH] , sum([발행액]) as 월별액  FROM fromNow group by datepart(MONTH, 만기일) order by [MONTH]","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 09:42:36.18 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"MONTH":5,"월별액":63653710},{"MONTH":6,"월별액":169942186},{"MONTH":7,"월별액":102669600}],"COLUMNS":["MONTH","월별액"]}
+------------------------------------------------
+2024-05-24 09:42:36.18 > [Elapsed Time] pullFromDB() : 0.094sec(s)
+2024-05-24 13:07:32.83 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"select a.계좌번호, b.잔액, a.거래일시, b.적요 FROM ( select Max(seq) as seq, 계좌번호, Max(거래일시) as 거래일시  FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] group by 계좌번호  )  a  left join [ezchemtech].[dbo].[TB_계좌거래내역_chem] b on  a.seq = b.seq;","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 13:07:32.96 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"계좌번호":"93300246921001","잔액":"100000000","거래일시":"2023-08-28 11:21:00.000","적요":"복리맞춤채권(원단위)"},{"계좌번호":"6497151870867","잔액":"0","거래일시":"2023-05-22 08:37:00.000","적요":"만기출금"},{"계좌번호":"63230104134613","잔액":"83219432","거래일시":"2024-05-23 14:26:00.000","적요":"주식회사 한국이러닝 | 법정의무교육(면세)//수지 (인터넷출금이체)"},{"계좌번호":"3010186198661","잔액":"492848","거래일시":"2023-12-24 13:49:36.000","적요":"농협001629 (예금이자)"},{"계좌번호":"33789004537804","잔액":"144929373","거래일시":"2024-05-23 11:16:00.000","적요":"코리아이플랫폼(주)//과천금융센터 (채권입금)"},{"계좌번호":"100028877450","잔액":"31656586","거래일시"...
+------------------------------------------------
+2024-05-24 13:07:32.99 > [Elapsed Time] pullFromDB() : 0.172sec(s)
+2024-05-24 13:07:33.00 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '63230104134613' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 13:07:33.32 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16783,"거래일시":"2024-05-23 14:26:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"340000","잔액":"83219432","적요":"주식회사 한국이러닝 | 법정의무교육(면세)//수지 (인터넷출금이체)"},{"seq":16778,"거래일시":"2024-05-23 11:08:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"20000","잔액":"83559432","적요":"한국경제 구독료 | 한국경제신문대금//수지 (인터넷출금이체)"},{"seq":16777,"거래일시":"2024-05-23 11:05:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"2340048","잔액":"83579432","적요":"대일관리시스템 주식 | 용현관리비_5월//수지 (인터넷출금이체)"},{"seq":16776,"거...
+------------------------------------------------
+2024-05-24 13:07:35.11 > [Elapsed Time] pullFromDB() : 2.125sec(s)
+2024-05-24 13:07:35.13 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '93300246901019' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 13:07:35.21 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16784,"거래일시":"2024-05-23 14:58:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"2450800","출금액":"0","잔액":"81311949","적요":"SK바이오텍(주)//신한은행 (타행이체)"},{"seq":16782,"거래일시":"2024-05-23 13:30:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"465300","출금액":"0","잔액":"78861149","적요":"(주)메디진//하나은행 (타행이체)"},{"seq":16771,"거래일시":"2024-05-22 10:32:00.000","거래일자":"2024-05-22 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"880837","잔액":"78395849","적요":"퇴직금예약이체//(대체)"},{"seq":16768,"거래일시":"2024-05-22 09:07:00.000","거래일자":"2024-05-22 ...
+------------------------------------------------
+2024-05-24 13:07:35.72 > [Elapsed Time] pullFromDB() : 0.594sec(s)
+2024-05-24 13:07:35.72 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"with fromNow([만기일],[발행액]) as( select [만기일],[발행액]  from [ezchemtech].[dbo].[TB_전자어음_개요] where [만기일] > getDate() ) select  datepart(MONTH, 만기일) as [MONTH] , sum([발행액]) as 월별액  FROM fromNow group by datepart(MONTH, 만기일) order by [MONTH]","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 13:07:35.91 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"MONTH":5,"월별액":63653710},{"MONTH":6,"월별액":169942186},{"MONTH":7,"월별액":102669600}],"COLUMNS":["MONTH","월별액"]}
+------------------------------------------------
+2024-05-24 13:07:35.91 > [Elapsed Time] pullFromDB() : 0.188sec(s)
+2024-05-24 13:07:46.52 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [order_year]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월견적추이];","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 13:07:46.63 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"order_year":2013,"Jan":null,"Feb":null,"Mar":75,"Apr":70,"May":112,"Jun":38,"Jul":47,"Aug":48,"Sep":38,"Oct":52,"Nom":49,"Dec":42},{"order_year":2014,"Jan":41,"Feb":48,"Mar":49,"Apr":96,"May":78,"Jun":107,"Jul":98,"Aug":71,"Sep":71,"Oct":115,"Nom":122,"Dec":155},{"order_year":2015,"Jan":141,"Feb":121,"Mar":150,"Apr":161,"May":328,"Jun":167,"Jul":198,"Aug":134,"Sep":157,"Oct":202,"Nom":228,"Dec":179},{"order_year":2016,"Jan":214,"Feb":180,"Mar":340,"Apr":297,"May":295,"Jun":256,"Jul":314,"Aug":264,"Sep":264,"Oct":227,"Nom":332,"Dec":303...
+------------------------------------------------
+2024-05-24 13:07:46.64 > [Elapsed Time] pullFromDB() : 0.125sec(s)
+2024-05-24 13:07:46.66 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [YEAR]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월판매액추이];","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 13:07:46.77 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"YEAR":2016,"Jan":116253646,"Feb":98907123,"Mar":209399418,"Apr":176681545,"May":233242620,"Jun":312517260,"Jul":349692334,"Aug":268068870,"Sep":180947609,"Oct":147922391,"Nom":310478637,"Dec":null},{"YEAR":2017,"Jan":440131410,"Feb":302405711,"Mar":730146702,"Apr":237578190,"May":177395775,"Jun":251228057,"Jul":446075729,"Aug":275607046,"Sep":318648613,"Oct":235130473,"Nom":420412209,"Dec":888712970},{"YEAR":2018,"Jan":303810173,"Feb":282033176,"Mar":467558079,"Apr":291935930,"May":257078128,"Jun":1112068480,"Jul":362365521,"Aug":40777...
+------------------------------------------------
+2024-05-24 13:07:46.80 > [Elapsed Time] pullFromDB() : 0.141sec(s)
+2024-05-24 13:07:46.80 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [YEAR],[Jan],[Feb],[Mar],[Apr],[May],[Jun],[Jul],[Aug],[Sep],[Oct],[Nom],[Dec] FROM [ezchemtech].[dbo].[VW_년비교월해외송금액추이]","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 13:07:46.86 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"YEAR":2017,"Jan":null,"Feb":null,"Mar":null,"Apr":null,"May":null,"Jun":null,"Jul":null,"Aug":null,"Sep":"2,400,510","Oct":null,"Nom":null,"Dec":"239,452,823"},{"YEAR":2018,"Jan":"113,768,947","Feb":"311,307,231","Mar":"211,456,948","Apr":"159,079,198","May":"190,757,869","Jun":"226,168,388","Jul":"220,689,851","Aug":"167,490,779","Sep":"221,931,341","Oct":"721,543,955","Nom":"243,046,377","Dec":"281,945,096"},{"YEAR":2019,"Jan":"211,565,596","Feb":"204,338,491","Mar":"196,191,746","Apr":"236,318,326","May":"313,555,379","Jun":"261,616...
+------------------------------------------------
+2024-05-24 13:07:46.88 > [Elapsed Time] pullFromDB() : 0.078sec(s)
+2024-05-24 14:01:34.08 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [order_year]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월견적추이];","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 14:01:34.19 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"order_year":2013,"Jan":null,"Feb":null,"Mar":75,"Apr":70,"May":112,"Jun":38,"Jul":47,"Aug":48,"Sep":38,"Oct":52,"Nom":49,"Dec":42},{"order_year":2014,"Jan":41,"Feb":48,"Mar":49,"Apr":96,"May":78,"Jun":107,"Jul":98,"Aug":71,"Sep":71,"Oct":115,"Nom":122,"Dec":155},{"order_year":2015,"Jan":141,"Feb":121,"Mar":150,"Apr":161,"May":328,"Jun":167,"Jul":198,"Aug":134,"Sep":157,"Oct":202,"Nom":228,"Dec":179},{"order_year":2016,"Jan":214,"Feb":180,"Mar":340,"Apr":297,"May":295,"Jun":256,"Jul":314,"Aug":264,"Sep":264,"Oct":227,"Nom":332,"Dec":303...
+------------------------------------------------
+2024-05-24 14:01:34.21 > [Elapsed Time] pullFromDB() : 0.125sec(s)
+2024-05-24 14:01:34.21 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [YEAR]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월판매액추이];","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 14:01:34.32 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"YEAR":2016,"Jan":116253646,"Feb":98907123,"Mar":209399418,"Apr":176681545,"May":233242620,"Jun":312517260,"Jul":349692334,"Aug":268068870,"Sep":180947609,"Oct":147922391,"Nom":310478637,"Dec":null},{"YEAR":2017,"Jan":440131410,"Feb":302405711,"Mar":730146702,"Apr":237578190,"May":177395775,"Jun":251228057,"Jul":446075729,"Aug":275607046,"Sep":318648613,"Oct":235130473,"Nom":420412209,"Dec":888712970},{"YEAR":2018,"Jan":303810173,"Feb":282033176,"Mar":467558079,"Apr":291935930,"May":257078128,"Jun":1112068480,"Jul":362365521,"Aug":40777...
+------------------------------------------------
+2024-05-24 14:01:34.33 > [Elapsed Time] pullFromDB() : 0.125sec(s)
+2024-05-24 14:01:34.35 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [YEAR],[Jan],[Feb],[Mar],[Apr],[May],[Jun],[Jul],[Aug],[Sep],[Oct],[Nom],[Dec] FROM [ezchemtech].[dbo].[VW_년비교월해외송금액추이]","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 14:01:34.41 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"YEAR":2017,"Jan":null,"Feb":null,"Mar":null,"Apr":null,"May":null,"Jun":null,"Jul":null,"Aug":null,"Sep":"2,400,510","Oct":null,"Nom":null,"Dec":"239,452,823"},{"YEAR":2018,"Jan":"113,768,947","Feb":"311,307,231","Mar":"211,456,948","Apr":"159,079,198","May":"190,757,869","Jun":"226,168,388","Jul":"220,689,851","Aug":"167,490,779","Sep":"221,931,341","Oct":"721,543,955","Nom":"243,046,377","Dec":"281,945,096"},{"YEAR":2019,"Jan":"211,565,596","Feb":"204,338,491","Mar":"196,191,746","Apr":"236,318,326","May":"313,555,379","Jun":"261,616...
+------------------------------------------------
+2024-05-24 14:01:34.41 > [Elapsed Time] pullFromDB() : 0.078sec(s)
+2024-05-24 14:01:39.05 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"select a.계좌번호, b.잔액, a.거래일시, b.적요 FROM ( select Max(seq) as seq, 계좌번호, Max(거래일시) as 거래일시  FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] group by 계좌번호  )  a  left join [ezchemtech].[dbo].[TB_계좌거래내역_chem] b on  a.seq = b.seq;","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 14:01:39.10 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"계좌번호":"93300246921001","잔액":"100000000","거래일시":"2023-08-28 11:21:00.000","적요":"복리맞춤채권(원단위)"},{"계좌번호":"6497151870867","잔액":"0","거래일시":"2023-05-22 08:37:00.000","적요":"만기출금"},{"계좌번호":"63230104134613","잔액":"83219432","거래일시":"2024-05-23 14:26:00.000","적요":"주식회사 한국이러닝 | 법정의무교육(면세)//수지 (인터넷출금이체)"},{"계좌번호":"3010186198661","잔액":"492848","거래일시":"2023-12-24 13:49:36.000","적요":"농협001629 (예금이자)"},{"계좌번호":"33789004537804","잔액":"144929373","거래일시":"2024-05-23 11:16:00.000","적요":"코리아이플랫폼(주)//과천금융센터 (채권입금)"},{"계좌번호":"100028877450","잔액":"31656586","거래일시"...
+------------------------------------------------
+2024-05-24 14:01:39.13 > [Elapsed Time] pullFromDB() : 0.094sec(s)
+2024-05-24 14:01:39.14 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '63230104134613' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 14:01:39.44 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16783,"거래일시":"2024-05-23 14:26:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"340000","잔액":"83219432","적요":"주식회사 한국이러닝 | 법정의무교육(면세)//수지 (인터넷출금이체)"},{"seq":16778,"거래일시":"2024-05-23 11:08:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"20000","잔액":"83559432","적요":"한국경제 구독료 | 한국경제신문대금//수지 (인터넷출금이체)"},{"seq":16777,"거래일시":"2024-05-23 11:05:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"2340048","잔액":"83579432","적요":"대일관리시스템 주식 | 용현관리비_5월//수지 (인터넷출금이체)"},{"seq":16776,"거...
+------------------------------------------------
+2024-05-24 14:01:41.29 > [Elapsed Time] pullFromDB() : 2.156sec(s)
+2024-05-24 14:01:41.30 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '93300246901019' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 14:01:41.38 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16784,"거래일시":"2024-05-23 14:58:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"2450800","출금액":"0","잔액":"81311949","적요":"SK바이오텍(주)//신한은행 (타행이체)"},{"seq":16782,"거래일시":"2024-05-23 13:30:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"465300","출금액":"0","잔액":"78861149","적요":"(주)메디진//하나은행 (타행이체)"},{"seq":16771,"거래일시":"2024-05-22 10:32:00.000","거래일자":"2024-05-22 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"880837","잔액":"78395849","적요":"퇴직금예약이체//(대체)"},{"seq":16768,"거래일시":"2024-05-22 09:07:00.000","거래일자":"2024-05-22 ...
+------------------------------------------------
+2024-05-24 14:01:41.85 > [Elapsed Time] pullFromDB() : 0.547sec(s)
+2024-05-24 14:01:41.86 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"with fromNow([만기일],[발행액]) as( select [만기일],[발행액]  from [ezchemtech].[dbo].[TB_전자어음_개요] where [만기일] > getDate() ) select  datepart(MONTH, 만기일) as [MONTH] , sum([발행액]) as 월별액  FROM fromNow group by datepart(MONTH, 만기일) order by [MONTH]","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 14:01:41.94 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"MONTH":5,"월별액":63653710},{"MONTH":6,"월별액":169942186},{"MONTH":7,"월별액":102669600}],"COLUMNS":["MONTH","월별액"]}
+------------------------------------------------
+2024-05-24 14:01:41.96 > [Elapsed Time] pullFromDB() : 0.094sec(s)
+2024-05-24 16:54:13.22 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"select a.계좌번호, b.잔액, a.거래일시, b.적요 FROM ( select Max(seq) as seq, 계좌번호, Max(거래일시) as 거래일시  FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] group by 계좌번호  )  a  left join [ezchemtech].[dbo].[TB_계좌거래내역_chem] b on  a.seq = b.seq;","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 16:54:13.36 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"계좌번호":"93300246921001","잔액":"100000000","거래일시":"2023-08-28 11:21:00.000","적요":"복리맞춤채권(원단위)"},{"계좌번호":"6497151870867","잔액":"0","거래일시":"2023-05-22 08:37:00.000","적요":"만기출금"},{"계좌번호":"63230104134613","잔액":"79957614","거래일시":"2024-05-24 11:39:00.000","적요":"씨그마알드리치코리아 | 국내제품구입//수지 (인터넷출금이체)"},{"계좌번호":"3010186198661","잔액":"492848","거래일시":"2023-12-24 13:49:36.000","적요":"농협001629 (예금이자)"},{"계좌번호":"33789004537804","잔액":"44928873","거래일시":"2024-05-24 14:59:00.000","적요":"이지켐텍기업//HanaCBS (타행송금)"},{"계좌번호":"100028877450","잔액":"31656586","거래일시":"2024-0...
+------------------------------------------------
+2024-05-24 16:54:13.39 > [Elapsed Time] pullFromDB() : 0.172sec(s)
+2024-05-24 16:54:13.41 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '63230104134613' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 16:54:13.55 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16791,"거래일시":"2024-05-24 11:39:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"83738","잔액":"79957614","적요":"씨그마알드리치코리아 | 국내제품구입//수지 (인터넷출금이체)"},{"seq":16790,"거래일시":"2024-05-24 10:03:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"2675770","잔액":"80041352","적요":"페더럴익스프레스코리//수지 (인터넷출금이체)"},{"seq":16789,"거래일시":"2024-05-24 10:01:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"130000","잔액":"82717122","적요":"조성도(참조은관리) | 주차비용현_5월//수지 (인터넷출금이체)"},{"seq":16788,"거래일시":"2024-05...
+------------------------------------------------
+2024-05-24 16:54:15.58 > [Elapsed Time] pullFromDB() : 2.172sec(s)
+2024-05-24 16:54:15.60 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '93300246901019' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 16:54:15.68 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16793,"거래일시":"2024-05-24 14:59:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"입금","입금액":"100000000","출금액":"0","잔액":"131616135","적요":"이지켐텍외환//하나은행 (타행이체)"},{"seq":16786,"거래일시":"2024-05-24 08:01:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"49695814","잔액":"31616135","적요":"급여//(인터넷)"},{"seq":16784,"거래일시":"2024-05-23 14:58:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"2450800","출금액":"0","잔액":"81311949","적요":"SK바이오텍(주)//신한은행 (타행이체)"},{"seq":16782,"거래일시":"2024-05-23 13:30:00.000","거래일자":"2024-05-2...
+------------------------------------------------
+2024-05-24 16:54:16.14 > [Elapsed Time] pullFromDB() : 0.547sec(s)
+2024-05-24 16:54:16.16 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"with fromNow([만기일],[발행액]) as( select [만기일],[발행액]  from [ezchemtech].[dbo].[TB_전자어음_개요] where [만기일] > getDate() ) select  datepart(MONTH, 만기일) as [MONTH] , sum([발행액]) as 월별액  FROM fromNow group by datepart(MONTH, 만기일) order by [MONTH]","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 16:54:16.25 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"MONTH":5,"월별액":63653710},{"MONTH":6,"월별액":169942186},{"MONTH":7,"월별액":259099500}],"COLUMNS":["MONTH","월별액"]}
+------------------------------------------------
+2024-05-24 16:54:16.25 > [Elapsed Time] pullFromDB() : 0.094sec(s)
+2024-05-24 16:58:41.18 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [order_year]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월견적추이];","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 16:58:41.29 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"order_year":2013,"Jan":null,"Feb":null,"Mar":75,"Apr":70,"May":112,"Jun":38,"Jul":47,"Aug":48,"Sep":38,"Oct":52,"Nom":49,"Dec":42},{"order_year":2014,"Jan":41,"Feb":48,"Mar":49,"Apr":96,"May":78,"Jun":107,"Jul":98,"Aug":71,"Sep":71,"Oct":115,"Nom":122,"Dec":155},{"order_year":2015,"Jan":141,"Feb":121,"Mar":150,"Apr":161,"May":328,"Jun":167,"Jul":198,"Aug":134,"Sep":157,"Oct":202,"Nom":228,"Dec":179},{"order_year":2016,"Jan":214,"Feb":180,"Mar":340,"Apr":297,"May":295,"Jun":256,"Jul":314,"Aug":264,"Sep":264,"Oct":227,"Nom":332,"Dec":303...
+------------------------------------------------
+2024-05-24 16:58:41.30 > [Elapsed Time] pullFromDB() : 0.125sec(s)
+2024-05-24 16:58:41.30 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [YEAR]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월판매액추이];","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 16:58:41.44 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"YEAR":2016,"Jan":116253646,"Feb":98907123,"Mar":209399418,"Apr":176681545,"May":233242620,"Jun":312517260,"Jul":349692334,"Aug":268068870,"Sep":180947609,"Oct":147922391,"Nom":310478637,"Dec":null},{"YEAR":2017,"Jan":440131410,"Feb":302405711,"Mar":730146702,"Apr":237578190,"May":177395775,"Jun":251228057,"Jul":446075729,"Aug":275607046,"Sep":318648613,"Oct":235130473,"Nom":420412209,"Dec":888712970},{"YEAR":2018,"Jan":303810173,"Feb":282033176,"Mar":467558079,"Apr":291935930,"May":257078128,"Jun":1112068480,"Jul":362365521,"Aug":40777...
+------------------------------------------------
+2024-05-24 16:58:41.47 > [Elapsed Time] pullFromDB() : 0.172sec(s)
+2024-05-24 16:58:41.47 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [YEAR],[Jan],[Feb],[Mar],[Apr],[May],[Jun],[Jul],[Aug],[Sep],[Oct],[Nom],[Dec] FROM [ezchemtech].[dbo].[VW_년비교월해외송금액추이]","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 16:58:41.55 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"YEAR":2017,"Jan":null,"Feb":null,"Mar":null,"Apr":null,"May":null,"Jun":null,"Jul":null,"Aug":null,"Sep":"2,400,510","Oct":null,"Nom":null,"Dec":"239,452,823"},{"YEAR":2018,"Jan":"113,768,947","Feb":"311,307,231","Mar":"211,456,948","Apr":"159,079,198","May":"190,757,869","Jun":"226,168,388","Jul":"220,689,851","Aug":"167,490,779","Sep":"221,931,341","Oct":"721,543,955","Nom":"243,046,377","Dec":"281,945,096"},{"YEAR":2019,"Jan":"211,565,596","Feb":"204,338,491","Mar":"196,191,746","Apr":"236,318,326","May":"313,555,379","Jun":"261,616...
+------------------------------------------------
+2024-05-24 16:58:41.55 > [Elapsed Time] pullFromDB() : 0.078sec(s)
+2024-05-24 17:41:57.49 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"select a.계좌번호, b.잔액, a.거래일시, b.적요 FROM ( select Max(seq) as seq, 계좌번호, Max(거래일시) as 거래일시  FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] group by 계좌번호  )  a  left join [ezchemtech].[dbo].[TB_계좌거래내역_chem] b on  a.seq = b.seq;","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 17:41:57.57 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"계좌번호":"93300246921001","잔액":"100000000","거래일시":"2023-08-28 11:21:00.000","적요":"복리맞춤채권(원단위)"},{"계좌번호":"6497151870867","잔액":"0","거래일시":"2023-05-22 08:37:00.000","적요":"만기출금"},{"계좌번호":"63230104134613","잔액":"79957614","거래일시":"2024-05-24 11:39:00.000","적요":"씨그마알드리치코리아 | 국내제품구입//수지 (인터넷출금이체)"},{"계좌번호":"3010186198661","잔액":"492848","거래일시":"2023-12-24 13:49:36.000","적요":"농협001629 (예금이자)"},{"계좌번호":"33789004537804","잔액":"44928873","거래일시":"2024-05-24 14:59:00.000","적요":"이지켐텍기업//HanaCBS (타행송금)"},{"계좌번호":"100028877450","잔액":"31656586","거래일시":"2024-0...
+------------------------------------------------
+2024-05-24 17:41:57.60 > [Elapsed Time] pullFromDB() : 0.109sec(s)
+2024-05-24 17:41:57.61 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '63230104134613' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 17:41:57.75 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16791,"거래일시":"2024-05-24 11:39:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"83738","잔액":"79957614","적요":"씨그마알드리치코리아 | 국내제품구입//수지 (인터넷출금이체)"},{"seq":16790,"거래일시":"2024-05-24 10:03:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"2675770","잔액":"80041352","적요":"페더럴익스프레스코리//수지 (인터넷출금이체)"},{"seq":16789,"거래일시":"2024-05-24 10:01:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"130000","잔액":"82717122","적요":"조성도(참조은관리) | 주차비용현_5월//수지 (인터넷출금이체)"},{"seq":16788,"거래일시":"2024-05...
+------------------------------------------------
+2024-05-24 17:41:59.50 > [Elapsed Time] pullFromDB() : 1.906sec(s)
+2024-05-24 17:41:59.52 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '93300246901019' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 17:41:59.66 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16793,"거래일시":"2024-05-24 14:59:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"입금","입금액":"100000000","출금액":"0","잔액":"131616135","적요":"이지켐텍외환//하나은행 (타행이체)"},{"seq":16786,"거래일시":"2024-05-24 08:01:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"49695814","잔액":"31616135","적요":"급여//(인터넷)"},{"seq":16784,"거래일시":"2024-05-23 14:58:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"2450800","출금액":"0","잔액":"81311949","적요":"SK바이오텍(주)//신한은행 (타행이체)"},{"seq":16782,"거래일시":"2024-05-23 13:30:00.000","거래일자":"2024-05-2...
+------------------------------------------------
+2024-05-24 17:42:00.07 > [Elapsed Time] pullFromDB() : 0.547sec(s)
+2024-05-24 17:42:00.08 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"with fromNow([만기일],[발행액]) as( select [만기일],[발행액]  from [ezchemtech].[dbo].[TB_전자어음_개요] where [만기일] > getDate() ) select  datepart(MONTH, 만기일) as [MONTH] , sum([발행액]) as 월별액  FROM fromNow group by datepart(MONTH, 만기일) order by [MONTH]","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 17:42:00.16 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"MONTH":5,"월별액":63653710},{"MONTH":6,"월별액":169942186},{"MONTH":7,"월별액":259099500}],"COLUMNS":["MONTH","월별액"]}
+------------------------------------------------
+2024-05-24 17:42:00.16 > [Elapsed Time] pullFromDB() : 0.078sec(s)
+2024-05-24 18:32:34.00 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"select a.계좌번호, b.잔액, a.거래일시, b.적요 FROM ( select Max(seq) as seq, 계좌번호, Max(거래일시) as 거래일시  FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] group by 계좌번호  )  a  left join [ezchemtech].[dbo].[TB_계좌거래내역_chem] b on  a.seq = b.seq;","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 18:32:34.08 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"계좌번호":"93300246921001","잔액":"100000000","거래일시":"2023-08-28 11:21:00.000","적요":"복리맞춤채권(원단위)"},{"계좌번호":"6497151870867","잔액":"0","거래일시":"2023-05-22 08:37:00.000","적요":"만기출금"},{"계좌번호":"63230104134613","잔액":"79957614","거래일시":"2024-05-24 11:39:00.000","적요":"씨그마알드리치코리아 | 국내제품구입//수지 (인터넷출금이체)"},{"계좌번호":"3010186198661","잔액":"492848","거래일시":"2023-12-24 13:49:36.000","적요":"농협001629 (예금이자)"},{"계좌번호":"33789004537804","잔액":"44928873","거래일시":"2024-05-24 14:59:00.000","적요":"이지켐텍기업//HanaCBS (타행송금)"},{"계좌번호":"100028877450","잔액":"31656586","거래일시":"2024-0...
+------------------------------------------------
+2024-05-24 18:32:34.14 > [Elapsed Time] pullFromDB() : 0.141sec(s)
+2024-05-24 18:32:34.16 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '63230104134613' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 18:32:34.36 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16791,"거래일시":"2024-05-24 11:39:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"83738","잔액":"79957614","적요":"씨그마알드리치코리아 | 국내제품구입//수지 (인터넷출금이체)"},{"seq":16790,"거래일시":"2024-05-24 10:03:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"2675770","잔액":"80041352","적요":"페더럴익스프레스코리//수지 (인터넷출금이체)"},{"seq":16789,"거래일시":"2024-05-24 10:01:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"130000","잔액":"82717122","적요":"조성도(참조은관리) | 주차비용현_5월//수지 (인터넷출금이체)"},{"seq":16788,"거래일시":"2024-05...
+------------------------------------------------
+2024-05-24 18:32:35.97 > [Elapsed Time] pullFromDB() : 1.828sec(s)
+2024-05-24 18:32:35.98 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [seq],[거래일시],[거래일자],[거래구분],[입금액],[출금액],[잔액],[적요]FROM [ezchemtech].[dbo].[TB_계좌거래내역_chem] where 계좌번호 = '93300246901019' and 거래일자 between dateadd( YEAR, -1, getDate()) and getDate()  order by seq desc","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 18:32:36.05 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"seq":16793,"거래일시":"2024-05-24 14:59:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"입금","입금액":"100000000","출금액":"0","잔액":"131616135","적요":"이지켐텍외환//하나은행 (타행이체)"},{"seq":16786,"거래일시":"2024-05-24 08:01:00.000","거래일자":"2024-05-24 00:00:00.000","거래구분":"출금","입금액":"0","출금액":"49695814","잔액":"31616135","적요":"급여//(인터넷)"},{"seq":16784,"거래일시":"2024-05-23 14:58:00.000","거래일자":"2024-05-23 00:00:00.000","거래구분":"입금","입금액":"2450800","출금액":"0","잔액":"81311949","적요":"SK바이오텍(주)//신한은행 (타행이체)"},{"seq":16782,"거래일시":"2024-05-23 13:30:00.000","거래일자":"2024-05-2...
+------------------------------------------------
+2024-05-24 18:32:36.50 > [Elapsed Time] pullFromDB() : 0.516sec(s)
+2024-05-24 18:32:36.50 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"with fromNow([만기일],[발행액]) as( select [만기일],[발행액]  from [ezchemtech].[dbo].[TB_전자어음_개요] where [만기일] > getDate() ) select  datepart(MONTH, 만기일) as [MONTH] , sum([발행액]) as 월별액  FROM fromNow group by datepart(MONTH, 만기일) order by [MONTH]","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\xls_node\\E01\\ezct_db_inf_ezchemtech .xlsm"}
+------------------------------------------------
+2024-05-24 18:32:36.59 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"MONTH":5,"월별액":63653710},{"MONTH":6,"월별액":169942186},{"MONTH":7,"월별액":259099500}],"COLUMNS":["MONTH","월별액"]}
+------------------------------------------------
+2024-05-24 18:32:36.61 > [Elapsed Time] pullFromDB() : 0.109sec(s)
