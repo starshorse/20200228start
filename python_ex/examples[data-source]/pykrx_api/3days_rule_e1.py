@@ -57,7 +57,8 @@ def get_df_period( before_period , code = "005930"):
 
 def get_df_etf_period( before_period , code = "200250"):
     df = stock.get_etf_ohlcv_by_date( before_period.strftime("%Y%m%d"), before_one_day.strftime("%Y%m%d"), code );
-    df['등락률'] = df['종가'].pct_change().fillna(0)*100;
+    if len( df ) > 0:
+        df['등락률'] = df['종가'].pct_change().fillna(0)*100;
     return df;
 
 if __name__ == '__main__':
@@ -72,16 +73,22 @@ if __name__ == '__main__':
         print(df['등락률'].tail(3))
         if( df['등락률'].tail(3).min() >  0 ):
             one_name = stock.get_market_ticker_name(one) 
-            df_all[one_name] = df['등락률']
+            print( one_name )
+            if len( one_name ) > 0:
+                pdb.set_trace();
+                df_all[one_name] = df['등락률']
 
     for one in etf_codes:
         df = get_df_etf_period( before_one_week, one )
+        if len( df ) == 0:
+            continue ;
         #pdb.set_trace(); 
         print('code:', one );
         print(df['등락률'].tail(3))
         if( df['등락률'].tail(3).min() >  0 ):
-            one_name = stock.get_etf_ticker_name(one) 
-            df_all[one_name] = df['등락률']
+            if len( one_name ) >0 :
+                one_name = stock.get_etf_ticker_name(one) 
+                df_all[one_name] = df['등락률']
     
     print( df_all.tail(3).T) 
 
