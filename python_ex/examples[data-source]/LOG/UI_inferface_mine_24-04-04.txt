@@ -1,0 +1,37 @@
+2024-04-04 11:50:52.32 > LogFile Creates
+2024-04-04 11:50:52.32 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [order_year]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월견적추이];","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\python_ex\\examples[data-source]\\UI_inferface_mine.xlsm"}
+------------------------------------------------
+2024-04-04 11:50:52.46 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"order_year":2013,"Jan":null,"Feb":null,"Mar":75,"Apr":70,"May":112,"Jun":38,"Jul":47,"Aug":48,"Sep":38,"Oct":52,"Nom":49,"Dec":42},{"order_year":2014,"Jan":41,"Feb":48,"Mar":49,"Apr":96,"May":78,"Jun":107,"Jul":98,"Aug":71,"Sep":71,"Oct":115,"Nom":122,"Dec":155},{"order_year":2015,"Jan":141,"Feb":121,"Mar":150,"Apr":161,"May":328,"Jun":167,"Jul":198,"Aug":134,"Sep":157,"Oct":202,"Nom":228,"Dec":179},{"order_year":2016,"Jan":214,"Feb":180,"Mar":340,"Apr":297,"May":295,"Jun":256,"Jul":314,"Aug":264,"Sep":264,"Oct":227,"Nom":332,"Dec":303...
+------------------------------------------------
+2024-04-04 11:50:52.53 > [Elapsed Time] getRows() : 0.02sec(s)
+2024-04-04 11:50:52.53 > [Elapsed Time] pullFromDB() : 0.223sec(s)
+2024-04-04 11:50:52.54 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [YEAR]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월판매액추이];","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\python_ex\\examples[data-source]\\UI_inferface_mine.xlsm"}
+------------------------------------------------
+2024-04-04 11:50:52.66 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"YEAR":2016,"Jan":116253646,"Feb":98907123,"Mar":209399418,"Apr":176681545,"May":233242620,"Jun":312517260,"Jul":349692334,"Aug":268068870,"Sep":180947609,"Oct":147922391,"Nom":310478637,"Dec":206165748},{"YEAR":2017,"Jan":440131410,"Feb":302405711,"Mar":730146702,"Apr":237578190,"May":177395775,"Jun":251228057,"Jul":446075729,"Aug":275607046,"Sep":318648613,"Oct":235130473,"Nom":420412209,"Dec":888712970},{"YEAR":2018,"Jan":303810173,"Feb":282033176,"Mar":467558079,"Apr":291935930,"May":257078128,"Jun":1112068480,"Jul":362365521,"Aug":...
+------------------------------------------------
+2024-04-04 11:50:52.70 > [Elapsed Time] getRows() : 0.023sec(s)
+2024-04-04 11:50:52.70 > [Elapsed Time] pullFromDB() : 0.16sec(s)
+2024-04-04 11:50:52.71 > requestToApiServer: Request
+RequestRoute: RPA_SELECT
+RequestURL: http://ezoffice365.com:8000/api/v0/RPA_SELECT
+body: {"query":"SELECT [YEAR]      ,[Jan]       ,[Feb]      ,[Mar]      ,[Apr]      ,[May]      ,[Jun]      ,[Jul]      ,[Aug]      ,[Sep]      ,[Oct]      ,[Nom]      ,[Dec]  FROM [ezchemtech].[dbo].[VW_년비교월출금액추이];","hostname":"DESKTOP-HUJUVSS","filepath":"C:\\workdir\\gitdn\\20200228start\\python_ex\\examples[data-source]\\UI_inferface_mine.xlsm"}
+------------------------------------------------
+2024-04-04 11:50:52.76 > requestToApiServer: Response
+Status: 200
+ResponseText: 
+{"STATUS":1,"RESULT":"success","ERRORMESSAGE":"","ROWS":[{"YEAR":2019,"Jan":"2,347,150","Feb":"1,306,565","Mar":"1,222,000","Apr":"260,000,000","May":"2,530,229","Jun":"687,515,946","Jul":"1,048,377,395","Aug":"416,782,392","Sep":"366,871,960","Oct":"211,667,352","Nom":"225,403,269","Dec":"434,971,342"},{"YEAR":2020,"Jan":"430,673,360","Feb":"513,793,930","Mar":"333,778,640","Apr":"584,108,720","May":"343,731,089","Jun":"256,989,772","Jul":"548,869,048","Aug":"594,226,074","Sep":"250,345,810","Oct":"374,272,899","Nom":"311,858,755","Dec":"1,116,476,374"},{"YEAR":2021,"Jan":"152,976,252","Feb":...
+------------------------------------------------
+2024-04-04 11:50:52.80 > [Elapsed Time] getRows() : 0.02sec(s)
+2024-04-04 11:50:52.80 > [Elapsed Time] pullFromDB() : 0.094sec(s)

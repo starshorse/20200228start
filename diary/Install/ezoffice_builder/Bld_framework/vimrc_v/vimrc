@@ -28,7 +28,7 @@ highlight Comment term=bold cterm=bold ctermfg=4	" 코멘트 하이라이트
 set wrap
 set noswapfile
 set lbr
-set clipboard=unnamedplus 
+"set clipboard=unnamedplus 
 "set visualbell						" 키를 잘못눌렀을 때 화면 프레시
 "set mouse=a						" vim에서 마우스 사용
 "

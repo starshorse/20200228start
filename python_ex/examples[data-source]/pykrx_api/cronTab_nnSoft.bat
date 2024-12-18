@@ -1,0 +1,1 @@
+python "C:\workdir\gitdn\20200228start\python_ex\examples[data-source]\pykrx_api\[stocks_mine]net_buy.py"

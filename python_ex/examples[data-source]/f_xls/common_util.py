@@ -14,7 +14,7 @@ from openpyxl import load_workbook
 import pandas as pd 
 import pdb, os
 from os import listdir 
-from os.path import isfile, join 
+from os.path import isfile, isdir, join 
 import re
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -22,12 +22,18 @@ import pandas as pd
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 data_krx_path = os.path.normpath( os.path.join( dir_path, 'data_krx' )) 
-data_companyguide_path = os.path.normpath( os.path.join( dir_path, 'data_companyguide', '20240320' )) 
+data_companyguide_path = os.path.normpath( os.path.join( dir_path, 'data_companyguide')) 
+data_companyguide_path_1 = os.path.normpath( os.path.join( dir_path, 'data_companyguide', '20240320' )) 
 
 def files_list( target_dir_path  ):
     onlyfiles = [ f for f in listdir( target_dir_path) if isfile( join( target_dir_path , f ))]
     print( onlyfiles ) 
     return onlyfiles 
+
+def dirs_list( target_dir_path  ):
+    onlydirs = [ f for f in listdir( target_dir_path) if isdir( join( target_dir_path , f ))]
+    print( onlydirs ) 
+    return onlydirs 
 
 def load_f_xlsx( fileName , sheetName ):
     wb = load_workbook( filename = fileName ) 
@@ -67,14 +73,23 @@ def fnguide_html_file():
     df = df[0].sort_values( by = '부채비율', ascending = True ) 
     return df                          
 
-def data_companyguide_last():
-    last_file_path = os.path.normpath( os.path.join( data_companyguide_path , 'IdxRank_Excel.html' ))
+def data_companyguide_last_1():
+    last_file_path = os.path.normpath( os.path.join( data_companyguide_path_1 , 'IdxRank_Excel.html' ))
     table = BeautifulSoup(open( last_file_path ,'r').read()).find('table')
     df = pd.read_html(str(table)) #I think it accepts BeatifulSoup object
                              #otherwise try str(table) as input
     df = df[0].sort_values( by = '부채비율', ascending = True ) 
     return df                          
 
+def data_companyguide_last():
+    dirs = dirs_list( data_companyguide_path ); 
+    dirs = sorted( dirs, reverse = True )
+    last_file_path = os.path.normpath( os.path.join( data_companyguide_path, dirs[0], 'IdxRank_Excel.xls' ))
+    table = BeautifulSoup(open( last_file_path ,'r').read()).find('table')
+    df = pd.read_html(str(table)) #I think it accepts BeatifulSoup object
+                             #otherwise try str(table) as input
+    df = df[0].sort_values( by = '부채비율', ascending = True ) 
+    return df  
 
 if __name__=='__main__':
     #df = data_krx_last();
