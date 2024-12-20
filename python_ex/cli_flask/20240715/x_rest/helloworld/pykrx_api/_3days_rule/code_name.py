@@ -173,6 +173,7 @@ etf_codes_dic = {
 '305720':'KODEX 2차전지산업',
 '441640':'KODEX 미국배당커버드콜',
 '273130':'KODEX 종합채권',
+'468380':'KODEX iShares 미국 하이일드액티브',
 '292560':'TIGER 일본엔선물' , # Yen 
 '130680':'TIGER 원유선물Enhanced(H)', # Oil 
 '429000':'TIGER 배당귀족',
