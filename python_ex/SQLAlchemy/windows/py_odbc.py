@@ -1,3 +1,12 @@
+"""
+20241228 - error. 
+        (venv) C:\workdir\gitdn\20200228start\python_ex\SQLAlchemy\windows>python py_odbc.py
+    Traceback (most recent call last):
+      File "py_odbc.py", line 50, in <module>
+        print( engine.table_names() )
+    AttributeError: 'Engine' object has no attribute 'table_names'
+
+"""
 import pandas as pd
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy.engine import URL

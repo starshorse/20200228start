@@ -6,7 +6,7 @@ from flask_moment import Moment
 from flask_login import LoginManager 
 from flask_pagedown import PageDown 
 # from config import config 
-from flask_sslify import SSLify 
+# from flask_sslify import SSLify 
 from .simple_page import simple_page as simple_page_blueprint 
 
 def create_app( config_name = 'default'):
