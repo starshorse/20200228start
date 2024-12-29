@@ -1,0 +1,11 @@
+pip install alembic==1.13.1
+pip install sqlachemy=2.0.0
+pip install sqlacodegen_v2   
+
+
+env.py 
+from KORSP_tbl import metadata 
+target_metadata = metadata 
+
+
+sqlacodegen mssql+pymssql://sa:1234@localhost/config > confg_tbl.py 
