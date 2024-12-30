@@ -1,0 +1,9 @@
+[console_scripts]
+sqlacodegen_v2 = sqlacodegen_v2.cli:main
+
+[sqlacodegen_v2.generators]
+dataclasses = sqlacodegen_v2.generators:DataclassGenerator
+declarative = sqlacodegen_v2.generators:DeclarativeGenerator
+declarative-dataclasses = sqlacodegen_v2.generators:DeclarativeDataclassGenerator
+sqlmodels = sqlacodegen_v2.generators:SQLModelGenerator
+tables = sqlacodegen_v2.generators:TablesGenerator
