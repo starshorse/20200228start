@@ -6,6 +6,7 @@
         print( engine.table_names() )
     AttributeError: 'Engine' object has no attribute 'table_names'
 
+ sqlalchemy==1.4.0 사용 
 """
 import pandas as pd
 from sqlalchemy import create_engine, MetaData

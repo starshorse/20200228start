@@ -1,3 +1,9 @@
+"""
+    SQLAlchemy==1.4.0 
+    Server: 34.64.60.213 
+    Password : !csdlwlof#xxxx
+
+"""
 import os 
 from sqlalchemy import create_engine,text 
 import sqlalchemy as db 
