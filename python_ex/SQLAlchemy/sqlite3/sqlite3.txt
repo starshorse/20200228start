@@ -1,0 +1,101 @@
+sqlite> .mode column
+sqlite> .schema
+CREATE TABLE tbl1(one text, two int);
+CREATE TABLE alembic_version (
+        version_num VARCHAR(32) NOT NULL,
+        CONSTRAINT alembic_version_pkc PRIMARY KEY (version_num)
+);
+CREATE TABLE IF NOT EXISTS "VW_stock_mine" (
+        "종목명" VARCHAR(14),
+        "종목코드" VARCHAR(6) NOT NULL,
+        "PER" VARCHAR(8),
+        "PBR" VARCHAR(5),
+        "배당수익률" VARCHAR(5)
+);
+CREATE TABLE IF NOT EXISTS "VW_stock_mine_basics" (
+        "회사명" VARCHAR(30),
+        "종목코드" VARCHAR(6) NOT NULL,
+        "업종" VARCHAR,
+        "주요제품" VARCHAR(100),
+        "상장일" DATE,
+        "결산월" VARCHAR(5),
+        "대표자명" VARCHAR,
+        "홈페이지" VARCHAR,
+        "지역" VARCHAR(10)
+);
+CREATE TABLE low_pbr_high_div (
+        "종목코드" VARCHAR(6) NOT NULL,
+        "종목명" VARCHAR(15) NOT NULL,
+        "종가" INTEGER NOT NULL,
+        "EPS" INTEGER,
+        "PER" NUMERIC(7, 2),
+        "선행_EPS" INTEGER,
+        "선행_PER" NUMERIC(9, 2),
+        "BPS" INTEGER,
+        "PBR" NUMERIC(7, 2),
+        "주당배당금" INTEGER NOT NULL,
+        "배당수익률" NUMERIC(5, 2) NOT NULL
+);
+CREATE TABLE mine (
+        "종목코드" VARCHAR(6) NOT NULL,
+        PRIMARY KEY ("종목코드")
+);
+CREATE TABLE pykrx_time (
+        "일자" DATE NOT NULL,
+        "종목코드" VARCHAR(6) NOT NULL,
+        "종목명" VARCHAR(14) NOT NULL,
+        "관리여부" VARCHAR(4),
+        "PER" VARCHAR(8),
+        "PBR" VARCHAR(5),
+        "배당수익률" VARCHAR(5)
+);
+CREATE TABLE stables (
+        "일자" DATE NOT NULL,
+        "종목코드" VARCHAR(6) NOT NULL,
+        "종목명" VARCHAR(14) NOT NULL,
+        "관리여부" VARCHAR(4) NOT NULL,
+        "종가" VARCHAR(9) NOT NULL,
+        "EPS" VARCHAR(7) NOT NULL,
+        "PER" VARCHAR(8) NOT NULL,
+        "BPS" VARCHAR(9) NOT NULL,
+        "PBR" VARCHAR(5) NOT NULL,
+        "주당배당금" VARCHAR(6),
+        "배당수익률" VARCHAR(5),
+        PRIMARY KEY ("종목코드")
+);
+CREATE TABLE stables_nw (
+        "종목코드" VARCHAR(6) NOT NULL,
+        "종목명" VARCHAR(15) NOT NULL,
+        "종가" INTEGER NOT NULL,
+        "대비" INTEGER NOT NULL,
+        "등락률" NUMERIC(6, 2) NOT NULL,
+        "EPS" INTEGER,
+        "PER" NUMERIC(7, 2),
+        "선행_EPS" INTEGER,
+        "선행_PER" NUMERIC(9, 2),
+        "BPS" INTEGER,
+        "PBR" NUMERIC(7, 2),
+        "주당배당금" INTEGER NOT NULL,
+        "배당수익률" NUMERIC(5, 2) NOT NULL,
+        PRIMARY KEY ("종목코드")
+);
+sqlite> select * from stables
+   ...> ;
+sqlite> select * from stables;
+sqlite> select tbl_name from sqlite_schema;
+tbl_name
+--------------------
+tbl1
+alembic_version
+alembic_version
+VW_stock_mine
+VW_stock_mine_basics
+low_pbr_high_div
+mine
+mine
+pykrx_time
+stables
+stables
+stables_nw
+stables_nw
+sqlite>

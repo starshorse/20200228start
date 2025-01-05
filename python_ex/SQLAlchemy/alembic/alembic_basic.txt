@@ -6,7 +6,8 @@ pip install alembic
 alembic init`폴더 이름`
 - Quick Start
 alembic.ini
-sqlalchemy.url = driver://user:pass@localhost/dbnamesqlalchemy.url = mysql+pymysql://user:pass@localhost/dbname
+sqlalchemy.url = driver://user:pass@localhost/dbname
+sqlalchemy.url = mysql+pymysql://user:pass@localhost/dbname
 driver는 사용하는 SQL + 라이브러리로 설정해주면 됩니다.
 env.py 수정하기
 automigration 하도록 설정하고 싶을 때
@@ -22,7 +23,8 @@ Migration
 		빈 파일이 만들어지며 버전업할 사람이 직접 SQL문 작성하여 올릴 수 있다.
 	• 자동으로 alembic 버전 파일 만들기
  		alembic revision --autogenerate -m '제목, 간단한 설명을 넣어주세요'
-		변경사항이 적용된 버전 파일 만들어진다.아직 autogenerate가 정확히 어떻게 동작하는지 모르겠다. base.metadata를 읽긴하는데.. 아오!!!!!
+		변경사항이 적용된 버전 파일 만들어진다.
+		아직 autogenerate가 정확히 어떻게 동작하는지 모르겠다. base.metadata를 읽긴하는데.. 아오!!!!!
 	• migration 실행하기
  		alembic upgrade head
 		제일 최신의 버전 파일 적용하기
@@ -31,3 +33,11 @@ Migration
 		Table 'alembic_version'
 		migration 버전 관리 테이블을 지칭한다.처음으로 migration할 때 alembic.ini에 설정한 스키마에 생긴다.
 출처: https://sssunho.tistory.com/1 [개발자 Sunho Lee:티스토리]
+
+
+
+sqlite3 
+
+alembic.ini
+sqlalchemy.url = sqlite:///test.db
+alebmic upgrade head 

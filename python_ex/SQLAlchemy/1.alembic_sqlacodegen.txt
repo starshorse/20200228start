@@ -2,6 +2,9 @@ pip install alembic==1.13.1
 pip install sqlalchemy==2.0.0
 pip install sqlacodegen_v2   
 
+-----------------------------------
+
+alemic revision --autogenerate -m 'metadata import'  
 
 env.py 
 from KORSP_tbl import metadata 
