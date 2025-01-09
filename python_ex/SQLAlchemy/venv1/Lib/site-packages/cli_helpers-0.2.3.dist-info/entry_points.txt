@@ -1,0 +1,5 @@
+[distutils.commands]
+docs = tasks:docs
+lint = tasks:lint
+test = tasks:test
+

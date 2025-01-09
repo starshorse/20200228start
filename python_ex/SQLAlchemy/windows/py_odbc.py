@@ -1,3 +1,13 @@
+"""
+20241228 - error. 
+        (venv) C:\workdir\gitdn\20200228start\python_ex\SQLAlchemy\windows>python py_odbc.py
+    Traceback (most recent call last):
+      File "py_odbc.py", line 50, in <module>
+        print( engine.table_names() )
+    AttributeError: 'Engine' object has no attribute 'table_names'
+
+ sqlalchemy==1.4.0 사용 
+"""
 import pandas as pd
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy.engine import URL
@@ -36,9 +46,11 @@ connection_url = URL.create(
         query={"driver": "ODBC Driver 17 for SQL Server"},
         )
 
-
 engine = create_engine(connection_url)
-conn = engine.connect()
+
+def odbc_conn(): 
+    conn = engine.connect()
+    return conn 
 
 #metadata = MetaData( bind= conn, reflect= True )
 """
@@ -47,4 +59,5 @@ conn = engine.connect()
  inspection.get_tables_names() 
 
 """
+odbc_conn() 
 print( engine.table_names() ) 

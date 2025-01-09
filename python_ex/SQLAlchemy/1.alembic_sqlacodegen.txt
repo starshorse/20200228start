@@ -1,0 +1,15 @@
+pip install alembic==1.13.1
+pip install sqlalchemy==2.0.0
+pip install sqlacodegen_v2   
+
+-----------------------------------
+
+alemic revision --autogenerate -m 'metadata import'  
+
+env.py 
+from KORSP_tbl import metadata 
+target_metadata = metadata 
+
+
+sqlacodegen_v2 mssql+pymssql://sa:1234@localhost/config > confg_tbl.py 
+sqlacodegen_v2 mssql+pyodbc://sa:1234@localhost:1433/KORSP?driver=ODBC+Driver+17+for+SQL+Server > KORSP_tbl.py 

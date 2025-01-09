@@ -1,0 +1,59 @@
+Python에서 SQLAlchemy로 MS-SQL 연동하기
+Excelsior-JH
+                           2017. 2. 20. 17:50
+			
+		
+Java에서는 Mybatis를 통해 SQL 연동을 아주 간편하게 할 수 있다. 
+이런 것을 ORM이라고 하는데, ORM(Object Relation Mapping)이란 오브젝트와 RDB사이에 존재하는 개념과 접근방법, 성격의 차이 때문에 요구되는 불편한 작업을 제거해줘서 개발자가 오브젝트를 가지고 정보를 다루면 ORM프레임워크가 이를 RDB에 적절한 형태로 변환해 주거나 그 반대로 RDB에 저장되어 있는 정보를 오브젝트가 다루기 쉬운 형태로 변환해 주는 것을 말한다.
+
+Python에도 Java처럼 ORM이 있을까 구글링해본 결과, SQLAlchemy라는게 있었다. 이번 포스팅에서는 SQLAlchemy를 통해 Python에서 MS-SQL을 연동해 보도록 하겠다.
+(이글은 http://docs.sqlalchemy.org/en/latest/orm/tutorial.html 이 곳을 참고하여 작성함)
+
+1. SQLAlchemy 설치
+먼저, sqlalchemy를 사용하려면 sqlalchemy 패키지를 설치해야 한다. pip 명령어를 통해 설치하는 방법은 여기를 참고하면 된다.
+pip install sqlalchemy
+
+2. MS-SQL과 연동
+sqlalchemy를 import하여 create_engine( )함수를 통해 MS-SQL과 접속한다. 다른 DB와의 연결은 아래의 링크를 참조하면 접속하는 방법이 나온다.
+http://docs.sqlalchemy.org/en/rel_0_9/core/engines.html 
+아래의 코드에서 echo는 로그를 위한 플래그이다. 순수 SQL코드를 보여준다. 
+from sqlalchemy import create_engine
+engine = create_engine('mssql+pymssql://username:passwd@host/database', echo=True)
+
+3. 매핑 선언
+ORM을 사용할 때 처리할 데이터베이스의 테이블을 설명하고 핻아 테이블에 매핑(Mapping) 될 클래스를 정의하는 작업이 필요하다. 처리할 작업이 필요한 테이블에 대해서 Mapping 클래스를 생성해주면 된다.
+sqlalchemy의 declarative_base( )를 사용하여 클래스를 생성한다. 클래스를 생성할 때는 '__tablename__'' 과 ''Primary key''가 반드시 필요하다. 
+아래의 코드의 __repr__( )함수는 선택사항이므로 작성을 굳이 안해줘도 된다.
+
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, SMALLINT, BIGINT, String
+# 매핑 선언
+Base = declarative_base()
+# Mapping 클래스 생성
+class 테이블명(Base): # 식별하기 쉽게 테이블명으로 지정
+    __tablename__ = '테이블명'
+    col1 = Column(SMALLINT)
+    col2 = Column(BIGINT, primary_key=True)
+    col3 = Column(String)
+    col4 = Column(String)
+def __init__(self, col1, col2, col3, col4):
+        self.col1 = col1
+        self.col2 = col2
+        self.col3 = col3
+        self.col4 = col4
+def __repr__(self):
+        return "<테이블명('%d', '%d', '%s', '%s')>" % (self.col1, self.col2, self.col3, self.col4)
+
+4. 세션 생성
+'Session'을 통해 데이터베이스를 다룰 수 있다. create_engine( )을 import 했던 같은 레벨에서 session을 생성하기 위한, sessionmaker를 import 할 수 있다.
+from sqlalchemy.orm import sessionmaker
+# session 생성
+Session = sessionmaker(bind=engine)
+session = Session()
+
+5. 테스트
+이제 제대로 연결이 되었는지 아래의 코드를 통해 테스트 해본다.
+for row in session.query(클래스명=테이블명): # 클래스 명을 테이블 명으로 해서 동일함
+    print(row.col1)
+출처: https://excelsior-cjh.tistory.com/77 [EXCELSIOR:티스토리]
+
