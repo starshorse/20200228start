@@ -5,7 +5,7 @@ from  helloworld.pykrx_api._3days_rule._3days_rule import _3days_rule_main_kospi
 def _3days_rule_kospi():
     df = get_market_fundamental_limit_name()
     #print( df ); 
-    codes = df['종목코드'].to_list() 
+    codes = df['종목코드'].to_list() # to_list() 
     names = df['종목명'].to_list() 
     codes_dic = {}
     for key in codes:
@@ -36,7 +36,7 @@ def _3days_rule_etf():
 
 def _3days_rule_etf_div():
     df = get_symbols_code_etf()
-    df = df[df['종목명'].str.contains('배당')] 
+    df = df[df['종목명'].str.contains('배당')]  # df.str.contains 
     #print( df );
     codes = df['종목코드'].to_list() 
     names = df['종목명'].to_list() 

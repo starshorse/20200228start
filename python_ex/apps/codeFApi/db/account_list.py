@@ -1,5 +1,7 @@
 """
-pip install sqlalchemy 
+pip install sqlalchemy=1.4.3 
+
+- DB name : ezoffice 
 """
 from dotenv import load_dotenv
 from pathlib import Path 
@@ -44,7 +46,7 @@ def insert_accountList( org_code , account_list_data, db_name='ezchemtech' ):
     """
     [
     'seq', 
-    '기관코드', 
+w'기관코드', 
     'resAccount', 
     'resAccountBalance', 
     'resAccountDeposit', 

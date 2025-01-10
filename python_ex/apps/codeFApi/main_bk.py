@@ -76,7 +76,7 @@ for bk_name in ezct_accountList:
                         'organization': org_codes[bk_name],
                         'loginType':'0',
                         'password':publicEncRSA(pubKey, cerPw ),    # 인증서 비밀번호 입력
-                        'derFile': cert_data['derFileB64'] ,                        # 인증서 인증서 DerFile
+                        'derFile': cert_data['derFileB64'] ,                       # 인증서 인증서 DerFile
                         'keyFile': cert_data['keyFileB64']                         # 인증서 인증서 KeyFile
                     }
                 ]
@@ -130,6 +130,9 @@ def update_accountTransaction_foreign( token, db_name='ezhemtech' ):
     iso_today = today.strftime('%Y%m%d'); 
     rows = get_accountList();
     #delete_accountTransaction_m(); 
+#######################################################################################
+# SQLAlchemy recoard ?  CORE , ORM으로 처리 가능 
+#######################################################################################
     for u in rows.all():
         #print( u._mapping );
         if( u._mapping['resAccountDeposit'] == 20 ):
@@ -172,6 +175,9 @@ def update_accountTransaction( token, db_name='ezchemtech' ):
     iso_today = today.strftime('%Y%m%d'); 
     rows = get_accountList();
     #delete_accountTransaction_m(); 
+#######################################################################################
+# SQLAlchemy recoard ?  CORE , ORM으로 처리 가능 
+#######################################################################################
     for u in rows.all():
         #print( u._mapping );
         if( u._mapping['resAccountDeposit'] == 11 ):
@@ -195,6 +201,9 @@ def update_accountTransaction( token, db_name='ezchemtech' ):
             accountTransaction_data = list( accountTransaction_data ); 
             if len( accountTransaction_data ) == 0:
                 continue 
+#######################################################################################
+# SQLAlchemy recoard ?  CORE , ORM으로 처리 가능 
+#######################################################################################
             for x in accountTransaction_data:
                 x['기관코드'] =  u._mapping['기관코드'] 
                 x['resAccount'] = u._mapping['resAccount'] 
@@ -207,6 +216,9 @@ def update_accountTransaction( token, db_name='ezchemtech' ):
 if __name__=='__main__':
     rtn_result = {'STATUS': {'UPDATE_ACCOUNT': -1 , 'UPDATE_TR_KR': -1 , 'UPDATE_TR_FOR': -1 }}
     result = get_serviceList_codeFApi('계좌거래목록') 
+#######################################################################################
+# SQLAlchemy recoard ?  CORE , ORM으로 처리 가능 
+#######################################################################################
     for u in result: 
         # Get from DB. 
         if u._mapping['enabled'] == 0: 

@@ -1,0 +1,121 @@
+Custom Commands
+----------------
+The flask command is implemented using Click. See that project’s documentation for full information about writing commands.
+
+This example adds the command create-user that takes the argument name.
+
+import click
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.cli.command("create-user")
+@click.argument("name")
+def create_user(name):
+    ...
+$ flask create-user admin
+  -----------------------
+This example adds the same command, but as user create, a command in a group. This is useful if you want to organize multiple related commands.
+
+import click
+from flask import Flask
+from flask.cli import AppGroup
+
+app = Flask(__name__)
+user_cli = AppGroup('user')
+
+@user_cli.command('create')
+@click.argument('name')
+def create_user(name):
+    ...
+
+app.cli.add_command(user_cli)
+$ flask user create demo
+-------------------------
+See Running Commands with the CLI Runner for an overview of how to test your custom commands.
+
+Registering Commands with Blueprints
+=====================================
+If your application uses blueprints, you can optionally register CLI commands directly onto them. When your blueprint is registered onto your application, the associated commands will be available to the flask command. By default, those commands will be nested in a group matching the name of the blueprint.
+
+from flask import Blueprint
+
+bp = Blueprint('students', __name__)
+
+@bp.cli.command('create')
+@click.argument('name')
+def create(name):
+    ...
+
+app.register_blueprint(bp)
+$ flask students create alice
+------------------------------
+You can alter the group name by specifying the cli_group parameter when creating the Blueprint object, or later with app.register_blueprint(bp, cli_group='...'). The following are equivalent:
+
+bp = Blueprint('students', __name__, cli_group='other')
+# or
+app.register_blueprint(bp, cli_group='other')
+$ flask other create alice
+Specifying cli_group=None will remove the nesting and merge the commands directly to the application’s level:
+
+bp = Blueprint('students', __name__, cli_group=None)
+# or
+app.register_blueprint(bp, cli_group=None)
+$ flask create alice
+Application Context
+Commands added using the Flask app’s cli or FlaskGroup command() decorator will be executed with an application context pushed, so your custom commands and parameters have access to the app and its configuration. The with_appcontext() decorator can be used to get the same behavior, but is not needed in most cases.
+
+import click
+from flask.cli import with_appcontext
+
+@click.command()
+@with_appcontext
+def do_work():
+    ...
+
+app.cli.add_command(do_work)
+Plugins
+-------
+Flask will automatically load commands specified in the flask.commands entry point. This is useful for extensions that want to add commands when they are installed. Entry points are specified in pyproject.toml:
+
+[project.entry-points."flask.commands"]
+my-command = "my_extension.commands:cli"
+Inside my_extension/commands.py you can then export a Click object:
+
+import click
+
+@click.command()
+def cli():
+    ...
+Once that package is installed in the same virtualenv as your Flask project, you can run flask my-command to invoke the command.
+
+Custom Scripts
+==============
+When you are using the app factory pattern, it may be more convenient to define your own Click script. Instead of using --app and letting Flask load your application, you can create your own Click object and export it as a console script entry point.
+
+Create an instance of FlaskGroup and pass it the factory:
+
+import click
+from flask import Flask
+from flask.cli import FlaskGroup
+
+def create_app():
+    app = Flask('wiki')
+    # other setup
+    return app
+
+@click.group(cls=FlaskGroup, create_app=create_app)
+def cli():
+    """Management script for the Wiki application."""
+Define the entry point in pyproject.toml:
+
+[project.scripts]
+wiki = "wiki:cli"
+Install the application in the virtualenv in editable mode and the custom script is available. Note that you don’t need to set --app.
+
+$ pip install -e .
+$ wiki run
+Errors in Custom Scripts
+When using a custom script, if you introduce an error in your module-level code, the reloader will fail because it can no longer load the entry point.
+
+The flask command, being separate from your code, does not have this issue and is recommended in most cases.

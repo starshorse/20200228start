@@ -1,3 +1,6 @@
+"""
+    df.pct_change().fillna(0)*100 전일대비 종가 증감.. 
+"""
 from pykrx import stock
 from dateutil.relativedelta import relativedelta 
 import datetime 
