@@ -13,3 +13,12 @@ target_metadata = metadata
 
 sqlacodegen_v2 mssql+pymssql://sa:1234@localhost/config > confg_tbl.py 
 sqlacodegen_v2 mssql+pyodbc://sa:1234@localhost:1433/KORSP?driver=ODBC+Driver+17+for+SQL+Server > KORSP_tbl.py 
+
+
+Examples:
+sqlacodegen postgresql:///some_local_db
+sqlacodegen mysql+oursql://user:password@localhost/dbname
+sqlacodegen sqlite:///database.db
+To see the full list of options:
+sqlacodegen --help
+

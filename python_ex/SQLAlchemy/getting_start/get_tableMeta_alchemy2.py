@@ -1,3 +1,6 @@
+"""
+    SQLALchemy==2.0.0 
+"""
 import os 
 from sqlalchemy import create_engine,text, inspect 
 import sqlalchemy as db 
@@ -25,12 +28,13 @@ engine = create_engine(f'mssql+pymssql://{ sqlserver_id }:{ sqlserver_password}@
 #print( df)
 
 conn = engine.connect() 
+metadata = db.MetaData() #extracting the metadata
+
+# SQLALchemy==1.4.3 에서만 동작하는 코드 
 #pdb.set_trace();
 # print( engine.table_names()) 
 # inspection = inspect(engine)
 # print( inspection.get_tables_names() )
-
-metadata = db.MetaData() #extracting the metadata
 #account_list = db.Table(f'TB_{ db_name }_계좌목록_codeFApi', metadata, autoload=True, 
 #autoload_with=engine) #Table object
 

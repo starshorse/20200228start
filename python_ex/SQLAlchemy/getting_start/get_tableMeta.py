@@ -18,6 +18,10 @@
         sa.PrimaryKeyConstraint('종목코드')
     )
 
+    result = conn.execute( selEnt )
+    for row in result:
+        row._mapping['종목코드']
+
 """
 import os 
 from sqlalchemy import create_engine,text, select ,insert  
