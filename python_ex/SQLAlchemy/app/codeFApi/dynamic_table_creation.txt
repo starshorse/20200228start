@@ -1,0 +1,45 @@
+We are spoiled by SQLAlchemy.
+What follows below is taken directly from the tutorial,
+and is really easy to setup and get working.
+
+And because it is done so often,
+the documentation moved to full declarative in Aug 2011.
+
+Setup your environment (I'm using the SQLite in-memory db to test):
+
+>>> from sqlalchemy import create_engine
+>>> engine = create_engine('sqlite:///:memory:', echo=True)
+>>> from sqlalchemy import Table, Column, Integer, String, MetaData
+>>> metadata = MetaData()
+Define your table:
+
+>>> players_table = Table('players', metadata,
+...   Column('id', Integer, primary_key=True),
+...   Column('name', String),
+...   Column('score', Integer)
+... )
+>>> metadata.create_all(engine) # create the table
+If you have logging turned on, you'll see the SQL that SQLAlchemy creates for you.
+
+Define your class:
+
+>>> class Player(object):
+...     def __init__(self, name, score):
+...         self.name = name
+...         self.score = score
+...
+...     def __repr__(self):
+...        return "<Player('%s','%s')>" % (self.name, self.score)
+Map the class to your table:
+
+>>> from sqlalchemy.orm import mapper
+>>> mapper(Player, players_table) 
+<Mapper at 0x...; Player>
+Create a player:
+
+>>> a_player = Player('monty', 0)
+>>> a_player.name
+'monty'
+>>> a_player.score
+0
+That's it, you now have a your player table.
