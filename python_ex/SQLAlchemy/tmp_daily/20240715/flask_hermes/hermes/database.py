@@ -20,7 +20,21 @@ def init_migrate( app ):
     db = SQLAlchemy( app )
     migrate = Migrate()
     migrate.init_app( app , db ) 
+    """
     from hermes.init_models import init_models
     init_models(db)
+    """
+    class Post(db.Model):
+        __tablename__ = 'blogposts'
+
+        id = db.Column(db.Integer, primary_key=True)
+        title = db.Column(db.String(120))
+        content = db.Column(db.Text)
+        date = db.Column(db.DateTime)
+        tag = db.Column(db.String(120))
+        cover = db.Column(db.String(120))
+
+        def __repr__(self):
+             return '<Post: %r>' % (self.title)
     return db 
 
