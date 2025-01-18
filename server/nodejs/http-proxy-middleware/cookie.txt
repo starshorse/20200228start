@@ -1,0 +1,141 @@
+You may use rewrite cookie path like this
+=========================================
+
+onProxyRes: function(proxyRes, req, res) {
+          var cookies = proxyRes.headers['set-cookie'];
+          var cookieRegex = /Path=\/mypath\//i;
+          
+          if (cookies) {
+            var newCookie = cookies.map(function(cookie) {
+              if (cookieRegex.test(cookie)) {
+                return cookie.replace(cookieRegex, 'Path=/targetpath');
+              }
+              return cookie;
+            });
+            //rewite set-cookie header
+            delete proxyRes.headers['set-cookie'];
+            proxyRes.headers['set-cookie'] = newCookie;
+          }
+        }
+
+
+http-proxy-middleware, how to copy all/cookie headers
+Ask Question
+Asked 7 years, 5 months ago
+Modified 2 years, 9 months ago
+Viewed 26k times
+Report this ad
+8
+I am using lite server by John Papa with HTTP proxy middleware by chimurai as a dev server. the problem is with my session cookie, I cannot persist the session cookie that comes from the real server. I saw this solution:  https://github.com/chimurai/http-proxy-middleware/issues/78
+but I see no resemblance to my bs-config.js:
+varproxy = require('http-proxy-middleware');
+module.exports= {
+    port: 3003,
+    server: {
+        middleware: {
+            1: proxy('demo/webservice/jaxrs', {
+                target: 'https://localhost:8443',
+                secure: false, // disable SSL verificationchangeOrigin: true// for vhosted sites, changes host header to match to target's host}),
+            2: require('connect-history-api-fallback')({index: '/index.html', verbose: true})
+        }
+    }
+};
+Does someone knows how to merge this two?
+UPDATE: this is part of the response headers:
+set-cookie:JSESSIONID=620083CD7AEB7A6CC5772AC800E673E3; Path=/appServer/webservice/jaxrs; Securestrict-transport-security:max-age=31622400; includeSubDomains
+Transfer-Encoding:chunked
+UPDATE2: I think my config should look like this:
+
+Var proxy = require('http-proxy-middleware');
+Function relayRequestHeaders(proxyReq, req) {
+    Object.keys(req.headers).forEach(function(key) {
+        proxyReq.setHeader(key, req.headers[key]);
+    });
+};
+Function relayResponseHeaders(proxyRes, req, res) {
+    Object.keys(proxyRes.headers).forEach(function(key) {
+            res.append(key, proxyRes.headers[key]);
+        });
+};
+module.exports= {
+    port: 3003,
+    server: {
+        middleware: {
+            1: proxy('/skybox', {
+                target: 'https://localhost:8443',
+                secure: false, // disable SSL verificationchangeOrigin: true,   // for vhosted sites, changes host header to match to target's host
+                onProxyReq: relayRequestHeaders,
+                onProxyRes: relayResponseHeaders
+            }),
+            2: require('connect-history-api-fallback')({index: '/index.html', verbose: true})
+        }
+    }
+};
+but now res.append is undefined :(
+5 Answers
+Sorted by:
+6
+try it:
+varcookie;
+functionrelayRequestHeaders(proxyReq, req) {
+  if(cookie) {
+    proxyReq.setHeader('cookie', cookie);
+  }
+};
+functionrelayResponseHeaders(proxyRes, req, res) {
+  varproxyCookie = proxyRes.headers["set-cookie"];
+  if(proxyCookie) {
+    cookie = proxyCookie;
+  }
+};
+It's working with lite-server
+
+출처: <https://stackoverflow.com/questions/38950292/http-proxy-middleware-how-to-copy-all-cookie-headers> 
+
+
+
+Persisting a cookie based session over node-http-proxy
+Ask Question
+Asked 11 years, 9 months ago
+Modified 2 years, 11 months ago
+Viewed 19k times
+Report this ad
+13
+I have a simple Express based Node.js web server that I'm using for development of a JavaScript application. I set up the server to use node-http-proxy to proxy API requests the application makes to a Jetty server that is running on a different domain and port. This setup has been working flawlessly until I started to run into problems with session management.
+Upon authentication the application server returns a cookie with an auth token representing the server session. When I run the JS application off of my filesystem (file://) I can see that once client receives the cookie, it is sent in all the subsequent API requests. When I run the JS app on the node server and API calls are proxied through node-http-proxy (RoutingProxy) the request headers never include the cookie.
+Is there something I need to handle manually to support this type of session persistence through the proxy? I've been digging through the node-http-proxy code but it is a little over my head because I am new to Node.
+https://gist.github.com/2475547 or:
+varexpress = require('express'),
+    routingProxy = require('http-proxy').RoutingProxy(),
+    app = express.createServer();
+varapiVersion = 1.0,
+    apiHost = my.host.com,
+    apiPort = 8080;
+functionapiProxy(pattern, host, port) {
+    returnfunction(req, res, next) {
+        if(req.url.match(pattern)) {
+            routingProxy.proxyRequest(req, res, {host: host, port: port});
+        } else{
+            next();
+        }
+    }
+}
+app.configure(function() {
+    // API proxy middlewareapp.use(apiProxy(newRegExp('\/'+ apiVersion + '\/.*'), apiHost, apiPort));
+// Static content middlewareapp.use(express.methodOverride());
+    app.use(express.bodyParser());
+    app.use(express.static(__dirname));
+    app.use(express.errorHandler({
+        dumpExceptions: true, 
+        showStack: true}));
+    app.use(app.router);
+});
+app.listen(3000);
+5 Answers
+Sorted by:
+5
+I did what you are asking by manually looking at the response, seeing if it is a set-cookie, snipping off the JSESSSIONID, storing it in a variable, and passing it on all subsequent requests as a header. This way the reverse proxy acts as a cookie.
+on('proxyReq', function(proxyReq){ proxyReq.setHeader('cookie', 'sessionid='+ cookieSnippedValue) 
+
+출처: <https://stackoverflow.com/questions/10291000/persisting-a-cookie-based-session-over-node-http-proxy> 
+

@@ -23,6 +23,7 @@ def init_models( db ):
         id = db.Column(db.Integer, primary_key=True)
         title = db.Column(db.String(120))
         content = db.Column(db.Text)
+        owner = db.Column( db.String(120))
         date = db.Column(db.DateTime)
         tag = db.Column(db.String(120))
         cover = db.Column(db.String(120))

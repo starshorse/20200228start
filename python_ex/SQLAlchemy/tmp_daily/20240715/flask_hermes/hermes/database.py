@@ -18,12 +18,13 @@ def init_migrate( app ):
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://sa:1234@localhost/config?driver=ODBC Driver 17 for SQL Server'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test_migrate.db'
     db = SQLAlchemy( app )
+    """
     migrate = Migrate()
     migrate.init_app( app , db ) 
-    """
     from hermes.init_models import init_models
     init_models(db)
     """
+    migrate = Migrate( app , db )
     class Post(db.Model):
         __tablename__ = 'blogposts'
 

@@ -16,7 +16,7 @@
   },
   "ezoffice": {
     "username": "sqlserver",
-    "password": "!csdlwlof#1286",
+    "password": "!csdlwlof****",
     "database": "ezoffice",
     "host": "34.64.60.213",
     "port":"1433",

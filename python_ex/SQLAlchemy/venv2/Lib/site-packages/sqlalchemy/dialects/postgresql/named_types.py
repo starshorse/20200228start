@@ -1,5 +1,5 @@
-# postgresql/named_types.py
-# Copyright (C) 2005-2023 the SQLAlchemy authors and contributors
+# dialects/postgresql/named_types.py
+# Copyright (C) 2005-2025 the SQLAlchemy authors and contributors
 # <see AUTHORS file>
 #
 # This module is part of SQLAlchemy and is released under
@@ -20,6 +20,7 @@ from ...sql import elements
 from ...sql import roles
 from ...sql import sqltypes
 from ...sql import type_api
+from ...sql.base import _NoArg
 from ...sql.ddl import InvokeCreateDDLBase
 from ...sql.ddl import InvokeDropDDLBase
 
@@ -161,8 +162,7 @@ class EnumDropper(NamedTypeDropper):
             self.connection.execute(DropEnumType(enum))
 
 
-class ENUM(NamedType, sqltypes.NativeForEmulated, sqltypes.Enum):
-
+class ENUM(NamedType, type_api.NativeForEmulated, sqltypes.Enum):
     """PostgreSQL ENUM type.
 
     This is a subclass of :class:`_types.Enum` which includes
@@ -185,8 +185,10 @@ class ENUM(NamedType, sqltypes.NativeForEmulated, sqltypes.Enum):
     :meth:`_schema.Table.drop`
     methods are called::
 
-        table = Table('sometable', metadata,
-            Column('some_enum', ENUM('a', 'b', 'c', name='myenum'))
+        table = Table(
+            "sometable",
+            metadata,
+            Column("some_enum", ENUM("a", "b", "c", name="myenum")),
         )
 
         table.create(engine)  # will emit CREATE ENUM and CREATE TABLE
@@ -197,21 +199,17 @@ class ENUM(NamedType, sqltypes.NativeForEmulated, sqltypes.Enum):
     :class:`_postgresql.ENUM` independently, and associate it with the
     :class:`_schema.MetaData` object itself::
 
-        my_enum = ENUM('a', 'b', 'c', name='myenum', metadata=metadata)
+        my_enum = ENUM("a", "b", "c", name="myenum", metadata=metadata)
 
-        t1 = Table('sometable_one', metadata,
-            Column('some_enum', myenum)
-        )
+        t1 = Table("sometable_one", metadata, Column("some_enum", myenum))
 
-        t2 = Table('sometable_two', metadata,
-            Column('some_enum', myenum)
-        )
+        t2 = Table("sometable_two", metadata, Column("some_enum", myenum))
 
     When this pattern is used, care must still be taken at the level
     of individual table creates.  Emitting CREATE TABLE without also
     specifying ``checkfirst=True`` will still cause issues::
 
-        t1.create(engine) # will fail: no such type 'myenum'
+        t1.create(engine)  # will fail: no such type 'myenum'
 
     If we specify ``checkfirst=True``, the individual table-level create
     operation will check for the ``ENUM`` and create if not exists::
@@ -230,21 +228,19 @@ class ENUM(NamedType, sqltypes.NativeForEmulated, sqltypes.Enum):
         my_enum.create(engine)
         my_enum.drop(engine)
 
-    .. versionchanged:: 1.0.0 The PostgreSQL :class:`_postgresql.ENUM` type
-       now behaves more strictly with regards to CREATE/DROP.  A metadata-level
-       ENUM type will only be created and dropped at the metadata level,
-       not the table level, with the exception of
-       ``table.create(checkfirst=True)``.
-       The ``table.drop()`` call will now emit a DROP TYPE for a table-level
-       enumerated type.
-
     """
 
     native_enum = True
     DDLGenerator = EnumGenerator
     DDLDropper = EnumDropper
 
-    def __init__(self, *enums, name: str, create_type: bool = True, **kw):
+    def __init__(
+        self,
+        *enums,
+        name: Union[str, _NoArg, None] = _NoArg.NO_ARG,
+        create_type: bool = True,
+        **kw,
+    ):
         """Construct an :class:`_postgresql.ENUM`.
 
         Arguments are the same as that of
@@ -280,7 +276,19 @@ class ENUM(NamedType, sqltypes.NativeForEmulated, sqltypes.Enum):
                 "non-native enum."
             )
         self.create_type = create_type
-        super().__init__(*enums, name=name, **kw)
+        if name is not _NoArg.NO_ARG:
+            kw["name"] = name
+        super().__init__(*enums, **kw)
+
+    def coerce_compared_value(self, op, value):
+        super_coerced_type = super().coerce_compared_value(op, value)
+        if (
+            super_coerced_type._type_affinity
+            is type_api.STRINGTYPE._type_affinity
+        ):
+            return self
+        else:
+            return super_coerced_type
 
     @classmethod
     def __test_init__(cls):
@@ -301,6 +309,9 @@ class ENUM(NamedType, sqltypes.NativeForEmulated, sqltypes.Enum):
         kw.setdefault("values_callable", impl.values_callable)
         kw.setdefault("omit_aliases", impl._omit_aliases)
         kw.setdefault("_adapted_from", impl)
+        if type_api._is_native_for_emulated(impl.__class__):
+            kw.setdefault("create_type", impl.create_type)
+
         return cls(**kw)
 
     def create(self, bind=None, checkfirst=True):
@@ -374,14 +385,12 @@ class DOMAIN(NamedType, sqltypes.SchemaType):
     A domain is essentially a data type with optional constraints
     that restrict the allowed set of values. E.g.::
 
-        PositiveInt = Domain(
-            "pos_int", Integer, check="VALUE > 0", not_null=True
-        )
+        PositiveInt = DOMAIN("pos_int", Integer, check="VALUE > 0", not_null=True)
 
-        UsPostalCode = Domain(
+        UsPostalCode = DOMAIN(
             "us_postal_code",
             Text,
-            check="VALUE ~ '^\d{5}$' OR VALUE ~ '^\d{5}-\d{4}$'"
+            check="VALUE ~ '^\d{5}$' OR VALUE ~ '^\d{5}-\d{4}$'",
         )
 
     See the `PostgreSQL documentation`__ for additional details
@@ -390,7 +399,7 @@ class DOMAIN(NamedType, sqltypes.SchemaType):
 
     .. versionadded:: 2.0
 
-    """
+    """  # noqa: E501
 
     DDLGenerator = DomainGenerator
     DDLDropper = DomainDropper
@@ -403,10 +412,10 @@ class DOMAIN(NamedType, sqltypes.SchemaType):
         data_type: _TypeEngineArgument[Any],
         *,
         collation: Optional[str] = None,
-        default: Optional[Union[str, elements.TextClause]] = None,
+        default: Union[elements.TextClause, str, None] = None,
         constraint_name: Optional[str] = None,
         not_null: Optional[bool] = None,
-        check: Optional[str] = None,
+        check: Union[elements.TextClause, str, None] = None,
         create_type: bool = True,
         **kw: Any,
     ):
@@ -450,7 +459,7 @@ class DOMAIN(NamedType, sqltypes.SchemaType):
         self.default = default
         self.collation = collation
         self.constraint_name = constraint_name
-        self.not_null = not_null
+        self.not_null = bool(not_null)
         if check is not None:
             check = coercions.expect(roles.DDLExpressionRole, check)
         self.check = check
@@ -460,6 +469,20 @@ class DOMAIN(NamedType, sqltypes.SchemaType):
     @classmethod
     def __test_init__(cls):
         return cls("name", sqltypes.Integer)
+
+    def adapt(self, impl, **kw):
+        if self.default:
+            kw["default"] = self.default
+        if self.constraint_name is not None:
+            kw["constraint_name"] = self.constraint_name
+        if self.not_null:
+            kw["not_null"] = self.not_null
+        if self.check is not None:
+            kw["check"] = str(self.check)
+        if self.create_type:
+            kw["create_type"] = self.create_type
+
+        return super().adapt(impl, **kw)
 
 
 class CreateEnumType(schema._CreateDropBase):
