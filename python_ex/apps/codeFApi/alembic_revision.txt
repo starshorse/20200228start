@@ -1,0 +1,67 @@
+    op.create_table('TB_Log_Collector',
+    sa.Column('seq', sa.BIGINT(), sa.Identity(always=False, start=1, increment=1), autoincrement=True, nullable=False),
+    sa.Column('query', sa.NVARCHAR(collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=False),
+    sa.Column('hostname', sa.NVARCHAR(length=50, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=False),
+    sa.Column('filepath', sa.NVARCHAR(collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('errormessage', sa.NVARCHAR(length=200, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('rownum', sa.INTEGER(), autoincrement=False, nullable=True),
+    sa.Column('target', sa.INTEGER(), autoincrement=False, nullable=True),
+    sa.Column('RegDate', mssql.DATETIMEOFFSET(), server_default=sa.text('(getdate())'), autoincrement=False, nullable=False),
+    sa.PrimaryKeyConstraint('seq', name='PK__TB_Log_C__DDDFBCBEA0171338')
+    )
+    op.create_table('TB_jupitor_관리회사',
+    sa.Column('seq', sa.INTEGER(), sa.Identity(always=False, start=1, increment=1), autoincrement=True, nullable=False),
+    sa.Column('RegDate', mssql.DATETIMEOFFSET(), server_default=sa.text('(getdate())'), autoincrement=False, nullable=False),
+    sa.Column('UpdateDate', mssql.DATETIMEOFFSET(), server_default=sa.text('(getdate())'), autoincrement=False, nullable=False),
+    sa.Column('name', sa.NVARCHAR(length=50, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('port', sa.INTEGER(), autoincrement=False, nullable=True),
+    sa.Column('dataPath', sa.NVARCHAR(length=100, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('imgUrl', sa.NVARCHAR(length=100, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('server_name', sa.NVARCHAR(length=50, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('db_name', sa.NVARCHAR(length=50, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('enabled', sa.INTEGER(), autoincrement=False, nullable=True),
+    sa.PrimaryKeyConstraint('seq', name='PK__TB_jupit__DDDFBCBE1779D513')
+    )
+    op.create_table('TB_bk_기관코드',
+    sa.Column('seq', sa.INTEGER(), sa.Identity(always=False, start=1, increment=1), autoincrement=True, nullable=False),
+    sa.Column('Code', sa.NVARCHAR(length=100, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=False),
+    sa.Column('기관명칭', sa.NVARCHAR(length=100, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=False),
+    sa.PrimaryKeyConstraint('seq', name='PK__TB_bk__DDDFBCBEB28ABD14')
+    )
+    op.create_table('TB_bullentinBoard',
+    sa.Column('seq', sa.INTEGER(), sa.Identity(always=False, start=1, increment=1), autoincrement=True, nullable=False),
+    sa.Column('user', sa.NVARCHAR(length=100, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=False),
+    sa.Column('title', sa.NVARCHAR(length=100, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=False),
+    sa.Column('contents', sa.NVARCHAR(collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('video_url', sa.NVARCHAR(length=100, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('regDate', mssql.DATETIMEOFFSET(), server_default=sa.text('(getdate())'), autoincrement=False, nullable=True),
+    sa.Column('hits', sa.INTEGER(), server_default=sa.text('((0))'), autoincrement=False, nullable=True),
+    sa.PrimaryKeyConstraint('seq', name='PK__TB_bulle__DDDFBCBEB28ABD14')
+    )
+    op.create_table('TB_Log',
+    sa.Column('seq', sa.INTEGER(), sa.Identity(always=False, start=1, increment=1), autoincrement=True, nullable=False),
+    sa.Column('historyId', sa.BIGINT(), autoincrement=False, nullable=True),
+    sa.Column('requestType', sa.NVARCHAR(length=50, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('clientMachineType', sa.NVARCHAR(length=10, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('clientMachineHostName', sa.NVARCHAR(length=50, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('clientAppName', sa.NVARCHAR(length=128, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('clientAppPath', sa.NVARCHAR(length=256, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('clientAppVersion', sa.NVARCHAR(length=20, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('clientAppProcessedTime', mssql.DATETIMEOFFSET(), autoincrement=False, nullable=True),
+    sa.Column('rowNum', sa.INTEGER(), autoincrement=False, nullable=True),
+    sa.Column('dbName', sa.NVARCHAR(length=30, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('tableName', sa.NVARCHAR(length=30, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('keyValue', sa.INTEGER(), autoincrement=False, nullable=True),
+    sa.Column('queryType', sa.NVARCHAR(length=10, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('query', sa.NVARCHAR(collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('RegDate', mssql.DATETIMEOFFSET(), server_default=sa.text('(getdate())'), autoincrement=False, nullable=True),
+    sa.Column('UpdateDate', mssql.DATETIMEOFFSET(), server_default=sa.text('(getdate())'), autoincrement=False, nullable=True),
+    sa.PrimaryKeyConstraint('seq', name='PK__TB_Log__DDDFBCBEBC754344')
+    )
+    op.create_table('TB_uploadFile',
+    sa.Column('seq', sa.INTEGER(), sa.Identity(always=False, start=1, increment=1), autoincrement=True, nullable=False),
+    sa.Column('file_name', sa.NVARCHAR(length=255, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=False),
+    sa.Column('path', sa.NVARCHAR(length=255, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.Column('user_id', sa.NVARCHAR(length=255, collation='Korean_Wansung_CI_AS'), autoincrement=False, nullable=True),
+    sa.PrimaryKeyConstraint('seq', name='PK__TB_uploa__DDDFBCBEEDA70013')
+    )

@@ -1,5 +1,6 @@
 """
     /venv_0115/Script 
+    flask db migrate -m "initial version"
 """
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy

@@ -13,7 +13,7 @@ create_table_sellOut_tax_codeFApi, create_table_sellOut_tax, post_process_sellOu
 create_table_accountList_codeFApi as  create_table_accountList , create_table_transactions_codeFApi as create_table_transactions,
 create_table_account_krTransaction , create_table_account_foreignTransaction                          
 )
-
+# 20200228start/.env 파일 참조 
 dotenv_path = Path('../../../.env')
 load_dotenv( dotenv_path = dotenv_path ) 
 
@@ -22,7 +22,9 @@ sqlserver_id = os.environ.get('SQLSERVER_ID')
 sqlserver_password = os.environ.get('SQLSERVER_PASSWORD') 
 
 print( sqlserver_host );
-engine = create_engine(f'mssql+pymssql://{ sqlserver_id }:{ sqlserver_password}@{ sqlserver_host }/ezoffice', echo=True)
+# for windows pyodbc 
+# engine = create_engine(f'mssql+pymssql://{ sqlserver_id }:{ sqlserver_password}@{ sqlserver_host }/ezoffice', echo=True)
+engine = create_engine(f'mssql+pyodbc://{ sqlserver_id }:{ sqlserver_password }@{ sqlserver_host }/ezoffice?driver=ODBC Driver 17 for SQL Server', echo=True )
 
 conn = engine.connect() 
 print( engine.table_names()) 
