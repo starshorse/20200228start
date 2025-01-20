@@ -8,7 +8,7 @@ from sqlalchemy import create_engine,text
 import sqlalchemy as db 
 import pandas as pd 
 from datetime import datetime 
-from db.sql_list import (set_dbName ,create_table_sellIn_tax_codeFApi,  create_table_sellIn_tax , post_process_sellIn_init ,   
+from codeFApi.db.sql_list import (set_dbName ,create_table_sellIn_tax_codeFApi,  create_table_sellIn_tax , post_process_sellIn_init ,   
 create_table_sellOut_tax_codeFApi, create_table_sellOut_tax, post_process_sellOut_init ,
 create_table_accountList_codeFApi as  create_table_accountList , create_table_transactions_codeFApi as create_table_transactions,
 create_table_account_krTransaction , create_table_account_foreignTransaction                          
