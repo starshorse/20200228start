@@ -1,0 +1,59 @@
+Window nvm설치 / node.js 설치 / node.js 버전관리
+===============================================
+진진이랑 2023. 2. 21. 10:05
+
+
+nvm이란?
+nvm도 node version manager의 약자로, node.js의 버전관리 도구이다.
+node.js는 버전이 빠르게 바뀌어서 동일한 서버 환경 내에서 여러버전을 사용할 때 버전을 전환하면서 사용할 수 있어서 유용하다.
+
+nvm은(노드 버전 관리도구)는 여러버전의 node.js를 설치 하고, 버전을 선택해서 사용할 수 있어 많이 사용하는 방법이지만, Mac/Linux에서만 사용할 수 있어 window에서는 사용할 수 없다.
+Window환경에서는 nvm-windows를 설치하고, node.js와 npm을 설치하는 것이 좋다.
+
+ 
+nvm 및 node.js 설치과정
+
+nvm-windows github 레퍼지토리이다! 
+nvm-windows에 대한 설명들이 있으니 확인 할 수 있다.
+https://github.com/coreybutler/nvm-windows#installation--upgrades
+
+
+다운로드는 이 링크에서 가능하다!
+https://github.com/coreybutler/nvm-windows/releases
+ 
+Releases · coreybutler/nvm-windows
+
+A node.js version management utility for Windows. Ironically written in Go. - coreybutler/nvm-windows
+
+github.com
+ 
+
+하단에 보면 설치파일이 있으니 다운받아 설치하면 된다.
+nvm-windows 설치과정은 다음과 같다.
+
+설치완료!
+ 
+
+nvm_setup.exe 파일 설치 후, node.js 설치를 한다.
+
+1. 설치가 완료되면 PowerShell이나 Cmd를 관리자권한으로 프로그램을 연다.
+
+2. nvm list available 명령어를 입력한다. 설치 가능한 node.js 버전 목록을 확인 할 수 있다.
+
+v8.17.0 ( Carbon ) 
+
+
+3. nvm install <version> 명령어를 입력한다.
+LTS버전이 안정적이기 때문에 LTS중 제일 최신 버전으로 다운받는다.
+nvm install 18.14.1
+
+4. 설치가 완료되면, nvm ls 명령어를 입력한다.
+설치된 노드 버전의 목록을 확인 할 수 있다.
+
+5. 만약 버전 전환을 한다면,
+nvm use <version>을 입력하여 사용할 버전을 선택한다.
+ex : nvm use 10.16.3
+
+
+nvm없이 node.js 다운 받는 방법: 
+https://jin2rang.tistory.com/entry/Window-Nodejs-%EC%84%A4%EC%B9%98
