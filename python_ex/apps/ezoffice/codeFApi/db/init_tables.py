@@ -1,5 +1,26 @@
 """
-pip install sqlalchemy 
+#1
+    SQLAlchemy 2.0 (released 2023-01-26) requires that raw SQL queries be wrapped by sqlalchemy.text.
+    The general solution for this error message is to pass the query text to sqlalchemy.text()
+    from sqlalchemy import text
+    ...
+    query = text("SELECT * FROM some_table WHERE column1 > 1")
+
+#2
+    DatabaseError: ('HY000', '[HY000] [Microsoft][ODBC SQL Server Driver]Connection is busy with results for another hstmt (0) (SQLExecDirectW)')
+    I was facing the same issue. This was fixed when I used fetchall() function. The following the code that I used.
+    import pypyodbc as pyodbc
+    def connect(self, query):
+        con = pyodbc.connect(self.CONNECTION_STRING)
+        cursor = con.cursor()
+        print('Connection to db successful')
+        cmd = (query)
+        results = cursor.execute(cmd).fetchall()
+        df = pd.read_sql(query, con)
+        return df, results
+    Using cursor.execute(cmd).fetchall() instead of cursor.execute(cmd) resolved it. Hope this helps.
+
+   pip install sqlalchemy 
 """
 from dotenv import load_dotenv
 from pathlib import Path 
@@ -27,12 +48,13 @@ print( sqlserver_host );
 engine = create_engine(f'mssql+pyodbc://{ sqlserver_id }:{ sqlserver_password }@{ sqlserver_host }/ezoffice?driver=ODBC Driver 17 for SQL Server', echo=True )
 
 conn = engine.connect() 
-print( engine.table_names()) 
+#print( engine.table_names()) 
 # get service table info. 
 
 def get_serviceList_codeFApi( service = '전자세금계산서목록' ):
     metadata = db.MetaData()
-    serviceList  = db.Table('TB_고객서비스_codeFApi', metadata, autoload=True, autoload_with=engine ) 
+    #serviceList  = db.Table('TB_고객서비스_codeFApi', metadata, autoload=True, autoload_with=engine ) 
+    serviceList  = db.Table('TB_고객서비스_codeFApi', metadata, autoload_with=engine ) 
     query = serviceList.select().where( serviceList.columns.서비스명 ==  service )
     result = conn.execute( query )
     return result 
@@ -74,9 +96,9 @@ def init_accountTrService():
             query = create_table_transactions( db_name )
             #conn.execute( query )
             query = create_table_account_krTransaction( db_name )
-            conn.execute( query )
+            conn.execute( text( query ) ).fetchall()
             query = create_table_account_foreignTransaction( db_name )
-            conn.execute( query )
+            conn.execute( text( query ) ).fetchall()
 
 
 
