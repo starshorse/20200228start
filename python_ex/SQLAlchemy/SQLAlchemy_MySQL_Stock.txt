@@ -1,0 +1,64 @@
+- SQLite의 경우에는 pandas DataFrame의 to_sql메서드를 통해서 바로 db에 데이터입력이 가능하다.
+- 하지만 다른 종류의 database를 활용한다면 SQLAchemy를 활용해서 판다스의 데이터프레임 형태를 db에 저장할 수 있다.
+ 
+  pip install sqlalchemy
+sqlalchemy를 install하는 명령어(왠만하면 아나콘다 프롬프트에서 실행해야 잘 import 된다)
+ 
+1. 주식데이터 가져오기
+=====================
+  Import pandas as pd
+  Import pandas_datareader.data as web
+  Import datetime
+  start = datetime.datetime(2010, 1, 1)
+  end = datetime.datetime(2016, 6, 12)
+  df = web.DataReader("AAPL", "yahoo", start, end)
+  df
+
+애플(Apple)의 주식데이터를 pandas_datareader를 활용해서 가져와 df라는 변수에 할당. (애플의 티커인 AAPL 입력)
+  
+2. SQLAlchemy를 활용하여 MySQL db에 접근
+=======================================
+  From sqlalchemy import create_engine
+  Import pymysql
+  Import pandas as pd
+  db_connection_path = 'mysql+pymysql://[db유저이름]:[db password]@[host address]/[db name]'
+  db_connection = create_engine(db_connection_path)
+  conn = db_connection.connect()
+ 
+ 
+engine
+- engine은 sqlalchemy의 활용에 있어서 첫 단계이다.
+- create_engine()을 통해 활용가능하고 다양한 DB에 접근가능하는 기능을 갖는다.
+- 여기서는 db_connection이라는 변수에 create_engine()을 할당했다.
+ 
+ 
+경로명 설정
+MySQL db에 접근하기 위한 경로는
+'mysql+pymysql://[db유저이름]:[db password]@[host address]/[db name]' 에 따라서 적어주면 된다(대괄호는 생략)
+ 
+ex)  'mysql+pymysql://root:mypassword@localhost:1234/testdb'
+ 
+3. 데이터프레임의 데이터 MySQL db에 import
+==========================================
+ 
+  df.to_sql('AAPL', con=db_connection, if_exists='replace')
+  db.commit()
+  db.close()
+ 
+df.to_sql(name=['db의 테이블이름'], con=[create_engine()], if_exists='replace') 
+ DataFrame의 to_sql 메서드를 통해서 df에 저장되어있던 애플의 주가데이터를 'AAPL'이라는 테이블 명으로 저장
+(testdb라는 이름의 db에 저장)
+ if_exist='replace'는 만약 해당 테이블이 존재한다면 대체(replace)함을 의미한다. 'append'활용시 추가(append)함
+ 
+ 
+4. 저장된 데이터 확인
+====================
+  df=pd.read_sql_table('aapl', con=conn)
+  df
+
+MySQL에서 불러온 애플의 주가 데이터로 잘 저장됐음을 알 수 있다.
+MySQL Workbench로도 확인해본 결과 aapl이라는 테이블로 저장되어 있음을 알 수 있다.
+('AAPL'로 저장했지만 소문자인 'aapl'로 저장되었고 데이터프레임으로 불러올 때도 'aapl'로 입력해야 불러와졌다)
+
+출처: <https://patrickstar-jjh.tistory.com/46> 
+
