@@ -1,30 +1,15 @@
-﻿
-Trackback 0 Comment 2 
-
-
-
-
-
-
-
-
-qemu/kvm으로 윈도우 가상머신 사용하기
-
+﻿qemu/kvm으로 윈도우 가상머신 사용하기
+=====================================
 가상화 2012.10.25 04:51 
-
-
-
 
 KVM이 활성화 되어 있지 않으면 x86 CPU를 에뮬레이션하므로 매우 느리다. 호스트 운영체제에서 KVM 모듈이 올라가 있는지 lsmod로  확인한다. kvm 모듈과 kvm_intel 또는 kvm_amd 모듈이 올라가 있어야 한다. kvm 모듈이 없으면 리눅스 커널 컴파일 설정과 빌드를 다시 해야한다. (요즘 CPU는 거의 다 포함되어 있지만, 저가형 CPU 모델에는 Intel VT-x와 AMD SVM등의 하드웨어 지원 가상화 기능이 빠져있는 경우도 있다. 이런 CPU에서는 KVM을 사용 할 수 없다.)
 
 $ lsmod | grep kvm
 
 qemu 코드를 받아온다.
-
 $ git clone git://git.qemu.org/qemu.git
 
 컴파일 설정을 한다.
-
 $ ./configure --enable-kvm --enable-sdl --target-list=x86_64-softmmu --audio-drv-list=alsa
 •--enable-kvm: kvm 기능 활성화 한다.
 •--enalbe-sdl: 로컬에서 디스플레이 하기 위해서 SDL 라이브러리를 활성화 시킨다.
@@ -36,36 +21,17 @@ $ ./configure --enable-kvm --enable-sdl --target-list=x86_64-softmmu --audio-drv
 $ make
 
 $ sudo make install
-
-
-
-
 디폴트로 '/usr/local/bin' 디렉토리에 설치가 된다. 실행하기 편하게 심볼릭 링크도 하나 만들어두자.
-
 $ sudo ln -s /usr/local/bin/qemu-system-x86_64 /usr/local/bin/qemu
 
-
-
-
 하드디스크로 사용 할 이미지 파일을 생성한다.
-
 $ qemu-img create -f qcow windows7.img 50G
-
-
-
 
 qcow 방식은 COW(Copy-On-Write) 방식으로 동적으로 하드 디스크 이미지를 확장시키므로 디스크 공간을 절약할 수 있다. 하지만, 미리 사용할 디스크를 만들어 두는 것 보다 아무래도 느리다. 하드디스크 공간이 딱히 부족하다거나 하지 않으면 그냥 RAW 이미지를 만들자.
 
 $ qemu-img windows7.img 50G
 
-
-
-
-
-
-
 설치 할 Windows 7 ISO 파일을 cdrom으로 지정하고, cdrom 부터 부팅이 되도록 설정하여 가상 머신에 윈도우를 설치한다.
-
 
 $ qemu --enable-kvm -sdl -m 2048 -cpu kvm64 -vga vmware -soundhw ac97 -hda windows7.img -cdrom windows7.iso -boot dc
 •--enable-kvm: kvm 기능을 활성화 한다.

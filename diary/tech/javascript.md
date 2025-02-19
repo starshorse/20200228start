@@ -4,15 +4,15 @@ Javascript Skill
 ## hash function. 
 ```javascript
 class DirectAddressTable {
-constructor () {
-this.table = [];
-}
-getValue (value = -1) {
-return this.table[value];
-}
-getTable () {
-return this.table;
-}
+    constructor () {
+        this.table = [];
+    }
+    getValue (value = -1) {
+        return this.table[value];
+    }
+    getTable () {
+        return this.table;
+    }
 }
 const myTable = new DirectAddressTable();
 myTable.setValue(3);
@@ -23,23 +23,23 @@ console.log(myTable.getTable());
 [ <3 empty items>, 3, <6 empty items>, 10, <79 empty items>, 90 ]
 
 Array(91) [
-0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 90]
+    0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 90]
 
-function hashFunction (key) {
-return key % 10;
-}
+    function hashFunction (key) {
+        return key % 10;
+    }
 console.log(hashFunction(102948)); // 8
 console.log(hashFunction(191919191)); // 1
 
 const myTableSize = 5;
 const myHashTable = new Array(myTableSize);
 function hashFunction (key) {
-// 들어온 값을 테이블의 크기로 나눠주고 나머지를 반환하면 된다.
-return key % myTableSize;
+    // 들어온 값을 테이블의 크기로 나눠주고 나머지를 반환하면 된다.
+    return key % myTableSize;
 }
 myHashTable[hashFunction(1991)] = 1991;
 myHashTable[hashFunction(1234)] = 1234;
@@ -60,25 +60,25 @@ const getSaveHash = value => value % myTableSize;
 // 스텝 해시에 사용되는 수는 테이블 사이즈보다 약간 작은 소수를 사용한다.
 const getStepHash = value => 17 - (value % 17);
 const setValue = value => {
-let index = getSaveHash(value);
-let targetValue = myHashTable[index];
-while (true) {
-if (!targetValue) {
-myHashTable[index] = value;
-console.log(`${index}번 인덱스에 ${value} 저장! `);
-return;
-}
-else if (myHashTable.length >= myTableSize) {
-console.log('풀방입니다');
-return;
-}
-else {
-console.log(`${index}번 인덱스에 ${value} 저장하려다 충돌 발생!ㅜㅜ`);
-index += getStepHash(value);
-index = index > myTableSize ? index - myTableSize : index;
-targetValue = myHashTable[index];
-}
-}
+    let index = getSaveHash(value);
+    let targetValue = myHashTable[index];
+    while (true) {
+        if (!targetValue) {
+            myHashTable[index] = value;
+            console.log(`${index}번 인덱스에 ${value} 저장! `);
+            return;
+        }
+        else if (myHashTable.length >= myTableSize) {
+            console.log('풀방입니다');
+            return;
+        }
+        else {
+            console.log(`${index}번 인덱스에 ${value} 저장하려다 충돌 발생!ㅜㅜ`);
+            index += getStepHash(value);
+            index = index > myTableSize ? index - myTableSize : index;
+            targetValue = myHashTable[index];
+        }
+    }
 }
 console.log(setValue(1991));
 console.log(setValue(6));
