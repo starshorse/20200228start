@@ -39,10 +39,12 @@ def _3days_rule_group( group_name ):
             df_all_bear[ codes_dic[ one ] ] = df['등락률'] 
     print("");
     print("[ 3 days bull up Stocks ]")
-    print( df_all.tail(3).T) 
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all.tail(3).T) 
     print("");
     print("[ 3 days bear down Stocks ]")
-    print( df_all_bear.tail(3).T) 
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all_bear.tail(3).T) 
 
 def _3days_rule_main():
     #df_mine = pd.DataFrame( { '종목코드': codes } );
@@ -87,11 +89,13 @@ def _3days_rule_main():
     print("");
     print("[ 3 days bear down Stocks ]")
     #print( tabulate( df_all.tail(3).T , headers='keys' , tablefmt='psql' )) 
-    print( df_all_bear.tail(3).T) 
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all_bear.tail(3).T) 
     df_all_bear_div['종목코드'] =  list_bear ;
     #print( df4div.head() )
     df_all_bear_div = pd.merge( df_all_bear_div , df4div, on='종목코드', how='left' );
-    print( df_all_bear_div );
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all_bear_div.sort_values(by='종목명', ascending=False ));
 
 
 def _3days_rule_main_kospi( codes_dic, df4div ):
@@ -123,12 +127,14 @@ def _3days_rule_main_kospi( codes_dic, df4div ):
     print("");
     print("[ 3 days bear down Stocks ]")
     #print( tabulate( df_all.tail(3).T , headers='keys' , tablefmt='psql' )) 
-    print( df_all_bear.tail(3).T) 
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all_bear.tail(3).T) 
     df_all_bear_div['종목코드'] =  list_bear ;
     #print( df4div.head() )
     df_all_bear_div = pd.merge( df_all_bear_div , df4div, on='종목코드', how='left' );
     print( df_all_bear_div );
-    print( df_all_bear_div[ df_all_bear_div['DIV'] > 5.5 ]);
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all_bear_div[ df_all_bear_div['DIV'] > 5.5 ]);
 
 
 def _3days_rule_main_etf( codes_dic, max_up = 0 ):
