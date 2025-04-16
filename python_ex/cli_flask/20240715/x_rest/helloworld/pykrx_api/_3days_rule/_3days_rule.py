@@ -85,7 +85,8 @@ def _3days_rule_main():
     print("");
     print("[ 3 days bull up Stocks ]")
     #print( tabulate( df_all.tail(3).T , headers='keys' , tablefmt='psql' )) 
-    print( df_all.tail(3).T) 
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all.tail(3).T) 
     print("");
     print("[ 3 days bear down Stocks ]")
     #print( tabulate( df_all.tail(3).T , headers='keys' , tablefmt='psql' )) 
@@ -123,7 +124,8 @@ def _3days_rule_main_kospi( codes_dic, df4div ):
     print("");
     print("[ 3 days bull up Stocks ]")
     #print( tabulate( df_all.tail(3).T , headers='keys' , tablefmt='psql' )) 
-    print( df_all.tail(3).T) 
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all.tail(3).T) 
     print("");
     print("[ 3 days bear down Stocks ]")
     #print( tabulate( df_all.tail(3).T , headers='keys' , tablefmt='psql' )) 
