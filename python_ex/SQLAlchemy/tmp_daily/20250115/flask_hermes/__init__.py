@@ -1,6 +1,8 @@
 """
     /venv_0115/Script 
+    flask db init 
     flask db migrate -m "initial version"
+    flask db upgrade 
 """
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
