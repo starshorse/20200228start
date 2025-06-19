@@ -1,0 +1,87 @@
+{
+  "file_name": "example_file",
+  "total_tables": 1,
+  "tables": [
+    {
+      "table_id": "table_1",
+      "headers": [
+        "Material (Customer)",
+        "Start date of movement",
+        "Material status",
+        "Quantity",
+        "Unrestricted-use stock"
+      ],
+      "rows": [
+        [
+          "AAA2528570000",
+          "2025/06/12, 07:00",
+          "Charge",
+          "52 PCE",
+          "390 PCE"
+        ],
+        [
+          "AAA2528570000",
+          "2025/06/12, 07:00",
+          "Charge",
+          "78 PCE",
+          "312 PCE"
+        ],
+        [
+          "AAA2528570000",
+          "2025/06/12, 07:00",
+          "Transferred out quantity",
+          "0 PCE",
+          "312 PCE"
+        ],
+        [
+          "AAA2468280000",
+          "2025/06/12, 07:00",
+          "Charge",
+          "26 PCE",
+          "26 PCE"
+        ],
+        [
+          "AAA2468280000",
+          "2025/06/12, 07:00",
+          "Transferred out quantity",
+          "0 PCE",
+          "26 PCE"
+        ],
+        [
+          "AAA2417010000",
+          "2025/06/12, 07:00",
+          "Received quantity",
+          "260 PCE",
+          "1,300 PCE"
+        ],
+        [
+          "AAA2417010000",
+          "2025/06/12, 07:00",
+          "Charge",
+          "260 PCE",
+          "1,040 PCE"
+        ],
+        [
+          "AAA2417010000",
+          "2025/06/12, 07:00",
+          "Charge",
+          "156 PCE",
+          "884 PCE"
+        ],
+        [
+          "AAA2417010000",
+          "2025/06/12, 07:00",
+          "Transferred out quantity",
+          "0 PCE",
+          "884 PCE"
+        ]
+      ],
+      "row_count": 9,
+      "column_count": 5
+    }
+  ],
+  "metadata": {
+    "file_name": "img_ffe99290_140230.png",
+    "processed_pages": 1
+  }
+}
