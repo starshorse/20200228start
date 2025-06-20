@@ -1,0 +1,146 @@
+[
+  {
+    "Material (Customer)": "AAA2528570000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Charge",
+    "Quantity": "52 PCE",
+    "Unrestricted-use stock": "390 PCE",
+    "source_file": "img_f0e19502_140229.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2528570000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Charge",
+    "Quantity": "78 PCE",
+    "Unrestricted-use stock": "312 PCE",
+    "source_file": "img_f0e19502_140229.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2528570000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Transferred out quantity",
+    "Quantity": "0 PCE",
+    "Unrestricted-use stock": "312 PCE",
+    "source_file": "img_f0e19502_140229.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2468280000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Charge",
+    "Quantity": "26 PCE",
+    "Unrestricted-use stock": "26 PCE",
+    "source_file": "img_f0e19502_140229.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2468280000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Transferred out quantity",
+    "Quantity": "0 PCE",
+    "Unrestricted-use stock": "26 PCE",
+    "source_file": "img_f0e19502_140229.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2417010000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Received quantity",
+    "Quantity": "260 PCE",
+    "Unrestricted-use stock": "1,300 PCE",
+    "source_file": "img_f0e19502_140229.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2417010000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Charge",
+    "Quantity": "260 PCE",
+    "Unrestricted-use stock": "1,040 PCE",
+    "source_file": "img_f0e19502_140229.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2417010000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Charge",
+    "Quantity": "156 PCE",
+    "Unrestricted-use stock": "884 PCE",
+    "source_file": "img_f0e19502_140229.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2417010000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Transferred out quantity",
+    "Quantity": "0 PCE",
+    "Unrestricted-use stock": "884 PCE",
+    "source_file": "img_f0e19502_140229.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2528570000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Charge",
+    "Quantity": "52 PCE",
+    "Unrestricted-use stock": "390 PCE",
+    "source_file": "img_ffe99290_140230.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2528570000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Charge",
+    "Quantity": "78 PCE",
+    "Unrestricted-use stock": "312 PCE",
+    "source_file": "img_ffe99290_140230.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2528570000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Transferred out quantity",
+    "Quantity": "0 PCE",
+    "Unrestricted-use stock": "312 PCE",
+    "source_file": "img_ffe99290_140230.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2468280000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Charge",
+    "Quantity": "26 PCE",
+    "Unrestricted-use stock": "26 PCE",
+    "source_file": "img_ffe99290_140230.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2468280000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Transferred out quantity",
+    "Quantity": "0 PCE",
+    "Unrestricted-use stock": "26 PCE",
+    "source_file": "img_ffe99290_140230.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2417010000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Received quantity",
+    "Quantity": "260 PCE",
+    "Unrestricted-use stock": "1,300 PCE",
+    "source_file": "img_ffe99290_140230.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2417010000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Charge",
+    "Quantity": "260 PCE",
+    "Unrestricted-use stock": "1,040 PCE",
+    "source_file": "img_ffe99290_140230.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2417010000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Charge",
+    "Quantity": "156 PCE",
+    "Unrestricted-use stock": "884 PCE",
+    "source_file": "img_ffe99290_140230.png.json"
+  },
+  {
+    "Material (Customer)": "AAA2417010000",
+    "Start date of movement": "2025/06/12, 07:00",
+    "Material status": "Transferred out quantity",
+    "Quantity": "0 PCE",
+    "Unrestricted-use stock": "884 PCE",
+    "source_file": "img_ffe99290_140230.png.json"
+  }
+]
