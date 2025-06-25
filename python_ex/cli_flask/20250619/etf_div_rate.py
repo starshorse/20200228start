@@ -61,7 +61,6 @@ def get_1y_return(etf_code, start_date, end_date):
             return None
         start_price = df['종가'].iloc[0]
         end_price = df['종가'].iloc[-1]
-
         # 데이터 유효성 검사
         if start_price in [0, None] or end_price in [0, None]:
             return None
@@ -100,7 +99,7 @@ def get_high_dividend_low_volatility_etfs(top_n=20):
     start_date, end_date = get_one_year_ago()
     result = []
 
-    for etf in etf_list:
+    for index , etf in enumerate( etf_list ):
         code = etf["itemcode"]
         name = etf["itemname"]
 
@@ -109,22 +108,25 @@ def get_high_dividend_low_volatility_etfs(top_n=20):
 
         dy, fee = get_dividend_yield_and_fee(code)
         one_year_return = get_1y_return(code, start_date, end_date)
+        print( dy );
 
-        if dy is not None and one_year_return is not None and -5 <= one_year_return <= 10:
+        #if dy is not None and one_year_return is not None and -5 <= one_year_return <= 10:
+        if one_year_return is not None:
             result.append({
                 "종목코드": code,
                 "종목명": name,
                 "자산운용사": get_provider(name),
                 "시장": guess_market(name),
-                "12개월 배당수익률(%)": dy,
+                #"12개월 배당수익률(%)": dy,
                 "1년 수익률(%)": one_year_return,
-                "총 수익률(%)": round(dy + one_year_return, 2),
+                #"총 수익률(%)": round(dy + one_year_return, 2),
                 "총보수(%)": fee if fee is not None else "-"
             })
         time.sleep(0.3)  # 과도한 요청 방지
 
     df = pd.DataFrame(result)
-    df = df.sort_values(by="12개월 배당수익률(%)", ascending=False).reset_index(drop=True)
+    #df = df.sort_values(by="12개월 배당수익률(%)", ascending=False).reset_index(drop=True)
+    df = df.sort_values(by="1년 수익률(%)", ascending=False).reset_index(drop=True)
     return df.head(top_n)
 
 if __name__ == "__main__":
