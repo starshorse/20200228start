@@ -6,7 +6,7 @@ describe('login', function(){
 var browser = new Browser() 
 	before( function(done){
 		this.timeout(10000) ;  
-		browser.visit('http://ez-office.co.kr:3004/admin/user/login', done ) 
+		browser.visit('https://ezoffice365.com:3004/admin/user/login', done ) 
 	})
 	it('should load the signup form', function(done){
 		this.timeout(10000) ;  
