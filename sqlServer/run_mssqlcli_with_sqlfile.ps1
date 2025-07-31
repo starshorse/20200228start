@@ -1,4 +1,5 @@
 # .\run_mssqlcli_with_sqlfile.ps1 "C:\path\to\your\script.sql" "192.168.0.106" "ezchemtech" "sa" "your_password"
+#.\run_mssqlcli_with_sqlfile.ps1 .\demo.TB_age_opt_ocr.sql "34.64.60.213" "demo" "sqlserver" "!csdlwlof#****"
 #
 param(
     [Parameter(Mandatory=$true, Position=0)][string]$sqlFilePath,   # 실행할 SQL 파일 경로
