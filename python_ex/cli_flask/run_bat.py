@@ -32,6 +32,8 @@ def job():
             user="starshorse@gmail.com",
             app_password="ybgc evqf zyqe qjvp"
         )
+
+job();    
 # 매일 오전 10시 실행
 schedule.every().day.at("10:00").do(job)
 

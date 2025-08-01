@@ -37,11 +37,11 @@ if (-not (Test-Path -Path $SourceDirPath -PathType Container)) {
     exit 1
 }
 
-# 소스 디렉토리 내 모든 파일 복사 (하위 폴더 없이 파일만)
-Write-Host "Copying files from $SourceDirPath to $DestDir"
-Get-ChildItem -Path $SourceDirPath -File | ForEach-Object {
-    Copy-Item -Path $_.FullName -Destination $DestDir -Force
-}
+
+# 소스 디렉토리 내 모든 파일과 하위 폴더 포함하여 복사
+Write-Host "Copying all contents from $SourceDirPath to $DestDir"
+Copy-Item -Path (Join-Path $SourceDirPath '*') -Destination $DestDir -Recurse -Force
+
 
 # ps1 파일 존재 확인 및 복사
 if (-not (Test-Path -Path $Ps1FilePath -PathType Leaf)) {
