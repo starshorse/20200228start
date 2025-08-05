@@ -32,7 +32,7 @@ def _3days_rule_group( group_name ):
         df = get_df_period( before_two_week, one )
         #pdb.set_trace(); 
         print('code:', one );
-        print(df['등락률'].tail(3))
+        #print(df['등락률'].tail(3))
         if( df['등락률'].tail(3).min() >  0 ):
             df_all[ codes_dic[ one ] ] = df['등락률'] 
         if( df['등락률'].tail(3).max() <  0 ):
@@ -64,7 +64,7 @@ def _3days_rule_main():
             continue ;
         #pdb.set_trace(); 
         print('code:', one );
-        print(df['등락률'].tail(3))
+        #print(df['등락률'].tail(3))
         if( df['등락률'].tail(3).min() >  0 ):
             df_all[ codes_dic[ one ] ] = df['등락률'] 
         if( df['등락률'].tail(3).max() <  0 ):
@@ -76,7 +76,7 @@ def _3days_rule_main():
             continue ;
         #pdb.set_trace(); 
         print('code:', one );
-        print(df['등락률'].tail(3))
+        #print(df['등락률'].tail(3))
         if( df['등락률'].tail(3).min() >  0 ):
             df_all[ etf_codes_dic[ one ] ] = df['등락률'] 
         if( df['등락률'].tail(3).max() <  0 ):
@@ -114,7 +114,7 @@ def _3days_rule_main_kospi( codes_dic, df4div ):
         if len( df ) == 0:
             continue ;
         #pdb.set_trace(); 
-        print(df['등락률'].tail(3))
+        #print(df['등락률'].tail(3))
         if( df['등락률'].tail(3).min() >  0 and df['등락률'].tail(3).max() > 2):
             df_all[ codes_dic[ one ] ] = df['등락률'] 
         if( df['등락률'].tail(3).max() <  0 ):
@@ -151,7 +151,7 @@ def _3days_rule_main_etf( codes_dic, max_up = 0 ):
         if len( df ) == 0:
             continue ;
         #pdb.set_trace(); 
-        print(df['등락률'].tail(3))
+        #print(df['등락률'].tail(3))
         if( df['등락률'].tail(3).min() >  0 and df['등락률'].tail(3).max() > max_up ):
             df_all[ codes_dic[ one ] ] = df['등락률'] 
         if( df['등락률'].tail(3).max() <  0 ):
