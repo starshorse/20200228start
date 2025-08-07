@@ -1,0 +1,35 @@
+$blue: #7989ff;          // 연한 보라 / 라벤더 블루 톤 유지
+$green: #34bc3f;         // 초록은 유지 (필요 시 변경 가능)
+$cyan: #4191eb;          // 시안은 유지 (필요 시 변경 가능)
+$yellow: #fc7721;        // 노랑 유지
+$red: #f31b48;           // 빨강 유지
+
+$gray-100: #f7f8f9;
+$gray-200: #f2f2f2;
+$gray-300: #d8cfff;      // 연보라 (기존 밝은 회색 대신)
+$gray-400: #b8a9ff;      // 보라톤 회색 대체
+$gray-500: #9a8cff;
+$gray-600: #7c6fff;
+$gray-700: #5e52ff;
+$gray-800: #462cbf;
+$gray-900: #301f8f;
+
+$secondary: #9a8cff;     // 보라빛 계열 반전 색상으로 변경
+
+$link-color: #6658f7;    // 진한 보라 링크 색상
+
+// 기존 글꼴, 크기, 그림자 등 설정 유지
+
+$theme-font-weight-semibold: 600 !default;
+
+$theme-border-radius: 3em !default;
+$theme-border-radius-sm: 3px !default;
+$theme-border-radius-xs: 2px !default;
+
+$theme-box-shadow: 0px 2px 4px 0px rgba(70, 44, 191, 0.3) !default; // 보라빛 그림자
+$theme-box-shadow-xs: 0px 1px 2px 0px rgba(70, 44, 191, 0.1) !default;
+$theme-box-shadow-sm: 0px 2px 4px 0px rgba(70, 44, 191, 0.2) !default;
+$theme-box-shadow-lg: 0px 2px 6px 0px rgba(70, 44, 191, 0.3) !default;
+
+// Breadcrumbs, Buttons, Cards, Forms, Pagination 등도 이 변수들을 참조해 자동 적용됨
+
