@@ -5,7 +5,7 @@ import math, pdb
 from tabulate import tabulate
 from .stock_data import get_ticker_name , get_df_period , get_df_etf_period, before_one_week, before_two_week 
 from .code_name import  codes_dic , etf_codes_dic
-from  helloworld.pykrx_api._net_buy.common_util import get_market_fundamental_limit_name, get_symbols_code_etf
+from  helloworld.pykrx_api._net_buy.common_util import get_market_fundamental_name, get_market_fundamental_limit_name, get_symbols_code_etf
 
 def get_tickers( group_name ):
     with open( os.path.join( os.path.dirname( os.path.realpath(__file__)), f'{ group_name }.json' ),'rt', encoding='UTF8') as f:
@@ -51,13 +51,16 @@ def _3days_rule_main():
     codes = list( codes_dic.keys() )
     etf_codes = list( etf_codes_dic.keys() )
     df_all = pd.DataFrame({}); 
+    df_all_bull_div = pd.DataFrame({}); 
     df_all_bear = pd.DataFrame({});
     df_all_bear_div = pd.DataFrame({});
     df = get_df_period( before_two_week, codes[0]);
     df_all.index = df.index ;
     df_all_bear.index = df.index 
     df4div  = get_market_fundamental_limit_name();
+    df4all  = get_market_fundamental_name();
     list_bear = [];
+    list_bull = [];
     for one in codes:
         df = get_df_period( before_two_week, one )
         if len( df ) == 0:
@@ -67,6 +70,7 @@ def _3days_rule_main():
         #print(df['등락률'].tail(3))
         if( df['등락률'].tail(3).min() >  0 ):
             df_all[ codes_dic[ one ] ] = df['등락률'] 
+            list_bull.append( one );
         if( df['등락률'].tail(3).max() <  0 ):
             df_all_bear[ codes_dic[ one ] ] = df['등락률'] 
             list_bear.append( one );
@@ -87,6 +91,13 @@ def _3days_rule_main():
     #print( tabulate( df_all.tail(3).T , headers='keys' , tablefmt='psql' )) 
     with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
         print( df_all.tail(3).T) 
+
+    df_all_bull_div['종목코드'] =  list_bull ;
+    #print( df4div.head() )
+    df_all_bull_div = pd.merge( df_all_bull_div , df4all, on='종목코드', how='left' );
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all_bull_div.sort_values(by='종목명', ascending=False ));
+
     print("");
     print("[ 3 days bear down Stocks ]")
     #print( tabulate( df_all.tail(3).T , headers='keys' , tablefmt='psql' )) 

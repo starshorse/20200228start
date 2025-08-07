@@ -71,6 +71,13 @@ def get_market_fundamental_kospi():
     return get_market_fundamental( market = "KOSPI" );
 def get_market_fundamental_kosdaq():
     return get_market_fundamental( market = "KOSDAQ" );
+
+def get_market_fundamental_name():
+    df_market = get_market_fundamental_all() 
+    df_symbols = get_symbols_code_all() 
+    df = df_market.merge( df_symbols , how='left' , left_on = '티커', right_on = '종목코드' )
+    return df 
+
 def get_market_fundamental_limit_name():
     global day_diff
     for i in range(10):
