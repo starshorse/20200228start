@@ -22,6 +22,7 @@ $ParentDir = Split-Path -Parent $CurrentDir
 
 # 최종 대상 경로: 상위 폴더 안에 SubFolderName 폴더 생성
 $DestDir = Join-Path $ParentDir $SubFolderName
+Remove-Item $DestDir -Recurse -Force
 
 # 폴더 없으면 생성
 if (-not (Test-Path -Path $DestDir)) {
@@ -61,4 +62,5 @@ Write-Host "Running ps1 file: $Ps1FileName"
 $exitCode = $LASTEXITCODE
 Write-Host "Script execution finished with exit code: $exitCode"
 exit $exitCode
+
 

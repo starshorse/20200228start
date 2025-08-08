@@ -1,1 +1,0 @@
- select a.seq, b.defaultDB , a.authOrgUserSeq, b.orgAuthSecret, a.machAuthSecret from config.dbo.TB_Auth_Machine as a left join config.dbo.TB_Auth_Organization as b on a.authOrgSeq = b.seq  ;

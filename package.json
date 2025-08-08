@@ -32,9 +32,9 @@
     "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
-    "sequelize": "^6.21.0",
+    "sequelize": "^6.37.7",
     "serve-favicon": "^2.5.0",
-    "sqlite3": "^5.0.8"
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "angular": "^1.8.3",
@@ -54,6 +54,7 @@
     "karma-jasmine": "^5.1.0",
     "mongoose": "^6.4.0",
     "nodemon": "^2.0.19",
+    "sequelize-cli": "^6.6.3",
     "time-grunt": "^2.0.0"
   }
 }
