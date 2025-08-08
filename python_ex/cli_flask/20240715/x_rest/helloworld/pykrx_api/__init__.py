@@ -1,6 +1,6 @@
 import click 
 from flask import Blueprint
-from ._3days_rule._3days_rule import _3days_rule_main, _3days_rule_group , get_tickers , add_ticker    
+from ._3days_rule._3days_rule import _3days_rule_main, _3days_rule_group ,  _3days_rule_message,  get_tickers , add_ticker    
 from ._3days_rule._3days_rule_all import _3days_rule_kospi, _3days_rule_etf  
 from ._hotSpot._hotSpot_all import _hotSpot_kospi, _hotSpot_etf 
 from ._net_buy._net_buy import net_buy_kospi ,net_buy_kosdaq  
@@ -11,7 +11,7 @@ bp_pykrx = Blueprint('pykrx', __name__ )
 def help():
     print('####################################################################');
     print('#                                                                  #');
-    print('# 3days_rule  [group_name( me,  g1, g2 ,g3 ) ]                     #');
+    print('# 3days_rule  [group_name( me, message,  g1, g2 ,g3 ) ]            #');
     print('# 3days_rule_all  [group_name( kospi , etf , div ) ]               #');
     print('# hotSpot_all [group_name( kospi, etf ) ]                          #');
     print('# get_tickers [group_name( me , g1, g2 ,g3 ) ]                     #');
@@ -25,6 +25,8 @@ def help():
 def _3days_rule( group_name ):
     if( group_name == 'me' ):
         _3days_rule_main();
+    elif group_name == 'message':
+        _3days_rule_message();
     else:
         _3days_rule_group( group_name );
 

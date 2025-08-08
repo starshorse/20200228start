@@ -46,6 +46,61 @@ def _3days_rule_group( group_name ):
     with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
         print( df_all_bear.tail(3).T) 
 
+
+def _3days_rule_message():
+    codes = list( codes_dic.keys() )
+    etf_codes = list( etf_codes_dic.keys() )
+    df_all_bull_div = pd.DataFrame({}); 
+    df_all_bull_etf_div = pd.DataFrame({}); 
+    df_all_bear_div = pd.DataFrame({});
+    df_all_bear_etf_div = pd.DataFrame({});
+    df4div  = get_market_fundamental_limit_name();
+    df4all  = get_market_fundamental_name();
+    df4all_etf = get_symbols_code_etf();
+    list_bear = [];
+    list_bull = [];
+    list_etf_bear = [];
+    list_etf_bull = [];
+    for one in codes:
+        df = get_df_period( before_two_week, one )
+        if len( df ) == 0:
+            continue ;
+        if( df['등락률'].tail(3).min() >  0 ):
+            list_bull.append( one );
+        if( df['등락률'].tail(3).max() <  0 ):
+            list_bear.append( one );
+    for one in etf_codes:
+        df = get_df_etf_period( before_two_week, one )
+        if len( df ) == 0:
+            continue ;
+        if( df['등락률'].tail(3).min() >  0 ):
+            list_etf_bull.append( one );
+        if( df['등락률'].tail(3).max() <  0 ):
+            list_etf_bear.append( one );
+    print("");
+    print("[ 3 days bull up Stocks ]")
+    df_all_bull_div['종목코드'] =  list_bull ;
+    df_all_bull_div = pd.merge( df_all_bull_div , df4all, on='종목코드', how='left' );
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all_bull_div['종목명'].sort_values( ascending=False ));
+    print("ETF");
+    df_all_bull_etf_div['종목코드'] =  list_etf_bull ;
+    df_all_bull_etf_div = pd.merge( df_all_bull_etf_div , df4all_etf, on='종목코드', how='left' );
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all_bull_etf_div['종목명'].sort_values( ascending=False ));
+    print("");
+    print("[ 3 days bear down Stocks ]")
+    df_all_bear_div['종목코드'] =  list_bear ;
+    df_all_bear_div = pd.merge( df_all_bear_div , df4all, on='종목코드', how='left' );
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all_bear_div[['DIV','종목명']].sort_values(by='종목명', ascending=False ));
+    print("ETF");
+    df_all_bear_etf_div['종목코드'] =  list_etf_bear ;
+    df_all_bear_etf_div = pd.merge( df_all_bear_etf_div , df4all_etf, on='종목코드', how='left' );
+    with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+        print( df_all_bear_etf_div['종목명'].sort_values( ascending=False ));
+
+
 def _3days_rule_main():
     #df_mine = pd.DataFrame( { '종목코드': codes } );
     codes = list( codes_dic.keys() )
