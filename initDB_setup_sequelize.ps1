@@ -1,4 +1,4 @@
-<#
+﻿<#
     PowerShell에서 유의사항
     bash의 cat <<EOF ... EOF 과 같은 멀티라인 문자열은 PowerShell의 here-string(@" ... "@)으로 변환.
     조건문/디렉터리 생성/파일 확인 등 bash 문법 차이에 주의.
@@ -9,7 +9,7 @@
 #>
 # Start Script
 # 
-Write-Host "🚀 SQLite3 + Sequelize 자동 설치 및 설정 시작..."
+Write-Host "?? SQLite3 + Sequelize 자동 설치 및 설정 시작..."
 
 # 0. npm init
 if (!(Test-Path "package.json")) {
@@ -92,7 +92,7 @@ npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
 
 # 10. 테스트 스크립트 작성
-$testScript = @"
+$testScript = @'
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize({
   dialect: 'sqlite',
@@ -112,24 +112,24 @@ const TB_Admin = sequelize.define('TB_Admin', {
 (async () => {
   try {
     const admins = await TB_Admin.findAll();
-    console.log('📊 TB_Admins 테이블 레코드 수:', admins.length);
+    console.log('?? TB_Admins 테이블 레코드 수:', admins.length);
     admins.forEach((a, i) => {
       console.log(`#${i + 1}: ${a.name} / ${a.email} / ${a.password}`);
     });
   } catch (e) {
-    console.error('❌ 오류:', e);
+    console.error('? 오류:', e);
   } finally {
     await sequelize.close();
   }
 })();
-"@
+'@
 $testScript | Set-Content -Encoding UTF8 "test-admin.js"
 
 # 11. 테스트 실행
 Write-Host ""
-Write-Host "🧪 테스트 실행..."
+Write-Host "?? 테스트 실행..."
 node ./test-admin.js
 
 Write-Host ""
-Write-Host "✅ 모든 작업 완료!"
+Write-Host "? 모든 작업 완료!"
 
