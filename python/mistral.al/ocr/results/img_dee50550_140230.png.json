@@ -1,0 +1,80 @@
+{
+  "file_name": "example.pdf",
+  "total_tables": 1,
+  "tables": [
+    {
+      "table_id": "table-1",
+      "headers": [
+        "ID",
+        "Date",
+        "Type",
+        "Quantity",
+        "Total"
+      ],
+      "rows": [
+        [
+          "A3C1155510000",
+          "2025/06/12, 07:00",
+          "Received quantity",
+          "260 PCE",
+          "780 PCE"
+        ],
+        [
+          "A3C1155510000",
+          "2025/06/12, 07:00",
+          "Charge",
+          "182 PCE",
+          "598 PCE"
+        ],
+        [
+          "A3C1155510000",
+          "2025/06/12, 07:00",
+          "Transferred out quantity",
+          "0 PCE",
+          "598 PCE"
+        ],
+        [
+          "A3C1091920000",
+          "2025/06/12, 07:00",
+          "Received quantity",
+          "520 PCE",
+          "832 PCE"
+        ],
+        [
+          "A3C1091920000",
+          "2025/06/12, 07:00",
+          "Charge",
+          "312 PCE",
+          "520 PCE"
+        ],
+        [
+          "A3C1091920000",
+          "2025/06/12, 07:00",
+          "Charge",
+          "130 PCE",
+          "390 PCE"
+        ],
+        [
+          "A3C1091920000",
+          "2025/06/12, 07:00",
+          "Transferred out quantity",
+          "0 PCE",
+          "390 PCE"
+        ],
+        [
+          "A3C1056010000",
+          "2025/06/12, 07:00",
+          "Received quantity",
+          "260 PCE",
+          "390 PCE"
+        ]
+      ],
+      "row_count": 8,
+      "column_count": 5
+    }
+  ],
+  "metadata": {
+    "file_name": "img_dee50550_140230.png",
+    "processed_pages": 1
+  }
+}
