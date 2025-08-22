@@ -1,4 +1,5 @@
 $currentPath = Get-Location
+$currentDirName = ""
 
 # 특정 디렉토리 이름까지의 경로 구하기
 $targetName = "20200228start"

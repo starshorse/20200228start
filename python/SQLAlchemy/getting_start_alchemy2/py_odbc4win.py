@@ -9,7 +9,7 @@
  sqlalchemy==1.4.0 사용 
 """
 import pandas as pd
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine, MetaData, inspect
 from sqlalchemy.engine import URL
 
 connection_string = (
@@ -41,7 +41,7 @@ connection_url = URL.create(
         "mssql+pyodbc",
         username="sa",
         password="1234",
-        host="localhost",
+        host="192.168.0.106",
         database="config",
         query={"driver": "ODBC Driver 17 for SQL Server"},
         )
@@ -55,9 +55,12 @@ def odbc_conn():
 #metadata = MetaData( bind= conn, reflect= True )
 """
  sqlalchemy 2.0 insepct 
- inspection = inspect( engine ) 
- inspection.get_tables_names() 
+ 
+"""
+inspection = inspect( engine ) 
+print(inspection.get_table_names() )
 
 """
 odbc_conn() 
 print( engine.table_names() ) 
+"""

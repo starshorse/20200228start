@@ -1,5 +1,6 @@
 """
     /venv_0115/Script 
+    $env:FLASK_APP="flask_hermes"
     flask db init 
     flask db migrate -m "initial version"
     flask db upgrade 

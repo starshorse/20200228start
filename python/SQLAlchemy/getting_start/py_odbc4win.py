@@ -41,7 +41,7 @@ connection_url = URL.create(
         "mssql+pyodbc",
         username="sa",
         password="1234",
-        host="localhost",
+        host="192.168.0.106",
         database="config",
         query={"driver": "ODBC Driver 17 for SQL Server"},
         )
