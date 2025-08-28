@@ -20,6 +20,34 @@
     PowerShell 또는 프로그램에서 MySQL에 접속할 때 반드시 UTF8 문자셋으로 연결해야 합니다.
     bash
     mysql -u sa -p1234 --default-character-set=utf8mb4 ezWebQt
+	
+
+./mysql 디렉토리에서 mysql설치및 기초 유저설정이 필요.	
+
+DBeaver에서 MySQL 8.0 연결 시 "Public Key Retrieval is not allowed" 문제를 해결하고 정상적으로 접속하는 방법은 다음과 같습니다:
+DBeaver에서 MySQL 연결 설정 방법
+1. 새 연결 만들기
+	DBeaver 실행 후, 좌측 상단의 플러그 모양 아이콘(또는 메뉴 Database → New Database Connection) 클릭
+	데이터베이스 종류에서 MySQL 선택 후 Next 클릭
+2. MySQL 접속 정보 입력
+	Host: MySQL 서버 주소 (예: localhost 또는 IP)
+	Port: 일반적으로 3306
+	Database: 접속할 DB 명 (선택, 비워도 됨)
+	Username: MySQL 사용자명 (예: root)
+	Password: 사용자의 MySQL 비밀번호
+3. 드라이버 설치 및 테스트
+	처음 연결할 때 드라이버 없으면 설치하라는 창이 뜸 → Download 클릭해서 설치
+	모든 정보 입력 후, 하단 Test Connection 버튼 클릭 → 연결 성공 여부 확인
+4. Public Key Retrieval 오류 해결 (중요!)
+	만약 오류 메시지로 "Public Key Retrieval is not allowed" 가 뜨면,
+	오른쪽 창에서 Driver Properties 탭으로 이동
+	다음 두 가지 속성 추가 또는 수정:
+	allowPublicKeyRetrieval → true
+	useSSL → false
+	추가 후 다시 Test Connection → 오류 없이 정상 연결되면 Finish 클릭
+5. 연결 완료 후
+	왼쪽 Database Navigator 에서 연결한 MySQL 서버와 데이터베이스들이 표시됨
+	원하는 테이블 조회, 쿼리 작성, 데이터 조작 등 가능
 #>
 
 # 1. mysql 접속용 명령어 문자열 준비
@@ -42,7 +70,7 @@ Set-Content -Path $sqlFile -Value $setupSql -Encoding UTF8
 
 # 4. mysql CLI로 쿼리 실행
 #& mysql -u root < $sqlFile
-Get-Content $sqlFile | & mysql -u root 
+Get-Content $sqlFile | & mysql -u root -p1234 
 
 
 # MySQL 접속 정보
@@ -96,12 +124,13 @@ CREATE TABLE IF NOT EXISTS quotations (
 "@
 function Exec-MySQLQuery($query) {
     # 임시 SQL파일로 저장
-    $tempFile = [System.IO.Path]::GetTempFileName()
+    #$tempFile = [System.IO.Path]::GetTempFileName()
     #Set-Content -Path $tempFile -Value $query -Encoding UTF8
-    Set-Content -Path $tempFile -Value $query 
     #Get-Content $tempFile | & mysql -u $mysqlUser -p$mysqlPass --default-character-set=utf8mb4  $mysqlDB  
-    Get-Content $tempFile | & mysql -u $mysqlUser  -p1234 --default-character-set=utf8mb4 $mysqlDB  
-    Remove-Item $tempFile
+    #Write-Host ( Get-Content $tempFile );
+    #Get-Content $tempFile | & mysql -u $mysqlUser  -p1234 --default-character-set=utf8mb4 $mysqlDB  
+    mysql -u $mysqlUser  -p1234 --default-character-set=utf8mb4 $mysqlDB  -e $query  
+    #Remove-Item $tempFile
 }
 
 # 테이블 생성 실행
@@ -167,20 +196,21 @@ INSERT INTO quotations (
     o_qty, o_purity, o_is_included_vat, o_is_1fee, o_calculated_price
 ) VALUES (
     $idx, $trackId, 
-    STR_TO_DATE( $generated_time , '%m/%d/%Y %H:%i:%s' ), 
+    STR_TO_DATE( $generated_time , '%Y-%m-%dT%H:%i:%s.000Z' ), 
     $generated_by, 
-    STR_TO_DATE( $updated_time, '%m/%d/%Y %H:%i:%s' ),
+    STR_TO_DATE( $updated_time,  '%Y-%m-%dT%H:%i:%s.000Z' ),
     $progress_status, $qt_number, $mro, $company, $user, $internal_remark,
     $c_maker, $c_chemical_name, $c_cas_no, $c_cat_no, $c_unit,
     $c_qty, $c_purity, $c_is_purity_greater, $c_remark, $c_is_requested,
-    STR_TO_DATE( $c_updated_time, '%m/%d/%Y %H:%i:%s' ), 
-    STR_TO_DATE( $c_requested_time, '%m/%d/%Y %H:%i:%s' ),
+    STR_TO_DATE(  $c_updated_time, '%Y-%m-%dT%H:%i:%s.000Z' ), 
+    STR_TO_DATE(  $c_requested_time, '%Y-%m-%dT%H:%i:%s.000Z' ),
     $o_maker, $o_chemical_name, $o_cas_no, $o_cat_no, $o_unit,
     $o_qty, $o_purity, $o_is_included_vat, $o_is_1fee, $o_calculated_price
 );
 "@
     
     # 쿼리 실행
+#Write-Host $insertSql
     Exec-MySQLQuery $insertSql
     Write-Host "Inserted record idx=$idx"
 }
