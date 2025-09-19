@@ -10,10 +10,12 @@ const modelController = require('./controllers/modelController');
 const dataController = require('./controllers/dataController');
 
 app.post('/generate-model', modelController.generateModel);
+app.post('/generate-model-json/:table', modelController.generateModelJson, modelController.generateModel );
 app.get('/model-schema/:table', modelController.getModelAttributes);
 
 app.get('/data/:table', dataController.getAll);
 app.post('/data/:table', dataController.create);
+app.post('/data/json/:table', dataController.create_json);
 app.put('/data/:table/:id', dataController.update);
 app.delete('/data/:table/:id', dataController.delete);
 

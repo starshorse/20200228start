@@ -1,6 +1,54 @@
 const fs = require('fs');
 const path = require('path');
 
+exports.generateModelJson = ( req, res, next )=>{
+	const tableName = req.params.table ;
+	var result 
+	// 파일 읽기 예시
+	fs.readFile('./results/data.json', 'utf8', (err, data) => {
+		if (err) throw err;
+		const json = JSON.parse(data);
+		const table = json.tables[0];
+
+		const attributes = {};
+		// 가능한 첫 rows의 값을 검사해 데이터 타입을 판단
+		table.headers.forEach((key, idx) => {
+			let type = "STRING";
+			const value = table.rows[0][idx];
+
+			if (typeof value === "number") {
+				if (Number.isInteger(value)) {
+					type = "INTEGER";
+				} else {
+					type = "DECIMAL(10,2)";
+				}
+			} else if (!isNaN(Number(value)) && value !== null && value !== "") {
+				// 문자열이라도 숫자값이면 타입 판단 (예: '123.45', '77')
+				if (value.toString().indexOf('.') >= 0) {
+					type = "DECIMAL(10,2)";
+				} else {
+					type = "INTEGER";
+				}
+			}
+			attributes[key] = { type, allowNull: true };
+		});
+
+		result = {
+			// tableName: table.table_id,
+			tableName: tableName,
+			attributes
+		};
+
+		console.log(JSON.stringify(result, null, 2));
+		if( result ){
+			req.body = result ;
+			next();
+		}else{
+			return res.json({ STATUS: -1 , ERRORMESSAGE: 'result not defined' })
+		}
+	});
+}
+
 exports.generateModel = (req, res) => {
   const { tableName, attributes } = req.body;
   if (!tableName || !attributes) {
@@ -15,7 +63,7 @@ exports.generateModel = (req, res) => {
 module.exports = (sequelize, DataTypes) => {
   const ${tableName} = sequelize.define('${tableName}', {
     ${modelAttributes}
-  }, {});
+  }, { freezeTableName : true });
   return ${tableName};
 };
 `;
@@ -36,7 +84,7 @@ module.exports = (sequelize, DataTypes) => {
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('${tableName}', {
-      id: {
+      seq: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,

@@ -1,15 +1,18 @@
 {
   "development": {
     "dialect": "sqlite",
-    "storage": "./db/database.sqlite"
+    "storage": "./db/database.sqlite",
+	"define": { "freezeTableName": true }
   },
   "test": {
     "dialect": "sqlite",
-    "storage": ":memory:"
+    "storage": ":memory:",
+	"define": { "freezeTableName": true }
   },
   "production": {
     "dialect": "sqlite",
-    "storage": "./db/database.sqlite"
+    "storage": "./db/database.sqlite",
+	"define": { "freezeTableName": true }
   }
 }
 
