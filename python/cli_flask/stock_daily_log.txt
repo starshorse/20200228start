@@ -9,44 +9,54 @@ C:\workdir\gitdn\20200228start\python\cli_flask\20240715\x_rest>set FLASK_APP=he
 C:\workdir\gitdn\20200228start\python\cli_flask\20240715\x_rest>flask pykrx 3days_rule message  
 
 [ 3 days bull up Stocks ]
-2    한국주철관
-1    진양홀딩스
-4     서울가스
-0      모토닉
-3       대현
+0        황금에스티
+5        해성디에스
+1      하이비젼시스템
+10        유아이엘
+3        윈스테크넷
+2       에스에이엠티
+9        세보엠이씨
+8         서원인텍
+7        삼양홀딩스
+6           바텍
+4     SNT다이내믹스
 Name: 종목명, dtype: object
 ETF
-0    ACE KRX금현물
+7            TIGER 코스닥150바이오테크
+6       TIGER 미국나스닥100커버드콜(합성)
+9          SOL 팔란티어커버드콜OTM채권혼합
+10                  RISE AI&로봇
+0                    KODEX 바이오
+1            KODEX 미국배당커버드콜액티브
+2      KODEX 미국AI테크TOP10타겟커버드콜
+3            KODEX 미국AI테크TOP10
+4            KODEX 미국AI전력핵심인프라
+5                  KODEX 로봇액티브
+8     ACE 글로벌인컴TOP10 SOLACTIVE
 Name: 종목명, dtype: object
 
 [ 3 days bear down Stocks ]
-     DIV     종목명
-0   1.00    현대건설
-3   0.55    한일화학
-7   5.55    한양증권
-8   4.21  한국자산신탁
-9   5.40    피에스텍
-10  4.65    태경산업
-11  3.77   쿠쿠홈시스
-1   2.85      원림
-2   4.82   동방아그로
-12  2.60    대창단조
-13  3.74   노루페인트
-5   6.44  KPX케미칼
-6   6.13  KCC글라스
-4   6.02      GS
-14  3.32     BGF
+     DIV       종목명
+11  2.46  현대지에프홀딩스
+1   5.53     한일홀딩스
+12  5.59      피에스텍
+7   3.36     풍산홀딩스
+18  2.03        풍산
+10  3.05        태양
+4   3.33       컴투스
+2   5.26    아이에스동서
+17  3.46      신도리코
+3   5.41      세아제강
+9   6.47      삼현철강
+6   4.50     라이온켐텍
+8   3.21      동아지질
+16  3.69        대상
+13  5.60    TKG휴켐스
+5   0.91    SNT에너지
+0   2.26    OCI홀딩스
+15  2.67       HMM
+14  4.21   DN오토모티브
 ETF
-5         TIGER 종합채권(AA-이상)액티브
-4      TIGER 미국30년국채커버드콜액티브(H)
-9          SOL 미국30년국채커버드콜(합성)
-10       PLUS 미국배당증가성장주데일리커버드콜
-11               PLUS 고배당저변동50
-2         KODEX 종합채권(AA-이상)액티브
-3            KODEX 미국AI전력핵심인프라
-0              KODEX 국고채10년액티브
-1                 KODEX 2차전지산업
-6                  HANARO K-뷰티
-7       ACE 미국반도체데일리타겟커버드콜(합성)
-8     ACE 글로벌인컴TOP10 SOLACTIVE
+0    TIGER 원유선물Enhanced(H)
+1       RISE 200고배당커버드콜ATM
 Name: 종목명, dtype: object
