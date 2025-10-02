@@ -9,54 +9,42 @@ C:\workdir\gitdn\20200228start\python\cli_flask\20240715\x_rest>set FLASK_APP=he
 C:\workdir\gitdn\20200228start\python\cli_flask\20240715\x_rest>flask pykrx 3days_rule message  
 
 [ 3 days bull up Stocks ]
-0        황금에스티
-5        해성디에스
-1      하이비젼시스템
-10        유아이엘
-3        윈스테크넷
-2       에스에이엠티
-9        세보엠이씨
-8         서원인텍
-7        삼양홀딩스
-6           바텍
-4     SNT다이내믹스
+8      해성디에스
+1      한라IMS
+7     한국자산신탁
+3      풍산홀딩스
+5         태양
+0     일성아이에스
+6     에스에이엠티
+4       동아지질
+2     SNT에너지
+10    SNT모티브
+9       KH바텍
 Name: 종목명, dtype: object
 ETF
-7            TIGER 코스닥150바이오테크
-6       TIGER 미국나스닥100커버드콜(합성)
-9          SOL 팔란티어커버드콜OTM채권혼합
-10                  RISE AI&로봇
-0                    KODEX 바이오
-1            KODEX 미국배당커버드콜액티브
-2      KODEX 미국AI테크TOP10타겟커버드콜
-3            KODEX 미국AI테크TOP10
-4            KODEX 미국AI전력핵심인프라
-5                  KODEX 로봇액티브
-8     ACE 글로벌인컴TOP10 SOLACTIVE
+0    KODEX 차이나CSI300
+1     KODEX AI전력핵심설비
 Name: 종목명, dtype: object
 
 [ 3 days bear down Stocks ]
-     DIV       종목명
-11  2.46  현대지에프홀딩스
-1   5.53     한일홀딩스
-12  5.59      피에스텍
-7   3.36     풍산홀딩스
-18  2.03        풍산
-10  3.05        태양
-4   3.33       컴투스
-2   5.26    아이에스동서
-17  3.46      신도리코
-3   5.41      세아제강
-9   6.47      삼현철강
-6   4.50     라이온켐텍
-8   3.21      동아지질
-16  3.69        대상
-13  5.60    TKG휴켐스
-5   0.91    SNT에너지
-0   2.26    OCI홀딩스
-15  2.67       HMM
-14  4.21   DN오토모티브
+     DIV     종목명
+3   0.00    현대해상
+4   5.89   한국주철관
+13  6.07   창해에탄올
+12  3.21    일진파워
+0   1.22      방림
+2   6.42      무학
+8   2.85   디와이파워
+7   3.18    대한제강
+5   2.13     넥스틸
+11  7.21   광주신세계
+10  4.66  골프존홀딩스
+9   2.20  SNT홀딩스
+1   2.49  OCI홀딩스
+6   6.50  KCC글라스
 ETF
-0    TIGER 원유선물Enhanced(H)
-1       RISE 200고배당커버드콜ATM
+2     SOL 팔란티어커버드콜OTM채권혼합
+3      RISE 200고배당커버드콜ATM
+1    KODEX 테슬라커버드콜채권혼합액티브
+0         KODEX 국고채10년액티브
 Name: 종목명, dtype: object
