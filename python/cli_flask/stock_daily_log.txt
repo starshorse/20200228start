@@ -7,44 +7,4 @@ C:\workdir\gitdn\20200228start\python\cli_flask>cd 20240715\x_rest
 C:\workdir\gitdn\20200228start\python\cli_flask\20240715\x_rest>set FLASK_APP=helloworld  
 
 C:\workdir\gitdn\20200228start\python\cli_flask\20240715\x_rest>flask pykrx 3days_rule message  
-
-[ 3 days bull up Stocks ]
-8      해성디에스
-1      한라IMS
-7     한국자산신탁
-3      풍산홀딩스
-5         태양
-0     일성아이에스
-6     에스에이엠티
-4       동아지질
-2     SNT에너지
-10    SNT모티브
-9       KH바텍
-Name: 종목명, dtype: object
-ETF
-0    KODEX 차이나CSI300
-1     KODEX AI전력핵심설비
-Name: 종목명, dtype: object
-
-[ 3 days bear down Stocks ]
-     DIV     종목명
-3   0.00    현대해상
-4   5.89   한국주철관
-13  6.07   창해에탄올
-12  3.21    일진파워
-0   1.22      방림
-2   6.42      무학
-8   2.85   디와이파워
-7   3.18    대한제강
-5   2.13     넥스틸
-11  7.21   광주신세계
-10  4.66  골프존홀딩스
-9   2.20  SNT홀딩스
-1   2.49  OCI홀딩스
-6   6.50  KCC글라스
-ETF
-2     SOL 팔란티어커버드콜OTM채권혼합
-3      RISE 200고배당커버드콜ATM
-1    KODEX 테슬라커버드콜채권혼합액티브
-0         KODEX 국고채10년액티브
-Name: 종목명, dtype: object
+^C

@@ -65,6 +65,7 @@ def _3days_rule_message():
         df = get_df_period( before_two_week, one )
         if len( df ) == 0:
             continue ;
+        print('STOCK code:', one );
         if( df['등락률'].tail(3).min() >  0 ):
             list_bull.append( one );
         if( df['등락률'].tail(3).max() <  0 ):
@@ -73,6 +74,7 @@ def _3days_rule_message():
         df = get_df_etf_period( before_two_week, one )
         if len( df ) == 0:
             continue ;
+        print('ETF code:', one );
         if( df['등락률'].tail(3).min() >  0 ):
             list_etf_bull.append( one );
         if( df['등락률'].tail(3).max() <  0 ):
