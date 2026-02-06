@@ -1,0 +1,182 @@
+{
+  "file_name": "image.png",
+  "total_tables": 1,
+  "tables": [
+    {
+      "table_id": "table-1",
+      "headers": [
+        "DESCRIPTION",
+        "QTY.",
+        "AMOUNT"
+      ],
+      "rows": [
+        [
+          "Order No:HY-S-251210S522",
+          "",
+          ""
+        ],
+        [
+          "PO: EZ25121010241200",
+          "",
+          ""
+        ],
+        [
+          "CS-D1693",
+          "",
+          ""
+        ],
+        [
+          "CAS:1120-90-7",
+          "",
+          ""
+        ],
+        [
+          "3-Iodopyridine",
+          "5g*1",
+          "USD 9.00"
+        ],
+        [
+          "Order No:HY-S-251211S633",
+          "",
+          ""
+        ],
+        [
+          "PO: EZ25121110406200",
+          "",
+          ""
+        ],
+        [
+          "CS-0011855",
+          "",
+          ""
+        ],
+        [
+          "CAS:1454843-78-7",
+          "",
+          ""
+        ],
+        [
+          "(R)-5-(tert-Butoxycarbonyl)-5-azaspiro[2.4]heptane-6-carboxylic acid (Impurity)",
+          "1g*1",
+          "USD 148.20"
+        ],
+        [
+          "CS-W004345",
+          "",
+          ""
+        ],
+        [
+          "CAS:530-48-3",
+          "",
+          ""
+        ],
+        [
+          "Ethene-1.1-diyldibenzene.98%(stabilized with HQ)",
+          "10g*1",
+          "USD 7.80"
+        ],
+        [
+          "CS-W007225",
+          "",
+          ""
+        ],
+        [
+          "CAS:137215-27-1",
+          "",
+          ""
+        ],
+        [
+          "7-Mercapto-4-methyl-2H-chromen-2-one",
+          "1g*1",
+          "USD 54.00"
+        ],
+        [
+          "CS-W018507",
+          "",
+          ""
+        ],
+        [
+          "CAS:13965-03-2",
+          "",
+          ""
+        ],
+        [
+          "Bis(triphenylphosphine)dichloropalladium",
+          "5g*1",
+          "USD 51.00"
+        ],
+        [
+          "Order No:HY-S-251212S291",
+          "",
+          ""
+        ],
+        [
+          "PO: EZ25121210467700",
+          "",
+          ""
+        ],
+        [
+          "CS-0146691",
+          "",
+          ""
+        ],
+        [
+          "CAS:112496-94-3",
+          "",
+          ""
+        ],
+        [
+          "1-Bromo-2-(methoxymethoxy)ethane",
+          "5g*1",
+          "USD 64.20"
+        ],
+        [
+          "CS-W019399",
+          "",
+          ""
+        ],
+        [
+          "CAS:69879-22-7",
+          "",
+          ""
+        ],
+        [
+          "6-Aminonicotinaldehyde",
+          "10g*1",
+          "USD 85.80"
+        ],
+        [
+          "Order No:HY-S-251212T666",
+          "",
+          ""
+        ],
+        [
+          "PO: EZ25121210248300",
+          "",
+          ""
+        ],
+        [
+          "CS-0062273",
+          "",
+          ""
+        ],
+        [
+          "CAS:53938-24-2",
+          "",
+          ""
+        ],
+        [
+          "1-Brom-4.5-dimethyl-2-nitro-benzol",
+          "1g*1",
+          "USD 66.00"
+        ]
+      ],
+      "row_count": 40,
+      "column_count": 3
+    }
+  ],
+  "metadata": {
+    "file_name": "ezchemtech001_preprocessed.png",
+    "processed_pages": 1
+  }
+}
